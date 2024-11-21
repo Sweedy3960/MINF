@@ -166,7 +166,7 @@ typedef struct
 
 void APP_Initialize ( void );
 void APP_UpdateState ( APP_STATES NewState );
-
+void AllLed(uint8_t state);
 /*******************************************************************************
   Function:
     void APP_Tasks ( void )

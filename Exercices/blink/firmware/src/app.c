@@ -54,8 +54,10 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 #include "app.h"
+#include <stdint.h>
 #include "Mc32DriverLcd.h"
 #include "Mc32Delays.h"
+#include "drv_tmr_static.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -214,7 +216,13 @@ void APP_Tasks ( void )
 //Toutes les 100ms ICI le seul endroit pour les 100ms
 void APP_Timer1CallBack(void)
 {
-    APP_UpdateState(APP_STATE_SERVICE_TASKS);
+    uint32_t i=0;
+    if(i>=30)
+    {
+        i=29;
+        APP_UpdateState(APP_STATE_SERVICE_TASKS);
+    }
+    
 }
 void APP_UpdateState(APP_STATES newState)
 {

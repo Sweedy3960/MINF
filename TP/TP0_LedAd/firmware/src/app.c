@@ -54,7 +54,11 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 #include "app.h"
-
+#include "bsp.h"
+#include <stdlib.h>
+#include <string.h>
+#include "Mc32DriverLcd.h"
+#include "Mc32DriverAdcAlt.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -134,30 +138,51 @@ void APP_Initialize ( void )
 
 void APP_Tasks ( void )
 {
-
+    S_ADCResultsAlt valueAdc;
+    char strCanal[4]={"CH"};
+    char StrChan[2]="0 ";
+    char buff[21];
+    static char firstTime = 0;
     /* Check the application's current state. */
     switch ( appData.state )
     {
         /* Application's initial state. */
         case APP_STATE_INIT:
         {
-            bool appInitialized = true;
-       
-        
-            if (appInitialized)
-            {
-            
-                appData.state = APP_STATE_SERVICE_TASKS;
-            }
+           
+            lcd_init();
+            lcd_bl_on();
+            printf_lcd("TP0 LED+AD 2024-11");
+            lcd_gotoxy(1,2);
+            printf_lcd("Clauzel");
+            BSP_InitADC10();
+            AllLed(1);
+            DRV_TMR0_Start();
+            APP_UpdateState(APP_STATE_WAIT);       
             break;
         }
 
         case APP_STATE_SERVICE_TASKS:
         {
-        
+            
+            valueAdc = BSP_ReadADCAlt();
+            lcd_gotoxy(1,3);
+            itoa(buff,valueAdc.Chan0,10);
+            printf_lcd(strcat(strcat(strCanal,StrChan),buff));
+            if(!firstTime)
+            {
+                firstTime = 1;
+                AllLed(0);
+            }
+            
+            APP_UpdateState(APP_STATE_WAIT);
             break;
         }
-
+        case APP_STATE_WAIT:
+        {
+            break;
+        }
+        
         /* TODO: implement your application state machine.*/
         
 
@@ -170,6 +195,46 @@ void APP_Tasks ( void )
     }
 }
 
+void APP_UpdateState ( APP_STATES newState )
+{ 
+   appData.state = newState;
+}
+void APP_Timer1CallBack(void)
+{
+    static uint32_t i=0;
+    if(i>=30)
+    {
+        i=29;
+        APP_UpdateState(APP_STATE_SERVICE_TASKS);
+    }
+    
+}
+void AllLed(uint8_t state)
+{
+    if (state !=0)
+    {
+        LED0_W=0;
+        LED1_W=0;
+        LED2_W=0;
+        LED3_W=0;
+        LED4_W=0;
+        LED5_W=0;
+        LED6_W=0;
+        LED7_W=0;
+    }
+    else
+    {
+        LED0_W=1;
+        LED1_W=1;
+        LED2_W=1;
+        LED3_W=1;
+        LED4_W=1;
+        LED5_W=1;
+        LED6_W=1;
+        LED7_W=1;
+    
+    }
+}
  
 
 /*******************************************************************************
