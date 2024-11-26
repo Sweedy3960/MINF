@@ -94,7 +94,10 @@ typedef enum
 	/* TODO: Define states used by the application state machine. */
 
 } APP_STATES;
-
+#define LIGHTUP 0 
+#define LIGHTOFF 1 
+#define OFF(x) (x = 1)
+#define ON(x)  (x = 0)
 
 // *****************************************************************************
 /* Application Data
@@ -167,6 +170,8 @@ typedef struct
 void APP_Initialize ( void );
 void APP_UpdateState ( APP_STATES NewState );
 void AllLed(uint8_t state);
+void APP_Timer1CallBack(void);
+void chenillard(void);
 /*******************************************************************************
   Function:
     void APP_Tasks ( void )

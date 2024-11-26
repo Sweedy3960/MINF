@@ -138,11 +138,8 @@ void APP_Initialize ( void )
 
 void APP_Tasks ( void )
 {
-    S_ADCResultsAlt valueAdc;
-    char strCanal[4]={"CH"};
-    char StrChan[2]="0 ";
-    char buff[21];
-    static char firstTime = 0;
+    
+    static char firstTimeSincePowerUp = 0;
     /* Check the application's current state. */
     switch ( appData.state )
     {
@@ -156,7 +153,7 @@ void APP_Tasks ( void )
             lcd_gotoxy(1,2);
             printf_lcd("Clauzel");
             BSP_InitADC10();
-            AllLed(1);
+            AllLed(LIGHTUP);
             DRV_TMR0_Start();
             APP_UpdateState(APP_STATE_WAIT);       
             break;
@@ -165,16 +162,17 @@ void APP_Tasks ( void )
         case APP_STATE_SERVICE_TASKS:
         {
             
-            valueAdc = BSP_ReadADCAlt();
+            appData.AdcRes = BSP_ReadAllADC();
             lcd_gotoxy(1,3);
-            itoa(buff,valueAdc.Chan0,10);
-            printf_lcd(strcat(strcat(strCanal,StrChan),buff));
-            if(!firstTime)
+            
+            printf_lcd("Ch0 %4d Ch1 %4d", appData.AdcRes.Chan0, appData.AdcRes.Chan1);
+            if(!firstTimeSincePowerUp)
             {
-                firstTime = 1;
-                AllLed(0);
+                firstTimeSincePowerUp = 1;
+                AllLed(LIGHTOFF);
             }
             
+            chenillard();
             APP_UpdateState(APP_STATE_WAIT);
             break;
         }
@@ -207,35 +205,73 @@ void APP_Timer1CallBack(void)
         i=29;
         APP_UpdateState(APP_STATE_SERVICE_TASKS);
     }
+    i++;
     
 }
+
 void AllLed(uint8_t state)
 {
+   
     if (state !=0)
     {
-        LED0_W=0;
-        LED1_W=0;
-        LED2_W=0;
-        LED3_W=0;
-        LED4_W=0;
-        LED5_W=0;
-        LED6_W=0;
-        LED7_W=0;
+        OFF(LED0_W);
+        OFF(LED1_W);
+        OFF(LED2_W);
+        OFF(LED3_W);
+        OFF(LED4_W);
+        OFF(LED5_W);
+        OFF(LED6_W);
+        OFF(LED7_W);
+         
     }
     else
     {
-        LED0_W=1;
-        LED1_W=1;
-        LED2_W=1;
-        LED3_W=1;
-        LED4_W=1;
-        LED5_W=1;
-        LED6_W=1;
-        LED7_W=1;
+        ON(LED0_W);
+        ON(LED1_W);
+        ON(LED2_W);
+        ON(LED3_W);
+        ON(LED4_W);
+        ON(LED5_W);
+        ON(LED6_W);
+        ON(LED7_W);
     
     }
 }
- 
+void chenillard(void)
+{
+    static char state=0;
+    AllLed(LIGHTOFF);
+    switch  (state)
+    {
+        case 0:
+            ON(LED0_W);
+            break;
+        case 1:
+            ON(LED1_W);
+            break;
+        case 2: 
+            ON(LED2_W);
+            break;  
+        case 3:
+            ON(LED3_W);
+            break;
+        case 4:
+            ON(LED4_W);
+            break;
+        case 5:
+            ON(LED5_W);
+            break;
+        case 6: 
+            ON(LED6_W);
+            break;  
+        case 7:
+            ON(LED7_W);
+            state=0;
+            break; 
+        
+    }
+    state++;
+}
 
 /*******************************************************************************
  End of File
