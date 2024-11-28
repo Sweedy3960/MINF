@@ -245,24 +245,31 @@ void chenillard(void)
     {
         case 0:
             ON(LED0_W);
+            state++;
             break;
         case 1:
             ON(LED1_W);
+            state++;
             break;
         case 2: 
             ON(LED2_W);
+            state++;
             break;  
         case 3:
             ON(LED3_W);
+            state++;
             break;
         case 4:
             ON(LED4_W);
+            state++;
             break;
         case 5:
             ON(LED5_W);
+            state++;
             break;
         case 6: 
             ON(LED6_W);
+            state++;
             break;  
         case 7:
             ON(LED7_W);
@@ -270,7 +277,7 @@ void chenillard(void)
             break; 
         
     }
-    state++;
+    
 }
 
 /*******************************************************************************
