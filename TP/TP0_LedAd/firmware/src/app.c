@@ -200,9 +200,9 @@ void APP_UpdateState ( APP_STATES newState )
 void APP_Timer1CallBack(void)
 {
     static uint32_t i=0;
-    if(i>=29)
+    if(i>=30)
     {
-        i=28;
+        i=29;
         APP_UpdateState(APP_STATE_SERVICE_TASKS);
     }
     i++;
