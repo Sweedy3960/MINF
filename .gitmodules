@@ -1,0 +1,3 @@
+[submodule "TP/TP1_TimerPWM_ACL_MSI/TP1_TimerPWM"]
+	path = TP/TP1_TimerPWM_ACL_MSI/TP1_TimerPWM
+	url = https://github.com/Sweedy3960/TP1_TimerPWM
