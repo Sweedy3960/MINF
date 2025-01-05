@@ -199,10 +199,10 @@ void APP_UpdateState ( APP_STATES newState )
 }
 void APP_Timer1CallBack(void)
 {
-    static uint32_t i=0;
-    if(i>=30)
+    static char i=0;
+    if(i>=MAXCNT)
     {
-        i=29;
+        i=(MAXCNT-1);
         APP_UpdateState(APP_STATE_SERVICE_TASKS);
     }
     i++;
