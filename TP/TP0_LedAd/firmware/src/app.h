@@ -168,10 +168,143 @@ typedef struct
 */
 
 void APP_Initialize ( void );
+/*******************************************************************************
+  Function:
+    void APP_Initialize ( void )
+
+  Summary:
+    MPLAB Harmony Demo application tasks function
+
+  Description:
+    This routine is the Harmony Demo application's initialisation function.  
+
+  Precondition:
+    idk
+
+  Parameters:
+    None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_Initialize();
+    </code>
+
+  Remarks:
+    This routine must be called from APP_UpdateState() routine.
+ */
 void APP_UpdateState ( APP_STATES NewState );
+/*******************************************************************************
+  Function:
+    void APP_UpdateState ( void )
+
+  Summary:
+     Function made by student
+  Description:
+    This function is used to modify the state machine
+
+  Precondition:
+    idk
+
+  Parameters:
+    APP_STATES NewState
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_UpdateState(NewState);
+    </code>
+
+  Remarks:
+    This routine must be called from APP_Tasks() routine.
+ */
 void AllLed(uint8_t state);
+/*******************************************************************************
+  Function:
+    void AllLed ( void )
+
+  Summary:
+     Function made by student
+  Description:
+    This function is used to modify the states of all leds
+
+  Precondition:
+    idk
+
+  Parameters:
+   uint8_t state
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    AllLed(0); //éteind
+    </code>
+
+  Remarks:
+    This routine must be called from APP_Tasks() routine.
+ */
 void APP_Timer1CallBack(void);
+/*******************************************************************************
+  Function:
+    void APP_Timer1CallBack ( void )
+
+  Summary:
+     Function made by student
+  Description:
+    This function is used to merge all content typed by programmer 
+    to the app files, improvimg visibility and uniformisation
+
+  Precondition:
+    idk
+
+  Parameters:
+   None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    APP_Timer1CallBack();
+    </code>
+
+  Remarks:
+    This routine must be called from __ISR(_TIMER_1_VECTOR, ipl4AUTO)  routine.
+ */
 void chenillard(void);
+/*******************************************************************************
+  Function:
+    void chenillard ( void )
+
+  Summary:
+     Function made by student
+  Description:
+    This function is used to swap between states of the chenillard
+
+  Precondition:
+    idk
+
+  Parameters:
+   None.
+
+  Returns:
+    None.
+
+  Example:
+    <code>
+    chenillard();
+    </code>
+
+  Remarks:
+    This routine must be called from APP_Tasks()  routine.
+ */
+void APP_Tasks( void );
 /*******************************************************************************
   Function:
     void APP_Tasks ( void )
@@ -202,7 +335,7 @@ void chenillard(void);
     This routine must be called from SYS_Tasks() routine.
  */
 
-void APP_Tasks( void );
+
 
 
 #endif /* _APP_H */
