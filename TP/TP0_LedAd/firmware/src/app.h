@@ -97,6 +97,7 @@ typedef enum
 //defines for numeric const
 #define LIGHTUP 0 
 #define LIGHTOFF 1 
+#define MAXCNT 30
 //Leds are active low so this macro make the code more readable
 //should be used only for tunning state leds directly to tthe latch
 #define OFF(x) (x = 1)
