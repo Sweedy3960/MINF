@@ -92,12 +92,12 @@ extern "C" {
 #define SYS_PORT_AD1PCFG        ~0x38c3
 #define SYS_PORT_CNPUE          0x0
 #define SYS_PORT_CNEN           0x0
-#define SYS_PORT_A_TRIS         0x7F0C
-#define SYS_PORT_A_LAT          0x80C0
+#define SYS_PORT_A_TRIS         0x3F0C
+#define SYS_PORT_A_LAT          0xC0C0
 #define SYS_PORT_A_ODC          0x0000
 
 #define SYS_PORT_B_TRIS         0xFAFF
-#define SYS_PORT_B_LAT          0x0400
+#define SYS_PORT_B_LAT          0x0000
 #define SYS_PORT_B_ODC          0x0000
 
 #define SYS_PORT_C_TRIS         0xFFF9

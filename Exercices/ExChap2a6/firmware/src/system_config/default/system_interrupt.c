@@ -70,21 +70,21 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 // *****************************************************************************
 
-void __ISR(_EXTERNAL_3_VECTOR, IPL7SRS) _IntHandlerExternalInterruptInstance0(void)
-{
-    PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_EXTERNAL_3);
-    BSP_LEDToggle(BSP_LED_1);
+//void __ISR(_EXTERNAL_3_VECTOR, IPL7SRS) _IntHandlerExternalInterruptInstance0(void)
+//{
+ //   PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_EXTERNAL_3);
+  //  BSP_LEDToggle(BSP_LED_1);
     
-    if (BSP_SwitchStateGet(BSP_SWITCH_1))
-    {
-        APP_IncCountInt3();
-    }
-    else
-    {
-        APP_DecCountInt3();
-    }
+  //  if (BSP_SwitchStateGet(BSP_SWITCH_1))
+   // {
+   //     APP_IncCountInt3();
+   // }
+   // else
+   // {
+    //    APP_DecCountInt3();
+    //}
     
-}
+//}
  
 
 void __ISR(_TIMER_1_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance0(void)

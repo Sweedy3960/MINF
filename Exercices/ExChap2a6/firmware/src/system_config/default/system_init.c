@@ -137,15 +137,7 @@ SYSTEM_OBJECTS sysObj;
   Remarks:
     See prototype in system/common/sys_module.h.
  */
-void IntExt3_initialize(void)
-{
-     /*Setup the INT_SOURCE_EXTERNAL_3 and Enable it*/
-    SYS_INT_VectorPrioritySet(INT_VECTOR_INT3, INT_PRIORITY_LEVEL7);
-    SYS_INT_VectorSubprioritySet(INT_VECTOR_INT3, INT_SUBPRIORITY_LEVEL0);
-    SYS_INT_ExternalInterruptTriggerSet(INT_EXTERNAL_INT_SOURCE3,INT_EDGE_TRIGGER_RISING);
-    SYS_INT_SourceEnable(INT_SOURCE_EXTERNAL_3);
 
-}
 void SYS_Initialize ( void* data )
 {
     /* Core Processor Initialization */
@@ -164,15 +156,9 @@ void SYS_Initialize ( void* data )
    
     /* Initialize System Services */
     SYS_PORTS_Initialize();
-    IntExt3_initialize();
+    //IntExt3_initialize();
     /*** Interrupt Service Initialization Code ***/
     SYS_INT_Initialize();
-
-   
-
-
-
-
 
     /* Initialize Middleware */
 
