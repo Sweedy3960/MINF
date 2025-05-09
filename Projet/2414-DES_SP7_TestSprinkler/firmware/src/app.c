@@ -54,7 +54,9 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 #include "app.h"
-
+#include "stdint.h"
+#include "stdbool.h"
+#include "Mc32DriverAdc.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -134,28 +136,85 @@ void APP_Initialize ( void )
 
 void APP_Tasks ( void )
 {
-
+    //timer1 used to buzz RN 
+    //timer 2 used to SR LED (trying)
+    static uint8_t value; 
+    SR_LEDS LEDS;
+    static uint8_t SampleReadyToRead;
+    uint8_t i; 
     /* Check the application's current state. */
     switch ( appData.state )
     {
         /* Application's initial state. */
         case APP_STATE_INIT:
         {
-           
-       
-        
+            LEDS.LED8 = 0;
+            LEDS.LED11 = 0;
+            LEDS.LED4 = 0;
+            LEDS.LED12 = 0;
+            LEDS.LED6 = 0;
+            LEDS.LED3 = 0;
+            //SR2
+            LEDS.LED10 = 0;
+            LEDS.LED7 = 0;
+            LEDS.LED1 = 0;
+            LEDS.LED13 = 0;
+            LEDS.LED0 = 0;
+            LEDS.LED14 = 0;
+            LEDS.LED5 = 0;
+            DRV_ADC_Initialize();
+            DRV_ADC_Open(); 
+            DRV_ADC_Start();
             
-            
+            DRV_TMR2_Start();
+            //BSP_InitADC10();
             appData.state = APP_STATE_SERVICE_TASKS;
-            
+            LIFELED_GREENOff();
         }
 
         case APP_STATE_SERVICE_TASKS:
         {
-            SR_LED_OE_2Toggle();
-            SR_LED_OE_1Toggle();
-            TESTPINToggle();
+            
+            //SR_LED_OE_1Toggle();
+            //TESTPINToggle();
+            value = SC3StateGet();
+            TESTPINStateSet(value);
+            //BUZZ_CMDToggle();
+            if (value)
+            {
+                DRV_TMR0_Start();
+            }
+            else
+            {
+                DRV_TMR0_Stop();
+                //appData.valAD=BSP_ReadAllADC();
+            }
+            SampleReadyToRead = DRV_ADC_SamplesAvailable();
+
+            if (SampleReadyToRead) {
+                SR_LED_OE_2Toggle();
+                for (i = 0; i < 14; i++) {
+                    appData.valAD[i] = DRV_ADC_SamplesRead(i);
+
+                }
+                
+            }
+            
+            
             break;
+            
+            
+            
+            
+            
+            /*SR REG : 25times per sec 13CLK -- 325HZ  
+             output disable -> send data -> output disable 
+            
+             * SR_LED_DATAStateSet
+             * SR_LED_OE_2Toggle();
+            
+            */
+            
         }
 
         /* TODO: implement your application state machine.*/
@@ -170,7 +229,12 @@ void APP_Tasks ( void )
     }
 }
 
+ void APP_TIMER1_CALLBACK(void)
+ {
+    BUZZ_CMDToggle();
+ }
  
+
 
 /*******************************************************************************
  End of File

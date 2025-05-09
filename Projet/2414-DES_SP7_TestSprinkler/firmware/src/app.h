@@ -58,6 +58,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include <stdlib.h>
 #include "system_config.h"
 #include "system_definitions.h"
+#include "Mc32DriverAdc.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -93,7 +94,26 @@ typedef enum
 	/* TODO: Define states used by the application state machine. */
 
 } APP_STATES;
-
+typedef struct
+{
+    //ordre as schematics
+    //SR1
+    bool LED8;
+    bool LED11;
+    bool LED4;
+    bool LED12;
+    bool LED6;
+    bool LED3;
+    //SR2
+    bool LED10;
+    bool LED7;
+    bool LED1;
+    bool LED13;
+    bool LED0;
+    bool LED14;
+    bool LED5;
+    
+}SR_LEDS;
 
 // *****************************************************************************
 /* Application Data
@@ -112,7 +132,7 @@ typedef struct
 {
     /* The application's current state */
     APP_STATES state;
-
+    ADC_SAMPLE valAD[14];
     /* TODO: Define any additional data used by the application. */
 
 } APP_DATA;
@@ -198,7 +218,7 @@ void APP_Initialize ( void );
 
 void APP_Tasks( void );
 
-
+ void APP_TIMER1_CALLBACK(void);
 #endif /* _APP_H */
 
 //DOM-IGNORE-BEGIN
