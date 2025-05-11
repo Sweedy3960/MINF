@@ -1,0 +1,6 @@
+[submodule "TP/TP1_TimerPWM_ACL_MSI/TP1_TimerPWM"]
+	path = TP/TP1_TimerPWM_ACL_MSI/TP1_TimerPWM
+	url = https://github.com/Sweedy3960/TP1_TimerPWM
+[submodule "TP/TP2_PwmRs232_ACL_MBR/TP2_RS232"]
+	path = TP/TP2_PwmRs232_ACL_MBR/TP2_RS232
+	url = https://github.com/Sweedy3960/TP2_RS232
