@@ -192,7 +192,7 @@ void APP_Tasks ( void )
             SampleReadyToRead = DRV_ADC_SamplesAvailable();
 
             if (SampleReadyToRead) {
-                SR_LED_OE_2Toggle();
+                LIFELED_GREENToggle();
                 for (i = 0; i < 14; i++) {
                     appData.valAD[i] = DRV_ADC_SamplesRead(i);
 
