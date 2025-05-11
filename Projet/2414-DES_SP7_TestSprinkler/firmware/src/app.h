@@ -112,6 +112,7 @@ typedef struct
     bool LED0;
     bool LED14;
     bool LED5;
+    bool Leds[14];
     
 }SR_LEDS;
 

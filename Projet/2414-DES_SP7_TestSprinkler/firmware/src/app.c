@@ -195,6 +195,7 @@ void APP_Tasks ( void )
                 LIFELED_GREENToggle();
                 for (i = 0; i < 14; i++) {
                     appData.valAD[i] = DRV_ADC_SamplesRead(i);
+                    
 
                 }
                 
@@ -207,13 +208,7 @@ void APP_Tasks ( void )
             
             
             
-            /*SR REG : 25times per sec 13CLK -- 325HZ  
-             output disable -> send data -> output disable 
-            
-             * SR_LED_DATAStateSet
-             * SR_LED_OE_2Toggle();
-            
-            */
+         
             
         }
 
@@ -231,9 +226,38 @@ void APP_Tasks ( void )
 
  void APP_TIMER1_CALLBACK(void)
  {
+     //between 1khz and 4khz 
+     //timer should be set to 4khz 
+     //with loop if necessary 
+     
     BUZZ_CMDToggle();
  }
- 
+ void APP_SERIAL_LEDS_CMD(void)
+{
+    /*SR REG : 25times per sec 13CLK -- 325HZ  
+         output disable -> send data -> output disable 
+            
+     * 
+     * SR_LED_OE_1Toggle();
+     * is remplaced by 
+     * TESTPINStateSet();     
+     */
+    static uint8_t state =0;
+    static uint8_t i =0;
+    SR_LED_CLKOff();
+    SR_LED_OE_2Off();
+    TESTPINOff();
+    for (i=0;i<14;i++)
+    {
+        SR_LED_DATAStateSet(1);
+        SR_LED_CLKToggle();
+        SR_LED_CLKToggle();
+    }
+    SR_LED_OE_2On();
+    TESTPINOn();
+    
+    
+ }
 
 
 /*******************************************************************************
