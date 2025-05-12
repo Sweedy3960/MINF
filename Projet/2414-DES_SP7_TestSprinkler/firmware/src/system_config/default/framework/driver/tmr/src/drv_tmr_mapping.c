@@ -96,6 +96,12 @@ SYS_MODULE_OBJ DRV_TMR_Initialize
 			sysObj = (SYS_MODULE_OBJ)DRV_TMR_INDEX_2;
             break;
         }
+        case DRV_TMR_INDEX_3:
+        {
+            DRV_TMR3_Initialize();
+			sysObj = (SYS_MODULE_OBJ)DRV_TMR_INDEX_3;
+            break;
+        }
         default:
         {
 			sysObj = SYS_MODULE_OBJ_INVALID;
@@ -137,6 +143,11 @@ void DRV_TMR_Deinitialize ( SYS_MODULE_OBJ object )
         case DRV_TMR_INDEX_2:
         {
             DRV_TMR2_DeInitialize();
+            break;
+        }
+        case DRV_TMR_INDEX_3:
+        {
+            DRV_TMR3_DeInitialize();
             break;
         }
         default:
@@ -181,6 +192,11 @@ SYS_STATUS DRV_TMR_Status ( SYS_MODULE_OBJ object )
             returnValue = DRV_TMR2_Status();
             break;
         }
+        case DRV_TMR_INDEX_3:
+        {
+            returnValue = DRV_TMR3_Status();
+            break;
+        }
         default:
         {
             break;
@@ -221,6 +237,11 @@ void DRV_TMR_Tasks ( SYS_MODULE_OBJ object )
         case DRV_TMR_INDEX_2:
         {
             DRV_TMR2_Tasks();
+            break;
+        }
+        case DRV_TMR_INDEX_3:
+        {
+            DRV_TMR3_Tasks();
             break;
         }
         default:
@@ -279,6 +300,11 @@ DRV_HANDLE DRV_TMR_Open
         case DRV_TMR_INDEX_2:
         {
             return (DRV_HANDLE)DRV_TMR_INDEX_2;
+            break;
+        }
+        case DRV_TMR_INDEX_3:
+        {
+            return (DRV_HANDLE)DRV_TMR_INDEX_3;
             break;
         }
         default:
@@ -364,6 +390,11 @@ DRV_TMR_CLIENT_STATUS DRV_TMR_ClientStatus
         case DRV_TMR_INDEX_2:
         {
             return DRV_TMR2_ClientStatus();
+            break;
+        }
+        case DRV_TMR_INDEX_3:
+        {
+            return DRV_TMR3_ClientStatus();
             break;
         }
         default:
@@ -452,6 +483,11 @@ uint32_t DRV_TMR_CounterValueGet ( DRV_HANDLE handle )
         case DRV_TMR_INDEX_2:
         {
             return DRV_TMR2_CounterValueGet();
+            break;
+        }
+        case DRV_TMR_INDEX_3:
+        {
+            return DRV_TMR3_CounterValueGet();
             break;
         }
         default:
@@ -724,6 +760,11 @@ bool DRV_TMR_Start ( DRV_HANDLE handle )
             return DRV_TMR2_Start();
             break;
         }
+        case DRV_TMR_INDEX_3:
+        {
+            return DRV_TMR3_Start();
+            break;
+        }
         default:
         {
             break;
@@ -836,6 +877,11 @@ DRV_TMR_OPERATION_MODE DRV_TMR_OperationModeGet(DRV_HANDLE handle)
             return DRV_TMR2_OperationModeGet();
             break;
         }
+        case DRV_TMR_INDEX_3:
+        {
+            return DRV_TMR3_OperationModeGet();
+            break;
+        }
         default:
         {
             break;
@@ -934,6 +980,11 @@ TMR_PRESCALE DRV_TMR_PrescalerGet ( DRV_HANDLE handle )
         case DRV_TMR_INDEX_2:
         {
             return DRV_TMR2_PrescalerGet();
+            break;
+        }
+        case DRV_TMR_INDEX_3:
+        {
+            return DRV_TMR3_PrescalerGet();
             break;
         }
         default:
@@ -1087,6 +1138,11 @@ DRV_TMR_OPERATION_MODE DRV_TMR_DividerRangeGet
         case DRV_TMR_INDEX_2:
         {
             return DRV_TMR2_DividerRangeGet(pDivRange);
+            break;
+        }
+        case DRV_TMR_INDEX_3:
+        {
+            return DRV_TMR3_DividerRangeGet(pDivRange);
             break;
         }
         default:

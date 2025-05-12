@@ -139,7 +139,7 @@ void APP_Tasks ( void )
     //timer1 used to buzz RN 
     //timer 2 used to SR LED (trying)
     static uint8_t value; 
-    SR_LEDS LEDS;
+   // SR_LEDS LEDS;
     static uint8_t SampleReadyToRead;
     uint8_t i; 
     /* Check the application's current state. */
@@ -148,20 +148,13 @@ void APP_Tasks ( void )
         /* Application's initial state. */
         case APP_STATE_INIT:
         {
-            LEDS.LED8 = 0;
-            LEDS.LED11 = 0;
-            LEDS.LED4 = 0;
-            LEDS.LED12 = 0;
-            LEDS.LED6 = 0;
-            LEDS.LED3 = 0;
-            //SR2
-            LEDS.LED10 = 0;
-            LEDS.LED7 = 0;
-            LEDS.LED1 = 0;
-            LEDS.LED13 = 0;
-            LEDS.LED0 = 0;
-            LEDS.LED14 = 0;
-            LEDS.LED5 = 0;
+            SR_LED_OE_2On(); //éteind
+            TESTPINOn(); //éteind
+            for (i=0;i<16;i++)
+            {
+                appData.sysLeds.Leds[i].state= 0;
+            }
+            APP_SERIAL_LEDS_CMD();
             DRV_ADC_Initialize();
             DRV_ADC_Open(); 
             DRV_ADC_Start();
@@ -174,7 +167,6 @@ void APP_Tasks ( void )
 
         case APP_STATE_SERVICE_TASKS:
         {
-            
             //SR_LED_OE_1Toggle();
             //TESTPINToggle();
             value = SC3StateGet();
@@ -190,18 +182,23 @@ void APP_Tasks ( void )
                 //appData.valAD=BSP_ReadAllADC();
             }
             SampleReadyToRead = DRV_ADC_SamplesAvailable();
-
+ 
             if (SampleReadyToRead) {
-                LIFELED_GREENToggle();
+                SR_LED_OE_2Toggle();
                 for (i = 0; i < 14; i++) {
                     appData.valAD[i] = DRV_ADC_SamplesRead(i);
-                    
 
+ 
                 }
-                
-            }
-            
-            
+        }
+        setAlarmLed();
+        setDerLed();
+        setIn1Led();
+        setIn2Led();
+        setIn3Led();
+        setIn4Led();
+        setIn5Led();
+        APP_SERIAL_LEDS_CMD();    
             break;
             
             
@@ -236,7 +233,7 @@ void APP_Tasks ( void )
 {
     /*SR REG : 25times per sec 13CLK -- 325HZ  
          output disable -> send data -> output disable 
-            
+     * //1 on state led goes off
      * 
      * SR_LED_OE_1Toggle();
      * is remplaced by 
@@ -245,20 +242,91 @@ void APP_Tasks ( void )
     static uint8_t state =0;
     static uint8_t i =0;
     SR_LED_CLKOff();
+    SR_SRCLK_FKCDPOff();
+    SR_LED_OE_2On(); //éteind
+    TESTPINOn(); //éteind
     SR_LED_OE_2Off();
     TESTPINOff();
-    for (i=0;i<14;i++)
+    for (i=0;i<20;i++)
     {
-        SR_LED_DATAStateSet(1);
+        SR_LED_DATAStateSet( appData.sysLeds.Leds[i].state= 0);
+        SR_SRCLK_FKCDPToggle();
         SR_LED_CLKToggle();
+        SR_SRCLK_FKCDPToggle();
         SR_LED_CLKToggle();
     }
-    SR_LED_OE_2On();
-    TESTPINOn();
     
-    
- }
-
+}
+void setAlarmLed(void)
+{
+    static uint8_t cnt=0;
+    if (cnt != 0)
+    {
+        appData.sysLeds.Leds[ALARRM_LED_SAVE].state=1;
+    }
+    appData.sysLeds.Leds[ALARRM_LED].state=1;
+    cnt++;
+}
+void setDerLed(void)
+{
+     static uint8_t cnt=0;
+    if (cnt != 0)
+    {
+        appData.sysLeds.Leds[DERR_LED].state=0;
+    }
+    appData.sysLeds.Leds[DERR_LED_SAVE].state=0;
+    cnt++;
+}
+void setIn1Led(void)
+{
+     static uint8_t cnt=0;
+    if (cnt != 0)
+    {
+        appData.sysLeds.Leds[FREE_IN1_LED].state=0;
+    }
+    appData.sysLeds.Leds[FREE_IN1_LED_SAVE].state=0;
+    cnt++;
+}
+void setIn2Led(void)
+{
+    static uint8_t cnt=0;
+    if (cnt != 0)
+    {
+        appData.sysLeds.Leds[FREE_IN2_LED].state=0;
+    }
+    appData.sysLeds.Leds[FREE_IN2_LED_SAVE].state=0;
+    cnt++;
+}
+void setIn3Led(void)
+{
+    static uint8_t cnt=0;
+    if (cnt != 0)
+    {
+        appData.sysLeds.Leds[FREE_IN3_LED].state=0;
+    }
+    appData.sysLeds.Leds[FREE_IN3_LED_SAVE].state=0;
+    cnt++;
+}
+void setIn4Led(void)
+{
+    static uint8_t cnt=0;
+    if (cnt != 0)
+    {
+        appData.sysLeds.Leds[FREE_IN4_LED].state=0;
+    }
+    appData.sysLeds.Leds[FREE_IN4_LED_SAVE].state=0;
+    cnt++;
+}
+void setIn5Led(void)
+{
+    static  uint8_t cnt=0;
+    if (cnt != 0)
+    {
+        appData.sysLeds.Leds[FREE_IN5_LED].state=0;
+    }
+    appData.sysLeds.Leds[FREE_IN5_LED_SAVE].state=0;
+    cnt++;
+}
 
 /*******************************************************************************
  End of File

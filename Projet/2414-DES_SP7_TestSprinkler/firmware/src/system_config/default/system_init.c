@@ -157,6 +157,8 @@ void SYS_Initialize ( void* data )
     DRV_TMR1_Initialize();
     /*Initialize TMR2 */
     DRV_TMR2_Initialize();
+    /*Initialize TMR3 */
+    DRV_TMR3_Initialize();
  
  
     /* Initialize System Services */

@@ -94,27 +94,7 @@ typedef enum
 	/* TODO: Define states used by the application state machine. */
 
 } APP_STATES;
-typedef struct
-{
-    //ordre as schematics
-    //SR1
-    bool LED8;
-    bool LED11;
-    bool LED4;
-    bool LED12;
-    bool LED6;
-    bool LED3;
-    //SR2
-    bool LED10;
-    bool LED7;
-    bool LED1;
-    bool LED13;
-    bool LED0;
-    bool LED14;
-    bool LED5;
-    bool Leds[14];
-    
-}SR_LEDS;
+
 
 // *****************************************************************************
 /* Application Data
@@ -129,15 +109,66 @@ typedef struct
     Application strings and buffers are be defined outside this structure.
  */
 
+
+typedef struct{
+    bool state;
+    uint8_t posTrammeSr;
+    uint8_t posPhys;
+    uint8_t rc_pecent;
+}LED;
+typedef struct
+{
+    /*
+    //ordre as schematics
+    //SR1
+    bool LED8;
+    bool LED11;
+    bool LED4;
+    bool LED12;
+    bool LED6;
+    bool LED3;
+     * unsused
+     * unused
+    //SR2
+    bool LED10;
+    bool LED7;
+    bool LED1;
+    bool LED13;
+    bool LED0;
+    bool LED14;
+    bool LED5;
+    bool LED5;
+    LED Leds[14];
+    */
+    LED Leds[16];
+}SR_LEDS;
+typedef enum 
+{
+    ALARRM_LED =15,
+    ALARRM_LED_SAVE=16,
+    DERR_LED = 13,
+    DERR_LED_SAVE = 14,
+    FREE_IN1_LED = 10,
+    FREE_IN1_LED_SAVE = 12,
+    FREE_IN2_LED = 1,
+    FREE_IN2_LED_SAVE = 9,
+    FREE_IN3_LED = 2,
+    FREE_IN3_LED_SAVE = 7,
+    FREE_IN4_LED = 3,
+    FREE_IN4_LED_SAVE = 4,
+    FREE_IN5_LED = 5,
+    FREE_IN5_LED_SAVE = 6,
+    TEST_LED = 11,       
+}FCT_LED;
 typedef struct
 {
     /* The application's current state */
     APP_STATES state;
     ADC_SAMPLE valAD[14];
+    SR_LEDS    sysLeds;
     /* TODO: Define any additional data used by the application. */
 
 } APP_DATA;
-
 
 // *****************************************************************************
 // *****************************************************************************
@@ -185,7 +216,13 @@ typedef struct
 */
 
 void APP_Initialize ( void );
-
+void setAlarmLed(void);
+void setDerLed(void);
+void setIn1Led(void);
+void setIn2Led(void);
+void setIn3Led(void);
+void setIn4Led(void);
+void setIn5Led(void);
 
 /*******************************************************************************
   Function:
@@ -220,6 +257,7 @@ void APP_Initialize ( void );
 void APP_Tasks( void );
 
  void APP_TIMER1_CALLBACK(void);
+ void APP_SERIAL_LEDS_CMD(void);
 #endif /* _APP_H */
 
 //DOM-IGNORE-BEGIN

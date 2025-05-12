@@ -528,104 +528,76 @@
   <Manifest>
     <Files dnOrder="0">
       <File dnOrder="0">
-        <Name dnOrder="0">drv_tmr_mapping.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/framework/driver/tmr</Path>
-      </File>
-      <File dnOrder="1">
-        <Name dnOrder="0">drv_tmr_variant_mapping.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/framework/driver/tmr/src</Path>
-      </File>
-      <File dnOrder="2">
-        <Name dnOrder="0">driver_common.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/framework/driver</Path>
-      </File>
-      <File dnOrder="3">
-        <Name dnOrder="0">drv_tmr.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/framework/driver/tmr</Path>
-      </File>
-      <File dnOrder="4">
-        <Name dnOrder="0">osal.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/framework/osal</Path>
-      </File>
-      <File dnOrder="5">
-        <Name dnOrder="0">tmr_definitions_pic32m.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/framework/driver/tmr</Path>
-      </File>
-      <File dnOrder="6">
-        <Name dnOrder="0">sys_ports.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/framework/system/ports</Path>
-      </File>
-      <File dnOrder="7">
-        <Name dnOrder="0">driver.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/framework/driver</Path>
-      </File>
-      <File dnOrder="8">
-        <Name dnOrder="0">sys_common.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/framework/system/common</Path>
-      </File>
-      <File dnOrder="9">
-        <Name dnOrder="0">sys_buffer.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/framework/system/common</Path>
-      </File>
-      <File dnOrder="10">
-        <Name dnOrder="0">sys_int_pic32.c</Name>
-        <Path dnOrder="1">Source&amp;#160;Files/framework/system/int/src</Path>
-      </File>
-      <File dnOrder="11">
-        <Name dnOrder="0">sys_clk_compatibility.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/framework/system/clk</Path>
-      </File>
-      <File dnOrder="12">
         <Name dnOrder="0">sys_clk.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/framework/system/clk</Path>
       </File>
-      <File dnOrder="13">
+      <File dnOrder="1">
         <Name dnOrder="0">sys_ports_definitions.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/framework/system/ports</Path>
       </File>
-      <File dnOrder="14">
+      <File dnOrder="2">
         <Name dnOrder="0">osal_impl_basic.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/framework/osal</Path>
       </File>
-      <File dnOrder="15">
+      <File dnOrder="3">
         <Name dnOrder="0">sys_clk_mapping.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/framework/system/clk</Path>
       </File>
-      <File dnOrder="16">
+      <File dnOrder="4">
         <Name dnOrder="0">osal_definitions.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/framework/osal</Path>
       </File>
-      <File dnOrder="17">
+      <File dnOrder="5">
         <Name dnOrder="0">sys_int_mapping.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/framework/system/int</Path>
       </File>
-      <File dnOrder="18">
+      <File dnOrder="6">
+        <Name dnOrder="0">osal.h</Name>
+        <Path dnOrder="1">Header&amp;#160;Files/framework/osal</Path>
+      </File>
+      <File dnOrder="7">
         <Name dnOrder="0">sys_int_private.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/framework/system/int/src</Path>
       </File>
-      <File dnOrder="19">
-        <Name dnOrder="0">drv_tmr_compatibility.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/framework/driver/tmr</Path>
-      </File>
-      <File dnOrder="20">
+      <File dnOrder="8">
         <Name dnOrder="0">system.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/framework/system</Path>
       </File>
-      <File dnOrder="21">
+      <File dnOrder="9">
         <Name dnOrder="0">sys_debug.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/framework/system/debug</Path>
       </File>
-      <File dnOrder="22">
+      <File dnOrder="10">
         <Name dnOrder="0">sys_module.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/framework/system/common</Path>
       </File>
-      <File dnOrder="23">
+      <File dnOrder="11">
+        <Name dnOrder="0">sys_ports.h</Name>
+        <Path dnOrder="1">Header&amp;#160;Files/framework/system/ports</Path>
+      </File>
+      <File dnOrder="12">
+        <Name dnOrder="0">sys_common.h</Name>
+        <Path dnOrder="1">Header&amp;#160;Files/framework/system/common</Path>
+      </File>
+      <File dnOrder="13">
+        <Name dnOrder="0">sys_buffer.h</Name>
+        <Path dnOrder="1">Header&amp;#160;Files/framework/system/common</Path>
+      </File>
+      <File dnOrder="14">
+        <Name dnOrder="0">sys_int_pic32.c</Name>
+        <Path dnOrder="1">Source&amp;#160;Files/framework/system/int/src</Path>
+      </File>
+      <File dnOrder="15">
         <Name dnOrder="0">sys_queue.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/framework/system/common</Path>
       </File>
-      <File dnOrder="24">
+      <File dnOrder="16">
         <Name dnOrder="0">sys_int.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/framework/system/int</Path>
+      </File>
+      <File dnOrder="17">
+        <Name dnOrder="0">sys_clk_compatibility.h</Name>
+        <Path dnOrder="1">Header&amp;#160;Files/framework/system/clk</Path>
       </File>
     </Files>
     <Templates dnOrder="1">
@@ -637,92 +609,68 @@
       <Template dnOrder="1">
         <Name dnOrder="0">system_init.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default</Path>
-        <Checksum dnOrder="2">C4465D71F02FC8A6D8E04E5E1C48EFAD</Checksum>
+        <Checksum dnOrder="2">6A75638CC160A467703436EEAF9C18D3</Checksum>
       </Template>
       <Template dnOrder="2">
         <Name dnOrder="0">main.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app</Path>
       </Template>
       <Template dnOrder="3">
-        <Name dnOrder="0">drv_tmr_static.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/app/system_config/default/framework/driver/tmr</Path>
-        <Checksum dnOrder="2">E9C3112A6AE233C3096E30F2F81A273E</Checksum>
-      </Template>
-      <Template dnOrder="4">
-        <Name dnOrder="0">drv_tmr_mapping.c</Name>
-        <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default/framework/driver/tmr/src</Path>
-        <Checksum dnOrder="2">84EC844A8E2C391E068EA80BD6DEF41F</Checksum>
-      </Template>
-      <Template dnOrder="5">
         <Name dnOrder="0">system_definitions.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/app/system_config/default</Path>
-        <Checksum dnOrder="2">0CCFF441837BC527EC99874AAFB93570</Checksum>
+        <Checksum dnOrder="2">4EC36E40F9F7B7C38756D47B034542B3</Checksum>
       </Template>
-      <Template dnOrder="6">
+      <Template dnOrder="4">
         <Name dnOrder="0">system_exceptions.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default</Path>
         <Checksum dnOrder="2">9836A04F3E98D3971DB91DF539160F34</Checksum>
       </Template>
-      <Template dnOrder="7">
-        <Name dnOrder="0">drv_adc_static.h</Name>
-        <Path dnOrder="1">Header&amp;#160;Files/app/system_config/default/framework/driver/adc</Path>
-        <Checksum dnOrder="2">BBB4482E932C87F4CBF70735F1C81B27</Checksum>
-      </Template>
-      <Template dnOrder="8">
+      <Template dnOrder="5">
         <Name dnOrder="0">sys_devcon.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default/framework/system/devcon/src</Path>
         <Checksum dnOrder="2">54ADBD4A35BCA03C42C74182FCE41849</Checksum>
       </Template>
-      <Template dnOrder="9">
-        <Name dnOrder="0">drv_adc_static.c</Name>
-        <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default/framework/driver/adc/src</Path>
-        <Checksum dnOrder="2">112C014788E5DD7EFF0690C4817503B5</Checksum>
-      </Template>
-      <Template dnOrder="10">
+      <Template dnOrder="6">
         <Name dnOrder="0">app.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app</Path>
       </Template>
-      <Template dnOrder="11">
+      <Template dnOrder="7">
         <Name dnOrder="0">sys_devcon_local.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/app/system_config/default/framework/system/devcon/src</Path>
         <Checksum dnOrder="2">B66F9B4DBD85DA7F9DE775E864E01395</Checksum>
       </Template>
-      <Template dnOrder="12">
+      <Template dnOrder="8">
         <Name dnOrder="0">sys_devcon.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/app/system_config/default/framework/system/devcon</Path>
         <Checksum dnOrder="2">07580DCDEF89D9C79B062544109C5367</Checksum>
       </Template>
-      <Template dnOrder="13">
+      <Template dnOrder="9">
         <Name dnOrder="0">system_tasks.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default</Path>
         <Checksum dnOrder="2">C2FDF6218CDD9CE0E51AFAC4ACBB5F79</Checksum>
       </Template>
-      <Template dnOrder="14">
+      <Template dnOrder="10">
         <Name dnOrder="0">sys_devcon_pic32mx.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default/framework/system/devcon/src</Path>
         <Checksum dnOrder="2">5141464248E33ABE9E7D144A2D4DC129</Checksum>
       </Template>
-      <Template dnOrder="15">
+      <Template dnOrder="11">
         <Name dnOrder="0">system_config.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/app/system_config/default</Path>
-        <Checksum dnOrder="2">8F57F7CD16243A0A42D12C580811C231</Checksum>
+        <Checksum dnOrder="2">7F0BB056B05EBD5611A255DCA5A42D0E</Checksum>
+        <ProjectFileChecksum dnOrder="3">50FAF62A5AFA52A785575359EC0E57C3</ProjectFileChecksum>
       </Template>
-      <Template dnOrder="16">
+      <Template dnOrder="12">
         <Name dnOrder="0">app.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/app</Path>
       </Template>
-      <Template dnOrder="17">
-        <Name dnOrder="0">drv_tmr_static.c</Name>
-        <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default/framework/driver/tmr/src</Path>
-        <Checksum dnOrder="2">79F7DF860446C75CED7A9AE1F4C088BB</Checksum>
-      </Template>
-      <Template dnOrder="18">
+      <Template dnOrder="13">
         <Name dnOrder="0">system_interrupt.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default</Path>
-        <Checksum dnOrder="2">D37B85269CB931DBD74D0C9BAB1B741D</Checksum>
+        <Checksum dnOrder="2">332D5ED6BB08A0DC9A521DCBD9DF0385</Checksum>
         <ProjectFileChecksum dnOrder="3">B7291E8EC46778AF279AB7E6526E6932</ProjectFileChecksum>
       </Template>
-      <Template dnOrder="19">
+      <Template dnOrder="14">
         <Name dnOrder="0">sys_clk_pic32mx.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default/framework/system/clk/src</Path>
         <Checksum dnOrder="2">FDF6C8068CFFAEEC5F8537A8D6514230</Checksum>
