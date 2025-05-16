@@ -122,45 +122,8 @@ extern "C" {
 
     extern S_AT42QT2120 s_getDataSensor; //Structure pour la recéption des datas
 
-    typedef enum {
-        ALARRM_LED = 15,
-        ALARRM_LED_SAVE = 16,
-        DERR_LED = 13,
-        DERR_LED_SAVE = 14,
-        FREE_IN1_LED = 10,
-        FREE_IN1_LED_SAVE = 12,
-        FREE_IN2_LED = 1,
-        FREE_IN2_LED_SAVE = 9,
-        FREE_IN3_LED = 2,
-        FREE_IN3_LED_SAVE = 7,
-        FREE_IN4_LED = 3,
-        FREE_IN4_LED_SAVE = 4,
-        FREE_IN5_LED = 5,
-        FREE_IN5_LED_SAVE = 6,
-        TEST_LED = 11,
-    } FCT_LED;
-
-    typedef union {
-
-        struct {
-            uint8_t led1 : 1;
-            uint8_t led2 : 1;
-            uint8_t led3 : 1;
-            uint8_t led4 : 1;
-            uint8_t led5 : 1;
-            uint8_t led6 : 1;
-            uint8_t led7 : 1;
-            uint8_t led8 : 1;
-            uint8_t led9 : 1;
-            uint8_t led10 : 1;
-            uint8_t led11 : 1;
-            uint8_t led12 : 1;
-            uint8_t led13 : 1;
-            uint8_t led14 : 1;
-
-        };
-        uint16_t cmd_leds;
-    } u_Leds;
+ 
+  
 
     typedef struct {
         uint8_t Ain1_conf : 1;
@@ -185,6 +148,7 @@ extern "C" {
         bool APP_DelayTimeIsRunning;
         void* SR_leds;
         ConfInSwitchs SySwitch;
+        
         /* TODO: Define any additional data used by the application. */
     } APP_DATA;
 

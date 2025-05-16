@@ -119,7 +119,7 @@ void SR_Init(SR_Context *SRegData) {
     SRegData->SelectedLed = 0x8000; // Start with the MSB
 }
 
-void SR_Update(a) {
+void SR_Update() {
     /*
      boucle 1 a 16 
      * mask 0x01 et >>1 
