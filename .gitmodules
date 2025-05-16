@@ -7,3 +7,6 @@
 [submodule "TP/TP2_PwmRs232_ACL_MBR/TP2_RS232"]
 	path = TP/TP3_MenuGen
 	url = https://github.com/Sweedy3960/TP3_MenuGen
+[submodule "MINF/TP4_USBGen"]
+	path = MINF/TP4_USBGen
+	url = https://github.com/MathieuBucher/TP4_USBGen
