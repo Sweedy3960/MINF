@@ -16,7 +16,7 @@
     "APP_Initialize" and "APP_Tasks" prototypes) and some of them are only used
     internally by the application (such as the "APP_STATES" definition).  Both
     are defined here for convenience.
-*******************************************************************************/
+ *******************************************************************************/
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
@@ -59,208 +59,237 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "system_config.h"
 #include "system_definitions.h"
 #include "Mc32DriverAdc.h"
-
+#include "Driver_SR_SN74HCS596QPWRQ1.h"
+#include "mcp79411.h"
+#include "mcp79411_interface.h"
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
 extern "C" {
 
 #endif
-// DOM-IGNORE-END 
+    // DOM-IGNORE-END 
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Type Definitions
-// *****************************************************************************
-// *****************************************************************************
+    // *****************************************************************************
+    // *****************************************************************************
+    // Section: Type Definitions
+    // *****************************************************************************
+    // *****************************************************************************
 
-// *****************************************************************************
-/* Application states
+    // *****************************************************************************
 
-  Summary:
-    Application states enumeration
+    /* Application states
 
-  Description:
-    This enumeration defines the valid application states.  These states
-    determine the behavior of the application at various times.
-*/
+      Summary:
+        Application states enumeration
 
-typedef enum
-{
-	/* Application's state machine's initial state. */
-	APP_STATE_INIT=0,
-	APP_STATE_SERVICE_TASKS,
+      Description:
+        This enumeration defines the valid application states.  These states
+        determine the behavior of the application at various times.
+     */
 
-	/* TODO: Define states used by the application state machine. */
+    typedef enum {
+        /* Application's state machine's initial state. */
+        APP_STATE_INIT = 0,
+        APP_STATE_SERVICE_TASKS,
 
-} APP_STATES;
+        /* TODO: Define states used by the application state machine. */
 
-
-// *****************************************************************************
-/* Application Data
-
-  Summary:
-    Holds application data
-
-  Description:
-    This structure holds the application's data.
-
-  Remarks:
-    Application strings and buffers are be defined outside this structure.
- */
+    } APP_STATES;
 
 
-typedef struct{
-    bool state;
-    uint8_t posTrammeSr;
-    uint8_t posPhys;
-    uint8_t rc_pecent;
-}LED;
-typedef struct
-{
-    /*
-    //ordre as schematics
-    //SR1
-    bool LED8;
-    bool LED11;
-    bool LED4;
-    bool LED12;
-    bool LED6;
-    bool LED3;
-     * unsused
-     * unused
-    //SR2
-    bool LED10;
-    bool LED7;
-    bool LED1;
-    bool LED13;
-    bool LED0;
-    bool LED14;
-    bool LED5;
-    bool LED5;
-    LED Leds[14];
-    */
-    LED Leds[16];
-}SR_LEDS;
-typedef enum 
-{
-    ALARRM_LED =15,
-    ALARRM_LED_SAVE=16,
-    DERR_LED = 13,
-    DERR_LED_SAVE = 14,
-    FREE_IN1_LED = 10,
-    FREE_IN1_LED_SAVE = 12,
-    FREE_IN2_LED = 1,
-    FREE_IN2_LED_SAVE = 9,
-    FREE_IN3_LED = 2,
-    FREE_IN3_LED_SAVE = 7,
-    FREE_IN4_LED = 3,
-    FREE_IN4_LED_SAVE = 4,
-    FREE_IN5_LED = 5,
-    FREE_IN5_LED_SAVE = 6,
-    TEST_LED = 11,       
-}FCT_LED;
-typedef struct
-{
-    /* The application's current state */
-    APP_STATES state;
-    ADC_SAMPLE valAD[14];
-    SR_LEDS    sysLeds;
-    /* TODO: Define any additional data used by the application. */
+    // *****************************************************************************
+    /* Application Data
 
-} APP_DATA;
+      Summary:
+        Holds application data
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Application Callback Routines
-// *****************************************************************************
-// *****************************************************************************
-/* These routines are called by drivers when certain events occur.
-*/
-	
-// *****************************************************************************
-// *****************************************************************************
-// Section: Application Initialization and State Machine Functions
-// *****************************************************************************
-// *****************************************************************************
+      Description:
+        This structure holds the application's data.
 
-/*******************************************************************************
-  Function:
-    void APP_Initialize ( void )
+      Remarks:
+        Application strings and buffers are be defined outside this structure.
+     */
 
-  Summary:
-     MPLAB Harmony application initialization routine.
+    /*Structure pour stocker ou recevoir les datas du AT42QT2120*/
+    typedef struct {
+        uint8_t start;
+        uint8_t valKey0to7;
+        uint8_t valKey8to11;
+        uint8_t valWheel;
+        uint8_t stop;
+    } S_AT42QT2120;
 
-  Description:
-    This function initializes the Harmony application.  It places the 
-    application in its initial state and prepares it to run so that its 
-    APP_Tasks function can be called.
+    extern S_AT42QT2120 s_getDataSensor; //Structure pour la recéption des datas
 
-  Precondition:
-    All other system initialization routines should be called before calling
-    this routine (in "SYS_Initialize").
+    typedef enum {
+        ALARRM_LED = 15,
+        ALARRM_LED_SAVE = 16,
+        DERR_LED = 13,
+        DERR_LED_SAVE = 14,
+        FREE_IN1_LED = 10,
+        FREE_IN1_LED_SAVE = 12,
+        FREE_IN2_LED = 1,
+        FREE_IN2_LED_SAVE = 9,
+        FREE_IN3_LED = 2,
+        FREE_IN3_LED_SAVE = 7,
+        FREE_IN4_LED = 3,
+        FREE_IN4_LED_SAVE = 4,
+        FREE_IN5_LED = 5,
+        FREE_IN5_LED_SAVE = 6,
+        TEST_LED = 11,
+    } FCT_LED;
 
-  Parameters:
-    None.
+    typedef union {
 
-  Returns:
-    None.
+        struct {
+            uint8_t led1 : 1;
+            uint8_t led2 : 1;
+            uint8_t led3 : 1;
+            uint8_t led4 : 1;
+            uint8_t led5 : 1;
+            uint8_t led6 : 1;
+            uint8_t led7 : 1;
+            uint8_t led8 : 1;
+            uint8_t led9 : 1;
+            uint8_t led10 : 1;
+            uint8_t led11 : 1;
+            uint8_t led12 : 1;
+            uint8_t led13 : 1;
+            uint8_t led14 : 1;
 
-  Example:
-    <code>
-    APP_Initialize();
-    </code>
+        };
+        uint16_t cmd_leds;
+    } u_Leds;
 
-  Remarks:
-    This routine must be called from the SYS_Initialize function.
-*/
+    typedef struct {
+        uint8_t Ain1_conf : 1;
+        uint8_t Ain2_conf : 1;
+        uint8_t Ain3_conf : 1;
+        uint8_t FreeIn1_conf : 1;
+        uint8_t FreeIn2_conf : 1;
+        uint8_t FreeIn3_conf : 1;
+        uint8_t FreeIn4_conf : 1;
+        uint8_t FreeIn5_conf : 1;
+        uint8_t SPBIn1_conf : 1;
+        uint8_t SPBIn2_conf : 1;
+        uint8_t SPBIn3_conf : 1;
+    } ConfInSwitchs;
 
-void APP_Initialize ( void );
-void setAlarmLed(void);
-void setDerLed(void);
-void setIn1Led(void);
-void setIn2Led(void);
-void setIn3Led(void);
-void setIn4Led(void);
-void setIn5Led(void);
+    typedef struct {
+        /* The application's current state */
+        APP_STATES state;
+        ADC_SAMPLE valAD[14];
+        //u_Leds     sysLeds;
+        uint32_t AppDelay;
+        bool APP_DelayTimeIsRunning;
+        void* SR_leds;
+        ConfInSwitchs SySwitch;
+        /* TODO: Define any additional data used by the application. */
+    } APP_DATA;
 
-/*******************************************************************************
-  Function:
-    void APP_Tasks ( void )
 
-  Summary:
-    MPLAB Harmony Demo application tasks function
 
-  Description:
-    This routine is the Harmony Demo application's tasks function.  It
-    defines the application's state machine and core logic.
+    // *****************************************************************************
+    // *****************************************************************************
+    // Section: Application Callback Routines
+    // *****************************************************************************
+    // *****************************************************************************
+    /* These routines are called by drivers when certain events occur.
+     */
 
-  Precondition:
-    The system and application initialization ("SYS_Initialize") should be
-    called before calling this.
+    // *****************************************************************************
+    // *****************************************************************************
+    // Section: Application Initialization and State Machine Functions
+    // *****************************************************************************
+    // *****************************************************************************
 
-  Parameters:
-    None.
+    /*******************************************************************************
+      Function:
+        void APP_Initialize ( void )
 
-  Returns:
-    None.
+      Summary:
+         MPLAB Harmony application initialization routine.
 
-  Example:
-    <code>
-    APP_Tasks();
-    </code>
+      Description:
+        This function initializes the Harmony application.  It places the 
+        application in its initial state and prepares it to run so that its 
+        APP_Tasks function can be called.
 
-  Remarks:
-    This routine must be called from SYS_Tasks() routine.
- */
+      Precondition:
+        All other system initialization routines should be called before calling
+        this routine (in "SYS_Initialize").
 
-void APP_Tasks( void );
+      Parameters:
+        None.
 
- void APP_TIMER1_CALLBACK(void);
- void APP_SERIAL_LEDS_CMD(void);
+      Returns:
+        None.
+
+      Example:
+        <code>
+        APP_Initialize();
+        </code>
+
+      Remarks:
+        This routine must be called from the SYS_Initialize function.
+     */
+
+    void APP_Initialize(void);
+    void setAlarmLed(void);
+    void setDerLed(void);
+    void setIn1Led(void);
+    void setIn2Led(void);
+    void setIn3Led(void);
+    void setIn4Led(void);
+    void setIn5Led(void);
+    uint8_t gray_conv(uint8_t n);
+    void SetLed(FCT_LED LedTomod);
+    /*******************************************************************************
+      Function:
+        void APP_Tasks ( void )
+
+      Summary:
+        MPLAB Harmony Demo application tasks function
+
+      Description:
+        This routine is the Harmony Demo application's tasks function.  It
+        defines the application's state machine and core logic.
+
+      Precondition:
+        The system and application initialization ("SYS_Initialize") should be
+        called before calling this.
+
+      Parameters:
+        None.
+
+      Returns:
+        None.
+
+      Example:
+        <code>
+        APP_Tasks();
+        </code>
+
+      Remarks:
+        This routine must be called from SYS_Tasks() routine.
+     */
+
+    void APP_Tasks(void);
+
+    void APP_TIMER1_CALLBACK(void);
+    void APP_TIMER4_CALLBACK(void);
+    void APP_SERIAL_LEDS_CMD(void);
+    void APP_WaitStart(uint16_t waitingTime_ms);
+    void CLOCKING_SRCLK(void);
+    void CLOCKING_CLK(void);
+    void ResetLed(FCT_LED LedTomod);
+    void SetLed(FCT_LED LedTomod);
+    void AdcReadAllSamples(void);
+    void GetInputsStates(void);
 #endif /* _APP_H */
 
-//DOM-IGNORE-BEGIN
+    //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
 }
 #endif

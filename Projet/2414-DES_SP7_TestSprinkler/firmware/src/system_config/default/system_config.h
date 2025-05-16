@@ -176,12 +176,12 @@ extern "C" {
 #define DRV_TMR_INTERRUPT_PRIORITY_IDX3     INT_PRIORITY_LEVEL1
 #define DRV_TMR_INTERRUPT_SUB_PRIORITY_IDX3 INT_SUBPRIORITY_LEVEL0
 #define DRV_TMR_CLOCK_SOURCE_IDX3           DRV_TMR_CLKSOURCE_INTERNAL
-#define DRV_TMR_PRESCALE_IDX3               TMR_PRESCALE_VALUE_1
+#define DRV_TMR_PRESCALE_IDX3               TMR_PRESCALE_VALUE_2
 #define DRV_TMR_OPERATION_MODE_IDX3         DRV_TMR_OPERATION_MODE_16_BIT
 #define DRV_TMR_ASYNC_WRITE_ENABLE_IDX3     false
 #define DRV_TMR_POWER_STATE_IDX3            
 
- 
+
  
 // *****************************************************************************
 // *****************************************************************************
@@ -289,12 +289,12 @@ extern "C" {
 #define Realy_CMD2StateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_13)
 #define Realy_CMD2StateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_13, Value)
 
-/*** Functions for ALARM/DER_REL_CMD pin ***/
-#define ALARMDER_REL_CMDToggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_4)
-#define ALARMDER_REL_CMDOn() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_4)
-#define ALARMDER_REL_CMDOff() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_4)
-#define ALARMDER_REL_CMDStateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_4)
-#define ALARMDER_REL_CMDStateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_4, Value)
+/*** Functions for Relay_CMD_ALARM pin ***/
+#define Relay_CMD_ALARMToggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_4)
+#define Relay_CMD_ALARMOn() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_4)
+#define Relay_CMD_ALARMOff() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_4)
+#define Relay_CMD_ALARMStateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_4)
+#define Relay_CMD_ALARMStateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_4, Value)
 
 /*** Functions for SPB_OUT1_CMD pin ***/
 #define SPB_OUT1_CMDToggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_5)

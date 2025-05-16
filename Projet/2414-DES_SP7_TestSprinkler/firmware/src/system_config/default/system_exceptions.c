@@ -134,7 +134,7 @@ void _general_exception_handler ( void )
 
     while (1)
     {
-        SYS_DEBUG_BreakPoint();
+       SYS_DEBUG_BreakPoint();
     }
 }
 

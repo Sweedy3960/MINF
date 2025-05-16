@@ -7,122 +7,129 @@ Optional file libmchp_peripheral.a not found
 
 Optional file libmchp_peripheral_32MX795F512L.a not found
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o (_bootstrap_exception_handler)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o (_bootstrap_exception_handler)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o (_on_reset)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o (_on_reset)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o (_on_bootstrap)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o (_on_bootstrap)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o (_nmi_handler)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o (_nmi_handler)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(pic32_data_init.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o (__pic32_data_init)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o (__pic32_data_init)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(general-exception.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o (_general_exception_context)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o (_general_exception_context)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector0.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_0)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_0)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector1.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_1)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_1)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector2.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_2)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_2)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector3.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_3)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_3)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector5.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_5)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_5)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector6.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_6)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_6)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector7.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_7)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_7)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector9.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_9)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_9)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector10.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_10)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_10)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector11.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_11)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_11)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector13.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_13)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_13)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector14.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_14)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_14)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector15.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_15)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_15)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector17.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_17)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_17)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector18.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_18)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_18)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector19.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_19)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_19)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector20.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_20)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_20)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector21.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_21)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_21)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector22.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_22)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_22)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector23.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_23)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_23)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector24.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_24)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_24)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector25.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_25)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_25)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector26.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_26)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_26)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector27.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_27)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_27)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector28.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_28)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_28)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector29.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_29)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_29)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector30.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_30)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_30)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector31.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_31)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_31)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector32.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_32)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_32)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector33.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_33)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_33)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector34.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_34)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_34)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector35.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_35)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_35)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector36.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_36)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_36)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector37.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_37)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_37)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector38.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_38)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_38)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector39.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_39)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_39)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector40.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_40)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_40)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector41.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_41)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_41)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector42.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_42)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_42)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector43.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_43)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_43)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector44.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_44)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_44)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector45.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_45)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_45)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector46.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_46)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_46)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector47.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_47)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_47)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector48.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_48)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_48)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector49.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_49)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_49)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector50.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_50)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_50)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector51.o)
-                              C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o (__vector_dispatch_51)
+                              C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o (__vector_dispatch_51)
 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
                               c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(vector0.o) (_DefaultInterrupt)
 
 Allocating common symbols
 Common symbol       size              file
 
+s_dataSensor        0x5               build/default/debug/_ext/1360937237/app.o
+s_newDataSensor     0x5               build/default/debug/_ext/1360937237/app.o
 sysObj              0x10              build/default/debug/_ext/1688732426/system_init.o
+I2cConReg           0x4               build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+global_data         0x4               build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+s_getDataSensor     0x5               build/default/debug/_ext/1360937237/app.o
 sysDevconObj        0x8               build/default/debug/_ext/340578644/sys_devcon.o
-appData             0x7c              build/default/debug/_ext/1360937237/app.o
+I2cBrg              0x4               build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+SR_LEDS             0x8               build/default/debug/_ext/1360937237/app.o
+appData             0x4c              build/default/debug/_ext/1360937237/app.o
 
 Microchip PIC32 Memory-Usage Report
 
@@ -130,117 +137,159 @@ kseg0 Program-Memory Usage
 section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
 .text.DRV_ADC_Initializ 0x9d000000          0x318         792   
-.text.APP_Tasks         0x9d000318          0x22c         556   
-.text.SYS_PORTS_Initial 0x9d000544          0x20c         524   
-.text.SYS_DEVCON_Perfor 0x9d000750          0x190         400   
-.text.APP_SERIAL_LEDS_C 0x9d0008e0          0x168         360   
-.text.IntHandlerDrvTmrI 0x9d000a48          0x158         344   
-.text.IntHandlerDrvTmrI 0x9d000ba0          0x150         336   
-.text.IntHandlerDrvTmrI 0x9d000cf0          0x150         336   
-.text.IntHandlerDrvTmrI 0x9d000e40          0x150         336   
-.rodata                 0x9d000f90           0xdc         220  Read-only const 
-.text.general_exception 0x9d00106c           0xdc         220   
-.text.DRV_TMR0_Initiali 0x9d001148           0xbc         188   
-.text.DRV_TMR1_Initiali 0x9d001204           0xbc         188   
-.text.DRV_TMR2_Initiali 0x9d0012c0           0xbc         188   
-.text.DRV_TMR3_Initiali 0x9d00137c           0xbc         188   
-.text.SYS_Initialize    0x9d001438           0xb4         180   
-.text.PLIB_TMR_Prescale 0x9d0014ec           0xac         172   
-.dinit                  0x9d001598           0x90         144   
-.text                   0x9d001628           0x84         132  App's exec code 
-.text._DRV_TMR0_Resume  0x9d0016ac           0x6c         108   
-.text._DRV_TMR2_Resume  0x9d001718           0x6c         108   
-.text.SYS_DEVCON_System 0x9d001784           0x68         104   
-.text.SYS_DEVCON_System 0x9d0017ec           0x68         104   
-.text._DRV_TMR0_Suspend 0x9d001854           0x64         100   
-.text.SYS_CLK_Initializ 0x9d0018b8           0x60          96   
-.text.PLIB_OSC_PBClockD 0x9d001918           0x60          96   
-.text.setAlarmLed       0x9d001978           0x5c          92   
-.text.setDerLed         0x9d0019d4           0x54          84   
-.text.setIn1Led         0x9d001a28           0x54          84   
-.text.setIn2Led         0x9d001a7c           0x54          84   
-.text.setIn3Led         0x9d001ad0           0x54          84   
-.text.setIn4Led         0x9d001b24           0x54          84   
-.text.setIn5Led         0x9d001b78           0x54          84   
-.text.PLIB_INT_VectorPr 0x9d001bcc           0x54          84   
-.text.main_entry        0x9d001c20           0x54          84   
-.text._general_exceptio 0x9d001c74           0x50          80   
-.text.PLIB_INT_VectorSu 0x9d001cc4           0x50          80   
-.text.PLIB_PORTS_PinWri 0x9d001d14           0x50          80   
-.text.DRV_ADC_SamplesRe 0x9d001d64           0x48          72   
-.text._bootstrap_except 0x9d001dac           0x48          72   
-.vector_default         0x9d001df4           0x48          72   
-.text.DRV_TMR0_Stop     0x9d001e3c           0x44          68   
-.text                   0x9d001e80           0x44          68  App's exec code 
-.text.DRV_TMR0_Start    0x9d001ec4           0x40          64   
-.text.DRV_TMR2_Start    0x9d001f04           0x40          64   
-.text.APP_TIMER1_CALLBA 0x9d001f44           0x3c          60   
-.text.SYS_DEVCON_Initia 0x9d001f80           0x3c          60   
-.text.DRV_ADC_Open      0x9d001fbc           0x38          56   
-.text.DRV_ADC_Start     0x9d001ff4           0x38          56   
-.text.DRV_ADC_SamplesAv 0x9d00202c           0x38          56   
-.text.SYS_INT_Initializ 0x9d002064           0x34          52   
-.text.SYS_DEVCON_JTAGDi 0x9d002098           0x34          52   
-.text.PLIB_ADC_MuxChann 0x9d0020cc           0x34          52   
-.text.SYS_Tasks         0x9d002100           0x30          48   
-.text.main              0x9d002130           0x2c          44   
-.text.APP_Initialize    0x9d00215c           0x28          40   
-.text.SYS_CLK_SystemFre 0x9d002184           0x28          40   
-.text.PLIB_DEVCON_Syste 0x9d0021ac           0x28          40   
-.text.PLIB_INT_SourceFl 0x9d0021d4           0x28          40   
-.text.PLIB_INT_SourceEn 0x9d0021fc           0x28          40   
-.text.PLIB_INT_SourceDi 0x9d002224           0x28          40   
-.text.PLIB_PORTS_PinSet 0x9d00224c           0x28          40   
-.text.PLIB_PORTS_PinCle 0x9d002274           0x28          40   
-.text.PLIB_PORTS_PinTog 0x9d00229c           0x28          40   
-.text.PLIB_ADC_Conversi 0x9d0022c4           0x24          36   
-.text.PLIB_INT_Enable   0x9d0022e8           0x24          36   
-.text.PLIB_PORTS_PinGet 0x9d00230c           0x24          36   
-.text.PLIB_PORTS_AnPins 0x9d002330           0x20          32   
-.text.PLIB_PORTS_Write  0x9d002350           0x20          32   
-.text.PLIB_PORTS_Direct 0x9d002370           0x20          32   
-.text.PLIB_PORTS_OpenDr 0x9d002390           0x20          32   
-.text.PLIB_INT_GetState 0x9d0023b0           0x1c          28   
-.text.PLIB_ADC_Enable   0x9d0023cc           0x18          24   
-.text.PLIB_ADC_ResultGe 0x9d0023e4           0x18          24   
-.text.PLIB_DEVCON_JTAGP 0x9d0023fc           0x18          24   
-.text.PLIB_DEVCON_Syste 0x9d002414           0x18          24   
-.text.PLIB_OSC_FRCDivis 0x9d00242c           0x18          24   
-.text.PLIB_TMR_Mode16Bi 0x9d002444           0x18          24   
-.text                   0x9d00245c           0x18          24  App's exec code 
-.text.PLIB_ADC_InputSca 0x9d002474           0x14          20   
-.text.PLIB_ADC_VoltageR 0x9d002488           0x14          20   
-.text.PLIB_ADC_Sampling 0x9d00249c           0x14          20   
-.text.PLIB_ADC_SamplesP 0x9d0024b0           0x14          20   
-.text.PLIB_ADC_SampleAc 0x9d0024c4           0x14          20   
-.text.PLIB_ADC_Conversi 0x9d0024d8           0x14          20   
-.text.PLIB_ADC_Conversi 0x9d0024ec           0x14          20   
-.text.PLIB_ADC_ResultFo 0x9d002500           0x14          20   
-.text.PLIB_ADC_ResultBu 0x9d002514           0x14          20   
-.text.PLIB_BMX_DataRamW 0x9d002528           0x14          20   
-.text.PLIB_INT_MultiVec 0x9d00253c           0x14          20   
-.text.PLIB_PCACHE_WaitS 0x9d002550           0x14          20   
-.text.PLIB_PCACHE_Prefe 0x9d002564           0x14          20   
-.text.PLIB_PORTS_Change 0x9d002578           0x14          20   
-.text.PLIB_TMR_ClockSou 0x9d00258c           0x14          20   
-.text.PLIB_ADC_StopInId 0x9d0025a0           0x10          16   
-.text.PLIB_ADC_MuxAInpu 0x9d0025b0           0x10          16   
-.text.PLIB_ADC_SampleAu 0x9d0025c0           0x10          16   
-.text.PLIB_ADC_Sampling 0x9d0025d0           0x10          16   
-.text.PLIB_PORTS_CnPins 0x9d0025e0           0x10          16   
-.text.PLIB_PORTS_CnPins 0x9d0025f0           0x10          16   
-.text.PLIB_TMR_Start    0x9d002600           0x10          16   
-.text.PLIB_TMR_Stop     0x9d002610           0x10          16   
-.text.__exception_handl 0x9d002620            0xc          12   
-.text.PLIB_ADC_Conversi 0x9d00262c            0xc          12   
-.text.PLIB_TMR_Counter1 0x9d002638            0xc          12   
-.text.PLIB_TMR_Period16 0x9d002644            0xc          12   
-.text.PLIB_BMX_ExistsDa 0x9d002650            0x8           8   
-.text.PLIB_PCACHE_Exist 0x9d002658            0x8           8   
-.text.PLIB_PCACHE_Exist 0x9d002660            0x8           8   
-.text._on_reset         0x9d002668            0x8           8   
-.text._on_bootstrap     0x9d002670            0x8           8   
-      Total kseg0_program_mem used  :      0x2678        9848  1.9% of 0x80000
+.text.mcp79411_set_time 0x9d000318          0x260         608   
+.text.SYS_PORTS_Initial 0x9d000578          0x20c         524   
+.text.APP_Tasks         0x9d000784          0x1bc         444   
+.text.mcp79411_get_time 0x9d000940          0x1b4         436   
+.text.SR_Update         0x9d000af4          0x19c         412   
+.text.SYS_DEVCON_Perfor 0x9d000c90          0x190         400   
+.text.GetInputsStates   0x9d000e20          0x188         392   
+.text.IntHandlerDrvTmrI 0x9d000fa8          0x158         344   
+.text.IntHandlerDrvTmrI 0x9d001100          0x158         344   
+.text.IntHandlerDrvTmrI 0x9d001258          0x150         336   
+.text.IntHandlerDrvTmrI 0x9d0013a8          0x150         336   
+.text.i2c_read          0x9d0014f8          0x14c         332   
+.text.mcp79411_rtc_reg_ 0x9d001644          0x110         272   
+.text.i2c_start         0x9d001754           0xf0         240   
+.text.i2c_init          0x9d001844           0xec         236   
+.text.i2c_write         0x9d001930           0xe8         232   
+.rodata                 0x9d001a18           0xdc         220  Read-only const 
+.text.general_exception 0x9d001af4           0xdc         220   
+.text.DRV_TMR0_Initiali 0x9d001bd0           0xbc         188   
+.text.DRV_TMR1_Initiali 0x9d001c8c           0xbc         188   
+.text.DRV_TMR2_Initiali 0x9d001d48           0xbc         188   
+.text.DRV_TMR3_Initiali 0x9d001e04           0xbc         188   
+.text.mcp79411_rtc_reg_ 0x9d001ec0           0xb8         184   
+.text.SYS_Initialize    0x9d001f78           0xb4         180   
+.text.mcp79411_dec2bcd  0x9d00202c           0xb4         180   
+.text.PLIB_TMR_Prescale 0x9d0020e0           0xac         172   
+.dinit                  0x9d00218c           0xa0         160   
+.text.AT42QT_Init       0x9d00222c           0x9c         156   
+.text.AT42QT_Read_Key0t 0x9d0022c8           0x90         144   
+.text.AT42QT_Read_Key8t 0x9d002358           0x90         144   
+.text.mcp79411_bcd2dec  0x9d0023e8           0x8c         140   
+.text                   0x9d002474           0x84         132  App's exec code 
+.text.APP_WaitStart     0x9d0024f8           0x80         128   
+.text.i2c_stop          0x9d002578           0x80         128   
+.text.AT42QT_Write      0x9d0025f8           0x74         116   
+.text._DRV_TMR0_Resume  0x9d00266c           0x6c         108   
+.text._DRV_TMR2_Resume  0x9d0026d8           0x6c         108   
+.text._DRV_TMR3_Resume  0x9d002744           0x6c         108   
+.text.SYS_DEVCON_System 0x9d0027b0           0x68         104   
+.text.SYS_DEVCON_System 0x9d002818           0x68         104   
+.text._DRV_TMR0_Suspend 0x9d002880           0x64         100   
+.text._DRV_TMR3_Suspend 0x9d0028e4           0x64         100   
+.text.APP_TIMER4_CALLBA 0x9d002948           0x64         100   
+.text.SYS_CLK_Initializ 0x9d0029ac           0x60          96   
+.text.SR_LoadData       0x9d002a0c           0x60          96   
+.text.PLIB_OSC_PBClockD 0x9d002a6c           0x60          96   
+.text.mcp79411_rtc_iic_ 0x9d002acc           0x5c          92   
+.text.mcp79411_rtc_iic_ 0x9d002b28           0x58          88   
+.text.PLIB_INT_VectorPr 0x9d002b80           0x54          84   
+.text.main_entry        0x9d002bd4           0x54          84   
+.text._general_exceptio 0x9d002c28           0x50          80   
+.text.PLIB_INT_VectorSu 0x9d002c78           0x50          80   
+.text._bootstrap_except 0x9d002cc8           0x48          72   
+.vector_default         0x9d002d10           0x48          72   
+.text.DRV_TMR0_Stop     0x9d002d58           0x44          68   
+.text.DRV_TMR3_Stop     0x9d002d9c           0x44          68   
+.text.SR_Init           0x9d002de0           0x44          68   
+.text                   0x9d002e24           0x44          68  App's exec code 
+.text.DRV_TMR0_Start    0x9d002e68           0x40          64   
+.text.DRV_TMR2_Start    0x9d002ea8           0x40          64   
+.text.DRV_TMR3_Start    0x9d002ee8           0x40          64   
+.text.SYS_DEVCON_Initia 0x9d002f28           0x3c          60   
+.text.APP_TIMER1_CALLBA 0x9d002f64           0x3c          60   
+.text.DRV_ADC_Open      0x9d002fa0           0x38          56   
+.text.DRV_ADC_Start     0x9d002fd8           0x38          56   
+.text.PLIB_I2C_BaudRate 0x9d003010           0x38          56   
+.text.SYS_DEVCON_JTAGDi 0x9d003048           0x34          52   
+.text.SYS_INT_Initializ 0x9d00307c           0x34          52   
+.text.PLIB_ADC_MuxChann 0x9d0030b0           0x34          52   
+.text.SYS_Tasks         0x9d0030e4           0x30          48   
+.text.SYS_CLK_Periphera 0x9d003114           0x2c          44   
+.text.main              0x9d003140           0x2c          44   
+.text.PLIB_I2C_Received 0x9d00316c           0x2c          44   
+.text.SYS_CLK_SystemFre 0x9d003198           0x28          40   
+.text.APP_Initialize    0x9d0031c0           0x28          40   
+.text.PLIB_DEVCON_Syste 0x9d0031e8           0x28          40   
+.text.PLIB_INT_SourceFl 0x9d003210           0x28          40   
+.text.PLIB_INT_SourceEn 0x9d003238           0x28          40   
+.text.PLIB_INT_SourceDi 0x9d003260           0x28          40   
+.text.PLIB_PORTS_PinSet 0x9d003288           0x28          40   
+.text.PLIB_PORTS_PinCle 0x9d0032b0           0x28          40   
+.text.PLIB_PORTS_PinTog 0x9d0032d8           0x28          40   
+.text.PLIB_ADC_Conversi 0x9d003300           0x24          36   
+.text.PLIB_I2C_BusIsIdl 0x9d003324           0x24          36   
+.text.PLIB_INT_Enable   0x9d003348           0x24          36   
+.text.PLIB_PORTS_PinGet 0x9d00336c           0x24          36   
+.text.PLIB_PORTS_AnPins 0x9d003390           0x20          32   
+.text.PLIB_PORTS_Write  0x9d0033b0           0x20          32   
+.text.PLIB_PORTS_Direct 0x9d0033d0           0x20          32   
+.text.PLIB_PORTS_OpenDr 0x9d0033f0           0x20          32   
+.text.PLIB_INT_GetState 0x9d003410           0x1c          28   
+.text.PLIB_ADC_Enable   0x9d00342c           0x18          24   
+.text.PLIB_DEVCON_JTAGP 0x9d003444           0x18          24   
+.text.PLIB_DEVCON_Syste 0x9d00345c           0x18          24   
+.text.PLIB_OSC_FRCDivis 0x9d003474           0x18          24   
+.text.PLIB_TMR_Mode16Bi 0x9d00348c           0x18          24   
+.text                   0x9d0034a4           0x18          24  App's exec code 
+.text.PLIB_ADC_InputSca 0x9d0034bc           0x14          20   
+.text.PLIB_ADC_VoltageR 0x9d0034d0           0x14          20   
+.text.PLIB_ADC_Sampling 0x9d0034e4           0x14          20   
+.text.PLIB_ADC_SamplesP 0x9d0034f8           0x14          20   
+.text.PLIB_ADC_SampleAc 0x9d00350c           0x14          20   
+.text.PLIB_ADC_Conversi 0x9d003520           0x14          20   
+.text.PLIB_ADC_Conversi 0x9d003534           0x14          20   
+.text.PLIB_ADC_ResultFo 0x9d003548           0x14          20   
+.text.PLIB_ADC_ResultBu 0x9d00355c           0x14          20   
+.text.PLIB_BMX_DataRamW 0x9d003570           0x14          20   
+.text.PLIB_INT_MultiVec 0x9d003584           0x14          20   
+.text.PLIB_PCACHE_WaitS 0x9d003598           0x14          20   
+.text.PLIB_PCACHE_Prefe 0x9d0035ac           0x14          20   
+.text.PLIB_PORTS_Change 0x9d0035c0           0x14          20   
+.text.PLIB_TMR_ClockSou 0x9d0035d4           0x14          20   
+.text.PLIB_ADC_StopInId 0x9d0035e8           0x10          16   
+.text.PLIB_ADC_MuxAInpu 0x9d0035f8           0x10          16   
+.text.PLIB_ADC_SampleAu 0x9d003608           0x10          16   
+.text.PLIB_ADC_Sampling 0x9d003618           0x10          16   
+.text.PLIB_I2C_SlaveClo 0x9d003628           0x10          16   
+.text.PLIB_I2C_HighFreq 0x9d003638           0x10          16   
+.text.PLIB_I2C_Enable   0x9d003648           0x10          16   
+.text.PLIB_I2C_Disable  0x9d003658           0x10          16   
+.text.PLIB_I2C_Arbitrat 0x9d003668           0x10          16   
+.text.PLIB_I2C_SlaveClo 0x9d003678           0x10          16   
+.text.PLIB_I2C_MasterSt 0x9d003688           0x10          16   
+.text.PLIB_I2C_MasterRe 0x9d003698           0x10          16   
+.text.PLIB_I2C_MasterSt 0x9d0036a8           0x10          16   
+.text.PLIB_I2C_Transmit 0x9d0036b8           0x10          16   
+.text.PLIB_I2C_Transmit 0x9d0036c8           0x10          16   
+.text.PLIB_I2C_Transmit 0x9d0036d8           0x10          16   
+.text.PLIB_I2C_Transmit 0x9d0036e8           0x10          16   
+.text.PLIB_I2C_MasterRe 0x9d0036f8           0x10          16   
+.text.PLIB_I2C_Receiver 0x9d003708           0x10          16   
+.text.PLIB_PORTS_CnPins 0x9d003718           0x10          16   
+.text.PLIB_PORTS_CnPins 0x9d003728           0x10          16   
+.text.PLIB_TMR_Start    0x9d003738           0x10          16   
+.text.PLIB_TMR_Stop     0x9d003748           0x10          16   
+.text.__exception_handl 0x9d003758            0xc          12   
+.text.PLIB_I2C_StartWas 0x9d003764            0xc          12   
+.text.PLIB_I2C_StopWasD 0x9d003770            0xc          12   
+.text.PLIB_I2C_Arbitrat 0x9d00377c            0xc          12   
+.text.PLIB_I2C_Transmit 0x9d003788            0xc          12   
+.text.PLIB_I2C_Transmit 0x9d003794            0xc          12   
+.text.PLIB_I2C_Transmit 0x9d0037a0            0xc          12   
+.text.PLIB_I2C_Received 0x9d0037ac            0xc          12   
+.text.PLIB_I2C_Received 0x9d0037b8            0xc          12   
+.text.PLIB_I2C_Receiver 0x9d0037c4            0xc          12   
+.text.PLIB_TMR_Counter1 0x9d0037d0            0xc          12   
+.text.PLIB_TMR_Period16 0x9d0037dc            0xc          12   
+.text.PLIB_BMX_ExistsDa 0x9d0037e8            0x8           8   
+.text.PLIB_PCACHE_Exist 0x9d0037f0            0x8           8   
+.text.PLIB_PCACHE_Exist 0x9d0037f8            0x8           8   
+.text._on_reset         0x9d003800            0x8           8   
+.text._on_bootstrap     0x9d003808            0x8           8   
+      Total kseg0_program_mem used  :      0x3810       14352  2.7% of 0x80000
 
 kseg0 Boot-Memory Usage
 section                    address  length [bytes]      (dec)  Description
@@ -312,7 +361,7 @@ section                    address  length [bytes]      (dec)  Description
 .bev_excpt              0xbfc00380           0x10          16  BEV-Exception 
          Total kseg1_boot_mem used  :       0x1ac         428  36.6% of 0x490
         --------------------------------------------------------------------------
-         Total Program Memory used  :      0x29d4       10708  2.0% of 0x81e00
+         Total Program Memory used  :      0x3b6c       15212  2.9% of 0x81e00
         --------------------------------------------------------------------------
 
 
@@ -326,20 +375,21 @@ kseg1 Data-Memory Usage
 section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
 reserve_data_0_kseg1    0xa0000000          0x200         512   
-.sbss                   0xa0000200           0x24          36  Small uninit data 
-.bss                    0xa0000224           0x7c         124  Uninitialized data 
-.data                   0xa00002a0           0x4c          76  Initialized data 
-         Total kseg1_data_mem used  :       0x2ec         748  0.6% of 0x20000
+.sbss                   0xa0000200           0x48          72  Small uninit data 
+.bss                    0xa0000248           0x4c          76  Uninitialized data 
+.bss                    0xa0000294          0x200         512  Uninitialized data 
+.data                   0xa0000494           0x4c          76  Initialized data 
+         Total kseg1_data_mem used  :       0x4e0        1248  1.0% of 0x20000
         --------------------------------------------------------------------------
-            Total Data Memory used  :       0x4ec        1260  1.0% of 0x20200
+            Total Data Memory used  :       0x6e0        1760  1.3% of 0x20200
         --------------------------------------------------------------------------
 
 
 Dynamic Data-Memory Reservation
 section                    address  length [bytes]      (dec)  Description
 -------                 ----------  -------------------------  -----------
-heap                    0xa00002f0              0           0  Reserved for heap 
-stack                   0xa0000308        0x1fce8      130280  Reserved for stack 
+heap                    0xa00004e8              0           0  Reserved for heap 
+stack                   0xa0000500        0x1faf8      129784  Reserved for stack 
 
         --------------------------------------------------------------------------
 
@@ -366,6 +416,22 @@ Discarded input sections
                 0x00000000       0x40 build/default/debug/_ext/1361460060/drv_adc_static.o
  .text.DRV_ADC_ChannelScanInputsRemove
                 0x00000000       0x40 build/default/debug/_ext/1361460060/drv_adc_static.o
+ .text.DRV_ADC_SamplesRead
+                0x00000000       0x48 build/default/debug/_ext/1361460060/drv_adc_static.o
+ .text.DRV_ADC_SamplesAvailable
+                0x00000000       0x38 build/default/debug/_ext/1361460060/drv_adc_static.o
+ .text          0x00000000        0x0 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .data          0x00000000        0x0 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .bss           0x00000000        0x0 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .reginfo       0x00000000       0x18 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .text.SYS_CLK_ReferenceFrequencyGet
+                0x00000000       0x28 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .text.SYS_CLK_SecondaryOscillatorEnable
+                0x00000000       0x60 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .text.SYS_CLK_SecondaryOscillatorDisable
+                0x00000000       0x58 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .text.SYS_CLK_SecondaryOscillatorIsEnabled
+                0x00000000       0x34 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
  .text          0x00000000        0x0 build/default/debug/_ext/1407244131/drv_tmr_static.o
  .data          0x00000000        0x0 build/default/debug/_ext/1407244131/drv_tmr_static.o
  .bss           0x00000000        0x0 build/default/debug/_ext/1407244131/drv_tmr_static.o
@@ -458,14 +524,6 @@ Discarded input sections
                 0x00000000       0x38 build/default/debug/_ext/1407244131/drv_tmr_static.o
  .text.DRV_TMR2_ClockSet
                 0x00000000       0x94 build/default/debug/_ext/1407244131/drv_tmr_static.o
- .text._DRV_TMR3_Resume
-                0x00000000       0x6c build/default/debug/_ext/1407244131/drv_tmr_static.o
- .text.DRV_TMR3_Start
-                0x00000000       0x40 build/default/debug/_ext/1407244131/drv_tmr_static.o
- .text._DRV_TMR3_Suspend
-                0x00000000       0x64 build/default/debug/_ext/1407244131/drv_tmr_static.o
- .text.DRV_TMR3_Stop
-                0x00000000       0x44 build/default/debug/_ext/1407244131/drv_tmr_static.o
  .text.DRV_TMR3_ClientStatus
                 0x00000000       0x3c build/default/debug/_ext/1407244131/drv_tmr_static.o
  .text.DRV_TMR3_CounterValueSet
@@ -530,6 +588,8 @@ Discarded input sections
                 0x00000000       0x24 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR3_OperationModeGet
                 0x00000000       0x24 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+ .text.DRV_TMR3_Close
+                0x00000000       0x30 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR3_Tasks
                 0x00000000       0x20 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_Initialize
@@ -543,15 +603,15 @@ Discarded input sections
  .text.DRV_TMR_Open
                 0x00000000       0xac build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_Close
-                0x00000000       0x88 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+                0x00000000       0xa4 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_ClientStatus
                 0x00000000       0xa8 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_CounterValueSet
-                0x00000000       0x98 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+                0x00000000       0xb8 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_CounterValueGet
                 0x00000000       0xa8 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_CounterClear
-                0x00000000       0x88 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+                0x00000000       0xa4 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_AlarmRegister
                 0x00000000       0x3c build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_AlarmDisable
@@ -567,13 +627,13 @@ Discarded input sections
  .text.DRV_TMR_Start
                 0x00000000       0xa8 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_Stop
-                0x00000000       0x88 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+                0x00000000       0xa4 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_AlarmHasElapsed
                 0x00000000       0x2c build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_OperationModeGet
                 0x00000000       0xa8 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_ClockSet
-                0x00000000       0xac build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+                0x00000000       0xd0 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_PrescalerGet
                 0x00000000       0xa8 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_GateModeSet
@@ -581,53 +641,9 @@ Discarded input sections
  .text.DRV_TMR_GateModeClear
                 0x00000000       0x2c build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_CounterFrequencyGet
-                0x00000000       0x8c build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+                0x00000000       0xa8 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .text.DRV_TMR_DividerRangeGet
                 0x00000000       0xbc build/default/debug/_ext/1407244131/drv_tmr_mapping.o
- .text          0x00000000        0x0 build/default/debug/_ext/1360937237/app.o
- .data          0x00000000        0x0 build/default/debug/_ext/1360937237/app.o
- .bss           0x00000000        0x0 build/default/debug/_ext/1360937237/app.o
- .reginfo       0x00000000       0x18 build/default/debug/_ext/1360937237/app.o
- .text          0x00000000        0x0 build/default/debug/_ext/1360937237/main.o
- .data          0x00000000        0x0 build/default/debug/_ext/1360937237/main.o
- .bss           0x00000000        0x0 build/default/debug/_ext/1360937237/main.o
- .reginfo       0x00000000       0x18 build/default/debug/_ext/1360937237/main.o
- .text          0x00000000        0x0 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .data          0x00000000        0x0 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .bss           0x00000000        0x0 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .reginfo       0x00000000       0x18 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .text.BSP_InitADC10
-                0x00000000      0x104 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .text.BSP_ReadAllADC
-                0x00000000      0x280 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .text          0x00000000        0x0 build/default/debug/_ext/711155467/sys_int_pic32.o
- .data          0x00000000        0x0 build/default/debug/_ext/711155467/sys_int_pic32.o
- .bss           0x00000000        0x0 build/default/debug/_ext/711155467/sys_int_pic32.o
- .reginfo       0x00000000       0x18 build/default/debug/_ext/711155467/sys_int_pic32.o
- .text.SYS_INT_StatusGetAndDisable
-                0x00000000       0x3c build/default/debug/_ext/711155467/sys_int_pic32.o
- .text.SYS_INT_StatusRestore
-                0x00000000       0x38 build/default/debug/_ext/711155467/sys_int_pic32.o
- .text.SYS_INT_Disable
-                0x00000000       0x48 build/default/debug/_ext/711155467/sys_int_pic32.o
- .text.SYS_INT_SourceDisable
-                0x00000000       0x70 build/default/debug/_ext/711155467/sys_int_pic32.o
- .text.SYS_INT_ExternalInterruptTriggerSet
-                0x00000000       0x68 build/default/debug/_ext/711155467/sys_int_pic32.o
- .text          0x00000000        0x0 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .data          0x00000000        0x0 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .bss           0x00000000        0x0 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .reginfo       0x00000000       0x18 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .text.SYS_CLK_PeripheralFrequencyGet
-                0x00000000       0x2c build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .text.SYS_CLK_ReferenceFrequencyGet
-                0x00000000       0x28 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .text.SYS_CLK_SecondaryOscillatorEnable
-                0x00000000       0x60 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .text.SYS_CLK_SecondaryOscillatorDisable
-                0x00000000       0x58 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .text.SYS_CLK_SecondaryOscillatorIsEnabled
-                0x00000000       0x34 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
  .text          0x00000000        0x0 build/default/debug/_ext/340578644/sys_devcon.o
  .data          0x00000000        0x0 build/default/debug/_ext/340578644/sys_devcon.o
  .bss           0x00000000        0x0 build/default/debug/_ext/340578644/sys_devcon.o
@@ -746,6 +762,87 @@ Discarded input sections
  .data          0x00000000        0x0 build/default/debug/_ext/1688732426/system_tasks.o
  .bss           0x00000000        0x0 build/default/debug/_ext/1688732426/system_tasks.o
  .reginfo       0x00000000       0x18 build/default/debug/_ext/1688732426/system_tasks.o
+ .text          0x00000000        0x0 build/default/debug/_ext/1360937237/app.o
+ .data          0x00000000        0x0 build/default/debug/_ext/1360937237/app.o
+ .bss           0x00000000        0x0 build/default/debug/_ext/1360937237/app.o
+ .reginfo       0x00000000       0x18 build/default/debug/_ext/1360937237/app.o
+ .text.AdcReadAllSamples
+                0x00000000       0xa0 build/default/debug/_ext/1360937237/app.o
+ .text.CLOCKING_SRCLK
+                0x00000000       0x68 build/default/debug/_ext/1360937237/app.o
+ .text.CLOCKING_CLK
+                0x00000000       0x78 build/default/debug/_ext/1360937237/app.o
+ .text.APP_SERIAL_LEDS_CMD
+                0x00000000       0xa0 build/default/debug/_ext/1360937237/app.o
+ .text          0x00000000        0x0 build/default/debug/_ext/1360937237/main.o
+ .data          0x00000000        0x0 build/default/debug/_ext/1360937237/main.o
+ .bss           0x00000000        0x0 build/default/debug/_ext/1360937237/main.o
+ .reginfo       0x00000000       0x18 build/default/debug/_ext/1360937237/main.o
+ .text          0x00000000        0x0 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .data          0x00000000        0x0 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .bss           0x00000000        0x0 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .reginfo       0x00000000       0x18 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .text.BSP_InitADC10
+                0x00000000      0x104 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .text.BSP_ReadAllADC
+                0x00000000      0x280 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .text          0x00000000        0x0 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .data          0x00000000        0x0 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .bss           0x00000000        0x0 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .reginfo       0x00000000       0x18 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .text.SR_LoadData2
+                0x00000000       0x2c build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .text          0x00000000        0x0 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .data          0x00000000        0x0 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .bss           0x00000000        0x0 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .reginfo       0x00000000       0x18 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .text.AT42QT_Read
+                0x00000000       0x9c build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .text.AT42QT_Read_Wheel
+                0x00000000       0x90 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .text          0x00000000        0x0 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .data          0x00000000        0x0 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .bss           0x00000000        0x0 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .reginfo       0x00000000       0x18 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .text.i2c_reStart
+                0x00000000       0xcc build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .text          0x00000000        0x0 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .data          0x00000000        0x0 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .bss           0x00000000        0x0 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .reginfo       0x00000000       0x18 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .text.SYS_INT_StatusGetAndDisable
+                0x00000000       0x3c build/default/debug/_ext/711155467/sys_int_pic32.o
+ .text.SYS_INT_StatusRestore
+                0x00000000       0x38 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .text.SYS_INT_Disable
+                0x00000000       0x48 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .text.SYS_INT_SourceDisable
+                0x00000000       0x70 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .text.SYS_INT_ExternalInterruptTriggerSet
+                0x00000000       0x68 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .text          0x00000000        0x0 build/default/debug/_ext/1360937237/mcp79411.o
+ .data          0x00000000        0x0 build/default/debug/_ext/1360937237/mcp79411.o
+ .reginfo       0x00000000       0x18 build/default/debug/_ext/1360937237/mcp79411.o
+ .text.mcp79411_set_alarm
+                0x00000000      0x35c build/default/debug/_ext/1360937237/mcp79411.o
+ .text.mcp79411_stop_alarm
+                0x00000000       0xb0 build/default/debug/_ext/1360937237/mcp79411.o
+ .text.mcp79411_init
+                0x00000000      0x10c build/default/debug/_ext/1360937237/mcp79411.o
+ .text          0x00000000        0x0 build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .data          0x00000000        0x0 build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .bss           0x00000000        0x0 build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .reginfo       0x00000000       0x18 build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .text          0x00000000        0x0 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .data          0x00000000        0x0 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .bss           0x00000000        0x0 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .reginfo       0x00000000       0x18 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .text.I2C_InitMCP79411
+                0x00000000       0x40 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .text.I2C_WriteSEEPROM
+                0x00000000      0x17c build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .text.I2C_ReadSEEPROM
+                0x00000000      0x108 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
  .text          0x00000000        0x0 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .data          0x00000000        0x0 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .bss           0x00000000        0x0 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
@@ -822,6 +919,8 @@ Discarded input sections
                 0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_ADC_ExistsConversionStopSequenceControl
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+ .text.PLIB_ADC_ConversionHasCompleted
+                0x00000000        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_ADC_ExistsConversionStatus
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_ADC_ExistsResultFormat
@@ -832,6 +931,8 @@ Discarded input sections
                 0x00000000        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_ADC_ExistsResultBufferFillStatus
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+ .text.PLIB_ADC_ResultGetByIndex
+                0x00000000       0x18 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_ADC_ExistsResultGetByIndex
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_ADCP_Enable
@@ -2972,8 +3073,6 @@ Discarded input sections
                 0x00000000      0x2a4 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_ETH_ExistsStationAddress
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_SlaveClockStretchingEnable
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_SlaveClockStretchingDisable
                 0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsClockStretching
@@ -2990,8 +3089,6 @@ Discarded input sections
                 0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsSMBus
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_HighFrequencyEnable
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_HighFrequencyDisable
                 0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsHighFrequency
@@ -3014,36 +3111,20 @@ Discarded input sections
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsIPMI
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_Enable
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_Disable
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsModuleEnable
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_StartWasDetected
-                0x00000000        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_StartClear
                 0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsStartDetect
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_StopWasDetected
-                0x00000000        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_StopClear
                 0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsStopDetect
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_ArbitrationLossHasOccurred
-                0x00000000        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_ArbitrationLossClear
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsArbitrationLoss
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_BusIsIdle
-                0x00000000       0x24 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsBusIsIdle
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_BaudRateSet
-                0x00000000       0x38 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_BaudRateGet
                 0x00000000       0x34 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsBaudRate
@@ -3092,70 +3173,36 @@ Discarded input sections
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_SlaveClockHold
                 0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_SlaveClockRelease
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsSlaveClockHold
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_MasterStart
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsMasterStart
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_MasterStartRepeat
                 0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsMasterStartRepeat
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_MasterReceiverClock1Byte
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsMasterReceiverClock1Byte
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_MasterStop
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsMasterStop
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_TransmitterIsBusy
-                0x00000000        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_TransmitterIsReady
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsTransmitterIsBusy
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_TransmitterByteSend
-                0x00000000        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsTransmitterByteSend
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_TransmitterByteHasCompleted
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsTransmitterByteComplete
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_TransmitterByteWasAcknowledged
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsTransmitterByteAcknowledge
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_TransmitterOverflowHasOccurred
-                0x00000000        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_TransmitterOverflowClear
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsTransmitterOverflow
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_ReceivedByteIsAvailable
-                0x00000000        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsReceivedByteAvailable
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_ReceivedByteGet
-                0x00000000        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsReceivedByteGet
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_ReceivedByteAcknowledge
-                0x00000000       0x2c ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ReceiverByteAcknowledgeHasCompleted
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_MasterReceiverReadyToAcknowledge
                 0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsReceivedByteAcknowledge
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_ReceiverOverflowHasOccurred
-                0x00000000        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text.PLIB_I2C_ReceiverOverflowClear
-                0x00000000       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_ExistsReceiverOverflow
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_I2C_SlaveInterruptOnStopEnable
@@ -4478,6 +4525,8 @@ Discarded input sections
                 0x00000000       0x20 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_PORTS_ExistsLatchRead
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+ .text.PLIB_PORTS_PinWrite
+                0x00000000       0x50 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_PORTS_Set
                 0x00000000       0x24 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .text.PLIB_PORTS_Toggle
@@ -6971,19 +7020,19 @@ Discarded input sections
  .text.PLIB_GLCD_CursorLUTGet
                 0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
  .rodata        0x00000000        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .text          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
- .data          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
- .bss           0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
- .reginfo       0x00000000       0x18 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
- .text          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cczGltsJ.o
- .data          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cczGltsJ.o
- .bss           0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cczGltsJ.o
- .reginfo       0x00000000       0x18 C:\Users\AYMCLA~1\AppData\Local\Temp\cczGltsJ.o
- .text          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o
- .data          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o
- .bss           0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o
- .reginfo       0x00000000       0x18 C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o
- .discard       0x00000000       0xd0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o
+ .text          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
+ .data          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
+ .bss           0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
+ .reginfo       0x00000000       0x18 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
+ .text          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccu649rl.o
+ .data          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccu649rl.o
+ .bss           0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\ccu649rl.o
+ .reginfo       0x00000000       0x18 C:\Users\AYMCLA~1\AppData\Local\Temp\ccu649rl.o
+ .text          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o
+ .data          0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o
+ .bss           0x00000000        0x0 C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o
+ .reginfo       0x00000000       0x18 C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o
+ .discard       0x00000000       0xd0 C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o
  .data          0x00000000        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
  .bss           0x00000000        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
  .reginfo       0x00000000       0x18 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
@@ -7270,13 +7319,9 @@ reserve_boot_0x1fc02000_kseg1
                 0xbfc02ff0                . = ALIGN (0x4)
 LOAD c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
 LOAD build/default/debug/_ext/1361460060/drv_adc_static.o
+LOAD build/default/debug/_ext/639803181/sys_clk_pic32mx.o
 LOAD build/default/debug/_ext/1407244131/drv_tmr_static.o
 LOAD build/default/debug/_ext/1407244131/drv_tmr_mapping.o
-LOAD build/default/debug/_ext/1360937237/app.o
-LOAD build/default/debug/_ext/1360937237/main.o
-LOAD build/default/debug/_ext/1896729784/Mc32DriverAdc.o
-LOAD build/default/debug/_ext/711155467/sys_int_pic32.o
-LOAD build/default/debug/_ext/639803181/sys_clk_pic32mx.o
 LOAD build/default/debug/_ext/340578644/sys_devcon.o
 LOAD build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
 LOAD build/default/debug/_ext/822048611/sys_ports_static.o
@@ -7284,14 +7329,24 @@ LOAD build/default/debug/_ext/1688732426/system_init.o
 LOAD build/default/debug/_ext/1688732426/system_interrupt.o
 LOAD build/default/debug/_ext/1688732426/system_exceptions.o
 LOAD build/default/debug/_ext/1688732426/system_tasks.o
+LOAD build/default/debug/_ext/1360937237/app.o
+LOAD build/default/debug/_ext/1360937237/main.o
+LOAD build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+LOAD build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+LOAD build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+LOAD build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+LOAD build/default/debug/_ext/711155467/sys_int_pic32.o
+LOAD build/default/debug/_ext/1360937237/mcp79411.o
+LOAD build/default/debug/_ext/1360937237/mcp79411_interface.o
+LOAD build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
 LOAD ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a
                 0x00000001                __MPLAB_BUILD = 0x1
                 0x00000001                __MPLAB_DEBUG = 0x1
                 0x00000001                __DEBUG = 0x1
                 0x00000000                _min_heap_size = 0x0
-LOAD C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
-LOAD C:\Users\AYMCLA~1\AppData\Local\Temp\cczGltsJ.o
-LOAD C:\Users\AYMCLA~1\AppData\Local\Temp\ccR4NwaA.o
+LOAD C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
+LOAD C:\Users\AYMCLA~1\AppData\Local\Temp\ccu649rl.o
+LOAD C:\Users\AYMCLA~1\AppData\Local\Temp\cc2uEabZ.o
 LOAD c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
                 0x00000400                PROVIDE (_min_stack_size, 0x400)
 START GROUP
@@ -7340,16 +7395,16 @@ END GROUP
 
 .reset          0xbfc00000      0x19c
  *(.reset)
- .reset         0xbfc00000        0x8 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
+ .reset         0xbfc00000        0x8 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
                 0xbfc00000                _reset
  *(.reset.startup)
  .reset.startup
-                0xbfc00008      0x194 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
+                0xbfc00008      0x194 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
                 0xbfc00008                _startup
 
 .bev_excpt      0xbfc00380       0x10
  *(.bev_handler)
- .bev_handler   0xbfc00380       0x10 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
+ .bev_handler   0xbfc00380       0x10 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
 
 .dbg_excpt      0xbfc00480        0x0
                 0xbfc00480                . = (. + DEFINED (_DEBUGGER)?0x8:0x0)
@@ -7359,7 +7414,7 @@ END GROUP
 
 .app_excpt      0x9fc01180       0x10
  *(.gen_handler)
- .gen_handler   0x9fc01180       0x10 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
+ .gen_handler   0x9fc01180       0x10 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
 
 .vector_0       0x9fc01200        0x8
  *(.vector_0)
@@ -7854,29 +7909,39 @@ END GROUP
                 0xa0000200                _data_end = .
                 0xa0000200                _bss_begin = .
 
-.sbss           0xa0000200       0x24
+.sbss           0xa0000200       0x48
                 0xa0000200                _sbss_begin = .
  *(.dynsbss)
  *(.sbss .sbss.* .gnu.linkonce.sb.*)
  .sbss          0xa0000200        0x4 build/default/debug/_ext/1407244131/drv_tmr_static.o
- .sbss          0xa0000204        0xb build/default/debug/_ext/1360937237/app.o
- *fill*         0xa000020f        0x1 
- .sbss          0xa0000210        0xc build/default/debug/_ext/1688732426/system_exceptions.o
+ .sbss          0xa0000204        0xc build/default/debug/_ext/1688732426/system_exceptions.o
+ .sbss          0xa0000210        0x2 build/default/debug/_ext/1360937237/app.o
  *(.scommon)
- .scommon       0xa000021c        0x8 build/default/debug/_ext/340578644/sys_devcon.o
-                0xa000021c                sysDevconObj
-                0xa0000224                _sbss_end = .
-                0xa0000224                . = ALIGN (0x4)
+ *fill*         0xa0000212        0x2 
+ .scommon       0xa0000214        0x8 build/default/debug/_ext/340578644/sys_devcon.o
+                0xa0000214                sysDevconObj
+ .scommon       0xa000021c       0x20 build/default/debug/_ext/1360937237/app.o
+                0xa000021c                s_dataSensor
+                0xa0000224                s_newDataSensor
+                0xa000022c                s_getDataSensor
+                0xa0000234                SR_LEDS
+ .scommon       0xa000023c        0x4 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+                0xa000023c                global_data
+ .scommon       0xa0000240        0x8 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+                0xa0000240                I2cConReg
+                0xa0000244                I2cBrg
+                0xa0000248                _sbss_end = .
+                0xa0000248                . = ALIGN (0x4)
 
-.bss            0xa0000224       0x7c
+.bss            0xa0000248       0x4c
  *(.dynbss)
  *(COMMON)
- COMMON         0xa0000224       0x7c build/default/debug/_ext/1360937237/app.o
-                0xa0000224                appData
-                0xa00002a0                . = ALIGN ((. != 0x0)?0x4:0x1)
-                0xa00002a0                . = ALIGN (0x4)
-                0xa00002a0                _end = .
-                0xa00002a0                _bss_end = .
+ COMMON         0xa0000248       0x4c build/default/debug/_ext/1360937237/app.o
+                0xa0000248                appData
+                0xa0000294                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0xa0000294                . = ALIGN (0x4)
+                0xa0000294                _end = .
+                0xa0000294                _bss_end = .
                 0x00020000                _bmxdudba_address = 0x20000
                 0x00020000                _bmxdupba_address = 0x20000
 
@@ -7897,29 +7962,35 @@ END GROUP
  *(.gptab.bss)
  *(.gptab.sbss)
 
-.mdebug.abi32   0xa00002a0        0x0
+.mdebug.abi32   0xa0000294        0x0
  *(.mdebug.abi32)
- .mdebug.abi32  0xa00002a0        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/1361460060/drv_adc_static.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/1407244131/drv_tmr_static.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/1360937237/app.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/1360937237/main.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/711155467/sys_int_pic32.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/340578644/sys_devcon.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/822048611/sys_ports_static.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/1688732426/system_init.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/1688732426/system_interrupt.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/1688732426/system_exceptions.o
- .mdebug.abi32  0xa00002a0        0x0 build/default/debug/_ext/1688732426/system_tasks.o
- .mdebug.abi32  0xa00002a0        0x0 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
- .mdebug.abi32  0xa00002a0        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .mdebug.abi32  0xa00002a0        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .mdebug.abi32  0xa00002a0        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .mdebug.abi32  0xa00002a0        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .mdebug.abi32  0xa0000294        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1361460060/drv_adc_static.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1407244131/drv_tmr_static.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/340578644/sys_devcon.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/822048611/sys_ports_static.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1688732426/system_init.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1688732426/system_interrupt.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1688732426/system_exceptions.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1688732426/system_tasks.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1360937237/app.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1360937237/main.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1360937237/mcp79411.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .mdebug.abi32  0xa0000294        0x0 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .mdebug.abi32  0xa0000294        0x0 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+ .mdebug.abi32  0xa0000294        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .mdebug.abi32  0xa0000294        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .mdebug.abi32  0xa0000294        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .mdebug.abi32  0xa0000294        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
 .mdebug.abiN32
  *(.mdebug.abiN32)
@@ -7965,13 +8036,9 @@ END GROUP
  .comment       0x00000000       0x3c c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
                                  0x3d (size before relaxing)
  .comment       0x00000000       0x3d build/default/debug/_ext/1361460060/drv_adc_static.o
+ .comment       0x00000000       0x3d build/default/debug/_ext/639803181/sys_clk_pic32mx.o
  .comment       0x00000000       0x3d build/default/debug/_ext/1407244131/drv_tmr_static.o
  .comment       0x00000000       0x3d build/default/debug/_ext/1407244131/drv_tmr_mapping.o
- .comment       0x00000000       0x3d build/default/debug/_ext/1360937237/app.o
- .comment       0x00000000       0x3d build/default/debug/_ext/1360937237/main.o
- .comment       0x00000000       0x3d build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .comment       0x00000000       0x3d build/default/debug/_ext/711155467/sys_int_pic32.o
- .comment       0x00000000       0x3d build/default/debug/_ext/639803181/sys_clk_pic32mx.o
  .comment       0x00000000       0x3d build/default/debug/_ext/340578644/sys_devcon.o
  .comment       0x00000000       0x3d build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
  .comment       0x00000000       0x3d build/default/debug/_ext/822048611/sys_ports_static.o
@@ -7979,6 +8046,16 @@ END GROUP
  .comment       0x00000000       0x3d build/default/debug/_ext/1688732426/system_interrupt.o
  .comment       0x00000000       0x3d build/default/debug/_ext/1688732426/system_exceptions.o
  .comment       0x00000000       0x3d build/default/debug/_ext/1688732426/system_tasks.o
+ .comment       0x00000000       0x3d build/default/debug/_ext/1360937237/app.o
+ .comment       0x00000000       0x3d build/default/debug/_ext/1360937237/main.o
+ .comment       0x00000000       0x3d build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .comment       0x00000000       0x3d build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .comment       0x00000000       0x3d build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .comment       0x00000000       0x3d build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .comment       0x00000000       0x3d build/default/debug/_ext/711155467/sys_int_pic32.o
+ .comment       0x00000000       0x3d build/default/debug/_ext/1360937237/mcp79411.o
+ .comment       0x00000000       0x3d build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .comment       0x00000000       0x3d build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
  .comment       0x0000003c       0x3c ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
                                  0x3d (size before relaxing)
  .comment       0x00000000       0x3d c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
@@ -7998,190 +8075,238 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0x8e8
+.debug_aranges  0x00000000      0xa68
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
  .debug_aranges
                 0x00000020       0x78 build/default/debug/_ext/1361460060/drv_adc_static.o
  .debug_aranges
-                0x00000098      0x248 build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x00000098       0x50 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
  .debug_aranges
-                0x000002e0      0x180 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+                0x000000e8      0x248 build/default/debug/_ext/1407244131/drv_tmr_static.o
  .debug_aranges
-                0x00000460       0x70 build/default/debug/_ext/1360937237/app.o
+                0x00000330      0x188 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .debug_aranges
-                0x000004d0       0x20 build/default/debug/_ext/1360937237/main.o
+                0x000004b8       0x78 build/default/debug/_ext/340578644/sys_devcon.o
  .debug_aranges
-                0x000004f0       0x28 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+                0x00000530       0x20 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
  .debug_aranges
-                0x00000518       0x48 build/default/debug/_ext/711155467/sys_int_pic32.o
+                0x00000550      0x148 build/default/debug/_ext/822048611/sys_ports_static.o
  .debug_aranges
-                0x00000560       0x50 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+                0x00000698       0x20 build/default/debug/_ext/1688732426/system_init.o
  .debug_aranges
-                0x000005b0       0x78 build/default/debug/_ext/340578644/sys_devcon.o
+                0x000006b8       0x38 build/default/debug/_ext/1688732426/system_interrupt.o
  .debug_aranges
-                0x00000628       0x20 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
+                0x000006f0       0x20 build/default/debug/_ext/1688732426/system_exceptions.o
  .debug_aranges
-                0x00000648      0x148 build/default/debug/_ext/822048611/sys_ports_static.o
+                0x00000710       0x20 build/default/debug/_ext/1688732426/system_tasks.o
  .debug_aranges
-                0x00000790       0x20 build/default/debug/_ext/1688732426/system_init.o
+                0x00000730       0x68 build/default/debug/_ext/1360937237/app.o
  .debug_aranges
-                0x000007b0       0x38 build/default/debug/_ext/1688732426/system_interrupt.o
+                0x00000798       0x20 build/default/debug/_ext/1360937237/main.o
  .debug_aranges
-                0x000007e8       0x20 build/default/debug/_ext/1688732426/system_exceptions.o
+                0x000007b8       0x28 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
  .debug_aranges
-                0x00000808       0x20 build/default/debug/_ext/1688732426/system_tasks.o
+                0x000007e0       0x38 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
  .debug_aranges
-                0x00000828       0x40 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
+                0x00000818       0x48 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
  .debug_aranges
-                0x00000868       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+                0x00000860       0x48 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
  .debug_aranges
-                0x00000888       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+                0x000008a8       0x48 build/default/debug/_ext/711155467/sys_int_pic32.o
  .debug_aranges
-                0x000008a8       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+                0x000008f0       0x60 build/default/debug/_ext/1360937237/mcp79411.o
  .debug_aranges
-                0x000008c8       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+                0x00000950       0x28 build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .debug_aranges
+                0x00000978       0x30 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .debug_aranges
+                0x000009a8       0x40 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
+ .debug_aranges
+                0x000009e8       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_aranges
+                0x00000a08       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_aranges
+                0x00000a28       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_aranges
+                0x00000a48       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000    0x16965
+.debug_info     0x00000000    0x1c8a1
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0xe3 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
  .debug_info    0x000000e3     0x1b96 build/default/debug/_ext/1361460060/drv_adc_static.o
- .debug_info    0x00001c79     0x3e1d build/default/debug/_ext/1407244131/drv_tmr_static.o
- .debug_info    0x00005a96     0x2096 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
- .debug_info    0x00007b2c     0x1c8f build/default/debug/_ext/1360937237/app.o
- .debug_info    0x000097bb      0x1d4 build/default/debug/_ext/1360937237/main.o
- .debug_info    0x0000998f     0x1208 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .debug_info    0x0000ab97     0x11d8 build/default/debug/_ext/711155467/sys_int_pic32.o
- .debug_info    0x0000bd6f     0x1281 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .debug_info    0x0000cff0     0x12e7 build/default/debug/_ext/340578644/sys_devcon.o
- .debug_info    0x0000e2d7      0xd72 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
- .debug_info    0x0000f049     0x2d49 build/default/debug/_ext/822048611/sys_ports_static.o
- .debug_info    0x00011d92     0x1764 build/default/debug/_ext/1688732426/system_init.o
- .debug_info    0x000134f6     0x1494 build/default/debug/_ext/1688732426/system_interrupt.o
- .debug_info    0x0001498a     0x11fd build/default/debug/_ext/1688732426/system_exceptions.o
- .debug_info    0x00015b87      0x96f build/default/debug/_ext/1688732426/system_tasks.o
- .debug_info    0x000164f6       0xf2 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
- .debug_info    0x000165e8       0xf4 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_info    0x000166dc       0xcd c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_info    0x000167a9       0xd5 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_info    0x0001687e       0xe7 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_info    0x00001c79     0x1289 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .debug_info    0x00002f02     0x3e1f build/default/debug/_ext/1407244131/drv_tmr_static.o
+ .debug_info    0x00006d21     0x21b1 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+ .debug_info    0x00008ed2     0x12e7 build/default/debug/_ext/340578644/sys_devcon.o
+ .debug_info    0x0000a1b9      0xd72 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
+ .debug_info    0x0000af2b     0x2d49 build/default/debug/_ext/822048611/sys_ports_static.o
+ .debug_info    0x0000dc74     0x176c build/default/debug/_ext/1688732426/system_init.o
+ .debug_info    0x0000f3e0     0x14c4 build/default/debug/_ext/1688732426/system_interrupt.o
+ .debug_info    0x000108a4     0x11fd build/default/debug/_ext/1688732426/system_exceptions.o
+ .debug_info    0x00011aa1      0x977 build/default/debug/_ext/1688732426/system_tasks.o
+ .debug_info    0x00012418     0x1fce build/default/debug/_ext/1360937237/app.o
+ .debug_info    0x000143e6      0x1d4 build/default/debug/_ext/1360937237/main.o
+ .debug_info    0x000145ba     0x1208 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .debug_info    0x000157c2     0x16d0 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .debug_info    0x00016e92      0xe4e build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .debug_info    0x00017ce0     0x1df8 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .debug_info    0x00019ad8     0x11d8 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .debug_info    0x0001acb0     0x10bd build/default/debug/_ext/1360937237/mcp79411.o
+ .debug_info    0x0001bd6d      0x28e build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .debug_info    0x0001bffb      0x437 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .debug_info    0x0001c432       0xf2 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
+ .debug_info    0x0001c524       0xf4 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_info    0x0001c618       0xcd c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_info    0x0001c6e5       0xd5 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_info    0x0001c7ba       0xe7 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
-.debug_abbrev   0x00000000     0x19f0
+.debug_abbrev   0x00000000     0x233a
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0x28 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
  .debug_abbrev  0x00000028      0x13a build/default/debug/_ext/1361460060/drv_adc_static.o
- .debug_abbrev  0x00000162      0x2eb build/default/debug/_ext/1407244131/drv_tmr_static.o
- .debug_abbrev  0x0000044d      0x2bb build/default/debug/_ext/1407244131/drv_tmr_mapping.o
- .debug_abbrev  0x00000708      0x200 build/default/debug/_ext/1360937237/app.o
- .debug_abbrev  0x00000908       0x93 build/default/debug/_ext/1360937237/main.o
- .debug_abbrev  0x0000099b      0x129 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .debug_abbrev  0x00000ac4      0x198 build/default/debug/_ext/711155467/sys_int_pic32.o
- .debug_abbrev  0x00000c5c      0x203 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .debug_abbrev  0x00000e5f      0x273 build/default/debug/_ext/340578644/sys_devcon.o
- .debug_abbrev  0x000010d2      0x1b7 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
- .debug_abbrev  0x00001289      0x1ec build/default/debug/_ext/822048611/sys_ports_static.o
- .debug_abbrev  0x00001475      0x1da build/default/debug/_ext/1688732426/system_init.o
- .debug_abbrev  0x0000164f      0x127 build/default/debug/_ext/1688732426/system_interrupt.o
- .debug_abbrev  0x00001776       0xf5 build/default/debug/_ext/1688732426/system_exceptions.o
- .debug_abbrev  0x0000186b       0xd3 build/default/debug/_ext/1688732426/system_tasks.o
- .debug_abbrev  0x0000193e       0x12 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
- .debug_abbrev  0x00001950       0x28 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_abbrev  0x00001978       0x28 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_abbrev  0x000019a0       0x28 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_abbrev  0x000019c8       0x28 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_abbrev  0x00000162      0x203 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .debug_abbrev  0x00000365      0x2eb build/default/debug/_ext/1407244131/drv_tmr_static.o
+ .debug_abbrev  0x00000650      0x2ce build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+ .debug_abbrev  0x0000091e      0x273 build/default/debug/_ext/340578644/sys_devcon.o
+ .debug_abbrev  0x00000b91      0x1b7 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
+ .debug_abbrev  0x00000d48      0x1ec build/default/debug/_ext/822048611/sys_ports_static.o
+ .debug_abbrev  0x00000f34      0x1da build/default/debug/_ext/1688732426/system_init.o
+ .debug_abbrev  0x0000110e      0x127 build/default/debug/_ext/1688732426/system_interrupt.o
+ .debug_abbrev  0x00001235       0xf5 build/default/debug/_ext/1688732426/system_exceptions.o
+ .debug_abbrev  0x0000132a       0xd3 build/default/debug/_ext/1688732426/system_tasks.o
+ .debug_abbrev  0x000013fd      0x270 build/default/debug/_ext/1360937237/app.o
+ .debug_abbrev  0x0000166d       0x93 build/default/debug/_ext/1360937237/main.o
+ .debug_abbrev  0x00001700      0x129 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .debug_abbrev  0x00001829      0x17f build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .debug_abbrev  0x000019a8      0x191 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .debug_abbrev  0x00001b39      0x1a4 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .debug_abbrev  0x00001cdd      0x198 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .debug_abbrev  0x00001e75      0x24a build/default/debug/_ext/1360937237/mcp79411.o
+ .debug_abbrev  0x000020bf       0xc2 build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .debug_abbrev  0x00002181      0x107 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .debug_abbrev  0x00002288       0x12 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
+ .debug_abbrev  0x0000229a       0x28 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_abbrev  0x000022c2       0x28 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_abbrev  0x000022ea       0x28 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_abbrev  0x00002312       0x28 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
-.debug_line     0x00000000     0x3e99
+.debug_line     0x00000000     0x4bc1
  *(.debug_line)
  .debug_line    0x00000000       0x99 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
  .debug_line    0x00000099      0x34b build/default/debug/_ext/1361460060/drv_adc_static.o
- .debug_line    0x000003e4      0x8f7 build/default/debug/_ext/1407244131/drv_tmr_static.o
- .debug_line    0x00000cdb      0x7a0 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
- .debug_line    0x0000147b      0x4c3 build/default/debug/_ext/1360937237/app.o
- .debug_line    0x0000193e       0xd1 build/default/debug/_ext/1360937237/main.o
- .debug_line    0x00001a0f      0x1d7 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .debug_line    0x00001be6      0x228 build/default/debug/_ext/711155467/sys_int_pic32.o
- .debug_line    0x00001e0e      0x35e build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .debug_line    0x0000216c      0x4de build/default/debug/_ext/340578644/sys_devcon.o
- .debug_line    0x0000264a      0x38c build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
- .debug_line    0x000029d6      0x59b build/default/debug/_ext/822048611/sys_ports_static.o
- .debug_line    0x00002f71      0x536 build/default/debug/_ext/1688732426/system_init.o
- .debug_line    0x000034a7      0x269 build/default/debug/_ext/1688732426/system_interrupt.o
- .debug_line    0x00003710      0x201 build/default/debug/_ext/1688732426/system_exceptions.o
- .debug_line    0x00003911      0x1c1 build/default/debug/_ext/1688732426/system_tasks.o
- .debug_line    0x00003ad2      0x152 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
- .debug_line    0x00003c24       0xa6 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_line    0x00003cca       0x93 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_line    0x00003d5d       0x97 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_line    0x00003df4       0xa5 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_line    0x000003e4      0x35e build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .debug_line    0x00000742      0x8f7 build/default/debug/_ext/1407244131/drv_tmr_static.o
+ .debug_line    0x00001039      0x7bd build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+ .debug_line    0x000017f6      0x4de build/default/debug/_ext/340578644/sys_devcon.o
+ .debug_line    0x00001cd4      0x38c build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
+ .debug_line    0x00002060      0x59b build/default/debug/_ext/822048611/sys_ports_static.o
+ .debug_line    0x000025fb      0x536 build/default/debug/_ext/1688732426/system_init.o
+ .debug_line    0x00002b31      0x26a build/default/debug/_ext/1688732426/system_interrupt.o
+ .debug_line    0x00002d9b      0x201 build/default/debug/_ext/1688732426/system_exceptions.o
+ .debug_line    0x00002f9c      0x1c1 build/default/debug/_ext/1688732426/system_tasks.o
+ .debug_line    0x0000315d      0x505 build/default/debug/_ext/1360937237/app.o
+ .debug_line    0x00003662       0xd1 build/default/debug/_ext/1360937237/main.o
+ .debug_line    0x00003733      0x1d7 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .debug_line    0x0000390a      0x2d1 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .debug_line    0x00003bdb      0x1ff build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .debug_line    0x00003dda      0x377 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .debug_line    0x00004151      0x228 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .debug_line    0x00004379      0x218 build/default/debug/_ext/1360937237/mcp79411.o
+ .debug_line    0x00004591      0x117 build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .debug_line    0x000046a8      0x152 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .debug_line    0x000047fa      0x152 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
+ .debug_line    0x0000494c       0xa6 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_line    0x000049f2       0x93 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_line    0x00004a85       0x97 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_line    0x00004b1c       0xa5 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
-.debug_frame    0x00000000     0x1f70
+.debug_frame    0x00000000     0x2408
  *(.debug_frame)
  .debug_frame   0x00000000       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
  .debug_frame   0x00000020      0x1c0 build/default/debug/_ext/1361460060/drv_adc_static.o
- .debug_frame   0x000001e0      0x9c8 build/default/debug/_ext/1407244131/drv_tmr_static.o
- .debug_frame   0x00000ba8      0x60c build/default/debug/_ext/1407244131/drv_tmr_mapping.o
- .debug_frame   0x000011b4      0x180 build/default/debug/_ext/1360937237/app.o
- .debug_frame   0x00001334       0x2c build/default/debug/_ext/1360937237/main.o
- .debug_frame   0x00001360       0x58 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .debug_frame   0x000013b8       0xe8 build/default/debug/_ext/711155467/sys_int_pic32.o
- .debug_frame   0x000014a0      0x100 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .debug_frame   0x000015a0      0x1ac build/default/debug/_ext/340578644/sys_devcon.o
- .debug_frame   0x0000174c       0x34 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
- .debug_frame   0x00001780      0x540 build/default/debug/_ext/822048611/sys_ports_static.o
- .debug_frame   0x00001cc0       0x34 build/default/debug/_ext/1688732426/system_init.o
- .debug_frame   0x00001cf4      0x190 build/default/debug/_ext/1688732426/system_interrupt.o
- .debug_frame   0x00001e84       0x2c build/default/debug/_ext/1688732426/system_exceptions.o
- .debug_frame   0x00001eb0       0x34 build/default/debug/_ext/1688732426/system_tasks.o
- .debug_frame   0x00001ee4       0x2c c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_frame   0x00001f10       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_frame   0x00001f30       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_frame   0x00001f50       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_frame   0x000001e0      0x100 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .debug_frame   0x000002e0      0x9c8 build/default/debug/_ext/1407244131/drv_tmr_static.o
+ .debug_frame   0x00000ca8      0x630 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+ .debug_frame   0x000012d8      0x1ac build/default/debug/_ext/340578644/sys_devcon.o
+ .debug_frame   0x00001484       0x34 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
+ .debug_frame   0x000014b8      0x540 build/default/debug/_ext/822048611/sys_ports_static.o
+ .debug_frame   0x000019f8       0x34 build/default/debug/_ext/1688732426/system_init.o
+ .debug_frame   0x00001a2c      0x190 build/default/debug/_ext/1688732426/system_interrupt.o
+ .debug_frame   0x00001bbc       0x2c build/default/debug/_ext/1688732426/system_exceptions.o
+ .debug_frame   0x00001be8       0x34 build/default/debug/_ext/1688732426/system_tasks.o
+ .debug_frame   0x00001c1c      0x170 build/default/debug/_ext/1360937237/app.o
+ .debug_frame   0x00001d8c       0x2c build/default/debug/_ext/1360937237/main.o
+ .debug_frame   0x00001db8       0x58 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .debug_frame   0x00001e10       0x94 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .debug_frame   0x00001ea4       0xe8 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .debug_frame   0x00001f8c       0xe8 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .debug_frame   0x00002074       0xe8 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .debug_frame   0x0000215c      0x14c build/default/debug/_ext/1360937237/mcp79411.o
+ .debug_frame   0x000022a8       0x58 build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .debug_frame   0x00002300       0x7c build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .debug_frame   0x0000237c       0x2c c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_frame   0x000023a8       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_frame   0x000023c8       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_frame   0x000023e8       0x20 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
-.debug_str      0x00000000       0xc4
+.debug_str      0x00000000      0x139
  *(.debug_str)
  .debug_str     0x00000000        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
  .debug_str     0x00000000        0xa build/default/debug/_ext/1361460060/drv_adc_static.o
+ .debug_str     0x0000000a        0x0 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
  .debug_str     0x0000000a       0x58 build/default/debug/_ext/1407244131/drv_tmr_static.o
  .debug_str     0x00000062        0xe build/default/debug/_ext/1407244131/drv_tmr_mapping.o
- .debug_str     0x00000070        0x0 build/default/debug/_ext/1360937237/app.o
- .debug_str     0x00000070        0x0 build/default/debug/_ext/1360937237/main.o
- .debug_str     0x00000070        0x0 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .debug_str     0x00000070       0x10 build/default/debug/_ext/711155467/sys_int_pic32.o
- .debug_str     0x00000080        0x0 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .debug_str     0x00000080       0x10 build/default/debug/_ext/340578644/sys_devcon.o
- .debug_str     0x00000090        0x0 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
- .debug_str     0x00000090       0x34 build/default/debug/_ext/822048611/sys_ports_static.o
- .debug_str     0x000000c4        0x0 build/default/debug/_ext/1688732426/system_init.o
- .debug_str     0x000000c4        0x0 build/default/debug/_ext/1688732426/system_interrupt.o
- .debug_str     0x000000c4        0x0 build/default/debug/_ext/1688732426/system_exceptions.o
- .debug_str     0x000000c4        0x0 build/default/debug/_ext/1688732426/system_tasks.o
- .debug_str     0x000000c4        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_str     0x000000c4        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_str     0x000000c4        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_str     0x000000c4        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_str     0x00000070       0x10 build/default/debug/_ext/340578644/sys_devcon.o
+ .debug_str     0x00000080        0x0 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
+ .debug_str     0x00000080       0x34 build/default/debug/_ext/822048611/sys_ports_static.o
+ .debug_str     0x000000b4        0x0 build/default/debug/_ext/1688732426/system_init.o
+ .debug_str     0x000000b4        0x0 build/default/debug/_ext/1688732426/system_interrupt.o
+ .debug_str     0x000000b4        0x0 build/default/debug/_ext/1688732426/system_exceptions.o
+ .debug_str     0x000000b4        0x0 build/default/debug/_ext/1688732426/system_tasks.o
+ .debug_str     0x000000b4        0x0 build/default/debug/_ext/1360937237/app.o
+ .debug_str     0x000000b4        0x0 build/default/debug/_ext/1360937237/main.o
+ .debug_str     0x000000b4        0x0 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .debug_str     0x000000b4        0x9 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .debug_str     0x000000bd        0xd build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .debug_str     0x000000ca        0x0 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .debug_str     0x000000ca       0x10 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .debug_str     0x000000da       0x54 build/default/debug/_ext/1360937237/mcp79411.o
+ .debug_str     0x0000012e        0x0 build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .debug_str     0x0000012e        0xb build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .debug_str     0x00000139        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_str     0x00000139        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_str     0x00000139        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_str     0x00000139        0x0 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
-.debug_loc      0x00000000     0x61fc
+.debug_loc      0x00000000     0x7a7f
  *(.debug_loc)
  .debug_loc     0x00000000      0x49b build/default/debug/_ext/1361460060/drv_adc_static.o
- .debug_loc     0x0000049b     0x1cca build/default/debug/_ext/1407244131/drv_tmr_static.o
- .debug_loc     0x00002165     0x1676 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
- .debug_loc     0x000037db      0x30c build/default/debug/_ext/1360937237/app.o
- .debug_loc     0x00003ae7       0x2c build/default/debug/_ext/1360937237/main.o
- .debug_loc     0x00003b13       0xc2 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .debug_loc     0x00003bd5      0x30f build/default/debug/_ext/711155467/sys_int_pic32.o
- .debug_loc     0x00003ee4      0x213 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .debug_loc     0x000040f7      0x430 build/default/debug/_ext/340578644/sys_devcon.o
- .debug_loc     0x00004527      0x134 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
- .debug_loc     0x0000465b     0x196e build/default/debug/_ext/822048611/sys_ports_static.o
- .debug_loc     0x00005fc9       0x7b build/default/debug/_ext/1688732426/system_init.o
- .debug_loc     0x00006044      0x11c build/default/debug/_ext/1688732426/system_interrupt.o
- .debug_loc     0x00006160       0x2c build/default/debug/_ext/1688732426/system_exceptions.o
- .debug_loc     0x0000618c       0x44 build/default/debug/_ext/1688732426/system_tasks.o
- .debug_loc     0x000061d0       0x2c c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_loc     0x0000049b      0x213 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .debug_loc     0x000006ae     0x1cca build/default/debug/_ext/1407244131/drv_tmr_static.o
+ .debug_loc     0x00002378     0x1789 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+ .debug_loc     0x00003b01      0x430 build/default/debug/_ext/340578644/sys_devcon.o
+ .debug_loc     0x00003f31      0x134 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
+ .debug_loc     0x00004065     0x196e build/default/debug/_ext/822048611/sys_ports_static.o
+ .debug_loc     0x000059d3       0x7b build/default/debug/_ext/1688732426/system_init.o
+ .debug_loc     0x00005a4e      0x11c build/default/debug/_ext/1688732426/system_interrupt.o
+ .debug_loc     0x00005b6a       0x2c build/default/debug/_ext/1688732426/system_exceptions.o
+ .debug_loc     0x00005b96       0x44 build/default/debug/_ext/1688732426/system_tasks.o
+ .debug_loc     0x00005bda      0x357 build/default/debug/_ext/1360937237/app.o
+ .debug_loc     0x00005f31       0x2c build/default/debug/_ext/1360937237/main.o
+ .debug_loc     0x00005f5d       0xc2 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .debug_loc     0x0000601f      0x18c build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .debug_loc     0x000061ab      0x3b7 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .debug_loc     0x00006562      0x274 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .debug_loc     0x000067d6      0x30f build/default/debug/_ext/711155467/sys_int_pic32.o
+ .debug_loc     0x00006ae5      0xa72 build/default/debug/_ext/1360937237/mcp79411.o
+ .debug_loc     0x00007557      0x199 build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .debug_loc     0x000076f0      0x363 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .debug_loc     0x00007a53       0x2c c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -8201,29 +8326,35 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x7a0
+.debug_ranges   0x00000000      0x8c0
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
  .debug_ranges  0x00000010       0x68 build/default/debug/_ext/1361460060/drv_adc_static.o
- .debug_ranges  0x00000078      0x238 build/default/debug/_ext/1407244131/drv_tmr_static.o
- .debug_ranges  0x000002b0      0x170 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
- .debug_ranges  0x00000420       0x60 build/default/debug/_ext/1360937237/app.o
- .debug_ranges  0x00000480       0x10 build/default/debug/_ext/1360937237/main.o
- .debug_ranges  0x00000490       0x18 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
- .debug_ranges  0x000004a8       0x38 build/default/debug/_ext/711155467/sys_int_pic32.o
- .debug_ranges  0x000004e0       0x40 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
- .debug_ranges  0x00000520       0x68 build/default/debug/_ext/340578644/sys_devcon.o
- .debug_ranges  0x00000588       0x10 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
- .debug_ranges  0x00000598      0x138 build/default/debug/_ext/822048611/sys_ports_static.o
- .debug_ranges  0x000006d0       0x10 build/default/debug/_ext/1688732426/system_init.o
- .debug_ranges  0x000006e0       0x28 build/default/debug/_ext/1688732426/system_interrupt.o
- .debug_ranges  0x00000708       0x10 build/default/debug/_ext/1688732426/system_exceptions.o
- .debug_ranges  0x00000718       0x10 build/default/debug/_ext/1688732426/system_tasks.o
- .debug_ranges  0x00000728       0x38 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
- .debug_ranges  0x00000760       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
- .debug_ranges  0x00000770       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
- .debug_ranges  0x00000780       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
- .debug_ranges  0x00000790       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_ranges  0x00000078       0x40 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+ .debug_ranges  0x000000b8      0x238 build/default/debug/_ext/1407244131/drv_tmr_static.o
+ .debug_ranges  0x000002f0      0x178 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+ .debug_ranges  0x00000468       0x68 build/default/debug/_ext/340578644/sys_devcon.o
+ .debug_ranges  0x000004d0       0x10 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
+ .debug_ranges  0x000004e0      0x138 build/default/debug/_ext/822048611/sys_ports_static.o
+ .debug_ranges  0x00000618       0x10 build/default/debug/_ext/1688732426/system_init.o
+ .debug_ranges  0x00000628       0x28 build/default/debug/_ext/1688732426/system_interrupt.o
+ .debug_ranges  0x00000650       0x10 build/default/debug/_ext/1688732426/system_exceptions.o
+ .debug_ranges  0x00000660       0x10 build/default/debug/_ext/1688732426/system_tasks.o
+ .debug_ranges  0x00000670       0x58 build/default/debug/_ext/1360937237/app.o
+ .debug_ranges  0x000006c8       0x10 build/default/debug/_ext/1360937237/main.o
+ .debug_ranges  0x000006d8       0x18 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+ .debug_ranges  0x000006f0       0x28 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+ .debug_ranges  0x00000718       0x38 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+ .debug_ranges  0x00000750       0x38 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+ .debug_ranges  0x00000788       0x38 build/default/debug/_ext/711155467/sys_int_pic32.o
+ .debug_ranges  0x000007c0       0x50 build/default/debug/_ext/1360937237/mcp79411.o
+ .debug_ranges  0x00000810       0x18 build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .debug_ranges  0x00000828       0x20 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .debug_ranges  0x00000848       0x38 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
+ .debug_ranges  0x00000880       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_ranges  0x00000890       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_ranges  0x000008a0       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_ranges  0x000008b0       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 
 .gnu.attributes
                 0x00000000       0x10
@@ -8233,43 +8364,55 @@ END GROUP
  .gnu.attributes
                 0x00000010       0x10 build/default/debug/_ext/1361460060/drv_adc_static.o
  .gnu.attributes
-                0x00000020       0x10 build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x00000020       0x10 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
  .gnu.attributes
-                0x00000030       0x10 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
+                0x00000030       0x10 build/default/debug/_ext/1407244131/drv_tmr_static.o
  .gnu.attributes
-                0x00000040       0x10 build/default/debug/_ext/1360937237/app.o
+                0x00000040       0x10 build/default/debug/_ext/1407244131/drv_tmr_mapping.o
  .gnu.attributes
-                0x00000050       0x10 build/default/debug/_ext/1360937237/main.o
+                0x00000050       0x10 build/default/debug/_ext/340578644/sys_devcon.o
  .gnu.attributes
-                0x00000060       0x10 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
+                0x00000060       0x10 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
  .gnu.attributes
-                0x00000070       0x10 build/default/debug/_ext/711155467/sys_int_pic32.o
+                0x00000070       0x10 build/default/debug/_ext/822048611/sys_ports_static.o
  .gnu.attributes
-                0x00000080       0x10 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+                0x00000080       0x10 build/default/debug/_ext/1688732426/system_init.o
  .gnu.attributes
-                0x00000090       0x10 build/default/debug/_ext/340578644/sys_devcon.o
+                0x00000090       0x10 build/default/debug/_ext/1688732426/system_interrupt.o
  .gnu.attributes
-                0x000000a0       0x10 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
+                0x000000a0       0x10 build/default/debug/_ext/1688732426/system_exceptions.o
  .gnu.attributes
-                0x000000b0       0x10 build/default/debug/_ext/822048611/sys_ports_static.o
+                0x000000b0       0x10 build/default/debug/_ext/1688732426/system_tasks.o
  .gnu.attributes
-                0x000000c0       0x10 build/default/debug/_ext/1688732426/system_init.o
+                0x000000c0       0x10 build/default/debug/_ext/1360937237/app.o
  .gnu.attributes
-                0x000000d0       0x10 build/default/debug/_ext/1688732426/system_interrupt.o
+                0x000000d0       0x10 build/default/debug/_ext/1360937237/main.o
  .gnu.attributes
-                0x000000e0       0x10 build/default/debug/_ext/1688732426/system_exceptions.o
+                0x000000e0       0x10 build/default/debug/_ext/1896729784/Mc32DriverAdc.o
  .gnu.attributes
-                0x000000f0       0x10 build/default/debug/_ext/1688732426/system_tasks.o
+                0x000000f0       0x10 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
  .gnu.attributes
-                0x00000100       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x00000100       0x10 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
  .gnu.attributes
-                0x00000110       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+                0x00000110       0x10 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
  .gnu.attributes
-                0x00000120       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+                0x00000120       0x10 build/default/debug/_ext/711155467/sys_int_pic32.o
  .gnu.attributes
-                0x00000130       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+                0x00000130       0x10 build/default/debug/_ext/1360937237/mcp79411.o
  .gnu.attributes
-                0x00000140       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+                0x00000140       0x10 build/default/debug/_ext/1360937237/mcp79411_interface.o
+ .gnu.attributes
+                0x00000150       0x10 build/default/debug/_ext/1360937237/Mc32gestI2cSeeprom.o
+ .gnu.attributes
+                0x00000160       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+ .gnu.attributes
+                0x00000170       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .gnu.attributes
+                0x00000180       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .gnu.attributes
+                0x00000190       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .gnu.attributes
+                0x000001a0       0x10 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
 LOAD c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3\libgcc.a
 START GROUP
 LOAD c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a
@@ -8291,11 +8434,14 @@ LOAD data_init
 .reginfo        0x00000000       0x18
  .reginfo       0x00000000       0x18 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
 
-.stack          0xa0000308      0x400
- .stack         0xa0000308      0x400 stack
+.stack          0xa0000500      0x400
+ .stack         0xa0000500      0x400 stack
 
-.data           0xa00002a0       0x4c
- .data          0xa00002a0       0x4c build/default/debug/_ext/1688732426/system_exceptions.o
+.bss            0xa0000294      0x200
+ .bss           0xa0000294      0x200 build/default/debug/_ext/1360937237/mcp79411.o
+
+.data           0xa0000494       0x4c
+ .data          0xa0000494       0x4c build/default/debug/_ext/1688732426/system_exceptions.o
 
 .text.DRV_ADC_Initialize
                 0x9d000000      0x318
@@ -8303,645 +8449,886 @@ LOAD data_init
                 0x9d000000      0x318 build/default/debug/_ext/1361460060/drv_adc_static.o
                 0x9d000000                DRV_ADC_Initialize
 
-.text.APP_Tasks
-                0x9d000318      0x22c
- .text.APP_Tasks
-                0x9d000318      0x22c build/default/debug/_ext/1360937237/app.o
-                0x9d000318                APP_Tasks
+.text.mcp79411_set_time
+                0x9d000318      0x260
+ .text.mcp79411_set_time
+                0x9d000318      0x260 build/default/debug/_ext/1360937237/mcp79411.o
+                0x9d000318                mcp79411_set_time
 
 .text.SYS_PORTS_Initialize
-                0x9d000544      0x20c
+                0x9d000578      0x20c
  .text.SYS_PORTS_Initialize
-                0x9d000544      0x20c build/default/debug/_ext/822048611/sys_ports_static.o
-                0x9d000544                SYS_PORTS_Initialize
+                0x9d000578      0x20c build/default/debug/_ext/822048611/sys_ports_static.o
+                0x9d000578                SYS_PORTS_Initialize
+
+.text.APP_Tasks
+                0x9d000784      0x1bc
+ .text.APP_Tasks
+                0x9d000784      0x1bc build/default/debug/_ext/1360937237/app.o
+                0x9d000784                APP_Tasks
+
+.text.mcp79411_get_time
+                0x9d000940      0x1b4
+ .text.mcp79411_get_time
+                0x9d000940      0x1b4 build/default/debug/_ext/1360937237/mcp79411.o
+                0x9d000940                mcp79411_get_time
+
+.text.SR_Update
+                0x9d000af4      0x19c
+ .text.SR_Update
+                0x9d000af4      0x19c build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+                0x9d000af4                SR_Update
 
 .text.SYS_DEVCON_PerformanceConfig
-                0x9d000750      0x190
+                0x9d000c90      0x190
  .text.SYS_DEVCON_PerformanceConfig
-                0x9d000750      0x190 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
-                0x9d000750                SYS_DEVCON_PerformanceConfig
+                0x9d000c90      0x190 build/default/debug/_ext/340578644/sys_devcon_pic32mx.o
+                0x9d000c90                SYS_DEVCON_PerformanceConfig
 
-.text.APP_SERIAL_LEDS_CMD
-                0x9d0008e0      0x168
- .text.APP_SERIAL_LEDS_CMD
-                0x9d0008e0      0x168 build/default/debug/_ext/1360937237/app.o
-                0x9d0008e0                APP_SERIAL_LEDS_CMD
+.text.GetInputsStates
+                0x9d000e20      0x188
+ .text.GetInputsStates
+                0x9d000e20      0x188 build/default/debug/_ext/1360937237/app.o
+                0x9d000e20                GetInputsStates
 
 .text.IntHandlerDrvTmrInstance0
-                0x9d000a48      0x158
+                0x9d000fa8      0x158
  .text.IntHandlerDrvTmrInstance0
-                0x9d000a48      0x158 build/default/debug/_ext/1688732426/system_interrupt.o
-                0x9d000a48                IntHandlerDrvTmrInstance0
-
-.text.IntHandlerDrvTmrInstance1
-                0x9d000ba0      0x150
- .text.IntHandlerDrvTmrInstance1
-                0x9d000ba0      0x150 build/default/debug/_ext/1688732426/system_interrupt.o
-                0x9d000ba0                IntHandlerDrvTmrInstance1
-
-.text.IntHandlerDrvTmrInstance2
-                0x9d000cf0      0x150
- .text.IntHandlerDrvTmrInstance2
-                0x9d000cf0      0x150 build/default/debug/_ext/1688732426/system_interrupt.o
-                0x9d000cf0                IntHandlerDrvTmrInstance2
+                0x9d000fa8      0x158 build/default/debug/_ext/1688732426/system_interrupt.o
+                0x9d000fa8                IntHandlerDrvTmrInstance0
 
 .text.IntHandlerDrvTmrInstance3
-                0x9d000e40      0x150
+                0x9d001100      0x158
  .text.IntHandlerDrvTmrInstance3
-                0x9d000e40      0x150 build/default/debug/_ext/1688732426/system_interrupt.o
-                0x9d000e40                IntHandlerDrvTmrInstance3
+                0x9d001100      0x158 build/default/debug/_ext/1688732426/system_interrupt.o
+                0x9d001100                IntHandlerDrvTmrInstance3
 
-.rodata         0x9d000f90       0xdc
- .rodata        0x9d000f90       0xdc build/default/debug/_ext/1688732426/system_exceptions.o
+.text.IntHandlerDrvTmrInstance1
+                0x9d001258      0x150
+ .text.IntHandlerDrvTmrInstance1
+                0x9d001258      0x150 build/default/debug/_ext/1688732426/system_interrupt.o
+                0x9d001258                IntHandlerDrvTmrInstance1
+
+.text.IntHandlerDrvTmrInstance2
+                0x9d0013a8      0x150
+ .text.IntHandlerDrvTmrInstance2
+                0x9d0013a8      0x150 build/default/debug/_ext/1688732426/system_interrupt.o
+                0x9d0013a8                IntHandlerDrvTmrInstance2
+
+.text.i2c_read  0x9d0014f8      0x14c
+ .text.i2c_read
+                0x9d0014f8      0x14c build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+                0x9d0014f8                i2c_read
+
+.text.mcp79411_rtc_reg_write
+                0x9d001644      0x110
+ .text.mcp79411_rtc_reg_write
+                0x9d001644      0x110 build/default/debug/_ext/1360937237/mcp79411.o
+
+.text.i2c_start
+                0x9d001754       0xf0
+ .text.i2c_start
+                0x9d001754       0xf0 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+                0x9d001754                i2c_start
+
+.text.i2c_init  0x9d001844       0xec
+ .text.i2c_init
+                0x9d001844       0xec build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+                0x9d001844                i2c_init
+
+.text.i2c_write
+                0x9d001930       0xe8
+ .text.i2c_write
+                0x9d001930       0xe8 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+                0x9d001930                i2c_write
+
+.rodata         0x9d001a18       0xdc
+ .rodata        0x9d001a18       0xdc build/default/debug/_ext/1688732426/system_exceptions.o
 
 .text.general_exception
-                0x9d00106c       0xdc
+                0x9d001af4       0xdc
  .text.general_exception
-                0x9d00106c       0xdc c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(general-exception.o)
-                0x9d00106c                _general_exception_context
+                0x9d001af4       0xdc c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(general-exception.o)
+                0x9d001af4                _general_exception_context
 
 .text.DRV_TMR0_Initialize
-                0x9d001148       0xbc
+                0x9d001bd0       0xbc
  .text.DRV_TMR0_Initialize
-                0x9d001148       0xbc build/default/debug/_ext/1407244131/drv_tmr_static.o
-                0x9d001148                DRV_TMR0_Initialize
+                0x9d001bd0       0xbc build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x9d001bd0                DRV_TMR0_Initialize
 
 .text.DRV_TMR1_Initialize
-                0x9d001204       0xbc
+                0x9d001c8c       0xbc
  .text.DRV_TMR1_Initialize
-                0x9d001204       0xbc build/default/debug/_ext/1407244131/drv_tmr_static.o
-                0x9d001204                DRV_TMR1_Initialize
+                0x9d001c8c       0xbc build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x9d001c8c                DRV_TMR1_Initialize
 
 .text.DRV_TMR2_Initialize
-                0x9d0012c0       0xbc
+                0x9d001d48       0xbc
  .text.DRV_TMR2_Initialize
-                0x9d0012c0       0xbc build/default/debug/_ext/1407244131/drv_tmr_static.o
-                0x9d0012c0                DRV_TMR2_Initialize
+                0x9d001d48       0xbc build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x9d001d48                DRV_TMR2_Initialize
 
 .text.DRV_TMR3_Initialize
-                0x9d00137c       0xbc
+                0x9d001e04       0xbc
  .text.DRV_TMR3_Initialize
-                0x9d00137c       0xbc build/default/debug/_ext/1407244131/drv_tmr_static.o
-                0x9d00137c                DRV_TMR3_Initialize
+                0x9d001e04       0xbc build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x9d001e04                DRV_TMR3_Initialize
+
+.text.mcp79411_rtc_reg_read
+                0x9d001ec0       0xb8
+ .text.mcp79411_rtc_reg_read
+                0x9d001ec0       0xb8 build/default/debug/_ext/1360937237/mcp79411.o
 
 .text.SYS_Initialize
-                0x9d001438       0xb4
+                0x9d001f78       0xb4
  .text.SYS_Initialize
-                0x9d001438       0xb4 build/default/debug/_ext/1688732426/system_init.o
-                0x9d001438                SYS_Initialize
+                0x9d001f78       0xb4 build/default/debug/_ext/1688732426/system_init.o
+                0x9d001f78                SYS_Initialize
+
+.text.mcp79411_dec2bcd
+                0x9d00202c       0xb4
+ .text.mcp79411_dec2bcd
+                0x9d00202c       0xb4 build/default/debug/_ext/1360937237/mcp79411.o
 
 .text.PLIB_TMR_PrescaleSelect
-                0x9d0014ec       0xac
+                0x9d0020e0       0xac
  .text.PLIB_TMR_PrescaleSelect
-                0x9d0014ec       0xac ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0014ec                PLIB_TMR_PrescaleSelect
+                0x9d0020e0       0xac ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0020e0                PLIB_TMR_PrescaleSelect
 
-.dinit          0x9d001598       0x90
- .dinit         0x9d001598       0x90 data_init
+.dinit          0x9d00218c       0xa0
+ .dinit         0x9d00218c       0xa0 data_init
 
-.text           0x9d001628       0x84
- .text          0x9d001628       0x84 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(pic32_data_init.o)
-                0x9d001628                __pic32_data_init
+.text.AT42QT_Init
+                0x9d00222c       0x9c
+ .text.AT42QT_Init
+                0x9d00222c       0x9c build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+                0x9d00222c                AT42QT_Init
+
+.text.AT42QT_Read_Key0to7
+                0x9d0022c8       0x90
+ .text.AT42QT_Read_Key0to7
+                0x9d0022c8       0x90 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+                0x9d0022c8                AT42QT_Read_Key0to7
+
+.text.AT42QT_Read_Key8to11
+                0x9d002358       0x90
+ .text.AT42QT_Read_Key8to11
+                0x9d002358       0x90 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+                0x9d002358                AT42QT_Read_Key8to11
+
+.text.mcp79411_bcd2dec
+                0x9d0023e8       0x8c
+ .text.mcp79411_bcd2dec
+                0x9d0023e8       0x8c build/default/debug/_ext/1360937237/mcp79411.o
+
+.text           0x9d002474       0x84
+ .text          0x9d002474       0x84 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(pic32_data_init.o)
+                0x9d002474                __pic32_data_init
+
+.text.APP_WaitStart
+                0x9d0024f8       0x80
+ .text.APP_WaitStart
+                0x9d0024f8       0x80 build/default/debug/_ext/1360937237/app.o
+                0x9d0024f8                APP_WaitStart
+
+.text.i2c_stop  0x9d002578       0x80
+ .text.i2c_stop
+                0x9d002578       0x80 build/default/debug/_ext/1360937237/Mc32_I2cUtilCCS.o
+                0x9d002578                i2c_stop
+
+.text.AT42QT_Write
+                0x9d0025f8       0x74
+ .text.AT42QT_Write
+                0x9d0025f8       0x74 build/default/debug/_ext/1360937237/PIC32130_AT42QT2120_I2C.o
+                0x9d0025f8                AT42QT_Write
 
 .text._DRV_TMR0_Resume
-                0x9d0016ac       0x6c
+                0x9d00266c       0x6c
  .text._DRV_TMR0_Resume
-                0x9d0016ac       0x6c build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x9d00266c       0x6c build/default/debug/_ext/1407244131/drv_tmr_static.o
 
 .text._DRV_TMR2_Resume
-                0x9d001718       0x6c
+                0x9d0026d8       0x6c
  .text._DRV_TMR2_Resume
-                0x9d001718       0x6c build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x9d0026d8       0x6c build/default/debug/_ext/1407244131/drv_tmr_static.o
+
+.text._DRV_TMR3_Resume
+                0x9d002744       0x6c
+ .text._DRV_TMR3_Resume
+                0x9d002744       0x6c build/default/debug/_ext/1407244131/drv_tmr_static.o
 
 .text.SYS_DEVCON_SystemUnlock
-                0x9d001784       0x68
+                0x9d0027b0       0x68
  .text.SYS_DEVCON_SystemUnlock
-                0x9d001784       0x68 build/default/debug/_ext/340578644/sys_devcon.o
-                0x9d001784                SYS_DEVCON_SystemUnlock
+                0x9d0027b0       0x68 build/default/debug/_ext/340578644/sys_devcon.o
+                0x9d0027b0                SYS_DEVCON_SystemUnlock
 
 .text.SYS_DEVCON_SystemLock
-                0x9d0017ec       0x68
+                0x9d002818       0x68
  .text.SYS_DEVCON_SystemLock
-                0x9d0017ec       0x68 build/default/debug/_ext/340578644/sys_devcon.o
-                0x9d0017ec                SYS_DEVCON_SystemLock
+                0x9d002818       0x68 build/default/debug/_ext/340578644/sys_devcon.o
+                0x9d002818                SYS_DEVCON_SystemLock
 
 .text._DRV_TMR0_Suspend
-                0x9d001854       0x64
+                0x9d002880       0x64
  .text._DRV_TMR0_Suspend
-                0x9d001854       0x64 build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x9d002880       0x64 build/default/debug/_ext/1407244131/drv_tmr_static.o
+
+.text._DRV_TMR3_Suspend
+                0x9d0028e4       0x64
+ .text._DRV_TMR3_Suspend
+                0x9d0028e4       0x64 build/default/debug/_ext/1407244131/drv_tmr_static.o
+
+.text.APP_TIMER4_CALLBACK
+                0x9d002948       0x64
+ .text.APP_TIMER4_CALLBACK
+                0x9d002948       0x64 build/default/debug/_ext/1360937237/app.o
+                0x9d002948                APP_TIMER4_CALLBACK
 
 .text.SYS_CLK_Initialize
-                0x9d0018b8       0x60
+                0x9d0029ac       0x60
  .text.SYS_CLK_Initialize
-                0x9d0018b8       0x60 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
-                0x9d0018b8                SYS_CLK_Initialize
+                0x9d0029ac       0x60 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+                0x9d0029ac                SYS_CLK_Initialize
+
+.text.SR_LoadData
+                0x9d002a0c       0x60
+ .text.SR_LoadData
+                0x9d002a0c       0x60 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+                0x9d002a0c                SR_LoadData
 
 .text.PLIB_OSC_PBClockDivisorSet
-                0x9d001918       0x60
+                0x9d002a6c       0x60
  .text.PLIB_OSC_PBClockDivisorSet
-                0x9d001918       0x60 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d001918                PLIB_OSC_PBClockDivisorSet
+                0x9d002a6c       0x60 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d002a6c                PLIB_OSC_PBClockDivisorSet
 
-.text.setAlarmLed
-                0x9d001978       0x5c
- .text.setAlarmLed
-                0x9d001978       0x5c build/default/debug/_ext/1360937237/app.o
-                0x9d001978                setAlarmLed
+.text.mcp79411_rtc_iic_read
+                0x9d002acc       0x5c
+ .text.mcp79411_rtc_iic_read
+                0x9d002acc       0x5c build/default/debug/_ext/1360937237/mcp79411_interface.o
+                0x9d002acc                mcp79411_rtc_iic_read
 
-.text.setDerLed
-                0x9d0019d4       0x54
- .text.setDerLed
-                0x9d0019d4       0x54 build/default/debug/_ext/1360937237/app.o
-                0x9d0019d4                setDerLed
-
-.text.setIn1Led
-                0x9d001a28       0x54
- .text.setIn1Led
-                0x9d001a28       0x54 build/default/debug/_ext/1360937237/app.o
-                0x9d001a28                setIn1Led
-
-.text.setIn2Led
-                0x9d001a7c       0x54
- .text.setIn2Led
-                0x9d001a7c       0x54 build/default/debug/_ext/1360937237/app.o
-                0x9d001a7c                setIn2Led
-
-.text.setIn3Led
-                0x9d001ad0       0x54
- .text.setIn3Led
-                0x9d001ad0       0x54 build/default/debug/_ext/1360937237/app.o
-                0x9d001ad0                setIn3Led
-
-.text.setIn4Led
-                0x9d001b24       0x54
- .text.setIn4Led
-                0x9d001b24       0x54 build/default/debug/_ext/1360937237/app.o
-                0x9d001b24                setIn4Led
-
-.text.setIn5Led
-                0x9d001b78       0x54
- .text.setIn5Led
-                0x9d001b78       0x54 build/default/debug/_ext/1360937237/app.o
-                0x9d001b78                setIn5Led
+.text.mcp79411_rtc_iic_write
+                0x9d002b28       0x58
+ .text.mcp79411_rtc_iic_write
+                0x9d002b28       0x58 build/default/debug/_ext/1360937237/mcp79411_interface.o
+                0x9d002b28                mcp79411_rtc_iic_write
 
 .text.PLIB_INT_VectorPrioritySet
-                0x9d001bcc       0x54
+                0x9d002b80       0x54
  .text.PLIB_INT_VectorPrioritySet
-                0x9d001bcc       0x54 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d001bcc                PLIB_INT_VectorPrioritySet
+                0x9d002b80       0x54 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d002b80                PLIB_INT_VectorPrioritySet
 
 .text.main_entry
-                0x9d001c20       0x54
+                0x9d002bd4       0x54
  .text.main_entry
-                0x9d001c20       0x54 C:\Users\AYMCLA~1\AppData\Local\Temp\cchQOE5g.o
-                0x9d001c54                __crt0_exit
+                0x9d002bd4       0x54 C:\Users\AYMCLA~1\AppData\Local\Temp\ccQq2Tq3.o
+                0x9d002c08                __crt0_exit
 
 .text._general_exception_handler
-                0x9d001c74       0x50
+                0x9d002c28       0x50
  .text._general_exception_handler
-                0x9d001c74       0x50 build/default/debug/_ext/1688732426/system_exceptions.o
-                0x9d001c74                _general_exception_handler
+                0x9d002c28       0x50 build/default/debug/_ext/1688732426/system_exceptions.o
+                0x9d002c28                _general_exception_handler
 
 .text.PLIB_INT_VectorSubPrioritySet
-                0x9d001cc4       0x50
+                0x9d002c78       0x50
  .text.PLIB_INT_VectorSubPrioritySet
-                0x9d001cc4       0x50 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d001cc4                PLIB_INT_VectorSubPrioritySet
-
-.text.PLIB_PORTS_PinWrite
-                0x9d001d14       0x50
- .text.PLIB_PORTS_PinWrite
-                0x9d001d14       0x50 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d001d14                PLIB_PORTS_PinWrite
-
-.text.DRV_ADC_SamplesRead
-                0x9d001d64       0x48
- .text.DRV_ADC_SamplesRead
-                0x9d001d64       0x48 build/default/debug/_ext/1361460060/drv_adc_static.o
-                0x9d001d64                DRV_ADC_SamplesRead
+                0x9d002c78       0x50 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d002c78                PLIB_INT_VectorSubPrioritySet
 
 .text._bootstrap_exception_handler
-                0x9d001dac       0x48
+                0x9d002cc8       0x48
  .text._bootstrap_exception_handler
-                0x9d001dac       0x48 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
-                0x9d001dac                _bootstrap_exception_handler
+                0x9d002cc8       0x48 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+                0x9d002cc8                _bootstrap_exception_handler
 
 .vector_default
-                0x9d001df4       0x48
+                0x9d002d10       0x48
  .vector_default
-                0x9d001df4       0x48 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
-                0x9d001df4                _DefaultInterrupt
+                0x9d002d10       0x48 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+                0x9d002d10                _DefaultInterrupt
 
 .text.DRV_TMR0_Stop
-                0x9d001e3c       0x44
+                0x9d002d58       0x44
  .text.DRV_TMR0_Stop
-                0x9d001e3c       0x44 build/default/debug/_ext/1407244131/drv_tmr_static.o
-                0x9d001e3c                DRV_TMR0_Stop
+                0x9d002d58       0x44 build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x9d002d58                DRV_TMR0_Stop
 
-.text           0x9d001e80       0x44
- .text          0x9d001e80       0x44 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
-                0x9d001e80                __pic32_software_reset
+.text.DRV_TMR3_Stop
+                0x9d002d9c       0x44
+ .text.DRV_TMR3_Stop
+                0x9d002d9c       0x44 build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x9d002d9c                DRV_TMR3_Stop
+
+.text.SR_Init   0x9d002de0       0x44
+ .text.SR_Init  0x9d002de0       0x44 build/default/debug/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o
+                0x9d002de0                SR_Init
+
+.text           0x9d002e24       0x44
+ .text          0x9d002e24       0x44 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\pic32_software_reset.o
+                0x9d002e24                __pic32_software_reset
 
 .text.DRV_TMR0_Start
-                0x9d001ec4       0x40
+                0x9d002e68       0x40
  .text.DRV_TMR0_Start
-                0x9d001ec4       0x40 build/default/debug/_ext/1407244131/drv_tmr_static.o
-                0x9d001ec4                DRV_TMR0_Start
+                0x9d002e68       0x40 build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x9d002e68                DRV_TMR0_Start
 
 .text.DRV_TMR2_Start
-                0x9d001f04       0x40
+                0x9d002ea8       0x40
  .text.DRV_TMR2_Start
-                0x9d001f04       0x40 build/default/debug/_ext/1407244131/drv_tmr_static.o
-                0x9d001f04                DRV_TMR2_Start
+                0x9d002ea8       0x40 build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x9d002ea8                DRV_TMR2_Start
 
-.text.APP_TIMER1_CALLBACK
-                0x9d001f44       0x3c
- .text.APP_TIMER1_CALLBACK
-                0x9d001f44       0x3c build/default/debug/_ext/1360937237/app.o
-                0x9d001f44                APP_TIMER1_CALLBACK
+.text.DRV_TMR3_Start
+                0x9d002ee8       0x40
+ .text.DRV_TMR3_Start
+                0x9d002ee8       0x40 build/default/debug/_ext/1407244131/drv_tmr_static.o
+                0x9d002ee8                DRV_TMR3_Start
 
 .text.SYS_DEVCON_Initialize
-                0x9d001f80       0x3c
+                0x9d002f28       0x3c
  .text.SYS_DEVCON_Initialize
-                0x9d001f80       0x3c build/default/debug/_ext/340578644/sys_devcon.o
-                0x9d001f80                SYS_DEVCON_Initialize
+                0x9d002f28       0x3c build/default/debug/_ext/340578644/sys_devcon.o
+                0x9d002f28                SYS_DEVCON_Initialize
+
+.text.APP_TIMER1_CALLBACK
+                0x9d002f64       0x3c
+ .text.APP_TIMER1_CALLBACK
+                0x9d002f64       0x3c build/default/debug/_ext/1360937237/app.o
+                0x9d002f64                APP_TIMER1_CALLBACK
 
 .text.DRV_ADC_Open
-                0x9d001fbc       0x38
+                0x9d002fa0       0x38
  .text.DRV_ADC_Open
-                0x9d001fbc       0x38 build/default/debug/_ext/1361460060/drv_adc_static.o
-                0x9d001fbc                DRV_ADC_Open
+                0x9d002fa0       0x38 build/default/debug/_ext/1361460060/drv_adc_static.o
+                0x9d002fa0                DRV_ADC_Open
 
 .text.DRV_ADC_Start
-                0x9d001ff4       0x38
+                0x9d002fd8       0x38
  .text.DRV_ADC_Start
-                0x9d001ff4       0x38 build/default/debug/_ext/1361460060/drv_adc_static.o
-                0x9d001ff4                DRV_ADC_Start
+                0x9d002fd8       0x38 build/default/debug/_ext/1361460060/drv_adc_static.o
+                0x9d002fd8                DRV_ADC_Start
 
-.text.DRV_ADC_SamplesAvailable
-                0x9d00202c       0x38
- .text.DRV_ADC_SamplesAvailable
-                0x9d00202c       0x38 build/default/debug/_ext/1361460060/drv_adc_static.o
-                0x9d00202c                DRV_ADC_SamplesAvailable
-
-.text.SYS_INT_Initialize
-                0x9d002064       0x34
- .text.SYS_INT_Initialize
-                0x9d002064       0x34 build/default/debug/_ext/711155467/sys_int_pic32.o
-                0x9d002064                SYS_INT_Initialize
+.text.PLIB_I2C_BaudRateSet
+                0x9d003010       0x38
+ .text.PLIB_I2C_BaudRateSet
+                0x9d003010       0x38 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003010                PLIB_I2C_BaudRateSet
 
 .text.SYS_DEVCON_JTAGDisable
-                0x9d002098       0x34
+                0x9d003048       0x34
  .text.SYS_DEVCON_JTAGDisable
-                0x9d002098       0x34 build/default/debug/_ext/340578644/sys_devcon.o
-                0x9d002098                SYS_DEVCON_JTAGDisable
+                0x9d003048       0x34 build/default/debug/_ext/340578644/sys_devcon.o
+                0x9d003048                SYS_DEVCON_JTAGDisable
+
+.text.SYS_INT_Initialize
+                0x9d00307c       0x34
+ .text.SYS_INT_Initialize
+                0x9d00307c       0x34 build/default/debug/_ext/711155467/sys_int_pic32.o
+                0x9d00307c                SYS_INT_Initialize
 
 .text.PLIB_ADC_MuxChannel0InputNegativeSelect
-                0x9d0020cc       0x34
+                0x9d0030b0       0x34
  .text.PLIB_ADC_MuxChannel0InputNegativeSelect
-                0x9d0020cc       0x34 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0020cc                PLIB_ADC_MuxChannel0InputNegativeSelect
+                0x9d0030b0       0x34 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0030b0                PLIB_ADC_MuxChannel0InputNegativeSelect
 
 .text.SYS_Tasks
-                0x9d002100       0x30
+                0x9d0030e4       0x30
  .text.SYS_Tasks
-                0x9d002100       0x30 build/default/debug/_ext/1688732426/system_tasks.o
-                0x9d002100                SYS_Tasks
+                0x9d0030e4       0x30 build/default/debug/_ext/1688732426/system_tasks.o
+                0x9d0030e4                SYS_Tasks
 
-.text.main      0x9d002130       0x2c
- .text.main     0x9d002130       0x2c build/default/debug/_ext/1360937237/main.o
-                0x9d002130                main
+.text.SYS_CLK_PeripheralFrequencyGet
+                0x9d003114       0x2c
+ .text.SYS_CLK_PeripheralFrequencyGet
+                0x9d003114       0x2c build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+                0x9d003114                SYS_CLK_PeripheralFrequencyGet
 
-.text.APP_Initialize
-                0x9d00215c       0x28
- .text.APP_Initialize
-                0x9d00215c       0x28 build/default/debug/_ext/1360937237/app.o
-                0x9d00215c                APP_Initialize
+.text.main      0x9d003140       0x2c
+ .text.main     0x9d003140       0x2c build/default/debug/_ext/1360937237/main.o
+                0x9d003140                main
+
+.text.PLIB_I2C_ReceivedByteAcknowledge
+                0x9d00316c       0x2c
+ .text.PLIB_I2C_ReceivedByteAcknowledge
+                0x9d00316c       0x2c ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d00316c                PLIB_I2C_ReceivedByteAcknowledge
 
 .text.SYS_CLK_SystemFrequencyGet
-                0x9d002184       0x28
+                0x9d003198       0x28
  .text.SYS_CLK_SystemFrequencyGet
-                0x9d002184       0x28 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
-                0x9d002184                SYS_CLK_SystemFrequencyGet
+                0x9d003198       0x28 build/default/debug/_ext/639803181/sys_clk_pic32mx.o
+                0x9d003198                SYS_CLK_SystemFrequencyGet
+
+.text.APP_Initialize
+                0x9d0031c0       0x28
+ .text.APP_Initialize
+                0x9d0031c0       0x28 build/default/debug/_ext/1360937237/app.o
+                0x9d0031c0                APP_Initialize
 
 .text.PLIB_DEVCON_SystemUnlock
-                0x9d0021ac       0x28
+                0x9d0031e8       0x28
  .text.PLIB_DEVCON_SystemUnlock
-                0x9d0021ac       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0021ac                PLIB_DEVCON_SystemUnlock
+                0x9d0031e8       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0031e8                PLIB_DEVCON_SystemUnlock
 
 .text.PLIB_INT_SourceFlagClear
-                0x9d0021d4       0x28
+                0x9d003210       0x28
  .text.PLIB_INT_SourceFlagClear
-                0x9d0021d4       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0021d4                PLIB_INT_SourceFlagClear
+                0x9d003210       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003210                PLIB_INT_SourceFlagClear
 
 .text.PLIB_INT_SourceEnable
-                0x9d0021fc       0x28
+                0x9d003238       0x28
  .text.PLIB_INT_SourceEnable
-                0x9d0021fc       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0021fc                PLIB_INT_SourceEnable
+                0x9d003238       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003238                PLIB_INT_SourceEnable
 
 .text.PLIB_INT_SourceDisable
-                0x9d002224       0x28
+                0x9d003260       0x28
  .text.PLIB_INT_SourceDisable
-                0x9d002224       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002224                PLIB_INT_SourceDisable
+                0x9d003260       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003260                PLIB_INT_SourceDisable
 
 .text.PLIB_PORTS_PinSet
-                0x9d00224c       0x28
+                0x9d003288       0x28
  .text.PLIB_PORTS_PinSet
-                0x9d00224c       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d00224c                PLIB_PORTS_PinSet
+                0x9d003288       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003288                PLIB_PORTS_PinSet
 
 .text.PLIB_PORTS_PinClear
-                0x9d002274       0x28
+                0x9d0032b0       0x28
  .text.PLIB_PORTS_PinClear
-                0x9d002274       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002274                PLIB_PORTS_PinClear
+                0x9d0032b0       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0032b0                PLIB_PORTS_PinClear
 
 .text.PLIB_PORTS_PinToggle
-                0x9d00229c       0x28
+                0x9d0032d8       0x28
  .text.PLIB_PORTS_PinToggle
-                0x9d00229c       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d00229c                PLIB_PORTS_PinToggle
+                0x9d0032d8       0x28 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0032d8                PLIB_PORTS_PinToggle
 
 .text.PLIB_ADC_ConversionClockSet
-                0x9d0022c4       0x24
+                0x9d003300       0x24
  .text.PLIB_ADC_ConversionClockSet
-                0x9d0022c4       0x24 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0022c4                PLIB_ADC_ConversionClockSet
+                0x9d003300       0x24 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003300                PLIB_ADC_ConversionClockSet
+
+.text.PLIB_I2C_BusIsIdle
+                0x9d003324       0x24
+ .text.PLIB_I2C_BusIsIdle
+                0x9d003324       0x24 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003324                PLIB_I2C_BusIsIdle
 
 .text.PLIB_INT_Enable
-                0x9d0022e8       0x24
+                0x9d003348       0x24
  .text.PLIB_INT_Enable
-                0x9d0022e8       0x24 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0022e8                PLIB_INT_Enable
+                0x9d003348       0x24 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003348                PLIB_INT_Enable
 
 .text.PLIB_PORTS_PinGet
-                0x9d00230c       0x24
+                0x9d00336c       0x24
  .text.PLIB_PORTS_PinGet
-                0x9d00230c       0x24 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d00230c                PLIB_PORTS_PinGet
+                0x9d00336c       0x24 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d00336c                PLIB_PORTS_PinGet
 
 .text.PLIB_PORTS_AnPinsModeSelect
-                0x9d002330       0x20
+                0x9d003390       0x20
  .text.PLIB_PORTS_AnPinsModeSelect
-                0x9d002330       0x20 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002330                PLIB_PORTS_AnPinsModeSelect
+                0x9d003390       0x20 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003390                PLIB_PORTS_AnPinsModeSelect
 
 .text.PLIB_PORTS_Write
-                0x9d002350       0x20
+                0x9d0033b0       0x20
  .text.PLIB_PORTS_Write
-                0x9d002350       0x20 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002350                PLIB_PORTS_Write
+                0x9d0033b0       0x20 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0033b0                PLIB_PORTS_Write
 
 .text.PLIB_PORTS_DirectionOutputSet
-                0x9d002370       0x20
+                0x9d0033d0       0x20
  .text.PLIB_PORTS_DirectionOutputSet
-                0x9d002370       0x20 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002370                PLIB_PORTS_DirectionOutputSet
+                0x9d0033d0       0x20 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0033d0                PLIB_PORTS_DirectionOutputSet
 
 .text.PLIB_PORTS_OpenDrainEnable
-                0x9d002390       0x20
+                0x9d0033f0       0x20
  .text.PLIB_PORTS_OpenDrainEnable
-                0x9d002390       0x20 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002390                PLIB_PORTS_OpenDrainEnable
+                0x9d0033f0       0x20 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0033f0                PLIB_PORTS_OpenDrainEnable
 
 .text.PLIB_INT_GetStateAndDisable
-                0x9d0023b0       0x1c
+                0x9d003410       0x1c
  .text.PLIB_INT_GetStateAndDisable
-                0x9d0023b0       0x1c ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0023b0                PLIB_INT_GetStateAndDisable
+                0x9d003410       0x1c ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003410                PLIB_INT_GetStateAndDisable
 
 .text.PLIB_ADC_Enable
-                0x9d0023cc       0x18
+                0x9d00342c       0x18
  .text.PLIB_ADC_Enable
-                0x9d0023cc       0x18 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0023cc                PLIB_ADC_Enable
-
-.text.PLIB_ADC_ResultGetByIndex
-                0x9d0023e4       0x18
- .text.PLIB_ADC_ResultGetByIndex
-                0x9d0023e4       0x18 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0023e4                PLIB_ADC_ResultGetByIndex
+                0x9d00342c       0x18 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d00342c                PLIB_ADC_Enable
 
 .text.PLIB_DEVCON_JTAGPortDisable
-                0x9d0023fc       0x18
+                0x9d003444       0x18
  .text.PLIB_DEVCON_JTAGPortDisable
-                0x9d0023fc       0x18 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0023fc                PLIB_DEVCON_JTAGPortDisable
+                0x9d003444       0x18 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003444                PLIB_DEVCON_JTAGPortDisable
 
 .text.PLIB_DEVCON_SystemLock
-                0x9d002414       0x18
+                0x9d00345c       0x18
  .text.PLIB_DEVCON_SystemLock
-                0x9d002414       0x18 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002414                PLIB_DEVCON_SystemLock
+                0x9d00345c       0x18 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d00345c                PLIB_DEVCON_SystemLock
 
 .text.PLIB_OSC_FRCDivisorSelect
-                0x9d00242c       0x18
+                0x9d003474       0x18
  .text.PLIB_OSC_FRCDivisorSelect
-                0x9d00242c       0x18 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d00242c                PLIB_OSC_FRCDivisorSelect
+                0x9d003474       0x18 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003474                PLIB_OSC_FRCDivisorSelect
 
 .text.PLIB_TMR_Mode16BitEnable
-                0x9d002444       0x18
+                0x9d00348c       0x18
  .text.PLIB_TMR_Mode16BitEnable
-                0x9d002444       0x18 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002444                PLIB_TMR_Mode16BitEnable
+                0x9d00348c       0x18 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d00348c                PLIB_TMR_Mode16BitEnable
 
-.text           0x9d00245c       0x18
- .text          0x9d00245c       0x18 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
-                0x9d00245c                _nmi_handler
+.text           0x9d0034a4       0x18
+ .text          0x9d0034a4       0x18 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
+                0x9d0034a4                _nmi_handler
 
 .text.PLIB_ADC_InputScanMaskAdd
-                0x9d002474       0x14
+                0x9d0034bc       0x14
  .text.PLIB_ADC_InputScanMaskAdd
-                0x9d002474       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002474                PLIB_ADC_InputScanMaskAdd
+                0x9d0034bc       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0034bc                PLIB_ADC_InputScanMaskAdd
 
 .text.PLIB_ADC_VoltageReferenceSelect
-                0x9d002488       0x14
+                0x9d0034d0       0x14
  .text.PLIB_ADC_VoltageReferenceSelect
-                0x9d002488       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002488                PLIB_ADC_VoltageReferenceSelect
+                0x9d0034d0       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0034d0                PLIB_ADC_VoltageReferenceSelect
 
 .text.PLIB_ADC_SamplingModeSelect
-                0x9d00249c       0x14
+                0x9d0034e4       0x14
  .text.PLIB_ADC_SamplingModeSelect
-                0x9d00249c       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d00249c                PLIB_ADC_SamplingModeSelect
+                0x9d0034e4       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0034e4                PLIB_ADC_SamplingModeSelect
 
 .text.PLIB_ADC_SamplesPerInterruptSelect
-                0x9d0024b0       0x14
+                0x9d0034f8       0x14
  .text.PLIB_ADC_SamplesPerInterruptSelect
-                0x9d0024b0       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0024b0                PLIB_ADC_SamplesPerInterruptSelect
+                0x9d0034f8       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0034f8                PLIB_ADC_SamplesPerInterruptSelect
 
 .text.PLIB_ADC_SampleAcquisitionTimeSet
-                0x9d0024c4       0x14
+                0x9d00350c       0x14
  .text.PLIB_ADC_SampleAcquisitionTimeSet
-                0x9d0024c4       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0024c4                PLIB_ADC_SampleAcquisitionTimeSet
+                0x9d00350c       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d00350c                PLIB_ADC_SampleAcquisitionTimeSet
 
 .text.PLIB_ADC_ConversionClockSourceSelect
-                0x9d0024d8       0x14
+                0x9d003520       0x14
  .text.PLIB_ADC_ConversionClockSourceSelect
-                0x9d0024d8       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0024d8                PLIB_ADC_ConversionClockSourceSelect
+                0x9d003520       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003520                PLIB_ADC_ConversionClockSourceSelect
 
 .text.PLIB_ADC_ConversionTriggerSourceSelect
-                0x9d0024ec       0x14
+                0x9d003534       0x14
  .text.PLIB_ADC_ConversionTriggerSourceSelect
-                0x9d0024ec       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0024ec                PLIB_ADC_ConversionTriggerSourceSelect
+                0x9d003534       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003534                PLIB_ADC_ConversionTriggerSourceSelect
 
 .text.PLIB_ADC_ResultFormatSelect
-                0x9d002500       0x14
+                0x9d003548       0x14
  .text.PLIB_ADC_ResultFormatSelect
-                0x9d002500       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002500                PLIB_ADC_ResultFormatSelect
+                0x9d003548       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003548                PLIB_ADC_ResultFormatSelect
 
 .text.PLIB_ADC_ResultBufferModeSelect
-                0x9d002514       0x14
+                0x9d00355c       0x14
  .text.PLIB_ADC_ResultBufferModeSelect
-                0x9d002514       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002514                PLIB_ADC_ResultBufferModeSelect
+                0x9d00355c       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d00355c                PLIB_ADC_ResultBufferModeSelect
 
 .text.PLIB_BMX_DataRamWaitStateSet
-                0x9d002528       0x14
+                0x9d003570       0x14
  .text.PLIB_BMX_DataRamWaitStateSet
-                0x9d002528       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002528                PLIB_BMX_DataRamWaitStateSet
+                0x9d003570       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003570                PLIB_BMX_DataRamWaitStateSet
 
 .text.PLIB_INT_MultiVectorSelect
-                0x9d00253c       0x14
+                0x9d003584       0x14
  .text.PLIB_INT_MultiVectorSelect
-                0x9d00253c       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d00253c                PLIB_INT_MultiVectorSelect
+                0x9d003584       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003584                PLIB_INT_MultiVectorSelect
 
 .text.PLIB_PCACHE_WaitStateSet
-                0x9d002550       0x14
+                0x9d003598       0x14
  .text.PLIB_PCACHE_WaitStateSet
-                0x9d002550       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002550                PLIB_PCACHE_WaitStateSet
+                0x9d003598       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003598                PLIB_PCACHE_WaitStateSet
 
 .text.PLIB_PCACHE_PrefetchEnableSet
-                0x9d002564       0x14
+                0x9d0035ac       0x14
  .text.PLIB_PCACHE_PrefetchEnableSet
-                0x9d002564       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002564                PLIB_PCACHE_PrefetchEnableSet
+                0x9d0035ac       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0035ac                PLIB_PCACHE_PrefetchEnableSet
 
 .text.PLIB_PORTS_ChangeNoticeEnable
-                0x9d002578       0x14
+                0x9d0035c0       0x14
  .text.PLIB_PORTS_ChangeNoticeEnable
-                0x9d002578       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002578                PLIB_PORTS_ChangeNoticeEnable
+                0x9d0035c0       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0035c0                PLIB_PORTS_ChangeNoticeEnable
 
 .text.PLIB_TMR_ClockSourceSelect
-                0x9d00258c       0x14
+                0x9d0035d4       0x14
  .text.PLIB_TMR_ClockSourceSelect
-                0x9d00258c       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d00258c                PLIB_TMR_ClockSourceSelect
+                0x9d0035d4       0x14 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0035d4                PLIB_TMR_ClockSourceSelect
 
 .text.PLIB_ADC_StopInIdleDisable
-                0x9d0025a0       0x10
+                0x9d0035e8       0x10
  .text.PLIB_ADC_StopInIdleDisable
-                0x9d0025a0       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0025a0                PLIB_ADC_StopInIdleDisable
+                0x9d0035e8       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0035e8                PLIB_ADC_StopInIdleDisable
 
 .text.PLIB_ADC_MuxAInputScanEnable
-                0x9d0025b0       0x10
+                0x9d0035f8       0x10
  .text.PLIB_ADC_MuxAInputScanEnable
-                0x9d0025b0       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0025b0                PLIB_ADC_MuxAInputScanEnable
+                0x9d0035f8       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0035f8                PLIB_ADC_MuxAInputScanEnable
 
 .text.PLIB_ADC_SampleAutoStartEnable
-                0x9d0025c0       0x10
+                0x9d003608       0x10
  .text.PLIB_ADC_SampleAutoStartEnable
-                0x9d0025c0       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0025c0                PLIB_ADC_SampleAutoStartEnable
+                0x9d003608       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003608                PLIB_ADC_SampleAutoStartEnable
 
 .text.PLIB_ADC_SamplingStart
-                0x9d0025d0       0x10
+                0x9d003618       0x10
  .text.PLIB_ADC_SamplingStart
-                0x9d0025d0       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0025d0                PLIB_ADC_SamplingStart
+                0x9d003618       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003618                PLIB_ADC_SamplingStart
+
+.text.PLIB_I2C_SlaveClockStretchingEnable
+                0x9d003628       0x10
+ .text.PLIB_I2C_SlaveClockStretchingEnable
+                0x9d003628       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003628                PLIB_I2C_SlaveClockStretchingEnable
+
+.text.PLIB_I2C_HighFrequencyEnable
+                0x9d003638       0x10
+ .text.PLIB_I2C_HighFrequencyEnable
+                0x9d003638       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003638                PLIB_I2C_HighFrequencyEnable
+
+.text.PLIB_I2C_Enable
+                0x9d003648       0x10
+ .text.PLIB_I2C_Enable
+                0x9d003648       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003648                PLIB_I2C_Enable
+
+.text.PLIB_I2C_Disable
+                0x9d003658       0x10
+ .text.PLIB_I2C_Disable
+                0x9d003658       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003658                PLIB_I2C_Disable
+
+.text.PLIB_I2C_ArbitrationLossClear
+                0x9d003668       0x10
+ .text.PLIB_I2C_ArbitrationLossClear
+                0x9d003668       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003668                PLIB_I2C_ArbitrationLossClear
+
+.text.PLIB_I2C_SlaveClockRelease
+                0x9d003678       0x10
+ .text.PLIB_I2C_SlaveClockRelease
+                0x9d003678       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003678                PLIB_I2C_SlaveClockRelease
+
+.text.PLIB_I2C_MasterStart
+                0x9d003688       0x10
+ .text.PLIB_I2C_MasterStart
+                0x9d003688       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003688                PLIB_I2C_MasterStart
+
+.text.PLIB_I2C_MasterReceiverClock1Byte
+                0x9d003698       0x10
+ .text.PLIB_I2C_MasterReceiverClock1Byte
+                0x9d003698       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003698                PLIB_I2C_MasterReceiverClock1Byte
+
+.text.PLIB_I2C_MasterStop
+                0x9d0036a8       0x10
+ .text.PLIB_I2C_MasterStop
+                0x9d0036a8       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0036a8                PLIB_I2C_MasterStop
+
+.text.PLIB_I2C_TransmitterIsReady
+                0x9d0036b8       0x10
+ .text.PLIB_I2C_TransmitterIsReady
+                0x9d0036b8       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0036b8                PLIB_I2C_TransmitterIsReady
+
+.text.PLIB_I2C_TransmitterByteHasCompleted
+                0x9d0036c8       0x10
+ .text.PLIB_I2C_TransmitterByteHasCompleted
+                0x9d0036c8       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0036c8                PLIB_I2C_TransmitterByteHasCompleted
+
+.text.PLIB_I2C_TransmitterByteWasAcknowledged
+                0x9d0036d8       0x10
+ .text.PLIB_I2C_TransmitterByteWasAcknowledged
+                0x9d0036d8       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0036d8                PLIB_I2C_TransmitterByteWasAcknowledged
+
+.text.PLIB_I2C_TransmitterOverflowClear
+                0x9d0036e8       0x10
+ .text.PLIB_I2C_TransmitterOverflowClear
+                0x9d0036e8       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0036e8                PLIB_I2C_TransmitterOverflowClear
+
+.text.PLIB_I2C_MasterReceiverReadyToAcknowledge
+                0x9d0036f8       0x10
+ .text.PLIB_I2C_MasterReceiverReadyToAcknowledge
+                0x9d0036f8       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0036f8                PLIB_I2C_MasterReceiverReadyToAcknowledge
+
+.text.PLIB_I2C_ReceiverOverflowClear
+                0x9d003708       0x10
+ .text.PLIB_I2C_ReceiverOverflowClear
+                0x9d003708       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003708                PLIB_I2C_ReceiverOverflowClear
 
 .text.PLIB_PORTS_CnPinsEnable
-                0x9d0025e0       0x10
+                0x9d003718       0x10
  .text.PLIB_PORTS_CnPinsEnable
-                0x9d0025e0       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0025e0                PLIB_PORTS_CnPinsEnable
+                0x9d003718       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003718                PLIB_PORTS_CnPinsEnable
 
 .text.PLIB_PORTS_CnPinsPullUpEnable
-                0x9d0025f0       0x10
+                0x9d003728       0x10
  .text.PLIB_PORTS_CnPinsPullUpEnable
-                0x9d0025f0       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d0025f0                PLIB_PORTS_CnPinsPullUpEnable
+                0x9d003728       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003728                PLIB_PORTS_CnPinsPullUpEnable
 
 .text.PLIB_TMR_Start
-                0x9d002600       0x10
+                0x9d003738       0x10
  .text.PLIB_TMR_Start
-                0x9d002600       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002600                PLIB_TMR_Start
+                0x9d003738       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003738                PLIB_TMR_Start
 
 .text.PLIB_TMR_Stop
-                0x9d002610       0x10
+                0x9d003748       0x10
  .text.PLIB_TMR_Stop
-                0x9d002610       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002610                PLIB_TMR_Stop
+                0x9d003748       0x10 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003748                PLIB_TMR_Stop
 
 .text.__exception_handler_break
-                0x9d002620        0xc
+                0x9d003758        0xc
  .text.__exception_handler_break
-                0x9d002620        0xc c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
-                0x9d002620                __exception_handler_break
+                0x9d003758        0xc c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\software-debug-break.o
+                0x9d003758                __exception_handler_break
 
-.text.PLIB_ADC_ConversionHasCompleted
-                0x9d00262c        0xc
- .text.PLIB_ADC_ConversionHasCompleted
-                0x9d00262c        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d00262c                PLIB_ADC_ConversionHasCompleted
+.text.PLIB_I2C_StartWasDetected
+                0x9d003764        0xc
+ .text.PLIB_I2C_StartWasDetected
+                0x9d003764        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003764                PLIB_I2C_StartWasDetected
+
+.text.PLIB_I2C_StopWasDetected
+                0x9d003770        0xc
+ .text.PLIB_I2C_StopWasDetected
+                0x9d003770        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003770                PLIB_I2C_StopWasDetected
+
+.text.PLIB_I2C_ArbitrationLossHasOccurred
+                0x9d00377c        0xc
+ .text.PLIB_I2C_ArbitrationLossHasOccurred
+                0x9d00377c        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d00377c                PLIB_I2C_ArbitrationLossHasOccurred
+
+.text.PLIB_I2C_TransmitterIsBusy
+                0x9d003788        0xc
+ .text.PLIB_I2C_TransmitterIsBusy
+                0x9d003788        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003788                PLIB_I2C_TransmitterIsBusy
+
+.text.PLIB_I2C_TransmitterByteSend
+                0x9d003794        0xc
+ .text.PLIB_I2C_TransmitterByteSend
+                0x9d003794        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d003794                PLIB_I2C_TransmitterByteSend
+
+.text.PLIB_I2C_TransmitterOverflowHasOccurred
+                0x9d0037a0        0xc
+ .text.PLIB_I2C_TransmitterOverflowHasOccurred
+                0x9d0037a0        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0037a0                PLIB_I2C_TransmitterOverflowHasOccurred
+
+.text.PLIB_I2C_ReceivedByteIsAvailable
+                0x9d0037ac        0xc
+ .text.PLIB_I2C_ReceivedByteIsAvailable
+                0x9d0037ac        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0037ac                PLIB_I2C_ReceivedByteIsAvailable
+
+.text.PLIB_I2C_ReceivedByteGet
+                0x9d0037b8        0xc
+ .text.PLIB_I2C_ReceivedByteGet
+                0x9d0037b8        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0037b8                PLIB_I2C_ReceivedByteGet
+
+.text.PLIB_I2C_ReceiverOverflowHasOccurred
+                0x9d0037c4        0xc
+ .text.PLIB_I2C_ReceiverOverflowHasOccurred
+                0x9d0037c4        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0037c4                PLIB_I2C_ReceiverOverflowHasOccurred
 
 .text.PLIB_TMR_Counter16BitClear
-                0x9d002638        0xc
+                0x9d0037d0        0xc
  .text.PLIB_TMR_Counter16BitClear
-                0x9d002638        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002638                PLIB_TMR_Counter16BitClear
+                0x9d0037d0        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0037d0                PLIB_TMR_Counter16BitClear
 
 .text.PLIB_TMR_Period16BitSet
-                0x9d002644        0xc
+                0x9d0037dc        0xc
  .text.PLIB_TMR_Period16BitSet
-                0x9d002644        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002644                PLIB_TMR_Period16BitSet
+                0x9d0037dc        0xc ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0037dc                PLIB_TMR_Period16BitSet
 
 .text.PLIB_BMX_ExistsDataRamWaitState
-                0x9d002650        0x8
+                0x9d0037e8        0x8
  .text.PLIB_BMX_ExistsDataRamWaitState
-                0x9d002650        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002650                PLIB_BMX_ExistsDataRamWaitState
+                0x9d0037e8        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0037e8                PLIB_BMX_ExistsDataRamWaitState
 
 .text.PLIB_PCACHE_ExistsWaitState
-                0x9d002658        0x8
+                0x9d0037f0        0x8
  .text.PLIB_PCACHE_ExistsWaitState
-                0x9d002658        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002658                PLIB_PCACHE_ExistsWaitState
+                0x9d0037f0        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0037f0                PLIB_PCACHE_ExistsWaitState
 
 .text.PLIB_PCACHE_ExistsPrefetchEnable
-                0x9d002660        0x8
+                0x9d0037f8        0x8
  .text.PLIB_PCACHE_ExistsPrefetchEnable
-                0x9d002660        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
-                0x9d002660                PLIB_PCACHE_ExistsPrefetchEnable
+                0x9d0037f8        0x8 ..\..\..\..\..\..\bin\framework\peripheral\PIC32MX795F512L_peripherals.a(peripheral.o)
+                0x9d0037f8                PLIB_PCACHE_ExistsPrefetchEnable
 
 .text._on_reset
-                0x9d002668        0x8
+                0x9d003800        0x8
  .text._on_reset
-                0x9d002668        0x8 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
-                0x9d002668                _on_reset
+                0x9d003800        0x8 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+                0x9d003800                _on_reset
 
 .text._on_bootstrap
-                0x9d002670        0x8
+                0x9d003808        0x8
  .text._on_bootstrap
-                0x9d002670        0x8 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
-                0x9d002670                _on_bootstrap
+                0x9d003808        0x8 c:/program files/microchip/xc32/v2.50/bin/bin/../../lib/gcc/pic32mx/4.8.3/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+                0x9d003808                _on_bootstrap

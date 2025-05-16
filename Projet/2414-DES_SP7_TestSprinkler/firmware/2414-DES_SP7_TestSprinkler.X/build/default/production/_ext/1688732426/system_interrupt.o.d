@@ -173,7 +173,9 @@ build/default/production/_ext/1688732426/system_interrupt.o: \
  ../../../../../../framework/peripheral/ports/processor/../templates/ports_ChangeNoticeEdgeControl_Unsupported.h \
  ../../../../../../framework/peripheral/ports/processor/../templates/ports_ChangeNoticeEdgeStatus_Unsupported.h \
  ../../../../../../framework/peripheral/ports/plib_ports_compatibility.h \
- ../src/Mc32DriverAdc.h ../src/system_config/default/system_definitions.h
+ ../src/Mc32DriverAdc.h ../src/Driver_SR_SN74HCS596QPWRQ1.h ../src/app.h \
+ ../src/mcp79411.h ../src/mcp79411_interface.h \
+ ../src/system_config/default/system_definitions.h
 
 ../../../../../../framework/system/common/sys_common.h:
 
@@ -524,5 +526,13 @@ build/default/production/_ext/1688732426/system_interrupt.o: \
 ../../../../../../framework/peripheral/ports/plib_ports_compatibility.h:
 
 ../src/Mc32DriverAdc.h:
+
+../src/Driver_SR_SN74HCS596QPWRQ1.h:
+
+../src/app.h:
+
+../src/mcp79411.h:
+
+../src/mcp79411_interface.h:
 
 ../src/system_config/default/system_definitions.h:

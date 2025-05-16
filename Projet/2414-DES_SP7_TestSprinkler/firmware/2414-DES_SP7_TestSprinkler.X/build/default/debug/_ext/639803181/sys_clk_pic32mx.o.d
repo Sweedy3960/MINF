@@ -173,7 +173,8 @@ build/default/debug/_ext/639803181/sys_clk_pic32mx.o: \
  ../../../../../../framework/peripheral/ports/processor/../templates/ports_ChangeNoticeEdgeControl_Unsupported.h \
  ../../../../../../framework/peripheral/ports/processor/../templates/ports_ChangeNoticeEdgeStatus_Unsupported.h \
  ../../../../../../framework/peripheral/ports/plib_ports_compatibility.h \
- ../src/app.h ../src/Mc32DriverAdc.h
+ ../src/app.h ../src/Mc32DriverAdc.h ../src/Driver_SR_SN74HCS596QPWRQ1.h \
+ ../src/app.h ../src/mcp79411.h ../src/mcp79411_interface.h
 
 ../src/system_config/default/system_config.h:
 
@@ -524,3 +525,11 @@ build/default/debug/_ext/639803181/sys_clk_pic32mx.o: \
 ../src/app.h:
 
 ../src/Mc32DriverAdc.h:
+
+../src/Driver_SR_SN74HCS596QPWRQ1.h:
+
+../src/app.h:
+
+../src/mcp79411.h:
+
+../src/mcp79411_interface.h:

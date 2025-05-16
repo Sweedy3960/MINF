@@ -57,6 +57,15 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "stdint.h"
 #include "stdbool.h"
 #include "Mc32DriverAdc.h"
+#include "Mc32_I2cUtil_SM.h"
+#include "PIC32130_AT42QT2120_I2C.h"
+#include "Driver_SR_SN74HCS596QPWRQ1.h"
+#include "Mc32gestI2cSeeprom.h"
+#include "mcp79411.h"
+#include "mcp79411_interface.h"
+
+
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -79,6 +88,10 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 */
 
 APP_DATA appData;
+SR_Context SR_LEDS;
+S_AT42QT2120 s_newDataSensor; //Structure pour envoie des nouvelles datas
+S_AT42QT2120 s_dataSensor;    //Structure pour l'envoie des datas
+S_AT42QT2120 s_getDataSensor; //Structure pour la recéption des datas
 
 // *****************************************************************************
 // *****************************************************************************
@@ -138,24 +151,42 @@ void APP_Tasks ( void )
 {
     //timer1 used to buzz RN 
     //timer 2 used to SR LED (trying)
-    static uint8_t value; 
+
    // SR_LEDS LEDS;
-    static uint8_t SampleReadyToRead;
-    uint8_t i; 
+    bool NACK = false;
+    mcp79411_time timeofRTC;
+    uint8_t ret;
+    
     /* Check the application's current state. */
     switch ( appData.state )
     {
+        
         /* Application's initial state. */
         case APP_STATE_INIT:
         {
-            SR_LED_OE_2On(); //éteind
-            TESTPINOn(); //éteind
-            for (i=0;i<16;i++)
-            {
-                appData.sysLeds.Leds[i].state= 0;
-            }
-            APP_SERIAL_LEDS_CMD();
+            //AT42QT_Init();
+            //SR_LED_OE_2On(); //éteind
+            //TESTPINOn(); //étein
+            
+            
+            
+            AT42QT_Init();
+            //mcp79411_init();
+            //mcp79411_TIME_KEEPING time;
+            //time.bytes= 0;
+            // 
+            //I2C_InitMCP79411();
+            
+            ret = mcp79411_set_time(0);
+            
+            appData.SR_leds = &SR_LEDS;
+            SR_Init(appData.SR_leds);
+            
+            
             DRV_ADC_Initialize();
+            
+            
+            
             DRV_ADC_Open(); 
             DRV_ADC_Start();
             
@@ -163,16 +194,16 @@ void APP_Tasks ( void )
             //BSP_InitADC10();
             appData.state = APP_STATE_SERVICE_TASKS;
             LIFELED_GREENOff();
-        }
+            
+        } break;
 
         case APP_STATE_SERVICE_TASKS:
         {
-            //SR_LED_OE_1Toggle();
-            //TESTPINToggle();
-            value = SC3StateGet();
-            TESTPINStateSet(value);
-            //BUZZ_CMDToggle();
-            if (value)
+            GetInputsStates();
+            ret =mcp79411_get_time(&timeofRTC);
+            
+            
+            if (appData.SySwitch.FreeIn1_conf)
             {
                 DRV_TMR0_Start();
             }
@@ -181,25 +212,29 @@ void APP_Tasks ( void )
                 DRV_TMR0_Stop();
                 //appData.valAD=BSP_ReadAllADC();
             }
-            SampleReadyToRead = DRV_ADC_SamplesAvailable();
- 
-            if (SampleReadyToRead) {
-                SR_LED_OE_2Toggle();
-                for (i = 0; i < 14; i++) {
-                    appData.valAD[i] = DRV_ADC_SamplesRead(i);
-
- 
-                }
-        }
-        setAlarmLed();
-        setDerLed();
-        setIn1Led();
-        setIn2Led();
-        setIn3Led();
-        setIn4Led();
-        setIn5Led();
-        APP_SERIAL_LEDS_CMD();    
-            break;
+            
+            SR_LoadData(appData.SR_leds ,0);
+            
+            if (appData.SySwitch.FreeIn2_conf)
+            {
+                SR_Update(appData.SR_leds);
+                
+            }
+            if(appData.SySwitch.FreeIn3_conf)
+            {
+                //SPB_OUT3_CMDToggle();
+            }
+            else
+            {
+            
+            }
+          //AdcReadAllSamples();
+            if (appData.SySwitch.FreeIn4_conf) {
+               // APP_SERIAL_LEDS_CMD();
+                s_dataSensor.valKey8to11 = AT42QT_Read_Key8to11(NACK);
+                s_dataSensor.valKey0to7 = AT42QT_Read_Key0to7(NACK);
+            }
+           
             
             
             
@@ -207,7 +242,7 @@ void APP_Tasks ( void )
             
          
             
-        }
+        } break;
 
         /* TODO: implement your application state machine.*/
         
@@ -221,6 +256,35 @@ void APP_Tasks ( void )
     }
 }
 
+void GetInputsStates(void) {
+    
+    
+    
+    appData.SySwitch.SPBIn3_conf = SC3StateGet();
+    appData.SySwitch.SPBIn2_conf = SC2StateGet();
+    appData.SySwitch.SPBIn2_conf= SC1StateGet();
+    appData.SySwitch.FreeIn1_conf= FC1StateGet();
+    appData.SySwitch.FreeIn2_conf= FC2StateGet();
+    appData.SySwitch.FreeIn3_conf= FC3StateGet();
+    appData.SySwitch.FreeIn4_conf= FC4StateGet();
+    appData.SySwitch.FreeIn5_conf= FC5StateGet();
+    
+
+}
+ void AdcReadAllSamples(void)
+ {
+    uint8_t i =0;
+    static uint8_t SampleReadyToRead;
+    SampleReadyToRead = DRV_ADC_SamplesAvailable();
+ 
+            if (SampleReadyToRead) {
+                for (i = 0; i < 14; i++) {
+                    appData.valAD[i] = DRV_ADC_SamplesRead(i);
+
+ 
+                }
+ }
+ }
  void APP_TIMER1_CALLBACK(void)
  {
      //between 1khz and 4khz 
@@ -229,105 +293,80 @@ void APP_Tasks ( void )
      
     BUZZ_CMDToggle();
  }
- void APP_SERIAL_LEDS_CMD(void)
+ 
+ 
+  void CLOCKING_SRCLK(void)
+  {
+      SR_SRCLK_FKCDPToggle(); //shift reg clk (internal shiftign))
+      APP_WaitStart(10);
+      SR_SRCLK_FKCDPToggle();
+      APP_WaitStart(10);
+  }
+  void CLOCKING_CLK(void)
+  {
+    SR_LED_CLKOff();
+    SR_LED_OE_2Off(); //enable output (alume sortie)
+    SR_LED_CLKToggle();//latch outputs
+    SR_LED_CLKToggle();//latch outputs
+    
+  }
+void APP_SERIAL_LEDS_CMD(void)
 {
-    /*SR REG : 25times per sec 13CLK -- 325HZ  
-         output disable -> send data -> output disable 
+    /*SR REG :
      * //1 on state led goes off
      * 
      * SR_LED_OE_1Toggle();
      * is remplaced by 
      * TESTPINStateSet();     
      */
-    static uint8_t state =0;
+    //static uint8_t state =0;
     static uint8_t i =0;
-    SR_LED_CLKOff();
-    SR_SRCLK_FKCDPOff();
-    SR_LED_OE_2On(); //éteind
-    TESTPINOn(); //éteind
-    SR_LED_OE_2Off();
-    TESTPINOff();
-    for (i=0;i<20;i++)
-    {
-        SR_LED_DATAStateSet( appData.sysLeds.Leds[i].state= 0);
-        SR_SRCLK_FKCDPToggle();
-        SR_LED_CLKToggle();
-        SR_SRCLK_FKCDPToggle();
-        SR_LED_CLKToggle();
+     //static uint16_t n =0;
+    
+    TESTPINOff(); 
+    CLOCKING_CLK();
+    CLOCKING_CLK();
+    //n = gray_conv(i);
+    for (i = 0; i < 16; i++) {
+        SR_LED_DATAStateSet(0);//(appData.sysLeds.cmd_leds & i));
+        CLOCKING_SRCLK();
+        
+       
     }
+    CLOCKING_CLK();
+   
+    //allume les sortie 
     
 }
-void setAlarmLed(void)
-{
-    static uint8_t cnt=0;
-    if (cnt != 0)
-    {
-        appData.sysLeds.Leds[ALARRM_LED_SAVE].state=1;
-    }
-    appData.sysLeds.Leds[ALARRM_LED].state=1;
-    cnt++;
-}
-void setDerLed(void)
-{
-     static uint8_t cnt=0;
-    if (cnt != 0)
-    {
-        appData.sysLeds.Leds[DERR_LED].state=0;
-    }
-    appData.sysLeds.Leds[DERR_LED_SAVE].state=0;
-    cnt++;
-}
-void setIn1Led(void)
-{
-     static uint8_t cnt=0;
-    if (cnt != 0)
-    {
-        appData.sysLeds.Leds[FREE_IN1_LED].state=0;
-    }
-    appData.sysLeds.Leds[FREE_IN1_LED_SAVE].state=0;
-    cnt++;
-}
-void setIn2Led(void)
-{
-    static uint8_t cnt=0;
-    if (cnt != 0)
-    {
-        appData.sysLeds.Leds[FREE_IN2_LED].state=0;
-    }
-    appData.sysLeds.Leds[FREE_IN2_LED_SAVE].state=0;
-    cnt++;
-}
-void setIn3Led(void)
-{
-    static uint8_t cnt=0;
-    if (cnt != 0)
-    {
-        appData.sysLeds.Leds[FREE_IN3_LED].state=0;
-    }
-    appData.sysLeds.Leds[FREE_IN3_LED_SAVE].state=0;
-    cnt++;
-}
-void setIn4Led(void)
-{
-    static uint8_t cnt=0;
-    if (cnt != 0)
-    {
-        appData.sysLeds.Leds[FREE_IN4_LED].state=0;
-    }
-    appData.sysLeds.Leds[FREE_IN4_LED_SAVE].state=0;
-    cnt++;
-}
-void setIn5Led(void)
-{
-    static  uint8_t cnt=0;
-    if (cnt != 0)
-    {
-        appData.sysLeds.Leds[FREE_IN5_LED].state=0;
-    }
-    appData.sysLeds.Leds[FREE_IN5_LED_SAVE].state=0;
-    cnt++;
-}
 
+
+  
+    //APP_WaitStart(cnt);
+
+
+
+/*
+ * Fct d'attente en fct du param d'entrée en ms 
+ * utilisation du timer 1 attente = 1ms
+*/
+void APP_WaitStart(uint16_t waitingTime_ms) {
+
+    appData.AppDelay = waitingTime_ms - 1;
+    DRV_TMR3_Start();
+    appData.APP_DelayTimeIsRunning = 1;
+    while (appData.APP_DelayTimeIsRunning) {
+    }
+    DRV_TMR3_Stop();
+}
+   void APP_TIMER4_CALLBACK(void){
+    if (appData.AppDelay > 0) {
+        appData.AppDelay--;
+    } else {
+        appData.APP_DelayTimeIsRunning = 0;
+    }
+    
+  }
+ 
 /*******************************************************************************
  End of File
  */
