@@ -4,3 +4,6 @@
 [submodule "TP/TP2_PwmRs232_ACL_MBR/TP2_RS232"]
 	path = TP/TP2_PwmRs232_ACL_MBR/TP2_RS232
 	url = https://github.com/Sweedy3960/TP2_RS232
+[submodule "TP/TP2_PwmRs232_ACL_MBR/TP2_RS232"]
+	path = TP/TP3_MenuGen
+	url = https://github.com/Sweedy3960/TP3_MenuGen
