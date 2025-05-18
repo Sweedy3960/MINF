@@ -48,8 +48,8 @@
  
 void I2C_InitMCP79411(void)
 {
-   bool Fast = true;
-   i2c_init( Fast );
+   //bool Fast = true;
+   //i2c_init( Fast );
 } //end I2C_InitMCP79411
  
 void I2C_WriteSEEPROM(void *SrcData, uint32_t EEpromAddr, uint16_t NbBytes)

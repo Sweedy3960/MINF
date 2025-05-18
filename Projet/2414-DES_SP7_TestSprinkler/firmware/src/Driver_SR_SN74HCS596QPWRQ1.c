@@ -56,7 +56,7 @@
   @Remarks
     Any additional remarks
  */
-SERIAL_REG_DATA SregData;
+//SERIAL_REG_DATA SregData;
 
 
 /* ************************************************************************** */
@@ -115,9 +115,16 @@ SERIAL_REG_DATA SregData;
     }
  */
 void SR_Init(SERIAL_REG_DATA *SRegData) {
-    SregData.state = SR_IDLE;
-    SregData.cmd_leds = 0b0101010101010101;
-     
+    SRegData->state = SR_IDLE;
+    SRegData->cmd_leds = 0x0000;
+    SR_LED_CLKOff();
+    SR_SRCLK_FKCDPOff();
+    //should be SR_LED_OE_1On but its
+    // and activ low so 
+    TESTPINOn();//set off 
+    //TESTPINOff();//set on 
+    SR_LED_OE_2On();//set off 
+    //return  SRegData;
 }
 
 void SR_Update(SERIAL_REG_DATA *SregData) {
@@ -129,41 +136,50 @@ void SR_Update(SERIAL_REG_DATA *SregData) {
      */
     static bool usingSr=false;
     static uint16_t i=0;
-    
+    uint16_t cmd_led_save = SregData->cmd_leds;
     usingSr=true;
- 
-    
-    //put that to init 
-    SR_LED_CLKOff();
-    SR_SRCLK_FKCDPOff();
-    //should be SR_LED_OE_1On but its
-    // and activ low so 
-    TESTPINOn();//set off 
+    //guess issue 
+    //SR_LED_DATAStateSet(0) all on 
+    //SR_LED_DATAStateSet(1) all on exept LED9  
+    //
+    //outputs of 
+    // TESTPINOn();//set off 
     //TESTPINOff();//set on 
-    SR_LED_OE_2On();//set off 
+    //SR_LED_OE_2On();//set off 
     
     //data valid at first clk
     SR_LED_DATAStateSet((SregData->cmd_leds & 0x01));   
-    
-    for (i=0;i<15;i++)
+    APP_WaitStart(1);
+    for (i=0;i<=16;i++)
     {
         
         
         //first clk shifting 
         SR_SRCLK_FKCDPOn();
-        //APP_WaitStart(0);
-        SR_SRCLK_FKCDPOff();
+        APP_WaitStart(1);
         //latch output is shift clk inverted 
+        
+        
+        SR_SRCLK_FKCDPOff();
+        
+       
         SR_LED_CLKOn();
-        //APP_WaitStart(0);
+        //APP_WaitStart(1);
+        
+         
+        APP_WaitStart(1);
         SR_LED_CLKOff();
         //setting valid data before next clking 
+        //SregData->cmd_leds = 0x0000;
+        APP_WaitStart(1);
         SregData->cmd_leds =SregData->cmd_leds>>1;
-        SR_LED_DATAStateSet((SregData->cmd_leds & 0x01));   
+        SR_LED_DATAStateSet((SregData->cmd_leds & 0x01));
+        APP_WaitStart(1);
     }
+    APP_WaitStart(1);
     TESTPINOff();//set on 
     SR_LED_OE_2Off();//set on
-    
+    SregData->cmd_leds = cmd_led_save;
     
     
     //try to do a driver 

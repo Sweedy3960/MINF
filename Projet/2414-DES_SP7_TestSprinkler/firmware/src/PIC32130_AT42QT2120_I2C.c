@@ -52,9 +52,9 @@
 ***************************************************************************/
  void AT42QT_Init(void) 
  {
-     bool Fast = false; //false = LOW speed / true= HIGH speed
+     //bool Fast = false; //false = LOW speed / true= HIGH speed
      
-     i2c_init(Fast);    //Initlialisation de l'I2C
+     //i2c_init(Fast);    //Initlialisation de l'I2C
     // AT42QT_Write(); //Detection du potentiomètre
      
      /*-- Changment de sensibilité des boutons --*/

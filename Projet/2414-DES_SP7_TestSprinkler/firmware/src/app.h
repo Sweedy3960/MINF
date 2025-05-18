@@ -146,7 +146,7 @@ extern "C" {
         SERIAL_REG_DATA  sysLeds;
         uint32_t AppDelay;
         bool APP_DelayTimeIsRunning;
-        void* SR_leds;
+        //void* SR_leds;
         ConfInSwitchs SySwitch;
         
         /* TODO: Define any additional data used by the application. */

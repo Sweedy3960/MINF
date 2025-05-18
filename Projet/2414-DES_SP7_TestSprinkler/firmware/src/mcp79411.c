@@ -378,33 +378,35 @@ int mcp79411_stop_alarm(mcp79411_alarm_channel chnl)
 
 void mcp79411_init(void)
 {
-//    i2c_start(); 
-//    i2c_write(( MCP79411_I2C_ADDR  << 1) | 0); 
-//    // Mode écriture
-//    i2c_write(MCP79411_REG_RTCC_RTCSEC); 
-//    // Début à RTCSEC 
-//    // Démarre l'oscillateur (bit ST = 1) et positionne 00:00:00 
-//    i2c_write(0x80 | mcp79411_bcd2dec(0));
-//    // Secondes avec ST = 1 
-//    i2c_write(mcp79411_bcd2dec(0)); 
-//    // Minutes 
-//    i2c_write(mcp79411_bcd2dec(0)); 
-//    // Heures 
-//    i2c_write(0x01); 
-//    // Jour de la semaine (dummy) 
-//    i2c_write(0x01); 
-//    // Jour du mois (dummy)
-//    i2c_write(0x01); 
-//    // Mois (dummy)
-//    i2c_write(0x00); 
-//    // Année (dummy) i2c_stop(); 
-//    // Active ALM0 et désactive l'onde carrée (SQWE) 
-//    i2c_start();
-//    i2c_write((MCP79411_I2C_ADDR << 1) | 0); 
-//    i2c_write(MCP79411_REG_RTCC_CONTROL);
-//    i2c_write(0x10);
-    
-    
+    //i2c_init(1);
+    i2c_start(); 
+    i2c_write(( MCP79411_I2C_ADDR  << 1) | 0); 
+    // Mode écriture
+    i2c_write(MCP79411_REG_RTCC_RTCSEC); 
+    // Début à RTCSEC 
+    // Démarre l'oscillateur (bit ST = 1) et positionne 00:00:00 
+    i2c_write(0x80 | mcp79411_bcd2dec(0));
+    // Secondes avec ST = 1 
+    i2c_write(mcp79411_bcd2dec(0)); 
+    // Minutes 
+    i2c_write(mcp79411_bcd2dec(0)); 
+    // Heures 
+    i2c_write(0x01); 
+    // Jour de la semaine (dummy) 
+    i2c_write(0x01); 
+    // Jour du mois (dummy)
+    i2c_write(0x01); 
+    // Mois (dummy)
+    i2c_write(0x00); 
+    // Année (dummy) 
+    i2c_stop(); 
+    // Active ALM0 et désactive l'onde carrée (SQWE) 
+    i2c_start();
+    i2c_write((MCP79411_I2C_ADDR << 1) | 0); 
+    i2c_write(MCP79411_REG_RTCC_CONTROL);
+    i2c_write(0x10);
+    i2c_stop(); 
+    /*
     mcp79411_CONTROL reg_CONTROL;
     mcp79411_OSCTRIM reg_OSCTRIM;
     int i = 0;
@@ -426,5 +428,5 @@ void mcp79411_init(void)
 
     reg_OSCTRIM.byte = 0;
     (void)mcp79411_rtc_reg_write(MCP79411_REG_RTCC_OSCTRIM, &reg_OSCTRIM.byte, sizeof(reg_OSCTRIM));
-     
+     */
 }

@@ -63,7 +63,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "Mc32gestI2cSeeprom.h"
 #include "mcp79411.h"
 #include "mcp79411_interface.h"
-
+#include "Mc32_I2cUtilCCS.h"
 
 
 // *****************************************************************************
@@ -154,7 +154,7 @@ void APP_Tasks ( void )
    // SR_LEDS LEDS;
     bool NACK = false;
     mcp79411_time timeofRTC;
-    uint8_t ret;
+    static uint8_t ret;
     
     /* Check the application's current state. */
     switch ( appData.state )
@@ -168,15 +168,17 @@ void APP_Tasks ( void )
             //TESTPINOn(); //étein
             
             
-            
+            i2c_init(1);
             AT42QT_Init();
-            //mcp79411_init();
+           // mcp79411_init();
             //mcp79411_TIME_KEEPING time;
             //time.bytes= 0;
             // 
             //I2C_InitMCP79411();
-            
-            ret = mcp79411_set_time(0);
+           // mcp79411_time time;
+            //time.min = 1;
+            mcp79411_init();
+            ret = mcp79411_set_time(&timeofRTC);
             
             
             SR_Init(&appData.sysLeds);
@@ -199,7 +201,7 @@ void APP_Tasks ( void )
         case APP_STATE_SERVICE_TASKS:
         {
             GetInputsStates();
-            ret =mcp79411_get_time(&timeofRTC);
+            //et =mcp79411_get_time(&timeofRTC);
             
             
             if (appData.SySwitch.FreeIn1_conf)
@@ -212,11 +214,13 @@ void APP_Tasks ( void )
                 //appData.valAD=BSP_ReadAllADC();
             }
             
-            SR_LoadData(appData.SR_leds ,0);
+            //SR_LoadData(appData.SR_leds ,0);
             
             if (appData.SySwitch.FreeIn2_conf)
             {
-                SR_Update(appData.SR_leds);
+                SR_Update(&appData.sysLeds);
+                APP_WaitStart(1000);
+                //appData.sysLeds.cmd_leds = 0xFFFF;
                 
             }
             if(appData.SySwitch.FreeIn3_conf)
@@ -229,7 +233,7 @@ void APP_Tasks ( void )
             }
           //AdcReadAllSamples();
             if (appData.SySwitch.FreeIn4_conf) {
-               // APP_SERIAL_LEDS_CMD();
+ 
                 s_dataSensor.valKey8to11 = AT42QT_Read_Key8to11(NACK);
                 s_dataSensor.valKey0to7 = AT42QT_Read_Key0to7(NACK);
             }
@@ -291,56 +295,10 @@ void GetInputsStates(void) {
      //with loop if necessary 
      
     BUZZ_CMDToggle();
+    
  }
  
- 
-  void CLOCKING_SRCLK(void)
-  {
-      SR_SRCLK_FKCDPToggle(); //shift reg clk (internal shiftign))
-      APP_WaitStart(10);
-      SR_SRCLK_FKCDPToggle();
-      APP_WaitStart(10);
-  }
-  void CLOCKING_CLK(void)
-  {
-    SR_LED_CLKOff();
-    SR_LED_OE_2Off(); //enable output (alume sortie)
-    SR_LED_CLKToggle();//latch outputs
-    SR_LED_CLKToggle();//latch outputs
-    
-  }
-void APP_SERIAL_LEDS_CMD(void)
-{
-    /*SR REG :
-     * //1 on state led goes off
-     * 
-     * SR_LED_OE_1Toggle();
-     * is remplaced by 
-     * TESTPINStateSet();     
-     */
-    //static uint8_t state =0;
-    static uint8_t i =0;
-     //static uint16_t n =0;
-    
-    TESTPINOff(); 
-    CLOCKING_CLK();
-    CLOCKING_CLK();
-    //n = gray_conv(i);
-    for (i = 0; i < 16; i++) {
-        SR_LED_DATAStateSet(0);//(appData.sysLeds.cmd_leds & i));
-        CLOCKING_SRCLK();
-        
-       
-    }
-    CLOCKING_CLK();
-   
-    //allume les sortie 
-    
-}
 
-
-  
-    //APP_WaitStart(cnt);
 
 
 
