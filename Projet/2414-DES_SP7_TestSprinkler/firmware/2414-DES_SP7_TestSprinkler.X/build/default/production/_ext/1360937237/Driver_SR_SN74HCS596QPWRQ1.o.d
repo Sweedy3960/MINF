@@ -1,6 +1,6 @@
 build/default/production/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o: \
- ../src/Driver_SR_SN74HCS596QPWRQ1.c ../src/Driver_SR_SN74HCS596QPWRQ1.h \
- ../src/app.h ../src/system_config/default/system_config.h \
+ ../src/Driver_SR_SN74HCS596QPWRQ1.c ../src/app.h \
+ ../src/system_config/default/system_config.h \
  ../src/system_config/default/system_definitions.h \
  ../../../../../../framework/system/common/sys_common.h \
  ../../../../../../framework/system/common/sys_module.h \
@@ -173,10 +173,8 @@ build/default/production/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o: \
  ../../../../../../framework/peripheral/ports/processor/../templates/ports_ChangeNoticeEdgeControl_Unsupported.h \
  ../../../../../../framework/peripheral/ports/processor/../templates/ports_ChangeNoticeEdgeStatus_Unsupported.h \
  ../../../../../../framework/peripheral/ports/plib_ports_compatibility.h \
- ../src/app.h ../src/Mc32DriverAdc.h ../src/mcp79411.h \
- ../src/mcp79411_interface.h
-
-../src/Driver_SR_SN74HCS596QPWRQ1.h:
+ ../src/app.h ../src/Mc32DriverAdc.h ../src/Driver_SR_SN74HCS596QPWRQ1.h \
+ ../src/mcp79411.h ../src/mcp79411_interface.h
 
 ../src/app.h:
 
@@ -529,6 +527,8 @@ build/default/production/_ext/1360937237/Driver_SR_SN74HCS596QPWRQ1.o: \
 ../src/app.h:
 
 ../src/Mc32DriverAdc.h:
+
+../src/Driver_SR_SN74HCS596QPWRQ1.h:
 
 ../src/mcp79411.h:
 

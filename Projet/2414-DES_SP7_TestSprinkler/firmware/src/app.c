@@ -88,7 +88,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 */
 
 APP_DATA appData;
-SR_Context SR_LEDS;
 S_AT42QT2120 s_newDataSensor; //Structure pour envoie des nouvelles datas
 S_AT42QT2120 s_dataSensor;    //Structure pour l'envoie des datas
 S_AT42QT2120 s_getDataSensor; //Structure pour la recéption des datas
@@ -179,8 +178,8 @@ void APP_Tasks ( void )
             
             ret = mcp79411_set_time(0);
             
-            appData.SR_leds = &SR_LEDS;
-            SR_Init(appData.SR_leds);
+            
+            SR_Init(&appData.sysLeds);
             
             
             DRV_ADC_Initialize();

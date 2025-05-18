@@ -198,7 +198,6 @@ uint8_t AT42QT_Read_Wheel(bool n_ACK)
     i2c_write(I2C_ADDRESS_WRITE);
     i2c_write(SLIDER_POSITION); 
     i2c_stop();
-
     i2c_start();
     i2c_write(I2C_ADDRESS_READ);
     valI2C = i2c_read(n_ACK);    

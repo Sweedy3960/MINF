@@ -25,9 +25,10 @@
  */
 
 /* TODO:  Include other files here if needed. */
-#include "Driver_SR_SN74HCS596QPWRQ1.h"
+
 #include "app.h"
 #include "stdlib.h"
+#include "Driver_SR_SN74HCS596QPWRQ1.h"
 /* ************************************************************************** */
 /* ************************************************************************** */
 /* Section: File Scope or Global Data                                         */
@@ -55,7 +56,7 @@
   @Remarks
     Any additional remarks
  */
-int global_data;
+SERIAL_REG_DATA SregData;
 
 
 /* ************************************************************************** */
@@ -113,30 +114,60 @@ int global_data;
         return 3;
     }
  */
-void SR_Init(SR_Context *SRegData) {
-    SRegData->state = SR_IDLE;
-    SRegData->dataToSR = 0b0101010101010101;
-    SRegData->SelectedLed = 0x8000; // Start with the MSB
+void SR_Init(SERIAL_REG_DATA *SRegData) {
+    SregData.state = SR_IDLE;
+    SregData.cmd_leds = 0b0101010101010101;
+     
 }
 
-void SR_Update() {
+void SR_Update(SERIAL_REG_DATA *SregData) {
     /*
      boucle 1 a 16 
      * mask 0x01 et >>1 
      * 
      
      */
+    static bool usingSr=false;
     static uint16_t i=0;
+    
+    usingSr=true;
+ 
+    
+    //put that to init 
+    SR_LED_CLKOff();
+    SR_SRCLK_FKCDPOff();
+    //should be SR_LED_OE_1On but its
+    // and activ low so 
+    TESTPINOn();//set off 
+    //TESTPINOff();//set on 
+    SR_LED_OE_2On();//set off 
+    
+    //data valid at first clk
+    SR_LED_DATAStateSet((SregData->cmd_leds & 0x01));   
+    
     for (i=0;i<15;i++)
     {
-        (cmd_leds & 0x01);
-        .cmd_leds>>1;
+        
+        
+        //first clk shifting 
+        SR_SRCLK_FKCDPOn();
+        //APP_WaitStart(0);
+        SR_SRCLK_FKCDPOff();
+        //latch output is shift clk inverted 
+        SR_LED_CLKOn();
+        //APP_WaitStart(0);
+        SR_LED_CLKOff();
+        //setting valid data before next clking 
+        SregData->cmd_leds =SregData->cmd_leds>>1;
+        SR_LED_DATAStateSet((SregData->cmd_leds & 0x01));   
     }
+    TESTPINOff();//set on 
+    SR_LED_OE_2Off();//set on
     
     
     
-    
-    
+    //try to do a driver 
+    /*
     switch (SRegData->state) {
         case SR_IDLE:
             // No operation
@@ -151,7 +182,7 @@ void SR_Update() {
                 SR_LED_DATAOn();
             }
             
-            SR_SRCLK_FKCDPToggle();
+            
              APP_WaitStart(5);
             SR_SRCLK_FKCDPToggle();
             
@@ -178,7 +209,8 @@ void SR_Update() {
 
             SRegData->state = SR_IDLE;
             break;
-    }
+     */
+    
 }
 
 
@@ -204,15 +236,14 @@ void SR_Update() {
   @Remarks
     Refer to the example_file.h interface header for function usage details.
  */
-void SR_LoadData(SR_Context *SRegData, uint16_t data) {
+void SR_LoadData(SERIAL_REG_DATA *SRegData, uint16_t data) {
     if (SRegData->state == SR_IDLE) {
-        SRegData->dataToSR = data;
-        SRegData->SelectedLed = 0x8000;
+        SRegData->cmd_leds = data;
         SRegData->state = SR_SHIFTING;
     }
 }
 
-void SR_LoadData2(SR_Context *SRegData, uint8_t data) {
+void SR_LoadData2(SERIAL_REG_DATA *SRegData, uint8_t data) {
     if (SRegData->state == SR_IDLE) {
         /*/*/
     }

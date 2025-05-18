@@ -107,14 +107,7 @@ extern "C" {
         SR_LATCHING
     } SR_State;
 
-     typedef struct {
-        //state task
-        SR_State state;
-        //var for the 16 led states 
-        uint16_t dataToSR;
-        //bitmaskfor selection
-        uint16_t SelectedLed;
-    } SR_Context;
+    
     typedef union {
 
         struct {
@@ -137,7 +130,8 @@ extern "C" {
 
         };
         uint16_t cmd_leds;
-    } u_Leds;    
+        SR_State state;
+    } SERIAL_REG_DATA;    
     typedef enum {
         ALARRM_LED = 15,
         ALARRM_LED_SAVE = 16,
@@ -212,9 +206,9 @@ extern "C" {
         }
      */
    
-void SR_Init(SR_Context *SRegData);
-void SR_Update(SR_Context *SRegData);
-void SR_LoadData(SR_Context *SRegData, uint16_t data);
+void SR_Init(SERIAL_REG_DATA *SRegData);
+void SR_Update(SERIAL_REG_DATA *SRegData);
+void SR_LoadData(SERIAL_REG_DATA *SRegData, uint16_t data);
     /* Provide C++ Compatibility */
 #ifdef __cplusplus
 }

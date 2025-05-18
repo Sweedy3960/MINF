@@ -143,7 +143,7 @@ extern "C" {
         /* The application's current state */
         APP_STATES state;
         ADC_SAMPLE valAD[14];
-        //u_Leds     sysLeds;
+        SERIAL_REG_DATA  sysLeds;
         uint32_t AppDelay;
         bool APP_DelayTimeIsRunning;
         void* SR_leds;
