@@ -56,12 +56,13 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "app.h"
 #include "stdint.h"
 #include "stdbool.h"
+#include "mcp79411.h"
 #include "Mc32DriverAdc.h"
 #include "Mc32_I2cUtil_SM.h"
 #include "PIC32130_AT42QT2120_I2C.h"
 #include "Driver_SR_SN74HCS596QPWRQ1.h"
 #include "Mc32gestI2cSeeprom.h"
-#include "mcp79411.h"
+
 #include "mcp79411_interface.h"
 #include "Mc32_I2cUtilCCS.h"
 
@@ -167,8 +168,8 @@ void APP_Tasks ( void )
             //SR_LED_OE_2On(); //éteind
             //TESTPINOn(); //étein
             
-            
-            i2c_init(1);
+            int a =12;
+            i2c_init(0);
             AT42QT_Init();
            // mcp79411_init();
             //mcp79411_TIME_KEEPING time;
@@ -178,9 +179,21 @@ void APP_Tasks ( void )
            // mcp79411_time time;
             //time.min = 1;
             mcp79411_init();
+           
+          
+            
+          
+            
+            
+            
+            
+            timeofRTC.sec = 0;
+            
             ret = mcp79411_set_time(&timeofRTC);
             
-            
+            timeofRTC.year =mcp79411_dec2bcd((unsigned char)a);
+           // mcp79411_set_time(&timeofRTC);
+            mcp79411_get_time(&timeofRTC);
             SR_Init(&appData.sysLeds);
             
             
@@ -201,7 +214,7 @@ void APP_Tasks ( void )
         case APP_STATE_SERVICE_TASKS:
         {
             GetInputsStates();
-            //et =mcp79411_get_time(&timeofRTC);
+            ret =mcp79411_get_time(&timeofRTC);
             
             
             if (appData.SySwitch.FreeIn1_conf)

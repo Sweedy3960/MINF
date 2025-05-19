@@ -8,7 +8,9 @@
  */
 #ifndef _MCP79411_H
 #define _MCP79411_H
-
+#include "stdint.h"
+#ifndef NULL_PTR
+#define NULL_PTR ((void*)0)
 
 typedef struct {
     char sec;
@@ -51,4 +53,11 @@ extern int mcp79411_get_time(mcp79411_time* time);
 extern int mcp79411_set_alarm(mcp79411_alarm_channel chnl, mcp79411_alarm_mode mode,
  mcp79411_alarm *alarm);
 extern int mcp79411_stop_alarm(mcp79411_alarm_channel chnl);
+
+//added to use it in app.c
+extern unsigned char mcp79411_dec2bcd(unsigned char dec);
+extern unsigned char mcp79411_bcd2dec(unsigned char bcd);
+int mcp79411_rtc_iic_read(uint8_t  *rx_buffer,short len);
+int mcp79411_rtc_iic_write(uint8_t  *tx_buffer, short len);
+#endif
 #endif

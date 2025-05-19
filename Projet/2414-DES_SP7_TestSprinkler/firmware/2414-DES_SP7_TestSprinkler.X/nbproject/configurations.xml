@@ -45,7 +45,6 @@
         <itemPath>../src/Mc32_I2cUtilCCS.h</itemPath>
         <itemPath>../src/Mc32gestI2cSeeprom.h</itemPath>
         <itemPath>../src/mcp79411.h</itemPath>
-        <itemPath>../src/mcp79411_interface.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="framework" projectFiles="true">
         <logicalFolder name="f2" displayName="driver" projectFiles="true">
@@ -170,7 +169,6 @@
         <itemPath>../src/PIC32130_AT42QT2120_I2C.c</itemPath>
         <itemPath>../src/Mc32_I2cUtilCCS.c</itemPath>
         <itemPath>../src/mcp79411.c</itemPath>
-        <itemPath>../src/mcp79411_interface.c</itemPath>
         <itemPath>../src/Mc32gestI2cSeeprom.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="framework" projectFiles="true">

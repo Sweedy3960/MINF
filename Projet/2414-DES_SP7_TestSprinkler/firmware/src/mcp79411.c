@@ -8,7 +8,7 @@
  */
 
 #include "mcp79411.h"
-#include "mcp79411_interface.h"
+
 #include "Mc32_I2cUtilCCS.h"
 
 #define MCP79411_BUFFER_MAX     (256)
@@ -49,7 +49,8 @@
 #define MCP79411_REG_RTCC_PWRUPHOUR    ((unsigned char)(0x1D))
 #define MCP79411_REG_RTCC_PWRUPDATE    ((unsigned char)(0x1E))
 #define MCP79411_REG_RTCC_PWRUPMTH     ((unsigned char)(0x1F))
-#define MCP79411_I2C_ADDR  0x6F
+#define MCP79411_I2C_ADDR_W  0xDE
+#define MCP79411_I2C_ADDR_R  0xDF
 
 typedef union {
     struct{
@@ -155,10 +156,9 @@ static mcp79411_obj mcp79411;
 
 static int mcp79411_rtc_reg_read(unsigned char reg_addr, unsigned char* rx_buffer, short len);
 static int mcp79411_rtc_reg_write(unsigned char reg_addr, unsigned char* tx_buffer, short len);
-static unsigned char mcp79411_dec2bcd(unsigned char dec);
-static unsigned char mcp79411_bcd2dec(unsigned char bcd);
 
-static unsigned char mcp79411_dec2bcd(unsigned char dec)
+
+unsigned char mcp79411_dec2bcd(unsigned char dec)
 {
     unsigned char l_highHalfByte = 0;
     unsigned char l_lowHalfByte  = 0;
@@ -180,8 +180,7 @@ static unsigned char mcp79411_dec2bcd(unsigned char dec)
 
     return ret;
 }
-
-static unsigned char mcp79411_bcd2dec(unsigned char bcd)
+unsigned char mcp79411_bcd2dec(unsigned char bcd)
 {
     unsigned char l_highHalfByte = 0;
     unsigned char l_lowHalfByte  = 0;
@@ -213,7 +212,7 @@ static int mcp79411_rtc_reg_read(unsigned char reg_addr, unsigned char* rx_buffe
     }else{
         ret = mcp79411_rtc_iic_write(&reg_addr, sizeof(reg_addr));
         if(ret == 0){
-            ret = mcp79411_rtc_iic_read(rx_buffer, len);
+            ret = mcp79411_rtc_iic_read(rx_buffer,len);
         }else{
             /*nothing*/
         }
@@ -380,32 +379,33 @@ void mcp79411_init(void)
 {
     //i2c_init(1);
     i2c_start(); 
-    i2c_write(( MCP79411_I2C_ADDR  << 1) | 0); 
+    i2c_write(MCP79411_I2C_ADDR_W); 
     // Mode écriture
     i2c_write(MCP79411_REG_RTCC_RTCSEC); 
     // Début à RTCSEC 
     // Démarre l'oscillateur (bit ST = 1) et positionne 00:00:00 
-    i2c_write(0x80 | mcp79411_bcd2dec(0));
+    //i2c_write(0x80 | mcp79411_bcd2dec(0));
     // Secondes avec ST = 1 
-    i2c_write(mcp79411_bcd2dec(0)); 
+    //i2c_write(mcp79411_bcd2dec(0)); 
     // Minutes 
-    i2c_write(mcp79411_bcd2dec(0)); 
+    //i2c_write(mcp79411_bcd2dec(0)); 
     // Heures 
-    i2c_write(0x01); 
+    //i2c_write(0x01); 
     // Jour de la semaine (dummy) 
-    i2c_write(0x01); 
+   // i2c_write(0x01); 
     // Jour du mois (dummy)
-    i2c_write(0x01); 
+    //i2c_write(0x01); 
     // Mois (dummy)
-    i2c_write(0x00); 
+    //i2c_write(0x00); 
     // Année (dummy) 
     i2c_stop(); 
     // Active ALM0 et désactive l'onde carrée (SQWE) 
     i2c_start();
-    i2c_write((MCP79411_I2C_ADDR << 1) | 0); 
+    i2c_write(MCP79411_I2C_ADDR_W); 
     i2c_write(MCP79411_REG_RTCC_CONTROL);
-    i2c_write(0x10);
+    i2c_write(0x00);
     i2c_stop(); 
+    
     /*
     mcp79411_CONTROL reg_CONTROL;
     mcp79411_OSCTRIM reg_OSCTRIM;
@@ -429,4 +429,47 @@ void mcp79411_init(void)
     reg_OSCTRIM.byte = 0;
     (void)mcp79411_rtc_reg_write(MCP79411_REG_RTCC_OSCTRIM, &reg_OSCTRIM.byte, sizeof(reg_OSCTRIM));
      */
+}
+int mcp79411_rtc_iic_write(uint8_t  *tx_buffer, short len)
+{
+    int8_t ret = -1;
+    static uint8_t i =0;
+//    int retry_cnt = 1000;
+
+    //while ( (IfxI2c_I2c_write(&iic_obj[IIC_CHANNEL_MCP79411].i2cDev[0], tx_buffer, len) ==
+     //IfxI2c_I2c_Status_nak) && (retry_cnt--) ) {}
+    i2c_start();
+    i2c_write(MCP79411_I2C_ADDR_W);//ADR
+    for (i=0;i<len;i++)//DATA
+    {
+        ret =i2c_write(tx_buffer[i]);
+    }
+    i2c_stop();
+    //if(retry_cnt > 0){
+      ret = 0;
+   // }
+
+    return ret;
+}
+
+int mcp79411_rtc_iic_read(uint8_t  *rx_buffer,short len)
+{   static uint8_t i =0;
+    int ret = -1;
+//    int retry_cnt = 1000;
+
+//    while ( (IfxI2c_I2c_read(&iic_obj[IIC_CHANNEL_MCP79411].i2cDev[0], rx_buffer, len) ==
+//     IfxI2c_I2c_Status_nak) && (retry_cnt--) ){}
+//
+//    if(retry_cnt > 0){
+       // ret = 0;
+//    }
+    i2c_start();
+    i2c_write(MCP79411_I2C_ADDR_R);//ADR
+    for (i=0;i<len;i++)
+    {
+        rx_buffer[i]=i2c_read(0);
+    }
+    i2c_stop();
+    ret = 0;
+    return ret;
 }
