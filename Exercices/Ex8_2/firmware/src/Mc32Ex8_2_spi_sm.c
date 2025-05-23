@@ -144,13 +144,17 @@ void SPI_StartRead(uint32_t nBytes)
     // Variables locales
     uint8_t i;
     
+
     // Ecriture des bytes
     for(i=0; i<nBytes; i++)
     {
         PLIB_SPI_BufferWrite(SPI_USED, DUMMY_BYTE);
     }
     // Updates SM
-    spiState = SPI_STATE_BUSY_READ;    
+    spiState = SPI_STATE_BUSY_READ;   
+    
+    
+
 }
 
 //pour obtenir l'état interne de la SM spi
@@ -195,6 +199,8 @@ void SPI_DoTasks(void){
         case SPI_STATE_BUSY_READ_WRITE:
             if(!PLIB_SPI_IsBusy(SPI_USED) && !PLIB_SPI_ReceiverFIFOIsEmpty(SPI_USED))
             {
+                //remet cs à 1
+                CS_LM70 = 1; 
                 spiState = SPI_STATE_IDLE_READ_DATA_AVAILABLE;
             }
             break;

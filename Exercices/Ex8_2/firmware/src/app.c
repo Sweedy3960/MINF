@@ -55,6 +55,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #include "app.h"
 #include "Mc32Ex8_2_spi_sm.h"
+#include "Mc32DriverLcd.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -141,20 +142,25 @@ void APP_Tasks ( void )
         /* Application's initial state. */
         case APP_STATE_INIT:
         {
-            bool appInitialized = true;
-       
-        
-            if (appInitialized)
-            {
-            
-                appData.state = APP_STATE_SERVICE_TASKS;
-            }
+            SPI_Init();
+            lcd_init();
+            lcd_bl_on();
+            DRV_TMR0_Start();
             break;
         }
 
         case APP_STATE_SERVICE_TASKS:
         {
-        
+            if(SPI_GetState() == SPI_STATE_IDLE)
+            {
+                LM70SMStartReadRawTemp();   
+            }
+            
+                
+                
+            SPI_DoTasks();
+            
+            APP_Update_State(APP_STATE_WAIT);
             break;
         }
 
@@ -169,8 +175,27 @@ void APP_Tasks ( void )
         }
     }
 }
+void APP_Update_State(APP_STATES newstate)
+{
+    appData.state = newstate;
 
+}
  
+void APP_CALLBACK_TIMER1(void)
+{
+    APP_Update_State(APP_STATE_SERVICE_TASKS);
+    
+}
+void LM70SMStartReadRawTemp(void)
+{
+    uint8_t regToRead = 2;
+    uint8_t i =0;
+    
+    CS_LM70=0;
+
+    SPI_StartRead(2);
+}
+
 
 /*******************************************************************************
  End of File

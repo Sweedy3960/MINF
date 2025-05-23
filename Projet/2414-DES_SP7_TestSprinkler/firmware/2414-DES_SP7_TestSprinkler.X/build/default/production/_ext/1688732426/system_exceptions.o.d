@@ -87,6 +87,38 @@ build/default/production/_ext/1688732426/system_exceptions.o: \
  ../../../../../../framework/peripheral/int/processor/../templates/int_VariableOffset_Unsupported.h \
  ../../../../../../framework/peripheral/int/processor/../templates/int_SoftwareNMI_Unsupported.h \
  ../../../../../../framework/system/int/sys_int_mapping.h \
+ ../../../../../../framework/system/fs/sys_fs.h \
+ ../../../../../../framework/system/fs/sys_fs_media_manager.h \
+ ../../../../../../framework/driver/driver_common.h \
+ ../../../../../../framework/system/fs/fat_fs/src/file_system/ff.h \
+ ../../../../../../framework/system/fs/fat_fs/src/file_system/ffconf.h \
+ ../../../../../../framework/system/fs/src/sys_fs_media_manager_local.h \
+ ../../../../../../framework/system/fs/fat_fs/src/hardware_access/diskio.h \
+ ../../../../../../framework/system/fs/fat_fs/src/file_system/ffconf.h \
+ ../../../../../../framework/system/tmr/sys_tmr.h \
+ ../../../../../../framework/driver/tmr/drv_tmr.h \
+ ../../../../../../framework/peripheral/tmr/plib_tmr.h \
+ ../../../../../../framework/peripheral/tmr/processor/tmr_processor.h \
+ ../../../../../../framework/peripheral/tmr/processor/tmr_p32xxxx.h \
+ ../../../../../../framework/peripheral/tmr/processor/tmr_p32mx795f512l.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_GatedTimeAccumulation_Default.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_registers.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_ClockSource_Default.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Prescale_Default.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_ClockSourceSync_Inverted.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Mode16Bit_Default.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Mode32Bit_Default.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_EnableControl_Default.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_StopInIdle_Default.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Counter16Bit_In16BitRegister.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Counter32Bit_In16BitRegister.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Period16Bit_Default.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Period32Bit_In16BitRegister_pic32.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_CounterAsyncWriteControl_Default.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_CounterAsyncWriteInProgress_Default.h \
+ ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_TimerOperationMode_Default.h \
+ ../../../../../../framework/driver/tmr/tmr_definitions_pic32m.h \
+ ../../../../../../framework/driver/tmr/drv_tmr_compatibility.h \
  ../src/system_config/default/framework/driver/adc/drv_adc_static.h \
  ../../../../../../framework/peripheral/adc/plib_adc.h \
  ../../../../../../framework/peripheral/adc/processor/adc_processor.h \
@@ -119,30 +151,6 @@ build/default/production/_ext/1688732426/system_exceptions.o: \
  ../../../../../../framework/peripheral/adc/processor/../templates/adc_ResultBufferFillStatus_Default.h \
  ../../../../../../framework/peripheral/adc/processor/../templates/adc_ResultGetByIndex_Default.h \
  ../src/system_config/default/framework/driver/tmr/drv_tmr_static.h \
- ../../../../../../framework/driver/tmr/drv_tmr.h \
- ../../../../../../framework/driver/driver_common.h \
- ../../../../../../framework/peripheral/tmr/plib_tmr.h \
- ../../../../../../framework/peripheral/tmr/processor/tmr_processor.h \
- ../../../../../../framework/peripheral/tmr/processor/tmr_p32xxxx.h \
- ../../../../../../framework/peripheral/tmr/processor/tmr_p32mx795f512l.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_GatedTimeAccumulation_Default.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_registers.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_ClockSource_Default.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Prescale_Default.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_ClockSourceSync_Inverted.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Mode16Bit_Default.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Mode32Bit_Default.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_EnableControl_Default.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_StopInIdle_Default.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Counter16Bit_In16BitRegister.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Counter32Bit_In16BitRegister.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Period16Bit_Default.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Period32Bit_In16BitRegister_pic32.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_CounterAsyncWriteControl_Default.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_CounterAsyncWriteInProgress_Default.h \
- ../../../../../../framework/peripheral/tmr/processor/../templates/tmr_TimerOperationMode_Default.h \
- ../../../../../../framework/driver/tmr/tmr_definitions_pic32m.h \
- ../../../../../../framework/driver/tmr/drv_tmr_compatibility.h \
  ../../../../../../framework/system/ports/sys_ports.h \
  ../../../../../../framework/system/ports/sys_ports_definitions.h \
  ../../../../../../framework/peripheral/ports/plib_ports.h \
@@ -174,6 +182,54 @@ build/default/production/_ext/1688732426/system_exceptions.o: \
  ../../../../../../framework/peripheral/ports/processor/../templates/ports_ChangeNoticeEdgeControl_Unsupported.h \
  ../../../../../../framework/peripheral/ports/processor/../templates/ports_ChangeNoticeEdgeStatus_Unsupported.h \
  ../../../../../../framework/peripheral/ports/plib_ports_compatibility.h \
+ ../../../../../../framework/driver/sdcard/drv_sdcard.h \
+ ../../../../../../framework/peripheral/spi/plib_spi.h \
+ ../../../../../../framework/peripheral/spi/processor/spi_processor.h \
+ ../../../../../../framework/peripheral/spi/processor/spi_p32xxxx.h \
+ ../../../../../../framework/peripheral/spi/processor/spi_p32mx795f512l.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_EnableControl_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_registers.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_StopInIdle_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_ReceiverOverflow_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_TransmitBufferFullStatus_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_TransmitBufferEmptyStatus_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_ReceiveBufferStatus_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_PinControl_PIC32_1.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_CommunicationWidth_PIC32.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_AudioCommunicationWidth_Unsupported.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_InputSamplePhase_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_OutputDataPhase_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_ClockPolarity_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_MasterControl_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_BaudRate_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_BusStatus_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_ReadDataSignStatus_Unsupported.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_SlaveSelectControl_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_TransmitUnderRunStatus_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_FIFOControl_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_FIFOCount_PIC32.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_ReceiveFIFOStatus_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_FIFOShiftRegisterEmptyStatus_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_FIFOInterruptMode_PIC32.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_FramedCommunication_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_FrameSyncPulseDirection_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_FrameSyncPulsePolarity_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_FrameSyncPulseEdge_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_FrameSyncPulseWidth_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_FrameSyncPulseCounter_PIC32.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_FrameErrorStatus_Unsupported.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_Buffer_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_BaudRateClock_Unsupported.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_ErrorInterruptControl_Unsupported.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_AudioErrorControl_Unsupported.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_AudioProtocolControl_Unsupported.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_AudioTransmitMode_Unsupported.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_AudioProtocolMode_Unsupported.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_Buffer32bit_Default.h \
+ ../../../../../../framework/peripheral/spi/processor/../templates/spi_Buffer16bit_Default.h \
+ ../../../../../../framework/driver/spi/drv_spi.h \
+ ../../../../../../framework/driver/spi/drv_spi_definitions.h \
+ ../../../../../../framework/driver/sdcard/drv_sdcard_mapping.h \
  ../src/app.h ../src/system_config/default/system_definitions.h \
  ../src/Mc32DriverAdc.h ../src/Driver_SR_SN74HCS596QPWRQ1.h ../src/app.h \
  ../src/mcp79411.h ../src/mcp79411_interface.h \
@@ -353,6 +409,70 @@ build/default/production/_ext/1688732426/system_exceptions.o: \
 
 ../../../../../../framework/system/int/sys_int_mapping.h:
 
+../../../../../../framework/system/fs/sys_fs.h:
+
+../../../../../../framework/system/fs/sys_fs_media_manager.h:
+
+../../../../../../framework/driver/driver_common.h:
+
+../../../../../../framework/system/fs/fat_fs/src/file_system/ff.h:
+
+../../../../../../framework/system/fs/fat_fs/src/file_system/ffconf.h:
+
+../../../../../../framework/system/fs/src/sys_fs_media_manager_local.h:
+
+../../../../../../framework/system/fs/fat_fs/src/hardware_access/diskio.h:
+
+../../../../../../framework/system/fs/fat_fs/src/file_system/ffconf.h:
+
+../../../../../../framework/system/tmr/sys_tmr.h:
+
+../../../../../../framework/driver/tmr/drv_tmr.h:
+
+../../../../../../framework/peripheral/tmr/plib_tmr.h:
+
+../../../../../../framework/peripheral/tmr/processor/tmr_processor.h:
+
+../../../../../../framework/peripheral/tmr/processor/tmr_p32xxxx.h:
+
+../../../../../../framework/peripheral/tmr/processor/tmr_p32mx795f512l.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_GatedTimeAccumulation_Default.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_registers.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_ClockSource_Default.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Prescale_Default.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_ClockSourceSync_Inverted.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Mode16Bit_Default.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Mode32Bit_Default.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_EnableControl_Default.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_StopInIdle_Default.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Counter16Bit_In16BitRegister.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Counter32Bit_In16BitRegister.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Period16Bit_Default.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Period32Bit_In16BitRegister_pic32.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_CounterAsyncWriteControl_Default.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_CounterAsyncWriteInProgress_Default.h:
+
+../../../../../../framework/peripheral/tmr/processor/../templates/tmr_TimerOperationMode_Default.h:
+
+../../../../../../framework/driver/tmr/tmr_definitions_pic32m.h:
+
+../../../../../../framework/driver/tmr/drv_tmr_compatibility.h:
+
 ../src/system_config/default/framework/driver/adc/drv_adc_static.h:
 
 ../../../../../../framework/peripheral/adc/plib_adc.h:
@@ -417,54 +537,6 @@ build/default/production/_ext/1688732426/system_exceptions.o: \
 
 ../src/system_config/default/framework/driver/tmr/drv_tmr_static.h:
 
-../../../../../../framework/driver/tmr/drv_tmr.h:
-
-../../../../../../framework/driver/driver_common.h:
-
-../../../../../../framework/peripheral/tmr/plib_tmr.h:
-
-../../../../../../framework/peripheral/tmr/processor/tmr_processor.h:
-
-../../../../../../framework/peripheral/tmr/processor/tmr_p32xxxx.h:
-
-../../../../../../framework/peripheral/tmr/processor/tmr_p32mx795f512l.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_GatedTimeAccumulation_Default.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_registers.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_ClockSource_Default.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Prescale_Default.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_ClockSourceSync_Inverted.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Mode16Bit_Default.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Mode32Bit_Default.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_EnableControl_Default.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_StopInIdle_Default.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Counter16Bit_In16BitRegister.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Counter32Bit_In16BitRegister.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Period16Bit_Default.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_Period32Bit_In16BitRegister_pic32.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_CounterAsyncWriteControl_Default.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_CounterAsyncWriteInProgress_Default.h:
-
-../../../../../../framework/peripheral/tmr/processor/../templates/tmr_TimerOperationMode_Default.h:
-
-../../../../../../framework/driver/tmr/tmr_definitions_pic32m.h:
-
-../../../../../../framework/driver/tmr/drv_tmr_compatibility.h:
-
 ../../../../../../framework/system/ports/sys_ports.h:
 
 ../../../../../../framework/system/ports/sys_ports_definitions.h:
@@ -526,6 +598,102 @@ build/default/production/_ext/1688732426/system_exceptions.o: \
 ../../../../../../framework/peripheral/ports/processor/../templates/ports_ChangeNoticeEdgeStatus_Unsupported.h:
 
 ../../../../../../framework/peripheral/ports/plib_ports_compatibility.h:
+
+../../../../../../framework/driver/sdcard/drv_sdcard.h:
+
+../../../../../../framework/peripheral/spi/plib_spi.h:
+
+../../../../../../framework/peripheral/spi/processor/spi_processor.h:
+
+../../../../../../framework/peripheral/spi/processor/spi_p32xxxx.h:
+
+../../../../../../framework/peripheral/spi/processor/spi_p32mx795f512l.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_EnableControl_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_registers.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_StopInIdle_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_ReceiverOverflow_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_TransmitBufferFullStatus_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_TransmitBufferEmptyStatus_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_ReceiveBufferStatus_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_PinControl_PIC32_1.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_CommunicationWidth_PIC32.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_AudioCommunicationWidth_Unsupported.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_InputSamplePhase_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_OutputDataPhase_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_ClockPolarity_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_MasterControl_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_BaudRate_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_BusStatus_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_ReadDataSignStatus_Unsupported.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_SlaveSelectControl_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_TransmitUnderRunStatus_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_FIFOControl_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_FIFOCount_PIC32.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_ReceiveFIFOStatus_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_FIFOShiftRegisterEmptyStatus_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_FIFOInterruptMode_PIC32.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_FramedCommunication_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_FrameSyncPulseDirection_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_FrameSyncPulsePolarity_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_FrameSyncPulseEdge_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_FrameSyncPulseWidth_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_FrameSyncPulseCounter_PIC32.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_FrameErrorStatus_Unsupported.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_Buffer_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_BaudRateClock_Unsupported.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_ErrorInterruptControl_Unsupported.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_AudioErrorControl_Unsupported.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_AudioProtocolControl_Unsupported.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_AudioTransmitMode_Unsupported.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_AudioProtocolMode_Unsupported.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_Buffer32bit_Default.h:
+
+../../../../../../framework/peripheral/spi/processor/../templates/spi_Buffer16bit_Default.h:
+
+../../../../../../framework/driver/spi/drv_spi.h:
+
+../../../../../../framework/driver/spi/drv_spi_definitions.h:
+
+../../../../../../framework/driver/sdcard/drv_sdcard_mapping.h:
 
 ../src/app.h:
 

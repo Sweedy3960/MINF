@@ -1,164 +1,12 @@
-/**
- * @file mcp79411.c
- * @author jozochen (jozocyz@hotmail.com)
- * @brief 
- * @date 2020-02-12
- * @copyright Apache License 2.0
- *            jozochen (jozocyz@hotmail.com) Copyright (c) 2020
- */
 
 #include "mcp79411.h"
 
 #include "Mc32_I2cUtilCCS.h"
-
-#define MCP79411_BUFFER_MAX     (256)
-#define MCP79411_REG_ADDR_LEN   (1)
-
-#define MCP79411_DEC_MAX        ((unsigned char)(0x99))
-#define MCP79411_DECADE         (10)
-#define MCP79411_4BIT_SHIFT     (4)
-#define MCP79411_HIGH_4BIT_MASK    (0X0fu)
-/**reg define**/
-#define MCP79411_REG_RTCC_RTCSEC       ((unsigned char)(0x00))
-#define MCP79411_REG_RTCC_RTCMIN       ((unsigned char)(0x01))
-#define MCP79411_REG_RTCC_RTCHOUR      ((unsigned char)(0x02))
-#define MCP79411_REG_RTCC_RTCWKDAY     ((unsigned char)(0x03))
-#define MCP79411_REG_RTCC_RTCDATE      ((unsigned char)(0x04))
-#define MCP79411_REG_RTCC_RTCMTH       ((unsigned char)(0x05))
-#define MCP79411_REG_RTCC_RTCYEAR      ((unsigned char)(0x06))
-#define MCP79411_REG_RTCC_CONTROL      ((unsigned char)(0x07))
-#define MCP79411_REG_RTCC_OSCTRIM      ((unsigned char)(0x08))
-#define MCP79411_REG_RTCC_EEUNLOCK     ((unsigned char)(0x09))
-#define MCP79411_REG_RTCC_ALM0SEC      ((unsigned char)(0x0A))
-#define MCP79411_REG_RTCC_ALM0MIN      ((unsigned char)(0x0B))
-#define MCP79411_REG_RTCC_ALM0HOUR     ((unsigned char)(0x0C))
-#define MCP79411_REG_RTCC_ALM0WKDAY    ((unsigned char)(0x0D))
-#define MCP79411_REG_RTCC_ALM0DATE     ((unsigned char)(0x0E))
-#define MCP79411_REG_RTCC_ALM0MTH      ((unsigned char)(0x0F))
-#define MCP79411_REG_RTCC_ALM1SEC      ((unsigned char)(0x11))
-#define MCP79411_REG_RTCC_ALM1MIN      ((unsigned char)(0x12))
-#define MCP79411_REG_RTCC_ALM1HOUR     ((unsigned char)(0x13))
-#define MCP79411_REG_RTCC_ALM1WKDAY    ((unsigned char)(0x14))
-#define MCP79411_REG_RTCC_ALM1DATE     ((unsigned char)(0x15))
-#define MCP79411_REG_RTCC_ALM1MTH      ((unsigned char)(0x16))
-#define MCP79411_REG_RTCC_PWRDNMIN     ((unsigned char)(0x18))
-#define MCP79411_REG_RTCC_PWRDNHOUR    ((unsigned char)(0x19))
-#define MCP79411_REG_RTCC_PWRDNDATE    ((unsigned char)(0x1A))
-#define MCP79411_REG_RTCC_PWRDNMTH     ((unsigned char)(0x1B))
-#define MCP79411_REG_RTCC_PWRUPMIN     ((unsigned char)(0x1C))
-#define MCP79411_REG_RTCC_PWRUPHOUR    ((unsigned char)(0x1D))
-#define MCP79411_REG_RTCC_PWRUPDATE    ((unsigned char)(0x1E))
-#define MCP79411_REG_RTCC_PWRUPMTH     ((unsigned char)(0x1F))
-#define MCP79411_I2C_ADDR_W  0xDE
-#define MCP79411_I2C_ADDR_R  0xDF
-
-typedef union {
-    struct{
-        char SQWFS   :2;
-        char CRSTRIM :1;
-        char EXTOSC  :1;
-        char ALM0EN  :1;
-        char ALM1EN  :1;
-        char SQWEN   :1;
-        char OUT     :1;
-    }bits;
-    unsigned char byte;
-}mcp79411_CONTROL;
-
-typedef union {
-    struct{
-        char TRIMVA  :7;
-        char SIGN    :1;
-    }bits;
-    unsigned char byte;
-}mcp79411_OSCTRIM;
-
-typedef union {
-    struct {
-        struct{
-            char SEC :7;
-            char ST  :1;
-        }RTCSEC_bits;
-        struct{
-            char MIN   :7;
-            char RSVD  :1;
-        }RTCMIN_bits;
-        struct{
-            char HOUR   :5;
-            char AM_PM  :1;
-            char b12_24  :1;
-            char RSVD   :1;
-        }RTCHOUR_bits;
-        struct{
-            char WKDAY   :3;
-            char VBATEN  :1;
-            char PWRFAIL :1;
-            char OSCRUN  :1;
-            char RSVD    :2;
-        }RTCWKDAY_bits;
-        struct{
-            char DATE    :6;
-            char RSVD    :2;
-        }RTCDATE_bits;
-        struct{
-            char MTH     :5;
-            char LPYR    :1;
-            char RSVD    :2;
-        }RTCMTH_bits;
-        struct{
-            char YEAR :8;
-        }RTCYEAR_bits;
-    }regs;
-    unsigned char bytes[7];
-}mcp79411_TIME_KEEPING;
-
-typedef union{
-    struct{
-        struct{
-            char SEC     :7;
-            char RSVD    :1;
-        }ALMXSEC_bits;
-        struct{
-            char MIN     :7;
-            char RSVD    :1;
-        }ALMXMIN_bits;    
-        struct{
-            char HOUR    :5;
-            char AM_PM   :1;
-            char b12_24  :1;
-            char RSVD    :1;
-        }ALMXHOUR_bits;
-        struct{
-            char WKDAY   :3;
-            char ALMXIF  :1;
-            char ALMXMSK :3;
-            char ALMPOL  :1;
-        }ALMXWKDAY_bits;
-        struct{
-            char DATE;
-        }ALMXDATE_bits;
-        struct{
-            char MTH    :5;
-            char RSVD   :3;
-        }ALMXMTH_bits;
-    }regs;
-    unsigned char bytes[6];
-}mcp79411_ALARMS;
-
-typedef struct{
-    struct{
-        unsigned char tx_buffer[MCP79411_BUFFER_MAX];
-        unsigned char rx_buffer[MCP79411_BUFFER_MAX];
-    }buffers;
-}mcp79411_obj;
+#include "app.h"
 
 static mcp79411_obj mcp79411;
 
-static int mcp79411_rtc_reg_read(unsigned char reg_addr, unsigned char* rx_buffer, short len);
-static int mcp79411_rtc_reg_write(unsigned char reg_addr, unsigned char* tx_buffer, short len);
-
-
-unsigned char mcp79411_dec2bcd(unsigned char dec)
+uint8_t mcp79411_dec2bcd(uint8_t dec)
 {
     unsigned char l_highHalfByte = 0;
     unsigned char l_lowHalfByte  = 0;
@@ -180,7 +28,7 @@ unsigned char mcp79411_dec2bcd(unsigned char dec)
 
     return ret;
 }
-unsigned char mcp79411_bcd2dec(unsigned char bcd)
+uint8_t mcp79411_bcd2dec(uint8_t bcd)
 {
     unsigned char l_highHalfByte = 0;
     unsigned char l_lowHalfByte  = 0;
@@ -203,7 +51,7 @@ unsigned char mcp79411_bcd2dec(unsigned char bcd)
     return ret;    
 }
 
-static int mcp79411_rtc_reg_read(unsigned char reg_addr, unsigned char* rx_buffer, short len)
+uint8_t mcp79411_rtc_reg_read(uint8_t reg_addr, uint8_t* rx_buffer, uint16_t len)
 {
     int ret = -1;
 
@@ -221,7 +69,7 @@ static int mcp79411_rtc_reg_read(unsigned char reg_addr, unsigned char* rx_buffe
     return ret;    
 }
 
-static int mcp79411_rtc_reg_write(unsigned char reg_addr, unsigned char* tx_buffer, short len)
+uint8_t mcp79411_rtc_reg_write(uint8_t reg_addr, uint8_t* tx_buffer, uint16_t len)
 {
 	unsigned char* ptx = &mcp79411.buffers.tx_buffer[0];
     int ret = -1;
@@ -240,7 +88,7 @@ static int mcp79411_rtc_reg_write(unsigned char reg_addr, unsigned char* tx_buff
     return ret;    
 }
 
-int mcp79411_set_time(mcp79411_time* time)
+uint8_t mcp79411_set_time(mcp79411_time* time)
 {
     mcp79411_TIME_KEEPING reg_time;
     int ret = -1;
@@ -251,7 +99,7 @@ int mcp79411_set_time(mcp79411_time* time)
         ret = -1;
     }else{
         for( i = 0; i < sizeof(reg_time); i++){
-            reg_time.bytes[i] = 0x00;
+            reg_time.time_bytes[i] = 0x00;
         }
 
         reg_time.regs.RTCSEC_bits.ST = 1;
@@ -266,13 +114,13 @@ int mcp79411_set_time(mcp79411_time* time)
         reg_time.regs.RTCDATE_bits.DATE = mcp79411_dec2bcd(time->date);
         reg_time.regs.RTCMTH_bits.MTH = mcp79411_dec2bcd(time->mth);
         reg_time.regs.RTCYEAR_bits.YEAR = mcp79411_dec2bcd(time->year);
-        ret = mcp79411_rtc_reg_write(MCP79411_REG_RTCC_RTCSEC, reg_time.bytes, sizeof(reg_time));
+        ret = mcp79411_rtc_reg_write(MCP79411_REG_RTCC_RTCSEC, reg_time.time_bytes, sizeof(reg_time));
     }
 
     return ret;
 }
 
-int mcp79411_get_time(mcp79411_time* time)
+uint8_t mcp79411_get_time(mcp79411_time* time)
 {
     mcp79411_TIME_KEEPING reg_time;
     int ret = -1;
@@ -281,7 +129,7 @@ int mcp79411_get_time(mcp79411_time* time)
     if(time == NULL_PTR){
         ret = -1;
     }else{
-        ret = mcp79411_rtc_reg_read(MCP79411_REG_RTCC_RTCSEC, reg_time.bytes, sizeof(reg_time));
+        ret = mcp79411_rtc_reg_read(MCP79411_REG_RTCC_RTCSEC, reg_time.time_bytes, sizeof(reg_time));
         if(ret == 0){
             time->sec = mcp79411_bcd2dec(reg_time.regs.RTCSEC_bits.SEC);
             time->min = mcp79411_bcd2dec(reg_time.regs.RTCMIN_bits.MIN);
@@ -297,7 +145,50 @@ int mcp79411_get_time(mcp79411_time* time)
 
     return ret;
 }
+uint8_t mcp79411_get_status(mcp79411_time* time)
+{
+    mcp79411_TIME_KEEPING reg_time;
+    int ret = -1;
+    uint8_t Oscillator_status =0;
+    //TODO:check arg time
+    if(time == NULL_PTR){
+        Oscillator_status =-1;
+    }else{
+        ret = mcp79411_rtc_reg_read(MCP79411_REG_RTCC_RTCWKDAY, reg_time.time_bytes, sizeof(reg_time));
+        if(ret == 0){
+        Oscillator_status= mcp79411_bcd2dec(reg_time.regs.RTCWKDAY_bits.OSCRUN);
+           
+            
+        }else{
+            
+        }
+    }
+    return Oscillator_status;
+}
+uint8_t mcp79411_set_OscOn(mcp79411_time* time)
+{
+    mcp79411_CONTROL reg_CONTROL;
+    int i = 0;
+    int ret =1;
 
+    for(i = 0; i < MCP79411_BUFFER_MAX; i++){
+        mcp79411.buffers.tx_buffer[i] = 0;
+        mcp79411.buffers.rx_buffer[i] = 0;
+    }
+
+    reg_CONTROL.ctrl_byte = 0;
+    reg_CONTROL.bits.SQWFS = 0;
+    reg_CONTROL.bits.CRSTRIM = 0;
+    reg_CONTROL.bits.EXTOSC = 0;
+    reg_CONTROL.bits.ALM0EN = 0;
+    reg_CONTROL.bits.ALM1EN = 0;
+    reg_CONTROL.bits.SQWEN = 1;
+    reg_CONTROL.bits.OUT = 1;
+    ret =mcp79411_rtc_reg_write(MCP79411_REG_RTCC_CONTROL, &reg_CONTROL.ctrl_byte, sizeof(reg_CONTROL));
+
+    return ret;
+}
+/*
 int mcp79411_set_alarm(mcp79411_alarm_channel chnl, mcp79411_alarm_mode mode,
  mcp79411_alarm *alarm)
 {
@@ -374,39 +265,10 @@ int mcp79411_stop_alarm(mcp79411_alarm_channel chnl)
 
     return ret;
 }
-
+*/
 void mcp79411_init(void)
 {
-    //i2c_init(1);
-    i2c_start(); 
-    i2c_write(MCP79411_I2C_ADDR_W); 
-    // Mode écriture
-    i2c_write(MCP79411_REG_RTCC_RTCSEC); 
-    // Début à RTCSEC 
-    // Démarre l'oscillateur (bit ST = 1) et positionne 00:00:00 
-    //i2c_write(0x80 | mcp79411_bcd2dec(0));
-    // Secondes avec ST = 1 
-    //i2c_write(mcp79411_bcd2dec(0)); 
-    // Minutes 
-    //i2c_write(mcp79411_bcd2dec(0)); 
-    // Heures 
-    //i2c_write(0x01); 
-    // Jour de la semaine (dummy) 
-   // i2c_write(0x01); 
-    // Jour du mois (dummy)
-    //i2c_write(0x01); 
-    // Mois (dummy)
-    //i2c_write(0x00); 
-    // Année (dummy) 
-    i2c_stop(); 
-    // Active ALM0 et désactive l'onde carrée (SQWE) 
-    i2c_start();
-    i2c_write(MCP79411_I2C_ADDR_W); 
-    i2c_write(MCP79411_REG_RTCC_CONTROL);
-    i2c_write(0x00);
-    i2c_stop(); 
     
-    /*
     mcp79411_CONTROL reg_CONTROL;
     mcp79411_OSCTRIM reg_OSCTRIM;
     int i = 0;
@@ -416,59 +278,50 @@ void mcp79411_init(void)
         mcp79411.buffers.rx_buffer[i] = 0;
     }
 
-    reg_CONTROL.byte = 0;
+    reg_CONTROL.ctrl_byte = 0;
     reg_CONTROL.bits.SQWFS = 0;
     reg_CONTROL.bits.CRSTRIM = 0;
-    reg_CONTROL.bits.EXTOSC = 1;
+    reg_CONTROL.bits.EXTOSC = 0;
     reg_CONTROL.bits.ALM0EN = 0;
     reg_CONTROL.bits.ALM1EN = 0;
-    reg_CONTROL.bits.SQWEN = 0;
-    reg_CONTROL.bits.OUT = 0;
-    (void)mcp79411_rtc_reg_write(MCP79411_REG_RTCC_CONTROL, &reg_CONTROL.byte, sizeof(reg_CONTROL));
+    reg_CONTROL.bits.SQWEN = 1;
+    reg_CONTROL.bits.OUT = 1;
+    (void)mcp79411_rtc_reg_write(MCP79411_REG_RTCC_CONTROL, &reg_CONTROL.ctrl_byte, sizeof(reg_CONTROL));
 
-    reg_OSCTRIM.byte = 0;
-    (void)mcp79411_rtc_reg_write(MCP79411_REG_RTCC_OSCTRIM, &reg_OSCTRIM.byte, sizeof(reg_OSCTRIM));
-     */
+    reg_OSCTRIM.osctrim_byte = 0;
+    (void)mcp79411_rtc_reg_write(MCP79411_REG_RTCC_OSCTRIM, &reg_OSCTRIM.osctrim_byte, sizeof(reg_OSCTRIM));
+     
 }
-int mcp79411_rtc_iic_write(uint8_t  *tx_buffer, short len)
+uint8_t mcp79411_rtc_iic_write(uint8_t  *tx_buffer, uint16_t len)
 {
-    int8_t ret = -1;
+    int8_t ack = 1;
     static uint8_t i =0;
-//    int retry_cnt = 1000;
 
-    //while ( (IfxI2c_I2c_write(&iic_obj[IIC_CHANNEL_MCP79411].i2cDev[0], tx_buffer, len) ==
-     //IfxI2c_I2c_Status_nak) && (retry_cnt--) ) {}
     i2c_start();
-    i2c_write(MCP79411_I2C_ADDR_W);//ADR
+    ack=i2c_write(MCP79411_I2C_ADDR_W);//ADR
     for (i=0;i<len;i++)//DATA
     {
-        ret =i2c_write(tx_buffer[i]);
+        ack =i2c_write(tx_buffer[i]);
     }
     i2c_stop();
-    //if(retry_cnt > 0){
-      ret = 0;
-   // }
+    
+   // ret = 0;
 
-    return ret;
+
+    return ack;
 }
 
-int mcp79411_rtc_iic_read(uint8_t  *rx_buffer,short len)
+uint8_t mcp79411_rtc_iic_read(uint8_t  *rx_buffer,uint16_t len)
 {   static uint8_t i =0;
-    int ret = -1;
-//    int retry_cnt = 1000;
+    int ret = 1;
 
-//    while ( (IfxI2c_I2c_read(&iic_obj[IIC_CHANNEL_MCP79411].i2cDev[0], rx_buffer, len) ==
-//     IfxI2c_I2c_Status_nak) && (retry_cnt--) ){}
-//
-//    if(retry_cnt > 0){
-       // ret = 0;
-//    }
     i2c_start();
     i2c_write(MCP79411_I2C_ADDR_R);//ADR
-    for (i=0;i<len;i++)
+    for (i=0;i<(len-1);i++)
     {
-        rx_buffer[i]=i2c_read(0);
+        rx_buffer[i]=i2c_read(1);
     }
+    rx_buffer[len]=i2c_read(0);
     i2c_stop();
     ret = 0;
     return ret;

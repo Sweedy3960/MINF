@@ -89,6 +89,7 @@ typedef enum
 	/* Application's state machine's initial state. */
 	APP_STATE_INIT=0,
 	APP_STATE_SERVICE_TASKS,
+            APP_STATE_WAIT,
 
 	/* TODO: Define states used by the application state machine. */
 
@@ -112,7 +113,7 @@ typedef struct
 {
     /* The application's current state */
     APP_STATES state;
-
+    uint8_t RxBuff[64];
     /* TODO: Define any additional data used by the application. */
 
 } APP_DATA;
@@ -198,7 +199,8 @@ void APP_Initialize ( void );
 
 void APP_Tasks( void );
 
-
+void APP_CALLBACK_TIMER1(void);
+void APP_Update_State(APP_STATES newstate);
 #endif /* _APP_H */
 
 //DOM-IGNORE-BEGIN

@@ -121,7 +121,7 @@ void SR_Init(SERIAL_REG_DATA *SRegData) {
     SR_SRCLK_FKCDPOff();
     //should be SR_LED_OE_1On but its
     // and activ low so 
-    TESTPINOn();//set off 
+    //TESTPINOn();//set off 
     //TESTPINOff();//set on 
     SR_LED_OE_2On();//set off 
     //return  SRegData;
@@ -177,7 +177,7 @@ void SR_Update(SERIAL_REG_DATA *SregData) {
         APP_WaitStart(1);
     }
     APP_WaitStart(1);
-    TESTPINOff();//set on 
+//    TESTPINOff();//set on 
     SR_LED_OE_2Off();//set on
     SregData->cmd_leds = cmd_led_save;
     

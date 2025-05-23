@@ -155,6 +155,7 @@ void APP_Tasks ( void )
    // SR_LEDS LEDS;
     bool NACK = false;
     mcp79411_time timeofRTC;
+    static uint8_t osc_status = 1;
     static uint8_t ret;
     
     /* Check the application's current state. */
@@ -164,12 +165,13 @@ void APP_Tasks ( void )
         /* Application's initial state. */
         case APP_STATE_INIT:
         {
+           // SYS_MEDIA_GEOMETRY *geometry = NULL;
             //AT42QT_Init();
             //SR_LED_OE_2On(); //éteind
             //TESTPINOn(); //étein
             
-            int a =12;
-            i2c_init(0);
+            //int a =12;
+            i2c_init(1);
             AT42QT_Init();
            // mcp79411_init();
             //mcp79411_TIME_KEEPING time;
@@ -187,13 +189,19 @@ void APP_Tasks ( void )
             
             
             
-            timeofRTC.sec = 0;
-            
+            //timeofRTC.sec = 0;
+            timeofRTC.sec =6;
+            timeofRTC.min =0;
+            timeofRTC.wkday=0;
+            timeofRTC.hour=0;
+            timeofRTC.mth=0;
+            timeofRTC.date=0;
+                    
             ret = mcp79411_set_time(&timeofRTC);
             
-            timeofRTC.year =mcp79411_dec2bcd((unsigned char)a);
-           // mcp79411_set_time(&timeofRTC);
-            mcp79411_get_time(&timeofRTC);
+            
+            //DR
+            //mcp79411_get_time(&timeofRTC);
             SR_Init(&appData.sysLeds);
             
             
@@ -214,8 +222,13 @@ void APP_Tasks ( void )
         case APP_STATE_SERVICE_TASKS:
         {
             GetInputsStates();
-            ret =mcp79411_get_time(&timeofRTC);
-            
+            //timeofRTC.sec =0;
+           // ret =mcp79411_get_time(&timeofRTC);
+            //osc_status = mcp79411_get_status(&timeofRTC);
+            //ret = mcp79411_set_OscOn(&timeofRTC);
+            //osc_status = mcp79411_get_status(&timeofRTC);
+                
+           // DRV_SDMMC_IsAttached
             
             if (appData.SySwitch.FreeIn1_conf)
             {

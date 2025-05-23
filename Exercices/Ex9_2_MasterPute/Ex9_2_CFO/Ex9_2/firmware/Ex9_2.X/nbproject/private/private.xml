@@ -2,22 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/Mc32_I2cUtilCCS.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/system_config/default/framework/system/ports/src/sys_ports_static.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/Mc32_I2cUtilCCS.h</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/main.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/PIC32130_AT42QT2120_I2C.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/Mc32gestI2cSeeprom.h</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/Mc32gestI2cSeeprom.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/mcp79411.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/mcp79411.h</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/Driver_SR_SN74HCS596QPWRQ1.h</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/PIC32130_AT42QT2120_I2C.h</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/app.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/Driver_SR_SN74HCS596QPWRQ1.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/mcp79411_interface.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/Mc32DriverAdc.c</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

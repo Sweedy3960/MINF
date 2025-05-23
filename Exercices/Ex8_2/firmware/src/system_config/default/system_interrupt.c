@@ -73,6 +73,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 void __ISR(_TIMER_1_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance0(void)
 {
+    //timer1 20ms 
+    APP_CALLBACK_TIMER1();
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_1);
 }
  /*******************************************************************************

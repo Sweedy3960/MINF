@@ -28,6 +28,7 @@
         </logicalFolder>
         <itemPath>../src/app.h</itemPath>
         <itemPath>C:/microchip/harmony/v2_06/apps/MINF/Exercices/Ex8_2/firmware/src/Mc32Ex8_2_spi_sm.h</itemPath>
+        <itemPath>../src/Mc32gestSpiLM70.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="bsp" projectFiles="true">
         <logicalFolder name="f1" displayName="pic32mx_skes" projectFiles="true">
@@ -178,7 +179,7 @@
         <targetDevice>PIC32MX795F512L</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>snap</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>2.50</languageToolchainVersion>
         <platform>3</platform>
