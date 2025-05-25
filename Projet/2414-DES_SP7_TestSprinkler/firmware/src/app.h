@@ -148,7 +148,7 @@ extern "C" {
         bool APP_DelayTimeIsRunning;
         //void* SR_leds;
         ConfInSwitchs SySwitch;
-        
+        mcp79411_time timeofRTC;
         /* TODO: Define any additional data used by the application. */
     } APP_DATA;
 

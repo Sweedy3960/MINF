@@ -231,7 +231,7 @@ build/default/production/_ext/1360937237/app.o: ../src/app.c ../src/app.h \
  ../src/app.h ../src/Mc32DriverAdc.h ../src/Driver_SR_SN74HCS596QPWRQ1.h \
  ../src/mcp79411.h ../src/mcp79411_interface.h ../src/Mc32_I2cUtil_SM.h \
  ../src/PIC32130_AT42QT2120_I2C.h ../src/Mc32gestI2cSeeprom.h \
- ../src/Mc32_I2cUtilCCS.h
+ ../src/Mc32_sdFatGest.h ../src/Mc32_I2cUtilCCS.h
 
 ../src/app.h:
 
@@ -708,5 +708,7 @@ build/default/production/_ext/1360937237/app.o: ../src/app.c ../src/app.h \
 ../src/PIC32130_AT42QT2120_I2C.h:
 
 ../src/Mc32gestI2cSeeprom.h:
+
+../src/Mc32_sdFatGest.h:
 
 ../src/Mc32_I2cUtilCCS.h:

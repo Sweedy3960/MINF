@@ -105,8 +105,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 const DRV_SDCARD_INIT drvSDCardInit =
 {
     .spiId = SPI_ID_1,
-    .spiIndex = 1,
-    .sdcardSpeedHz = 20000000,
+    .spiIndex = 0,
+    .sdcardSpeedHz = 5000000,
     .spiClk = CLK_BUS_PERIPHERAL_1,
     .chipSelectPort = PORT_CHANNEL_D,
     .chipSelectBitPosition = PORTS_BIT_POS_9,

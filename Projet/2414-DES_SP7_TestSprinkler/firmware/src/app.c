@@ -62,7 +62,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "PIC32130_AT42QT2120_I2C.h"
 #include "Driver_SR_SN74HCS596QPWRQ1.h"
 #include "Mc32gestI2cSeeprom.h"
-
+#include "Mc32_sdFatGest.h"
 #include "mcp79411_interface.h"
 #include "Mc32_I2cUtilCCS.h"
 
@@ -154,7 +154,7 @@ void APP_Tasks ( void )
 
    // SR_LEDS LEDS;
     bool NACK = false;
-    mcp79411_time timeofRTC;
+    
     static uint8_t osc_status = 1;
     static uint8_t ret;
     
@@ -169,10 +169,10 @@ void APP_Tasks ( void )
             //AT42QT_Init();
             //SR_LED_OE_2On(); //éteind
             //TESTPINOn(); //étein
-            
+            //DRV_USART0_Initialize();
             //int a =12;
-            i2c_init(1);
-            AT42QT_Init();
+            //i2c_init(1);
+            //AT42QT_Init();
            // mcp79411_init();
             //mcp79411_TIME_KEEPING time;
             //time.bytes= 0;
@@ -180,7 +180,7 @@ void APP_Tasks ( void )
             //I2C_InitMCP79411();
            // mcp79411_time time;
             //time.min = 1;
-            mcp79411_init();
+           // mcp79411_init();
            
           
             
@@ -190,21 +190,22 @@ void APP_Tasks ( void )
             
             
             //timeofRTC.sec = 0;
-            timeofRTC.sec =6;
-            timeofRTC.min =0;
-            timeofRTC.wkday=0;
-            timeofRTC.hour=0;
-            timeofRTC.mth=0;
-            timeofRTC.date=0;
+            appData.timeofRTC.sec =6;
+            appData.timeofRTC.min =0;
+            appData.timeofRTC.wkday=0;
+            appData.timeofRTC.hour=0;
+            appData.timeofRTC.mth=0;
+            appData.timeofRTC.date=0;
                     
-            ret = mcp79411_set_time(&timeofRTC);
+            //ret = mcp79411_set_time(&appData.timeofRTC);
             
             
             //DR
             //mcp79411_get_time(&timeofRTC);
             SR_Init(&appData.sysLeds);
             
-            
+            ret = DRV_SPI_Status(SPI_ID_1);
+            //DRV_SPI_INIT
             DRV_ADC_Initialize();
             
             
@@ -212,7 +213,7 @@ void APP_Tasks ( void )
             DRV_ADC_Open(); 
             DRV_ADC_Start();
             
-            DRV_TMR2_Start();
+           // DRV_TMR2_Start();
             //BSP_InitADC10();
             appData.state = APP_STATE_SERVICE_TASKS;
             LIFELED_GREENOff();
@@ -221,6 +222,41 @@ void APP_Tasks ( void )
 
         case APP_STATE_SERVICE_TASKS:
         {
+            
+            /* If and SD card is mounted */
+            if(sd_getState() != APP_MOUNT_DISK){
+                /* Wait until SD availaible */
+                while(sd_getState() != APP_IDLE){
+                    /* SD FAT routine */
+                    sd_fat_task();
+                }
+                /* Unmount disk */
+                sd_setState(APP_UNMOUNT_DISK);
+                /* Wait until unmounted*/
+                while(sd_getState() != APP_IDLE){
+                    sd_fat_task();
+                }
+            }
+            
+            ret = DRV_SPI_Status(SPI_ID_1);
+            if (ret != SYS_STATUS_READY)
+            {
+                              
+                if (sd_getState() != APP_MOUNT_DISK)
+{
+                    sd_fat_task();
+                   // ret= DRV_USART_Open(DRV_USART_INDEX_0, DRV_IO_INTENT_EXCLUSIVE);
+                    //if (ret == DRV_HANDLE_INVALID) {
+                        // Unable to open the driver
+                        // May be the driver is not initialized or the initialization
+                        // is not complete.
+                    }
+                   // DRV_USART_WriteByte(DRV_USART_INDEX_0, 'a');
+                    //DRV_USART_Close(DRV_USART_INDEX_0);
+                }
+                sd_fat_task();
+            
+            //sd_fat_task();
             GetInputsStates();
             //timeofRTC.sec =0;
            // ret =mcp79411_get_time(&timeofRTC);
@@ -232,11 +268,11 @@ void APP_Tasks ( void )
             
             if (appData.SySwitch.FreeIn1_conf)
             {
-                DRV_TMR0_Start();
+                //DRV_TMR0_Start();
             }
             else
             {
-                DRV_TMR0_Stop();
+                //DRV_TMR0_Stop();
                 //appData.valAD=BSP_ReadAllADC();
             }
             
@@ -252,6 +288,7 @@ void APP_Tasks ( void )
             if(appData.SySwitch.FreeIn3_conf)
             {
                 //SPB_OUT3_CMDToggle();
+                sd_logger_scheduleWrite(&appData.timeofRTC);
             }
             else
             {
@@ -335,11 +372,11 @@ void GetInputsStates(void) {
 void APP_WaitStart(uint16_t waitingTime_ms) {
 
     appData.AppDelay = waitingTime_ms - 1;
-    DRV_TMR3_Start();
+    //DRV_TMR3_Start();
     appData.APP_DelayTimeIsRunning = 1;
     while (appData.APP_DelayTimeIsRunning) {
     }
-    DRV_TMR3_Stop();
+    //DRV_TMR3_Stop();
 }
    void APP_TIMER4_CALLBACK(void){
     if (appData.AppDelay > 0) {
