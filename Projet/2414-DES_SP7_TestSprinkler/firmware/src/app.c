@@ -94,8 +94,25 @@ S_AT42QT2120 s_dataSensor;    //Structure pour l'envoie des datas
 S_AT42QT2120 s_getDataSensor; //Structure pour la rec�ption des datas
 
 
-// Array of notes for a simple song (5 notes)
-float songNotes[5] = { NOTE_DO, NOTE_RE, NOTE_MI, NOTE_FA, NOTE_SOL };
+// Tableau des fréquences pour do, si, la, sol, fa, mi, ré, do (octave très aiguë)
+#define NOTE_DO   2093.00f
+#define NOTE_SI   1975.53f
+#define NOTE_LA   1760.00f
+#define NOTE_SOL  1567.98f
+#define NOTE_FA   1396.91f
+#define NOTE_MI   1318.51f
+#define NOTE_RE   1174.66f
+
+float songNotes[8] = {
+    NOTE_DO,    // do
+    NOTE_SI,    // si
+    NOTE_LA,    // la
+    NOTE_SOL,   // sol
+    NOTE_FA,    // fa
+    NOTE_MI,    // mi
+    NOTE_RE,    // ré
+    NOTE_DO     // do (octave supérieure)
+};
 
 
 // *****************************************************************************
@@ -225,7 +242,7 @@ void APP_Tasks ( void )
                     sd_fat_task();
                 }
 
-                sd_logger_scheduleWrite(&appData.timeofRTC);
+                //sd_logger_scheduleWrite(&appData.timeofRTC);
 
 
 
@@ -268,6 +285,7 @@ void APP_Tasks ( void )
             if (appData.SySwitch.FreeIn1_conf)
             {
                 //DRV_TMR0_Start();
+                 appData.state = APP_STATE_BUZZER;
             }
             else
             {
@@ -431,10 +449,10 @@ void SetTMR0_Frequency(float freq_hz)
 // Function to play a song (blocking, for demo)
 void PlaySong(void) {
   // Array of note durations in ms (example: 400ms per note)
- static uint16_t songDurations[5] = { 400, 400, 400, 400, 400 };
+ static uint16_t songDurations[8] = { 400, 400, 400, 400, 400, 400, 400, 400 };
   uint8_t i =0;
 
-    for(i = 0; i < 5; i++) {
+    for(i = 0; i < 8; i++) {
         SetTMR0_Frequency(songNotes[i]);
         DRV_TMR0_Start();
         APP_WaitStart(songDurations[i]);
