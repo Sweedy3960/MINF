@@ -9,6 +9,7 @@
             "imageType": "application",
             "imagePath": "./out/2414-DES_SP7_TestSprinkler/default.elf",
             "toolProperties": "default-tool",
+            "tool": "ICD 4",
             "packs": [
                 {
                     "name": "PIC32MX_DFP",
@@ -26,9 +27,6 @@
             "type": "toolchain",
             "provider": "microchip.toolchains:xc32@2.50",
             "properties": {
-                "global.common-include-directories": [],
-                "assembler.preprocessor-macros": [],
-                "assembler.assembler-symbols": [],
                 "assembler.extra-include-directories-for-preprocessor": [
                     "firmware/2414-DES_SP7_TestSprinkler.X"
                 ],
@@ -37,7 +35,6 @@
                 ],
                 "compiler.isolate-each-function": true,
                 "compiler.tentative-definitions": "",
-                "compiler.preprocessor-macros": [],
                 "compiler.extra-include-directories": [
                     "firmware/src",
                     "firmware/src/system_config/default",
@@ -49,23 +46,17 @@
                 "compiler.additional-warnings": true,
                 "compiler++.isolate-each-function": true,
                 "compiler++.optimization-level": "-O1",
-                "compiler++.preprocessor-macros": [],
                 "compiler++.extra-include-directories": [
                     "firmware/2414-DES_SP7_TestSprinkler.X"
                 ],
                 "linker.heap-size": "0",
                 "linker.remove-unused-sections": true,
-                "linker.oXC32ld-extra-opts": [],
-                "linker.input-libraries": [],
                 "linker.extra-lib-directories": [
                     "firmware/2414-DES_SP7_TestSprinkler.X"
                 ],
                 "linker.fill-flash-options-inc-const": "1",
                 "linker.map-file": "",
                 "linker.report-memory-usage": false,
-                "linker.trace-symbols": [],
-                "linker.linker-symbols": [],
-                "linker.preprocessor-macros": [],
                 "compiler.toplevel-reordering": "",
                 "compiler++.toplevel-reordering": "",
                 "archiver.additional-options-chop-files": false,

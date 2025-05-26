@@ -2,5 +2,6 @@
     "mplab.clangd.arguments": [
         "--compile-commands-dir=${workspaceRoot}\\_build\\2414-DES_SP7_TestSprinkler\\default"
     ],
-    "mplab.clangd.path": ""
+    "mplab.clangd.path": "",
+    "C_Cpp.intelliSenseEngine": "disabled"
 }
