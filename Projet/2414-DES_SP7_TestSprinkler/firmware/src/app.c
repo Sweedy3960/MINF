@@ -171,9 +171,9 @@ void APP_Tasks ( void )
         case APP_STATE_INIT:
         {
             // Ensure SPI1 is initialized (only if not already done by system)
-            if (DRV_SPI_Status(SPI_ID_1) != SYS_STATUS_READY) {
-                DRV_SPI_Initialize(DRV_SPI_INDEX_1, (SYS_MODULE_INIT*)NULL);
-            }
+           // if (DRV_SPI_Status(SPI_ID_1) != SYS_STATUS_READY) {
+               // DRV_SPI_Initialize(DRV_SPI_INDEX_1, (SYS_MODULE_INIT*)NULL);
+            //}
             /*
             appData.timeofRTC.sec = 0;
             appData.timeofRTC.sec =6;
@@ -209,51 +209,51 @@ void APP_Tasks ( void )
         case APP_STATE_SERVICE_TASKS:
         {
             // Check if SPI1 is ready before SD card operations
-            if (DRV_SPI_Status(SPI_ID_1) != SYS_STATUS_READY) {
+            //if (DRV_SPI_Status(SPI_ID_1) != SYS_STATUS_READY) {
                 // SPI not ready, skip SD card operations and optionally set an error state or retry
                 // You can add a debug LED or log here if needed
-                LIFELED_GREENToggle();
+               // LIFELED_GREENToggle();
                 // Optionally, you can set an error state or retry logic
-                appData.state = APP_ERROR; // Transition to an error state
-                break;
-            }
+               // appData.state = APP_ERROR; // Transition to an error state
+               // break;
+            //}
 
             /* If an SD card is mounted */
-            if(sd_getState() != APP_MOUNT_DISK){
+           // if(sd_getState() != APP_MOUNT_DISK){
                 /* Wait until SD available */
-                while(sd_getState() != APP_IDLE){
-                    sd_fat_task();
-                }
+              //  while(sd_getState() != APP_IDLE){
+             //       sd_fat_task();
+               // }
 
-                sd_logger_scheduleWrite(&appData.timeofRTC);
+               // sd_logger_scheduleWrite(&appData.timeofRTC);
 
 
 
                 /* Unmount disk */
-                sd_setState(APP_UNMOUNT_DISK);
+               // sd_setState(APP_UNMOUNT_DISK);
                 /* Wait until unmounted*/
-                while(sd_getState() != APP_IDLE){
-                    sd_fat_task();
-                }
-            }
+               // while(sd_getState() != APP_IDLE){
+               //     sd_fat_task();
+               // }
+            //}
             
             ret = DRV_SPI_Status(SPI_ID_1);
-            if (ret != SYS_STATUS_READY)
-            {
+         //   if (ret != SYS_STATUS_READY)
+          //  {
                               
-                if (sd_getState() != APP_MOUNT_DISK)
-{
-                    sd_fat_task();
+             //   if (sd_getState() != APP_MOUNT_DISK)
+//{
+                 //   sd_fat_task();
                    // ret= DRV_USART_Open(DRV_USART_INDEX_0, DRV_IO_INTENT_EXCLUSIVE);
                     //if (ret == DRV_HANDLE_INVALID) {
                         // Unable to open the driver
                         // May be the driver is not initialized or the initialization
                         // is not complete.
-                    }
+                  //  }
                    // DRV_USART_WriteByte(DRV_USART_INDEX_0, 'a');
                     //DRV_USART_Close(DRV_USART_INDEX_0);
-                }
-                sd_fat_task();
+               // }
+               // sd_fat_task();
             
             //sd_fat_task();
             GetInputsStates();
@@ -268,6 +268,7 @@ void APP_Tasks ( void )
             if (appData.SySwitch.FreeIn1_conf)
             {
                 //DRV_TMR0_Start();
+                appData.state = APP_STATE_BUZZER;
             }
             else
             {
