@@ -30,3 +30,7 @@ funclist
 nbproject/Makefile-*
 disassembly/
 .generated_files/
+*/.vscode/
+*/_build/
+*/cmake/
+*/out/

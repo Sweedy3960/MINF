@@ -92,11 +92,35 @@ extern "C" {
         /* Application's state machine's initial state. */
         APP_STATE_INIT = 0,
         APP_STATE_SERVICE_TASKS,
+        APP_STATE_WAIT_START,
+        APP_STATE_READ_SENSOR,
+        APP_STATE_ERROR,
+        APP_STATE_READ_ADC,
+        APP_STATE_READ_INPUTS,
+        APP_STATE_READ_SERIAL_LEDS,
+        APP_STATE_READ_RTC,
+        APP_STATE_READ_SDCARD,
+        APP_STATE_READ_SDCARD_LOG,
+        APP_STATE_BUZZER,
+        APP_STATE_READ_AT42QT2120,
 
         /* TODO: Define states used by the application state machine. */
 
     } APP_STATES;
-
+       
+    // Musical note frequencies (Hz) for one octave (C4 to B4)
+#define NOTE_DO      16744.032f
+#define NOTE_DOb     17739.680f
+#define NOTE_RE      18794.544f
+#define NOTE_REb     19912.112f
+#define NOTE_MI      21096.160f
+#define NOTE_FA      22350.592f
+#define NOTE_FAb     23679.616f
+#define NOTE_SOL     25083.712f
+#define NOTE_SOLb    26579.488f
+#define NOTE_LA      28160.000f
+#define NOTE_LAb     29834.464f
+#define NOTE_SI      31608.512f
 
     // *****************************************************************************
     /* Application Data
@@ -120,7 +144,7 @@ extern "C" {
         uint8_t stop;
     } S_AT42QT2120;
 
-    extern S_AT42QT2120 s_getDataSensor; //Structure pour la recéption des datas
+    extern S_AT42QT2120 s_getDataSensor; //Structure pour la recï¿½ption des datas
 
  
   
@@ -152,6 +176,8 @@ extern "C" {
         /* TODO: Define any additional data used by the application. */
     } APP_DATA;
 
+
+    #define PBCLK_FREQ 80000000 //80MHz
 
 
     // *****************************************************************************
@@ -251,6 +277,8 @@ extern "C" {
     void SetLed(FCT_LED LedTomod);
     void AdcReadAllSamples(void);
     void GetInputsStates(void);
+    void SetTMR0_Frequency(float freq_hz);
+    void PlaySong(void);
 #endif /* _APP_H */
 
     //DOM-IGNORE-BEGIN

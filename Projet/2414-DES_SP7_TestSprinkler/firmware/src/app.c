@@ -91,7 +91,12 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 APP_DATA appData;
 S_AT42QT2120 s_newDataSensor; //Structure pour envoie des nouvelles datas
 S_AT42QT2120 s_dataSensor;    //Structure pour l'envoie des datas
-S_AT42QT2120 s_getDataSensor; //Structure pour la recéption des datas
+S_AT42QT2120 s_getDataSensor; //Structure pour la recï¿½ption des datas
+
+
+// Array of notes for a simple song (5 notes)
+float songNotes[5] = { NOTE_DO, NOTE_RE, NOTE_MI, NOTE_FA, NOTE_SOL };
+
 
 // *****************************************************************************
 // *****************************************************************************
@@ -165,38 +170,19 @@ void APP_Tasks ( void )
         /* Application's initial state. */
         case APP_STATE_INIT:
         {
-           // SYS_MEDIA_GEOMETRY *geometry = NULL;
-            //AT42QT_Init();
-            //SR_LED_OE_2On(); //éteind
-            //TESTPINOn(); //étein
-            //DRV_USART0_Initialize();
-            //int a =12;
-            //i2c_init(1);
-            //AT42QT_Init();
-           // mcp79411_init();
-            //mcp79411_TIME_KEEPING time;
-            //time.bytes= 0;
-            // 
-            //I2C_InitMCP79411();
-           // mcp79411_time time;
-            //time.min = 1;
-           // mcp79411_init();
-           
-          
-            
-          
-            
-            
-            
-            
-            //timeofRTC.sec = 0;
+            // Ensure SPI1 is initialized (only if not already done by system)
+            if (DRV_SPI_Status(SPI_ID_1) != SYS_STATUS_READY) {
+                DRV_SPI_Initialize(DRV_SPI_INDEX_1, (SYS_MODULE_INIT*)NULL);
+            }
+            /*
+            appData.timeofRTC.sec = 0;
             appData.timeofRTC.sec =6;
             appData.timeofRTC.min =0;
             appData.timeofRTC.wkday=0;
             appData.timeofRTC.hour=0;
             appData.timeofRTC.mth=0;
             appData.timeofRTC.date=0;
-                    
+              */      
             //ret = mcp79411_set_time(&appData.timeofRTC);
             
             
@@ -222,14 +208,27 @@ void APP_Tasks ( void )
 
         case APP_STATE_SERVICE_TASKS:
         {
-            
-            /* If and SD card is mounted */
+            // Check if SPI1 is ready before SD card operations
+            if (DRV_SPI_Status(SPI_ID_1) != SYS_STATUS_READY) {
+                // SPI not ready, skip SD card operations and optionally set an error state or retry
+                // You can add a debug LED or log here if needed
+                LIFELED_GREENToggle();
+                // Optionally, you can set an error state or retry logic
+                appData.state = APP_ERROR; // Transition to an error state
+                break;
+            }
+
+            /* If an SD card is mounted */
             if(sd_getState() != APP_MOUNT_DISK){
-                /* Wait until SD availaible */
+                /* Wait until SD available */
                 while(sd_getState() != APP_IDLE){
-                    /* SD FAT routine */
                     sd_fat_task();
                 }
+
+                sd_logger_scheduleWrite(&appData.timeofRTC);
+
+
+
                 /* Unmount disk */
                 sd_setState(APP_UNMOUNT_DISK);
                 /* Wait until unmounted*/
@@ -310,6 +309,26 @@ void APP_Tasks ( void )
             
         } break;
 
+
+
+        case APP_STATE_BUZZER:
+        {
+            //call to play a song
+            PlaySong();
+            // Transition back to the service tasks state
+            appData.state = APP_STATE_SERVICE_TASKS;
+           
+        } break;  
+
+        case APP_ERROR:
+        {
+            /* An error occurred, handle it here */
+            // You can set an error LED or log the error
+            LIFELED_GREENToggle();
+            // Optionally, you can reset the state machine or take other actions
+            appData.state = APP_STATE_INIT; // Reset to initial state
+        } break;  
+
         /* TODO: implement your application state machine.*/
         
 
@@ -328,7 +347,7 @@ void GetInputsStates(void) {
     
     appData.SySwitch.SPBIn3_conf = SC3StateGet();
     appData.SySwitch.SPBIn2_conf = SC2StateGet();
-    appData.SySwitch.SPBIn2_conf= SC1StateGet();
+    appData.SySwitch.SPBIn2_conf=  SC1StateGet();
     appData.SySwitch.FreeIn1_conf= FC1StateGet();
     appData.SySwitch.FreeIn2_conf= FC2StateGet();
     appData.SySwitch.FreeIn3_conf= FC3StateGet();
@@ -360,23 +379,18 @@ void GetInputsStates(void) {
     BUZZ_CMDToggle();
     
  }
- 
-
-
-
-
 /*
- * Fct d'attente en fct du param d'entrée en ms 
+ * Fct d'attente en fct du param d'entrï¿½e en ms 
  * utilisation du timer 1 attente = 1ms
 */
 void APP_WaitStart(uint16_t waitingTime_ms) {
 
     appData.AppDelay = waitingTime_ms - 1;
-    //DRV_TMR3_Start();
+    DRV_TMR3_Start();
     appData.APP_DelayTimeIsRunning = 1;
     while (appData.APP_DelayTimeIsRunning) {
     }
-    //DRV_TMR3_Stop();
+    DRV_TMR3_Stop();
 }
    void APP_TIMER4_CALLBACK(void){
     if (appData.AppDelay > 0) {
@@ -387,6 +401,50 @@ void APP_WaitStart(uint16_t waitingTime_ms) {
     
   }
  
+
+void SetTMR0_Frequency(float freq_hz)
+{
+    uint16_t prescaler_values[] = {1, 2, 4, 8, 16, 32, 64, 256};
+    TMR_PRESCALE prescaler_enums[] = {
+        TMR_PRESCALE_VALUE_1, TMR_PRESCALE_VALUE_2, TMR_PRESCALE_VALUE_4, TMR_PRESCALE_VALUE_8,
+        TMR_PRESCALE_VALUE_16, TMR_PRESCALE_VALUE_32, TMR_PRESCALE_VALUE_64, TMR_PRESCALE_VALUE_256
+    };
+    uint8_t i =0;
+
+    uint32_t period = 0;
+    for (i = 0; i < 8; i++) {
+        period = (uint32_t)(PBCLK_FREQ / (prescaler_values[i] * freq_hz)) - 1;
+        if (period <= 0xFFFF) {
+            // Set prescaler
+            PLIB_TMR_PrescaleSelect(TMR_ID_1, prescaler_enums[i]);
+            // Set period
+            DRV_TMR0_PeriodValueSet(period);
+            break;
+        }
+    }
+    // Optionally restart timer
+    DRV_TMR0_Stop();
+    DRV_TMR0_Start();
+}
+
+
+// Function to play a song (blocking, for demo)
+void PlaySong(void) {
+  // Array of note durations in ms (example: 400ms per note)
+ static uint16_t songDurations[5] = { 400, 400, 400, 400, 400 };
+  uint8_t i =0;
+
+    for(i = 0; i < 5; i++) {
+        SetTMR0_Frequency(songNotes[i]);
+        DRV_TMR0_Start();
+        APP_WaitStart(songDurations[i]);
+        DRV_TMR0_Stop();
+        APP_WaitStart(50); // Short pause between notes
+    }
+}
+
+
+
 /*******************************************************************************
  End of File
  */
