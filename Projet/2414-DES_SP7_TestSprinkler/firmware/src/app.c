@@ -99,13 +99,9 @@ S_AT42QT2120 s_getDataSensor; //Structure pour la rec�ption des datas
 // Nouvelle séquence de notes pour la mélodie demandée
 float songMelody[] = {
     NOTE_RE, NOTE_MI, NOTE_RE,
+    NOTE_RE, NOTE_RE,
     NOTE_RE, NOTE_MI, NOTE_RE,
-    NOTE_RE, NOTE_MI, NOTE_RE,
-    NOTE_RE, NOTE_FA, NOTE_SOL, NOTE_FA, NOTE_MI, NOTE_RE,
-    NOTE_FA, NOTE_MI, NOTE_RE,
-    NOTE_FA, NOTE_MI, NOTE_RE,
-    NOTE_FA, NOTE_MI, NOTE_RE,
-    NOTE_LA, NOTE_LA, NOTE_LA, NOTE_SOL, NOTE_FA, NOTE_SOL, NOTE_FA, NOTE_LA, NOTE_SOL, NOTE_FA, NOTE_MI, NOTE_RE
+    NOTE_RE, NOTE_FA, NOTE_SOL, NOTE_FA, NOTE_MI, NOTE_RE
 };
 
 #define SONG_LENGTH (sizeof(songMelody)/sizeof(songMelody[0]))
@@ -221,6 +217,7 @@ void APP_Tasks ( void )
 
         case APP_STATE_SERVICE_TASKS:
         {
+          
             // Check if SPI1 is ready before SD card operations
             //if (DRV_SPI_Status(SPI_ID_1) != SYS_STATUS_READY) {
                 // SPI not ready, skip SD card operations and optionally set an error state or retry
@@ -460,7 +457,7 @@ void PlaySong(void) {
 }
 
 
-s
+
 /*******************************************************************************
  End of File
  */
