@@ -108,19 +108,16 @@ extern "C" {
 
     } APP_STATES;
        
-    // Musical note frequencies (Hz) for one octave (C4 to B4)
-#define NOTE_DO      16744.032f
-#define NOTE_DOb     17739.680f
-#define NOTE_RE      18794.544f
-#define NOTE_REb     19912.112f
-#define NOTE_MI      21096.160f
-#define NOTE_FA      22350.592f
-#define NOTE_FAb     23679.616f
-#define NOTE_SOL     25083.712f
-#define NOTE_SOLb    26579.488f
-#define NOTE_LA      28160.000f
-#define NOTE_LAb     29834.464f
-#define NOTE_SI      31608.512f
+
+// Tableau des fréquences pour do, si, la, sol, fa, mi, ré, do (octave très aiguë)
+  #define NOTE_DO   2093.00f
+  #define NOTE_SI   1975.53f
+  #define NOTE_LA   1760.00f
+  #define NOTE_SOL  1567.98f
+  #define NOTE_FA   1396.91f
+  #define NOTE_MI   1318.51f
+  #define NOTE_RE   1174.66f
+  #define NOTE_DO2  1046.50fs
 
     // *****************************************************************************
     /* Application Data
@@ -279,6 +276,7 @@ extern "C" {
     void GetInputsStates(void);
     void SetTMR0_Frequency(float freq_hz);
     void PlaySong(void);
+
 #endif /* _APP_H */
 
     //DOM-IGNORE-BEGIN

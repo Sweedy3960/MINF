@@ -94,25 +94,21 @@ S_AT42QT2120 s_dataSensor;    //Structure pour l'envoie des datas
 S_AT42QT2120 s_getDataSensor; //Structure pour la rec�ption des datas
 
 
-// Tableau des fréquences pour do, si, la, sol, fa, mi, ré, do (octave très aiguë)
-#define NOTE_DO   2093.00f
-#define NOTE_SI   1975.53f
-#define NOTE_LA   1760.00f
-#define NOTE_SOL  1567.98f
-#define NOTE_FA   1396.91f
-#define NOTE_MI   1318.51f
-#define NOTE_RE   1174.66f
 
-float songNotes[8] = {
-    NOTE_DO,    // do
-    NOTE_SI,    // si
-    NOTE_LA,    // la
-    NOTE_SOL,   // sol
-    NOTE_FA,    // fa
-    NOTE_MI,    // mi
-    NOTE_RE,    // ré
-    NOTE_DO     // do (octave supérieure)
+
+// Nouvelle séquence de notes pour la mélodie demandée
+float songMelody[] = {
+    NOTE_RE, NOTE_MI, NOTE_RE,
+    NOTE_RE, NOTE_MI, NOTE_RE,
+    NOTE_RE, NOTE_MI, NOTE_RE,
+    NOTE_RE, NOTE_FA, NOTE_SOL, NOTE_FA, NOTE_MI, NOTE_RE,
+    NOTE_FA, NOTE_MI, NOTE_RE,
+    NOTE_FA, NOTE_MI, NOTE_RE,
+    NOTE_FA, NOTE_MI, NOTE_RE,
+    NOTE_LA, NOTE_LA, NOTE_LA, NOTE_SOL, NOTE_FA, NOTE_SOL, NOTE_FA, NOTE_LA, NOTE_SOL, NOTE_FA, NOTE_MI, NOTE_RE
 };
+
+#define SONG_LENGTH (sizeof(songMelody)/sizeof(songMelody[0]))
 
 
 // *****************************************************************************
@@ -242,11 +238,7 @@ void APP_Tasks ( void )
              //       sd_fat_task();
                // }
 
-<<<<<<< HEAD
                 //sd_logger_scheduleWrite(&appData.timeofRTC);
-=======
-               // sd_logger_scheduleWrite(&appData.timeofRTC);
->>>>>>> 1c567f5a403e1698adb4b091a11fdb6cddea7f27
 
 
 
@@ -289,11 +281,7 @@ void APP_Tasks ( void )
             if (appData.SySwitch.FreeIn1_conf)
             {
                 //DRV_TMR0_Start();
-<<<<<<< HEAD
                  appData.state = APP_STATE_BUZZER;
-=======
-                appData.state = APP_STATE_BUZZER;
->>>>>>> 1c567f5a403e1698adb4b091a11fdb6cddea7f27
             }
             else
             {
@@ -441,7 +429,8 @@ void SetTMR0_Frequency(float freq_hz)
     for (i = 0; i < 8; i++) {
         period = (uint32_t)(PBCLK_FREQ / (prescaler_values[i] * freq_hz)) - 1;
         if (period <= 0xFFFF) {
-            // Set prescaler
+         
+          // Set prescaler
             PLIB_TMR_PrescaleSelect(TMR_ID_1, prescaler_enums[i]);
             // Set period
             DRV_TMR0_PeriodValueSet(period);
@@ -456,21 +445,22 @@ void SetTMR0_Frequency(float freq_hz)
 
 // Function to play a song (blocking, for demo)
 void PlaySong(void) {
-  // Array of note durations in ms (example: 400ms per note)
- static uint16_t songDurations[8] = { 400, 400, 400, 400, 400, 400, 400, 400 };
-  uint8_t i =0;
-
-    for(i = 0; i < 8; i++) {
-        SetTMR0_Frequency(songNotes[i]);
+    static uint16_t songDurations[36] = {
+        300,300,300,  300,300,300,  300,300,300,  200,200,200,200,200,200,
+        300,300,300,  300,300,300,  300,300,300,  200,200,200,200,200,200,200,200,200,200
+    };
+    uint8_t i = 0;
+    for(i = 0; i < SONG_LENGTH; i++) {
+        SetTMR0_Frequency(songMelody[i]);
         DRV_TMR0_Start();
         APP_WaitStart(songDurations[i]);
         DRV_TMR0_Stop();
-        APP_WaitStart(50); // Short pause between notes
+        APP_WaitStart(40); // Petite pause
     }
 }
 
 
-
+s
 /*******************************************************************************
  End of File
  */
