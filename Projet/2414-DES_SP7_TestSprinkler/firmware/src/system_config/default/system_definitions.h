@@ -61,6 +61,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "driver/adc/drv_adc_static.h"
 #include "driver/tmr/drv_tmr_static.h"
 #include "peripheral/int/plib_int.h"
+#include "driver/usart/drv_usart_static.h"
 #include "system/ports/sys_ports.h"
 #include "driver/sdcard/drv_sdcard.h"
 #include "driver/spi/drv_spi.h"
@@ -104,6 +105,7 @@ typedef struct
     SYS_MODULE_OBJ  drvTmr2;
     SYS_MODULE_OBJ  drvTmr3;
 
+    SYS_MODULE_OBJ  drvUsart0;
     SYS_MODULE_OBJ  drvSDCard;
 
     /*** SPI Object for Index 0 ***/

@@ -304,10 +304,6 @@ uint8_t mcp79411_rtc_iic_write(uint8_t  *tx_buffer, uint16_t len)
         ack =i2c_write(tx_buffer[i]);
     }
     i2c_stop();
-    
-   // ret = 0;
-
-
     return ack;
 }
 

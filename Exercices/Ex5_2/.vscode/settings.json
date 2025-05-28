@@ -1,0 +1,7 @@
+{
+    "mplab.clangd.arguments": [
+        "--compile-commands-dir=${workspaceRoot}\\_build\\Ex5_2\\default"
+    ],
+    "mplab.clangd.path": "",
+    "C_Cpp.intelliSenseEngine": "disabled"
+}

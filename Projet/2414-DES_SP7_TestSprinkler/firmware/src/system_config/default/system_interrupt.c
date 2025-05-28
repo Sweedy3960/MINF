@@ -63,11 +63,18 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "app.h"
 #include "system_definitions.h"
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: System Interrupt Vector Functions
 // *****************************************************************************
 // *****************************************************************************
+void __ISR(_UART_1_VECTOR, ipl1AUTO) _IntHandlerDrvUsartInstance0(void)
+{
+    DRV_USART_TasksTransmit(sysObj.drvUsart0);
+    DRV_USART_TasksError(sysObj.drvUsart0);
+    DRV_USART_TasksReceive(sysObj.drvUsart0);
+}
 
  
 

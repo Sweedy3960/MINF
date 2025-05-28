@@ -96,28 +96,27 @@ extern "C" {
         APP_STATE_READ_SENSOR,
         APP_STATE_ERROR,
         APP_STATE_READ_ADC,
-        APP_STATE_READ_INPUTS,
-        APP_STATE_READ_SERIAL_LEDS,
+        APP_STATE_READ_CONFIG_INPUTS,
+        APP_STATE_SERIAL_LEDS,
         APP_STATE_READ_RTC,
-        APP_STATE_READ_SDCARD,
-        APP_STATE_READ_SDCARD_LOG,
+        APP_STATE_WRITE_SDCARD,
         APP_STATE_BUZZER,
-        APP_STATE_READ_AT42QT2120,
-
+        APP_STATE_READ_CAPACITIVE_SENSOR,
+        APP_STATE_REPEAT,
         /* TODO: Define states used by the application state machine. */
 
     } APP_STATES;
-       
 
-// Tableau des fréquences pour do, si, la, sol, fa, mi, ré, do (octave très aiguë)
-  #define NOTE_DO   2093.00f
-  #define NOTE_SI   1975.53f
-  #define NOTE_LA   1760.00f
-  #define NOTE_SOL  1567.98f
-  #define NOTE_FA   1396.91f
-  #define NOTE_MI   1318.51f
-  #define NOTE_RE   1174.66f
-  #define NOTE_DO2  1046.50fs
+
+    // Tableau des fréquences pour do, si, la, sol, fa, mi, ré, do (octave très aiguë)
+#define NOTE_DO   2093.00f
+#define NOTE_SI   1975.53f
+#define NOTE_LA   1760.00f
+#define NOTE_SOL  1567.98f
+#define NOTE_FA   1396.91f
+#define NOTE_MI   1318.51f
+#define NOTE_RE   1174.66f
+#define NOTE_DO2  1046.50f
 
     // *****************************************************************************
     /* Application Data
@@ -142,39 +141,66 @@ extern "C" {
     } S_AT42QT2120;
 
     extern S_AT42QT2120 s_getDataSensor; //Structure pour la rec�ption des datas
-
- 
-  
+    // a config switch has an fct linked and a state 
 
     typedef struct {
-        uint8_t Ain1_conf : 1;
-        uint8_t Ain2_conf : 1;
-        uint8_t Ain3_conf : 1;
-        uint8_t FreeIn1_conf : 1;
-        uint8_t FreeIn2_conf : 1;
-        uint8_t FreeIn3_conf : 1;
-        uint8_t FreeIn4_conf : 1;
-        uint8_t FreeIn5_conf : 1;
-        uint8_t SPBIn1_conf : 1;
-        uint8_t SPBIn2_conf : 1;
-        uint8_t SPBIn3_conf : 1;
+        uint8_t state : 1;
+
+    } SwithcConfig;
+
+    typedef enum {
+        //AIN switch can set if it's an 0-10v or 4-20mA input
+        AIN_0_10V = 0,
+        AIN_4_20mA = 1,
+        //
+    } ConfigStatesAIN;
+
+    typedef enum {
+        //FreeInputs are used to redirect the inputs  to the FreeOutputs corresponding
+        FREE_IN_DONOT = 0,
+        FREE_IN_REPEAT = 1,
+    } ConfigStatesFreeIn;
+
+    typedef enum {
+        //SPBIn are used to redirect the SPBin to alarm/derrangement output
+        SPB_IN_DONOT = 0,
+        SPB_IN_REPEAT = 1,
+    } ConfigStatesSPBs;
+
+    typedef struct {
+        SwithcConfig Ain1_conf;
+        SwithcConfig Ain2_conf;
+        SwithcConfig Ain3_conf;
+
+        SwithcConfig FreeIn1_conf;
+        SwithcConfig FreeIn2_conf;
+        SwithcConfig FreeIn3_conf;
+        SwithcConfig FreeIn4_conf;
+        SwithcConfig FreeIn5_conf;
+
+        SwithcConfig SPBIn1_conf;
+        SwithcConfig SPBIn2_conf;
+        SwithcConfig SPBIn3_conf;
     } ConfInSwitchs;
+
+
 
     typedef struct {
         /* The application's current state */
         APP_STATES state;
         ADC_SAMPLE valAD[14];
-        SERIAL_REG_DATA  sysLeds;
+        SERIAL_REG_DATA sysLeds;
         uint32_t AppDelay;
         bool APP_DelayTimeIsRunning;
         //void* SR_leds;
         ConfInSwitchs SySwitch;
         mcp79411_time timeofRTC;
+        uint8_t cmdRealayOut[9]; //used to store the relay states 
         /* TODO: Define any additional data used by the application. */
     } APP_DATA;
 
 
-    #define PBCLK_FREQ 80000000 //80MHz
+#define PBCLK_FREQ 80000000 //80MHz
 
 
     // *****************************************************************************
@@ -268,14 +294,19 @@ extern "C" {
     void APP_TIMER4_CALLBACK(void);
     void APP_SERIAL_LEDS_CMD(void);
     void APP_WaitStart(uint16_t waitingTime_ms);
+    void APP_AdcReadAllSamples(void);
+    void APP_GetInputsStates(void);
+    void APP_SetTMR0_Frequency(float freq_hz);
+    void APP_PlaySong(void);
+    void APP_InitMcp79411(void);
+    void APP_InitADC(void);
+    
+    
     void CLOCKING_SRCLK(void);
     void CLOCKING_CLK(void);
     void ResetLed(FCT_LED LedTomod);
     void SetLed(FCT_LED LedTomod);
-    void AdcReadAllSamples(void);
-    void GetInputsStates(void);
-    void SetTMR0_Frequency(float freq_hz);
-    void PlaySong(void);
+    void DebugUART_Print(const char *format, ...);
 
 #endif /* _APP_H */
 

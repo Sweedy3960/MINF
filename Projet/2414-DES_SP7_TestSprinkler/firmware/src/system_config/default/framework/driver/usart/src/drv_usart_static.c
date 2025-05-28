@@ -79,9 +79,6 @@ SYS_MODULE_OBJ DRV_USART0_Initialize(void)
     /* Disable the USART module to configure it*/
     PLIB_USART_Disable (USART_ID_1);
 
-    /* Set the handshake mode to either simplex or flow control */
-    PLIB_USART_HandshakeModeSelect(USART_ID_1, DRV_USART_HANDSHAKE_FLOWCONTROL);
-
     /* Initialize the USART based on configuration settings */
     PLIB_USART_InitializeModeGeneral(USART_ID_1,
             false,  /*Auto baud*/
