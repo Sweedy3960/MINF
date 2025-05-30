@@ -1,0 +1,327 @@
+\doxysection{app.\+h}
+\hypertarget{app_8h_source}{}\label{app_8h_source}\mbox{\hyperlink{app_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ MPLAB\ Harmony\ Application\ Header\ File}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ Company:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ Microchip\ Technology\ Inc.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ File\ Name:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ app.h}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ This\ header\ file\ provides\ prototypes\ and\ definitions\ for\ the\ application.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ This\ header\ file\ provides\ function\ prototypes\ and\ data\ type\ definitions\ for}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ the\ application.\ \ Some\ of\ these\ are\ required\ by\ the\ system\ (such\ as\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ "{}APP\_Initialize"{}\ and\ "{}APP\_Tasks"{}\ prototypes)\ and\ some\ of\ them\ are\ only\ used}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ \ internally\ by\ the\ application\ (such\ as\ the\ "{}APP\_STATES"{}\ definition).\ \ Both}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ are\ defined\ here\ for\ convenience.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *******************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00022\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{Copyright\ (c)\ 2013-\/2014\ released\ Microchip\ Technology\ Inc.\ \ All\ rights\ reserved.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{comment}{Microchip\ licenses\ to\ you\ the\ right\ to\ use,\ modify,\ copy\ and\ distribute}}
+\DoxyCodeLine{00026\ \textcolor{comment}{Software\ only\ when\ embedded\ on\ a\ Microchip\ microcontroller\ or\ digital\ signal}}
+\DoxyCodeLine{00027\ \textcolor{comment}{controller\ that\ is\ integrated\ into\ your\ product\ or\ third\ party\ product}}
+\DoxyCodeLine{00028\ \textcolor{comment}{(pursuant\ to\ the\ sublicense\ terms\ in\ the\ accompanying\ license\ agreement).}}
+\DoxyCodeLine{00029\ \textcolor{comment}{}}
+\DoxyCodeLine{00030\ \textcolor{comment}{You\ should\ refer\ to\ the\ license\ agreement\ accompanying\ this\ Software\ for}}
+\DoxyCodeLine{00031\ \textcolor{comment}{additional\ information\ regarding\ your\ rights\ and\ obligations.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{}}
+\DoxyCodeLine{00033\ \textcolor{comment}{SOFTWARE\ AND\ DOCUMENTATION\ ARE\ PROVIDED\ "{}AS\ IS"{}\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,}}
+\DoxyCodeLine{00034\ \textcolor{comment}{EITHER\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ WITHOUT\ LIMITATION,\ ANY\ WARRANTY\ OF}}
+\DoxyCodeLine{00035\ \textcolor{comment}{MERCHANTABILITY,\ TITLE,\ NON-\/INFRINGEMENT\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{IN\ NO\ EVENT\ SHALL\ MICROCHIP\ OR\ ITS\ LICENSORS\ BE\ LIABLE\ OR\ OBLIGATED\ UNDER}}
+\DoxyCodeLine{00037\ \textcolor{comment}{CONTRACT,\ NEGLIGENCE,\ STRICT\ LIABILITY,\ CONTRIBUTION,\ BREACH\ OF\ WARRANTY,\ OR}}
+\DoxyCodeLine{00038\ \textcolor{comment}{OTHER\ LEGAL\ EQUITABLE\ THEORY\ ANY\ DIRECT\ OR\ INDIRECT\ DAMAGES\ OR\ EXPENSES}}
+\DoxyCodeLine{00039\ \textcolor{comment}{INCLUDING\ BUT\ NOT\ LIMITED\ TO\ ANY\ INCIDENTAL,\ SPECIAL,\ INDIRECT,\ PUNITIVE\ OR}}
+\DoxyCodeLine{00040\ \textcolor{comment}{CONSEQUENTIAL\ DAMAGES,\ LOST\ PROFITS\ OR\ LOST\ DATA,\ COST\ OF\ PROCUREMENT\ OF}}
+\DoxyCodeLine{00041\ \textcolor{comment}{SUBSTITUTE\ GOODS,\ TECHNOLOGY,\ SERVICES,\ OR\ ANY\ CLAIMS\ BY\ THIRD\ PARTIES}}
+\DoxyCodeLine{00042\ \textcolor{comment}{(INCLUDING\ BUT\ NOT\ LIMITED\ TO\ ANY\ DEFENSE\ THEREOF),\ OR\ OTHER\ SIMILAR\ COSTS.}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ *******************************************************************************/}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ \_APP\_H}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ \_APP\_H}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ Section:\ Included\ Files}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}system\_config.h"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}system\_definitions.h"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_mc32_driver_adc_8h}{Mc32DriverAdc.h}}"{}}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h}{Driver\_SR\_SN74HCS596QPWRQ1.h}}"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mcp79411_8h}{mcp79411.h}}"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mcp79411__interface_8h}{mcp79411\_interface.h}}"{}}}
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ \ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\ DOM-\/IGNORE-\/END\ }}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Section:\ Type\ Definitions}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{/*\ Application\ states}}
+\DoxyCodeLine{00082\ \textcolor{comment}{}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ \ \ \ \ \ Summary:}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ \ \ \ \ \ \ \ Application\ states\ enumeration}}
+\DoxyCodeLine{00085\ \textcolor{comment}{}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ \ \ \ \ \ Description:}}
+\DoxyCodeLine{00087\ \textcolor{comment}{\ \ \ \ \ \ \ \ This\ enumeration\ defines\ the\ valid\ application\ states.\ \ These\ states}}
+\DoxyCodeLine{00088\ \textcolor{comment}{\ \ \ \ \ \ \ \ determine\ the\ behavior\ of\ the\ application\ at\ various\ times.}}
+\DoxyCodeLine{00089\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Application's\ state\ machine's\ initial\ state.\ */}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871aee72936f6dda86ada3946d7c937a2297}{APP\_STATE\_INIT}}\ =\ 0,}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a92f04718da45a34c069d899c657d1ac5}{APP\_STATE\_SERVICE\_TASKS}},}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a78ae693746229d7a60e96952ac1f8091}{APP\_STATE\_WAIT\_START}},}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a86b49641ff58c1d5ce9a81c69e354719}{APP\_STATE\_READ\_SENSOR}},}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a795800b55678e769e1fdf1f3537ee3e2}{APP\_STATE\_ERROR}},}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871aae7454b7a8fd9118a47003d1186d2ded}{APP\_STATE\_READ\_ADC}},}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a79e338cdf5f310924fa15a967aec61e2}{APP\_STATE\_READ\_CONFIG\_INPUTS}},}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a27e293e8d19fefee3d8799e99455dcc6}{APP\_STATE\_SERIAL\_LEDS}},}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a2453ac9393c55bb82106cd475a29ae26}{APP\_STATE\_READ\_RTC}},}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871adfc2947d228ae748c670c3a73973861d}{APP\_STATE\_WRITE\_SDCARD}},}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a33f4a337ce97923c289ce748aacc87b7}{APP\_STATE\_BUZZER}},}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871aab59313602084351d71f1cd95e79ae95}{APP\_STATE\_READ\_CAPACITIVE\_SENSOR}},}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a1806519d9869ebf82d468ef69cbd209b}{APP\_STATE\_REPEAT}},}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ TODO:\ Define\ states\ used\ by\ the\ application\ state\ machine.\ */}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \}\ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871}{APP\_STATES}};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{//\ Tableau\ des\ fréquences\ pour\ do,\ si,\ la,\ sol,\ fa,\ mi,\ ré,\ do\ (octave\ très\ aiguë)}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ NOTE\_DO\ \ \ 2093.00f}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ NOTE\_SI\ \ \ 1975.53f}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ NOTE\_LA\ \ \ 1760.00f}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ NOTE\_SOL\ \ 1567.98f}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ NOTE\_FA\ \ \ 1396.91f}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ NOTE\_MI\ \ \ 1318.51f}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ NOTE\_RE\ \ \ 1174.66f}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ NOTE\_DO2\ \ 1046.50f}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{/*\ Application\ Data}}
+\DoxyCodeLine{00123\ \textcolor{comment}{}}
+\DoxyCodeLine{00124\ \textcolor{comment}{\ \ \ \ \ \ Summary:}}
+\DoxyCodeLine{00125\ \textcolor{comment}{\ \ \ \ \ \ \ \ Holds\ application\ data}}
+\DoxyCodeLine{00126\ \textcolor{comment}{}}
+\DoxyCodeLine{00127\ \textcolor{comment}{\ \ \ \ \ \ Description:}}
+\DoxyCodeLine{00128\ \textcolor{comment}{\ \ \ \ \ \ \ \ This\ structure\ holds\ the\ application's\ data.}}
+\DoxyCodeLine{00129\ \textcolor{comment}{}}
+\DoxyCodeLine{00130\ \textcolor{comment}{\ \ \ \ \ \ Remarks:}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ \ \ \ \ \ \ \ Application\ strings\ and\ buffers\ are\ be\ defined\ outside\ this\ structure.}}
+\DoxyCodeLine{00132\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{/*Structure\ pour\ stocker\ ou\ recevoir\ les\ datas\ du\ AT42QT2120*/}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s___a_t42_q_t2120_a7dc2499e4825a78e484bb388ab29dc1d}{start}};}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s___a_t42_q_t2120_a5cca1cafe581f4e00d853992f5e28878}{valKey0to7}};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s___a_t42_q_t2120_aff442d74b7de2acf677f72635bc681b3}{valKey8to11}};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s___a_t42_q_t2120_af4f8e8c31e5cebf21fa7c2b11837d859}{valWheel}};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_s___a_t42_q_t2120_a219998cfb366307196d1013046d3f5d2}{stop}};}
+\DoxyCodeLine{00141\ \ \ \ \ \}\ \mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\_AT42QT2120}};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\_AT42QT2120}}\ \mbox{\hyperlink{app_8c_ad3d63cf42bac9da94dc89d5565d39cc1}{s\_getDataSensor}};\ \textcolor{comment}{//Structure\ pour\ la\ rec{\ucr}ption\ des\ datas}}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{//\ a\ config\ switch\ has\ an\ fct\ linked\ and\ a\ state\ }}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_swithc_config_a0b57aa10271a66f3dc936bba1d2f3830}{state}}\ :\ 1;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \}\ \mbox{\hyperlink{struct_swithc_config}{SwithcConfig}};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{comment}{//AIN\ switch\ can\ set\ if\ it's\ an\ 0-\/10v\ or\ 4-\/20mA\ input}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_a4191bff3b8a6064de384d4c03061f1cea94b641944a9cd56925d978cb5b499d18}{AIN\_0\_10V}}\ =\ 0,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_a4191bff3b8a6064de384d4c03061f1cead50b71e950011960c9b48dd9a55675be}{AIN\_4\_20mA}}\ =\ 1,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00156\ \ \ \ \ \}\ \mbox{\hyperlink{app_8h_a4191bff3b8a6064de384d4c03061f1ce}{ConfigStatesAIN}};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{comment}{//FreeInputs\ are\ used\ to\ redirect\ the\ inputs\ \ to\ the\ FreeOutputs\ corresponding}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_acf903aefe776184cd5993e76692aa5a1a8836f3cefcfcc3c37ffb23fface5751c}{FREE\_IN\_DONOT}}\ =\ 0,}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_acf903aefe776184cd5993e76692aa5a1a990335f82123f351ecbaf502ae7f8c0f}{FREE\_IN\_REPEAT}}\ =\ 1,}
+\DoxyCodeLine{00162\ \ \ \ \ \}\ \mbox{\hyperlink{app_8h_acf903aefe776184cd5993e76692aa5a1}{ConfigStatesFreeIn}};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{comment}{//SPBIn\ are\ used\ to\ redirect\ the\ SPBin\ to\ alarm/derrangement\ output}}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ada390c31648888e80455e59aededec89aec0faa7f1261066a2e5c416866c3eba7}{SPB\_IN\_DONOT}}\ =\ 0,}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ada390c31648888e80455e59aededec89ac86d865e5bb4b3c004fcf5751ea1063a}{SPB\_IN\_REPEAT}}\ =\ 1,}
+\DoxyCodeLine{00168\ \ \ \ \ \}\ \mbox{\hyperlink{app_8h_ada390c31648888e80455e59aededec89}{ConfigStatesSPBs}};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_swithc_config}{SwithcConfig}}\ \mbox{\hyperlink{struct_conf_in_switchs_a2a5e3e1cc77c11c86af11f95d04946eb}{Ain1\_conf}};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_swithc_config}{SwithcConfig}}\ \mbox{\hyperlink{struct_conf_in_switchs_af61f187d11f5f9193aa8f0ac116d2faa}{Ain2\_conf}};}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_swithc_config}{SwithcConfig}}\ \mbox{\hyperlink{struct_conf_in_switchs_a4abfb19c11ff556b16df8359d0dedde3}{Ain3\_conf}};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_swithc_config}{SwithcConfig}}\ \mbox{\hyperlink{struct_conf_in_switchs_ab203b62f351dfbbbf00a96a143c62fe5}{FreeIn1\_conf}};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_swithc_config}{SwithcConfig}}\ \mbox{\hyperlink{struct_conf_in_switchs_a07f34869e40398f10df3bfba04c564ea}{FreeIn2\_conf}};}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_swithc_config}{SwithcConfig}}\ \mbox{\hyperlink{struct_conf_in_switchs_a85232de9f2793824e3df28c9c76abed6}{FreeIn3\_conf}};}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_swithc_config}{SwithcConfig}}\ \mbox{\hyperlink{struct_conf_in_switchs_aa56f995ba678fe6faa19bc5813d11dcc}{FreeIn4\_conf}};}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_swithc_config}{SwithcConfig}}\ \mbox{\hyperlink{struct_conf_in_switchs_a16a8db661a63be19b2b827ac431245f4}{FreeIn5\_conf}};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_swithc_config}{SwithcConfig}}\ \mbox{\hyperlink{struct_conf_in_switchs_a6adc6882848f7ceb181fb098c3c81713}{SPBIn1\_conf}};}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_swithc_config}{SwithcConfig}}\ \mbox{\hyperlink{struct_conf_in_switchs_aaf12fb10cfb9814cd2d2f2eb7cc89353}{SPBIn2\_conf}};}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_swithc_config}{SwithcConfig}}\ \mbox{\hyperlink{struct_conf_in_switchs_af733a950b97916f5fc378e821f3b2ed2}{SPBIn3\_conf}};}
+\DoxyCodeLine{00184\ \ \ \ \ \}\ \mbox{\hyperlink{struct_conf_in_switchs}{ConfInSwitchs}};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ The\ application's\ current\ state\ */}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871}{APP\_STATES}}\ \mbox{\hyperlink{struct_a_p_p___d_a_t_a_a5e301beaf2d55ccc56dfcf3943d310fc}{state}};}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ ADC\_SAMPLE\ \mbox{\hyperlink{struct_a_p_p___d_a_t_a_a6852c02f57797573b81c7b93353ce022}{valAD}}[14];}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{union_s_e_r_i_a_l___r_e_g___d_a_t_a}{SERIAL\_REG\_DATA}}\ \mbox{\hyperlink{struct_a_p_p___d_a_t_a_aee7ccbdc60708d03e28215cc98e6977c}{sysLeds}};}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_a_p_p___d_a_t_a_a17a3cc95c0d2a70aedea4e7d50fd3ba7}{AppDelay}};}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_a_p_p___d_a_t_a_a3b98f7c2463a4ee686752b1b9577a022}{APP\_DelayTimeIsRunning}};}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//void*\ SR\_leds;}}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_conf_in_switchs}{ConfInSwitchs}}\ \mbox{\hyperlink{struct_a_p_p___d_a_t_a_a6d12f5d530d8f877a04340e2f7d867ad}{SySwitch}};}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structmcp79411__time}{mcp79411\_time}}\ \mbox{\hyperlink{struct_a_p_p___d_a_t_a_ac9aff2c82e28d67ac00d682b76c1bb62}{timeofRTC}};}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_a_p_p___d_a_t_a_a1262446d553b67fd5ab69650d1b578c0}{cmdRealayOut}}[9];\ \textcolor{comment}{//used\ to\ store\ the\ relay\ states\ }}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ TODO:\ Define\ any\ additional\ data\ used\ by\ the\ application.\ */}}
+\DoxyCodeLine{00200\ \ \ \ \ \}\ \mbox{\hyperlink{struct_a_p_p___d_a_t_a}{APP\_DATA}};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ PBCLK\_FREQ\ 80000000\ }\textcolor{comment}{//80MHz}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{comment}{//\ Section:\ Application\ Callback\ Routines}}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{comment}{/*\ These\ routines\ are\ called\ by\ drivers\ when\ certain\ events\ occur.}}
+\DoxyCodeLine{00212\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{comment}{//\ Section:\ Application\ Initialization\ and\ State\ Machine\ Functions}}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \textcolor{comment}{\ \ \ \ /*******************************************************************************}}
+\DoxyCodeLine{00221\ \textcolor{comment}{\ \ \ \ \ \ Function:}}
+\DoxyCodeLine{00222\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ APP\_Initialize\ (\ void\ )}}
+\DoxyCodeLine{00223\ \textcolor{comment}{}}
+\DoxyCodeLine{00224\ \textcolor{comment}{\ \ \ \ \ \ Summary:}}
+\DoxyCodeLine{00225\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ MPLAB\ Harmony\ application\ initialization\ routine.}}
+\DoxyCodeLine{00226\ \textcolor{comment}{}}
+\DoxyCodeLine{00227\ \textcolor{comment}{\ \ \ \ \ \ Description:}}
+\DoxyCodeLine{00228\ \textcolor{comment}{\ \ \ \ \ \ \ \ This\ function\ initializes\ the\ Harmony\ application.\ \ It\ places\ the\ }}
+\DoxyCodeLine{00229\ \textcolor{comment}{\ \ \ \ \ \ \ \ application\ in\ its\ initial\ state\ and\ prepares\ it\ to\ run\ so\ that\ its\ }}
+\DoxyCodeLine{00230\ \textcolor{comment}{\ \ \ \ \ \ \ \ APP\_Tasks\ function\ can\ be\ called.}}
+\DoxyCodeLine{00231\ \textcolor{comment}{}}
+\DoxyCodeLine{00232\ \textcolor{comment}{\ \ \ \ \ \ Precondition:}}
+\DoxyCodeLine{00233\ \textcolor{comment}{\ \ \ \ \ \ \ \ All\ other\ system\ initialization\ routines\ should\ be\ called\ before\ calling}}
+\DoxyCodeLine{00234\ \textcolor{comment}{\ \ \ \ \ \ \ \ this\ routine\ (in\ "{}SYS\_Initialize"{}).}}
+\DoxyCodeLine{00235\ \textcolor{comment}{}}
+\DoxyCodeLine{00236\ \textcolor{comment}{\ \ \ \ \ \ Parameters:}}
+\DoxyCodeLine{00237\ \textcolor{comment}{\ \ \ \ \ \ \ \ None.}}
+\DoxyCodeLine{00238\ \textcolor{comment}{}}
+\DoxyCodeLine{00239\ \textcolor{comment}{\ \ \ \ \ \ Returns:}}
+\DoxyCodeLine{00240\ \textcolor{comment}{\ \ \ \ \ \ \ \ None.}}
+\DoxyCodeLine{00241\ \textcolor{comment}{}}
+\DoxyCodeLine{00242\ \textcolor{comment}{\ \ \ \ \ \ Example:}}
+\DoxyCodeLine{00243\ \textcolor{comment}{\ \ \ \ \ \ \ \ <code>}}
+\DoxyCodeLine{00244\ \textcolor{comment}{\ \ \ \ \ \ \ \ APP\_Initialize();}}
+\DoxyCodeLine{00245\ \textcolor{comment}{\ \ \ \ \ \ \ \ </code>}}
+\DoxyCodeLine{00246\ \textcolor{comment}{}}
+\DoxyCodeLine{00247\ \textcolor{comment}{\ \ \ \ \ \ Remarks:}}
+\DoxyCodeLine{00248\ \textcolor{comment}{\ \ \ \ \ \ \ \ This\ routine\ must\ be\ called\ from\ the\ SYS\_Initialize\ function.}}
+\DoxyCodeLine{00249\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_a59b305aa4f4287d45cbe428f533f84b2}{APP\_Initialize}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_ac84821be565c3ad536c97469e444bd01}{setAlarmLed}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_ac49dd186f408eac336716408104ede01}{setDerLed}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_a044fffe26eb85b52390beae5d918d2f0}{setIn1Led}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_a8994480c1b198b89b53c1ed4f916cf69}{setIn2Led}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_af14a44e9bd4a0ddc43a9fba643fba295}{setIn3Led}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_ac5cf140de5f4704781eb7b574412def0}{setIn4Led}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_acaf1eefd017e5d66c39d991a26c2197a}{setIn5Led}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00259\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{app_8h_a49e20dc3e3e27d43533501f8f7f34026}{gray\_conv}}(uint8\_t\ n);}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_ab11af01d10b55155821953dccf79c672}{SetLed}}(\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5}{FCT\_LED}}\ LedTomod);}
+\DoxyCodeLine{00261\ \textcolor{comment}{\ \ \ \ /*******************************************************************************}}
+\DoxyCodeLine{00262\ \textcolor{comment}{\ \ \ \ \ \ Function:}}
+\DoxyCodeLine{00263\ \textcolor{comment}{\ \ \ \ \ \ \ \ void\ APP\_Tasks\ (\ void\ )}}
+\DoxyCodeLine{00264\ \textcolor{comment}{}}
+\DoxyCodeLine{00265\ \textcolor{comment}{\ \ \ \ \ \ Summary:}}
+\DoxyCodeLine{00266\ \textcolor{comment}{\ \ \ \ \ \ \ \ MPLAB\ Harmony\ Demo\ application\ tasks\ function}}
+\DoxyCodeLine{00267\ \textcolor{comment}{}}
+\DoxyCodeLine{00268\ \textcolor{comment}{\ \ \ \ \ \ Description:}}
+\DoxyCodeLine{00269\ \textcolor{comment}{\ \ \ \ \ \ \ \ This\ routine\ is\ the\ Harmony\ Demo\ application's\ tasks\ function.\ \ It}}
+\DoxyCodeLine{00270\ \textcolor{comment}{\ \ \ \ \ \ \ \ defines\ the\ application's\ state\ machine\ and\ core\ logic.}}
+\DoxyCodeLine{00271\ \textcolor{comment}{}}
+\DoxyCodeLine{00272\ \textcolor{comment}{\ \ \ \ \ \ Precondition:}}
+\DoxyCodeLine{00273\ \textcolor{comment}{\ \ \ \ \ \ \ \ The\ system\ and\ application\ initialization\ ("{}SYS\_Initialize"{})\ should\ be}}
+\DoxyCodeLine{00274\ \textcolor{comment}{\ \ \ \ \ \ \ \ called\ before\ calling\ this.}}
+\DoxyCodeLine{00275\ \textcolor{comment}{}}
+\DoxyCodeLine{00276\ \textcolor{comment}{\ \ \ \ \ \ Parameters:}}
+\DoxyCodeLine{00277\ \textcolor{comment}{\ \ \ \ \ \ \ \ None.}}
+\DoxyCodeLine{00278\ \textcolor{comment}{}}
+\DoxyCodeLine{00279\ \textcolor{comment}{\ \ \ \ \ \ Returns:}}
+\DoxyCodeLine{00280\ \textcolor{comment}{\ \ \ \ \ \ \ \ None.}}
+\DoxyCodeLine{00281\ \textcolor{comment}{}}
+\DoxyCodeLine{00282\ \textcolor{comment}{\ \ \ \ \ \ Example:}}
+\DoxyCodeLine{00283\ \textcolor{comment}{\ \ \ \ \ \ \ \ <code>}}
+\DoxyCodeLine{00284\ \textcolor{comment}{\ \ \ \ \ \ \ \ APP\_Tasks();}}
+\DoxyCodeLine{00285\ \textcolor{comment}{\ \ \ \ \ \ \ \ </code>}}
+\DoxyCodeLine{00286\ \textcolor{comment}{}}
+\DoxyCodeLine{00287\ \textcolor{comment}{\ \ \ \ \ \ Remarks:}}
+\DoxyCodeLine{00288\ \textcolor{comment}{\ \ \ \ \ \ \ \ This\ routine\ must\ be\ called\ from\ SYS\_Tasks()\ routine.}}
+\DoxyCodeLine{00289\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_a859aee46b660cfee47cfd45ce08f6862}{APP\_Tasks}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_a8f46b20760f4b4b10df763dd5b6e2525}{APP\_TIMER1\_CALLBACK}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_a245753d6244c3f5682adbdc334412149}{APP\_TIMER4\_CALLBACK}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_a51d9a9aba50639baf27bff12757c9dae}{APP\_SERIAL\_LEDS\_CMD}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_abcbd1769c7d03ea90681c10fe1f03775}{APP\_WaitStart}}(uint16\_t\ waitingTime\_ms);}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_a98a5fecb1828f413db07cfb10273379c}{APP\_AdcReadAllSamples}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_a912c163cafb881d4deea72f7b463cbdc}{APP\_GetInputsStates}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_a23e441f0e8d8f65fb909cf1630237be2}{APP\_SetTMR0\_Frequency}}(\textcolor{keywordtype}{float}\ freq\_hz);}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_aa3bed8e1f96b2024b7750e4b1c6b9cbe}{APP\_PlaySong}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_aa01b24d00b6eb54fd185e029a791cccc}{APP\_InitMcp79411}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_a43ccfb3bb8362f57c897915a2bf0b888}{APP\_InitADC}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00303\ \ \ \ \ }
+\DoxyCodeLine{00304\ \ \ \ \ }
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_ae151403ee4e82e74bbd931fe9e0ff9e8}{CLOCKING\_SRCLK}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_a83f72156f02ea0c9d1980998f6a1133e}{CLOCKING\_CLK}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_a1f221d6b1726a5ef4b2533d542fde9f6}{ResetLed}}(\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5}{FCT\_LED}}\ LedTomod);}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_ab11af01d10b55155821953dccf79c672}{SetLed}}(\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5}{FCT\_LED}}\ LedTomod);}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{app_8h_ab90aceec1f83db2e42e1f207cd9e4c95}{DebugUART\_Print}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format,\ ...);}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_APP\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{comment}{//DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00315\ \}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00317\ \textcolor{comment}{//DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00320\ \textcolor{comment}{\ End\ of\ File}}
+\DoxyCodeLine{00321\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00322\ }
+
+\end{DoxyCode}

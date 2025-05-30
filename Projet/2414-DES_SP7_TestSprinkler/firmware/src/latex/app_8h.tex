@@ -1,0 +1,492 @@
+\doxysection{app.\+h File Reference}
+\hypertarget{app_8h}{}\label{app_8h}\index{app.h@{app.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}system\+\_\+config.\+h"{}}\newline
+{\ttfamily \#include "{}system\+\_\+definitions.\+h"{}}\newline
+{\ttfamily \#include "{}Mc32\+Driver\+Adc.\+h"{}}\newline
+{\ttfamily \#include "{}Driver\+\_\+\+SR\+\_\+\+SN74\+HCS596\+QPWRQ1.\+h"{}}\newline
+{\ttfamily \#include "{}mcp79411.\+h"{}}\newline
+{\ttfamily \#include "{}mcp79411\+\_\+interface.\+h"{}}\newline
+Include dependency graph for app.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}}
+\item 
+struct \mbox{\hyperlink{struct_swithc_config}{Swithc\+Config}}
+\item 
+struct \mbox{\hyperlink{struct_conf_in_switchs}{Conf\+In\+Switchs}}
+\item 
+struct \mbox{\hyperlink{struct_a_p_p___d_a_t_a}{APP\+\_\+\+DATA}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{app_8h_abb229cda1af1b02b1e73cbc017329f02}{NOTE\+\_\+\+DO}}~2093.\+00f
+\item 
+\#define \mbox{\hyperlink{app_8h_a55d56d27abc2577d42ff2dd35a9e99d3}{NOTE\+\_\+\+SI}}~1975.\+53f
+\item 
+\#define \mbox{\hyperlink{app_8h_a51782228a1835069048535a45322684d}{NOTE\+\_\+\+LA}}~1760.\+00f
+\item 
+\#define \mbox{\hyperlink{app_8h_a1525e106bef7dbceb4da2ed568361f87}{NOTE\+\_\+\+SOL}}~1567.\+98f
+\item 
+\#define \mbox{\hyperlink{app_8h_ad11dba50dc350bc40f063a8c8271b4e8}{NOTE\+\_\+\+FA}}~1396.\+91f
+\item 
+\#define \mbox{\hyperlink{app_8h_ac7b0f458b034d39fb9a445aa45198c19}{NOTE\+\_\+\+MI}}~1318.\+51f
+\item 
+\#define \mbox{\hyperlink{app_8h_a7f76ce04645a7b97576894b684239c72}{NOTE\+\_\+\+RE}}~1174.\+66f
+\item 
+\#define \mbox{\hyperlink{app_8h_a80f312efa613d0da8e6f5b770bb2fce6}{NOTE\+\_\+\+DO2}}~1046.\+50f
+\item 
+\#define \mbox{\hyperlink{app_8h_abc09fe7149f547d87d7a47d89131260c}{PBCLK\+\_\+\+FREQ}}~80000000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871}{APP\+\_\+\+STATES}} \{ \newline
+\mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871aee72936f6dda86ada3946d7c937a2297}{APP\+\_\+\+STATE\+\_\+\+INIT}} = 0
+, \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a92f04718da45a34c069d899c657d1ac5}{APP\+\_\+\+STATE\+\_\+\+SERVICE\+\_\+\+TASKS}}
+, \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a78ae693746229d7a60e96952ac1f8091}{APP\+\_\+\+STATE\+\_\+\+WAIT\+\_\+\+START}}
+, \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a86b49641ff58c1d5ce9a81c69e354719}{APP\+\_\+\+STATE\+\_\+\+READ\+\_\+\+SENSOR}}
+, \newline
+\mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a795800b55678e769e1fdf1f3537ee3e2}{APP\+\_\+\+STATE\+\_\+\+ERROR}}
+, \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871aae7454b7a8fd9118a47003d1186d2ded}{APP\+\_\+\+STATE\+\_\+\+READ\+\_\+\+ADC}}
+, \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a79e338cdf5f310924fa15a967aec61e2}{APP\+\_\+\+STATE\+\_\+\+READ\+\_\+\+CONFIG\+\_\+\+INPUTS}}
+, \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a27e293e8d19fefee3d8799e99455dcc6}{APP\+\_\+\+STATE\+\_\+\+SERIAL\+\_\+\+LEDS}}
+, \newline
+\mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a2453ac9393c55bb82106cd475a29ae26}{APP\+\_\+\+STATE\+\_\+\+READ\+\_\+\+RTC}}
+, \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871adfc2947d228ae748c670c3a73973861d}{APP\+\_\+\+STATE\+\_\+\+WRITE\+\_\+\+SDCARD}}
+, \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a33f4a337ce97923c289ce748aacc87b7}{APP\+\_\+\+STATE\+\_\+\+BUZZER}}
+, \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871aab59313602084351d71f1cd95e79ae95}{APP\+\_\+\+STATE\+\_\+\+READ\+\_\+\+CAPACITIVE\+\_\+\+SENSOR}}
+, \newline
+\mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871a1806519d9869ebf82d468ef69cbd209b}{APP\+\_\+\+STATE\+\_\+\+REPEAT}}
+ \}
+\item 
+enum \mbox{\hyperlink{app_8h_a4191bff3b8a6064de384d4c03061f1ce}{Config\+States\+AIN}} \{ \mbox{\hyperlink{app_8h_a4191bff3b8a6064de384d4c03061f1cea94b641944a9cd56925d978cb5b499d18}{AIN\+\_\+0\+\_\+10V}} = 0
+, \mbox{\hyperlink{app_8h_a4191bff3b8a6064de384d4c03061f1cead50b71e950011960c9b48dd9a55675be}{AIN\+\_\+4\+\_\+20mA}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{app_8h_acf903aefe776184cd5993e76692aa5a1}{Config\+States\+Free\+In}} \{ \mbox{\hyperlink{app_8h_acf903aefe776184cd5993e76692aa5a1a8836f3cefcfcc3c37ffb23fface5751c}{FREE\+\_\+\+IN\+\_\+\+DONOT}} = 0
+, \mbox{\hyperlink{app_8h_acf903aefe776184cd5993e76692aa5a1a990335f82123f351ecbaf502ae7f8c0f}{FREE\+\_\+\+IN\+\_\+\+REPEAT}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{app_8h_ada390c31648888e80455e59aededec89}{Config\+States\+SPBs}} \{ \mbox{\hyperlink{app_8h_ada390c31648888e80455e59aededec89aec0faa7f1261066a2e5c416866c3eba7}{SPB\+\_\+\+IN\+\_\+\+DONOT}} = 0
+, \mbox{\hyperlink{app_8h_ada390c31648888e80455e59aededec89ac86d865e5bb4b3c004fcf5751ea1063a}{SPB\+\_\+\+IN\+\_\+\+REPEAT}} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{app_8h_a59b305aa4f4287d45cbe428f533f84b2}{APP\+\_\+\+Initialize}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_ac84821be565c3ad536c97469e444bd01}{set\+Alarm\+Led}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_ac49dd186f408eac336716408104ede01}{set\+Der\+Led}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_a044fffe26eb85b52390beae5d918d2f0}{set\+In1\+Led}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_a8994480c1b198b89b53c1ed4f916cf69}{set\+In2\+Led}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_af14a44e9bd4a0ddc43a9fba643fba295}{set\+In3\+Led}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_ac5cf140de5f4704781eb7b574412def0}{set\+In4\+Led}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_acaf1eefd017e5d66c39d991a26c2197a}{set\+In5\+Led}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{app_8h_a49e20dc3e3e27d43533501f8f7f34026}{gray\+\_\+conv}} (uint8\+\_\+t n)
+\item 
+void \mbox{\hyperlink{app_8h_ab11af01d10b55155821953dccf79c672}{Set\+Led}} (\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5}{FCT\+\_\+\+LED}} Led\+Tomod)
+\item 
+void \mbox{\hyperlink{app_8h_a859aee46b660cfee47cfd45ce08f6862}{APP\+\_\+\+Tasks}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_a8f46b20760f4b4b10df763dd5b6e2525}{APP\+\_\+\+TIMER1\+\_\+\+CALLBACK}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_a245753d6244c3f5682adbdc334412149}{APP\+\_\+\+TIMER4\+\_\+\+CALLBACK}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_a51d9a9aba50639baf27bff12757c9dae}{APP\+\_\+\+SERIAL\+\_\+\+LEDS\+\_\+\+CMD}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_abcbd1769c7d03ea90681c10fe1f03775}{APP\+\_\+\+Wait\+Start}} (uint16\+\_\+t waiting\+Time\+\_\+ms)
+\item 
+void \mbox{\hyperlink{app_8h_a98a5fecb1828f413db07cfb10273379c}{APP\+\_\+\+Adc\+Read\+All\+Samples}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_a912c163cafb881d4deea72f7b463cbdc}{APP\+\_\+\+Get\+Inputs\+States}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_a23e441f0e8d8f65fb909cf1630237be2}{APP\+\_\+\+Set\+TMR0\+\_\+\+Frequency}} (float freq\+\_\+hz)
+\item 
+void \mbox{\hyperlink{app_8h_aa3bed8e1f96b2024b7750e4b1c6b9cbe}{APP\+\_\+\+Play\+Song}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_aa01b24d00b6eb54fd185e029a791cccc}{APP\+\_\+\+Init\+Mcp79411}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_a43ccfb3bb8362f57c897915a2bf0b888}{APP\+\_\+\+Init\+ADC}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_ae151403ee4e82e74bbd931fe9e0ff9e8}{CLOCKING\+\_\+\+SRCLK}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_a83f72156f02ea0c9d1980998f6a1133e}{CLOCKING\+\_\+\+CLK}} (void)
+\item 
+void \mbox{\hyperlink{app_8h_a1f221d6b1726a5ef4b2533d542fde9f6}{Reset\+Led}} (\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5}{FCT\+\_\+\+LED}} Led\+Tomod)
+\item 
+void \mbox{\hyperlink{app_8h_ab90aceec1f83db2e42e1f207cd9e4c95}{Debug\+UART\+\_\+\+Print}} (const char \texorpdfstring{$\ast$}{*}format,...)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} \mbox{\hyperlink{app_8h_ad3d63cf42bac9da94dc89d5565d39cc1}{s\+\_\+get\+Data\+Sensor}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{app_8h_abb229cda1af1b02b1e73cbc017329f02}\index{app.h@{app.h}!NOTE\_DO@{NOTE\_DO}}
+\index{NOTE\_DO@{NOTE\_DO}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{NOTE\_DO}{NOTE\_DO}}
+{\footnotesize\ttfamily \label{app_8h_abb229cda1af1b02b1e73cbc017329f02} 
+\#define NOTE\+\_\+\+DO~2093.\+00f}
+
+\Hypertarget{app_8h_a80f312efa613d0da8e6f5b770bb2fce6}\index{app.h@{app.h}!NOTE\_DO2@{NOTE\_DO2}}
+\index{NOTE\_DO2@{NOTE\_DO2}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{NOTE\_DO2}{NOTE\_DO2}}
+{\footnotesize\ttfamily \label{app_8h_a80f312efa613d0da8e6f5b770bb2fce6} 
+\#define NOTE\+\_\+\+DO2~1046.\+50f}
+
+\Hypertarget{app_8h_ad11dba50dc350bc40f063a8c8271b4e8}\index{app.h@{app.h}!NOTE\_FA@{NOTE\_FA}}
+\index{NOTE\_FA@{NOTE\_FA}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{NOTE\_FA}{NOTE\_FA}}
+{\footnotesize\ttfamily \label{app_8h_ad11dba50dc350bc40f063a8c8271b4e8} 
+\#define NOTE\+\_\+\+FA~1396.\+91f}
+
+\Hypertarget{app_8h_a51782228a1835069048535a45322684d}\index{app.h@{app.h}!NOTE\_LA@{NOTE\_LA}}
+\index{NOTE\_LA@{NOTE\_LA}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{NOTE\_LA}{NOTE\_LA}}
+{\footnotesize\ttfamily \label{app_8h_a51782228a1835069048535a45322684d} 
+\#define NOTE\+\_\+\+LA~1760.\+00f}
+
+\Hypertarget{app_8h_ac7b0f458b034d39fb9a445aa45198c19}\index{app.h@{app.h}!NOTE\_MI@{NOTE\_MI}}
+\index{NOTE\_MI@{NOTE\_MI}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{NOTE\_MI}{NOTE\_MI}}
+{\footnotesize\ttfamily \label{app_8h_ac7b0f458b034d39fb9a445aa45198c19} 
+\#define NOTE\+\_\+\+MI~1318.\+51f}
+
+\Hypertarget{app_8h_a7f76ce04645a7b97576894b684239c72}\index{app.h@{app.h}!NOTE\_RE@{NOTE\_RE}}
+\index{NOTE\_RE@{NOTE\_RE}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{NOTE\_RE}{NOTE\_RE}}
+{\footnotesize\ttfamily \label{app_8h_a7f76ce04645a7b97576894b684239c72} 
+\#define NOTE\+\_\+\+RE~1174.\+66f}
+
+\Hypertarget{app_8h_a55d56d27abc2577d42ff2dd35a9e99d3}\index{app.h@{app.h}!NOTE\_SI@{NOTE\_SI}}
+\index{NOTE\_SI@{NOTE\_SI}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{NOTE\_SI}{NOTE\_SI}}
+{\footnotesize\ttfamily \label{app_8h_a55d56d27abc2577d42ff2dd35a9e99d3} 
+\#define NOTE\+\_\+\+SI~1975.\+53f}
+
+\Hypertarget{app_8h_a1525e106bef7dbceb4da2ed568361f87}\index{app.h@{app.h}!NOTE\_SOL@{NOTE\_SOL}}
+\index{NOTE\_SOL@{NOTE\_SOL}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{NOTE\_SOL}{NOTE\_SOL}}
+{\footnotesize\ttfamily \label{app_8h_a1525e106bef7dbceb4da2ed568361f87} 
+\#define NOTE\+\_\+\+SOL~1567.\+98f}
+
+\Hypertarget{app_8h_abc09fe7149f547d87d7a47d89131260c}\index{app.h@{app.h}!PBCLK\_FREQ@{PBCLK\_FREQ}}
+\index{PBCLK\_FREQ@{PBCLK\_FREQ}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{PBCLK\_FREQ}{PBCLK\_FREQ}}
+{\footnotesize\ttfamily \label{app_8h_abc09fe7149f547d87d7a47d89131260c} 
+\#define PBCLK\+\_\+\+FREQ~80000000}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871}\index{app.h@{app.h}!APP\_STATES@{APP\_STATES}}
+\index{APP\_STATES@{APP\_STATES}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{APP\_STATES}{APP\_STATES}}
+{\footnotesize\ttfamily \label{app_8h_ac23e091bbd221d57ef9aa15bf099b871} 
+enum \mbox{\hyperlink{app_8h_ac23e091bbd221d57ef9aa15bf099b871}{APP\+\_\+\+STATES}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_STATE\_INIT@{APP\_STATE\_INIT}!app.h@{app.h}}\index{app.h@{app.h}!APP\_STATE\_INIT@{APP\_STATE\_INIT}}}\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871aee72936f6dda86ada3946d7c937a2297}\label{app_8h_ac23e091bbd221d57ef9aa15bf099b871aee72936f6dda86ada3946d7c937a2297} 
+APP\+\_\+\+STATE\+\_\+\+INIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_STATE\_SERVICE\_TASKS@{APP\_STATE\_SERVICE\_TASKS}!app.h@{app.h}}\index{app.h@{app.h}!APP\_STATE\_SERVICE\_TASKS@{APP\_STATE\_SERVICE\_TASKS}}}\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871a92f04718da45a34c069d899c657d1ac5}\label{app_8h_ac23e091bbd221d57ef9aa15bf099b871a92f04718da45a34c069d899c657d1ac5} 
+APP\+\_\+\+STATE\+\_\+\+SERVICE\+\_\+\+TASKS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_STATE\_WAIT\_START@{APP\_STATE\_WAIT\_START}!app.h@{app.h}}\index{app.h@{app.h}!APP\_STATE\_WAIT\_START@{APP\_STATE\_WAIT\_START}}}\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871a78ae693746229d7a60e96952ac1f8091}\label{app_8h_ac23e091bbd221d57ef9aa15bf099b871a78ae693746229d7a60e96952ac1f8091} 
+APP\+\_\+\+STATE\+\_\+\+WAIT\+\_\+\+START&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_STATE\_READ\_SENSOR@{APP\_STATE\_READ\_SENSOR}!app.h@{app.h}}\index{app.h@{app.h}!APP\_STATE\_READ\_SENSOR@{APP\_STATE\_READ\_SENSOR}}}\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871a86b49641ff58c1d5ce9a81c69e354719}\label{app_8h_ac23e091bbd221d57ef9aa15bf099b871a86b49641ff58c1d5ce9a81c69e354719} 
+APP\+\_\+\+STATE\+\_\+\+READ\+\_\+\+SENSOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_STATE\_ERROR@{APP\_STATE\_ERROR}!app.h@{app.h}}\index{app.h@{app.h}!APP\_STATE\_ERROR@{APP\_STATE\_ERROR}}}\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871a795800b55678e769e1fdf1f3537ee3e2}\label{app_8h_ac23e091bbd221d57ef9aa15bf099b871a795800b55678e769e1fdf1f3537ee3e2} 
+APP\+\_\+\+STATE\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_STATE\_READ\_ADC@{APP\_STATE\_READ\_ADC}!app.h@{app.h}}\index{app.h@{app.h}!APP\_STATE\_READ\_ADC@{APP\_STATE\_READ\_ADC}}}\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871aae7454b7a8fd9118a47003d1186d2ded}\label{app_8h_ac23e091bbd221d57ef9aa15bf099b871aae7454b7a8fd9118a47003d1186d2ded} 
+APP\+\_\+\+STATE\+\_\+\+READ\+\_\+\+ADC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_STATE\_READ\_CONFIG\_INPUTS@{APP\_STATE\_READ\_CONFIG\_INPUTS}!app.h@{app.h}}\index{app.h@{app.h}!APP\_STATE\_READ\_CONFIG\_INPUTS@{APP\_STATE\_READ\_CONFIG\_INPUTS}}}\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871a79e338cdf5f310924fa15a967aec61e2}\label{app_8h_ac23e091bbd221d57ef9aa15bf099b871a79e338cdf5f310924fa15a967aec61e2} 
+APP\+\_\+\+STATE\+\_\+\+READ\+\_\+\+CONFIG\+\_\+\+INPUTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_STATE\_SERIAL\_LEDS@{APP\_STATE\_SERIAL\_LEDS}!app.h@{app.h}}\index{app.h@{app.h}!APP\_STATE\_SERIAL\_LEDS@{APP\_STATE\_SERIAL\_LEDS}}}\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871a27e293e8d19fefee3d8799e99455dcc6}\label{app_8h_ac23e091bbd221d57ef9aa15bf099b871a27e293e8d19fefee3d8799e99455dcc6} 
+APP\+\_\+\+STATE\+\_\+\+SERIAL\+\_\+\+LEDS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_STATE\_READ\_RTC@{APP\_STATE\_READ\_RTC}!app.h@{app.h}}\index{app.h@{app.h}!APP\_STATE\_READ\_RTC@{APP\_STATE\_READ\_RTC}}}\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871a2453ac9393c55bb82106cd475a29ae26}\label{app_8h_ac23e091bbd221d57ef9aa15bf099b871a2453ac9393c55bb82106cd475a29ae26} 
+APP\+\_\+\+STATE\+\_\+\+READ\+\_\+\+RTC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_STATE\_WRITE\_SDCARD@{APP\_STATE\_WRITE\_SDCARD}!app.h@{app.h}}\index{app.h@{app.h}!APP\_STATE\_WRITE\_SDCARD@{APP\_STATE\_WRITE\_SDCARD}}}\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871adfc2947d228ae748c670c3a73973861d}\label{app_8h_ac23e091bbd221d57ef9aa15bf099b871adfc2947d228ae748c670c3a73973861d} 
+APP\+\_\+\+STATE\+\_\+\+WRITE\+\_\+\+SDCARD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_STATE\_BUZZER@{APP\_STATE\_BUZZER}!app.h@{app.h}}\index{app.h@{app.h}!APP\_STATE\_BUZZER@{APP\_STATE\_BUZZER}}}\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871a33f4a337ce97923c289ce748aacc87b7}\label{app_8h_ac23e091bbd221d57ef9aa15bf099b871a33f4a337ce97923c289ce748aacc87b7} 
+APP\+\_\+\+STATE\+\_\+\+BUZZER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_STATE\_READ\_CAPACITIVE\_SENSOR@{APP\_STATE\_READ\_CAPACITIVE\_SENSOR}!app.h@{app.h}}\index{app.h@{app.h}!APP\_STATE\_READ\_CAPACITIVE\_SENSOR@{APP\_STATE\_READ\_CAPACITIVE\_SENSOR}}}\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871aab59313602084351d71f1cd95e79ae95}\label{app_8h_ac23e091bbd221d57ef9aa15bf099b871aab59313602084351d71f1cd95e79ae95} 
+APP\+\_\+\+STATE\+\_\+\+READ\+\_\+\+CAPACITIVE\+\_\+\+SENSOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_STATE\_REPEAT@{APP\_STATE\_REPEAT}!app.h@{app.h}}\index{app.h@{app.h}!APP\_STATE\_REPEAT@{APP\_STATE\_REPEAT}}}\Hypertarget{app_8h_ac23e091bbd221d57ef9aa15bf099b871a1806519d9869ebf82d468ef69cbd209b}\label{app_8h_ac23e091bbd221d57ef9aa15bf099b871a1806519d9869ebf82d468ef69cbd209b} 
+APP\+\_\+\+STATE\+\_\+\+REPEAT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{app_8h_a4191bff3b8a6064de384d4c03061f1ce}\index{app.h@{app.h}!ConfigStatesAIN@{ConfigStatesAIN}}
+\index{ConfigStatesAIN@{ConfigStatesAIN}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{ConfigStatesAIN}{ConfigStatesAIN}}
+{\footnotesize\ttfamily \label{app_8h_a4191bff3b8a6064de384d4c03061f1ce} 
+enum \mbox{\hyperlink{app_8h_a4191bff3b8a6064de384d4c03061f1ce}{Config\+States\+AIN}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AIN\_0\_10V@{AIN\_0\_10V}!app.h@{app.h}}\index{app.h@{app.h}!AIN\_0\_10V@{AIN\_0\_10V}}}\Hypertarget{app_8h_a4191bff3b8a6064de384d4c03061f1cea94b641944a9cd56925d978cb5b499d18}\label{app_8h_a4191bff3b8a6064de384d4c03061f1cea94b641944a9cd56925d978cb5b499d18} 
+AIN\+\_\+0\+\_\+10V&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AIN\_4\_20mA@{AIN\_4\_20mA}!app.h@{app.h}}\index{app.h@{app.h}!AIN\_4\_20mA@{AIN\_4\_20mA}}}\Hypertarget{app_8h_a4191bff3b8a6064de384d4c03061f1cead50b71e950011960c9b48dd9a55675be}\label{app_8h_a4191bff3b8a6064de384d4c03061f1cead50b71e950011960c9b48dd9a55675be} 
+AIN\+\_\+4\+\_\+20mA&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{app_8h_acf903aefe776184cd5993e76692aa5a1}\index{app.h@{app.h}!ConfigStatesFreeIn@{ConfigStatesFreeIn}}
+\index{ConfigStatesFreeIn@{ConfigStatesFreeIn}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{ConfigStatesFreeIn}{ConfigStatesFreeIn}}
+{\footnotesize\ttfamily \label{app_8h_acf903aefe776184cd5993e76692aa5a1} 
+enum \mbox{\hyperlink{app_8h_acf903aefe776184cd5993e76692aa5a1}{Config\+States\+Free\+In}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN\_DONOT@{FREE\_IN\_DONOT}!app.h@{app.h}}\index{app.h@{app.h}!FREE\_IN\_DONOT@{FREE\_IN\_DONOT}}}\Hypertarget{app_8h_acf903aefe776184cd5993e76692aa5a1a8836f3cefcfcc3c37ffb23fface5751c}\label{app_8h_acf903aefe776184cd5993e76692aa5a1a8836f3cefcfcc3c37ffb23fface5751c} 
+FREE\+\_\+\+IN\+\_\+\+DONOT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN\_REPEAT@{FREE\_IN\_REPEAT}!app.h@{app.h}}\index{app.h@{app.h}!FREE\_IN\_REPEAT@{FREE\_IN\_REPEAT}}}\Hypertarget{app_8h_acf903aefe776184cd5993e76692aa5a1a990335f82123f351ecbaf502ae7f8c0f}\label{app_8h_acf903aefe776184cd5993e76692aa5a1a990335f82123f351ecbaf502ae7f8c0f} 
+FREE\+\_\+\+IN\+\_\+\+REPEAT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{app_8h_ada390c31648888e80455e59aededec89}\index{app.h@{app.h}!ConfigStatesSPBs@{ConfigStatesSPBs}}
+\index{ConfigStatesSPBs@{ConfigStatesSPBs}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{ConfigStatesSPBs}{ConfigStatesSPBs}}
+{\footnotesize\ttfamily \label{app_8h_ada390c31648888e80455e59aededec89} 
+enum \mbox{\hyperlink{app_8h_ada390c31648888e80455e59aededec89}{Config\+States\+SPBs}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_IN\_DONOT@{SPB\_IN\_DONOT}!app.h@{app.h}}\index{app.h@{app.h}!SPB\_IN\_DONOT@{SPB\_IN\_DONOT}}}\Hypertarget{app_8h_ada390c31648888e80455e59aededec89aec0faa7f1261066a2e5c416866c3eba7}\label{app_8h_ada390c31648888e80455e59aededec89aec0faa7f1261066a2e5c416866c3eba7} 
+SPB\+\_\+\+IN\+\_\+\+DONOT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_IN\_REPEAT@{SPB\_IN\_REPEAT}!app.h@{app.h}}\index{app.h@{app.h}!SPB\_IN\_REPEAT@{SPB\_IN\_REPEAT}}}\Hypertarget{app_8h_ada390c31648888e80455e59aededec89ac86d865e5bb4b3c004fcf5751ea1063a}\label{app_8h_ada390c31648888e80455e59aededec89ac86d865e5bb4b3c004fcf5751ea1063a} 
+SPB\+\_\+\+IN\+\_\+\+REPEAT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{app_8h_a98a5fecb1828f413db07cfb10273379c}\index{app.h@{app.h}!APP\_AdcReadAllSamples@{APP\_AdcReadAllSamples}}
+\index{APP\_AdcReadAllSamples@{APP\_AdcReadAllSamples}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{APP\_AdcReadAllSamples()}{APP\_AdcReadAllSamples()}}
+{\footnotesize\ttfamily \label{app_8h_a98a5fecb1828f413db07cfb10273379c} 
+void APP\+\_\+\+Adc\+Read\+All\+Samples (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{app_8h_a912c163cafb881d4deea72f7b463cbdc}\index{app.h@{app.h}!APP\_GetInputsStates@{APP\_GetInputsStates}}
+\index{APP\_GetInputsStates@{APP\_GetInputsStates}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{APP\_GetInputsStates()}{APP\_GetInputsStates()}}
+{\footnotesize\ttfamily \label{app_8h_a912c163cafb881d4deea72f7b463cbdc} 
+void APP\+\_\+\+Get\+Inputs\+States (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{app_8h_a43ccfb3bb8362f57c897915a2bf0b888}\index{app.h@{app.h}!APP\_InitADC@{APP\_InitADC}}
+\index{APP\_InitADC@{APP\_InitADC}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{APP\_InitADC()}{APP\_InitADC()}}
+{\footnotesize\ttfamily \label{app_8h_a43ccfb3bb8362f57c897915a2bf0b888} 
+void APP\+\_\+\+Init\+ADC (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{app_8h_a59b305aa4f4287d45cbe428f533f84b2}\index{app.h@{app.h}!APP\_Initialize@{APP\_Initialize}}
+\index{APP\_Initialize@{APP\_Initialize}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{APP\_Initialize()}{APP\_Initialize()}}
+{\footnotesize\ttfamily \label{app_8h_a59b305aa4f4287d45cbe428f533f84b2} 
+void APP\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_aa01b24d00b6eb54fd185e029a791cccc}\index{app.h@{app.h}!APP\_InitMcp79411@{APP\_InitMcp79411}}
+\index{APP\_InitMcp79411@{APP\_InitMcp79411}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{APP\_InitMcp79411()}{APP\_InitMcp79411()}}
+{\footnotesize\ttfamily \label{app_8h_aa01b24d00b6eb54fd185e029a791cccc} 
+void APP\+\_\+\+Init\+Mcp79411 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\Hypertarget{app_8h_aa3bed8e1f96b2024b7750e4b1c6b9cbe}\index{app.h@{app.h}!APP\_PlaySong@{APP\_PlaySong}}
+\index{APP\_PlaySong@{APP\_PlaySong}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{APP\_PlaySong()}{APP\_PlaySong()}}
+{\footnotesize\ttfamily \label{app_8h_aa3bed8e1f96b2024b7750e4b1c6b9cbe} 
+void APP\+\_\+\+Play\+Song (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\Hypertarget{app_8h_a51d9a9aba50639baf27bff12757c9dae}\index{app.h@{app.h}!APP\_SERIAL\_LEDS\_CMD@{APP\_SERIAL\_LEDS\_CMD}}
+\index{APP\_SERIAL\_LEDS\_CMD@{APP\_SERIAL\_LEDS\_CMD}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{APP\_SERIAL\_LEDS\_CMD()}{APP\_SERIAL\_LEDS\_CMD()}}
+{\footnotesize\ttfamily \label{app_8h_a51d9a9aba50639baf27bff12757c9dae} 
+void APP\+\_\+\+SERIAL\+\_\+\+LEDS\+\_\+\+CMD (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_a23e441f0e8d8f65fb909cf1630237be2}\index{app.h@{app.h}!APP\_SetTMR0\_Frequency@{APP\_SetTMR0\_Frequency}}
+\index{APP\_SetTMR0\_Frequency@{APP\_SetTMR0\_Frequency}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{APP\_SetTMR0\_Frequency()}{APP\_SetTMR0\_Frequency()}}
+{\footnotesize\ttfamily \label{app_8h_a23e441f0e8d8f65fb909cf1630237be2} 
+void APP\+\_\+\+Set\+TMR0\+\_\+\+Frequency (\begin{DoxyParamCaption}\item[{float}]{freq\+\_\+hz}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 9
+\Hypertarget{app_8h_a859aee46b660cfee47cfd45ce08f6862}\index{app.h@{app.h}!APP\_Tasks@{APP\_Tasks}}
+\index{APP\_Tasks@{APP\_Tasks}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{APP\_Tasks()}{APP\_Tasks()}}
+{\footnotesize\ttfamily \label{app_8h_a859aee46b660cfee47cfd45ce08f6862} 
+void APP\+\_\+\+Tasks (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+here we should repeat inputs to outputs if neededHere is the call graph for this function\+:
+% FIG 10
+\Hypertarget{app_8h_a8f46b20760f4b4b10df763dd5b6e2525}\index{app.h@{app.h}!APP\_TIMER1\_CALLBACK@{APP\_TIMER1\_CALLBACK}}
+\index{APP\_TIMER1\_CALLBACK@{APP\_TIMER1\_CALLBACK}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{APP\_TIMER1\_CALLBACK()}{APP\_TIMER1\_CALLBACK()}}
+{\footnotesize\ttfamily \label{app_8h_a8f46b20760f4b4b10df763dd5b6e2525} 
+void APP\+\_\+\+TIMER1\+\_\+\+CALLBACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_a245753d6244c3f5682adbdc334412149}\index{app.h@{app.h}!APP\_TIMER4\_CALLBACK@{APP\_TIMER4\_CALLBACK}}
+\index{APP\_TIMER4\_CALLBACK@{APP\_TIMER4\_CALLBACK}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{APP\_TIMER4\_CALLBACK()}{APP\_TIMER4\_CALLBACK()}}
+{\footnotesize\ttfamily \label{app_8h_a245753d6244c3f5682adbdc334412149} 
+void APP\+\_\+\+TIMER4\+\_\+\+CALLBACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_abcbd1769c7d03ea90681c10fe1f03775}\index{app.h@{app.h}!APP\_WaitStart@{APP\_WaitStart}}
+\index{APP\_WaitStart@{APP\_WaitStart}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{APP\_WaitStart()}{APP\_WaitStart()}}
+{\footnotesize\ttfamily \label{app_8h_abcbd1769c7d03ea90681c10fe1f03775} 
+void APP\+\_\+\+Wait\+Start (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{waiting\+Time\+\_\+ms}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 11
+\Hypertarget{app_8h_a83f72156f02ea0c9d1980998f6a1133e}\index{app.h@{app.h}!CLOCKING\_CLK@{CLOCKING\_CLK}}
+\index{CLOCKING\_CLK@{CLOCKING\_CLK}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{CLOCKING\_CLK()}{CLOCKING\_CLK()}}
+{\footnotesize\ttfamily \label{app_8h_a83f72156f02ea0c9d1980998f6a1133e} 
+void CLOCKING\+\_\+\+CLK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_ae151403ee4e82e74bbd931fe9e0ff9e8}\index{app.h@{app.h}!CLOCKING\_SRCLK@{CLOCKING\_SRCLK}}
+\index{CLOCKING\_SRCLK@{CLOCKING\_SRCLK}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{CLOCKING\_SRCLK()}{CLOCKING\_SRCLK()}}
+{\footnotesize\ttfamily \label{app_8h_ae151403ee4e82e74bbd931fe9e0ff9e8} 
+void CLOCKING\+\_\+\+SRCLK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_ab90aceec1f83db2e42e1f207cd9e4c95}\index{app.h@{app.h}!DebugUART\_Print@{DebugUART\_Print}}
+\index{DebugUART\_Print@{DebugUART\_Print}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{DebugUART\_Print()}{DebugUART\_Print()}}
+{\footnotesize\ttfamily \label{app_8h_ab90aceec1f83db2e42e1f207cd9e4c95} 
+void Debug\+UART\+\_\+\+Print (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{format}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 12
+\Hypertarget{app_8h_a49e20dc3e3e27d43533501f8f7f34026}\index{app.h@{app.h}!gray\_conv@{gray\_conv}}
+\index{gray\_conv@{gray\_conv}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{gray\_conv()}{gray\_conv()}}
+{\footnotesize\ttfamily \label{app_8h_a49e20dc3e3e27d43533501f8f7f34026} 
+uint8\+\_\+t gray\+\_\+conv (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{n}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_a1f221d6b1726a5ef4b2533d542fde9f6}\index{app.h@{app.h}!ResetLed@{ResetLed}}
+\index{ResetLed@{ResetLed}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{ResetLed()}{ResetLed()}}
+{\footnotesize\ttfamily \label{app_8h_a1f221d6b1726a5ef4b2533d542fde9f6} 
+void Reset\+Led (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5}{FCT\+\_\+\+LED}}}]{Led\+Tomod}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_ac84821be565c3ad536c97469e444bd01}\index{app.h@{app.h}!setAlarmLed@{setAlarmLed}}
+\index{setAlarmLed@{setAlarmLed}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{setAlarmLed()}{setAlarmLed()}}
+{\footnotesize\ttfamily \label{app_8h_ac84821be565c3ad536c97469e444bd01} 
+void set\+Alarm\+Led (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_ac49dd186f408eac336716408104ede01}\index{app.h@{app.h}!setDerLed@{setDerLed}}
+\index{setDerLed@{setDerLed}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{setDerLed()}{setDerLed()}}
+{\footnotesize\ttfamily \label{app_8h_ac49dd186f408eac336716408104ede01} 
+void set\+Der\+Led (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_a044fffe26eb85b52390beae5d918d2f0}\index{app.h@{app.h}!setIn1Led@{setIn1Led}}
+\index{setIn1Led@{setIn1Led}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{setIn1Led()}{setIn1Led()}}
+{\footnotesize\ttfamily \label{app_8h_a044fffe26eb85b52390beae5d918d2f0} 
+void set\+In1\+Led (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_a8994480c1b198b89b53c1ed4f916cf69}\index{app.h@{app.h}!setIn2Led@{setIn2Led}}
+\index{setIn2Led@{setIn2Led}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{setIn2Led()}{setIn2Led()}}
+{\footnotesize\ttfamily \label{app_8h_a8994480c1b198b89b53c1ed4f916cf69} 
+void set\+In2\+Led (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_af14a44e9bd4a0ddc43a9fba643fba295}\index{app.h@{app.h}!setIn3Led@{setIn3Led}}
+\index{setIn3Led@{setIn3Led}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{setIn3Led()}{setIn3Led()}}
+{\footnotesize\ttfamily \label{app_8h_af14a44e9bd4a0ddc43a9fba643fba295} 
+void set\+In3\+Led (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_ac5cf140de5f4704781eb7b574412def0}\index{app.h@{app.h}!setIn4Led@{setIn4Led}}
+\index{setIn4Led@{setIn4Led}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{setIn4Led()}{setIn4Led()}}
+{\footnotesize\ttfamily \label{app_8h_ac5cf140de5f4704781eb7b574412def0} 
+void set\+In4\+Led (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_acaf1eefd017e5d66c39d991a26c2197a}\index{app.h@{app.h}!setIn5Led@{setIn5Led}}
+\index{setIn5Led@{setIn5Led}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{setIn5Led()}{setIn5Led()}}
+{\footnotesize\ttfamily \label{app_8h_acaf1eefd017e5d66c39d991a26c2197a} 
+void set\+In5\+Led (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8h_ab11af01d10b55155821953dccf79c672}\index{app.h@{app.h}!SetLed@{SetLed}}
+\index{SetLed@{SetLed}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{SetLed()}{SetLed()}}
+{\footnotesize\ttfamily \label{app_8h_ab11af01d10b55155821953dccf79c672} 
+void Set\+Led (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5}{FCT\+\_\+\+LED}}}]{Led\+Tomod}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{app_8h_ad3d63cf42bac9da94dc89d5565d39cc1}\index{app.h@{app.h}!s\_getDataSensor@{s\_getDataSensor}}
+\index{s\_getDataSensor@{s\_getDataSensor}!app.h@{app.h}}
+\doxysubsubsection{\texorpdfstring{s\_getDataSensor}{s\_getDataSensor}}
+{\footnotesize\ttfamily \label{app_8h_ad3d63cf42bac9da94dc89d5565d39cc1} 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} s\+\_\+get\+Data\+Sensor\hspace{0.3cm}{\ttfamily [extern]}}
+

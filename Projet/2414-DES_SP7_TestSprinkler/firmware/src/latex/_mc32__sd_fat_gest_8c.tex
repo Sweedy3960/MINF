@@ -1,0 +1,86 @@
+\doxysection{Mc32\+\_\+sd\+Fat\+Gest.\+c File Reference}
+\hypertarget{_mc32__sd_fat_gest_8c}{}\label{_mc32__sd_fat_gest_8c}\index{Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}}
+{\ttfamily \#include "{}Mc32\+\_\+sd\+Fat\+Gest.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}app.\+h"{}}\newline
+Include dependency graph for Mc32\+\_\+sd\+Fat\+Gest.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_mc32__sd_fat_gest_8c_a778050b1faf45c6ed4b5b15a96c044b0}{sd\+\_\+fat\+\_\+task}} (void)
+\item 
+void \mbox{\hyperlink{_mc32__sd_fat_gest_8c_ab88f2212acaa520ae9bcdc4155dc3413}{sd\+\_\+logger\+\_\+schedule\+Write}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}data)
+\item 
+\mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4ed}{APP\+\_\+\+FAT\+\_\+\+STATES}} \mbox{\hyperlink{_mc32__sd_fat_gest_8c_a59e4eeaae6bb99a25a56ef760a9e7cc7}{sd\+\_\+get\+State}} (void)
+\item 
+void \mbox{\hyperlink{_mc32__sd_fat_gest_8c_ad212171d27d68bce04e48d11500b9a80}{sd\+\_\+set\+State}} (\mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4ed}{APP\+\_\+\+FAT\+\_\+\+STATES}} new\+State)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_a_p_p___f_a_t___d_a_t_a}{APP\+\_\+\+FAT\+\_\+\+DATA}} COHERENT\+\_\+\+ALIGNED \mbox{\hyperlink{_mc32__sd_fat_gest_8c_a7556da5d529006746c8ed371b36e1c02}{app\+Fat\+Data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_mc32__sd_fat_gest_8c_a778050b1faf45c6ed4b5b15a96c044b0}\index{Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}!sd\_fat\_task@{sd\_fat\_task}}
+\index{sd\_fat\_task@{sd\_fat\_task}!Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}}
+\doxysubsubsection{\texorpdfstring{sd\_fat\_task()}{sd\_fat\_task()}}
+{\footnotesize\ttfamily \label{_mc32__sd_fat_gest_8c_a778050b1faf45c6ed4b5b15a96c044b0} 
+void sd\+\_\+fat\+\_\+task (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Descriptive Data Item Name
+
+@\+Summary Brief one-\/line summary of the data item.
+
+@\+Description Full description, explaining the purpose and usage of data item. 
+
+Additional description in consecutive paragraphs separated by HTML paragraph breaks, as necessary. 
+
+Type "{}\+Java\+Doc"{} in the "{}\+How Do I?"{} IDE toolbar for more information on tags.
+
+@\+Remarks Any additional remarks Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{_mc32__sd_fat_gest_8c_a59e4eeaae6bb99a25a56ef760a9e7cc7}\index{Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}!sd\_getState@{sd\_getState}}
+\index{sd\_getState@{sd\_getState}!Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}}
+\doxysubsubsection{\texorpdfstring{sd\_getState()}{sd\_getState()}}
+{\footnotesize\ttfamily \label{_mc32__sd_fat_gest_8c_a59e4eeaae6bb99a25a56ef760a9e7cc7} 
+\mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4ed}{APP\+\_\+\+FAT\+\_\+\+STATES}} sd\+\_\+get\+State (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{_mc32__sd_fat_gest_8c_ab88f2212acaa520ae9bcdc4155dc3413}\index{Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}!sd\_logger\_scheduleWrite@{sd\_logger\_scheduleWrite}}
+\index{sd\_logger\_scheduleWrite@{sd\_logger\_scheduleWrite}!Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}}
+\doxysubsubsection{\texorpdfstring{sd\_logger\_scheduleWrite()}{sd\_logger\_scheduleWrite()}}
+{\footnotesize\ttfamily \label{_mc32__sd_fat_gest_8c_ab88f2212acaa520ae9bcdc4155dc3413} 
+void sd\+\_\+logger\+\_\+schedule\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{_mc32__sd_fat_gest_8c_ad212171d27d68bce04e48d11500b9a80}\index{Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}!sd\_setState@{sd\_setState}}
+\index{sd\_setState@{sd\_setState}!Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}}
+\doxysubsubsection{\texorpdfstring{sd\_setState()}{sd\_setState()}}
+{\footnotesize\ttfamily \label{_mc32__sd_fat_gest_8c_ad212171d27d68bce04e48d11500b9a80} 
+void sd\+\_\+set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4ed}{APP\+\_\+\+FAT\+\_\+\+STATES}}}]{new\+State}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_mc32__sd_fat_gest_8c_a7556da5d529006746c8ed371b36e1c02}\index{Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}!appFatData@{appFatData}}
+\index{appFatData@{appFatData}!Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}}
+\doxysubsubsection{\texorpdfstring{appFatData}{appFatData}}
+{\footnotesize\ttfamily \label{_mc32__sd_fat_gest_8c_a7556da5d529006746c8ed371b36e1c02} 
+\mbox{\hyperlink{struct_a_p_p___f_a_t___d_a_t_a}{APP\+\_\+\+FAT\+\_\+\+DATA}} COHERENT\+\_\+\+ALIGNED app\+Fat\+Data}
+
+Descriptive File Name
+
+@\+Company ETML-\/\+ES
+
+@\+File Name sd\+\_\+fat\+\_\+gest.\+c
+
+@\+Summary SD card fat system management
+
+@\+Description SD card fat system management 

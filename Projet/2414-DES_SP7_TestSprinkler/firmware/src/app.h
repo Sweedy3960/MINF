@@ -62,6 +62,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "Driver_SR_SN74HCS596QPWRQ1.h"
 #include "mcp79411.h"
 #include "mcp79411_interface.h"
+#include "mutex.h"
+
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
 
@@ -197,6 +199,7 @@ extern "C" {
         mcp79411_time timeofRTC;
         uint8_t cmdRealayOut[9]; //used to store the relay states 
         /* TODO: Define any additional data used by the application. */
+        MUTEX_t appMutex; 
     } APP_DATA;
 
 

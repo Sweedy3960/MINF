@@ -1,0 +1,87 @@
+\doxysection{mcp79411\+\_\+interface.\+h File Reference}
+\hypertarget{mcp79411__interface_8h}{}\label{mcp79411__interface_8h}\index{mcp79411\_interface.h@{mcp79411\_interface.h}}
+{\ttfamily \#include "{}stdint.\+h"{}}\newline
+Include dependency graph for mcp79411\+\_\+interface.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mcp79411__interface_8h_a530f11a96e508d171d28564c8dc20942}{NULL\+\_\+\+PTR}}~((void\texorpdfstring{$\ast$}{*})0)
+\item 
+\#define \mbox{\hyperlink{mcp79411__interface_8h_a8126d54e38aa8fd72f762b0d86793eec}{MCP79411\+\_\+\+EEPROM\+\_\+R}}~0x\+AF
+\item 
+\#define \mbox{\hyperlink{mcp79411__interface_8h_ae7d901256aeec6b771342ffdd2c509e7}{MCP79411\+\_\+\+EEPROM\+\_\+W}}~0x\+AE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mcp79411__interface_8h_add5e3576881b1a5553a971d87ddbe8d1}{mcp79411\+\_\+rtc\+\_\+iic\+\_\+write}} (unsigned char \texorpdfstring{$\ast$}{*}tx\+\_\+buffer, short len)
+\item 
+int \mbox{\hyperlink{mcp79411__interface_8h_abb05f6811123d1be40bc21fe1b8b5074}{mcp79411\+\_\+rtc\+\_\+iic\+\_\+read}} (unsigned char \texorpdfstring{$\ast$}{*}rx\+\_\+buffer, uint32\+\_\+t reg, short len)
+\item 
+int \mbox{\hyperlink{mcp79411__interface_8h_a52853704bfe8ff87ba67d9e6ee13bf14}{mcp79411\+\_\+eep\+\_\+iic\+\_\+write}} (unsigned char \texorpdfstring{$\ast$}{*}tx\+\_\+buffer, short len)
+\item 
+int \mbox{\hyperlink{mcp79411__interface_8h_ae060c2d123d8b79972bd6213914c819f}{mcp79411\+\_\+eep\+\_\+iic\+\_\+read}} (unsigned char \texorpdfstring{$\ast$}{*}rx\+\_\+buffer, short len)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+jozochen (\href{mailto:jozocyz@hotmail.com}{\texttt{ jozocyz@hotmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/02-\/11 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Apache License 2.\+0 jozochen (\href{mailto:jozocyz@hotmail.com}{\texttt{ jozocyz@hotmail.\+com}}) Copyright (c) 2020 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{mcp79411__interface_8h_a8126d54e38aa8fd72f762b0d86793eec}\index{mcp79411\_interface.h@{mcp79411\_interface.h}!MCP79411\_EEPROM\_R@{MCP79411\_EEPROM\_R}}
+\index{MCP79411\_EEPROM\_R@{MCP79411\_EEPROM\_R}!mcp79411\_interface.h@{mcp79411\_interface.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_EEPROM\_R}{MCP79411\_EEPROM\_R}}
+{\footnotesize\ttfamily \label{mcp79411__interface_8h_a8126d54e38aa8fd72f762b0d86793eec} 
+\#define MCP79411\+\_\+\+EEPROM\+\_\+R~0x\+AF}
+
+\Hypertarget{mcp79411__interface_8h_ae7d901256aeec6b771342ffdd2c509e7}\index{mcp79411\_interface.h@{mcp79411\_interface.h}!MCP79411\_EEPROM\_W@{MCP79411\_EEPROM\_W}}
+\index{MCP79411\_EEPROM\_W@{MCP79411\_EEPROM\_W}!mcp79411\_interface.h@{mcp79411\_interface.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_EEPROM\_W}{MCP79411\_EEPROM\_W}}
+{\footnotesize\ttfamily \label{mcp79411__interface_8h_ae7d901256aeec6b771342ffdd2c509e7} 
+\#define MCP79411\+\_\+\+EEPROM\+\_\+W~0x\+AE}
+
+\Hypertarget{mcp79411__interface_8h_a530f11a96e508d171d28564c8dc20942}\index{mcp79411\_interface.h@{mcp79411\_interface.h}!NULL\_PTR@{NULL\_PTR}}
+\index{NULL\_PTR@{NULL\_PTR}!mcp79411\_interface.h@{mcp79411\_interface.h}}
+\doxysubsubsection{\texorpdfstring{NULL\_PTR}{NULL\_PTR}}
+{\footnotesize\ttfamily \label{mcp79411__interface_8h_a530f11a96e508d171d28564c8dc20942} 
+\#define NULL\+\_\+\+PTR~((void\texorpdfstring{$\ast$}{*})0)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mcp79411__interface_8h_ae060c2d123d8b79972bd6213914c819f}\index{mcp79411\_interface.h@{mcp79411\_interface.h}!mcp79411\_eep\_iic\_read@{mcp79411\_eep\_iic\_read}}
+\index{mcp79411\_eep\_iic\_read@{mcp79411\_eep\_iic\_read}!mcp79411\_interface.h@{mcp79411\_interface.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_eep\_iic\_read()}{mcp79411\_eep\_iic\_read()}}
+{\footnotesize\ttfamily \label{mcp79411__interface_8h_ae060c2d123d8b79972bd6213914c819f} 
+int mcp79411\+\_\+eep\+\_\+iic\+\_\+read (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{rx\+\_\+buffer}{, }\item[{short}]{len}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{mcp79411__interface_8h_a52853704bfe8ff87ba67d9e6ee13bf14}\index{mcp79411\_interface.h@{mcp79411\_interface.h}!mcp79411\_eep\_iic\_write@{mcp79411\_eep\_iic\_write}}
+\index{mcp79411\_eep\_iic\_write@{mcp79411\_eep\_iic\_write}!mcp79411\_interface.h@{mcp79411\_interface.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_eep\_iic\_write()}{mcp79411\_eep\_iic\_write()}}
+{\footnotesize\ttfamily \label{mcp79411__interface_8h_a52853704bfe8ff87ba67d9e6ee13bf14} 
+int mcp79411\+\_\+eep\+\_\+iic\+\_\+write (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{tx\+\_\+buffer}{, }\item[{short}]{len}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{mcp79411__interface_8h_abb05f6811123d1be40bc21fe1b8b5074}\index{mcp79411\_interface.h@{mcp79411\_interface.h}!mcp79411\_rtc\_iic\_read@{mcp79411\_rtc\_iic\_read}}
+\index{mcp79411\_rtc\_iic\_read@{mcp79411\_rtc\_iic\_read}!mcp79411\_interface.h@{mcp79411\_interface.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_iic\_read()}{mcp79411\_rtc\_iic\_read()}}
+{\footnotesize\ttfamily \label{mcp79411__interface_8h_abb05f6811123d1be40bc21fe1b8b5074} 
+int mcp79411\+\_\+rtc\+\_\+iic\+\_\+read (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{rx\+\_\+buffer}{, }\item[{uint32\+\_\+t}]{reg}{, }\item[{short}]{len}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{mcp79411__interface_8h_add5e3576881b1a5553a971d87ddbe8d1}\index{mcp79411\_interface.h@{mcp79411\_interface.h}!mcp79411\_rtc\_iic\_write@{mcp79411\_rtc\_iic\_write}}
+\index{mcp79411\_rtc\_iic\_write@{mcp79411\_rtc\_iic\_write}!mcp79411\_interface.h@{mcp79411\_interface.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_iic\_write()}{mcp79411\_rtc\_iic\_write()}}
+{\footnotesize\ttfamily \label{mcp79411__interface_8h_add5e3576881b1a5553a971d87ddbe8d1} 
+int mcp79411\+\_\+rtc\+\_\+iic\+\_\+write (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{tx\+\_\+buffer}{, }\item[{short}]{len}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+

@@ -1,0 +1,207 @@
+\doxysection{mcp79411.\+h}
+\hypertarget{mcp79411_8h_source}{}\label{mcp79411_8h_source}\mbox{\hyperlink{mcp79411_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_MCP79411\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_MCP79411\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}stdint.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ NULL\_PTR}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ NULL\_PTR\ ((void*)0)}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ MCP79411\_BUFFER\_MAX\ \ \ \ \ 256}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_ADDR\_LEN\ \ \ 1}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ MCP79411\_DEC\_MAX\ \ \ \ \ \ \ \ 0x99}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ MCP79411\_DECADE\ \ \ \ \ \ \ \ \ 10}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ MCP79411\_4BIT\_SHIFT\ \ \ \ \ 4}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ MCP79411\_HIGH\_4BIT\_MASK\ \ \ \ 0X0fu}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_RTCSEC\ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_RTCMIN\ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_RTCHOUR\ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_RTCWKDAY\ \ \ \ \ 0x03}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_RTCDATE\ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_RTCMTH\ \ \ \ \ \ \ 0x05}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_RTCYEAR\ \ \ \ \ \ 0x06}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_CONTROL\ \ \ \ \ \ 0x07}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_OSCTRIM\ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_EEUNLOCK\ \ \ \ \ 0x09}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_ALM0SEC\ \ \ \ \ \ 0x0A}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_ALM0MIN\ \ \ \ \ \ 0x0B}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_ALM0HOUR\ \ \ \ \ 0x0C}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_ALM0WKDAY\ \ \ \ 0x0D}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_ALM0DATE\ \ \ \ \ 0x0E}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_ALM0MTH\ \ \ \ \ \ 0x0F}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_ALM1SEC\ \ \ \ \ \ 0x11}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_ALM1MIN\ \ \ \ \ \ 0x12}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_ALM1HOUR\ \ \ \ \ 0x13}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_ALM1WKDAY\ \ \ \ 0x14}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_ALM1DATE\ \ \ \ \ 0x15}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_ALM1MTH\ \ \ \ \ \ 0x16}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_PWRDNMIN\ \ \ \ \ 0x18}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_PWRDNHOUR\ \ \ \ 0x19}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_PWRDNDATE\ \ \ \ 0x1A}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_PWRDNMTH\ \ \ \ \ 0x1B}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_PWRUPMIN\ \ \ \ \ 0x1C}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_PWRUPHOUR\ \ \ \ 0x1D}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_PWRUPDATE\ \ \ \ 0x1E}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ MCP79411\_REG\_RTCC\_PWRUPMTH\ \ \ \ \ 0x1F}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ MCP79411\_I2C\_ADDR\_W\ \ 0xDE}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ MCP79411\_I2C\_ADDR\_R\ \ 0xDF}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___c_o_n_t_r_o_l_af54106109ea3c3a373f28444c11bfba8}{SQWFS}}\ \ \ :2;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___c_o_n_t_r_o_l_a35c4199167867a0effcf064323ee81b2}{CRSTRIM}}\ :1;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___c_o_n_t_r_o_l_ac26624524773b14d08bf9cd3b9310a4d}{EXTOSC}}\ \ :1;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___c_o_n_t_r_o_l_ad0af98f388b2d040251c849cd89ea173}{ALM0EN}}\ \ :1;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___c_o_n_t_r_o_l_a32f3dd957233db4e084ad5399ecb5935}{ALM1EN}}\ \ :1;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___c_o_n_t_r_o_l_aaa80e3ac1655414187143b04e15b8110}{SQWEN}}\ \ \ :1;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___c_o_n_t_r_o_l_a247b3e3bc75be4d1d80f1f5b19e21020}{OUT}}\ \ \ \ \ :1;}
+\DoxyCodeLine{00057\ \ \ \ \ \}bits;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___c_o_n_t_r_o_l_a530f89db1c7efb161a9779d6526e52d3}{ctrl\_byte}};}
+\DoxyCodeLine{00059\ \}\mbox{\hyperlink{unionmcp79411___c_o_n_t_r_o_l}{mcp79411\_CONTROL}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___o_s_c_t_r_i_m_aaa6c6615e4d868be9bab1ed881ec2d7e}{TRIMVA}}\ \ :7;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___o_s_c_t_r_i_m_a05ba1fc4ee8d9f0f700b3fd87d602513}{SIGN}}\ \ \ \ :1;}
+\DoxyCodeLine{00065\ \ \ \ \ \}bits;}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___o_s_c_t_r_i_m_a6b477aa7c48b4a1e8c6e293a87c94d9f}{osctrim\_byte}};}
+\DoxyCodeLine{00067\ \}\mbox{\hyperlink{unionmcp79411___o_s_c_t_r_i_m}{mcp79411\_OSCTRIM}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_af04bb7dfeae1479f7894e30cb3c07fb0}{SEC}}\ :7;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_a59710b8677e6166c4f242455f03fb70f}{ST}}\ \ :1;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}RTCSEC\_bits;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_ac6bf19e173885e4bc2b610105154a0e1}{MIN}}\ \ \ :7;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_a869d53342ff857c00a887e40bbe44555}{RES}}\ \ :1;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}RTCMIN\_bits;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_ac1b34e87c3b24929d2075519845a9e32}{HOUR}}\ \ \ :5;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_a26206c4de8dc5a04f4e80d7e49221728}{AM\_PM}}\ \ :1;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_a194903a2354f91120ef22eb45ceba067}{b12\_24}}\ \ :1;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_a869d53342ff857c00a887e40bbe44555}{RES}}\ \ \ :1;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}RTCHOUR\_bits;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_ae7f88a83463b93943fb9016284b2f32a}{WKDAY}}\ \ \ :3;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_ad036a62ee76bd3fde25d60d2fe329e3b}{VBATEN}}\ \ :1;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_ad1c1a0ff242d853669d801422788af30}{PWRFAIL}}\ :1;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_a9dba22a968a5bb0ad745f74c923bf647}{OSCRUN}}\ \ :1;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_a869d53342ff857c00a887e40bbe44555}{RES}}\ \ \ \ :2;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \}RTCWKDAY\_bits;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_a8cb0681aaef4ccb42ef41321f2ed7dfc}{DATE}}\ \ \ \ :6;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_a869d53342ff857c00a887e40bbe44555}{RES}}\ \ \ \ \ :2;}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}RTCDATE\_bits;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_afd8cc5a2c3c8ba541961c0b745f269da}{MTH}}\ \ \ \ \ :5;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_a6aad6512533268ef21477481bc66ecd6}{LPYR}}\ \ \ \ :1;}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_a869d53342ff857c00a887e40bbe44555}{RES}}\ \ \ \ :2;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}RTCMTH\_bits;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_a81568aed827de8d31699cf88c6e0bdb4}{YEAR}}\ :8;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}RTCYEAR\_bits;}
+\DoxyCodeLine{00104\ \ \ \ \ \}regs;}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g_a8c834c6e48b633cb40e54d221c305ae4}{time\_bytes}}[7];}
+\DoxyCodeLine{00106\ \}\mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g}{mcp79411\_TIME\_KEEPING}};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union}\{}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_af04bb7dfeae1479f7894e30cb3c07fb0}{SEC}}\ \ \ \ \ :7;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a869d53342ff857c00a887e40bbe44555}{RES}}\ \ \ \ :1;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}ALMXSEC\_bits;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_ac6bf19e173885e4bc2b610105154a0e1}{MIN}}\ \ \ \ \ :7;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a869d53342ff857c00a887e40bbe44555}{RES}}\ \ \ \ :1;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}ALMXMIN\_bits;\ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_ac1b34e87c3b24929d2075519845a9e32}{HOUR}}\ \ \ \ :5;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a26206c4de8dc5a04f4e80d7e49221728}{AM\_PM}}\ \ \ :1;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a194903a2354f91120ef22eb45ceba067}{b12\_24}}\ \ :1;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a869d53342ff857c00a887e40bbe44555}{RES}}\ \ \ \ :1;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}ALMXHOUR\_bits;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_ae7f88a83463b93943fb9016284b2f32a}{WKDAY}}\ \ \ :3;}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_acd6609681a96ca25a1dff0f04e287446}{ALMXIF}}\ \ :1;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a976569b60aae2ff3767169ebbd00be06}{ALMXMSK}}\ :3;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_aff4c4522b40f90fb8ab0eb7258cc50e9}{ALMPOL}}\ \ :1;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \}ALMXWKDAY\_bits;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a8cb0681aaef4ccb42ef41321f2ed7dfc}{DATE}};}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}ALMXDATE\_bits;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_afd8cc5a2c3c8ba541961c0b745f269da}{MTH}}\ \ \ \ :5;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a869d53342ff857c00a887e40bbe44555}{RES}}\ \ \ :3;}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \}ALMXMTH\_bits;}
+\DoxyCodeLine{00137\ \ \ \ \ \}regs;}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a94e0ae983bb8933e43325e73f7356dde}{bytes}}[6];}
+\DoxyCodeLine{00139\ \}\mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s}{mcp79411\_ALARMS}};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__obj_ab5fe67d09d956bdf2bbbad468fcb3d92}{tx\_buffer}}[\mbox{\hyperlink{mcp79411_8h_af675fe4f2fae0447ae056a159e0b23e2}{MCP79411\_BUFFER\_MAX}}];}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__obj_a24ac3a6b7ce5ecf23a00aa367ff38557}{rx\_buffer}}[\mbox{\hyperlink{mcp79411_8h_af675fe4f2fae0447ae056a159e0b23e2}{MCP79411\_BUFFER\_MAX}}];}
+\DoxyCodeLine{00145\ \ \ \ \ \}buffers;}
+\DoxyCodeLine{00146\ \}\mbox{\hyperlink{structmcp79411__obj}{mcp79411\_obj}};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ uint8\_t\ \mbox{\hyperlink{mcp79411_8h_aa60e654238b849de1b1440e8a5fb1909}{mcp79411\_rtc\_reg\_read}}(uint8\_t\ reg\_addr,\ uint8\_t*\ rx\_buffer,\ uint16\_t\ len);}
+\DoxyCodeLine{00151\ \ uint8\_t\ \mbox{\hyperlink{mcp79411_8h_a65e0738f4056e1c71fdf5394ad69d9f0}{mcp79411\_rtc\_reg\_write}}(uint8\_t\ reg\_addr,uint8\_t*\ tx\_buffer,\ uint16\_t\ len);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__time_a3ff7236d2fe59dd75a1ced740b42e6e1}{sec}};}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__time_aac77aba6e1f35470054a534c37697837}{min}};}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__time_a3570bc91d88c62253caf1ab72a31bc5f}{hour}};}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__time_a06515210e83423140947af0e68f16d28}{wkday}};}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__time_aa0bfdc26f9cd0c0fcbfcc16f3cd99f47}{date}};}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__time_a54cd381ec959d258898a1b4ec7fdd96b}{mth}};}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__time_a974714396b722bced5b6e031be077650}{year}};}
+\DoxyCodeLine{00161\ \}\mbox{\hyperlink{structmcp79411__time}{mcp79411\_time}};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__alarm_a3ff7236d2fe59dd75a1ced740b42e6e1}{sec}};}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__alarm_aac77aba6e1f35470054a534c37697837}{min}};}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__alarm_a3570bc91d88c62253caf1ab72a31bc5f}{hour}};}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__alarm_a06515210e83423140947af0e68f16d28}{wkday}};}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__alarm_aa0bfdc26f9cd0c0fcbfcc16f3cd99f47}{date}};}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structmcp79411__alarm_a54cd381ec959d258898a1b4ec7fdd96b}{mth}};\ \ \ \ }
+\DoxyCodeLine{00170\ \}\mbox{\hyperlink{structmcp79411__alarm}{mcp79411\_alarm}};}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9ac84ff6287992919098aa24efcb6417ec}{MCP79411\_ALRM\_MODE\_SEC}}\ =\ 0x00,}
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9ade87ff292f22cda9e6e6e164029e1756}{MCP79411\_ALRM\_MODE\_MIN}}\ =\ 0x01,}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9af3a87eadfc86404bf951f930c4b8cacc}{MCP79411\_ALRM\_MODE\_HOUR}}\ =\ 0x02,}
+\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9aea41f2eb366e02cee804329b4fcd538e}{MCP79411\_ALRM\_MODE\_WKDAY}}\ =\ 0x03,}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9a3a8c312acf0d22c1888c7dc39e160887}{MCP79411\_ALRM\_MODE\_DATE}}\ =\ 0x04,}
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9afc6747fd7f77e052f6c76689c208343a}{MCP79411\_ALRM\_MODE\_ALL}}\ =\ 0x07,}
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9a8f92474ea37d61f9a3a0620bfff10b42}{MCP79411\_ALRM\_MODE\_MAX}}}
+\DoxyCodeLine{00180\ \}\mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9}{mcp79411\_alarm\_mode}};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04a433c9feb0daabd7df6e093912287e4e4}{MCP79411\_ALRM\_CHANNEL\_0}}\ =\ 0,\ \ }
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04a45fe5a8f47323d09b6f397e770f190fb}{MCP79411\_ALRM\_CHANNEL\_1}},}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04aa462190d82efd2bc33197db3abf0c836}{MCP79411\_ALRM\_CHANNEL\_MAX}},\ \ }
+\DoxyCodeLine{00186\ \}\mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04}{mcp79411\_alarm\_channel}};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mcp79411_8h_a42a385a44017102ecf7ec3564d40aa5b}{mcp79411\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00189\ \ uint8\_t\ \mbox{\hyperlink{mcp79411_8h_aa48c2f24c3ced51665e713fad332217c}{mcp79411\_set\_time}}(\mbox{\hyperlink{structmcp79411__time}{mcp79411\_time}}*\ time);}
+\DoxyCodeLine{00190\ \ uint8\_t\ \mbox{\hyperlink{mcp79411_8h_adcbe7d2c5f35d60954ec2f3c652a20a3}{mcp79411\_get\_time}}(\mbox{\hyperlink{structmcp79411__time}{mcp79411\_time}}*\ time);}
+\DoxyCodeLine{00191\ \ uint8\_t\ \mbox{\hyperlink{mcp79411_8h_a5db7f9b8bc73d67c3b8f8fac4f40f083}{mcp79411\_set\_alarm}}(\mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04}{mcp79411\_alarm\_channel}}\ chnl,\ \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9}{mcp79411\_alarm\_mode}}\ mode,}
+\DoxyCodeLine{00192\ \ \mbox{\hyperlink{structmcp79411__alarm}{mcp79411\_alarm}}\ *alarm);}
+\DoxyCodeLine{00193\ \ uint8\_t\ \mbox{\hyperlink{mcp79411_8h_a24713f45d1f40957e6acb3f8e0bbfb19}{mcp79411\_stop\_alarm}}(\mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04}{mcp79411\_alarm\_channel}}\ chnl);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{comment}{//added\ to\ use\ it\ in\ app.c}}
+\DoxyCodeLine{00196\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{mcp79411_8h_a140d411267c7eedc5fe9d3bf1ae902f9}{mcp79411\_dec2bcd}}(uint8\_t\ dec);}
+\DoxyCodeLine{00197\ \textcolor{keyword}{extern}\ uint8\_t\ \mbox{\hyperlink{mcp79411_8h_a53b7cc370a69d20d748070c4276f97e7}{mcp79411\_bcd2dec}}(uint8\_t\ bcd);}
+\DoxyCodeLine{00198\ uint8\_t\ \mbox{\hyperlink{mcp79411_8h_a507ee5efba3f31963f5dc40e05e2b610}{mcp79411\_rtc\_iic\_read}}(uint8\_t\ \ *rx\_buffer,uint16\_t\ len);}
+\DoxyCodeLine{00199\ uint8\_t\ \mbox{\hyperlink{mcp79411_8h_a828b08c558474707c1a9bc1638196b10}{mcp79411\_rtc\_iic\_write}}(uint8\_t\ \ *tx\_buffer,\ uint16\_t\ len);}
+\DoxyCodeLine{00200\ uint8\_t\ \mbox{\hyperlink{mcp79411_8h_a716e7698399ac524d53db8beed23ff84}{mcp79411\_get\_status}}(\mbox{\hyperlink{structmcp79411__time}{mcp79411\_time}}*\ time);}
+\DoxyCodeLine{00201\ uint8\_t\ \mbox{\hyperlink{mcp79411_8h_aa43d28edf61dee366af7f84e510c3dcd}{mcp79411\_set\_OscOn}}(\mbox{\hyperlink{structmcp79411__time}{mcp79411\_time}}*\ time);}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

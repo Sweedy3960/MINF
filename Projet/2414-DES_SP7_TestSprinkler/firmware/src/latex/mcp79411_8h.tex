@@ -1,0 +1,564 @@
+\doxysection{mcp79411.\+h File Reference}
+\hypertarget{mcp79411_8h}{}\label{mcp79411_8h}\index{mcp79411.h@{mcp79411.h}}
+{\ttfamily \#include "{}stdint.\+h"{}}\newline
+Include dependency graph for mcp79411.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unionmcp79411___c_o_n_t_r_o_l}{mcp79411\+\_\+\+CONTROL}}
+\item 
+union \mbox{\hyperlink{unionmcp79411___o_s_c_t_r_i_m}{mcp79411\+\_\+\+OSCTRIM}}
+\item 
+union \mbox{\hyperlink{unionmcp79411___t_i_m_e___k_e_e_p_i_n_g}{mcp79411\+\_\+\+TIME\+\_\+\+KEEPING}}
+\item 
+union \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s}{mcp79411\+\_\+\+ALARMS}}
+\item 
+struct \mbox{\hyperlink{structmcp79411__obj}{mcp79411\+\_\+obj}}
+\item 
+struct \mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}}
+\item 
+struct \mbox{\hyperlink{structmcp79411__alarm}{mcp79411\+\_\+alarm}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a530f11a96e508d171d28564c8dc20942}{NULL\+\_\+\+PTR}}~((void\texorpdfstring{$\ast$}{*})0)
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_af675fe4f2fae0447ae056a159e0b23e2}{MCP79411\+\_\+\+BUFFER\+\_\+\+MAX}}~256
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_abd4a5a62a57d5267a089f10dcb471364}{MCP79411\+\_\+\+REG\+\_\+\+ADDR\+\_\+\+LEN}}~1
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_ab7a55229ba3bf1323c7dbd8e6a404e75}{MCP79411\+\_\+\+DEC\+\_\+\+MAX}}~0x99
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_adeec8c6baf7f423affde155e4471baa7}{MCP79411\+\_\+\+DECADE}}~10
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_acae3d33cb9e82cc5df3834fadbad9200}{MCP79411\+\_\+4\+BIT\+\_\+\+SHIFT}}~4
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a62a83e12337f93bdc227a28acdfffd69}{MCP79411\+\_\+\+HIGH\+\_\+4\+BIT\+\_\+\+MASK}}~0\+X0fu
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a923b93c28d4f3398ea05ed6bd7b7e49a}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCSEC}}~0x00
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a78022aa5448d0501a34dba82eac490c4}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCMIN}}~0x01
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_aa887c65620e9099a34154db16c3d4b6e}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCHOUR}}~0x02
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_afce05a20a8d1b55962c773342c849215}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCWKDAY}}~0x03
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a4fcaf7f4c31bffb2b88d78e91852eef0}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCDATE}}~0x04
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a4ffa3e3ae1a8fb19dd289d5c37b28a35}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCMTH}}~0x05
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a595422be26cc9cede02fac34b078eff4}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCYEAR}}~0x06
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a4e1696d534dfdaa393b940bcc8389eae}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+CONTROL}}~0x07
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a3f3a28584e028f730596a0cc8bc25fd6}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+OSCTRIM}}~0x08
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a590b1adabdae6d4b086b28ae429717c4}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+EEUNLOCK}}~0x09
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_aa30b2c84d0e99ac4e415a2e53c80b707}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM0\+SEC}}~0x0A
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_abb26fbb4308bfc73dab1aa8daa4e3ac9}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM0\+MIN}}~0x0B
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a6a928a0327f988104a22c0ceec5cc651}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM0\+HOUR}}~0x0C
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_ae6247f4f60cd48c513c7629558745058}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM0\+WKDAY}}~0x0D
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a3f05a0d5b388cb4f3db1d4ae02dfd9ba}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM0\+DATE}}~0x0E
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_acdd3ff5880fb1bae2ab5037f9f14fe48}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM0\+MTH}}~0x0F
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a02f7fc1b90403a3dbc6248f5d7ec6d6c}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM1\+SEC}}~0x11
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a8e3444de05ef8f6adb9774964187cdb5}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM1\+MIN}}~0x12
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a34a86f59307328ad43fd7109ffea4634}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM1\+HOUR}}~0x13
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_aee317841001e871cce98ea4f4fc26c9d}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM1\+WKDAY}}~0x14
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_aea70d2790160ceaf39889402de304447}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM1\+DATE}}~0x15
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a3fd264679147764154dfad6360552d58}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM1\+MTH}}~0x16
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_ac52891f2ebae430035d90273ee5283b3}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRDNMIN}}~0x18
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a5a73993e32dfbdf628214b26e37b7e9f}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRDNHOUR}}~0x19
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_adcb3a42d93cde414b832d6735d6a3eca}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRDNDATE}}~0x1A
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a340acc1e844f04ef9f4598d72dbfbf5d}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRDNMTH}}~0x1B
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a8f76659ddbecfbb747eb595ddd873124}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRUPMIN}}~0x1C
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_ad359409861f83ce4649c32d97fe98dfb}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRUPHOUR}}~0x1D
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a1c9a00203b213a9e46df6ec6852fafd0}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRUPDATE}}~0x1E
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_af756bf8f3fcc2d37185139befdbf337b}{MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRUPMTH}}~0x1F
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_a1fc90255d0591ffa640234bc24911d7e}{MCP79411\+\_\+\+I2\+C\+\_\+\+ADDR\+\_\+W}}~0x\+DE
+\item 
+\#define \mbox{\hyperlink{mcp79411_8h_aba04880f35199fa99fa7bbbdd137f9f1}{MCP79411\+\_\+\+I2\+C\+\_\+\+ADDR\+\_\+R}}~0x\+DF
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9}{mcp79411\+\_\+alarm\+\_\+mode}} \{ \newline
+\mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9ac84ff6287992919098aa24efcb6417ec}{MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+SEC}} = 0x00
+, \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9ade87ff292f22cda9e6e6e164029e1756}{MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+MIN}} = 0x01
+, \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9af3a87eadfc86404bf951f930c4b8cacc}{MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+HOUR}} = 0x02
+, \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9aea41f2eb366e02cee804329b4fcd538e}{MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+WKDAY}} = 0x03
+, \newline
+\mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9a3a8c312acf0d22c1888c7dc39e160887}{MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+DATE}} = 0x04
+, \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9afc6747fd7f77e052f6c76689c208343a}{MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+ALL}} = 0x07
+, \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9a8f92474ea37d61f9a3a0620bfff10b42}{MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+MAX}}
+ \}
+\item 
+enum \mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04}{mcp79411\+\_\+alarm\+\_\+channel}} \{ \mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04a433c9feb0daabd7df6e093912287e4e4}{MCP79411\+\_\+\+ALRM\+\_\+\+CHANNEL\+\_\+0}} = 0
+, \mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04a45fe5a8f47323d09b6f397e770f190fb}{MCP79411\+\_\+\+ALRM\+\_\+\+CHANNEL\+\_\+1}}
+, \mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04aa462190d82efd2bc33197db3abf0c836}{MCP79411\+\_\+\+ALRM\+\_\+\+CHANNEL\+\_\+\+MAX}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_aa60e654238b849de1b1440e8a5fb1909}{mcp79411\+\_\+rtc\+\_\+reg\+\_\+read}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}rx\+\_\+buffer, uint16\+\_\+t len)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a65e0738f4056e1c71fdf5394ad69d9f0}{mcp79411\+\_\+rtc\+\_\+reg\+\_\+write}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}tx\+\_\+buffer, uint16\+\_\+t len)
+\item 
+void \mbox{\hyperlink{mcp79411_8h_a42a385a44017102ecf7ec3564d40aa5b}{mcp79411\+\_\+init}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_aa48c2f24c3ced51665e713fad332217c}{mcp79411\+\_\+set\+\_\+time}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}time)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_adcbe7d2c5f35d60954ec2f3c652a20a3}{mcp79411\+\_\+get\+\_\+time}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}time)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a5db7f9b8bc73d67c3b8f8fac4f40f083}{mcp79411\+\_\+set\+\_\+alarm}} (\mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04}{mcp79411\+\_\+alarm\+\_\+channel}} chnl, \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9}{mcp79411\+\_\+alarm\+\_\+mode}} mode, \mbox{\hyperlink{structmcp79411__alarm}{mcp79411\+\_\+alarm}} \texorpdfstring{$\ast$}{*}alarm)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a24713f45d1f40957e6acb3f8e0bbfb19}{mcp79411\+\_\+stop\+\_\+alarm}} (\mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04}{mcp79411\+\_\+alarm\+\_\+channel}} chnl)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a140d411267c7eedc5fe9d3bf1ae902f9}{mcp79411\+\_\+dec2bcd}} (uint8\+\_\+t dec)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a53b7cc370a69d20d748070c4276f97e7}{mcp79411\+\_\+bcd2dec}} (uint8\+\_\+t bcd)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a507ee5efba3f31963f5dc40e05e2b610}{mcp79411\+\_\+rtc\+\_\+iic\+\_\+read}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}rx\+\_\+buffer, uint16\+\_\+t len)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a828b08c558474707c1a9bc1638196b10}{mcp79411\+\_\+rtc\+\_\+iic\+\_\+write}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}tx\+\_\+buffer, uint16\+\_\+t len)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a716e7698399ac524d53db8beed23ff84}{mcp79411\+\_\+get\+\_\+status}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}time)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_aa43d28edf61dee366af7f84e510c3dcd}{mcp79411\+\_\+set\+\_\+\+Osc\+On}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}time)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{mcp79411_8h_acae3d33cb9e82cc5df3834fadbad9200}\index{mcp79411.h@{mcp79411.h}!MCP79411\_4BIT\_SHIFT@{MCP79411\_4BIT\_SHIFT}}
+\index{MCP79411\_4BIT\_SHIFT@{MCP79411\_4BIT\_SHIFT}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_4BIT\_SHIFT}{MCP79411\_4BIT\_SHIFT}}
+{\footnotesize\ttfamily \label{mcp79411_8h_acae3d33cb9e82cc5df3834fadbad9200} 
+\#define MCP79411\+\_\+4\+BIT\+\_\+\+SHIFT~4}
+
+\Hypertarget{mcp79411_8h_af675fe4f2fae0447ae056a159e0b23e2}\index{mcp79411.h@{mcp79411.h}!MCP79411\_BUFFER\_MAX@{MCP79411\_BUFFER\_MAX}}
+\index{MCP79411\_BUFFER\_MAX@{MCP79411\_BUFFER\_MAX}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_BUFFER\_MAX}{MCP79411\_BUFFER\_MAX}}
+{\footnotesize\ttfamily \label{mcp79411_8h_af675fe4f2fae0447ae056a159e0b23e2} 
+\#define MCP79411\+\_\+\+BUFFER\+\_\+\+MAX~256}
+
+\Hypertarget{mcp79411_8h_ab7a55229ba3bf1323c7dbd8e6a404e75}\index{mcp79411.h@{mcp79411.h}!MCP79411\_DEC\_MAX@{MCP79411\_DEC\_MAX}}
+\index{MCP79411\_DEC\_MAX@{MCP79411\_DEC\_MAX}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_DEC\_MAX}{MCP79411\_DEC\_MAX}}
+{\footnotesize\ttfamily \label{mcp79411_8h_ab7a55229ba3bf1323c7dbd8e6a404e75} 
+\#define MCP79411\+\_\+\+DEC\+\_\+\+MAX~0x99}
+
+\Hypertarget{mcp79411_8h_adeec8c6baf7f423affde155e4471baa7}\index{mcp79411.h@{mcp79411.h}!MCP79411\_DECADE@{MCP79411\_DECADE}}
+\index{MCP79411\_DECADE@{MCP79411\_DECADE}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_DECADE}{MCP79411\_DECADE}}
+{\footnotesize\ttfamily \label{mcp79411_8h_adeec8c6baf7f423affde155e4471baa7} 
+\#define MCP79411\+\_\+\+DECADE~10}
+
+\Hypertarget{mcp79411_8h_a62a83e12337f93bdc227a28acdfffd69}\index{mcp79411.h@{mcp79411.h}!MCP79411\_HIGH\_4BIT\_MASK@{MCP79411\_HIGH\_4BIT\_MASK}}
+\index{MCP79411\_HIGH\_4BIT\_MASK@{MCP79411\_HIGH\_4BIT\_MASK}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_HIGH\_4BIT\_MASK}{MCP79411\_HIGH\_4BIT\_MASK}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a62a83e12337f93bdc227a28acdfffd69} 
+\#define MCP79411\+\_\+\+HIGH\+\_\+4\+BIT\+\_\+\+MASK~0\+X0fu}
+
+\Hypertarget{mcp79411_8h_aba04880f35199fa99fa7bbbdd137f9f1}\index{mcp79411.h@{mcp79411.h}!MCP79411\_I2C\_ADDR\_R@{MCP79411\_I2C\_ADDR\_R}}
+\index{MCP79411\_I2C\_ADDR\_R@{MCP79411\_I2C\_ADDR\_R}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_I2C\_ADDR\_R}{MCP79411\_I2C\_ADDR\_R}}
+{\footnotesize\ttfamily \label{mcp79411_8h_aba04880f35199fa99fa7bbbdd137f9f1} 
+\#define MCP79411\+\_\+\+I2\+C\+\_\+\+ADDR\+\_\+R~0x\+DF}
+
+\Hypertarget{mcp79411_8h_a1fc90255d0591ffa640234bc24911d7e}\index{mcp79411.h@{mcp79411.h}!MCP79411\_I2C\_ADDR\_W@{MCP79411\_I2C\_ADDR\_W}}
+\index{MCP79411\_I2C\_ADDR\_W@{MCP79411\_I2C\_ADDR\_W}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_I2C\_ADDR\_W}{MCP79411\_I2C\_ADDR\_W}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a1fc90255d0591ffa640234bc24911d7e} 
+\#define MCP79411\+\_\+\+I2\+C\+\_\+\+ADDR\+\_\+W~0x\+DE}
+
+\Hypertarget{mcp79411_8h_abd4a5a62a57d5267a089f10dcb471364}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_ADDR\_LEN@{MCP79411\_REG\_ADDR\_LEN}}
+\index{MCP79411\_REG\_ADDR\_LEN@{MCP79411\_REG\_ADDR\_LEN}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_ADDR\_LEN}{MCP79411\_REG\_ADDR\_LEN}}
+{\footnotesize\ttfamily \label{mcp79411_8h_abd4a5a62a57d5267a089f10dcb471364} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+ADDR\+\_\+\+LEN~1}
+
+\Hypertarget{mcp79411_8h_a3f05a0d5b388cb4f3db1d4ae02dfd9ba}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_ALM0DATE@{MCP79411\_REG\_RTCC\_ALM0DATE}}
+\index{MCP79411\_REG\_RTCC\_ALM0DATE@{MCP79411\_REG\_RTCC\_ALM0DATE}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_ALM0DATE}{MCP79411\_REG\_RTCC\_ALM0DATE}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a3f05a0d5b388cb4f3db1d4ae02dfd9ba} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM0\+DATE~0x0E}
+
+\Hypertarget{mcp79411_8h_a6a928a0327f988104a22c0ceec5cc651}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_ALM0HOUR@{MCP79411\_REG\_RTCC\_ALM0HOUR}}
+\index{MCP79411\_REG\_RTCC\_ALM0HOUR@{MCP79411\_REG\_RTCC\_ALM0HOUR}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_ALM0HOUR}{MCP79411\_REG\_RTCC\_ALM0HOUR}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a6a928a0327f988104a22c0ceec5cc651} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM0\+HOUR~0x0C}
+
+\Hypertarget{mcp79411_8h_abb26fbb4308bfc73dab1aa8daa4e3ac9}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_ALM0MIN@{MCP79411\_REG\_RTCC\_ALM0MIN}}
+\index{MCP79411\_REG\_RTCC\_ALM0MIN@{MCP79411\_REG\_RTCC\_ALM0MIN}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_ALM0MIN}{MCP79411\_REG\_RTCC\_ALM0MIN}}
+{\footnotesize\ttfamily \label{mcp79411_8h_abb26fbb4308bfc73dab1aa8daa4e3ac9} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM0\+MIN~0x0B}
+
+\Hypertarget{mcp79411_8h_acdd3ff5880fb1bae2ab5037f9f14fe48}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_ALM0MTH@{MCP79411\_REG\_RTCC\_ALM0MTH}}
+\index{MCP79411\_REG\_RTCC\_ALM0MTH@{MCP79411\_REG\_RTCC\_ALM0MTH}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_ALM0MTH}{MCP79411\_REG\_RTCC\_ALM0MTH}}
+{\footnotesize\ttfamily \label{mcp79411_8h_acdd3ff5880fb1bae2ab5037f9f14fe48} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM0\+MTH~0x0F}
+
+\Hypertarget{mcp79411_8h_aa30b2c84d0e99ac4e415a2e53c80b707}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_ALM0SEC@{MCP79411\_REG\_RTCC\_ALM0SEC}}
+\index{MCP79411\_REG\_RTCC\_ALM0SEC@{MCP79411\_REG\_RTCC\_ALM0SEC}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_ALM0SEC}{MCP79411\_REG\_RTCC\_ALM0SEC}}
+{\footnotesize\ttfamily \label{mcp79411_8h_aa30b2c84d0e99ac4e415a2e53c80b707} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM0\+SEC~0x0A}
+
+\Hypertarget{mcp79411_8h_ae6247f4f60cd48c513c7629558745058}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_ALM0WKDAY@{MCP79411\_REG\_RTCC\_ALM0WKDAY}}
+\index{MCP79411\_REG\_RTCC\_ALM0WKDAY@{MCP79411\_REG\_RTCC\_ALM0WKDAY}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_ALM0WKDAY}{MCP79411\_REG\_RTCC\_ALM0WKDAY}}
+{\footnotesize\ttfamily \label{mcp79411_8h_ae6247f4f60cd48c513c7629558745058} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM0\+WKDAY~0x0D}
+
+\Hypertarget{mcp79411_8h_aea70d2790160ceaf39889402de304447}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_ALM1DATE@{MCP79411\_REG\_RTCC\_ALM1DATE}}
+\index{MCP79411\_REG\_RTCC\_ALM1DATE@{MCP79411\_REG\_RTCC\_ALM1DATE}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_ALM1DATE}{MCP79411\_REG\_RTCC\_ALM1DATE}}
+{\footnotesize\ttfamily \label{mcp79411_8h_aea70d2790160ceaf39889402de304447} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM1\+DATE~0x15}
+
+\Hypertarget{mcp79411_8h_a34a86f59307328ad43fd7109ffea4634}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_ALM1HOUR@{MCP79411\_REG\_RTCC\_ALM1HOUR}}
+\index{MCP79411\_REG\_RTCC\_ALM1HOUR@{MCP79411\_REG\_RTCC\_ALM1HOUR}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_ALM1HOUR}{MCP79411\_REG\_RTCC\_ALM1HOUR}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a34a86f59307328ad43fd7109ffea4634} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM1\+HOUR~0x13}
+
+\Hypertarget{mcp79411_8h_a8e3444de05ef8f6adb9774964187cdb5}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_ALM1MIN@{MCP79411\_REG\_RTCC\_ALM1MIN}}
+\index{MCP79411\_REG\_RTCC\_ALM1MIN@{MCP79411\_REG\_RTCC\_ALM1MIN}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_ALM1MIN}{MCP79411\_REG\_RTCC\_ALM1MIN}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a8e3444de05ef8f6adb9774964187cdb5} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM1\+MIN~0x12}
+
+\Hypertarget{mcp79411_8h_a3fd264679147764154dfad6360552d58}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_ALM1MTH@{MCP79411\_REG\_RTCC\_ALM1MTH}}
+\index{MCP79411\_REG\_RTCC\_ALM1MTH@{MCP79411\_REG\_RTCC\_ALM1MTH}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_ALM1MTH}{MCP79411\_REG\_RTCC\_ALM1MTH}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a3fd264679147764154dfad6360552d58} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM1\+MTH~0x16}
+
+\Hypertarget{mcp79411_8h_a02f7fc1b90403a3dbc6248f5d7ec6d6c}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_ALM1SEC@{MCP79411\_REG\_RTCC\_ALM1SEC}}
+\index{MCP79411\_REG\_RTCC\_ALM1SEC@{MCP79411\_REG\_RTCC\_ALM1SEC}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_ALM1SEC}{MCP79411\_REG\_RTCC\_ALM1SEC}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a02f7fc1b90403a3dbc6248f5d7ec6d6c} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM1\+SEC~0x11}
+
+\Hypertarget{mcp79411_8h_aee317841001e871cce98ea4f4fc26c9d}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_ALM1WKDAY@{MCP79411\_REG\_RTCC\_ALM1WKDAY}}
+\index{MCP79411\_REG\_RTCC\_ALM1WKDAY@{MCP79411\_REG\_RTCC\_ALM1WKDAY}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_ALM1WKDAY}{MCP79411\_REG\_RTCC\_ALM1WKDAY}}
+{\footnotesize\ttfamily \label{mcp79411_8h_aee317841001e871cce98ea4f4fc26c9d} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+ALM1\+WKDAY~0x14}
+
+\Hypertarget{mcp79411_8h_a4e1696d534dfdaa393b940bcc8389eae}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_CONTROL@{MCP79411\_REG\_RTCC\_CONTROL}}
+\index{MCP79411\_REG\_RTCC\_CONTROL@{MCP79411\_REG\_RTCC\_CONTROL}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_CONTROL}{MCP79411\_REG\_RTCC\_CONTROL}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a4e1696d534dfdaa393b940bcc8389eae} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+CONTROL~0x07}
+
+\Hypertarget{mcp79411_8h_a590b1adabdae6d4b086b28ae429717c4}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_EEUNLOCK@{MCP79411\_REG\_RTCC\_EEUNLOCK}}
+\index{MCP79411\_REG\_RTCC\_EEUNLOCK@{MCP79411\_REG\_RTCC\_EEUNLOCK}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_EEUNLOCK}{MCP79411\_REG\_RTCC\_EEUNLOCK}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a590b1adabdae6d4b086b28ae429717c4} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+EEUNLOCK~0x09}
+
+\Hypertarget{mcp79411_8h_a3f3a28584e028f730596a0cc8bc25fd6}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_OSCTRIM@{MCP79411\_REG\_RTCC\_OSCTRIM}}
+\index{MCP79411\_REG\_RTCC\_OSCTRIM@{MCP79411\_REG\_RTCC\_OSCTRIM}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_OSCTRIM}{MCP79411\_REG\_RTCC\_OSCTRIM}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a3f3a28584e028f730596a0cc8bc25fd6} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+OSCTRIM~0x08}
+
+\Hypertarget{mcp79411_8h_adcb3a42d93cde414b832d6735d6a3eca}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_PWRDNDATE@{MCP79411\_REG\_RTCC\_PWRDNDATE}}
+\index{MCP79411\_REG\_RTCC\_PWRDNDATE@{MCP79411\_REG\_RTCC\_PWRDNDATE}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_PWRDNDATE}{MCP79411\_REG\_RTCC\_PWRDNDATE}}
+{\footnotesize\ttfamily \label{mcp79411_8h_adcb3a42d93cde414b832d6735d6a3eca} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRDNDATE~0x1A}
+
+\Hypertarget{mcp79411_8h_a5a73993e32dfbdf628214b26e37b7e9f}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_PWRDNHOUR@{MCP79411\_REG\_RTCC\_PWRDNHOUR}}
+\index{MCP79411\_REG\_RTCC\_PWRDNHOUR@{MCP79411\_REG\_RTCC\_PWRDNHOUR}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_PWRDNHOUR}{MCP79411\_REG\_RTCC\_PWRDNHOUR}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a5a73993e32dfbdf628214b26e37b7e9f} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRDNHOUR~0x19}
+
+\Hypertarget{mcp79411_8h_ac52891f2ebae430035d90273ee5283b3}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_PWRDNMIN@{MCP79411\_REG\_RTCC\_PWRDNMIN}}
+\index{MCP79411\_REG\_RTCC\_PWRDNMIN@{MCP79411\_REG\_RTCC\_PWRDNMIN}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_PWRDNMIN}{MCP79411\_REG\_RTCC\_PWRDNMIN}}
+{\footnotesize\ttfamily \label{mcp79411_8h_ac52891f2ebae430035d90273ee5283b3} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRDNMIN~0x18}
+
+\Hypertarget{mcp79411_8h_a340acc1e844f04ef9f4598d72dbfbf5d}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_PWRDNMTH@{MCP79411\_REG\_RTCC\_PWRDNMTH}}
+\index{MCP79411\_REG\_RTCC\_PWRDNMTH@{MCP79411\_REG\_RTCC\_PWRDNMTH}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_PWRDNMTH}{MCP79411\_REG\_RTCC\_PWRDNMTH}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a340acc1e844f04ef9f4598d72dbfbf5d} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRDNMTH~0x1B}
+
+\Hypertarget{mcp79411_8h_a1c9a00203b213a9e46df6ec6852fafd0}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_PWRUPDATE@{MCP79411\_REG\_RTCC\_PWRUPDATE}}
+\index{MCP79411\_REG\_RTCC\_PWRUPDATE@{MCP79411\_REG\_RTCC\_PWRUPDATE}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_PWRUPDATE}{MCP79411\_REG\_RTCC\_PWRUPDATE}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a1c9a00203b213a9e46df6ec6852fafd0} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRUPDATE~0x1E}
+
+\Hypertarget{mcp79411_8h_ad359409861f83ce4649c32d97fe98dfb}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_PWRUPHOUR@{MCP79411\_REG\_RTCC\_PWRUPHOUR}}
+\index{MCP79411\_REG\_RTCC\_PWRUPHOUR@{MCP79411\_REG\_RTCC\_PWRUPHOUR}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_PWRUPHOUR}{MCP79411\_REG\_RTCC\_PWRUPHOUR}}
+{\footnotesize\ttfamily \label{mcp79411_8h_ad359409861f83ce4649c32d97fe98dfb} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRUPHOUR~0x1D}
+
+\Hypertarget{mcp79411_8h_a8f76659ddbecfbb747eb595ddd873124}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_PWRUPMIN@{MCP79411\_REG\_RTCC\_PWRUPMIN}}
+\index{MCP79411\_REG\_RTCC\_PWRUPMIN@{MCP79411\_REG\_RTCC\_PWRUPMIN}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_PWRUPMIN}{MCP79411\_REG\_RTCC\_PWRUPMIN}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a8f76659ddbecfbb747eb595ddd873124} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRUPMIN~0x1C}
+
+\Hypertarget{mcp79411_8h_af756bf8f3fcc2d37185139befdbf337b}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_PWRUPMTH@{MCP79411\_REG\_RTCC\_PWRUPMTH}}
+\index{MCP79411\_REG\_RTCC\_PWRUPMTH@{MCP79411\_REG\_RTCC\_PWRUPMTH}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_PWRUPMTH}{MCP79411\_REG\_RTCC\_PWRUPMTH}}
+{\footnotesize\ttfamily \label{mcp79411_8h_af756bf8f3fcc2d37185139befdbf337b} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+PWRUPMTH~0x1F}
+
+\Hypertarget{mcp79411_8h_a4fcaf7f4c31bffb2b88d78e91852eef0}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_RTCDATE@{MCP79411\_REG\_RTCC\_RTCDATE}}
+\index{MCP79411\_REG\_RTCC\_RTCDATE@{MCP79411\_REG\_RTCC\_RTCDATE}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_RTCDATE}{MCP79411\_REG\_RTCC\_RTCDATE}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a4fcaf7f4c31bffb2b88d78e91852eef0} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCDATE~0x04}
+
+\Hypertarget{mcp79411_8h_aa887c65620e9099a34154db16c3d4b6e}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_RTCHOUR@{MCP79411\_REG\_RTCC\_RTCHOUR}}
+\index{MCP79411\_REG\_RTCC\_RTCHOUR@{MCP79411\_REG\_RTCC\_RTCHOUR}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_RTCHOUR}{MCP79411\_REG\_RTCC\_RTCHOUR}}
+{\footnotesize\ttfamily \label{mcp79411_8h_aa887c65620e9099a34154db16c3d4b6e} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCHOUR~0x02}
+
+\Hypertarget{mcp79411_8h_a78022aa5448d0501a34dba82eac490c4}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_RTCMIN@{MCP79411\_REG\_RTCC\_RTCMIN}}
+\index{MCP79411\_REG\_RTCC\_RTCMIN@{MCP79411\_REG\_RTCC\_RTCMIN}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_RTCMIN}{MCP79411\_REG\_RTCC\_RTCMIN}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a78022aa5448d0501a34dba82eac490c4} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCMIN~0x01}
+
+\Hypertarget{mcp79411_8h_a4ffa3e3ae1a8fb19dd289d5c37b28a35}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_RTCMTH@{MCP79411\_REG\_RTCC\_RTCMTH}}
+\index{MCP79411\_REG\_RTCC\_RTCMTH@{MCP79411\_REG\_RTCC\_RTCMTH}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_RTCMTH}{MCP79411\_REG\_RTCC\_RTCMTH}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a4ffa3e3ae1a8fb19dd289d5c37b28a35} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCMTH~0x05}
+
+\Hypertarget{mcp79411_8h_a923b93c28d4f3398ea05ed6bd7b7e49a}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_RTCSEC@{MCP79411\_REG\_RTCC\_RTCSEC}}
+\index{MCP79411\_REG\_RTCC\_RTCSEC@{MCP79411\_REG\_RTCC\_RTCSEC}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_RTCSEC}{MCP79411\_REG\_RTCC\_RTCSEC}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a923b93c28d4f3398ea05ed6bd7b7e49a} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCSEC~0x00}
+
+reg define \Hypertarget{mcp79411_8h_afce05a20a8d1b55962c773342c849215}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_RTCWKDAY@{MCP79411\_REG\_RTCC\_RTCWKDAY}}
+\index{MCP79411\_REG\_RTCC\_RTCWKDAY@{MCP79411\_REG\_RTCC\_RTCWKDAY}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_RTCWKDAY}{MCP79411\_REG\_RTCC\_RTCWKDAY}}
+{\footnotesize\ttfamily \label{mcp79411_8h_afce05a20a8d1b55962c773342c849215} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCWKDAY~0x03}
+
+\Hypertarget{mcp79411_8h_a595422be26cc9cede02fac34b078eff4}\index{mcp79411.h@{mcp79411.h}!MCP79411\_REG\_RTCC\_RTCYEAR@{MCP79411\_REG\_RTCC\_RTCYEAR}}
+\index{MCP79411\_REG\_RTCC\_RTCYEAR@{MCP79411\_REG\_RTCC\_RTCYEAR}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_REG\_RTCC\_RTCYEAR}{MCP79411\_REG\_RTCC\_RTCYEAR}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a595422be26cc9cede02fac34b078eff4} 
+\#define MCP79411\+\_\+\+REG\+\_\+\+RTCC\+\_\+\+RTCYEAR~0x06}
+
+\Hypertarget{mcp79411_8h_a530f11a96e508d171d28564c8dc20942}\index{mcp79411.h@{mcp79411.h}!NULL\_PTR@{NULL\_PTR}}
+\index{NULL\_PTR@{NULL\_PTR}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{NULL\_PTR}{NULL\_PTR}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a530f11a96e508d171d28564c8dc20942} 
+\#define NULL\+\_\+\+PTR~((void\texorpdfstring{$\ast$}{*})0)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04}\index{mcp79411.h@{mcp79411.h}!mcp79411\_alarm\_channel@{mcp79411\_alarm\_channel}}
+\index{mcp79411\_alarm\_channel@{mcp79411\_alarm\_channel}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_alarm\_channel}{mcp79411\_alarm\_channel}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04} 
+enum \mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04}{mcp79411\+\_\+alarm\+\_\+channel}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCP79411\_ALRM\_CHANNEL\_0@{MCP79411\_ALRM\_CHANNEL\_0}!mcp79411.h@{mcp79411.h}}\index{mcp79411.h@{mcp79411.h}!MCP79411\_ALRM\_CHANNEL\_0@{MCP79411\_ALRM\_CHANNEL\_0}}}\Hypertarget{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04a433c9feb0daabd7df6e093912287e4e4}\label{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04a433c9feb0daabd7df6e093912287e4e4} 
+MCP79411\+\_\+\+ALRM\+\_\+\+CHANNEL\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCP79411\_ALRM\_CHANNEL\_1@{MCP79411\_ALRM\_CHANNEL\_1}!mcp79411.h@{mcp79411.h}}\index{mcp79411.h@{mcp79411.h}!MCP79411\_ALRM\_CHANNEL\_1@{MCP79411\_ALRM\_CHANNEL\_1}}}\Hypertarget{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04a45fe5a8f47323d09b6f397e770f190fb}\label{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04a45fe5a8f47323d09b6f397e770f190fb} 
+MCP79411\+\_\+\+ALRM\+\_\+\+CHANNEL\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCP79411\_ALRM\_CHANNEL\_MAX@{MCP79411\_ALRM\_CHANNEL\_MAX}!mcp79411.h@{mcp79411.h}}\index{mcp79411.h@{mcp79411.h}!MCP79411\_ALRM\_CHANNEL\_MAX@{MCP79411\_ALRM\_CHANNEL\_MAX}}}\Hypertarget{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04aa462190d82efd2bc33197db3abf0c836}\label{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04aa462190d82efd2bc33197db3abf0c836} 
+MCP79411\+\_\+\+ALRM\+\_\+\+CHANNEL\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9}\index{mcp79411.h@{mcp79411.h}!mcp79411\_alarm\_mode@{mcp79411\_alarm\_mode}}
+\index{mcp79411\_alarm\_mode@{mcp79411\_alarm\_mode}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_alarm\_mode}{mcp79411\_alarm\_mode}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9} 
+enum \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9}{mcp79411\+\_\+alarm\+\_\+mode}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCP79411\_ALRM\_MODE\_SEC@{MCP79411\_ALRM\_MODE\_SEC}!mcp79411.h@{mcp79411.h}}\index{mcp79411.h@{mcp79411.h}!MCP79411\_ALRM\_MODE\_SEC@{MCP79411\_ALRM\_MODE\_SEC}}}\Hypertarget{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9ac84ff6287992919098aa24efcb6417ec}\label{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9ac84ff6287992919098aa24efcb6417ec} 
+MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+SEC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCP79411\_ALRM\_MODE\_MIN@{MCP79411\_ALRM\_MODE\_MIN}!mcp79411.h@{mcp79411.h}}\index{mcp79411.h@{mcp79411.h}!MCP79411\_ALRM\_MODE\_MIN@{MCP79411\_ALRM\_MODE\_MIN}}}\Hypertarget{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9ade87ff292f22cda9e6e6e164029e1756}\label{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9ade87ff292f22cda9e6e6e164029e1756} 
+MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+MIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCP79411\_ALRM\_MODE\_HOUR@{MCP79411\_ALRM\_MODE\_HOUR}!mcp79411.h@{mcp79411.h}}\index{mcp79411.h@{mcp79411.h}!MCP79411\_ALRM\_MODE\_HOUR@{MCP79411\_ALRM\_MODE\_HOUR}}}\Hypertarget{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9af3a87eadfc86404bf951f930c4b8cacc}\label{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9af3a87eadfc86404bf951f930c4b8cacc} 
+MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+HOUR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCP79411\_ALRM\_MODE\_WKDAY@{MCP79411\_ALRM\_MODE\_WKDAY}!mcp79411.h@{mcp79411.h}}\index{mcp79411.h@{mcp79411.h}!MCP79411\_ALRM\_MODE\_WKDAY@{MCP79411\_ALRM\_MODE\_WKDAY}}}\Hypertarget{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9aea41f2eb366e02cee804329b4fcd538e}\label{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9aea41f2eb366e02cee804329b4fcd538e} 
+MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+WKDAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCP79411\_ALRM\_MODE\_DATE@{MCP79411\_ALRM\_MODE\_DATE}!mcp79411.h@{mcp79411.h}}\index{mcp79411.h@{mcp79411.h}!MCP79411\_ALRM\_MODE\_DATE@{MCP79411\_ALRM\_MODE\_DATE}}}\Hypertarget{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9a3a8c312acf0d22c1888c7dc39e160887}\label{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9a3a8c312acf0d22c1888c7dc39e160887} 
+MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+DATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCP79411\_ALRM\_MODE\_ALL@{MCP79411\_ALRM\_MODE\_ALL}!mcp79411.h@{mcp79411.h}}\index{mcp79411.h@{mcp79411.h}!MCP79411\_ALRM\_MODE\_ALL@{MCP79411\_ALRM\_MODE\_ALL}}}\Hypertarget{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9afc6747fd7f77e052f6c76689c208343a}\label{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9afc6747fd7f77e052f6c76689c208343a} 
+MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+ALL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MCP79411\_ALRM\_MODE\_MAX@{MCP79411\_ALRM\_MODE\_MAX}!mcp79411.h@{mcp79411.h}}\index{mcp79411.h@{mcp79411.h}!MCP79411\_ALRM\_MODE\_MAX@{MCP79411\_ALRM\_MODE\_MAX}}}\Hypertarget{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9a8f92474ea37d61f9a3a0620bfff10b42}\label{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9a8f92474ea37d61f9a3a0620bfff10b42} 
+MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mcp79411_8h_a53b7cc370a69d20d748070c4276f97e7}\index{mcp79411.h@{mcp79411.h}!mcp79411\_bcd2dec@{mcp79411\_bcd2dec}}
+\index{mcp79411\_bcd2dec@{mcp79411\_bcd2dec}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_bcd2dec()}{mcp79411\_bcd2dec()}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a53b7cc370a69d20d748070c4276f97e7} 
+uint8\+\_\+t mcp79411\+\_\+bcd2dec (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{bcd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{mcp79411_8h_a140d411267c7eedc5fe9d3bf1ae902f9}\index{mcp79411.h@{mcp79411.h}!mcp79411\_dec2bcd@{mcp79411\_dec2bcd}}
+\index{mcp79411\_dec2bcd@{mcp79411\_dec2bcd}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_dec2bcd()}{mcp79411\_dec2bcd()}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a140d411267c7eedc5fe9d3bf1ae902f9} 
+uint8\+\_\+t mcp79411\+\_\+dec2bcd (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{mcp79411_8h_a716e7698399ac524d53db8beed23ff84}\index{mcp79411.h@{mcp79411.h}!mcp79411\_get\_status@{mcp79411\_get\_status}}
+\index{mcp79411\_get\_status@{mcp79411\_get\_status}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_get\_status()}{mcp79411\_get\_status()}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a716e7698399ac524d53db8beed23ff84} 
+uint8\+\_\+t mcp79411\+\_\+get\+\_\+status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 4
+\Hypertarget{mcp79411_8h_adcbe7d2c5f35d60954ec2f3c652a20a3}\index{mcp79411.h@{mcp79411.h}!mcp79411\_get\_time@{mcp79411\_get\_time}}
+\index{mcp79411\_get\_time@{mcp79411\_get\_time}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_get\_time()}{mcp79411\_get\_time()}}
+{\footnotesize\ttfamily \label{mcp79411_8h_adcbe7d2c5f35d60954ec2f3c652a20a3} 
+uint8\+\_\+t mcp79411\+\_\+get\+\_\+time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\Hypertarget{mcp79411_8h_a42a385a44017102ecf7ec3564d40aa5b}\index{mcp79411.h@{mcp79411.h}!mcp79411\_init@{mcp79411\_init}}
+\index{mcp79411\_init@{mcp79411\_init}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_init()}{mcp79411\_init()}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a42a385a44017102ecf7ec3564d40aa5b} 
+void mcp79411\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:
+% FIG 7
+\Hypertarget{mcp79411_8h_a507ee5efba3f31963f5dc40e05e2b610}\index{mcp79411.h@{mcp79411.h}!mcp79411\_rtc\_iic\_read@{mcp79411\_rtc\_iic\_read}}
+\index{mcp79411\_rtc\_iic\_read@{mcp79411\_rtc\_iic\_read}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_iic\_read()}{mcp79411\_rtc\_iic\_read()}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a507ee5efba3f31963f5dc40e05e2b610} 
+uint8\+\_\+t mcp79411\+\_\+rtc\+\_\+iic\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{rx\+\_\+buffer}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 8
+Here is the caller graph for this function\+:
+% FIG 9
+\Hypertarget{mcp79411_8h_a828b08c558474707c1a9bc1638196b10}\index{mcp79411.h@{mcp79411.h}!mcp79411\_rtc\_iic\_write@{mcp79411\_rtc\_iic\_write}}
+\index{mcp79411\_rtc\_iic\_write@{mcp79411\_rtc\_iic\_write}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_iic\_write()}{mcp79411\_rtc\_iic\_write()}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a828b08c558474707c1a9bc1638196b10} 
+uint8\+\_\+t mcp79411\+\_\+rtc\+\_\+iic\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{tx\+\_\+buffer}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 10
+Here is the caller graph for this function\+:
+% FIG 11
+\Hypertarget{mcp79411_8h_aa60e654238b849de1b1440e8a5fb1909}\index{mcp79411.h@{mcp79411.h}!mcp79411\_rtc\_reg\_read@{mcp79411\_rtc\_reg\_read}}
+\index{mcp79411\_rtc\_reg\_read@{mcp79411\_rtc\_reg\_read}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_reg\_read()}{mcp79411\_rtc\_reg\_read()}}
+{\footnotesize\ttfamily \label{mcp79411_8h_aa60e654238b849de1b1440e8a5fb1909} 
+uint8\+\_\+t mcp79411\+\_\+rtc\+\_\+reg\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{rx\+\_\+buffer}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13
+\Hypertarget{mcp79411_8h_a65e0738f4056e1c71fdf5394ad69d9f0}\index{mcp79411.h@{mcp79411.h}!mcp79411\_rtc\_reg\_write@{mcp79411\_rtc\_reg\_write}}
+\index{mcp79411\_rtc\_reg\_write@{mcp79411\_rtc\_reg\_write}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_reg\_write()}{mcp79411\_rtc\_reg\_write()}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a65e0738f4056e1c71fdf5394ad69d9f0} 
+uint8\+\_\+t mcp79411\+\_\+rtc\+\_\+reg\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{tx\+\_\+buffer}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 14
+Here is the caller graph for this function\+:
+% FIG 15
+\Hypertarget{mcp79411_8h_a5db7f9b8bc73d67c3b8f8fac4f40f083}\index{mcp79411.h@{mcp79411.h}!mcp79411\_set\_alarm@{mcp79411\_set\_alarm}}
+\index{mcp79411\_set\_alarm@{mcp79411\_set\_alarm}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_set\_alarm()}{mcp79411\_set\_alarm()}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a5db7f9b8bc73d67c3b8f8fac4f40f083} 
+uint8\+\_\+t mcp79411\+\_\+set\+\_\+alarm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04}{mcp79411\+\_\+alarm\+\_\+channel}}}]{chnl}{, }\item[{\mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9}{mcp79411\+\_\+alarm\+\_\+mode}}}]{mode}{, }\item[{\mbox{\hyperlink{structmcp79411__alarm}{mcp79411\+\_\+alarm}} \texorpdfstring{$\ast$}{*}}]{alarm}{}\end{DoxyParamCaption})}
+
+\Hypertarget{mcp79411_8h_aa43d28edf61dee366af7f84e510c3dcd}\index{mcp79411.h@{mcp79411.h}!mcp79411\_set\_OscOn@{mcp79411\_set\_OscOn}}
+\index{mcp79411\_set\_OscOn@{mcp79411\_set\_OscOn}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_set\_OscOn()}{mcp79411\_set\_OscOn()}}
+{\footnotesize\ttfamily \label{mcp79411_8h_aa43d28edf61dee366af7f84e510c3dcd} 
+uint8\+\_\+t mcp79411\+\_\+set\+\_\+\+Osc\+On (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 16
+\Hypertarget{mcp79411_8h_aa48c2f24c3ced51665e713fad332217c}\index{mcp79411.h@{mcp79411.h}!mcp79411\_set\_time@{mcp79411\_set\_time}}
+\index{mcp79411\_set\_time@{mcp79411\_set\_time}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_set\_time()}{mcp79411\_set\_time()}}
+{\footnotesize\ttfamily \label{mcp79411_8h_aa48c2f24c3ced51665e713fad332217c} 
+uint8\+\_\+t mcp79411\+\_\+set\+\_\+time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 17
+Here is the caller graph for this function\+:
+% FIG 18
+\Hypertarget{mcp79411_8h_a24713f45d1f40957e6acb3f8e0bbfb19}\index{mcp79411.h@{mcp79411.h}!mcp79411\_stop\_alarm@{mcp79411\_stop\_alarm}}
+\index{mcp79411\_stop\_alarm@{mcp79411\_stop\_alarm}!mcp79411.h@{mcp79411.h}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_stop\_alarm()}{mcp79411\_stop\_alarm()}}
+{\footnotesize\ttfamily \label{mcp79411_8h_a24713f45d1f40957e6acb3f8e0bbfb19} 
+uint8\+\_\+t mcp79411\+\_\+stop\+\_\+alarm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04}{mcp79411\+\_\+alarm\+\_\+channel}}}]{chnl}{}\end{DoxyParamCaption})}
+

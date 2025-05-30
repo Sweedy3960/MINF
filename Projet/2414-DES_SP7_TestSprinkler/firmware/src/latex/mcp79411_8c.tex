@@ -1,0 +1,149 @@
+\doxysection{mcp79411.\+c File Reference}
+\hypertarget{mcp79411_8c}{}\label{mcp79411_8c}\index{mcp79411.c@{mcp79411.c}}
+{\ttfamily \#include "{}mcp79411.\+h"{}}\newline
+{\ttfamily \#include "{}Mc32\+\_\+\+I2c\+Util\+CCS.\+h"{}}\newline
+{\ttfamily \#include "{}app.\+h"{}}\newline
+Include dependency graph for mcp79411.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8c_a140d411267c7eedc5fe9d3bf1ae902f9}{mcp79411\+\_\+dec2bcd}} (uint8\+\_\+t dec)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8c_a53b7cc370a69d20d748070c4276f97e7}{mcp79411\+\_\+bcd2dec}} (uint8\+\_\+t bcd)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8c_aa60e654238b849de1b1440e8a5fb1909}{mcp79411\+\_\+rtc\+\_\+reg\+\_\+read}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}rx\+\_\+buffer, uint16\+\_\+t len)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8c_a65e0738f4056e1c71fdf5394ad69d9f0}{mcp79411\+\_\+rtc\+\_\+reg\+\_\+write}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}tx\+\_\+buffer, uint16\+\_\+t len)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8c_aa48c2f24c3ced51665e713fad332217c}{mcp79411\+\_\+set\+\_\+time}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}time)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8c_adcbe7d2c5f35d60954ec2f3c652a20a3}{mcp79411\+\_\+get\+\_\+time}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}time)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8c_a716e7698399ac524d53db8beed23ff84}{mcp79411\+\_\+get\+\_\+status}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}time)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8c_aa43d28edf61dee366af7f84e510c3dcd}{mcp79411\+\_\+set\+\_\+\+Osc\+On}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}time)
+\item 
+void \mbox{\hyperlink{mcp79411_8c_a42a385a44017102ecf7ec3564d40aa5b}{mcp79411\+\_\+init}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8c_a828b08c558474707c1a9bc1638196b10}{mcp79411\+\_\+rtc\+\_\+iic\+\_\+write}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}tx\+\_\+buffer, uint16\+\_\+t len)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{mcp79411_8c_a507ee5efba3f31963f5dc40e05e2b610}{mcp79411\+\_\+rtc\+\_\+iic\+\_\+read}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}rx\+\_\+buffer, uint16\+\_\+t len)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structmcp79411__obj}{mcp79411\+\_\+obj}} \mbox{\hyperlink{mcp79411_8c_a2fbf39eb360298f81ae661266ca35322}{mcp79411}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mcp79411_8c_a53b7cc370a69d20d748070c4276f97e7}\index{mcp79411.c@{mcp79411.c}!mcp79411\_bcd2dec@{mcp79411\_bcd2dec}}
+\index{mcp79411\_bcd2dec@{mcp79411\_bcd2dec}!mcp79411.c@{mcp79411.c}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_bcd2dec()}{mcp79411\_bcd2dec()}}
+{\footnotesize\ttfamily \label{mcp79411_8c_a53b7cc370a69d20d748070c4276f97e7} 
+uint8\+\_\+t mcp79411\+\_\+bcd2dec (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{bcd}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{mcp79411_8c_a140d411267c7eedc5fe9d3bf1ae902f9}\index{mcp79411.c@{mcp79411.c}!mcp79411\_dec2bcd@{mcp79411\_dec2bcd}}
+\index{mcp79411\_dec2bcd@{mcp79411\_dec2bcd}!mcp79411.c@{mcp79411.c}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_dec2bcd()}{mcp79411\_dec2bcd()}}
+{\footnotesize\ttfamily \label{mcp79411_8c_a140d411267c7eedc5fe9d3bf1ae902f9} 
+uint8\+\_\+t mcp79411\+\_\+dec2bcd (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dec}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{mcp79411_8c_a716e7698399ac524d53db8beed23ff84}\index{mcp79411.c@{mcp79411.c}!mcp79411\_get\_status@{mcp79411\_get\_status}}
+\index{mcp79411\_get\_status@{mcp79411\_get\_status}!mcp79411.c@{mcp79411.c}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_get\_status()}{mcp79411\_get\_status()}}
+{\footnotesize\ttfamily \label{mcp79411_8c_a716e7698399ac524d53db8beed23ff84} 
+uint8\+\_\+t mcp79411\+\_\+get\+\_\+status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 3
+\Hypertarget{mcp79411_8c_adcbe7d2c5f35d60954ec2f3c652a20a3}\index{mcp79411.c@{mcp79411.c}!mcp79411\_get\_time@{mcp79411\_get\_time}}
+\index{mcp79411\_get\_time@{mcp79411\_get\_time}!mcp79411.c@{mcp79411.c}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_get\_time()}{mcp79411\_get\_time()}}
+{\footnotesize\ttfamily \label{mcp79411_8c_adcbe7d2c5f35d60954ec2f3c652a20a3} 
+uint8\+\_\+t mcp79411\+\_\+get\+\_\+time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\Hypertarget{mcp79411_8c_a42a385a44017102ecf7ec3564d40aa5b}\index{mcp79411.c@{mcp79411.c}!mcp79411\_init@{mcp79411\_init}}
+\index{mcp79411\_init@{mcp79411\_init}!mcp79411.c@{mcp79411.c}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_init()}{mcp79411\_init()}}
+{\footnotesize\ttfamily \label{mcp79411_8c_a42a385a44017102ecf7ec3564d40aa5b} 
+void mcp79411\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 6
+\Hypertarget{mcp79411_8c_a507ee5efba3f31963f5dc40e05e2b610}\index{mcp79411.c@{mcp79411.c}!mcp79411\_rtc\_iic\_read@{mcp79411\_rtc\_iic\_read}}
+\index{mcp79411\_rtc\_iic\_read@{mcp79411\_rtc\_iic\_read}!mcp79411.c@{mcp79411.c}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_iic\_read()}{mcp79411\_rtc\_iic\_read()}}
+{\footnotesize\ttfamily \label{mcp79411_8c_a507ee5efba3f31963f5dc40e05e2b610} 
+uint8\+\_\+t mcp79411\+\_\+rtc\+\_\+iic\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{rx\+\_\+buffer}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\Hypertarget{mcp79411_8c_a828b08c558474707c1a9bc1638196b10}\index{mcp79411.c@{mcp79411.c}!mcp79411\_rtc\_iic\_write@{mcp79411\_rtc\_iic\_write}}
+\index{mcp79411\_rtc\_iic\_write@{mcp79411\_rtc\_iic\_write}!mcp79411.c@{mcp79411.c}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_iic\_write()}{mcp79411\_rtc\_iic\_write()}}
+{\footnotesize\ttfamily \label{mcp79411_8c_a828b08c558474707c1a9bc1638196b10} 
+uint8\+\_\+t mcp79411\+\_\+rtc\+\_\+iic\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{tx\+\_\+buffer}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+\Hypertarget{mcp79411_8c_aa60e654238b849de1b1440e8a5fb1909}\index{mcp79411.c@{mcp79411.c}!mcp79411\_rtc\_reg\_read@{mcp79411\_rtc\_reg\_read}}
+\index{mcp79411\_rtc\_reg\_read@{mcp79411\_rtc\_reg\_read}!mcp79411.c@{mcp79411.c}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_reg\_read()}{mcp79411\_rtc\_reg\_read()}}
+{\footnotesize\ttfamily \label{mcp79411_8c_aa60e654238b849de1b1440e8a5fb1909} 
+uint8\+\_\+t mcp79411\+\_\+rtc\+\_\+reg\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{rx\+\_\+buffer}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
+\Hypertarget{mcp79411_8c_a65e0738f4056e1c71fdf5394ad69d9f0}\index{mcp79411.c@{mcp79411.c}!mcp79411\_rtc\_reg\_write@{mcp79411\_rtc\_reg\_write}}
+\index{mcp79411\_rtc\_reg\_write@{mcp79411\_rtc\_reg\_write}!mcp79411.c@{mcp79411.c}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_reg\_write()}{mcp79411\_rtc\_reg\_write()}}
+{\footnotesize\ttfamily \label{mcp79411_8c_a65e0738f4056e1c71fdf5394ad69d9f0} 
+uint8\+\_\+t mcp79411\+\_\+rtc\+\_\+reg\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{tx\+\_\+buffer}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 13
+Here is the caller graph for this function\+:
+% FIG 14
+\Hypertarget{mcp79411_8c_aa43d28edf61dee366af7f84e510c3dcd}\index{mcp79411.c@{mcp79411.c}!mcp79411\_set\_OscOn@{mcp79411\_set\_OscOn}}
+\index{mcp79411\_set\_OscOn@{mcp79411\_set\_OscOn}!mcp79411.c@{mcp79411.c}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_set\_OscOn()}{mcp79411\_set\_OscOn()}}
+{\footnotesize\ttfamily \label{mcp79411_8c_aa43d28edf61dee366af7f84e510c3dcd} 
+uint8\+\_\+t mcp79411\+\_\+set\+\_\+\+Osc\+On (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 15
+\Hypertarget{mcp79411_8c_aa48c2f24c3ced51665e713fad332217c}\index{mcp79411.c@{mcp79411.c}!mcp79411\_set\_time@{mcp79411\_set\_time}}
+\index{mcp79411\_set\_time@{mcp79411\_set\_time}!mcp79411.c@{mcp79411.c}}
+\doxysubsubsection{\texorpdfstring{mcp79411\_set\_time()}{mcp79411\_set\_time()}}
+{\footnotesize\ttfamily \label{mcp79411_8c_aa48c2f24c3ced51665e713fad332217c} 
+uint8\+\_\+t mcp79411\+\_\+set\+\_\+time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 16
+Here is the caller graph for this function\+:
+% FIG 17
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{mcp79411_8c_a2fbf39eb360298f81ae661266ca35322}\index{mcp79411.c@{mcp79411.c}!mcp79411@{mcp79411}}
+\index{mcp79411@{mcp79411}!mcp79411.c@{mcp79411.c}}
+\doxysubsubsection{\texorpdfstring{mcp79411}{mcp79411}}
+{\footnotesize\ttfamily \label{mcp79411_8c_a2fbf39eb360298f81ae661266ca35322} 
+\mbox{\hyperlink{structmcp79411__obj}{mcp79411\+\_\+obj}} mcp79411\hspace{0.3cm}{\ttfamily [static]}}
+

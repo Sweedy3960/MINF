@@ -1,0 +1,103 @@
+\doxysection{Mc32gest\+I2c\+Seeprom.\+c File Reference}
+\hypertarget{_mc32gest_i2c_seeprom_8c}{}\label{_mc32gest_i2c_seeprom_8c}\index{Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}}
+{\ttfamily \#include "{}Mc32gest\+I2c\+Seeprom.\+h"{}}\newline
+{\ttfamily \#include "{}Mc32\+\_\+\+I2c\+Util\+CCS.\+h"{}}\newline
+{\ttfamily \#include "{}stdint.\+h"{}}\newline
+Include dependency graph for Mc32gest\+I2c\+Seeprom.\+c\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_mc32gest_i2c_seeprom_8c_a8126d54e38aa8fd72f762b0d86793eec}{MCP79411\+\_\+\+EEPROM\+\_\+R}}~0x\+AF
+\item 
+\#define \mbox{\hyperlink{_mc32gest_i2c_seeprom_8c_ae7d901256aeec6b771342ffdd2c509e7}{MCP79411\+\_\+\+EEPROM\+\_\+W}}~0x\+AE
+\item 
+\#define \mbox{\hyperlink{_mc32gest_i2c_seeprom_8c_a27dafeb457cbacf0cb0da7a2c9939bf9}{MCP79411\+\_\+\+EEPROM\+\_\+\+BEG}}~0x00
+\item 
+\#define \mbox{\hyperlink{_mc32gest_i2c_seeprom_8c_a0219bdd598523bb4ac0f1f50012cd441}{MCP79411\+\_\+\+EEPROM\+\_\+\+END}}~0x7F
+\item 
+\#define \mbox{\hyperlink{_mc32gest_i2c_seeprom_8c_a3afd8e63be402e0679d9c0f39427cc12}{REG\+\_\+\+EEUNLOCK}}~0x09
+\item 
+\#define \mbox{\hyperlink{_mc32gest_i2c_seeprom_8c_a27dafeb457cbacf0cb0da7a2c9939bf9}{MCP79411\+\_\+\+EEPROM\+\_\+\+BEG}}~0x00
+\item 
+\#define \mbox{\hyperlink{_mc32gest_i2c_seeprom_8c_a0219bdd598523bb4ac0f1f50012cd441}{MCP79411\+\_\+\+EEPROM\+\_\+\+END}}~0x7F
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_mc32gest_i2c_seeprom_8c_a3306f29c8c0f0473c7e00dbacb17a983}{I2\+C\+\_\+\+Init\+MCP79411}} (void)
+\item 
+void \mbox{\hyperlink{_mc32gest_i2c_seeprom_8c_ad4f4818d62f573fd6b0715977c242c0c}{I2\+C\+\_\+\+Write\+SEEPROM}} (void \texorpdfstring{$\ast$}{*}Src\+Data, uint32\+\_\+t EEprom\+Addr, uint16\+\_\+t Nb\+Bytes)
+\item 
+void \mbox{\hyperlink{_mc32gest_i2c_seeprom_8c_abe4c03a9abd92ea8537de7ea02d71003}{I2\+C\+\_\+\+Read\+SEEPROM}} (void \texorpdfstring{$\ast$}{*}Dst\+Data, uint32\+\_\+t EEprom\+Addr, uint16\+\_\+t Nb\+Bytes)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_mc32gest_i2c_seeprom_8c_a27dafeb457cbacf0cb0da7a2c9939bf9}\index{Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}!MCP79411\_EEPROM\_BEG@{MCP79411\_EEPROM\_BEG}}
+\index{MCP79411\_EEPROM\_BEG@{MCP79411\_EEPROM\_BEG}!Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_EEPROM\_BEG}{MCP79411\_EEPROM\_BEG}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{_mc32gest_i2c_seeprom_8c_a27dafeb457cbacf0cb0da7a2c9939bf9} 
+\#define MCP79411\+\_\+\+EEPROM\+\_\+\+BEG~0x00}
+
+\Hypertarget{_mc32gest_i2c_seeprom_8c_a27dafeb457cbacf0cb0da7a2c9939bf9}\index{Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}!MCP79411\_EEPROM\_BEG@{MCP79411\_EEPROM\_BEG}}
+\index{MCP79411\_EEPROM\_BEG@{MCP79411\_EEPROM\_BEG}!Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_EEPROM\_BEG}{MCP79411\_EEPROM\_BEG}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{_mc32gest_i2c_seeprom_8c_a27dafeb457cbacf0cb0da7a2c9939bf9} 
+\#define MCP79411\+\_\+\+EEPROM\+\_\+\+BEG~0x00}
+
+\Hypertarget{_mc32gest_i2c_seeprom_8c_a0219bdd598523bb4ac0f1f50012cd441}\index{Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}!MCP79411\_EEPROM\_END@{MCP79411\_EEPROM\_END}}
+\index{MCP79411\_EEPROM\_END@{MCP79411\_EEPROM\_END}!Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_EEPROM\_END}{MCP79411\_EEPROM\_END}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{_mc32gest_i2c_seeprom_8c_a0219bdd598523bb4ac0f1f50012cd441} 
+\#define MCP79411\+\_\+\+EEPROM\+\_\+\+END~0x7F}
+
+\Hypertarget{_mc32gest_i2c_seeprom_8c_a0219bdd598523bb4ac0f1f50012cd441}\index{Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}!MCP79411\_EEPROM\_END@{MCP79411\_EEPROM\_END}}
+\index{MCP79411\_EEPROM\_END@{MCP79411\_EEPROM\_END}!Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_EEPROM\_END}{MCP79411\_EEPROM\_END}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{_mc32gest_i2c_seeprom_8c_a0219bdd598523bb4ac0f1f50012cd441} 
+\#define MCP79411\+\_\+\+EEPROM\+\_\+\+END~0x7F}
+
+\Hypertarget{_mc32gest_i2c_seeprom_8c_a8126d54e38aa8fd72f762b0d86793eec}\index{Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}!MCP79411\_EEPROM\_R@{MCP79411\_EEPROM\_R}}
+\index{MCP79411\_EEPROM\_R@{MCP79411\_EEPROM\_R}!Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_EEPROM\_R}{MCP79411\_EEPROM\_R}}
+{\footnotesize\ttfamily \label{_mc32gest_i2c_seeprom_8c_a8126d54e38aa8fd72f762b0d86793eec} 
+\#define MCP79411\+\_\+\+EEPROM\+\_\+R~0x\+AF}
+
+\Hypertarget{_mc32gest_i2c_seeprom_8c_ae7d901256aeec6b771342ffdd2c509e7}\index{Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}!MCP79411\_EEPROM\_W@{MCP79411\_EEPROM\_W}}
+\index{MCP79411\_EEPROM\_W@{MCP79411\_EEPROM\_W}!Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}}
+\doxysubsubsection{\texorpdfstring{MCP79411\_EEPROM\_W}{MCP79411\_EEPROM\_W}}
+{\footnotesize\ttfamily \label{_mc32gest_i2c_seeprom_8c_ae7d901256aeec6b771342ffdd2c509e7} 
+\#define MCP79411\+\_\+\+EEPROM\+\_\+W~0x\+AE}
+
+\Hypertarget{_mc32gest_i2c_seeprom_8c_a3afd8e63be402e0679d9c0f39427cc12}\index{Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}!REG\_EEUNLOCK@{REG\_EEUNLOCK}}
+\index{REG\_EEUNLOCK@{REG\_EEUNLOCK}!Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}}
+\doxysubsubsection{\texorpdfstring{REG\_EEUNLOCK}{REG\_EEUNLOCK}}
+{\footnotesize\ttfamily \label{_mc32gest_i2c_seeprom_8c_a3afd8e63be402e0679d9c0f39427cc12} 
+\#define REG\+\_\+\+EEUNLOCK~0x09}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_mc32gest_i2c_seeprom_8c_a3306f29c8c0f0473c7e00dbacb17a983}\index{Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}!I2C\_InitMCP79411@{I2C\_InitMCP79411}}
+\index{I2C\_InitMCP79411@{I2C\_InitMCP79411}!Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_InitMCP79411()}{I2C\_InitMCP79411()}}
+{\footnotesize\ttfamily \label{_mc32gest_i2c_seeprom_8c_a3306f29c8c0f0473c7e00dbacb17a983} 
+void I2\+C\+\_\+\+Init\+MCP79411 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_mc32gest_i2c_seeprom_8c_abe4c03a9abd92ea8537de7ea02d71003}\index{Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}!I2C\_ReadSEEPROM@{I2C\_ReadSEEPROM}}
+\index{I2C\_ReadSEEPROM@{I2C\_ReadSEEPROM}!Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_ReadSEEPROM()}{I2C\_ReadSEEPROM()}}
+{\footnotesize\ttfamily \label{_mc32gest_i2c_seeprom_8c_abe4c03a9abd92ea8537de7ea02d71003} 
+void I2\+C\+\_\+\+Read\+SEEPROM (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{Dst\+Data}{, }\item[{uint32\+\_\+t}]{EEprom\+Addr}{, }\item[{uint16\+\_\+t}]{Nb\+Bytes}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 1
+\Hypertarget{_mc32gest_i2c_seeprom_8c_ad4f4818d62f573fd6b0715977c242c0c}\index{Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}!I2C\_WriteSEEPROM@{I2C\_WriteSEEPROM}}
+\index{I2C\_WriteSEEPROM@{I2C\_WriteSEEPROM}!Mc32gestI2cSeeprom.c@{Mc32gestI2cSeeprom.c}}
+\doxysubsubsection{\texorpdfstring{I2C\_WriteSEEPROM()}{I2C\_WriteSEEPROM()}}
+{\footnotesize\ttfamily \label{_mc32gest_i2c_seeprom_8c_ad4f4818d62f573fd6b0715977c242c0c} 
+void I2\+C\+\_\+\+Write\+SEEPROM (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{Src\+Data}{, }\item[{uint32\+\_\+t}]{EEprom\+Addr}{, }\item[{uint16\+\_\+t}]{Nb\+Bytes}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 2

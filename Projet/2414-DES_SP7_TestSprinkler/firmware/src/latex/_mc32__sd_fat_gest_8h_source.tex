@@ -1,0 +1,210 @@
+\doxysection{Mc32\+\_\+sd\+Fat\+Gest.\+h}
+\hypertarget{_mc32__sd_fat_gest_8h_source}{}\label{_mc32__sd_fat_gest_8h_source}\mbox{\hyperlink{_mc32__sd_fat_gest_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ MPLAB\ Harmony\ Application\ Header\ File}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ Company:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ Microchip\ Technology\ Inc.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ File\ Name:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ app.h}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ This\ header\ file\ provides\ prototypes\ and\ definitions\ for\ the\ application.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ This\ header\ file\ provides\ function\ prototypes\ and\ data\ type\ definitions\ for}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ the\ application.\ \ Some\ of\ these\ are\ required\ by\ the\ system\ (such\ as\ the}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ "{}APP\_Initialize"{}\ and\ "{}APP\_Tasks"{}\ prototypes)\ and\ some\ of\ them\ are\ only\ used}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ \ internally\ by\ the\ application\ (such\ as\ the\ "{}APP\_FAT\_STATES"{}\ definition).\ \ Both}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ are\ defined\ here\ for\ convenience.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00022\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{Copyright\ (c)\ 2013-\/2014\ released\ Microchip\ Technology\ Inc.\ \ All\ rights\ reserved.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{}}
+\DoxyCodeLine{00025\ \textcolor{comment}{Microchip\ licenses\ to\ you\ the\ right\ to\ use,\ modify,\ copy\ and\ distribute}}
+\DoxyCodeLine{00026\ \textcolor{comment}{Software\ only\ when\ embedded\ on\ a\ Microchip\ microcontroller\ or\ digital\ signal}}
+\DoxyCodeLine{00027\ \textcolor{comment}{controller\ that\ is\ integrated\ into\ your\ product\ or\ third\ party\ product}}
+\DoxyCodeLine{00028\ \textcolor{comment}{(pursuant\ to\ the\ sublicense\ terms\ in\ the\ accompanying\ license\ agreement).}}
+\DoxyCodeLine{00029\ \textcolor{comment}{}}
+\DoxyCodeLine{00030\ \textcolor{comment}{You\ should\ refer\ to\ the\ license\ agreement\ accompanying\ this\ Software\ for}}
+\DoxyCodeLine{00031\ \textcolor{comment}{additional\ information\ regarding\ your\ rights\ and\ obligations.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{}}
+\DoxyCodeLine{00033\ \textcolor{comment}{SOFTWARE\ AND\ DOCUMENTATION\ ARE\ PROVIDED\ "{}AS\ IS"{}\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,}}
+\DoxyCodeLine{00034\ \textcolor{comment}{EITHER\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ WITHOUT\ LIMITATION,\ ANY\ WARRANTY\ OF}}
+\DoxyCodeLine{00035\ \textcolor{comment}{MERCHANTABILITY,\ TITLE,\ NON-\/INFRINGEMENT\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{IN\ NO\ EVENT\ SHALL\ MICROCHIP\ OR\ ITS\ LICENSORS\ BE\ LIABLE\ OR\ OBLIGATED\ UNDER}}
+\DoxyCodeLine{00037\ \textcolor{comment}{CONTRACT,\ NEGLIGENCE,\ STRICT\ LIABILITY,\ CONTRIBUTION,\ BREACH\ OF\ WARRANTY,\ OR}}
+\DoxyCodeLine{00038\ \textcolor{comment}{OTHER\ LEGAL\ EQUITABLE\ THEORY\ ANY\ DIRECT\ OR\ INDIRECT\ DAMAGES\ OR\ EXPENSES}}
+\DoxyCodeLine{00039\ \textcolor{comment}{INCLUDING\ BUT\ NOT\ LIMITED\ TO\ ANY\ INCIDENTAL,\ SPECIAL,\ INDIRECT,\ PUNITIVE\ OR}}
+\DoxyCodeLine{00040\ \textcolor{comment}{CONSEQUENTIAL\ DAMAGES,\ LOST\ PROFITS\ OR\ LOST\ DATA,\ COST\ OF\ PROCUREMENT\ OF}}
+\DoxyCodeLine{00041\ \textcolor{comment}{SUBSTITUTE\ GOODS,\ TECHNOLOGY,\ SERVICES,\ OR\ ANY\ CLAIMS\ BY\ THIRD\ PARTIES}}
+\DoxyCodeLine{00042\ \textcolor{comment}{(INCLUDING\ BUT\ NOT\ LIMITED\ TO\ ANY\ DEFENSE\ THEREOF),\ OR\ OTHER\ SIMILAR\ COSTS.}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ *******************************************************************************/}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ \_SD\_FAT\_GEST\_H}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ \_SD\_FAT\_GEST\_H}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ Section:\ Included\ Files}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{app_8h}{app.h}}"{}}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ Section:\ Type\ Definitions}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#ifdef\ DRV\_SDHC\_USE\_DMA}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ DATA\_BUFFER\_ALIGN\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_attribute\_\_((coherent,\ aligned(32)))}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ DATA\_BUFFER\_ALIGN\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_attribute\_\_((aligned(32)))}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00071\ \textcolor{comment}{/*\ Application\ States}}
+\DoxyCodeLine{00072\ \textcolor{comment}{}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ \ \ \ Application\ states\ enumeration}}
+\DoxyCodeLine{00075\ \textcolor{comment}{}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ \ \ \ This\ enumeration\ defines\ the\ valid\ application\ states.\ \ These\ states}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ \ \ \ determine\ the\ behavior\ of\ the\ application\ at\ various\ times.}}
+\DoxyCodeLine{00079\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{/*\ Application's\ state\ machine's\ initial\ state.\ */}}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{/*\ The\ app\ mounts\ the\ disk\ */}}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4edadc3389d8bc3bb2063ce08efdf534499a}{APP\_MOUNT\_DISK}}\ =\ 0,}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{/*\ Set\ the\ current\ drive\ */}}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4eda0ecbb97523faeff7ae8c98ce7c3a3bd9}{APP\_SET\_CURRENT\_DRIVE}},}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{/*\ The\ app\ opens\ the\ file\ to\ read\ */}}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4edacd6dbb1f384f191205d2c9ed2785d428}{APP\_WRITE\_MEASURE\_FILE}},}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{comment}{/*\ The\ app\ reads\ from\ a\ file\ and\ writes\ to\ another\ file\ */}}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4eda3445425c0f085a77a0de0462345f10a1}{APP\_WRITE\_TO\_MEASURE\_FILE}},}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{/*\ The\ app\ closes\ the\ file*/}}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4eda800e77ee088dc87ce09c6bc95e20d80a}{APP\_CLOSE\_FILE}},}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{comment}{/*\ The\ app\ closes\ the\ file\ and\ idles\ */}}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4edab7ba8c8ed2c179fec88a9b6aafc663f0}{APP\_IDLE}},}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{/*\ An\ app\ error\ has\ occurred\ */}}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4eda0a53212262724ecd8005236640d22c96}{APP\_ERROR}},}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{/*\ Unmount\ disk\ */}}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4eda2a486c90a3da8c7ba7148a85b9b44353}{APP\_UNMOUNT\_DISK}}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \}\ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4ed}{APP\_FAT\_STATES}};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00112\ \textcolor{comment}{/*\ Application\ Data}}
+\DoxyCodeLine{00113\ \textcolor{comment}{}}
+\DoxyCodeLine{00114\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00115\ \textcolor{comment}{\ \ \ \ Holds\ application\ data}}
+\DoxyCodeLine{00116\ \textcolor{comment}{}}
+\DoxyCodeLine{00117\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00118\ \textcolor{comment}{\ \ \ \ This\ structure\ holds\ the\ application's\ data.}}
+\DoxyCodeLine{00119\ \textcolor{comment}{}}
+\DoxyCodeLine{00120\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00121\ \textcolor{comment}{\ \ \ \ Application\ strings\ and\ buffers\ are\ be\ defined\ outside\ this\ structure.}}
+\DoxyCodeLine{00122\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00125\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{comment}{/*\ SYS\_FS\ File\ handle\ for\ 1st\ file\ */}}
+\DoxyCodeLine{00127\ \ \ \ \ SYS\_FS\_HANDLE\ \ \ \ \ \ \mbox{\hyperlink{struct_a_p_p___f_a_t___d_a_t_a_a3edb99262bcec7d4a2bb79fe1b3e86f2}{fileHandle}};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{comment}{/*\ SYS\_FS\ File\ handle\ for\ 2nd\ file\ */}}
+\DoxyCodeLine{00130\ \ \ \ \ SYS\_FS\_HANDLE\ \ \ \ \ \ \mbox{\hyperlink{struct_a_p_p___f_a_t___d_a_t_a_a68506e43221faf0517391077e245515a}{fileHandle1}};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{comment}{/*\ Application's\ current\ state\ */}}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4ed}{APP\_FAT\_STATES}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_p_p___f_a_t___d_a_t_a_a2bbbb2e07c93810c3f11111ec7819b7c}{state}};}
+\DoxyCodeLine{00134\ \ \ \ \ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{comment}{/*\ Application\ data\ buffer\ */}}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data[256]\ \mbox{\hyperlink{struct_a_p_p___f_a_t___d_a_t_a_a83dfbedcc693107e7f654a84fc5a7784}{DATA\_BUFFER\_ALIGN}};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_p_p___f_a_t___d_a_t_a_add2640bdbd91f68492ba39b0e15e280c}{nBytesWritten}};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_p_p___f_a_t___d_a_t_a_a4c9da3da10333d10387341be2833e928}{nBytesRead}};}
+\DoxyCodeLine{00141\ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_p_p___f_a_t___d_a_t_a_a66eb867794f611877f71c96ef02941e0}{nBytesToWrite}};}
+\DoxyCodeLine{00143\ \}\ \mbox{\hyperlink{struct_a_p_p___f_a_t___d_a_t_a}{APP\_FAT\_DATA}};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00147\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00148\ \textcolor{comment}{//\ Section:\ Application\ Callback\ Routines}}
+\DoxyCodeLine{00149\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00150\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00151\ \textcolor{comment}{/*\ These\ routines\ are\ called\ by\ drivers\ when\ certain\ events\ occur.}}
+\DoxyCodeLine{00152\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ }
+\DoxyCodeLine{00155\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00156\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00157\ \textcolor{comment}{//\ Section:\ Application\ Initialization\ and\ State\ Machine\ Functions}}
+\DoxyCodeLine{00158\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00159\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00162\ \textcolor{comment}{}}
+\DoxyCodeLine{00163\ \textcolor{comment}{\ \ Function:}}
+\DoxyCodeLine{00164\ \textcolor{comment}{\ \ \ \ void\ APP\_Tasks\ (\ void\ )}}
+\DoxyCodeLine{00165\ \textcolor{comment}{}}
+\DoxyCodeLine{00166\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00167\ \textcolor{comment}{\ \ \ \ MPLAB\ Harmony\ Demo\ application\ tasks\ function}}
+\DoxyCodeLine{00168\ \textcolor{comment}{}}
+\DoxyCodeLine{00169\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00170\ \textcolor{comment}{\ \ \ \ This\ routine\ is\ the\ Harmony\ Demo\ application's\ tasks\ function.\ \ It}}
+\DoxyCodeLine{00171\ \textcolor{comment}{\ \ \ \ defines\ the\ application's\ state\ machine\ and\ core\ logic.}}
+\DoxyCodeLine{00172\ \textcolor{comment}{}}
+\DoxyCodeLine{00173\ \textcolor{comment}{\ \ Precondition:}}
+\DoxyCodeLine{00174\ \textcolor{comment}{\ \ \ \ The\ system\ and\ application\ initialization\ ("{}SYS\_Initialize"{})\ should\ be}}
+\DoxyCodeLine{00175\ \textcolor{comment}{\ \ \ \ called\ before\ calling\ this.}}
+\DoxyCodeLine{00176\ \textcolor{comment}{}}
+\DoxyCodeLine{00177\ \textcolor{comment}{\ \ Parameters:}}
+\DoxyCodeLine{00178\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00179\ \textcolor{comment}{}}
+\DoxyCodeLine{00180\ \textcolor{comment}{\ \ Returns:}}
+\DoxyCodeLine{00181\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00182\ \textcolor{comment}{}}
+\DoxyCodeLine{00183\ \textcolor{comment}{\ \ Example:}}
+\DoxyCodeLine{00184\ \textcolor{comment}{\ \ \ \ <code>}}
+\DoxyCodeLine{00185\ \textcolor{comment}{\ \ \ \ APP\_Tasks();}}
+\DoxyCodeLine{00186\ \textcolor{comment}{\ \ \ \ </code>}}
+\DoxyCodeLine{00187\ \textcolor{comment}{}}
+\DoxyCodeLine{00188\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00189\ \textcolor{comment}{\ \ \ \ This\ routine\ must\ be\ called\ from\ SYS\_Tasks()\ routine.}}
+\DoxyCodeLine{00190\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_a778050b1faf45c6ed4b5b15a96c044b0}{sd\_fat\_task}}\ (\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{comment}{//void\ sd\_BNO\_scheduleWrite\ (s\_bno055\_data\ *\ data);}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4ed}{APP\_FAT\_STATES}}\ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_a59e4eeaae6bb99a25a56ef760a9e7cc7}{sd\_getState}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_ad212171d27d68bce04e48d11500b9a80}{sd\_setState}}(\ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4ed}{APP\_FAT\_STATES}}\ newState\ );}
+\DoxyCodeLine{00199\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32__sd_fat_gest_8h_ab88f2212acaa520ae9bcdc4155dc3413}{sd\_logger\_scheduleWrite}}\ (\mbox{\hyperlink{structmcp79411__time}{mcp79411\_time}}\ *data);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_APP\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00202\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00203\ \textcolor{comment}{\ End\ of\ File}}
+\DoxyCodeLine{00204\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00205\ }
+
+\end{DoxyCode}

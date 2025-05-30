@@ -1,0 +1,51 @@
+\doxysection{Mc32\+\_\+\+I2c\+Util\+\_\+\+SM.\+h}
+\hypertarget{_mc32___i2c_util___s_m_8h_source}{}\label{_mc32___i2c_util___s_m_8h_source}\mbox{\hyperlink{_mc32___i2c_util___s_m_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MC32\_I2CUTIL\_SM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MC32\_I2CUTIL\_SM\_H}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ \ Mc32\_I2cUtilCCS.h}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ Description\ :\ \ \ utilitaire\ I2C\ avec\ State\ Machine}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ conserve\ la\ découpe\ des\ fonctions\ CCS\ like}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ \ Auteur\ \ \ \ \ \ :\ \ \ C.\ HUBER}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ \ \ \ \ \ Date\ \ \ \ \ \ \ \ \ \ \ \ :\ \ \ \ \ \ \ 24.04.2015}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ Version\ \ \ \ \ :\ \ \ V1.6}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ \ Compilateur\ :\ \ \ XC32\ V1.40}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ \ \ \ \ \ plib\ \ \ \ \ \ \ \ \ \ \ \ :\ \ \ \ \ \ \ Harmony\ 1\_06}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ Modifications\ :}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ \ \ CHR\ \ \ 24.04.2015\ utilisation\ stdint.h}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ suppression\ du\ I2C\ module\ ID\ dans\ les\ paramères}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ \ \ \ \ \ CHR\ \ \ 10.05.2016\ mise\ à jour\ version\ compilateur\ et\ Harmony}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ \ \ (SCA\ 11.04.2017\ adaptation\ Harmony\ 1.08\ (pas\ de\ modif\ de\ ce\ fichier))}}
+\DoxyCodeLine{00020\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ KIT\ 32MX795F512L\ Constants}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ KIT\_I2C\_BUS\ \ \ I2C\_ID\_2\ \ \ \ }\textcolor{comment}{//\ n'est\ plus\ utilisée}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03a6b7875583fb15a32574dbc5f9c89a2d1}{I2C\_XSM\_Idle}},\ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03a9a18c3af15d8d69c9db50353ca861802}{I2C\_XSM\_Busy}},\ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03ab0e968b0a40429f761fd4fd73637895f}{I2C\_XSM\_Ready}}\}\ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03}{E\_I2C\_XSM}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00031\ \ \ \ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03}{E\_I2C\_XSM}}\ \mbox{\hyperlink{struct_s___descr___i2_c___s_m_ad792a3668b51e7ffa32c976b75d84b94}{I2cMainSM}};}
+\DoxyCodeLine{00032\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_s___descr___i2_c___s_m_af033418484be26160089676f3eb4f433}{I2cSeqSM}};}
+\DoxyCodeLine{00033\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_s___descr___i2_c___s_m_a8085e3a71e809f383943901705799ca0}{DebugCode}};}
+\DoxyCodeLine{00034\ \}\ \mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\_Descr\_I2C\_SM}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_acff566dd95b852ab0584dbad98724935}{I2C\_SM\_isReady}}(\ \mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\_Descr\_I2C\_SM}}\ *pDSM\ );}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a1c31009ee022cd14ef5d38018c253e88}{I2C\_SM\_begin}}(\ \mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\_Descr\_I2C\_SM}}\ *pDSM\ );}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a29e3bbc9703b3c3bd36e32eb2036e4e4}{I2C\_SM\_init}}(\ \ \textcolor{keywordtype}{bool}\ Fast,\ \mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\_Descr\_I2C\_SM}}\ *pDSM\ );}
+\DoxyCodeLine{00040\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a365aa8edd953d79e9ab862820f07e900}{I2C\_SM\_start}}(\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\_Descr\_I2C\_SM}}\ *pDSM);}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a7e5dc0494ca200661437a6fecb448894}{I2C\_SM\_reStart}}(\ \mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\_Descr\_I2C\_SM}}\ *pDSM);}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a0e9502edac8a28b66385b96a12535bbd}{I2C\_SM\_write}}(\ \mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\_Descr\_I2C\_SM}}\ *pDSM,\ uint8\_t\ data,\ \textcolor{keywordtype}{bool}\ *pAck\ );}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a08190150d92d659703614ba6a572d4d6}{I2C\_SM\_read}}(\ \mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\_Descr\_I2C\_SM}}\ *pDSM,\ \textcolor{keywordtype}{bool}\ ackTodo,\ uint8\_t\ *pData\ );}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a2faa39680b406f26664a2d5472fb5995}{I2C\_SM\_stop}}(\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\_Descr\_I2C\_SM}}\ *pDSM);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,224 @@
+\doxysection{app.\+c File Reference}
+\hypertarget{app_8c}{}\label{app_8c}\index{app.c@{app.c}}
+{\ttfamily \#include "{}app.\+h"{}}\newline
+Include dependency graph for app.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{app_8c_a59b305aa4f4287d45cbe428f533f84b2}{APP\+\_\+\+Initialize}} (void)
+\item 
+void \mbox{\hyperlink{app_8c_a859aee46b660cfee47cfd45ce08f6862}{APP\+\_\+\+Tasks}} (void)
+\item 
+void \mbox{\hyperlink{app_8c_a912c163cafb881d4deea72f7b463cbdc}{APP\+\_\+\+Get\+Inputs\+States}} (void)
+\item 
+void \mbox{\hyperlink{app_8c_a98a5fecb1828f413db07cfb10273379c}{APP\+\_\+\+Adc\+Read\+All\+Samples}} (void)
+\item 
+void \mbox{\hyperlink{app_8c_a8f46b20760f4b4b10df763dd5b6e2525}{APP\+\_\+\+TIMER1\+\_\+\+CALLBACK}} (void)
+\item 
+void \mbox{\hyperlink{app_8c_abcbd1769c7d03ea90681c10fe1f03775}{APP\+\_\+\+Wait\+Start}} (uint16\+\_\+t waiting\+Time\+\_\+ms)
+\item 
+void \mbox{\hyperlink{app_8c_a245753d6244c3f5682adbdc334412149}{APP\+\_\+\+TIMER4\+\_\+\+CALLBACK}} (void)
+\item 
+void \mbox{\hyperlink{app_8c_a23e441f0e8d8f65fb909cf1630237be2}{APP\+\_\+\+Set\+TMR0\+\_\+\+Frequency}} (float freq\+\_\+hz)
+\item 
+void \mbox{\hyperlink{app_8c_aa3bed8e1f96b2024b7750e4b1c6b9cbe}{APP\+\_\+\+Play\+Song}} (void)
+\item 
+void \mbox{\hyperlink{app_8c_aa01b24d00b6eb54fd185e029a791cccc}{APP\+\_\+\+Init\+Mcp79411}} (void)
+\item 
+void \mbox{\hyperlink{app_8c_a43ccfb3bb8362f57c897915a2bf0b888}{APP\+\_\+\+Init\+ADC}} (void)
+\item 
+void \mbox{\hyperlink{app_8c_ab90aceec1f83db2e42e1f207cd9e4c95}{Debug\+UART\+\_\+\+Print}} (const char \texorpdfstring{$\ast$}{*}format,...)
+\item 
+void \mbox{\hyperlink{app_8c_a11c6321d0c51f900a247c32fcfcd384d}{APP\+\_\+\+Set\+Realy\+Out}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_a_p_p___d_a_t_a}{APP\+\_\+\+DATA}} \mbox{\hyperlink{app_8c_a4f18a2543252a3f61342104a531a0f3c}{app\+Data}}
+\item 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} \mbox{\hyperlink{app_8c_a00fb7977be2deac611244a063ae44be4}{s\+\_\+new\+Data\+Sensor}}
+\item 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} \mbox{\hyperlink{app_8c_ad0f2efc2ebe8ab8915d976a328ec9416}{s\+\_\+data\+Sensor}}
+\item 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} \mbox{\hyperlink{app_8c_ad3d63cf42bac9da94dc89d5565d39cc1}{s\+\_\+get\+Data\+Sensor}}
+\item 
+float \mbox{\hyperlink{app_8c_ab7195cdbc35be0315726b868b3003649}{song\+Melody}} \mbox{[}10\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{app_8c_a5fb4cee6fbecf822ad046ebd844f3dc6}{Debug\+UART\+\_\+\+Enable}} =0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{app_8c_a4e3b0a94500ae9b732f5358adbc7ad14}{Init\+Mcp}} =0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{app_8c_a1aa2a022bfb70d96a410ba0323906b42}{Init\+ADC}} =1
+\item 
+uint8\+\_\+t \mbox{\hyperlink{app_8c_adee735add4bf8eceef44461a28260e54}{Init\+Touch\+Cap}} =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{app_8c_a98a5fecb1828f413db07cfb10273379c}\index{app.c@{app.c}!APP\_AdcReadAllSamples@{APP\_AdcReadAllSamples}}
+\index{APP\_AdcReadAllSamples@{APP\_AdcReadAllSamples}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{APP\_AdcReadAllSamples()}{APP\_AdcReadAllSamples()}}
+{\footnotesize\ttfamily \label{app_8c_a98a5fecb1828f413db07cfb10273379c} 
+void APP\+\_\+\+Adc\+Read\+All\+Samples (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{app_8c_a912c163cafb881d4deea72f7b463cbdc}\index{app.c@{app.c}!APP\_GetInputsStates@{APP\_GetInputsStates}}
+\index{APP\_GetInputsStates@{APP\_GetInputsStates}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{APP\_GetInputsStates()}{APP\_GetInputsStates()}}
+{\footnotesize\ttfamily \label{app_8c_a912c163cafb881d4deea72f7b463cbdc} 
+void APP\+\_\+\+Get\+Inputs\+States (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{app_8c_a43ccfb3bb8362f57c897915a2bf0b888}\index{app.c@{app.c}!APP\_InitADC@{APP\_InitADC}}
+\index{APP\_InitADC@{APP\_InitADC}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{APP\_InitADC()}{APP\_InitADC()}}
+{\footnotesize\ttfamily \label{app_8c_a43ccfb3bb8362f57c897915a2bf0b888} 
+void APP\+\_\+\+Init\+ADC (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{app_8c_a59b305aa4f4287d45cbe428f533f84b2}\index{app.c@{app.c}!APP\_Initialize@{APP\_Initialize}}
+\index{APP\_Initialize@{APP\_Initialize}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{APP\_Initialize()}{APP\_Initialize()}}
+{\footnotesize\ttfamily \label{app_8c_a59b305aa4f4287d45cbe428f533f84b2} 
+void APP\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8c_aa01b24d00b6eb54fd185e029a791cccc}\index{app.c@{app.c}!APP\_InitMcp79411@{APP\_InitMcp79411}}
+\index{APP\_InitMcp79411@{APP\_InitMcp79411}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{APP\_InitMcp79411()}{APP\_InitMcp79411()}}
+{\footnotesize\ttfamily \label{app_8c_aa01b24d00b6eb54fd185e029a791cccc} 
+void APP\+\_\+\+Init\+Mcp79411 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\Hypertarget{app_8c_aa3bed8e1f96b2024b7750e4b1c6b9cbe}\index{app.c@{app.c}!APP\_PlaySong@{APP\_PlaySong}}
+\index{APP\_PlaySong@{APP\_PlaySong}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{APP\_PlaySong()}{APP\_PlaySong()}}
+{\footnotesize\ttfamily \label{app_8c_aa3bed8e1f96b2024b7750e4b1c6b9cbe} 
+void APP\+\_\+\+Play\+Song (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\Hypertarget{app_8c_a11c6321d0c51f900a247c32fcfcd384d}\index{app.c@{app.c}!APP\_SetRealyOut@{APP\_SetRealyOut}}
+\index{APP\_SetRealyOut@{APP\_SetRealyOut}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{APP\_SetRealyOut()}{APP\_SetRealyOut()}}
+{\footnotesize\ttfamily \label{app_8c_a11c6321d0c51f900a247c32fcfcd384d} 
+void APP\+\_\+\+Set\+Realy\+Out (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8c_a23e441f0e8d8f65fb909cf1630237be2}\index{app.c@{app.c}!APP\_SetTMR0\_Frequency@{APP\_SetTMR0\_Frequency}}
+\index{APP\_SetTMR0\_Frequency@{APP\_SetTMR0\_Frequency}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{APP\_SetTMR0\_Frequency()}{APP\_SetTMR0\_Frequency()}}
+{\footnotesize\ttfamily \label{app_8c_a23e441f0e8d8f65fb909cf1630237be2} 
+void APP\+\_\+\+Set\+TMR0\+\_\+\+Frequency (\begin{DoxyParamCaption}\item[{float}]{freq\+\_\+hz}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 8
+\Hypertarget{app_8c_a859aee46b660cfee47cfd45ce08f6862}\index{app.c@{app.c}!APP\_Tasks@{APP\_Tasks}}
+\index{APP\_Tasks@{APP\_Tasks}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{APP\_Tasks()}{APP\_Tasks()}}
+{\footnotesize\ttfamily \label{app_8c_a859aee46b660cfee47cfd45ce08f6862} 
+void APP\+\_\+\+Tasks (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+here we should repeat inputs to outputs if neededHere is the call graph for this function\+:
+% FIG 9
+\Hypertarget{app_8c_a8f46b20760f4b4b10df763dd5b6e2525}\index{app.c@{app.c}!APP\_TIMER1\_CALLBACK@{APP\_TIMER1\_CALLBACK}}
+\index{APP\_TIMER1\_CALLBACK@{APP\_TIMER1\_CALLBACK}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{APP\_TIMER1\_CALLBACK()}{APP\_TIMER1\_CALLBACK()}}
+{\footnotesize\ttfamily \label{app_8c_a8f46b20760f4b4b10df763dd5b6e2525} 
+void APP\+\_\+\+TIMER1\+\_\+\+CALLBACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8c_a245753d6244c3f5682adbdc334412149}\index{app.c@{app.c}!APP\_TIMER4\_CALLBACK@{APP\_TIMER4\_CALLBACK}}
+\index{APP\_TIMER4\_CALLBACK@{APP\_TIMER4\_CALLBACK}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{APP\_TIMER4\_CALLBACK()}{APP\_TIMER4\_CALLBACK()}}
+{\footnotesize\ttfamily \label{app_8c_a245753d6244c3f5682adbdc334412149} 
+void APP\+\_\+\+TIMER4\+\_\+\+CALLBACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_8c_abcbd1769c7d03ea90681c10fe1f03775}\index{app.c@{app.c}!APP\_WaitStart@{APP\_WaitStart}}
+\index{APP\_WaitStart@{APP\_WaitStart}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{APP\_WaitStart()}{APP\_WaitStart()}}
+{\footnotesize\ttfamily \label{app_8c_abcbd1769c7d03ea90681c10fe1f03775} 
+void APP\+\_\+\+Wait\+Start (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{waiting\+Time\+\_\+ms}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 10
+\Hypertarget{app_8c_ab90aceec1f83db2e42e1f207cd9e4c95}\index{app.c@{app.c}!DebugUART\_Print@{DebugUART\_Print}}
+\index{DebugUART\_Print@{DebugUART\_Print}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{DebugUART\_Print()}{DebugUART\_Print()}}
+{\footnotesize\ttfamily \label{app_8c_ab90aceec1f83db2e42e1f207cd9e4c95} 
+void Debug\+UART\+\_\+\+Print (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{format}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 11
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{app_8c_a4f18a2543252a3f61342104a531a0f3c}\index{app.c@{app.c}!appData@{appData}}
+\index{appData@{appData}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{appData}{appData}}
+{\footnotesize\ttfamily \label{app_8c_a4f18a2543252a3f61342104a531a0f3c} 
+\mbox{\hyperlink{struct_a_p_p___d_a_t_a}{APP\+\_\+\+DATA}} app\+Data}
+
+\Hypertarget{app_8c_a5fb4cee6fbecf822ad046ebd844f3dc6}\index{app.c@{app.c}!DebugUART\_Enable@{DebugUART\_Enable}}
+\index{DebugUART\_Enable@{DebugUART\_Enable}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{DebugUART\_Enable}{DebugUART\_Enable}}
+{\footnotesize\ttfamily \label{app_8c_a5fb4cee6fbecf822ad046ebd844f3dc6} 
+uint8\+\_\+t Debug\+UART\+\_\+\+Enable =0}
+
+\Hypertarget{app_8c_a1aa2a022bfb70d96a410ba0323906b42}\index{app.c@{app.c}!InitADC@{InitADC}}
+\index{InitADC@{InitADC}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{InitADC}{InitADC}}
+{\footnotesize\ttfamily \label{app_8c_a1aa2a022bfb70d96a410ba0323906b42} 
+uint8\+\_\+t Init\+ADC =1}
+
+\Hypertarget{app_8c_a4e3b0a94500ae9b732f5358adbc7ad14}\index{app.c@{app.c}!InitMcp@{InitMcp}}
+\index{InitMcp@{InitMcp}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{InitMcp}{InitMcp}}
+{\footnotesize\ttfamily \label{app_8c_a4e3b0a94500ae9b732f5358adbc7ad14} 
+uint8\+\_\+t Init\+Mcp =0}
+
+\Hypertarget{app_8c_adee735add4bf8eceef44461a28260e54}\index{app.c@{app.c}!InitTouchCap@{InitTouchCap}}
+\index{InitTouchCap@{InitTouchCap}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{InitTouchCap}{InitTouchCap}}
+{\footnotesize\ttfamily \label{app_8c_adee735add4bf8eceef44461a28260e54} 
+uint8\+\_\+t Init\+Touch\+Cap =0}
+
+\Hypertarget{app_8c_ad0f2efc2ebe8ab8915d976a328ec9416}\index{app.c@{app.c}!s\_dataSensor@{s\_dataSensor}}
+\index{s\_dataSensor@{s\_dataSensor}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{s\_dataSensor}{s\_dataSensor}}
+{\footnotesize\ttfamily \label{app_8c_ad0f2efc2ebe8ab8915d976a328ec9416} 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} s\+\_\+data\+Sensor}
+
+\Hypertarget{app_8c_ad3d63cf42bac9da94dc89d5565d39cc1}\index{app.c@{app.c}!s\_getDataSensor@{s\_getDataSensor}}
+\index{s\_getDataSensor@{s\_getDataSensor}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{s\_getDataSensor}{s\_getDataSensor}}
+{\footnotesize\ttfamily \label{app_8c_ad3d63cf42bac9da94dc89d5565d39cc1} 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} s\+\_\+get\+Data\+Sensor}
+
+\Hypertarget{app_8c_a00fb7977be2deac611244a063ae44be4}\index{app.c@{app.c}!s\_newDataSensor@{s\_newDataSensor}}
+\index{s\_newDataSensor@{s\_newDataSensor}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{s\_newDataSensor}{s\_newDataSensor}}
+{\footnotesize\ttfamily \label{app_8c_a00fb7977be2deac611244a063ae44be4} 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} s\+\_\+new\+Data\+Sensor}
+
+\Hypertarget{app_8c_ab7195cdbc35be0315726b868b3003649}\index{app.c@{app.c}!songMelody@{songMelody}}
+\index{songMelody@{songMelody}!app.c@{app.c}}
+\doxysubsubsection{\texorpdfstring{songMelody}{songMelody}}
+{\footnotesize\ttfamily \label{app_8c_ab7195cdbc35be0315726b868b3003649} 
+float song\+Melody\mbox{[}10\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{app_8h_abb229cda1af1b02b1e73cbc017329f02}{NOTE\_DO}},\ \mbox{\hyperlink{app_8h_a7f76ce04645a7b97576894b684239c72}{NOTE\_RE}},\ \mbox{\hyperlink{app_8h_abb229cda1af1b02b1e73cbc017329f02}{NOTE\_DO}},\ \mbox{\hyperlink{app_8h_a7f76ce04645a7b97576894b684239c72}{NOTE\_RE}},\ \mbox{\hyperlink{app_8h_ac7b0f458b034d39fb9a445aa45198c19}{NOTE\_MI}},\ \mbox{\hyperlink{app_8h_ad11dba50dc350bc40f063a8c8271b4e8}{NOTE\_FA}},}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{app_8h_a1525e106bef7dbceb4da2ed568361f87}{NOTE\_SOL}},\ \mbox{\hyperlink{app_8h_ad11dba50dc350bc40f063a8c8271b4e8}{NOTE\_FA}},\ \mbox{\hyperlink{app_8h_ac7b0f458b034d39fb9a445aa45198c19}{NOTE\_MI}},\ \mbox{\hyperlink{app_8h_a7f76ce04645a7b97576894b684239c72}{NOTE\_RE}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

@@ -1,0 +1,176 @@
+\doxysection{Driver\+\_\+\+SR\+\_\+\+SN74\+HCS596\+QPWRQ1.\+h File Reference}
+\hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h}{}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}
+{\ttfamily \#include "{}app.\+h"{}}\newline
+Include dependency graph for Driver\+\_\+\+SR\+\_\+\+SN74\+HCS596\+QPWRQ1.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_s_e_r_i_a_l___r_e_g___d_a_t_a}{SERIAL\+\_\+\+REG\+\_\+\+DATA}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_a985d2a031a7f9fe12683d5b7ee1b8917}{EXAMPLE\+\_\+\+CONSTANT}}~0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac6a628dcd45de2a4051a0a68231bfefd}{SR\+\_\+\+State}} \{ \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac6a628dcd45de2a4051a0a68231bfefda8ab27fb2f3878a0f55e499681afe3f7a}{SR\+\_\+\+IDLE}}
+, \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac6a628dcd45de2a4051a0a68231bfefda87edf73ac1fca1fa88a06deb864244dc}{SR\+\_\+\+SHIFTING}}
+, \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac6a628dcd45de2a4051a0a68231bfefda5b75f28f728f2720b189d876b55a65cd}{SR\+\_\+\+LATCHING}}
+ \}
+\item 
+enum \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5}{FCT\+\_\+\+LED}} \{ \newline
+\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a05315116273220738fee255e6923e05a}{ALARRM\+\_\+\+LED}} = 15
+, \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a3f96372346728d3c6867c35fc4126cd1}{ALARRM\+\_\+\+LED\+\_\+\+SAVE}} = 16
+, \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a54ec300d87d8f01522b2296e11dc6aeb}{DERR\+\_\+\+LED}} = 13
+, \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5ad7551ec6fe077ed9cd97e25726b3f4fc}{DERR\+\_\+\+LED\+\_\+\+SAVE}} = 14
+, \newline
+\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a54c090bc5bd7206b6d7edc5d7bc917b1}{FREE\+\_\+\+IN1\+\_\+\+LED}} = 10
+, \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5aaad3551c182041f8c9100b664fecf2e3}{FREE\+\_\+\+IN1\+\_\+\+LED\+\_\+\+SAVE}} = 12
+, \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5af46b40f61669999176731e35361a01da}{FREE\+\_\+\+IN2\+\_\+\+LED}} = 1
+, \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a8992582b4d69da8fe4c2a72c09373681}{FREE\+\_\+\+IN2\+\_\+\+LED\+\_\+\+SAVE}} = 9
+, \newline
+\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a8d0e4b88baf572f20d3cdcec14a346ca}{FREE\+\_\+\+IN3\+\_\+\+LED}} = 2
+, \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a5cacff17709d7f10af515a55f1e22953}{FREE\+\_\+\+IN3\+\_\+\+LED\+\_\+\+SAVE}} = 7
+, \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a64516be305d52df7960c2d8f84e731a2}{FREE\+\_\+\+IN4\+\_\+\+LED}} = 3
+, \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a561490f27a9954500a1f1ec8a10690d5}{FREE\+\_\+\+IN4\+\_\+\+LED\+\_\+\+SAVE}} = 4
+, \newline
+\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5aa5610b4e7025a9d7cb8578be304ea589}{FREE\+\_\+\+IN5\+\_\+\+LED}} = 5
+, \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5ac81a789f14ecb0be310cc20be145db5e}{FREE\+\_\+\+IN5\+\_\+\+LED\+\_\+\+SAVE}} = 6
+, \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5aec0233e73419754c4366f9de9fb5b5bd}{TEST\+\_\+\+LED}} = 11
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_a985d2a031a7f9fe12683d5b7ee1b8917}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!EXAMPLE\_CONSTANT@{EXAMPLE\_CONSTANT}}
+\index{EXAMPLE\_CONSTANT@{EXAMPLE\_CONSTANT}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}
+\doxysubsubsection{\texorpdfstring{EXAMPLE\_CONSTANT}{EXAMPLE\_CONSTANT}}
+{\footnotesize\ttfamily \label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_a985d2a031a7f9fe12683d5b7ee1b8917} 
+\#define EXAMPLE\+\_\+\+CONSTANT~0}
+
+Descriptive File Name
+
+@\+Company Company Name
+
+@\+File Name filename.\+h
+
+@\+Summary Brief description of the file.
+
+@\+Description Describe the purpose of this file. Descriptive Constant Name
+
+@\+Summary Brief one-\/line summary of the constant.
+
+@\+Description Full description, explaining the purpose and usage of the constant. 
+
+Additional description in consecutive paragraphs separated by HTML paragraph breaks, as necessary. 
+
+Type "{}\+Java\+Doc"{} in the "{}\+How Do I?"{} IDE toolbar for more information on tags.
+
+@\+Remarks Any additional remarks 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!FCT\_LED@{FCT\_LED}}
+\index{FCT\_LED@{FCT\_LED}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}
+\doxysubsubsection{\texorpdfstring{FCT\_LED}{FCT\_LED}}
+{\footnotesize\ttfamily \label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5} 
+enum \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5}{FCT\+\_\+\+LED}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALARRM\_LED@{ALARRM\_LED}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!ALARRM\_LED@{ALARRM\_LED}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a05315116273220738fee255e6923e05a}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a05315116273220738fee255e6923e05a} 
+ALARRM\+\_\+\+LED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALARRM\_LED\_SAVE@{ALARRM\_LED\_SAVE}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!ALARRM\_LED\_SAVE@{ALARRM\_LED\_SAVE}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a3f96372346728d3c6867c35fc4126cd1}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a3f96372346728d3c6867c35fc4126cd1} 
+ALARRM\+\_\+\+LED\+\_\+\+SAVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DERR\_LED@{DERR\_LED}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!DERR\_LED@{DERR\_LED}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a54ec300d87d8f01522b2296e11dc6aeb}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a54ec300d87d8f01522b2296e11dc6aeb} 
+DERR\+\_\+\+LED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DERR\_LED\_SAVE@{DERR\_LED\_SAVE}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!DERR\_LED\_SAVE@{DERR\_LED\_SAVE}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5ad7551ec6fe077ed9cd97e25726b3f4fc}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5ad7551ec6fe077ed9cd97e25726b3f4fc} 
+DERR\+\_\+\+LED\+\_\+\+SAVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN1\_LED@{FREE\_IN1\_LED}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!FREE\_IN1\_LED@{FREE\_IN1\_LED}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a54c090bc5bd7206b6d7edc5d7bc917b1}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a54c090bc5bd7206b6d7edc5d7bc917b1} 
+FREE\+\_\+\+IN1\+\_\+\+LED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN1\_LED\_SAVE@{FREE\_IN1\_LED\_SAVE}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!FREE\_IN1\_LED\_SAVE@{FREE\_IN1\_LED\_SAVE}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5aaad3551c182041f8c9100b664fecf2e3}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5aaad3551c182041f8c9100b664fecf2e3} 
+FREE\+\_\+\+IN1\+\_\+\+LED\+\_\+\+SAVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN2\_LED@{FREE\_IN2\_LED}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!FREE\_IN2\_LED@{FREE\_IN2\_LED}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5af46b40f61669999176731e35361a01da}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5af46b40f61669999176731e35361a01da} 
+FREE\+\_\+\+IN2\+\_\+\+LED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN2\_LED\_SAVE@{FREE\_IN2\_LED\_SAVE}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!FREE\_IN2\_LED\_SAVE@{FREE\_IN2\_LED\_SAVE}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a8992582b4d69da8fe4c2a72c09373681}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a8992582b4d69da8fe4c2a72c09373681} 
+FREE\+\_\+\+IN2\+\_\+\+LED\+\_\+\+SAVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN3\_LED@{FREE\_IN3\_LED}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!FREE\_IN3\_LED@{FREE\_IN3\_LED}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a8d0e4b88baf572f20d3cdcec14a346ca}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a8d0e4b88baf572f20d3cdcec14a346ca} 
+FREE\+\_\+\+IN3\+\_\+\+LED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN3\_LED\_SAVE@{FREE\_IN3\_LED\_SAVE}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!FREE\_IN3\_LED\_SAVE@{FREE\_IN3\_LED\_SAVE}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a5cacff17709d7f10af515a55f1e22953}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a5cacff17709d7f10af515a55f1e22953} 
+FREE\+\_\+\+IN3\+\_\+\+LED\+\_\+\+SAVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN4\_LED@{FREE\_IN4\_LED}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!FREE\_IN4\_LED@{FREE\_IN4\_LED}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a64516be305d52df7960c2d8f84e731a2}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a64516be305d52df7960c2d8f84e731a2} 
+FREE\+\_\+\+IN4\+\_\+\+LED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN4\_LED\_SAVE@{FREE\_IN4\_LED\_SAVE}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!FREE\_IN4\_LED\_SAVE@{FREE\_IN4\_LED\_SAVE}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a561490f27a9954500a1f1ec8a10690d5}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5a561490f27a9954500a1f1ec8a10690d5} 
+FREE\+\_\+\+IN4\+\_\+\+LED\+\_\+\+SAVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN5\_LED@{FREE\_IN5\_LED}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!FREE\_IN5\_LED@{FREE\_IN5\_LED}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5aa5610b4e7025a9d7cb8578be304ea589}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5aa5610b4e7025a9d7cb8578be304ea589} 
+FREE\+\_\+\+IN5\+\_\+\+LED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN5\_LED\_SAVE@{FREE\_IN5\_LED\_SAVE}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!FREE\_IN5\_LED\_SAVE@{FREE\_IN5\_LED\_SAVE}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5ac81a789f14ecb0be310cc20be145db5e}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5ac81a789f14ecb0be310cc20be145db5e} 
+FREE\+\_\+\+IN5\+\_\+\+LED\+\_\+\+SAVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_LED@{TEST\_LED}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!TEST\_LED@{TEST\_LED}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5aec0233e73419754c4366f9de9fb5b5bd}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5aec0233e73419754c4366f9de9fb5b5bd} 
+TEST\+\_\+\+LED&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac6a628dcd45de2a4051a0a68231bfefd}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!SR\_State@{SR\_State}}
+\index{SR\_State@{SR\_State}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}
+\doxysubsubsection{\texorpdfstring{SR\_State}{SR\_State}}
+{\footnotesize\ttfamily \label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac6a628dcd45de2a4051a0a68231bfefd} 
+enum \mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac6a628dcd45de2a4051a0a68231bfefd}{SR\+\_\+\+State}}}
+
+Descriptive Data Type Name
+
+@\+Summary Brief one-\/line summary of the data type.
+
+@\+Description Full description, explaining the purpose and usage of the data type. 
+
+Additional description in consecutive paragraphs separated by HTML paragraph breaks, as necessary. 
+
+Type "{}\+Java\+Doc"{} in the "{}\+How Do I?"{} IDE toolbar for more information on tags.
+
+@\+Remarks Any additional remarks 
+
+Describe enumeration elements and structure and union members above each element or member. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SR\_IDLE@{SR\_IDLE}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!SR\_IDLE@{SR\_IDLE}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac6a628dcd45de2a4051a0a68231bfefda8ab27fb2f3878a0f55e499681afe3f7a}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac6a628dcd45de2a4051a0a68231bfefda8ab27fb2f3878a0f55e499681afe3f7a} 
+SR\+\_\+\+IDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SR\_SHIFTING@{SR\_SHIFTING}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!SR\_SHIFTING@{SR\_SHIFTING}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac6a628dcd45de2a4051a0a68231bfefda87edf73ac1fca1fa88a06deb864244dc}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac6a628dcd45de2a4051a0a68231bfefda87edf73ac1fca1fa88a06deb864244dc} 
+SR\+\_\+\+SHIFTING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SR\_LATCHING@{SR\_LATCHING}!Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}}\index{Driver\_SR\_SN74HCS596QPWRQ1.h@{Driver\_SR\_SN74HCS596QPWRQ1.h}!SR\_LATCHING@{SR\_LATCHING}}}\Hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac6a628dcd45de2a4051a0a68231bfefda5b75f28f728f2720b189d876b55a65cd}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac6a628dcd45de2a4051a0a68231bfefda5b75f28f728f2720b189d876b55a65cd} 
+SR\+\_\+\+LATCHING&\\
+\hline
+
+\end{DoxyEnumFields}

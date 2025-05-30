@@ -1,0 +1,19 @@
+digraph "mcp79411_rtc_reg_write"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="mcp79411_rtc_reg_write",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge6_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="mcp79411_init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mcp79411_8c.html#a42a385a44017102ecf7ec3564d40aa5b",tooltip=" "];
+  Node1 -> Node3 [id="edge7_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="mcp79411_set_OscOn",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mcp79411_8c.html#aa43d28edf61dee366af7f84e510c3dcd",tooltip=" "];
+  Node1 -> Node4 [id="edge8_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="mcp79411_set_time",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$mcp79411_8c.html#aa48c2f24c3ced51665e713fad332217c",tooltip=" "];
+  Node4 -> Node5 [id="edge9_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="APP_InitMcp79411",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$app_8c.html#aa01b24d00b6eb54fd185e029a791cccc",tooltip=" "];
+  Node5 -> Node6 [id="edge10_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="APP_Tasks",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$app_8c.html#a859aee46b660cfee47cfd45ce08f6862",tooltip=" "];
+}

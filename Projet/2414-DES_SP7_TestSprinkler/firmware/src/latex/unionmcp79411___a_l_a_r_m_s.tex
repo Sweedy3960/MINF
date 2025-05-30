@@ -1,0 +1,172 @@
+\doxysection{mcp79411\+\_\+\+ALARMS Union Reference}
+\hypertarget{unionmcp79411___a_l_a_r_m_s}{}\label{unionmcp79411___a_l_a_r_m_s}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+
+
+{\ttfamily \#include $<$mcp79411.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>struct \{\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_af04bb7dfeae1479f7894e30cb3c07fb0}{SEC}}:7\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a869d53342ff857c00a887e40bbe44555}{RES}}:1\\
+\>\} \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a5714d44338ae1e06e9bba776f0cf3512}{ALMXSEC\_bits}}\\
+\>struct \{\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_ac6bf19e173885e4bc2b610105154a0e1}{MIN}}:7\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a869d53342ff857c00a887e40bbe44555}{RES}}:1\\
+\>\} \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_aaa74f675342507f7f95b01c175412e32}{ALMXMIN\_bits}}\\
+\>struct \{\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_ac1b34e87c3b24929d2075519845a9e32}{HOUR}}:5\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a26206c4de8dc5a04f4e80d7e49221728}{AM\_PM}}:1\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a194903a2354f91120ef22eb45ceba067}{b12\_24}}:1\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a869d53342ff857c00a887e40bbe44555}{RES}}:1\\
+\>\} \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_aa3d2597ed9593af71e417b5a33019466}{ALMXHOUR\_bits}}\\
+\>struct \{\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_ae7f88a83463b93943fb9016284b2f32a}{WKDAY}}:3\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_acd6609681a96ca25a1dff0f04e287446}{ALMXIF}}:1\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a976569b60aae2ff3767169ebbd00be06}{ALMXMSK}}:3\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_aff4c4522b40f90fb8ab0eb7258cc50e9}{ALMPOL}}:1\\
+\>\} \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a16a44be7aa32162a624be862a6c23443}{ALMXWKDAY\_bits}}\\
+\>struct \{\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a8cb0681aaef4ccb42ef41321f2ed7dfc}{DATE}}\\
+\>\} \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a97d90547bac3ecd1825549e2130e5575}{ALMXDATE\_bits}}\\
+\>struct \{\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_afd8cc5a2c3c8ba541961c0b745f269da}{MTH}}:5\\
+\>\>char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a869d53342ff857c00a887e40bbe44555}{RES}}:3\\
+\>\} \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_aa91a0b675215f9d284d16b64989c45e7}{ALMXMTH\_bits}}\\
+\} \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a73c49e91aaf6bcf5c32202f435635afe}{regs}}\\
+
+\end{tabbing}\item 
+unsigned char \mbox{\hyperlink{unionmcp79411___a_l_a_r_m_s_a94e0ae983bb8933e43325e73f7356dde}{bytes}} \mbox{[}6\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_aff4c4522b40f90fb8ab0eb7258cc50e9}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!ALMPOL@{ALMPOL}}
+\index{ALMPOL@{ALMPOL}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{ALMPOL}{ALMPOL}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_aff4c4522b40f90fb8ab0eb7258cc50e9} 
+char ALMPOL}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_a97d90547bac3ecd1825549e2130e5575}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!ALMXDATE\_bits@{ALMXDATE\_bits}}
+\index{ALMXDATE\_bits@{ALMXDATE\_bits}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_a97d90547bac3ecd1825549e2130e5575} 
+struct  \{ ... \}  ALMXDATE\+\_\+bits}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_aa3d2597ed9593af71e417b5a33019466}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!ALMXHOUR\_bits@{ALMXHOUR\_bits}}
+\index{ALMXHOUR\_bits@{ALMXHOUR\_bits}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_aa3d2597ed9593af71e417b5a33019466} 
+struct  \{ ... \}  ALMXHOUR\+\_\+bits}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_acd6609681a96ca25a1dff0f04e287446}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!ALMXIF@{ALMXIF}}
+\index{ALMXIF@{ALMXIF}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{ALMXIF}{ALMXIF}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_acd6609681a96ca25a1dff0f04e287446} 
+char ALMXIF}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_aaa74f675342507f7f95b01c175412e32}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!ALMXMIN\_bits@{ALMXMIN\_bits}}
+\index{ALMXMIN\_bits@{ALMXMIN\_bits}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_aaa74f675342507f7f95b01c175412e32} 
+struct  \{ ... \}  ALMXMIN\+\_\+bits}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_a976569b60aae2ff3767169ebbd00be06}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!ALMXMSK@{ALMXMSK}}
+\index{ALMXMSK@{ALMXMSK}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{ALMXMSK}{ALMXMSK}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_a976569b60aae2ff3767169ebbd00be06} 
+char ALMXMSK}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_aa91a0b675215f9d284d16b64989c45e7}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!ALMXMTH\_bits@{ALMXMTH\_bits}}
+\index{ALMXMTH\_bits@{ALMXMTH\_bits}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_aa91a0b675215f9d284d16b64989c45e7} 
+struct  \{ ... \}  ALMXMTH\+\_\+bits}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_a5714d44338ae1e06e9bba776f0cf3512}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!ALMXSEC\_bits@{ALMXSEC\_bits}}
+\index{ALMXSEC\_bits@{ALMXSEC\_bits}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_a5714d44338ae1e06e9bba776f0cf3512} 
+struct  \{ ... \}  ALMXSEC\+\_\+bits}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_a16a44be7aa32162a624be862a6c23443}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!ALMXWKDAY\_bits@{ALMXWKDAY\_bits}}
+\index{ALMXWKDAY\_bits@{ALMXWKDAY\_bits}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_a16a44be7aa32162a624be862a6c23443} 
+struct  \{ ... \}  ALMXWKDAY\+\_\+bits}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_a26206c4de8dc5a04f4e80d7e49221728}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!AM\_PM@{AM\_PM}}
+\index{AM\_PM@{AM\_PM}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{AM\_PM}{AM\_PM}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_a26206c4de8dc5a04f4e80d7e49221728} 
+char AM\+\_\+\+PM}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_a194903a2354f91120ef22eb45ceba067}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!b12\_24@{b12\_24}}
+\index{b12\_24@{b12\_24}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{b12\_24}{b12\_24}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_a194903a2354f91120ef22eb45ceba067} 
+char b12\+\_\+24}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_a94e0ae983bb8933e43325e73f7356dde}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!bytes@{bytes}}
+\index{bytes@{bytes}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{bytes}{bytes}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_a94e0ae983bb8933e43325e73f7356dde} 
+unsigned char bytes\mbox{[}6\mbox{]}}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_a8cb0681aaef4ccb42ef41321f2ed7dfc}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!DATE@{DATE}}
+\index{DATE@{DATE}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{DATE}{DATE}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_a8cb0681aaef4ccb42ef41321f2ed7dfc} 
+char DATE}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_ac1b34e87c3b24929d2075519845a9e32}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!HOUR@{HOUR}}
+\index{HOUR@{HOUR}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{HOUR}{HOUR}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_ac1b34e87c3b24929d2075519845a9e32} 
+char HOUR}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_ac6bf19e173885e4bc2b610105154a0e1}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!MIN@{MIN}}
+\index{MIN@{MIN}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{MIN}{MIN}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_ac6bf19e173885e4bc2b610105154a0e1} 
+char MIN}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_afd8cc5a2c3c8ba541961c0b745f269da}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!MTH@{MTH}}
+\index{MTH@{MTH}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{MTH}{MTH}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_afd8cc5a2c3c8ba541961c0b745f269da} 
+char MTH}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_a73c49e91aaf6bcf5c32202f435635afe}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!regs@{regs}}
+\index{regs@{regs}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_a73c49e91aaf6bcf5c32202f435635afe} 
+struct  \{ ... \}  regs}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_a869d53342ff857c00a887e40bbe44555}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!RES@{RES}}
+\index{RES@{RES}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{RES}{RES}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_a869d53342ff857c00a887e40bbe44555} 
+char RES}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_af04bb7dfeae1479f7894e30cb3c07fb0}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!SEC@{SEC}}
+\index{SEC@{SEC}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{SEC}{SEC}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_af04bb7dfeae1479f7894e30cb3c07fb0} 
+char SEC}
+
+\Hypertarget{unionmcp79411___a_l_a_r_m_s_ae7f88a83463b93943fb9016284b2f32a}\index{mcp79411\_ALARMS@{mcp79411\_ALARMS}!WKDAY@{WKDAY}}
+\index{WKDAY@{WKDAY}!mcp79411\_ALARMS@{mcp79411\_ALARMS}}
+\doxysubsubsection{\texorpdfstring{WKDAY}{WKDAY}}
+{\footnotesize\ttfamily \label{unionmcp79411___a_l_a_r_m_s_ae7f88a83463b93943fb9016284b2f32a} 
+char WKDAY}
+
+
+
+The documentation for this union was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mcp79411_8h}{mcp79411.\+h}}\end{DoxyCompactItemize}

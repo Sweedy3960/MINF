@@ -1,0 +1,7 @@
+\doxysection{Driver\+\_\+\+SR\+\_\+\+SN74\+HCS596\+QPWRQ1.\+c File Reference}
+\hypertarget{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8c}{}\label{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8c}\index{Driver\_SR\_SN74HCS596QPWRQ1.c@{Driver\_SR\_SN74HCS596QPWRQ1.c}}
+{\ttfamily \#include "{}app.\+h"{}}\newline
+{\ttfamily \#include "{}stdlib.\+h"{}}\newline
+{\ttfamily \#include "{}Driver\+\_\+\+SR\+\_\+\+SN74\+HCS596\+QPWRQ1.\+h"{}}\newline
+Include dependency graph for Driver\+\_\+\+SR\+\_\+\+SN74\+HCS596\+QPWRQ1.\+c\+:
+% FIG 0

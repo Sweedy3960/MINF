@@ -1,0 +1,21 @@
+\doxysection{mcp79411\+\_\+interface.\+h}
+\hypertarget{mcp79411__interface_8h_source}{}\label{mcp79411__interface_8h_source}\mbox{\hyperlink{mcp79411__interface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ \_MCP79411\_INTERFACE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ \_MCP79411\_INTERFACE\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}stdint.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ NULL\_PTR}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ NULL\_PTR\ ((void*)0)}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ MCP79411\_EEPROM\_R\ \ \ \ 0xAF\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ MCP79411\ address\ for\ read}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ MCP79411\_EEPROM\_W\ \ \ \ 0xAE\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ MCP79411\ address\ for\ write}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mcp79411__interface_8h_add5e3576881b1a5553a971d87ddbe8d1}{mcp79411\_rtc\_iic\_write}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *tx\_buffer,\ \textcolor{keywordtype}{short}\ len);}
+\DoxyCodeLine{00017\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mcp79411__interface_8h_abb05f6811123d1be40bc21fe1b8b5074}{mcp79411\_rtc\_iic\_read}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *rx\_buffer,uint32\_t\ reg\ ,\textcolor{keywordtype}{short}\ len);}
+\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mcp79411__interface_8h_a52853704bfe8ff87ba67d9e6ee13bf14}{mcp79411\_eep\_iic\_write}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *tx\_buffer,\ \textcolor{keywordtype}{short}\ len);}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{mcp79411__interface_8h_ae060c2d123d8b79972bd6213914c819f}{mcp79411\_eep\_iic\_read}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *rx\_buffer,\ \textcolor{keywordtype}{short}\ len);}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

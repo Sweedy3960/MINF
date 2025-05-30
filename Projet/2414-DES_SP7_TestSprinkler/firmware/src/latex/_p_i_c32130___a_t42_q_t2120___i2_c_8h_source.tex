@@ -1,0 +1,209 @@
+\doxysection{PIC32130\+\_\+\+AT42\+QT2120\+\_\+\+I2\+C.\+h}
+\hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_source}{}\label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_source}\mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ \_PIC32130\_AT42QT2120\_I2C\_H\ \ \ \ }\textcolor{comment}{/*\ Guard\ against\ multiple\ inclusion\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ \_PIC32130\_AT42QT2120\_I2C\_H}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00024\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00025\ \textcolor{comment}{/*\ Section:\ Included\ Files\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00026\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00027\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{app_8h}{app.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{comment}{/*\ This\ section\ lists\ the\ other\ files\ that\ are\ included\ in\ this\ file.}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{/*\ TODO:\ \ Include\ other\ files\ here\ if\ needed.\ */}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{/*\ Provide\ C++\ Compatibility\ */}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00037\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Constants-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//\#define\ I2C\_ADDRESS\_WRITE\ 0X1C\ //Address\ WRITE}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//\#define\ I2C\_ADDRESS\_READ\ \ 0X1D\ //Address\ READ}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ I2C\_ADDRESS\_WRITE\ 0X38\ }\textcolor{comment}{//Address\ WRITE\ 0X1C\ +\ WRITE\ 0}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ I2C\_ADDRESS\_READ\ \ 0X39\ }\textcolor{comment}{//Address\ READ\ \ 0X1C\ +\ READ\ 1}}
+\DoxyCodeLine{00046\ \ \ \ \ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ WHEEL\_ENABLE\ \ \ \ \ \ 0X80\ }\textcolor{comment}{//Enable\ WHEEL\ on\ channels\ 0,1\ and\ 2}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ DETECT\_THRESHOLD\ \ 0X32\ }\textcolor{comment}{//Change\ the\ value\ for\ the\ key\ \ \ \ }}
+\DoxyCodeLine{00049\ \ \ \ \ }
+\DoxyCodeLine{00050\ \textcolor{comment}{/*Déclaration\ des\ registres*/}}
+\DoxyCodeLine{00051\ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/NAME\ REGISTRE\ \ \ \ ADDRESSE\ \ DESCRITPTION-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ CHIP\_ID\ \ \ \ \ \ \ \ \ \ 0\ }\textcolor{comment}{//READ\ -\/\ 0X3E}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ FIRMWARE\_VERSION\ 1\ }\textcolor{comment}{//READ\ -\/\ MSB\ =\ Majour\ version\ -\/\ LSB\ =\ Minor\ version}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ DETECTION\_STATUS\ 2\ }\textcolor{comment}{//READ}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ KEY\_STATUS0\ \ \ \ \ \ 3\ }\textcolor{comment}{//READ\ -\/\ Key0\ To\ Key7}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ KEY\_STATUS1\ \ \ \ \ \ 4\ }\textcolor{comment}{//READ\ -\/\ Key8\ to\ Key\ 11-\/\ 4\ bits\ MSB\ RESERVED}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ SLIDER\_POSITION\ \ 5\ }\textcolor{comment}{//READ\ }}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ CALIBRATE\ \ \ \ \ \ \ \ 6\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ RESET\ \ \ \ \ \ \ \ \ \ \ \ 7\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ LP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ }\textcolor{comment}{//READ/WRITE\ -\/\ LOW\ POWER\ MODE}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ TTD\ \ \ \ \ \ \ \ \ \ \ \ \ \ 9\ }\textcolor{comment}{//READ/WRITE\ -\/\ TOWARDS\ TOUCH\ }}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ ATD\ \ \ \ \ \ \ \ \ \ \ \ \ 10\ }\textcolor{comment}{//READ/WRITE\ -\/\ AWAY\ FROM\ TOUCH}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ DI\ \ \ \ \ \ \ \ \ \ \ \ \ \ 11\ }\textcolor{comment}{//READ/WRITE\ -\/\ Detection\ Integrator}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ TRD\ \ \ \ \ \ \ \ \ \ \ \ \ 12\ }\textcolor{comment}{//READ/WRITE\ -\/\ Touch\ Recal\ Delay}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ DHT\ \ \ \ \ \ \ \ \ \ \ \ \ 13\ }\textcolor{comment}{//READ/WRITE\ -\/\ Drift\ Hold\ Time}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ SLIDER\_OPTION\ \ \ 14\ }\textcolor{comment}{//READ/WRITE\ -\/\ Bit7\ HIGH-\/configured-\/Bit\ 6\ LOW\ =\ WHEEL}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ CHARGE\_TIME\ \ \ \ \ 15\ }\textcolor{comment}{//NOT\ USE\ }}
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00069\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/KEY\ DETECT\ THRESHOLD-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ \ \ \ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ KEY0\_DETECT\ \ \ \ \ 16\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ KEY1\_DETECT\ \ \ \ \ 17\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ KEY2\_DETECT\ \ \ \ \ 18\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ KEY3\_DETECT\ \ \ \ \ 19\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ KEY4\_DETECT\ \ \ \ \ 20\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ KEY5\_DETECT\ \ \ \ \ 21\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ KEY6\_DETECT\ \ \ \ \ 22\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ KEY7\_DETECT\ \ \ \ \ 23\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ KEY8\_DETECT\ \ \ \ \ 24\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ KEY9\_DETECT\ \ \ \ \ 25\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ KEY10\_DETECT\ \ \ \ 26\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ KEY11\_DETECT\ \ \ \ 27\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00082\ \ \ \ \ }
+\DoxyCodeLine{00083\ \textcolor{comment}{/*KEY\ CONTROLE\ BIT7\ TO5\ RESERVED-\/BIT\ 4\ GUARD-\/BIT3\ TO\ 2\ AKS-\/BIT1\ GPO-\/BIT0\ EN*/}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ KEYO\_CONTROL\ \ \ \ 28\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ KEY1\_CONTROL\ \ \ \ 29\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ KEY2\_CONTROL\ \ \ \ 30\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ KEY3\_CONTROL\ \ \ \ 31\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ KEY4\_CONTROL\ \ \ \ 32\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ KEY5\_CONTROL\ \ \ \ 33\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ KEY6\_CONTROL\ \ \ \ 34\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ KEY7\_CONTROL\ \ \ \ 35\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ KEY8\_CONTROL\ \ \ \ 36\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ KEY9\_CONTROL\ \ \ \ 37\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ KEY1O\_CONTROL\ \ \ 38\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ KEY11\_CONTROL\ \ \ 39\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/KEY\ PULSE\ SCALE\ -\/\ READ/WRITE-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ \ \ \ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ KEY0\_PULSE\_SCALE\ \ \ \ 40\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ KEY1\_PULSE\_SCALE\ \ \ \ 41\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ KEY2\_PULSE\_SCALE\ \ \ \ 42\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ KEY3\_PULSE\_SCALE\ \ \ \ 43\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ KEY4\_PULSE\_SCALE\ \ \ \ 44\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ KEY5\_PULSE\_SCALE\ \ \ \ 45\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ KEY6\_PULSE\_SCALE\ \ \ \ 46\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ KEY7\_PULSE\_SCALE\ \ \ \ 47\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ KEY8\_PULSE\_SCALE\ \ \ \ 48\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ KEY9\_PULSE\_SCALE\ \ \ \ 49\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ KEY10\_PULSE\_SCALE\ \ \ 50\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ KEY11\_PULSE\_SCALE\ \ \ 51\ }\textcolor{comment}{//READ/WRITE}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/KEY\ SIGNAL\ -\/\ READ-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ \ \ \ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ KEY0\_SIGNAL\_MSB\ \ \ \ \ 52}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ KEY0\_SIGNAL\_LSB\ \ \ \ \ 53}}
+\DoxyCodeLine{00114\ \ \ \ \ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ KEY1\_SIGNAL\_MSB\ \ \ \ \ 54}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ KEY1\_SIGNAL\_LSB\ \ \ \ \ 55}}
+\DoxyCodeLine{00117\ \ \ \ \ }
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ KEY2\_SIGNAL\_MSB\ \ \ \ \ 56}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ KEY2\_SIGNAL\_LSB\ \ \ \ \ 57}}
+\DoxyCodeLine{00120\ \ \ \ \ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ KEY3\_SIGNAL\_MSB\ \ \ \ \ 58}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ KEY3\_SIGNAL\_LSB\ \ \ \ \ 59}}
+\DoxyCodeLine{00123\ \ \ \ \ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ KEY4\_SIGNAL\_MSB\ \ \ \ \ 60}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ KEY4\_SIGNAL\_LSB\ \ \ \ \ 61}}
+\DoxyCodeLine{00126\ \ \ \ \ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ KEY5\_SIGNAL\_MSB\ \ \ \ \ 62}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ KEY5\_SIGNAL\_LSB\ \ \ \ \ 63}}
+\DoxyCodeLine{00129\ \ \ \ \ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ KEY6\_SIGNAL\_MSB\ \ \ \ \ 64}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ KEY6\_SIGNAL\_LSB\ \ \ \ \ 65}}
+\DoxyCodeLine{00132\ \ \ \ \ }
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ KEY7\_SIGNAL\_MSB\ \ \ \ \ 66}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ KEY7\_SIGNAL\_LSB\ \ \ \ \ 67}}
+\DoxyCodeLine{00135\ \ \ \ \ }
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ KEY8\_SIGNAL\_MSB\ \ \ \ \ 68}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ KEY8\_SIGNAL\_LSB\ \ \ \ \ 69\ \ \ }}
+\DoxyCodeLine{00138\ \ \ \ \ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ KEY9\_SIGNAL\_MSB\ \ \ \ \ 70}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ KEY9\_SIGNAL\_LSB\ \ \ \ \ 71}}
+\DoxyCodeLine{00141\ \ \ \ \ }
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ KEY10\_SIGNAL\_MSB\ \ \ \ 72}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ KEY10\_SIGNAL\_LSB\ \ \ \ 73\ \ }}
+\DoxyCodeLine{00144\ \ \ \ \ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ KEY11\_SIGNAL\_MSB\ \ \ \ 74}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ KEY11\_SIGNAL\_LSB\ \ \ \ 75\ \ }}
+\DoxyCodeLine{00147\ \ \ \ \ }
+\DoxyCodeLine{00148\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/REFERENCE\ DATA\ \ -\/\ READ-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ \ \ \ }
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ REFERENCE0\_MSB\ \ \ \ \ \ 76}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ REFERENCE0\_LSB\ \ \ \ \ \ 77}}
+\DoxyCodeLine{00151\ \ \ \ \ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ REFERENCE1\_MSB\ \ \ \ \ \ 78}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ REFERENCE1\_LSB\ \ \ \ \ \ 79}}
+\DoxyCodeLine{00154\ \ \ \ \ }
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ REFERENCE2\_MSB\ \ \ \ \ \ 80}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ REFERENCE2\_LSB\ \ \ \ \ \ 81}}
+\DoxyCodeLine{00157\ \ \ \ \ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ REFERENCE3\_MSB\ \ \ \ \ \ 82}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ REFERENCE3\_LSB\ \ \ \ \ \ 83}}
+\DoxyCodeLine{00160\ \ \ \ \ }
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ REFERENCE4\_MSB\ \ \ \ \ \ 84}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ REFERENCE4\_LSB\ \ \ \ \ \ 85}}
+\DoxyCodeLine{00163\ \ \ \ \ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ REFERENCE5\_MSB\ \ \ \ \ \ 86}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ REFERENCE5\_LSB\ \ \ \ \ \ 87}}
+\DoxyCodeLine{00166\ \ \ \ \ }
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ REFERENCE6\_MSB\ \ \ \ \ \ 88}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ REFERENCE6\_LSB\ \ \ \ \ \ 89}}
+\DoxyCodeLine{00169\ \ \ \ \ }
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ REFERENCE7\_MSB\ \ \ \ \ \ 90}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ REFERENCE7\_LSB\ \ \ \ \ \ 91}}
+\DoxyCodeLine{00172\ \ \ \ \ }
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ REFERENCE8\_MSB\ \ \ \ \ \ 92}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ REFERENCE8\_LSB\ \ \ \ \ \ 93\ \ \ }}
+\DoxyCodeLine{00175\ \ \ \ \ }
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ REFERENCE9\_MSB\ \ \ \ \ \ 94}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ REFERENCE9\_LSB\ \ \ \ \ \ 95}}
+\DoxyCodeLine{00178\ \ \ \ \ }
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ REFERENCE10\_MSB\ \ \ \ \ 96}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ REFERENCE10\_LSB\ \ \ \ \ 97\ \ }}
+\DoxyCodeLine{00181\ \ \ \ \ }
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ REFERENCE11\_MSB\ \ \ \ \ 98}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ REFERENCE11\_LSB\ \ \ \ \ 99\ \ }}
+\DoxyCodeLine{00184\ \ \ \ \ }
+\DoxyCodeLine{00185\ \ \ \ \ }
+\DoxyCodeLine{00186\ \ \ \ \ }
+\DoxyCodeLine{00187\ \ \ \ \ }
+\DoxyCodeLine{00188\ \ \ \ \ }
+\DoxyCodeLine{00189\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00190\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00191\ \textcolor{comment}{//\ Section:\ Structure\ Types}}
+\DoxyCodeLine{00192\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00193\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ }
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00198\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00199\ \textcolor{comment}{//\ Section:\ Prototype\ Functions}}
+\DoxyCodeLine{00200\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00201\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00202\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af5700399ec33af8803bb244e5f1b9667}{AT42QT\_Init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00203\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ae8b864de4a507559ab0b1b82b82def6f}{AT42QT\_Write}}(uint8\_t\ adr\_Registre\_W,\ uint8\_t\ data\_Write);}
+\DoxyCodeLine{00204\ uint8\_t\ \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9619655c3b6d6bc9d52e5da60515ad00}{AT42QT\_Read}}(uint8\_t\ adr\_Registre\_R,\ \textcolor{keywordtype}{bool}\ n\_ACK);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{comment}{/*-\/-\/\ Fonction\ pour\ lire\ des\ registre\ spécifique\ -\/-\/*/}}
+\DoxyCodeLine{00207\ uint8\_t\ \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a8d973579a3ad5f1718f8f1489ed8ebfe}{AT42QT\_Read\_Key0to7}}(\textcolor{keywordtype}{bool}\ n\_ACK);}
+\DoxyCodeLine{00208\ uint8\_t\ \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a39150e6230461628108aa0b9b349fc1a}{AT42QT\_Read\_Key8to11}}(\textcolor{keywordtype}{bool}\ n\_ACK);}
+\DoxyCodeLine{00209\ uint8\_t\ \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a385915a2e3e17d17d3485357160cc161}{AT42QT\_Read\_Wheel}}(\textcolor{keywordtype}{bool}\ n\_ACK);}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{comment}{/*\ Provide\ C++\ Compatibility\ */}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00213\ \}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_PIC32130\_AT42QT2120\_I2C\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{comment}{/*\ *****************************************************************************}}
+\DoxyCodeLine{00219\ \textcolor{comment}{\ End\ of\ File}}
+\DoxyCodeLine{00220\ \textcolor{comment}{\ */}}
+
+\end{DoxyCode}

@@ -328,9 +328,16 @@ void APP_Tasks(void)
                 sd_setState(APP_UNMOUNT_DISK);
 
                 // Wait until unmounted
+                uint32_t sd_timeout = 0;
+                uint32_t sd_timeout_max = 1000000; // Limite arbitraire, à ajuster selon besoin
                 while (sd_getState() != APP_IDLE)
                 {
                     sd_fat_task();
+                    sd_timeout++;
+                    if(sd_timeout > sd_timeout_max) {
+                        if(DebugUART_Enable) DebugUART_Print("[ERR] Timeout SD unmount!\r\n");
+                        break;
+                    }
                 }
             }
             else
@@ -452,8 +459,16 @@ void APP_Tasks(void)
         appData.AppDelay = waitingTime_ms - 1;
         DRV_TMR3_Start();
         appData.APP_DelayTimeIsRunning = 1;
+        // Garde-fou : timeout logiciel (2x le temps demandé)
+        uint32_t timeout = 0;
+        uint32_t timeout_max = (uint32_t)waitingTime_ms * 2;
         while (appData.APP_DelayTimeIsRunning)
         {
+            timeout++;
+            if(timeout > timeout_max) {
+                if(DebugUART_Enable) DebugUART_Print("[ERR] Timeout dans APP_WaitStart !\r\n");
+                break;
+            }
         }
         DRV_TMR3_Stop();
     }

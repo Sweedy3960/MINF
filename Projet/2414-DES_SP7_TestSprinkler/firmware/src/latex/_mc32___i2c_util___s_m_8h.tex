@@ -1,0 +1,132 @@
+\doxysection{Mc32\+\_\+\+I2c\+Util\+\_\+\+SM.\+h File Reference}
+\hypertarget{_mc32___i2c_util___s_m_8h}{}\label{_mc32___i2c_util___s_m_8h}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for Mc32\+\_\+\+I2c\+Util\+\_\+\+SM.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a31d82e34ecb2a371cd299049304f964d}{KIT\+\_\+\+I2\+C\+\_\+\+BUS}}~I2\+C\+\_\+\+ID\+\_\+2
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03}{E\+\_\+\+I2\+C\+\_\+\+XSM}} \{ \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03a6b7875583fb15a32574dbc5f9c89a2d1}{I2\+C\+\_\+\+XSM\+\_\+\+Idle}}
+, \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03a9a18c3af15d8d69c9db50353ca861802}{I2\+C\+\_\+\+XSM\+\_\+\+Busy}}
+, \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03ab0e968b0a40429f761fd4fd73637895f}{I2\+C\+\_\+\+XSM\+\_\+\+Ready}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_acff566dd95b852ab0584dbad98724935}{I2\+C\+\_\+\+SM\+\_\+is\+Ready}} (\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}p\+DSM)
+\item 
+void \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a1c31009ee022cd14ef5d38018c253e88}{I2\+C\+\_\+\+SM\+\_\+begin}} (\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}p\+DSM)
+\item 
+void \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a29e3bbc9703b3c3bd36e32eb2036e4e4}{I2\+C\+\_\+\+SM\+\_\+init}} (bool Fast, \mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}p\+DSM)
+\item 
+void \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a365aa8edd953d79e9ab862820f07e900}{I2\+C\+\_\+\+SM\+\_\+start}} (\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}p\+DSM)
+\item 
+void \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a7e5dc0494ca200661437a6fecb448894}{I2\+C\+\_\+\+SM\+\_\+re\+Start}} (\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}p\+DSM)
+\item 
+void \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a0e9502edac8a28b66385b96a12535bbd}{I2\+C\+\_\+\+SM\+\_\+write}} (\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}p\+DSM, uint8\+\_\+t data, bool \texorpdfstring{$\ast$}{*}p\+Ack)
+\item 
+void \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a08190150d92d659703614ba6a572d4d6}{I2\+C\+\_\+\+SM\+\_\+read}} (\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}p\+DSM, bool ack\+Todo, uint8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data)
+\item 
+void \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a2faa39680b406f26664a2d5472fb5995}{I2\+C\+\_\+\+SM\+\_\+stop}} (\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}p\+DSM)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_mc32___i2c_util___s_m_8h_a31d82e34ecb2a371cd299049304f964d}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}!KIT\_I2C\_BUS@{KIT\_I2C\_BUS}}
+\index{KIT\_I2C\_BUS@{KIT\_I2C\_BUS}!Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}
+\doxysubsubsection{\texorpdfstring{KIT\_I2C\_BUS}{KIT\_I2C\_BUS}}
+{\footnotesize\ttfamily \label{_mc32___i2c_util___s_m_8h_a31d82e34ecb2a371cd299049304f964d} 
+\#define KIT\+\_\+\+I2\+C\+\_\+\+BUS~I2\+C\+\_\+\+ID\+\_\+2}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}!E\_I2C\_XSM@{E\_I2C\_XSM}}
+\index{E\_I2C\_XSM@{E\_I2C\_XSM}!Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}
+\doxysubsubsection{\texorpdfstring{E\_I2C\_XSM}{E\_I2C\_XSM}}
+{\footnotesize\ttfamily \label{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03} 
+enum \mbox{\hyperlink{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03}{E\+\_\+\+I2\+C\+\_\+\+XSM}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I2C\_XSM\_Idle@{I2C\_XSM\_Idle}!Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}!I2C\_XSM\_Idle@{I2C\_XSM\_Idle}}}\Hypertarget{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03a6b7875583fb15a32574dbc5f9c89a2d1}\label{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03a6b7875583fb15a32574dbc5f9c89a2d1} 
+I2\+C\+\_\+\+XSM\+\_\+\+Idle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I2C\_XSM\_Busy@{I2C\_XSM\_Busy}!Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}!I2C\_XSM\_Busy@{I2C\_XSM\_Busy}}}\Hypertarget{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03a9a18c3af15d8d69c9db50353ca861802}\label{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03a9a18c3af15d8d69c9db50353ca861802} 
+I2\+C\+\_\+\+XSM\+\_\+\+Busy&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I2C\_XSM\_Ready@{I2C\_XSM\_Ready}!Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}!I2C\_XSM\_Ready@{I2C\_XSM\_Ready}}}\Hypertarget{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03ab0e968b0a40429f761fd4fd73637895f}\label{_mc32___i2c_util___s_m_8h_a6bb7a9253ad9dacd2add1b8a2cff5c03ab0e968b0a40429f761fd4fd73637895f} 
+I2\+C\+\_\+\+XSM\+\_\+\+Ready&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_mc32___i2c_util___s_m_8h_a1c31009ee022cd14ef5d38018c253e88}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}!I2C\_SM\_begin@{I2C\_SM\_begin}}
+\index{I2C\_SM\_begin@{I2C\_SM\_begin}!Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_SM\_begin()}{I2C\_SM\_begin()}}
+{\footnotesize\ttfamily \label{_mc32___i2c_util___s_m_8h_a1c31009ee022cd14ef5d38018c253e88} 
+void I2\+C\+\_\+\+SM\+\_\+begin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}}]{p\+DSM}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{_mc32___i2c_util___s_m_8h_a29e3bbc9703b3c3bd36e32eb2036e4e4}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}!I2C\_SM\_init@{I2C\_SM\_init}}
+\index{I2C\_SM\_init@{I2C\_SM\_init}!Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_SM\_init()}{I2C\_SM\_init()}}
+{\footnotesize\ttfamily \label{_mc32___i2c_util___s_m_8h_a29e3bbc9703b3c3bd36e32eb2036e4e4} 
+void I2\+C\+\_\+\+SM\+\_\+init (\begin{DoxyParamCaption}\item[{bool}]{Fast}{, }\item[{\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}}]{p\+DSM}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 3
+\Hypertarget{_mc32___i2c_util___s_m_8h_acff566dd95b852ab0584dbad98724935}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}!I2C\_SM\_isReady@{I2C\_SM\_isReady}}
+\index{I2C\_SM\_isReady@{I2C\_SM\_isReady}!Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_SM\_isReady()}{I2C\_SM\_isReady()}}
+{\footnotesize\ttfamily \label{_mc32___i2c_util___s_m_8h_acff566dd95b852ab0584dbad98724935} 
+bool I2\+C\+\_\+\+SM\+\_\+is\+Ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}}]{p\+DSM}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_mc32___i2c_util___s_m_8h_a08190150d92d659703614ba6a572d4d6}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}!I2C\_SM\_read@{I2C\_SM\_read}}
+\index{I2C\_SM\_read@{I2C\_SM\_read}!Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_SM\_read()}{I2C\_SM\_read()}}
+{\footnotesize\ttfamily \label{_mc32___i2c_util___s_m_8h_a08190150d92d659703614ba6a572d4d6} 
+void I2\+C\+\_\+\+SM\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}}]{p\+DSM}{, }\item[{bool}]{ack\+Todo}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_mc32___i2c_util___s_m_8h_a7e5dc0494ca200661437a6fecb448894}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}!I2C\_SM\_reStart@{I2C\_SM\_reStart}}
+\index{I2C\_SM\_reStart@{I2C\_SM\_reStart}!Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_SM\_reStart()}{I2C\_SM\_reStart()}}
+{\footnotesize\ttfamily \label{_mc32___i2c_util___s_m_8h_a7e5dc0494ca200661437a6fecb448894} 
+void I2\+C\+\_\+\+SM\+\_\+re\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}}]{p\+DSM}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_mc32___i2c_util___s_m_8h_a365aa8edd953d79e9ab862820f07e900}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}!I2C\_SM\_start@{I2C\_SM\_start}}
+\index{I2C\_SM\_start@{I2C\_SM\_start}!Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_SM\_start()}{I2C\_SM\_start()}}
+{\footnotesize\ttfamily \label{_mc32___i2c_util___s_m_8h_a365aa8edd953d79e9ab862820f07e900} 
+void I2\+C\+\_\+\+SM\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}}]{p\+DSM}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_mc32___i2c_util___s_m_8h_a2faa39680b406f26664a2d5472fb5995}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}!I2C\_SM\_stop@{I2C\_SM\_stop}}
+\index{I2C\_SM\_stop@{I2C\_SM\_stop}!Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_SM\_stop()}{I2C\_SM\_stop()}}
+{\footnotesize\ttfamily \label{_mc32___i2c_util___s_m_8h_a2faa39680b406f26664a2d5472fb5995} 
+void I2\+C\+\_\+\+SM\+\_\+stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}}]{p\+DSM}{}\end{DoxyParamCaption})}
+
+\Hypertarget{_mc32___i2c_util___s_m_8h_a0e9502edac8a28b66385b96a12535bbd}\index{Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}!I2C\_SM\_write@{I2C\_SM\_write}}
+\index{I2C\_SM\_write@{I2C\_SM\_write}!Mc32\_I2cUtil\_SM.h@{Mc32\_I2cUtil\_SM.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_SM\_write()}{I2C\_SM\_write()}}
+{\footnotesize\ttfamily \label{_mc32___i2c_util___s_m_8h_a0e9502edac8a28b66385b96a12535bbd} 
+void I2\+C\+\_\+\+SM\+\_\+write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s___descr___i2_c___s_m}{S\+\_\+\+Descr\+\_\+\+I2\+C\+\_\+\+SM}} \texorpdfstring{$\ast$}{*}}]{p\+DSM}{, }\item[{uint8\+\_\+t}]{data}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{p\+Ack}{}\end{DoxyParamCaption})}
+
