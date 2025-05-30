@@ -67,7 +67,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "Mc32_I2cUtilCCS.h"
 #include <stdarg.h>
 #include <stdio.h>
-
+#include "GesFifoTh32.h"
+#include "Mc32gest_RS232.h"
 
 
 // *****************************************************************************
@@ -189,9 +190,9 @@ void APP_Tasks(void)
               
         {
             DRV_USART0_Initialize();
-            
+            DRV_USART1_Initialize();
         }
-        DRV_USART1_Initialize();
+        
         PLIB_USART_TransmitterByteSend(USART_ID_3,'a');
         if(DebugUART_Enable) DebugUART_Print("[SM] Starting INIT functionality\r\n");
         //this init the structures  and configures necessary things
@@ -571,20 +572,15 @@ void APP_Tasks(void)
 
 // Fonction simple pour envoyer une chaîne sur l'UART (à adapter selon ton driver)
 void DebugUART_Print(const char *format, ...) {
-    char buffer[128];
+    int8_t buffer[128];
     va_list args;
     va_start(args, format);
-    vsnprintf(buffer, sizeof(buffer), format, args);
+    vsnprintf((char*)buffer, sizeof(buffer), format, args);
     va_end(args);
-    char *p = buffer;
+    int8_t *p = buffer;
     while (*p) {
-        // Attendre que le buffer soit prêt
-        while (!PLIB_USART_TransmitterIsEmpty(USART_ID_3))
-        {
-            //retry INIT and open ? 
-         LIFELED_GREENToggle();
-        }
-        PLIB_USART_TransmitterByteSend(USART_ID_3, *p);
+        SendMessage(p);
+        //PLIB_USART_TransmitterByteSend(USART_ID_3, );
         ++p;
     }
 }

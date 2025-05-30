@@ -78,31 +78,17 @@ void InitFifoComm(void) {
 
 // Valeur de retour 0  = pas de message reçu donc local (data non modifié)
 // Valeur de retour 1  = message reçu donc en remote (data mis à jour)
-
-/*void SendMessage(S_pwmSettings *pData) {
+void SendMessage(int8_t *pData) {
     int8_t freeSize;
-    uint16_t ValCrc16 = 0xFFFF;
+  
     // Traitement émission à introduire ICI
     // Formatage message et remplissage fifo émission
     // ...
     // Test si place Pour écrire 1 message 
     freeSize = GetWriteSpace(&descrFifoTX);
     if (freeSize >= MESS_SIZE) {
-        // Compose le message
-        TxMess.Start = 0xAA;
-        ValCrc16 = updateCRC16(ValCrc16, TxMess.Start);
-        TxMess.Speed = pData->SpeedSetting;
-        ValCrc16 = updateCRC16(ValCrc16, TxMess.Speed);
-        TxMess.Angle = pData->AngleSetting;
-        ValCrc16 = updateCRC16(ValCrc16, TxMess.Angle);
-        TxMess.LsbCrc = (ValCrc16 & 0x00FF);
-        TxMess.MsbCrc = (ValCrc16 & 0xFF00) >> 8;
         // Dépose le message dans le fifo
-        PutCharInFifo(&descrFifoTX, (int8_t) 0xAA);
-        PutCharInFifo(&descrFifoTX, TxMess.Speed);
-        PutCharInFifo(&descrFifoTX, TxMess.Angle);
-        PutCharInFifo(&descrFifoTX, (int8_t) TxMess.MsbCrc);
-        PutCharInFifo(&descrFifoTX, (int8_t) TxMess.LsbCrc);
+        PutCharInFifo(&descrFifoTX, (int8_t)*pData);
     }
 
 
@@ -113,17 +99,17 @@ void InitFifoComm(void) {
     freeSize = GetReadSize(&descrFifoTX);
     if ((RS232_CTS == 0) && (freeSize > 0)) {
         // Autorise int émission    
-        PLIB_INT_SourceEnable(INT_ID_0, INT_SOURCE_USART_1_TRANSMIT);
+        PLIB_INT_SourceEnable(INT_ID_0, INT_SOURCE_USART_3_TRANSMIT);
     }
 }
-*/
+
 
 // Interruption USART1
 // !!!!!!!!
 // Attention ne pas oublier de supprimer la réponse générée dans system_interrupt
 // !!!!!!!!
 
-void __ISR(_UART_3_VECTOR, ipl5AUTO)_IntHandlerDrvUsartInstance0() {
+void __ISR(_UART_3_VECTOR, ipl5AUTO)_IntHandlerDrvUsartInstance1() {
     USART_ERROR UsartStatus;
     uint8_t freeSize, TXsize;
     int8_t c;
@@ -138,7 +124,7 @@ void __ISR(_UART_3_VECTOR, ipl5AUTO)_IntHandlerDrvUsartInstance0() {
     if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_3_ERROR) &&
             PLIB_INT_SourceIsEnabled(INT_ID_0, INT_SOURCE_USART_3_ERROR)) {
         /* Clear pending interrupt */
-        PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_USART_1_ERROR);
+        PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_USART_3_ERROR);
         // Traitement de l'erreur à la réception.
     }
 

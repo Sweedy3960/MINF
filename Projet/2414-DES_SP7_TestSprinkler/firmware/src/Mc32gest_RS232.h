@@ -23,7 +23,7 @@
 
 // prototypes des fonctions
 void InitFifoComm(void);
-
+void SendMessage(int8_t *pData);
 #define MAXMSGFAUX 10
 // Descripteur des fifos
 extern S_fifo descrFifoRX;
