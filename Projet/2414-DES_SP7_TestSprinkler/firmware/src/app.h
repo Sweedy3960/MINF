@@ -120,6 +120,20 @@ extern "C" {
 #define NOTE_RE   1174.66f
 #define NOTE_DO2  1046.50f
 
+
+
+
+#define RS232_RTS    LATGbits.LATG6    // output donc latch
+#define RS232_CTS    PORTGbits.RG9
+// Definitions pour fonctions PLIB_PORTS
+#define RS232_RTS_PORT   PORT_CHANNEL_G
+#define RS232_RTS_BIT    PORTS_BIT_POS_9
+#define RS232_CTS_PORT   PORT_CHANNEL_G
+#define RS232_CTS_BIT    PORTS_BIT_POS_6  
+    
+    
+    
+    
     // *****************************************************************************
     /* Application Data
 

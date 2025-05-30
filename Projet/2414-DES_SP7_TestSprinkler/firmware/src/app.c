@@ -95,7 +95,7 @@ APP_DATA appData;
 S_AT42QT2120 s_newDataSensor; //Structure pour envoie des nouvelles datas
 S_AT42QT2120 s_dataSensor; //Structure pour l'envoie des datas
 S_AT42QT2120 s_getDataSensor; //Structure pour la rec�ption des datas
-
+DRV_HANDLE usartHandle = DRV_HANDLE_INVALID; 
 
 
 
@@ -109,10 +109,10 @@ float songMelody[10] = {
 #define SONG_LENGTH (sizeof(songMelody)/sizeof(songMelody[0]))
 
 
-uint8_t DebugUART_Enable =0; // Flag to enable/disable debug UART output
-uint8_t InitMcp =0;
-uint8_t InitADC =1;
-uint8_t InitTouchCap =0;
+static uint8_t DebugUART_Enable =1; // Flag to enable/disable debug UART output
+static uint8_t InitMcp =0;
+static uint8_t InitADC =1;
+static uint8_t InitTouchCap =0;
 
 
 
@@ -177,9 +177,7 @@ void APP_Tasks(void)
     // SR_LEDS LEDS;
     bool NACK = false;
 
-    static uint8_t osc_status = 1;
-    static uint8_t ret;
-    static APP_STATES st = APP_STATE_INIT;
+    
     /* Check the application's current state. */
     switch (appData.state)
     {
@@ -187,6 +185,14 @@ void APP_Tasks(void)
         /* Application's initial state. */
     case APP_STATE_INIT:
     {
+          if(DebugUART_Enable)
+              
+        {
+            DRV_USART0_Initialize();
+            
+        }
+        DRV_USART1_Initialize();
+        PLIB_USART_TransmitterByteSend(USART_ID_3,'a');
         if(DebugUART_Enable) DebugUART_Print("[SM] Starting INIT functionality\r\n");
         //this init the structures  and configures necessary things
         if(InitMcp)
@@ -202,6 +208,7 @@ void APP_Tasks(void)
             AT42QT_Init();
 
         }
+         
         //set the led life on 
         LIFELED_GREENOff();
 
@@ -209,7 +216,7 @@ void APP_Tasks(void)
         //ret = DRV_SPI_Status(SPI_ID_1);
         //DRV_SPI_INIT
         // DRV_TMR2_Start();
-        appData.state = APP_STATE_WAIT_START;
+        appData.state = APP_STATE_SERVICE_TASKS;
 
 
     }
@@ -217,14 +224,9 @@ void APP_Tasks(void)
 
     case APP_STATE_SERVICE_TASKS:
     {
+        PLIB_USART_TransmitterByteSend(USART_ID_3,'a');
         if(DebugUART_Enable) DebugUART_Print("[SM] Starting SERVICE_TASKS functionality\r\n");
-        // Boucle de test : itère sur tous les états de la SM
-        for( st= APP_STATE_INIT; st <= APP_STATE_READ_CAPACITIVE_SENSOR; st++) {
-            appData.state = st;
-            if(DebugUART_Enable) DebugUART_Print("[SM] Test loop: switched to state %d\r\n", st);
-            // Appeler APP_Tasks pour exécuter l'état (optionnel, sinon la boucle ne fait que changer l'état)
-            // APP_Tasks(); // Décommenter si on veut exécuter la logique de chaque état
-        }
+        appData.state = APP_STATE_WAIT_START;
        
          //set the led life on 
         LIFELED_GREENToggle();
@@ -247,7 +249,7 @@ void APP_Tasks(void)
         if(DebugUART_Enable) DebugUART_Print("[SM] Starting READ_SENSOR functionality\r\n");
         //we should allways read inputs
       //if any change is detected logg it in SD and update the Serial reg
-     
+      appData.state = APP_STATE_ERROR;
       LIFELED_GREENToggle();
     }
         break;
@@ -257,7 +259,7 @@ void APP_Tasks(void)
         //in case of error we can reset the system
         //or we can try to recover from the error
         //for now we will just reset the system
-        
+        appData.state = APP_STATE_READ_ADC;
         LIFELED_GREENToggle();
     }
     break;
@@ -268,6 +270,7 @@ void APP_Tasks(void)
         APP_AdcReadAllSamples();
         //WE NEED TO MODIFY ADC FCT LATER TO CHECK IF IT GOES O WITH A RETURN 
         LIFELED_GREENToggle();
+         appData.state = APP_STATE_READ_CONFIG_INPUTS;
     }
     break;
     case APP_STATE_READ_CONFIG_INPUTS:
@@ -281,7 +284,7 @@ void APP_Tasks(void)
         APP_GetInputsStates();
         //we need a flag to  know if the inputs have changed with return           
         LIFELED_GREENToggle();
-
+        appData.state = APP_STATE_SERIAL_LEDS;
     }
     break;
     case APP_STATE_SERIAL_LEDS:
@@ -291,7 +294,7 @@ void APP_Tasks(void)
         //this is used to manage the serial leds
         //and update their states
         LIFELED_GREENToggle();
-        
+          appData.state = APP_STATE_READ_RTC;
     }
     break;
     case APP_STATE_READ_RTC:
@@ -309,7 +312,7 @@ void APP_Tasks(void)
         //any changes of any inputs 
         //and then we should update the SD logger
         LIFELED_GREENToggle();
-
+        appData.state = APP_STATE_WRITE_SDCARD;
     }
     break;
     case APP_STATE_WRITE_SDCARD:
@@ -349,6 +352,7 @@ void APP_Tasks(void)
         }
     }
     LIFELED_GREENToggle();
+     appData.state = APP_STATE_BUZZER;
     break;
 
     case APP_STATE_BUZZER:
@@ -359,7 +363,7 @@ void APP_Tasks(void)
             // Transition back to the service tasks stateB
             LIFELED_GREENToggle();
         }
-        
+         appData.state = APP_STATE_READ_CAPACITIVE_SENSOR;
         break;
     case APP_STATE_READ_CAPACITIVE_SENSOR:
     {
@@ -376,6 +380,7 @@ void APP_Tasks(void)
         LIFELED_GREENToggle();
 
     }
+     appData.state = APP_STATE_REPEAT;
         break;
 
     case APP_STATE_REPEAT:
@@ -397,6 +402,8 @@ void APP_Tasks(void)
         } 
         LIFELED_GREENToggle();
     }
+         appData.state = APP_STATE_SERVICE_TASKS;
+
     break;
     default:
         {
@@ -460,15 +467,11 @@ void APP_Tasks(void)
         DRV_TMR3_Start();
         appData.APP_DelayTimeIsRunning = 1;
         // Garde-fou : timeout logiciel (2x le temps demandé)
-        uint32_t timeout = 0;
-        uint32_t timeout_max = (uint32_t)waitingTime_ms * 2;
+       
+       
         while (appData.APP_DelayTimeIsRunning)
         {
-            timeout++;
-            if(timeout > timeout_max) {
-                if(DebugUART_Enable) DebugUART_Print("[ERR] Timeout dans APP_WaitStart !\r\n");
-                break;
-            }
+            
         }
         DRV_TMR3_Stop();
     }
@@ -576,8 +579,12 @@ void DebugUART_Print(const char *format, ...) {
     char *p = buffer;
     while (*p) {
         // Attendre que le buffer soit prêt
-        while (!PLIB_USART_TransmitterIsEmpty(USART_ID_1));
-        PLIB_USART_TransmitterByteSend(USART_ID_1, *p);
+        while (!PLIB_USART_TransmitterIsEmpty(USART_ID_3))
+        {
+            //retry INIT and open ? 
+         LIFELED_GREENToggle();
+        }
+        PLIB_USART_TransmitterByteSend(USART_ID_3, *p);
         ++p;
     }
 }
@@ -601,7 +608,6 @@ void APP_SetRealyOut(void/*&appdata.cmdRealayOut cmd*/)
 
 
 }
-
 
 
 

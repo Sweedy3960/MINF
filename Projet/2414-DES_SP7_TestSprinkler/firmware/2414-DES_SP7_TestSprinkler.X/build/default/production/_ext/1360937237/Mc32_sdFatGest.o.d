@@ -329,7 +329,7 @@ build/default/production/_ext/1360937237/Mc32_sdFatGest.o: \
  ../../../../../../framework/driver/spi/drv_spi_definitions.h \
  ../../../../../../framework/driver/sdcard/drv_sdcard_mapping.h \
  ../src/app.h ../src/Mc32DriverAdc.h ../src/Driver_SR_SN74HCS596QPWRQ1.h \
- ../src/mcp79411.h ../src/mcp79411_interface.h
+ ../src/mcp79411.h ../src/mcp79411_interface.h ../src/mutex.h
 
 ../src/Mc32_sdFatGest.h:
 
@@ -1000,3 +1000,5 @@ build/default/production/_ext/1360937237/Mc32_sdFatGest.o: \
 ../src/mcp79411.h:
 
 ../src/mcp79411_interface.h:
+
+../src/mutex.h:

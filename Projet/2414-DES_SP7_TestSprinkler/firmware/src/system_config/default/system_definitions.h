@@ -106,6 +106,7 @@ typedef struct
     SYS_MODULE_OBJ  drvTmr3;
 
     SYS_MODULE_OBJ  drvUsart0;
+    SYS_MODULE_OBJ  drvUsart1;
     SYS_MODULE_OBJ  drvSDCard;
 
     /*** SPI Object for Index 0 ***/
