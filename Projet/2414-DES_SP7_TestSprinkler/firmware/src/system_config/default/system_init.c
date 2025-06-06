@@ -135,6 +135,27 @@ const DRV_SDCARD_INIT drvSDCardInit =
     .queueSize = DRV_SPI_QUEUE_SIZE_IDX0,
     .jobQueueReserveSize = DRV_SPI_RESERVED_JOB_IDX0,
  };
+  /*** Index 1  ***/
+ DRV_SPI_INIT drvSpi1InitData =
+ {
+    .spiId = DRV_SPI_SPI_ID_IDX1,
+    .taskMode = DRV_SPI_TASK_MODE_IDX1,
+    .spiMode = DRV_SPI_SPI_MODE_IDX1,
+    .allowIdleRun = DRV_SPI_ALLOW_IDLE_RUN_IDX1,
+    .spiProtocolType = DRV_SPI_SPI_PROTOCOL_TYPE_IDX1,
+    .commWidth = DRV_SPI_COMM_WIDTH_IDX1,
+    .spiClk = DRV_SPI_SPI_CLOCK_IDX1,
+    .baudRate = DRV_SPI_BAUD_RATE_IDX1,
+    .bufferType = DRV_SPI_BUFFER_TYPE_IDX1,
+    .clockMode = DRV_SPI_CLOCK_MODE_IDX1,
+    .inputSamplePhase = DRV_SPI_INPUT_PHASE_IDX1,
+    .txInterruptSource = DRV_SPI_TX_INT_SOURCE_IDX1,
+    .rxInterruptSource = DRV_SPI_RX_INT_SOURCE_IDX1,
+    .errInterruptSource = DRV_SPI_ERROR_INT_SOURCE_IDX1,
+    .dummyByteValue = DRV_SPI_TRANSMIT_DUMMY_BYTE_VALUE_IDX1,
+    .queueSize = DRV_SPI_QUEUE_SIZE_IDX1,
+    .jobQueueReserveSize = DRV_SPI_RESERVED_JOB_IDX1,
+ };
 // </editor-fold>
 // <editor-fold defaultstate="collapsed" desc="DRV_USART Initialization Data">
 // </editor-fold>
@@ -225,6 +246,12 @@ void SYS_Initialize ( void* data )
     SYS_INT_VectorPrioritySet(DRV_SPI_INT_VECTOR_IDX0, DRV_SPI_INT_PRIORITY_IDX0);
     SYS_INT_VectorSubprioritySet(DRV_SPI_INT_VECTOR_IDX0, DRV_SPI_INT_SUB_PRIORITY_IDX0);
     sysObj.spiObjectIdx0 = DRV_SPI_Initialize(DRV_SPI_INDEX_0, (const SYS_MODULE_INIT  * const)&drvSpi0InitData);
+
+    /*** SPI Driver Index 1 initialization***/
+
+    SYS_INT_VectorPrioritySet(DRV_SPI_INT_VECTOR_IDX1, DRV_SPI_INT_PRIORITY_IDX1);
+    SYS_INT_VectorSubprioritySet(DRV_SPI_INT_VECTOR_IDX1, DRV_SPI_INT_SUB_PRIORITY_IDX1);
+    sysObj.spiObjectIdx1 = DRV_SPI_Initialize(DRV_SPI_INDEX_1, (const SYS_MODULE_INIT  * const)&drvSpi1InitData);
     /*Initialize TMR0 */
     DRV_TMR0_Initialize();
     /*Initialize TMR1 */
@@ -236,9 +263,9 @@ void SYS_Initialize ( void* data )
  
      sysObj.drvUsart0 = DRV_USART_Initialize(DRV_USART_INDEX_0, (SYS_MODULE_INIT *)NULL);
     sysObj.drvUsart1 = DRV_USART_Initialize(DRV_USART_INDEX_1, (SYS_MODULE_INIT *)NULL);
-    SYS_INT_VectorPrioritySet(INT_VECTOR_UART1, INT_PRIORITY_LEVEL1);
+    SYS_INT_VectorPrioritySet(INT_VECTOR_UART1, INT_PRIORITY_LEVEL3);
     SYS_INT_VectorSubprioritySet(INT_VECTOR_UART1, INT_SUBPRIORITY_LEVEL0);
-    SYS_INT_VectorPrioritySet(INT_VECTOR_UART3, INT_PRIORITY_LEVEL1);
+    SYS_INT_VectorPrioritySet(INT_VECTOR_UART3, INT_PRIORITY_LEVEL3);
     SYS_INT_VectorSubprioritySet(INT_VECTOR_UART3, INT_SUBPRIORITY_LEVEL0);
 
     /* Initialize System Services */

@@ -92,7 +92,7 @@ void sd_fat_task ( void )
             break;
 
         case APP_SET_CURRENT_DRIVE:
-            if(SYS_FS_CurrentDriveSet("/mnt/myDrive") == SYS_FS_RES_FAILURE)
+            if(SYS_FS_CurrentDriveSet("/mnt/SD_LOGG") == SYS_FS_RES_FAILURE)
             {
                 /* Error while setting current drive */
                 appFatData.state = APP_ERROR;
@@ -158,7 +158,7 @@ void sd_fat_task ( void )
             break;
             
         case APP_UNMOUNT_DISK:
-            if(SYS_FS_Unmount("/mnt/myDrive") != 0)
+            if(SYS_FS_Unmount("/mnt/SD_LOGG") != 0)
             {
                 /* The disk could not be un mounted. Try
                  * un mounting again untill success. */

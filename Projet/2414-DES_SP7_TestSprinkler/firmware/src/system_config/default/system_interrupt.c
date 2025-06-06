@@ -69,34 +69,13 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // Section: System Interrupt Vector Functions
 // *****************************************************************************
 // *****************************************************************************
-void __ISR(_UART_1_VECTOR, ipl1AUTO) _IntHandlerDrvUsartInstance0(void)
-{
-    DRV_USART_TasksTransmit(sysObj.drvUsart0);
-    DRV_USART_TasksError(sysObj.drvUsart0);
-    DRV_USART_TasksReceive(sysObj.drvUsart0);
-}
-
-
-
- 
-
- 
-
- 
-
- 
-
- 
- 
- 
-
-void __ISR(_TIMER_1_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance0(void)
+void __ISR(_TIMER_1_VECTOR, ipl7AUTO) IntHandlerDrvTmrInstance0(void)
 {
     
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_1);
      APP_TIMER1_CALLBACK();
 }
-void __ISR(_TIMER_2_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance1(void)
+void __ISR(_TIMER_2_VECTOR, ipl7AUTO) IntHandlerDrvTmrInstance1(void)
 {
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_2);
 }
@@ -105,13 +84,13 @@ void __ISR(_TIMER_3_VECTOR, ipl0AUTO) IntHandlerDrvTmrInstance2(void)
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_3);
     // APP_TIMER3_CALLBACK();
 }
-void __ISR(_TIMER_4_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance3(void)
+void __ISR(_TIMER_4_VECTOR, ipl7AUTO) IntHandlerDrvTmrInstance3(void)
 {
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_4);
     APP_TIMER4_CALLBACK();
 }
  
-void __ISR(_SPI_1_VECTOR, ipl1AUTO) _IntHandlerSPIInstance0(void)
+void __ISR(_SPI_1_VECTOR, ipl2AUTO) _IntHandlerSPIInstance0(void)
 {
     DRV_SPI_Tasks(sysObj.spiObjectIdx0);
 }
