@@ -111,6 +111,9 @@ typedef struct
 
     /*** SPI Object for Index 0 ***/
     SYS_MODULE_OBJ				spiObjectIdx0;
+    
+    /*** SPI Object for Index 1 ***/
+    SYS_MODULE_OBJ				spiObjectIdx1;
 
 } SYSTEM_OBJECTS;
 

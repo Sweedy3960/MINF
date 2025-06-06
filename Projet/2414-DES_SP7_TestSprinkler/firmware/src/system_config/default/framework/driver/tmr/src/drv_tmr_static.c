@@ -159,7 +159,7 @@ void DRV_TMR0_Initialize(void)
     /*Set period */ 
     PLIB_TMR_Period16BitSet(TMR_ID_1, 19999);
     /* Setup Interrupt */   
-    PLIB_INT_VectorPrioritySet(INT_ID_0, INT_VECTOR_T1, INT_PRIORITY_LEVEL1);
+    PLIB_INT_VectorPrioritySet(INT_ID_0, INT_VECTOR_T1, INT_PRIORITY_LEVEL7);
     PLIB_INT_VectorSubPrioritySet(INT_ID_0, INT_VECTOR_T1, INT_SUBPRIORITY_LEVEL0);          
 }
 
@@ -341,7 +341,7 @@ void DRV_TMR1_Initialize(void)
     /*Set period */ 
     PLIB_TMR_Period16BitSet(TMR_ID_2, 14999);
     /* Setup Interrupt */   
-    PLIB_INT_VectorPrioritySet(INT_ID_0, INT_VECTOR_T2, INT_PRIORITY_LEVEL1);
+    PLIB_INT_VectorPrioritySet(INT_ID_0, INT_VECTOR_T2, INT_PRIORITY_LEVEL7);
     PLIB_INT_VectorSubPrioritySet(INT_ID_0, INT_VECTOR_T2, INT_SUBPRIORITY_LEVEL0);          
 }
 
@@ -524,7 +524,7 @@ void DRV_TMR2_Initialize(void)
     PLIB_TMR_Period16BitSet(TMR_ID_3, 62499);
     /* Setup Interrupt */   
     PLIB_INT_VectorPrioritySet(INT_ID_0, INT_VECTOR_T3, INT_DISABLE_INTERRUPT);
-    PLIB_INT_VectorSubPrioritySet(INT_ID_0, INT_VECTOR_T3, INT_SUBPRIORITY_LEVEL0);          
+    PLIB_INT_VectorSubPrioritySet(INT_ID_0, INT_VECTOR_T3, INT_SUBPRIORITY_LEVEL3);          
 }
 
 static void _DRV_TMR2_Resume(bool resume)
@@ -705,7 +705,7 @@ void DRV_TMR3_Initialize(void)
     /*Set period */ 
     PLIB_TMR_Period16BitSet(TMR_ID_4, 39999);
     /* Setup Interrupt */   
-    PLIB_INT_VectorPrioritySet(INT_ID_0, INT_VECTOR_T4, INT_PRIORITY_LEVEL1);
+    PLIB_INT_VectorPrioritySet(INT_ID_0, INT_VECTOR_T4, INT_PRIORITY_LEVEL7);
     PLIB_INT_VectorSubPrioritySet(INT_ID_0, INT_VECTOR_T4, INT_SUBPRIORITY_LEVEL0);          
 }
 

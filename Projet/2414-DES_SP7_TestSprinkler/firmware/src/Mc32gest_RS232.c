@@ -71,7 +71,7 @@ void InitFifoComm(void) {
     InitFifo(&descrFifoTX, FIFO_TX_SIZE, fifoTX, 0);
 
     // Init RTS 
-    RS232_RTS = 1; // interdit émission par l'autre
+    UART1_RTSOn(); // interdit émission par l'autre
 
 } // InitComm
 
@@ -80,7 +80,7 @@ void InitFifoComm(void) {
 // Valeur de retour 1  = message reçu donc en remote (data mis à jour)
 void SendMessage(int8_t *pData) {
     int8_t freeSize;
-  
+    int8_t ctsstate;
     // Traitement émission à introduire ICI
     // Formatage message et remplissage fifo émission
     // ...
@@ -97,19 +97,142 @@ void SendMessage(int8_t *pData) {
     // Gestion du controle de flux
     // si on a un caractère à envoyer et que CTS = 0
     freeSize = GetReadSize(&descrFifoTX);
-    if ((RS232_CTS == 0) && (freeSize > 0)) {
+    ctsstate = UART1_CTSStateGet();
+    if ((ctsstate==0) && (freeSize > 0)) {
         // Autorise int émission    
         PLIB_INT_SourceEnable(INT_ID_0, INT_SOURCE_USART_3_TRANSMIT);
     }
 }
-
+/*
 
 // Interruption USART1
 // !!!!!!!!
 // Attention ne pas oublier de supprimer la réponse générée dans system_interrupt
 // !!!!!!!!
+void __ISR(_UART_1_VECTOR, ipl1AUTO)_IntHandlerDrvUsartInstance0() {
 
-void __ISR(_UART_3_VECTOR, ipl5AUTO)_IntHandlerDrvUsartInstance1() {
+
+ USART_ERROR UsartStatus;
+    uint8_t freeSize, TXsize;
+    int8_t c;
+    int8_t i_cts = 0;
+    BOOL TxBuffFull;
+    
+    // Is this an Error interrupt ?
+    if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_1_ERROR) &&
+            PLIB_INT_SourceIsEnabled(INT_ID_0, INT_SOURCE_USART_1_ERROR)) {
+        //Clear pending interrupt 
+        PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_USART_1_ERROR);
+        // Traitement de l'erreur à la réception.
+    }
+
+
+    // Is this an RX interrupt ?
+    if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_1_RECEIVE) &&
+            PLIB_INT_SourceIsEnabled(INT_ID_0, INT_SOURCE_USART_1_RECEIVE)) {
+
+        // Oui Test si erreur parité ou overrun
+        UsartStatus = PLIB_USART_ErrorsGet(USART_ID_1);
+
+        if ((UsartStatus & (USART_ERROR_PARITY |
+                USART_ERROR_FRAMING | USART_ERROR_RECEIVER_OVERRUN)) == 0) {
+
+            // Traitement RX à faire ICI
+            // Lecture des caractères depuis le buffer HW -> fifo SW
+            //  (pour savoir s'il y a une data dans le buffer HW RX : PLIB_USART_ReceiverDataIsAvailable())
+            //  (Lecture via fonction PLIB_USART_ReceiverByteReceive())
+            // ...
+            // transfert dans le FIFO software
+            // de tous les char reçus
+            if (PLIB_USART_ReceiverDataIsAvailable(USART_ID_1)) {
+                c = PLIB_USART_ReceiverByteReceive(USART_ID_1);
+                PutCharInFifo(&descrFifoRX, c);
+            }
+
+           // LED4_W = !LED4_R; // Toggle Led4
+            // buffer is empty, clear interrupt flag
+            PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_USART_1_RECEIVE);
+        } else {
+            // Suppression des erreurs
+            // La lecture des erreurs les efface
+            // sauf pour overrun
+            while ((UsartStatus & USART_ERROR_RECEIVER_OVERRUN) == USART_ERROR_RECEIVER_OVERRUN) {
+                PLIB_USART_ReceiverOverrunErrorClear(USART_ID_1);
+            }
+        }
+        freeSize = GetWriteSpace(&descrFifoRX);
+        // clean de la fifo si proche full 
+        if (freeSize <= 6) {
+            // Contrôle de flux : demande stop émission
+            RS232_RTS = 1;
+        }
+    }
+
+
+
+
+
+
+    // end if RX
+
+
+    // Is this an TX interrupt ?
+    if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_1_TRANSMIT) &&
+            PLIB_INT_SourceIsEnabled(INT_ID_0, INT_SOURCE_USART_1_TRANSMIT)) {
+
+        // Traitement TX à faire ICI
+        // Envoi des caractères depuis le fifo SW -> buffer HW
+
+        // Avant d'émettre, on vérifie 3 conditions :
+        //  Si CTS = 0 autorisation d'émettre (entrée RS232_CTS)
+        //  S'il y a un caratères à émettre dans le fifo
+        //  S'il y a de la place dans le buffer d'émission (PLIB_USART_TransmitterBufferIsFull)
+        //   (envoi avec PLIB_USART_TransmitterByteSend())
+
+        // ...
+        TXsize = GetReadSize(&descrFifoTX);
+        // Si CTS = 0 (autorisation d'émettre)
+        i_cts = RS232_CTS;
+        //Si buffer pas full onet autorisation d'émettre 
+        TxBuffFull = PLIB_USART_TransmitterBufferIsFull(USART_ID_1);
+        if ((i_cts == 0) && (TXsize > 0) &&
+                TxBuffFull == false) {
+            while ((i_cts == 0) && (TXsize > 0) && TxBuffFull == false) {
+                //temps que tu peut emmettre vide fifo soft 
+                GetCharFromFifo(&descrFifoTX, &c);
+                //envoie le caractere
+                PLIB_USART_TransmitterByteSend(USART_ID_1, c);
+                //check nuffer full 
+                i_cts = RS232_CTS;
+                TXsize = GetReadSize(&descrFifoTX);
+                TxBuffFull = PLIB_USART_TransmitterBufferIsFull(USART_ID_1);
+
+
+            }
+
+            //LED5_W = !LED5_R; // Toggle Led5
+            // Clear the TX interrupt Flag
+            PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_USART_1_TRANSMIT);
+          
+        }
+        else {
+            // disable TX interrupt
+            PLIB_INT_SourceDisable(INT_ID_0, INT_SOURCE_USART_1_TRANSMIT);
+        }
+    }
+    // Marque fin interruption avec Led3
+    //LED3_W = 0;
+    
+    
+    
+
+
+}
+
+*/
+
+
+void __ISR(_UART_3_VECTOR, ipl3AUTO)_IntHandlerDrvUsartInstance1() {
     USART_ERROR UsartStatus;
     uint8_t freeSize, TXsize;
     int8_t c;
@@ -166,7 +289,7 @@ void __ISR(_UART_3_VECTOR, ipl5AUTO)_IntHandlerDrvUsartInstance1() {
         // clean de la fifo si proche full 
         if (freeSize <= 6) {
             // Contrôle de flux : demande stop émission
-            RS232_RTS = 1;
+            UART1_RTSOn();
         }
     }
 
@@ -194,7 +317,7 @@ void __ISR(_UART_3_VECTOR, ipl5AUTO)_IntHandlerDrvUsartInstance1() {
         // ...
         TXsize = GetReadSize(&descrFifoTX);
         // Si CTS = 0 (autorisation d'émettre)
-        i_cts = RS232_CTS;
+        i_cts = UART1_CTSStateGet();
         //Si buffer pas full onet autorisation d'émettre 
         TxBuffFull = PLIB_USART_TransmitterBufferIsFull(USART_ID_3);
         if ((i_cts == 0) && (TXsize > 0) &&
@@ -205,7 +328,7 @@ void __ISR(_UART_3_VECTOR, ipl5AUTO)_IntHandlerDrvUsartInstance1() {
                 //envoie le caractere
                 PLIB_USART_TransmitterByteSend(USART_ID_3, c);
                 //check nuffer full 
-                i_cts = RS232_CTS;
+                i_cts = UART1_CTSStateGet();
                 TXsize = GetReadSize(&descrFifoTX);
                 TxBuffFull = PLIB_USART_TransmitterBufferIsFull(USART_ID_3);
 
@@ -224,7 +347,7 @@ void __ISR(_UART_3_VECTOR, ipl5AUTO)_IntHandlerDrvUsartInstance1() {
     }
     // Marque fin interruption avec Led3
     //LED3_W = 0;
-} // end __ISR Usart 1
+} // end __ISR Usart 3
 
 
 

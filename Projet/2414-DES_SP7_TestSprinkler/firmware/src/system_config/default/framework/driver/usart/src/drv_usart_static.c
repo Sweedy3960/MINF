@@ -413,7 +413,7 @@ SYS_MODULE_OBJ DRV_USART1_Initialize(void)
     PLIB_USART_InitializeOperation(USART_ID_3,
             USART_RECEIVE_FIFO_ONE_CHAR,
             USART_TRANSMIT_FIFO_IDLE,
-            USART_ENABLE_TX_RX_CTS_RTS_USED);
+            USART_ENABLE_TX_RX_USED);
 
     /* Get the USART clock source value*/
     clockSource = SYS_CLK_PeripheralFrequencyGet ( CLK_BUS_PERIPHERAL_1 );

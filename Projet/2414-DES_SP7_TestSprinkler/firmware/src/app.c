@@ -71,6 +71,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "Mc32gest_RS232.h"
 
 
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -113,8 +114,8 @@ float songMelody[10] = {
 static uint8_t DebugUART_Enable =1; // Flag to enable/disable debug UART output
 static uint8_t InitMcp =0;
 static uint8_t InitADC =1;
-static uint8_t InitTouchCap =0;
-
+static uint8_t InitTouchCap =1;
+static uint8_t SDcard=0;
 
 
 // *****************************************************************************
@@ -191,6 +192,7 @@ void APP_Tasks(void)
         {
             DRV_USART0_Initialize();
             DRV_USART1_Initialize();
+            InitFifoComm();
         }
         
         PLIB_USART_TransmitterByteSend(USART_ID_3,'a');
@@ -215,7 +217,7 @@ void APP_Tasks(void)
 
 
         //ret = DRV_SPI_Status(SPI_ID_1);
-        //DRV_SPI_INIT
+        //
         // DRV_TMR2_Start();
         appData.state = APP_STATE_SERVICE_TASKS;
 
@@ -225,7 +227,7 @@ void APP_Tasks(void)
 
     case APP_STATE_SERVICE_TASKS:
     {
-        PLIB_USART_TransmitterByteSend(USART_ID_3,'a');
+        
         if(DebugUART_Enable) DebugUART_Print("[SM] Starting SERVICE_TASKS functionality\r\n");
         appData.state = APP_STATE_WAIT_START;
        
@@ -318,38 +320,20 @@ void APP_Tasks(void)
     break;
     case APP_STATE_WRITE_SDCARD:
     {
+        
         if(DebugUART_Enable) DebugUART_Print("[SM] Starting WRITE_SDCARD functionality\r\n");
-        if(InitMcp)
+        if(SDcard)
         {
-            sd_logger_scheduleWrite(&appData.timeofRTC);
-            // Check if SD card is mounted
-            if (sd_getState() == APP_MOUNT_DISK)
+            if(sd_getState() == APP_IDLE)
             {
-                // Perform SD card operations
-                sd_fat_task();
-            
-                // Unmount disk after operations
-                sd_setState(APP_UNMOUNT_DISK);
-
-                // Wait until unmounted
-                uint32_t sd_timeout = 0;
-                uint32_t sd_timeout_max = 1000000; // Limite arbitraire, à ajuster selon besoin
-                while (sd_getState() != APP_IDLE)
-                {
-                    sd_fat_task();
-                    sd_timeout++;
-                    if(sd_timeout > sd_timeout_max) {
-                        if(DebugUART_Enable) DebugUART_Print("[ERR] Timeout SD unmount!\r\n");
-                        break;
-                    }
-                }
+             sd_logger_scheduleWrite(&appData.timeofRTC);
             }
             else
             {
-                // Handle case where SD card is not mounted
-                // You can set an error state or retry logic here
-            
+              sd_fat_task();
             }
+            
+           
         }
     }
     LIFELED_GREENToggle();
@@ -360,7 +344,7 @@ void APP_Tasks(void)
         {
             if(DebugUART_Enable) DebugUART_Print("[SM] Starting BUZZER functionality\r\n");
             //call to play a song
-            APP_PlaySong();
+           // APP_PlaySong();
             // Transition back to the service tasks stateB
             LIFELED_GREENToggle();
         }

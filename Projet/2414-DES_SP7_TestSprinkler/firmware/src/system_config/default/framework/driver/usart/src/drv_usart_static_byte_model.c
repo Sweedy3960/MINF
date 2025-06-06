@@ -78,8 +78,6 @@ uint8_t DRV_USART0_ReadByte(void)
 
 void DRV_USART0_WriteByte(const uint8_t byte)
 {
-    /* Wait till TX buffer is available as blocking operation is selected */
-    while(PLIB_USART_TransmitterBufferIsFull(USART_ID_1));
     /* Send one byte */
     PLIB_USART_TransmitterByteSend(USART_ID_1, byte);
     SYS_INT_SourceEnable(INT_SOURCE_USART_1_TRANSMIT);
@@ -127,8 +125,6 @@ uint8_t DRV_USART1_ReadByte(void)
 
 void DRV_USART1_WriteByte(const uint8_t byte)
 {
-    /* Wait till TX buffer is available as blocking operation is selected */
-    while(PLIB_USART_TransmitterBufferIsFull(USART_ID_3));
     /* Send one byte */
     PLIB_USART_TransmitterByteSend(USART_ID_3, byte);
     SYS_INT_SourceEnable(INT_SOURCE_USART_3_TRANSMIT);

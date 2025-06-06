@@ -157,7 +157,7 @@ void APP_Tasks ( void )
             lcd_gotoxy(1,1);
             printf_lcd("Exo9_2");
             lcd_gotoxy(1,2);
-            printf_lcd("CFO");
+            printf_lcd("aaaaaaaaaaa");
             lcd_gotoxy(1,3);
             printf_lcd("Temp: ");
             
