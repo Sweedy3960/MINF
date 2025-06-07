@@ -129,6 +129,8 @@ typedef struct{
 	T_DISP_COMMAND command;
 	DISPLAY_STATES state;
 	UG_GUI gui;
+
+	
 } T_DISPLAY;
 
 /* ************************************************************************** */

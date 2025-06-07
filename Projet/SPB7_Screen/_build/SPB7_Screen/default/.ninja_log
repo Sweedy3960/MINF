@@ -1,0 +1,27 @@
+# ninja log v6
+96	2674	7710135197966325	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/main.c.o	c15339d7e7e7cecd
+103	2867	7710135198036267	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/bsp/bsp.c.o	59c60f26ba67b773
+12	3222	7710135197136397	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/framework/system/int/src/sys_int_pic32.c.o	d4aafe0f75d3a849
+127	3339	7710135198278141	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/driver/spi/static/src/drv_spi_static_sys_queue.c.o	82a3b715fd8ff248
+170	3594	7710135198708153	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/system/ports/src/sys_ports_static.c.o	b6280d1d1a50de0
+158	3850	7710135198588114	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/system/devcon/src/sys_devcon.c.o	745a5e841bd9709e
+140	3916	7710135198408100	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/driver/tmr/src/drv_tmr_mapping.c.o	f6d5a72cd311694d
+146	4141	7710135198468130	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/driver/tmr/src/drv_tmr_static.c.o	37b4cfed6ae61255
+164	4462	7710135198648107	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/system/devcon/src/sys_devcon_pic32mx.c.o	11ddc06f91f85ba1
+3223	4668	7710135229237400	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/system_tasks.c.o	405617179f1a5d9c
+91	4706	7710135197916191	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/app.c.o	ee2cf7469486fa2e
+152	4713	7710135198528145	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/system/clk/src/sys_clk_pic32mx.c.o	49653fe31d82f3dc
+2868	4724	7710135225688888	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/system_interrupt.c.o	be044b6dc7a98ec3
+2676	4757	7710135223771890	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/system_init.c.o	5626225e5402f297
+176	4759	7710135198768142	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/system_exceptions.c.o	a7cedc004c7c75f0
+109	4774	7710135198098136	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/driver/spi/static/src/drv_spi_mapping.c.o	cff167708577672d
+133	4776	7710135198338108	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/driver/spi/static/src/drv_spi_static_tasks.c.o	cc5fd6de86d8a2c7
+122	4785	7710135198228096	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/driver/spi/static/src/drv_spi_static_ebm_tasks.c.o	bc9cfe9c4b3e9311
+85	4791	7710135197856166	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/LCD_Driver.c.o	1703af131a839c3d
+116	4918	7710135198168091	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/driver/spi/static/src/drv_spi_static.c.o	645e523223d98a8d
+3340	5275	7710135230402754	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/ugui.c.o	d6c81768c78b341e
+98	996	7710135588989645	CMakeFiles/SPB7_Screen_default_default_XC32_compile.dir/C_/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/Display.c.o	8ceeabcffd944cd7
+997	4169	7710135597980485	C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/out/SPB7_Screen/default.elf	3941bfae7c73ab5a
+4169	4598	7710135629704023	CMakeFiles/SPB7_Screen_default_Bin2Hex	6b513e9f89f1b431
+4169	4598	7710135629704023	C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/out/SPB7_Screen/default.hex	6b513e9f89f1b431
+4169	4598	7710135629704023	C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/_build/SPB7_Screen/default/CMakeFiles/SPB7_Screen_default_Bin2Hex	6b513e9f89f1b431

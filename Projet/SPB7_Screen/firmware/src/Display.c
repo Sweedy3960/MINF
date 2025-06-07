@@ -37,6 +37,15 @@
 /* ************************************************************************** */
 ///@{
 static T_DISPLAY disp;
+char signalNames[7][20] = {
+    "Signal1",
+    "Signal2",
+    "Signal3",
+    "Signal4",
+    "Signal5",
+    "Signal6",
+    "Signal7"
+};
 ///@}
 //extern MODULE_SLOT_DATA slotData[7];
 /* ************************************************************************** */
@@ -556,22 +565,14 @@ void DrawEllipse(int centerX, int centerY, int a, int b) {
 }
 
 
+
+
 void DisplayScreen_Signals(bool setToDark, uint8_t *state) {
-    const char *str_Signals[] = {
-        "Signal1",
-        "Signal2",
-        "Signal3",
-        "Signal4",
-        "Signal5",
-        "Signal6",
-        "Signal7"
-    };
     char sginals[7][20];
     uint8_t i;
     for (i = 0; i < 7; i++) {
-       
-        strcpy(sginals[i], str_Signals[i]);
-      
+        strcpy(sginals[i], signalNames[i]);
+
         if (state[i] != '0') {
             strcat(sginals[i]," ER"); 
         }
@@ -608,9 +609,65 @@ void DisplayScreen_Signals(bool setToDark, uint8_t *state) {
 	UG_PutString(0 ,116 , sginals[6]);
 } 
 
+void SetSignalName(int index, const char* newName) {
+    if (index >= 0 && index < 7) {
+        strncpy(signalNames[index], newName, sizeof(signalNames[index]) - 1);
+        signalNames[index][sizeof(signalNames[index]) - 1] = '\0'; // Sécurité
+    }
+}
 
+void EditSignalName_IHM(int index) {
+    char tempName[20];
+    strncpy(tempName, signalNames[index], sizeof(tempName));
+    tempName[sizeof(tempName)-1] = '\0';
+    int pos = 0; // Position du curseur dans le nom
 
+    int editing = 1;
+    while (editing) {
+        // Afficher le nom en cours d'édition avec un curseur (ex: '_')
+        char display[24];
+        snprintf(display, sizeof(display), "%s_", tempName);
+        UG_FillFrame(0, 0, 127, 15, C_WHITE); // Efface la zone d'affichage
+        UG_PutString(0, 0, display);
 
+        // Attendre une entrée utilisateur (à adapter selon votre système)
+        // Exemples :
+        // - bouton haut : tempName[pos]++
+        // - bouton bas : tempName[pos]--
+        // - bouton gauche : pos--
+        // - bouton droite : pos++
+        // - bouton OK : editing = 0
+
+        // --- À remplacer par votre gestion d'IHM ---
+        // Ici, pseudo-code :
+		/*
+        int key = GetUserKey(); // À implémenter 
+        switch (key) {
+            case KEY_UP:
+                if (tempName[pos] < 'Z') tempName[pos]++;
+                else tempName[pos] = 'A';
+                break;
+            case KEY_DOWN:
+                if (tempName[pos] > 'A') tempName[pos]--;
+                else tempName[pos] = 'Z';
+                break;
+            case KEY_LEFT:
+                if (pos > 0) pos--;
+                break;
+            case KEY_RIGHT:
+                if (pos < (int)strlen(tempName)-1) pos++;
+                break;
+            case KEY_OK:
+                editing = 0;
+                break;
+            case KEY_CANCEL:
+                return; // Annule l'édition
+        }
+        */
+    }
+    // Appliquer le nouveau nom
+    SetSignalName(index, tempName);
+}
 
 /* *****************************************************************************
  End of File Display
