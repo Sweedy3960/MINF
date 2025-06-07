@@ -139,7 +139,7 @@ static void DisplayScreen_Welcome(bool setToDark){
 	/* Ecriture des chaines de caracteres */
 	UG_FontSelect ( &FONT_8X8 );
 	UG_PutString(0 ,0 , str_Welcome_1);
-    UG_FontSelect ( &FONT_6X8 );
+        UG_FontSelect ( &FONT_6X8 );
     UG_PutString(0 ,30 , str_Welcome_2);
 	UG_FontSelect ( &FONT_6X8 );
 	UG_PutString(0 ,45 , str_Welcome_3);
@@ -279,7 +279,7 @@ void DrawHoldMode(bool holdMode, bool selected)
  * @details Le logo est centré automatiquement selon DISPLAY_WIDTH et DISPLAY_HEIGHT.
  *          Les tailles sont adaptées pour un écran 128x64.
  */
-void DrawEyeLogo(void)
+void DisplayEyeLogo(void)
 {
     int centerX = DISPLAY_WIDTH / 2;
     int centerY = DISPLAY_HEIGHT / 2;
@@ -294,10 +294,18 @@ void DrawEyeLogo(void)
     UG_DrawLine(centerX - triHalfBase, triBaseY, centerX + triHalfBase, triBaseY, C_BLACK);
     UG_DrawLine(centerX + triHalfBase, triBaseY, centerX, triTopY, C_BLACK);
 
-    // Contour de l'œil (ellipse blanche)
-    int eyeWidth = 40;
-    int eyeHeight = 16;
-    UG_DrawEllipse(centerX, centerY, eyeWidth/2, eyeHeight/2, C_WHITE);
+     // Eye outline approximation (diamond shape instead of ellipse)
+    int eyeWidth = 60;
+    int eyeHeight = 25;
+    int eyeLeft = centerX - eyeWidth/2;
+    int eyeRight = centerX + eyeWidth/2;
+    int eyeTop = centerY - eyeHeight/2;
+    int eyeBottom = centerY + eyeHeight/2;
+
+    UG_DrawLine(eyeLeft, centerY, centerX, eyeTop, C_WHITE);
+    UG_DrawLine(centerX, eyeTop, eyeRight, centerY, C_WHITE);
+    UG_DrawLine(eyeRight, centerY, centerX, eyeBottom, C_WHITE);
+    UG_DrawLine(centerX, eyeBottom, eyeLeft, centerY, C_WHITE);
 
     // Pupille (cercle noir)
     UG_FillCircle(centerX, centerY, 5, C_BLACK);
@@ -362,49 +370,7 @@ void DisplayValues_MainMenu(
 }
 */
 ///@{
-/* ----------------------------------------------------------------------------*/
-/**
- * @brief   Display specific data according screen in use
- *          -- EXEMPLE DE FONCTION A RENOMMER/ADAPTER --
- * 
- * @param  a    valeur a 
- */
-void DisplayValues_23132(float voltmeterValue, bool currentMode, bool holdMode, uint8_t position)
-{
-	char str[7];
-
-	if(disp.currentScreenNr == DISP_SCR_23132)
-	{
-		if(holdMode == false)
-		{
-			UG_FontSelect(&FONT_16X26);
-			UG_SetBackcolor (C_WHITE);
-			UG_SetForecolor (C_BLACK);
-			sprintf(str, "%2.2f", voltmeterValue);
-			UG_PutString(3, 17, str);
-		}
-		DrawMenuIcon(false);
-		DrawCurrentMode(currentMode, false);
-		DrawHoldMode(holdMode, false);
-		switch(position)
-		{
-			case 0:
-				DrawMenuIcon(true);
-				break;
-			case 1:
-				DrawCurrentMode(currentMode, true);
-				break;
-			case 2:
-				DrawHoldMode(holdMode, true);
-				break;
-			//case 3:
-				//break;
-			default:
-				break;
-		}
-	}
-}   /* DisplayValues_23132 */
-
+/* ------------------------------------
 /* -------------------------------------------------------------------------- */
 /**
  * @brief   Sets the background color of the display
@@ -469,14 +435,12 @@ void DisplayScreen(uint8_t screen, bool setToDark){
 			DisplayScreen_Welcome(setToDark);    
            // UG_DrawLine(70, 55, 71, 57, 0);
 			break;
-		//case DISP_SCR_ERROR:
-			//DisplayScreen_Error();	//TODO: Error handling
-			//break;
-		case DISP_SCR_MAIN_MENU:
+		
+		case DISP_SCR_ERROR:
 			//DisplayScreen_MainMenu(true);
 			break;
-		case DISP_SCR_23132:
-			//DisplayScreen_23132(true);
+		case DSP_LOGO:
+                    DisplayEyeLogo();
 			break;
 		default:
 			break;   

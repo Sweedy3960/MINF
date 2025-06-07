@@ -95,10 +95,8 @@ extern "C" {
 typedef enum{
 	DISP_SCR_WELCOME=0,             ///< ecran d'accueil
 	/* Liste des ecrans */
-	DISP_SCR_MAIN_MENU,          ///< page ecran no ...
+	DSP_LOGO,          ///< page ecran no ...
 	DISP_SCR_ERROR,
-	DISP_SCR_23132,
-	DISP_SCR_LAST
 } E_DISPLAY_SCREENS;
 
 /** @name Liste de commandes d'affichage */
