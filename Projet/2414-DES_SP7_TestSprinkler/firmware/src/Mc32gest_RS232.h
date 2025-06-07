@@ -3,7 +3,7 @@
 /*--------------------------------------------------------*/
 // Mc32Gest_RS232.h
 /*--------------------------------------------------------*/
-//	Description :	emission et reception spécialisée
+//	Description :	emission et reception spï¿½cialisï¿½e
 //			        pour TP2 2016-2017
 //
 //	Auteur 		: 	C. HUBER
@@ -18,7 +18,7 @@
 
 
 /*--------------------------------------------------------*/
-// Définition des fonctions prototypes
+// Dï¿½finition des fonctions prototypes
 /*--------------------------------------------------------*/
 
 // prototypes des fonctions
