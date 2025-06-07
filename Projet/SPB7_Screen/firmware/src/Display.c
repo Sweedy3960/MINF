@@ -69,8 +69,12 @@ void Display_TimerCallback(void){
  * @param   c   couleur (noir ou blanc du pixel
  */
 void DisplayPixelSetCallback(UG_S16 x, UG_S16 y, UG_COLOR c){
-	UG_S16 column = x;
-	UG_S16 row = DISPLAY_HEIGHT - y - 1;
+	//this was the original code bu wee need to shit 90°
+	//UG_S16 column = x;
+	//UG_S16 row = DISPLAY_HEIGHT - y - 1;
+	//so 
+	UG_S16 column = y;
+	UG_S16 row = DISPLAY_HEIGHT - x - 1;
 	/* toute autre couleur que noir sera consideree comme blanche */
 	uint8_t page = row / DISPLAY_PAGES; 
 	uint8_t pageValue = 1 << (row % DISPLAY_PAGES);
@@ -268,6 +272,45 @@ void DrawHoldMode(bool holdMode, bool selected)
 	UG_PutString(66, 55, "HOLD");*/
 }
 
+/* -------------------------------------------------------------------------- */
+/**
+ * @brief   Dessine un logo "œil dans un triangle" centré sur l'écran LCD.
+ *
+ * @details Le logo est centré automatiquement selon DISPLAY_WIDTH et DISPLAY_HEIGHT.
+ *          Les tailles sont adaptées pour un écran 128x64.
+ */
+void DrawEyeLogo(void)
+{
+    int centerX = DISPLAY_WIDTH / 2;
+    int centerY = DISPLAY_HEIGHT / 2;
+
+    // Triangle équilatéral
+    int triHeight = 50;
+    int triHalfBase = 32;
+    int triTopY = centerY - triHeight/2;
+    int triBaseY = centerY + triHeight/2;
+
+    UG_DrawLine(centerX, triTopY, centerX - triHalfBase, triBaseY, C_BLACK);
+    UG_DrawLine(centerX - triHalfBase, triBaseY, centerX + triHalfBase, triBaseY, C_BLACK);
+    UG_DrawLine(centerX + triHalfBase, triBaseY, centerX, triTopY, C_BLACK);
+
+    // Contour de l'œil (ellipse blanche)
+    int eyeWidth = 40;
+    int eyeHeight = 16;
+    UG_DrawEllipse(centerX, centerY, eyeWidth/2, eyeHeight/2, C_WHITE);
+
+    // Pupille (cercle noir)
+    UG_FillCircle(centerX, centerY, 5, C_BLACK);
+
+    // Paupière supérieure (triangle noir)
+    int lidOffsetY = 7;
+    UG_DrawLine(centerX - eyeWidth/2, centerY, centerX, centerY - lidOffsetY, C_BLACK);
+    UG_DrawLine(centerX, centerY - lidOffsetY, centerX + eyeWidth/2, centerY, C_BLACK);
+    UG_DrawLine(centerX + eyeWidth/2, centerY, centerX - eyeWidth/2, centerY, C_BLACK);
+
+    // Cadre optionnel
+    UG_DrawFrame(centerX - 45, centerY - 28, centerX + 45, centerY + 28, C_GRAY);
+}
 ///@}
 
 /* ************************************************************************** */

@@ -160,7 +160,7 @@ void APP_Tasks ( void )
             
             appData.needDisplayUpdate = false;
             
-			DisplayScreen(0, true);
+			      DisplayScreen(0, true);
             //DisplayScreen_MainMenu(0);
             //DrawMenuIcon();
             
