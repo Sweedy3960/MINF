@@ -69,12 +69,13 @@ void Display_TimerCallback(void){
  * @param   c   couleur (noir ou blanc du pixel
  */
 void DisplayPixelSetCallback(UG_S16 x, UG_S16 y, UG_COLOR c){
-	//this was the original code bu wee need to shit 90°
-	//UG_S16 column = x;
-	//UG_S16 row = DISPLAY_HEIGHT - y - 1;
+	//this was the original code bu wee need to shift 90
+    
+//	UG_S16 column = x;
+//	UG_S16 row = DISPLAY_HEIGHT - y - 1;
 	//so 
-	UG_S16 column = y;
-	UG_S16 row = DISPLAY_HEIGHT - x - 1;
+ 	UG_S16 column = DISPLAY_WIDTH - y-1;
+	UG_S16 row = DISPLAY_HEIGHT-x-1;
 	/* toute autre couleur que noir sera consideree comme blanche */
 	uint8_t page = row / DISPLAY_PAGES; 
 	uint8_t pageValue = 1 << (row % DISPLAY_PAGES);
@@ -124,7 +125,7 @@ static void DisplayClearPage(uint8_t p, bool setToClear) {
 static void DisplayScreen_Welcome(bool setToDark){
 	char str_Welcome_1[] = "Welcome";
 	char str_Welcome_2[] = "v1.0.0";
-	char str_Welcome_3[] = "initialisation";
+	char str_Welcome_3[] = "init..";
 	
 	if (setToDark){
 		UG_SetBackcolor (C_WHITE);
@@ -141,7 +142,7 @@ static void DisplayScreen_Welcome(bool setToDark){
 	UG_PutString(0 ,0 , str_Welcome_1);
         UG_FontSelect ( &FONT_6X8 );
     UG_PutString(0 ,30 , str_Welcome_2);
-	UG_FontSelect ( &FONT_6X8 );
+	UG_FontSelect ( &FONT_4X6 );
 	UG_PutString(0 ,45 , str_Welcome_3);
 	
 }   /* DisplayScreen_Welcome */
@@ -281,8 +282,8 @@ void DrawHoldMode(bool holdMode, bool selected)
  */
 void DisplayEyeLogo(void)
 {
-    int centerX = DISPLAY_WIDTH / 2;
-    int centerY = DISPLAY_HEIGHT / 2;
+    int centerX = DISPLAY_HEIGHT / 2;
+    int centerY =  DISPLAY_WIDTH/ 2;
 
     // Triangle équilatéral
     int triHeight = 50;
@@ -295,21 +296,12 @@ void DisplayEyeLogo(void)
     UG_DrawLine(centerX + triHalfBase, triBaseY, centerX, triTopY, C_BLACK);
 
      // Eye outline approximation (diamond shape instead of ellipse)
-    int eyeWidth = 60;
-    int eyeHeight = 25;
-    int eyeLeft = centerX - eyeWidth/2;
-    int eyeRight = centerX + eyeWidth/2;
-    int eyeTop = centerY - eyeHeight/2;
-    int eyeBottom = centerY + eyeHeight/2;
-
-    UG_DrawLine(eyeLeft, centerY, centerX, eyeTop, C_WHITE);
-    UG_DrawLine(centerX, eyeTop, eyeRight, centerY, C_WHITE);
-    UG_DrawLine(eyeRight, centerY, centerX, eyeBottom, C_WHITE);
-    UG_DrawLine(centerX, eyeBottom, eyeLeft, centerY, C_WHITE);
-
+    int eyeWidth = 10;
+    int eyeHeight = 30;
+    DrawEllipse(centerX,centerY,eyeHeight,eyeWidth);
     // Pupille (cercle noir)
     UG_FillCircle(centerX, centerY, 5, C_BLACK);
-
+    //7064464
     // Paupière supérieure (triangle noir)
     int lidOffsetY = 7;
     UG_DrawLine(centerX - eyeWidth/2, centerY, centerX, centerY - lidOffsetY, C_BLACK);
@@ -428,14 +420,16 @@ void DisplayScreen(uint8_t screen, bool setToDark){
 	
 	disp.currentScreenNr = screen;
 	DisplayClear(true);
-
+    uint8_t mockSignalStates[7]={'0','1','0','1','0','1','1'};
 	switch(screen)
 	{
 		case DISP_SCR_WELCOME:
 			DisplayScreen_Welcome(setToDark);    
            // UG_DrawLine(70, 55, 71, 57, 0);
 			break;
-		
+		case DISP_SIGN:
+                DisplayScreen_Signals(setToDark,mockSignalStates);
+			break;
 		case DISP_SCR_ERROR:
 			//DisplayScreen_MainMenu(true);
 			break;
@@ -546,6 +540,77 @@ void Display_Task(){
 	}
 }   /* Display_Task */
 ///@}
+
+void DrawEllipse(int centerX, int centerY, int a, int b) {
+    int numSegments = 100; // Number of line segments to approximate the ellipse
+    int i;
+    for (i = 0; i < numSegments; i++) {
+        float theta1 = 2.0f * M_PI * i / numSegments;
+        float theta2 = 2.0f * M_PI * (i + 1) / numSegments;
+        int x1 = centerX + a * cos(theta1);
+        int y1 = centerY + b * sin(theta1);
+        int x2 = centerX + a * cos(theta2);
+        int y2 = centerY + b * sin(theta2);
+        UG_DrawLine(x1, y1, x2, y2,C_BLACK);
+    }
+}
+
+
+void DisplayScreen_Signals(bool setToDark, uint8_t *state) {
+    const char *str_Signals[] = {
+        "Signal1",
+        "Signal2",
+        "Signal3",
+        "Signal4",
+        "Signal5",
+        "Signal6",
+        "Signal7"
+    };
+    char sginals[7][20];
+    uint8_t i;
+    for (i = 0; i < 7; i++) {
+       
+        strcpy(sginals[i], str_Signals[i]);
+      
+        if (state[i] != '0') {
+            strcat(sginals[i]," ER"); 
+        }
+        else
+        {
+            strcat(sginals[i]," OK");
+        }
+        
+    }
+	if (setToDark){
+		UG_SetBackcolor (C_WHITE);
+		UG_SetForecolor (C_BLACK);
+	} else { 
+		UG_SetBackcolor (C_BLACK);
+		UG_SetForecolor (C_WHITE);
+	}
+
+	UG_FontSetHSpace(0);
+	
+	/* Ecriture des chaines de caracteres */
+	UG_FontSelect ( &FONT_6X8 );
+	UG_PutString(0 ,20 , sginals[0]);
+    UG_FontSelect ( &FONT_6X8 );
+    UG_PutString(0 ,35 , sginals[1]);
+	UG_FontSelect ( &FONT_6X8 );
+	UG_PutString(0 , 50, sginals[2]);
+    UG_FontSelect ( &FONT_6X8 );
+    UG_PutString(0 , 67, sginals[3]);
+    UG_FontSelect ( &FONT_6X8 );
+    UG_PutString(0 ,82 , sginals[4]);
+	UG_FontSelect ( &FONT_6X8 );
+	UG_PutString(0 ,99 , sginals[5]);
+    UG_FontSelect ( &FONT_6X8 );
+	UG_PutString(0 ,116 , sginals[6]);
+} 
+
+
+
+
 
 /* *****************************************************************************
  End of File Display

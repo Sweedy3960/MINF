@@ -163,6 +163,14 @@ void SYS_Initialize ( void* data )
     sysObj.spiObjectIdx1 = DRV_SPI_Initialize(DRV_SPI_INDEX_1, (const SYS_MODULE_INIT  * const)NULL);
     /*Initialize TMR0 */
     DRV_TMR0_Initialize();
+    /*Initialize TMR1 */
+    DRV_TMR1_Initialize();
+    /*Initialize TMR2 */
+    DRV_TMR2_Initialize();
+    /*Initialize TMR3 */
+    DRV_TMR3_Initialize();
+    /*Initialize TMR4 */
+    DRV_TMR4_Initialize();
  
  
     /* Initialize System Services */

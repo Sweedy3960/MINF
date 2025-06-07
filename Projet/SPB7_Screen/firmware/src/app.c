@@ -137,7 +137,7 @@ void APP_Initialize ( void )
 
 void APP_Tasks ( void )
 {
-
+    static uint8_t tmrScr = 0;
     /* Check the application's current state. */
     switch ( appData.state )
     {
@@ -146,9 +146,12 @@ void APP_Tasks ( void )
         {
                 LCD_RWOff();
                 LCD_BLOn();
-                DRV_TMR0_Start();
+                DRV_TMR4_Start();
                 DisplayInit();
+                //timing set at 300
+                appData.TimerScreen = 300;
                 appData.state = APP_STATE_SERVICE_TASKS;
+                appData.needDisplayUpdate=1;
             
             break;
         }
@@ -156,11 +159,21 @@ void APP_Tasks ( void )
         case APP_STATE_SERVICE_TASKS:
         { 
             Display_Task();
+            if (appData.needDisplayUpdate)
+            {
+                
+                if (tmrScr>=3)
+                {
+                    tmrScr =DISP_SIGN;
+                }
+                DisplayScreen(tmrScr, true);  
+                tmrScr ++;
+                appData.needDisplayUpdate = false;
+            }
+           
             
             
-            appData.needDisplayUpdate = false;
-            
-			      DisplayScreen(0, true);
+			
             //DisplayScreen_MainMenu(0);
             //DrawMenuIcon();
             
@@ -180,7 +193,16 @@ void APP_Tasks ( void )
     }
 }
 
- 
+ void APP_TIMER5_CALLBACK(void)
+ {
+    
+    appData.TimerScreen --;
+    if (appData.TimerScreen == 0)
+    {
+        appData.TimerScreen = 200;
+        appData.needDisplayUpdate = 1;
+    }
+ }
 
 /*******************************************************************************
  End of File

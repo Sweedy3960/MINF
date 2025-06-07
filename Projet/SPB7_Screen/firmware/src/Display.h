@@ -95,7 +95,8 @@ extern "C" {
 typedef enum{
 	DISP_SCR_WELCOME=0,             ///< ecran d'accueil
 	/* Liste des ecrans */
-	DSP_LOGO,          ///< page ecran no ...
+	DSP_LOGO,  
+    DISP_SIGN,       
 	DISP_SCR_ERROR,
 } E_DISPLAY_SCREENS;
 
@@ -232,7 +233,8 @@ bool DisplayInit();
  */
 void Display_Task();
 
-
+void DrawEllipse(int centerX, int centerY, int a, int b);
+void DisplayScreen_Signals(bool setToDark , uint8_t * state);
 ///@}
 
 	/* Provide C++ Compatibility */
