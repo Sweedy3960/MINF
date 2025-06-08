@@ -62,6 +62,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "system/common/sys_common.h"
 #include "appTouch.h"
 #include "system_definitions.h"
+#include "Display.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -84,16 +85,21 @@ void __ISR(_TIMER_3_VECTOR, ipl0AUTO) IntHandlerDrvTmrInstance2(void)
 {
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_3);
 }
-void __ISR(_TIMER_4_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance3(void)
+void __ISR(_TIMER_4_VECTOR, ipl2AUTO) IntHandlerDrvTmrInstance3(void)
 {
-    //1ms
+    //50ms
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_4);
     APP_TIMER4_CALLBACK();
          
 }
 void __ISR(_TIMER_5_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance4(void)
 {
+ 
+    Display_TimerCallback();
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_5);
+    
+    APP_TIMER5_CALLBACK();
+   
 }
 
 

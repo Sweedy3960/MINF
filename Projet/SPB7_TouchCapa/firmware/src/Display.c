@@ -156,7 +156,7 @@ static void DisplayScreen_Welcome(bool setToDark){
 	
 }   /* DisplayScreen_Welcome */
 
-void DisplayScreen_MainMenu(bool setToDark)
+void DisplayScreen_MainMenu(uint16_t * stateTouch, bool setToDark)
 {
 	if (setToDark){
 		UG_SetBackcolor (C_WHITE);
@@ -168,12 +168,25 @@ void DisplayScreen_MainMenu(bool setToDark)
 	UG_FontSetHSpace(0);
 	UG_FontSelect (&FONT_6X8);
 	UG_PutString(1, 2, "Main Menu");
-	UG_DrawFrame(0, 0, 127, 63, C_BLACK);
-	UG_DrawLine(0, 10, 127, 10, C_BLACK);
-	UG_DrawLine(6, 28, 121, 28, C_BLACK);
-	UG_DrawLine(6, 45, 121, 45, C_BLACK);
+    
+	
 }
+void DisplayScreen_Error(uint16_t * stateTouch, bool setToDark)
+{
+    if (setToDark){
+		UG_SetBackcolor (C_WHITE);
+		UG_SetForecolor (C_BLACK);
+	} else { 
+		UG_SetBackcolor (C_BLACK);
+		UG_SetForecolor (C_WHITE);
+	}
+	UG_FontSetHSpace(0);
+	UG_FontSelect (&FONT_6X8);
+	UG_PutString(1, 1, "rel");
+    UG_PutString(1, 10, "or");
+    UG_PutString(1, 20, "not handle");
 
+}
 /* -------------------------------------------------------------------------- */
 /**
  * @brief   Displays Screen Voltmeter 23132
@@ -425,26 +438,33 @@ void DisplayClear(bool setToClear){
  * @param   setToDark   true = dark ; false = clear
  * 
  */
-void DisplayScreen(uint8_t screen, bool setToDark){
+void DisplayScreen(uint8_t screen, uint16_t *touchStates ,bool setToDark)     
+{
 	
 	disp.currentScreenNr = screen;
 	DisplayClear(true);
-    uint8_t mockSignalStates[7]={'0','1','0','1','0','1','1'};
+    
 	switch(screen)
 	{
 		case DISP_SCR_WELCOME:
 			DisplayScreen_Welcome(setToDark);    
            // UG_DrawLine(70, 55, 71, 57, 0);
 			break;
-		case DISP_SIGN:
-                DisplayScreen_Signals(setToDark,mockSignalStates);
-			break;
-		case DISP_SCR_ERROR:
-			//DisplayScreen_MainMenu(true);
-			break;
-		case DSP_LOGO:
+            case DSP_LOGO:
                     DisplayEyeLogo();
 			break;
+            case DISP_SIGN:
+                DisplayScreen_Signals(touchStates,setToDark);
+			break;
+        case DISP_SCR_MENU:
+            DisplayScreen_MainMenu(touchStates,setToDark);
+            break;
+		case DISP_CHANGE_SIGN_NAME:
+            break;
+		case DISP_SCR_ERROR:
+			DisplayScreen_Error(touchStates,setToDark);
+			break;
+		
 		default:
 			break;   
 	}
@@ -567,13 +587,20 @@ void DrawEllipse(int centerX, int centerY, int a, int b) {
 
 
 
-void DisplayScreen_Signals(bool setToDark, uint8_t *state) {
+void DisplayScreen_Signals( uint16_t *stateTouch,bool setToDark) {
+    
     char sginals[7][20];
+    char states[7];
     uint8_t i;
+    for (i = 0; i < 7; i++) {
+        itoa(states,(int)stateTouch,2);
+    }
+    
+    
     for (i = 0; i < 7; i++) {
         strcpy(sginals[i], signalNames[i]);
 
-        if (state[i] != '0') {
+        if (states[i] != '0') {
             strcat(sginals[i]," ER"); 
         }
         else
@@ -637,33 +664,32 @@ void EditSignalName_IHM(int index) {
         // - bouton gauche : pos--
         // - bouton droite : pos++
         // - bouton OK : editing = 0
-
-        // --- À remplacer par votre gestion d'IHM ---
-        // Ici, pseudo-code :
-		/*
-        int key = GetUserKey(); // À implémenter 
-        switch (key) {
-            case KEY_UP:
-                if (tempName[pos] < 'Z') tempName[pos]++;
-                else tempName[pos] = 'A';
-                break;
-            case KEY_DOWN:
-                if (tempName[pos] > 'A') tempName[pos]--;
-                else tempName[pos] = 'Z';
-                break;
-            case KEY_LEFT:
-                if (pos > 0) pos--;
-                break;
-            case KEY_RIGHT:
-                if (pos < (int)strlen(tempName)-1) pos++;
-                break;
-            case KEY_OK:
-                editing = 0;
-                break;
-            case KEY_CANCEL:
-                return; // Annule l'édition
-        }
-        */
+        
+        
+        
+//        int key = GetUserKey(); // À implémenter 
+//        switch (key) {
+//            case KEY_UP:
+//                if (tempName[pos] < 'Z') tempName[pos]++;
+//                else tempName[pos] = 'A';
+//                break;
+//            case KEY_DOWN:
+//                if (tempName[pos] > 'A') tempName[pos]--;
+//                else tempName[pos] = 'Z';
+//                break;
+//            case KEY_LEFT:
+//                if (pos > 0) pos--;
+//                break;
+//            case KEY_RIGHT:
+//                if (pos < (int)strlen(tempName)-1) pos++;
+//                break;
+//            case KEY_OK:
+//                editing = 0;
+//                break;
+//            case KEY_CANCEL:
+//                return; // Annule l'édition
+//        }
+//        */
     }
     // Appliquer le nouveau nom
     SetSignalName(index, tempName);

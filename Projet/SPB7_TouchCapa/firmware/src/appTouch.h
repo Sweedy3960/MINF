@@ -125,7 +125,16 @@ typedef enum
 #define KEY_UP_R(x)   (x&0x01)
 #define KEY_MID_R(x)  (x&0x80)
 #define KEY_DOWN_R(x) (x&0x40)
-
+    
+    
+#define KEY_UP_L_MASK   0x0002
+#define KEY_MID_L_MASK  0x0004
+#define KEY_DOWN_L_MASK 0x0008
+#define KEY_UP_C_MASK   0x0020
+#define KEY_DOWN_C_MASK 0x0010
+#define KEY_UP_R_MASK   0x0100
+#define KEY_MID_R_MASK  0x0080
+#define KEY_DOWN_R_MASK 0x0040
 // --- Task Control Flags (extern from app_taskctrl.c) ---
 
 extern app_task_ctrl_t touchTaskCtrl;    

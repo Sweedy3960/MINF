@@ -3,7 +3,7 @@
 #include "appDisp.h"
 
 #include "appTouch.h"
-void App_EventBus_Publish(app_event_t evt, uint16_t data)
+void App_EventBus_Publish(app_event_t evt, uint16_t *data)
 {
     switch (evt) {
         case EVT_TOUCH:

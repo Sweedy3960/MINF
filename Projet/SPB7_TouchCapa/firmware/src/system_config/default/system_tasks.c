@@ -53,7 +53,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #include "system_config.h"
 #include "system_definitions.h"
-
+#include "appTouch.h"
+#include "appDisp.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -81,6 +82,7 @@ void SYS_Tasks ( void )
 
     /* Maintain the application's state machine. */
     APP_Touch_Tasks();
+    APP_Disp_Tasks();
 }
 
 

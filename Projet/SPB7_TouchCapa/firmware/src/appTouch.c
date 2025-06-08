@@ -164,7 +164,7 @@ void APP_Touch_Tasks ( void )
             s_dataSensor.valKey8to11 = AT42QT_Read_Key8to11(0);
             appTouchData.touchStates = ((s_dataSensor.valKey8to11 <<8)| s_dataSensor.valKey0to7);
              if (appTouchData.touchStates != appTouchData.lastTouchStates) {
-                App_EventBus_Publish(EVT_TOUCH, appTouchData.touchStates);
+                App_EventBus_Publish(EVT_TOUCH, &appTouchData.touchStates);
                 touchTaskCtrl.isDirty = true;
                 appTouchData.lastTouchStates = appTouchData.touchStates;
             }

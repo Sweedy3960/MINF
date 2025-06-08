@@ -97,7 +97,10 @@ typedef enum{
 	/* Liste des ecrans */
 	DSP_LOGO,  
     DISP_SIGN,       
-	DISP_SCR_ERROR,
+    DISP_SCR_MENU,
+    DISP_CHANGE_SIGN_NAME,     
+    DISP_SCR_ERROR,
+            
 } E_DISPLAY_SCREENS;
 
 /** @name Liste de commandes d'affichage */
@@ -193,7 +196,6 @@ void DisplayScrollClear();
  */
 void DisplayClear(bool setToClear);
 
-void DisplayScreen_Error(void);
 
 /* ----------------------------------------------------------------------------*/
 /**
@@ -218,7 +220,7 @@ void DisplayScreen_23132(bool setToDark);
  * @param   setToDark   true = dark ; false = clear
  * 
  */
-void DisplayScreen(uint8_t screen, bool setToDark);      
+void DisplayScreen(uint8_t screen,uint16_t *touchStates ,bool setToDark);      
   
 /* -------------------------------------------------------------------------- */
 /**
@@ -234,9 +236,10 @@ bool DisplayInit();
  * 
  */
 void Display_Task();
-
+void DisplayScreen_MainMenu(uint16_t * stateTouch,bool setToDark);
 void DrawEllipse(int centerX, int centerY, int a, int b);
-void DisplayScreen_Signals(bool setToDark , uint8_t * state);
+void DisplayScreen_Signals( uint16_t * stateTouch,bool setToDark);
+void DisplayScreen_Error(uint16_t * stateTouch, bool setToDark);
 ///@}
 
 	/* Provide C++ Compatibility */

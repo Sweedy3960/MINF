@@ -118,11 +118,12 @@ typedef struct
 {
     /* The application's current state */
     APP_DISP_STATES state;
-    uint8_t currentScreen;
+    
 	bool needDisplayUpdate;
 	uint8_t positionCursor;
 	uint8_t positionList;
     uint16_t TimerScreen;
+    bool dispInit;
     
     /* TODO: Define any additional data used by the application. */
 
@@ -230,7 +231,7 @@ void APP_Disp_Initialize ( void );
 
 void APP_Disp_Tasks( void );
 void APP_TIMER5_CALLBACK(void);
-void App_Display_HandleTouch(uint16_t touchStates);
+void App_Display_HandleTouch(uint16_t *touchStates);
 #endif /* _APP_H */
 
 //DOM-IGNORE-BEGIN

@@ -198,6 +198,7 @@
         <Name dnOrder="0">system_init.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default</Path>
         <Checksum dnOrder="2">3B533FD6ED1386B2C27D8CCE2D4A2111</Checksum>
+        <ProjectFileChecksum dnOrder="3">70DD88913A5BD59E73D69E29F7F65FF9</ProjectFileChecksum>
       </Template>
       <Template dnOrder="11">
         <Name dnOrder="0">main.c</Name>
@@ -262,7 +263,7 @@
       <Template dnOrder="23">
         <Name dnOrder="0">system_config.h</Name>
         <Path dnOrder="1">Header&amp;#160;Files/app/system_config/default</Path>
-        <Checksum dnOrder="2">61992290AE9F1D2C85587F0279BF3C56</Checksum>
+        <Checksum dnOrder="2">852CF242C614A222AEC9D64F8F489B5C</Checksum>
       </Template>
       <Template dnOrder="24">
         <Name dnOrder="0">app.h</Name>
@@ -271,7 +272,7 @@
       <Template dnOrder="25">
         <Name dnOrder="0">drv_tmr_static.c</Name>
         <Path dnOrder="1">Source&amp;#160;Files/app/system_config/default/framework/driver/tmr/src</Path>
-        <Checksum dnOrder="2">F79B7392FDDBB06EC139E2B80964025F</Checksum>
+        <Checksum dnOrder="2">691C340AFFDAD9A04E2F6A7568027A21</Checksum>
       </Template>
       <Template dnOrder="26">
         <Name dnOrder="0">drv_spi_static_sys_queue.c</Name>

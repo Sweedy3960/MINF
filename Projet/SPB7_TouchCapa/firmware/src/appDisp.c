@@ -60,6 +60,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "ugui_config.h"
 #include "app_taskctrl.h"
 #include "app_eventbus.h"
+#include "appTouch.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -79,7 +80,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
     This structure should be initialized by the APP_Initialize function.
     
     Application strings and buffers are be defined outside this structure.
-*/
+ */
 
 APP_DISP_DATA appDispData;
 extern app_task_ctrl_t displayTaskCtrl;
@@ -91,7 +92,7 @@ extern app_task_ctrl_t displayTaskCtrl;
 // *****************************************************************************
 
 /* TODO:  Add any necessary callback functions.
-*/
+ */
 
 // *****************************************************************************
 // *****************************************************************************
@@ -101,7 +102,7 @@ extern app_task_ctrl_t displayTaskCtrl;
 
 
 /* TODO:  Add any necessary local functions.
-*/
+ */
 
 
 // *****************************************************************************
@@ -118,17 +119,15 @@ extern app_task_ctrl_t displayTaskCtrl;
     See prototype in app.h.
  */
 
-void APP_Disp_Initialize ( void )
-{
+void APP_Disp_Initialize(void) {
     /* Place the App state machine in its initial state. */
     appDispData.state = APP_DISP_STATE_INIT;
 
-    
+
     /* TODO: Initialize your application's state machine and other
      * parameters.
      */
 }
-
 
 /******************************************************************************
   Function:
@@ -138,37 +137,46 @@ void APP_Disp_Initialize ( void )
     See prototype in app.h.
  */
 
-void APP_Disp_Tasks ( void )
-{
-  
+void APP_Disp_Tasks(void) {
+    static uint8_t tmrScr = 0;
     /* Check the application's current state. */
-    switch ( appDispData.state )
-    {
-        /* Application's initial state. */
+    switch (appDispData.state) {
+            /* Application's initial state. */
         case APP_DISP_STATE_INIT:
         {
-                LCD_RWOff();
-                LCD_BLOn();
-                DRV_TMR4_Start();
-                DisplayInit();
-                //timing set at 300
-                appDispData.TimerScreen = 300;
-                appDispData.state = APP_DISP_STATE_SERVICE_TASKS;
-                appDispData.needDisplayUpdate=1;
-            
+            LCD_RWOff();
+            LCD_BLOn();
+            DRV_TMR4_Start();
+            DisplayInit();
+            //timing set at 300
+            appDispData.TimerScreen = 300;
+            appDispData.state = APP_DISP_STATE_SERVICE_TASKS;
+            appDispData.needDisplayUpdate = 1;
+            appDispData.dispInit = 0;
+
             break;
         }
 
         case APP_DISP_STATE_SERVICE_TASKS:
-        { 
+        {
+            if (appDispData.needDisplayUpdate) {
+
+                if (tmrScr >= 3) {
+                    tmrScr = DISP_SIGN;
+                    appDispData.dispInit = 1;
+                }
+                DisplayScreen(tmrScr, 0, true);
+                tmrScr++;
+                appDispData.needDisplayUpdate = false;
+            }
             Display_Task();
             break;
         }
 
-        /* TODO: implement your application state machine.*/
-        
+            /* TODO: implement your application state machine.*/
 
-        /* The default state should never be executed. */
+
+            /* The default state should never be executed. */
         default:
         {
             /* TODO: Handle error in application's state machine. */
@@ -177,36 +185,199 @@ void APP_Disp_Tasks ( void )
     }
 }
 
- void APP_TIMER5_CALLBACK(void)
- {
-    
-    appDispData.TimerScreen --;
-    if (appDispData.TimerScreen == 0)
-    {
+void APP_TIMER5_CALLBACK(void) {
+
+    appDispData.TimerScreen--;
+    if (appDispData.TimerScreen == 0) {
         appDispData.TimerScreen = 200;
-        appDispData.needDisplayUpdate = 1;
+        if (!appDispData.dispInit) {
+            appDispData.needDisplayUpdate = 1;
+        }
     }
- }
-void App_Display_HandleTouch(uint16_t touchStates)
-{
+}
+
+void App_Display_HandleTouch(uint16_t *touchStates) {
     // mettre à jour l?affichage selon les touches détectées
     // Par exemple?: changer l'état du menu
     // Pour l?instant, on se contente de marquer la tâche display comme "dirty"
-    
-    static uint8_t tmrScr = 0;
     displayTaskCtrl.isDirty = true;
-    if (appDispData.needDisplayUpdate)
-    {
+    
+    switch (*touchStates) {
+            //SIMPLE TOUCH
+        case KEY_UP_L_MASK:
+            //
 
-        if (tmrScr >= 3)
-        {
-            tmrScr = DISP_SIGN;
-        }
-        DisplayScreen(tmrScr, true);
-        tmrScr++;
-        appDispData.needDisplayUpdate = false;
+            break;
+        case KEY_MID_L_MASK:
+
+            break;
+        case KEY_DOWN_L_MASK:
+
+            break;
+        case KEY_UP_C_MASK:
+
+            break;
+        case KEY_DOWN_C_MASK:
+
+            break;
+        case KEY_UP_R_MASK:
+
+            break;
+        case KEY_MID_R_MASK:
+
+            break;
+        case KEY_DOWN_R_MASK:
+
+            break;
+
+
+
+            //SIMPLE COMBO TOUCH   
+
+            //LEFFT
+        case ((KEY_UP_L_MASK | KEY_MID_L_MASK)):
+            //
+
+            break;
+
+        case ((KEY_UP_L_MASK | KEY_DOWN_L_MASK)):
+            //
+
+            break;
+        case ((KEY_MID_L_MASK | KEY_DOWN_L_MASK)):
+            //
+            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            break;
+            //RIGHT
+        case ((KEY_UP_R_MASK | KEY_MID_R_MASK)):
+            //
+
+            break;
+
+        case ((KEY_UP_R_MASK | KEY_DOWN_R_MASK)):
+            //
+
+            break;
+        case ((KEY_MID_R_MASK | KEY_DOWN_R_MASK)):
+            //
+
+            break;
+            //center 
+        case ((KEY_UP_C_MASK | KEY_DOWN_C_MASK)):
+            //
+             
+            break;
+
+
+
+
+            //LEFT +CENTER
+
+
+        case ((KEY_UP_L_MASK | KEY_DOWN_C_MASK)):
+            //
+
+            break;
+        case ((KEY_UP_L_MASK | KEY_UP_C_MASK)):
+            //
+
+            break;
+
+        case ((KEY_MID_L_MASK | KEY_DOWN_C_MASK)):
+            //
+
+            break;
+        case ((KEY_MID_L_MASK | KEY_UP_C_MASK)):
+            //
+
+            break;
+        case ((KEY_DOWN_L_MASK | KEY_DOWN_C_MASK)):
+            //
+
+            break;
+        case ((KEY_DOWN_L_MASK | KEY_UP_C_MASK)):
+            //
+
+            break;
+
+
+            //RIGHT +CENTER    
+
+        case ((KEY_UP_R_MASK | KEY_DOWN_C_MASK)):
+            //
+
+            break;
+        case ((KEY_UP_R_MASK | KEY_UP_C_MASK)):
+            //
+
+            break;
+
+        case ((KEY_MID_R_MASK | KEY_DOWN_C_MASK)):
+            //
+
+            break;
+        case ((KEY_MID_R_MASK | KEY_UP_C_MASK)):
+            //
+
+            break;
+        case ((KEY_DOWN_R_MASK | KEY_DOWN_C_MASK)):
+            //
+
+            break;
+        case ((KEY_DOWN_R_MASK | KEY_UP_C_MASK)):
+            //
+
+            break;
+
+        case 0:
+            
+            //touche released 
+            
+            break;
+
+            /*
+        //HARD COMBO TOUCH   
+        case ((KEY_UP_L_MASK|KEY_MID_L_MASK|KEY_UP_C_MASK)):
+            //
+            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            break;  
+            
+        case ((KEY_UP_L_MASK | KEY_DOWN_L_MASK|KEY_UP_C_MASK)):
+            //
+            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            break;    
+         case ((KEY_MID_L_MASK|KEY_DOWN_L_MASK|KEY_UP_C_MASK)):
+            //
+            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            break;   
+            
+        case ((KEY_UP_R_MASK|KEY_MID_R_MASK|KEY_UP_C_MASK)):
+            //
+            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            break;  
+            
+        case ((KEY_UP_R_MASK | KEY_DOWN_R_MASK|KEY_UP_C_MASK)):
+            //
+            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            break;    
+         case ((KEY_MID_R_MASK|KEY_DOWN_R_MASK|KEY_UP_C_MASK)):
+            //
+            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            break;           
+             */
+
+
+
+
+        default:
+            //nothing is pressed or combo not handled
+            //DisplayScreen(DISP_SCR_ERROR, touchStates, true);
+            //if released continue last thing 
+            break;
     }
-   
+
+
+
 
 }
 /*******************************************************************************
