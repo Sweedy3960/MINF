@@ -54,9 +54,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 #include "app.h"
-#include "PIC32130_AT42QT2120_I2C.h"
-#include "Mc32_I2cUtilCCS.h"
-
 
 // *****************************************************************************
 // *****************************************************************************
@@ -80,9 +77,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 */
 
 APP_DATA appData;
-S_AT42QT2120 s_newDataSensor; //Structure pour envoie des nouvelles datas
-S_AT42QT2120 s_dataSensor; //Structure pour l'envoie des datas
-S_AT42QT2120 s_getDataSensor; //Structure pour la rec�ption des datas
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Application Callback Functions
@@ -146,28 +141,23 @@ void APP_Tasks ( void )
         /* Application's initial state. */
         case APP_STATE_INIT:
         {
-            AT42QT_Init();
-            appData.state = APP_STATE_SERVICE_TASKS;
-            DRV_TMR3_Start();
-            LIFELED_GREENOff();
+            bool appInitialized = true;
+       
+        
+            if (appInitialized)
+            {
+            
+                appData.state = APP_STATE_SERVICE_TASKS;
+            }
             break;
         }
 
         case APP_STATE_SERVICE_TASKS:
         {
-           
-            
-                s_dataSensor.valKey0to7 = AT42QT_Read_Key0to7(0);
-                s_dataSensor.valKey8to11 = AT42QT_Read_Key8to11(0);
-            
-            appData.state = APP_STATE_IDLE;
+        
             break;
         }
-        case APP_STATE_IDLE:
-        {
-        
-        }
-        break;
+
         /* TODO: implement your application state machine.*/
         
 
@@ -180,10 +170,7 @@ void APP_Tasks ( void )
     }
 }
 
-void APP_TIMER4_CALLBACK(void)
-{
-    appData.state = APP_STATE_SERVICE_TASKS;
-}
+ 
 
 /*******************************************************************************
  End of File

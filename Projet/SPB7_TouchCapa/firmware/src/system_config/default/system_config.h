@@ -108,15 +108,15 @@ extern "C" {
 #define SYS_PORT_D_LAT          0x0200
 #define SYS_PORT_D_ODC          0x0000
 
-#define SYS_PORT_E_TRIS         0xFFDF
-#define SYS_PORT_E_LAT          0x0000
+#define SYS_PORT_E_TRIS         0xFFC3
+#define SYS_PORT_E_LAT          0x0014
 #define SYS_PORT_E_ODC          0x0000
 
 #define SYS_PORT_F_TRIS         0xFFFE
 #define SYS_PORT_F_LAT          0x0000
 #define SYS_PORT_F_ODC          0x0000
 
-#define SYS_PORT_G_TRIS         0x5FFF
+#define SYS_PORT_G_TRIS         0x4FFF
 #define SYS_PORT_G_LAT          0x0000
 #define SYS_PORT_G_ODC          0x0000
 
@@ -129,6 +129,26 @@ extern "C" {
 // Section: Driver Configuration
 // *****************************************************************************
 // *****************************************************************************
+
+/*** SPI Driver Configuration ***/
+#define DRV_SPI_NUMBER_OF_MODULES		4
+/*** Driver Compilation and static configuration options. ***/
+/*** Select SPI compilation units.***/
+#define DRV_SPI_POLLED 				1
+#define DRV_SPI_ISR 				0
+#define DRV_SPI_MASTER 				1
+#define DRV_SPI_SLAVE 				0
+#define DRV_SPI_RM 					0
+#define DRV_SPI_EBM 				1
+#define DRV_SPI_8BIT 				1
+#define DRV_SPI_16BIT 				0
+#define DRV_SPI_32BIT 				0
+#define DRV_SPI_DMA 				0
+
+/*** SPI Driver Static Allocation Options ***/
+#define DRV_SPI_INSTANCES_NUMBER 		2
+#define DRV_SPI_CLIENTS_NUMBER 			2
+#define DRV_SPI_ELEMENTS_PER_QUEUE 		10
 /*** Timer Driver Configuration ***/
 #define DRV_TMR_INTERRUPT_MODE             true
 
@@ -140,7 +160,7 @@ extern "C" {
 #define DRV_TMR_INTERRUPT_PRIORITY_IDX0     INT_PRIORITY_LEVEL1
 #define DRV_TMR_INTERRUPT_SUB_PRIORITY_IDX0 INT_SUBPRIORITY_LEVEL0
 #define DRV_TMR_CLOCK_SOURCE_IDX0           DRV_TMR_CLKSOURCE_INTERNAL
-#define DRV_TMR_PRESCALE_IDX0               TMR_PRESCALE_VALUE_1
+#define DRV_TMR_PRESCALE_IDX0               TMR_PRESCALE_VALUE_64
 #define DRV_TMR_OPERATION_MODE_IDX0         DRV_TMR_OPERATION_MODE_16_BIT
 #define DRV_TMR_ASYNC_WRITE_ENABLE_IDX0     false
 #define DRV_TMR_POWER_STATE_IDX0            
@@ -152,7 +172,7 @@ extern "C" {
 #define DRV_TMR_INTERRUPT_PRIORITY_IDX1     INT_PRIORITY_LEVEL1
 #define DRV_TMR_INTERRUPT_SUB_PRIORITY_IDX1 INT_SUBPRIORITY_LEVEL0
 #define DRV_TMR_CLOCK_SOURCE_IDX1           DRV_TMR_CLKSOURCE_INTERNAL
-#define DRV_TMR_PRESCALE_IDX1               TMR_PRESCALE_VALUE_16
+#define DRV_TMR_PRESCALE_IDX1               TMR_PRESCALE_VALUE_256
 #define DRV_TMR_OPERATION_MODE_IDX1         DRV_TMR_OPERATION_MODE_16_BIT
 
 #define DRV_TMR_ASYNC_WRITE_ENABLE_IDX1     false
@@ -162,7 +182,7 @@ extern "C" {
 #define DRV_TMR_INTERRUPT_SOURCE_IDX2       INT_SOURCE_TIMER_3
 #define DRV_TMR_INTERRUPT_VECTOR_IDX2       INT_VECTOR_T3
 #define DRV_TMR_ISR_VECTOR_IDX2             _TIMER_3_VECTOR
-#define DRV_TMR_INTERRUPT_PRIORITY_IDX2     INT_DISABLE_INTERRUPT
+#define DRV_TMR_INTERRUPT_PRIORITY_IDX2     INT_PRIORITY_LEVEL1
 #define DRV_TMR_INTERRUPT_SUB_PRIORITY_IDX2 INT_SUBPRIORITY_LEVEL0
 #define DRV_TMR_CLOCK_SOURCE_IDX2           DRV_TMR_CLKSOURCE_INTERNAL
 #define DRV_TMR_PRESCALE_IDX2               TMR_PRESCALE_VALUE_256
@@ -177,10 +197,23 @@ extern "C" {
 #define DRV_TMR_INTERRUPT_PRIORITY_IDX3     INT_PRIORITY_LEVEL1
 #define DRV_TMR_INTERRUPT_SUB_PRIORITY_IDX3 INT_SUBPRIORITY_LEVEL0
 #define DRV_TMR_CLOCK_SOURCE_IDX3           DRV_TMR_CLKSOURCE_INTERNAL
-#define DRV_TMR_PRESCALE_IDX3               TMR_PRESCALE_VALUE_2
+#define DRV_TMR_PRESCALE_IDX3               TMR_PRESCALE_VALUE_256
 #define DRV_TMR_OPERATION_MODE_IDX3         DRV_TMR_OPERATION_MODE_16_BIT
 #define DRV_TMR_ASYNC_WRITE_ENABLE_IDX3     false
 #define DRV_TMR_POWER_STATE_IDX3            
+
+/*** Timer Driver 4 Configuration ***/
+#define DRV_TMR_PERIPHERAL_ID_IDX4          TMR_ID_5
+#define DRV_TMR_INTERRUPT_SOURCE_IDX4       INT_SOURCE_TIMER_5
+#define DRV_TMR_INTERRUPT_VECTOR_IDX4       INT_VECTOR_T5
+#define DRV_TMR_ISR_VECTOR_IDX4             _TIMER_5_VECTOR
+#define DRV_TMR_INTERRUPT_PRIORITY_IDX4     INT_PRIORITY_LEVEL1
+#define DRV_TMR_INTERRUPT_SUB_PRIORITY_IDX4 INT_SUBPRIORITY_LEVEL0
+#define DRV_TMR_CLOCK_SOURCE_IDX4           DRV_TMR_CLKSOURCE_INTERNAL
+#define DRV_TMR_PRESCALE_IDX4               TMR_PRESCALE_VALUE_64
+#define DRV_TMR_OPERATION_MODE_IDX4         DRV_TMR_OPERATION_MODE_16_BIT
+#define DRV_TMR_ASYNC_WRITE_ENABLE_IDX4     false
+#define DRV_TMR_POWER_STATE_IDX4            
 
 
  
@@ -244,6 +277,13 @@ extern "C" {
 #define SR_LED_CLKOff() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_8)
 #define SR_LED_CLKStateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_8)
 #define SR_LED_CLKStateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_8, Value)
+
+/*** Functions for SD_SPI_CS pin ***/
+#define SD_SPI_CSToggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_9)
+#define SD_SPI_CSOn() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_9)
+#define SD_SPI_CSOff() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_9)
+#define SD_SPI_CSStateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_9)
+#define SD_SPI_CSStateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_9, Value)
 
 /*** Functions for SR_LED_OE_2 pin ***/
 #define SR_LED_OE_2Toggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_D, PORTS_BIT_POS_11)
@@ -329,20 +369,40 @@ extern "C" {
 #define SR_LED_DATAStateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_0)
 #define SR_LED_DATAStateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_F, PORTS_BIT_POS_0, Value)
 
-/*** Functions for LCD_A0 pin ***/
-#define LCD_A0Toggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_13)
-#define LCD_A0On() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_13)
-#define LCD_A0Off() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_13)
-#define LCD_A0StateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_13)
-#define LCD_A0StateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_13, Value)
+/*** Functions for RESET_DIS_ pin ***/
+#define RESET_DIS_Toggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_12)
+#define RESET_DIS_On() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_12)
+#define RESET_DIS_Off() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_12)
+#define RESET_DIS_StateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_12)
+#define RESET_DIS_StateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_12, Value)
 
-/*** Functions for TOUCH_CHANGE pin ***/
-#define TOUCH_CHANGEStateGet() PLIB_PORTS_PinGet(PORTS_ID_0, PORT_CHANNEL_A, PORTS_BIT_POS_4)
+/*** Functions for A0_DIS_ pin ***/
+#define A0_DIS_Toggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_13)
+#define A0_DIS_On() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_13)
+#define A0_DIS_Off() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_13)
+#define A0_DIS_StateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_13)
+#define A0_DIS_StateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_G, PORTS_BIT_POS_13, Value)
 
-/*** Functions for SD_SPI_SC pin ***/
-#define SD_SPI_SC_PORT PORT_CHANNEL_D
-#define SD_SPI_SC_PIN PORTS_BIT_POS_9
-#define SD_SPI_SC_PIN_MASK (0x1 << 9)
+/*** Functions for SS_DIS_ pin ***/
+#define SS_DIS_Toggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_2)
+#define SS_DIS_On() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_2)
+#define SS_DIS_Off() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_2)
+#define SS_DIS_StateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_2)
+#define SS_DIS_StateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_2, Value)
+
+/*** Functions for LCD_BL pin ***/
+#define LCD_BLToggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_3)
+#define LCD_BLOn() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_3)
+#define LCD_BLOff() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_3)
+#define LCD_BLStateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_3)
+#define LCD_BLStateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_3, Value)
+
+/*** Functions for LCD_RW pin ***/
+#define LCD_RWToggle() PLIB_PORTS_PinToggle(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_4)
+#define LCD_RWOn() PLIB_PORTS_PinSet(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_4)
+#define LCD_RWOff() PLIB_PORTS_PinClear(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_4)
+#define LCD_RWStateGet() PLIB_PORTS_PinGetLatched(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_4)
+#define LCD_RWStateSet(Value) PLIB_PORTS_PinWrite(PORTS_ID_0, PORT_CHANNEL_E, PORTS_BIT_POS_4, Value)
 
 
 /*** Application Instance 0 Configuration ***/

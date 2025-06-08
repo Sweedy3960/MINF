@@ -74,11 +74,13 @@ void SYS_Tasks ( void )
     /* Maintain system services */
 
     /* Maintain Device Drivers */
+    DRV_SPI_Tasks(sysObj.spiObjectIdx0);
+    DRV_SPI_Tasks(sysObj.spiObjectIdx1);
 
     /* Maintain Middleware & Other Libraries */
 
     /* Maintain the application's state machine. */
-    APP_Tasks();
+    APP_Touch_Tasks();
 }
 
 

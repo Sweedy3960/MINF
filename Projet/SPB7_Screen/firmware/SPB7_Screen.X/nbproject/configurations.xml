@@ -38,11 +38,11 @@
             <itemPath>../src/system_config/default/system_definitions.h</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <itemPath>../src/app.h</itemPath>
         <itemPath>../src/Display.h</itemPath>
         <itemPath>../src/LCD_Driver.h</itemPath>
         <itemPath>../src/ugui.h</itemPath>
         <itemPath>../src/ugui_config.h</itemPath>
+        <itemPath>../src/appDisp.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="framework" projectFiles="true">
         <logicalFolder name="f1" displayName="driver" projectFiles="true">
@@ -166,11 +166,11 @@
             <itemPath>../src/system_config/default/system_tasks.c</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <itemPath>../src/app.c</itemPath>
         <itemPath>../src/main.c</itemPath>
         <itemPath>../src/Display.c</itemPath>
         <itemPath>../src/LCD_Driver.c</itemPath>
         <itemPath>../src/ugui.c</itemPath>
+        <itemPath>../src/appDisp.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="framework" projectFiles="true">
         <logicalFolder name="f1" displayName="system" projectFiles="true">

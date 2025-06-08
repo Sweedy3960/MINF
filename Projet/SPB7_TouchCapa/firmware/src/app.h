@@ -83,28 +83,19 @@ extern "C" {
     This enumeration defines the valid application states.  These states
     determine the behavior of the application at various times.
 */
-#define NACK 0
+
 typedef enum
 {
 	/* Application's state machine's initial state. */
 	APP_STATE_INIT=0,
 	APP_STATE_SERVICE_TASKS,
-    APP_STATE_IDLE,
+
 	/* TODO: Define states used by the application state machine. */
 
-    } APP_STATES;
+} APP_STATES;
 
-    /*Structure pour stocker ou recevoir les datas du AT42QT2120*/
-    typedef struct {
-        uint8_t start;
-        uint8_t valKey0to7;
-        uint8_t valKey8to11;
-        uint8_t valWheel;
-        uint8_t stop;
-    } S_AT42QT2120;
 
-    extern S_AT42QT2120 s_getDataSensor; //Structure pour la rec�ption des datas
-    // *****************************************************************************
+// *****************************************************************************
 /* Application Data
 
   Summary:
@@ -121,7 +112,7 @@ typedef struct
 {
     /* The application's current state */
     APP_STATES state;
-    
+
     /* TODO: Define any additional data used by the application. */
 
 } APP_DATA;
@@ -206,7 +197,7 @@ void APP_Initialize ( void );
  */
 
 void APP_Tasks( void );
-void APP_TIMER4_CALLBACK(void);
+
 
 #endif /* _APP_H */
 

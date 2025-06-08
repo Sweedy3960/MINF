@@ -25,7 +25,7 @@
 /* Section: Included Files                                                    */
 /* ************************************************************************** */
 /* ************************************************************************** */
-#include "app.h"
+#include "appTouch.h"
 /* This section lists the other files that are included in this file.
  */
 

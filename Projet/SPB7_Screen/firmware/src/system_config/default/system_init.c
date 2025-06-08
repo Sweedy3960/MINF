@@ -48,6 +48,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 
 #include "system_config.h"
 #include "system_definitions.h"
+#include "appDisp.h"
+
 
 
 // ****************************************************************************
@@ -185,7 +187,8 @@ void SYS_Initialize ( void* data )
     SYS_INT_Enable();
 
     /* Initialize the Application */
-    APP_Initialize();
+    APP_Touch_Initialize();
+    APP_Disp_Initialize();
 }
 
 

@@ -53,11 +53,13 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 // *****************************************************************************
 
-#include "app.h"
+#include "appDisp.h"
 #include "Display.h"
-#include"LCD_Driver.h"
+#include "LCD_Driver.h"
 #include "ugui.h"
 #include "ugui_config.h"
+#include "app_taskctrl.h"
+#include "app_eventbus.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: Global Data Definitions
@@ -79,7 +81,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
     Application strings and buffers are be defined outside this structure.
 */
 
-APP_DATA appData;
+APP_DISP_DATA appDispData;
+extern app_task_ctrl_t displayTaskCtrl;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -115,10 +118,10 @@ APP_DATA appData;
     See prototype in app.h.
  */
 
-void APP_Initialize ( void )
+void APP_Disp_Initialize ( void )
 {
     /* Place the App state machine in its initial state. */
-    appData.state = APP_STATE_INIT;
+    appDispData.state = APP_DISP_STATE_INIT;
 
     
     /* TODO: Initialize your application's state machine and other
@@ -135,49 +138,30 @@ void APP_Initialize ( void )
     See prototype in app.h.
  */
 
-void APP_Tasks ( void )
+void APP_Disp_Tasks ( void )
 {
-    static uint8_t tmrScr = 0;
+  
     /* Check the application's current state. */
-    switch ( appData.state )
+    switch ( appDispData.state )
     {
         /* Application's initial state. */
-        case APP_STATE_INIT:
+        case APP_DISP_STATE_INIT:
         {
                 LCD_RWOff();
                 LCD_BLOn();
                 DRV_TMR4_Start();
                 DisplayInit();
                 //timing set at 300
-                appData.TimerScreen = 300;
-                appData.state = APP_STATE_SERVICE_TASKS;
-                appData.needDisplayUpdate=1;
+                appDispData.TimerScreen = 300;
+                appDispData.state = APP_DISP_STATE_SERVICE_TASKS;
+                appDispData.needDisplayUpdate=1;
             
             break;
         }
 
-        case APP_STATE_SERVICE_TASKS:
+        case APP_DISP_STATE_SERVICE_TASKS:
         { 
             Display_Task();
-            if (appData.needDisplayUpdate)
-            {
-                
-                if (tmrScr>=3)
-                {
-                    tmrScr =DISP_SIGN;
-                }
-                DisplayScreen(tmrScr, true);  
-                tmrScr ++;
-                appData.needDisplayUpdate = false;
-            }
-           
-            
-            
-			
-            //DisplayScreen_MainMenu(0);
-            //DrawMenuIcon();
-            
-            
             break;
         }
 
@@ -196,14 +180,35 @@ void APP_Tasks ( void )
  void APP_TIMER5_CALLBACK(void)
  {
     
-    appData.TimerScreen --;
-    if (appData.TimerScreen == 0)
+    appDispData.TimerScreen --;
+    if (appDispData.TimerScreen == 0)
     {
-        appData.TimerScreen = 200;
-        appData.needDisplayUpdate = 1;
+        appDispData.TimerScreen = 200;
+        appDispData.needDisplayUpdate = 1;
     }
  }
+void App_Display_HandleTouch(uint16_t touchStates)
+{
+    // mettre à jour l?affichage selon les touches détectées
+    // Par exemple?: changer l'état du menu
+    // Pour l?instant, on se contente de marquer la tâche display comme "dirty"
+    
+    static uint8_t tmrScr = 0;
+    displayTaskCtrl.isDirty = true;
+    if (appDispData.needDisplayUpdate)
+    {
 
+        if (tmrScr >= 3)
+        {
+            tmrScr = DISP_SIGN;
+        }
+        DisplayScreen(tmrScr, true);
+        tmrScr++;
+        appDispData.needDisplayUpdate = false;
+    }
+   
+
+}
 /*******************************************************************************
  End of File
  */

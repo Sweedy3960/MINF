@@ -56,7 +56,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "peripheral/int/plib_int.h"
 #include "system/ports/sys_ports.h"
 #include "driver/spi/static/drv_spi_static.h"
-#include "app.h"
+#include "appDisp.h"
 
 
 // DOM-IGNORE-BEGIN
