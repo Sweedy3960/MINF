@@ -119,26 +119,6 @@ typedef struct
 
 } APP_DATA;
 
-typedef struct
-{
-	E_MODULE_ID id;
-	E_MODULE_MODEL model;
-} MODULE_SLOT_DATA;
-typedef enum
-{
-	MODULE_1 = 1,
-	MODULE_2,
-	MODULE_3,
-	MODULE_4,
-	MODULE_5,
-	MODULE_6,
-	MODULE_7,
-} E_MODULE_ID;
-typedef enum
-{
-	EMPTY = 0,
-	MODULE_23132,
-}E_MODULE_MODEL;
 
 
 

@@ -54,8 +54,6 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 #include "app.h"
-#include "mcp79411.h"
-
 
 // *****************************************************************************
 // *****************************************************************************
@@ -143,24 +141,22 @@ void APP_Tasks ( void )
         /* Application's initial state. */
         case APP_STATE_INIT:
         {
-            APP_InitMcp79411();
-            mcp79411_init();
-            appData.state = APP_STATE_IDLE;
+            bool appInitialized = true;
+       
+        
+            
+            
+                appData.state = APP_STATE_SERVICE_TASKS;
+           
+            break;
         }
 
         case APP_STATE_SERVICE_TASKS:
         {
-                
-               mcp79411_get_time(&appData.timeofRTC);   
-               
+        
             break;
         }
-        case APP_STATE_IDLE:
-        {
 
-             
-            break;
-        }
         /* TODO: implement your application state machine.*/
         
 
@@ -172,24 +168,11 @@ void APP_Tasks ( void )
         }
     }
 }
- void APP_InitMcp79411(void)
-    {
-        i2c_init(1);
-        appData.timeofRTC.sec = 0;
-        appData.timeofRTC.min = 0;
-        appData.timeofRTC.sec = 1;
-        appData.timeofRTC.hour = 0;
-        appData.timeofRTC.mth = 0;
-        appData.timeofRTC.date = 0;
-        appData.timeofRTC.year = 0;
-        mcp79411_set_time(&appData.timeofRTC);
-        //mcp79411_get_time(&appData.timeofRTC);
-    }
- 
-void APP_TIMER4_CALLBACK(void)
+void APP_TIMER3_CALLBACK(void)
 {
     appData.state = APP_STATE_SERVICE_TASKS;
 }
+
 /*******************************************************************************
  End of File
  */
