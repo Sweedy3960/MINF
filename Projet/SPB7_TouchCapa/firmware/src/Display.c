@@ -158,19 +158,86 @@ static void DisplayScreen_Welcome(bool setToDark){
 
 void DisplayScreen_MainMenu(uint16_t * stateTouch, bool setToDark)
 {
-	if (setToDark){
-		UG_SetBackcolor (C_WHITE);
-		UG_SetForecolor (C_BLACK);
-	} else { 
-		UG_SetBackcolor (C_BLACK);
-		UG_SetForecolor (C_WHITE);
-	}
-	UG_FontSetHSpace(0);
-	UG_FontSelect (&FONT_6X8);
-	UG_PutString(1, 2, "Main Menu");
+    static uint8_t menuIndex = 0; // 0 = Afficher signaux, 1 = Renommer un signal, 2 = Test Buzzer
+    //char menuItems[][]= { "Afficher signaux", "Renommer un signal", "Test Buzzer" };
+   
+    char *menuItems[] = {
+    "Afficher signaux",
+    "Renommer un signal",
+    "Test Buzzer"
+    };
     
-	
+    
+    
+    uint8_t nbItems = sizeof(menuItems)/sizeof(menuItems[0]);
+    uint8_t i = 0;
+    // Fond noir ou blanc
+    if (setToDark){
+        UG_SetBackcolor (C_WHITE);
+        UG_SetForecolor (C_BLACK);
+    } else { 
+        UG_SetBackcolor (C_BLACK);
+        UG_SetForecolor (C_WHITE);
+    }
+    UG_FontSetHSpace(0);
+    UG_FontSelect (&FONT_6X8);
+
+    // Titre
+    UG_PutString(1, 2, "Main Menu");
+
+    // Affichage des choix de menu
+    for (i = 0; i < nbItems; i++) {
+        if (i == menuIndex) {
+            // Inversion noir/blanc pour l'item sélectionné
+            UG_SetBackcolor(C_BLACK);
+            UG_SetForecolor(C_WHITE);
+            UG_FillFrame(8, 20 + i*15, 120, 20 + i*15 + 10, C_BLACK);
+        } else {
+            UG_SetBackcolor(C_WHITE);
+            UG_SetForecolor(C_BLACK);
+        }
+        UG_PutString(10, (20 + (i*15)), menuItems[i]);
+    }
+    // Remettre couleurs par défaut
+    if (setToDark) {
+        UG_SetBackcolor (C_WHITE);
+        UG_SetForecolor (C_BLACK);
+    } else {
+        UG_SetBackcolor (C_BLACK);
+        UG_SetForecolor (C_WHITE);
+    }
+
+    // Gestion des touches
+    if (stateTouch) {
+        static uint16_t lastTouch = 0;
+        uint16_t touch = *stateTouch;
+        // Pour éviter l'auto-repeat, on ne traite que les fronts montants
+        if ((touch & KEY_DOWN_C_MASK) && !(lastTouch & KEY_DOWN_C_MASK)) {
+            if (menuIndex < nbItems-1) menuIndex++;
+        }
+        if ((touch & KEY_UP_C_MASK) && !(lastTouch & KEY_UP_C_MASK)) {
+            if (menuIndex > 0) menuIndex--;
+        }
+        if ((touch & KEY_MID_L_MASK) && !(lastTouch & KEY_MID_L_MASK)) {
+            if (menuIndex == 0) {
+                // Afficher l’état des signaux
+                DisplayScreen_Signals(stateTouch, setToDark);
+            } else if (menuIndex == 1) {
+                // Renommer un signal (exemple : signal 0)
+                EditSignalName_IHM(0);
+            } else if (menuIndex == 2) {
+                // Exemple : Test Buzzer
+                // Ici, tu peux appeler une fonction pour activer le buzzer
+                UG_FillFrame(0, 40, 127, 55, C_WHITE);
+                UG_SetForecolor(C_BLACK);
+                UG_PutString(10, 45, "Buzzer en test!");
+                // Ex : Buzzer_Test();
+            }
+        }
+        lastTouch = touch;
+    }
 }
+
 void DisplayScreen_Error(uint16_t * stateTouch, bool setToDark)
 {
     if (setToDark){

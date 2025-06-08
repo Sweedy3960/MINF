@@ -124,7 +124,7 @@ typedef struct
 	uint8_t positionList;
     uint16_t TimerScreen;
     bool dispInit;
-    
+    uint8_t currentScreen;
     /* TODO: Define any additional data used by the application. */
 
 } APP_DISP_DATA;
@@ -230,8 +230,11 @@ void APP_Disp_Initialize ( void );
  */
 
 void APP_Disp_Tasks( void );
+void EditSignalName_IHM(int index);
 void APP_TIMER5_CALLBACK(void);
+void App_Display_ChangeScreen(uint8_t newScreen, uint16_t *touchStates, bool forceUpdate);
 void App_Display_HandleTouch(uint16_t *touchStates);
+
 #endif /* _APP_H */
 
 //DOM-IGNORE-BEGIN

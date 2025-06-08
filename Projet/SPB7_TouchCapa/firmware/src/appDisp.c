@@ -159,17 +159,27 @@ void APP_Disp_Tasks(void) {
 
         case APP_DISP_STATE_SERVICE_TASKS:
         {
-            if (appDispData.needDisplayUpdate) {
+           if (!displayTaskCtrl.isActive)
+                break;
 
+            // === Startup logo sequence ===
+            if (appDispData.needDisplayUpdate) {
                 if (tmrScr >= 3) {
-                    tmrScr = DISP_SIGN;
+                    tmrScr = DISP_SIGN;           // move to default screen
                     appDispData.dispInit = 1;
                 }
-                DisplayScreen(tmrScr, 0, true);
+                App_Display_ChangeScreen(tmrScr, 0, true);    // show welcome screen (force)
                 tmrScr++;
-                appDispData.needDisplayUpdate = false;
+                appDispData.needDisplayUpdate = 0;
             }
-            Display_Task();
+
+            // test if we need display and reset flag afer
+            if (displayTaskCtrl.isDirty && appDispData.dispInit) {
+                App_Display_ChangeScreen(DISP_SIGN, 0, true);  // or current UI state (force)
+                displayTaskCtrl.isDirty = false;    // clear dirty flag
+            }
+
+            Display_Task();  // update UG_GUI and such
             break;
         }
 
@@ -197,9 +207,12 @@ void APP_TIMER5_CALLBACK(void) {
 }
 
 void App_Display_HandleTouch(uint16_t *touchStates) {
-    // mettre à jour l?affichage selon les touches détectées
-    // Par exemple?: changer l'état du menu
-    // Pour l?instant, on se contente de marquer la tâche display comme "dirty"
+    // mettre ï¿½ jour l?affichage selon les touches dï¿½tectï¿½es
+    // Par exemple?: changer l'ï¿½tat du menu
+    // Pour l?instant, on se contente de marquer la tï¿½che display comme "dirty"
+    if (!appDispData.dispInit)
+        return; // Ignore touches until startup is complete
+    
     displayTaskCtrl.isDirty = true;
     
     switch (*touchStates) {
@@ -245,8 +258,10 @@ void App_Display_HandleTouch(uint16_t *touchStates) {
 
             break;
         case ((KEY_MID_L_MASK | KEY_DOWN_L_MASK)):
-            //
-            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            /**
+             * @brief Changement d'Ã©cran vers le menu via App_Display_ChangeScreen (non forcÃ©).
+             */
+            App_Display_ChangeScreen(DISP_SCR_MENU, touchStates, false);
             break;
             //RIGHT
         case ((KEY_UP_R_MASK | KEY_MID_R_MASK)):
@@ -330,39 +345,48 @@ void App_Display_HandleTouch(uint16_t *touchStates) {
             break;
 
         case 0:
-            
-            //touche released 
-            
+             displayTaskCtrl.isDirty = true; 
+            //touche released so rerender
+            // Optional: revert to previous or idle
+             //nothing is pressed 
+             //force redraw may be neecessary 
+             //App_Display_ChangeScreen(DISP_SCR_MENU,touchStates ,false);
             break;
 
             /*
         //HARD COMBO TOUCH   
         case ((KEY_UP_L_MASK|KEY_MID_L_MASK|KEY_UP_C_MASK)):
             //
-            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            // DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            App_Display_ChangeScreen(DISP_SCR_MENU, touchStates, true);
             break;  
             
         case ((KEY_UP_L_MASK | KEY_DOWN_L_MASK|KEY_UP_C_MASK)):
             //
-            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            // DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            App_Display_ChangeScreen(DISP_SCR_MENU, touchStates, true);
             break;    
          case ((KEY_MID_L_MASK|KEY_DOWN_L_MASK|KEY_UP_C_MASK)):
             //
-            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            // DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            App_Display_ChangeScreen(DISP_SCR_MENU, touchStates, true);
             break;   
             
         case ((KEY_UP_R_MASK|KEY_MID_R_MASK|KEY_UP_C_MASK)):
             //
-            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            // DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            App_Display_ChangeScreen(DISP_SCR_MENU, touchStates, true);
             break;  
             
         case ((KEY_UP_R_MASK | KEY_DOWN_R_MASK|KEY_UP_C_MASK)):
             //
-            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            // DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            App_Display_ChangeScreen(DISP_SCR_MENU, touchStates, true);
             break;    
          case ((KEY_MID_R_MASK|KEY_DOWN_R_MASK|KEY_UP_C_MASK)):
             //
-            DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            // DisplayScreen(DISP_SCR_MENU,touchStates ,true);
+            App_Display_ChangeScreen(DISP_SCR_MENU, touchStates, true);
             break;           
              */
 
@@ -379,6 +403,17 @@ void App_Display_HandleTouch(uint16_t *touchStates) {
 
 
 
+}
+void App_Display_ChangeScreen(uint8_t newScreen, uint16_t *touchStates, bool forceUpdate)
+{
+    if (appDispData.currentScreen == newScreen && !forceUpdate)
+        return;  // Skip if already on this screen and no forced redraw
+
+    appDispData.currentScreen = newScreen;
+
+    DisplayScreen(newScreen, touchStates, true);
+
+    displayTaskCtrl.isDirty = false; // reset after full redraw
 }
 /*******************************************************************************
  End of File

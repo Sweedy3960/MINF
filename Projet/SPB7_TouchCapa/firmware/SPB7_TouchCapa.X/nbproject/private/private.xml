@@ -3,41 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/system_exceptions.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/system_config/default/framework/driver/spi/static/src/drv_spi_static_tasks.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/driver/spi/static/src/drv_spi_mapping.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/appTouch.h</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/app_eventbus.h</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/appTouch.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/system_config/default/framework/driver/spi/static/src/drv_spi_static.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/Display.h</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/system_config/default/system_tasks.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/system_config/default/framework/driver/spi/static/src/drv_spi_static_sys_queue.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/app_eventbus.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/system_config/default/framework/driver/spi/static/src/drv_spi_mapping.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/Display.h</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/appDisp.h</file>
-            <file>file:/C:/Program%20Files/Microchip/xc32/v2.50/pic32mx/include/stdlib.h</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/system_config/default/system_interrupt.c</file>
-            <file>file:/C:/Program%20Files/Microchip/xc32/v2.50/pic32mx/include/string.h</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/system_interrupt.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/appDisp.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/system_config/default/framework/driver/tmr/src/drv_tmr_static.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/system_config/default/system_init.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/Display.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/ugui.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/framework/peripheral/int/processor/int_p32mx795f512l.h</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/main.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/LCD_Driver.h</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/Display.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/driver/spi/static/src/drv_spi_static_sys_queue.c</file>
             <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/SPB7_TouchCapa.X/nbproject/Makefile-default.mk</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/LCD_Driver.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/LCD_Driver.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/framework/driver/spi/static/src/drv_spi_static_tasks.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/main.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/app_taskctrl.c</file>
-            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_Screen/firmware/src/system_config/default/system_tasks.c</file>
         </group>
     </open-files>
 </project-private>
