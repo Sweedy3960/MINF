@@ -206,36 +206,11 @@ void DisplayScreen_MainMenu(uint16_t * stateTouch, bool setToDark)
         UG_SetBackcolor (C_BLACK);
         UG_SetForecolor (C_WHITE);
     }
-
+    
     // Gestion des touches
-    if (stateTouch) {
-        static uint16_t lastTouch = 0;
-        uint16_t touch = *stateTouch;
-        // Pour éviter l'auto-repeat, on ne traite que les fronts montants
-        if ((touch & KEY_DOWN_C_MASK) && !(lastTouch & KEY_DOWN_C_MASK)) {
-            if (menuIndex < nbItems-1) menuIndex++;
-        }
-        if ((touch & KEY_UP_C_MASK) && !(lastTouch & KEY_UP_C_MASK)) {
-            if (menuIndex > 0) menuIndex--;
-        }
-        if ((touch & KEY_MID_L_MASK) && !(lastTouch & KEY_MID_L_MASK)) {
-            if (menuIndex == 0) {
-                // Afficher l’état des signaux
-                DisplayScreen_Signals(stateTouch, setToDark);
-            } else if (menuIndex == 1) {
-                // Renommer un signal (exemple : signal 0)
-                EditSignalName_IHM(0);
-            } else if (menuIndex == 2) {
-                // Exemple : Test Buzzer
-                // Ici, tu peux appeler une fonction pour activer le buzzer
-                UG_FillFrame(0, 40, 127, 55, C_WHITE);
-                UG_SetForecolor(C_BLACK);
-                UG_PutString(10, 45, "Buzzer en test!");
-                // Ex : Buzzer_Test();
-            }
-        }
-        lastTouch = touch;
-    }
+    
+    
+    
 }
 
 void DisplayScreen_Error(uint16_t * stateTouch, bool setToDark)
@@ -657,17 +632,20 @@ void DrawEllipse(int centerX, int centerY, int a, int b) {
 void DisplayScreen_Signals( uint16_t *stateTouch,bool setToDark) {
     
     char sginals[7][20];
-    char states[7];
+    uint8_t states[7];
     uint8_t i;
+    if (stateTouch == NULL)
+        return;
     for (i = 0; i < 7; i++) {
-        itoa(states,(int)stateTouch,2);
+        states[i] = (*stateTouch >> i) & 0x01;
     }
     
+   
     
     for (i = 0; i < 7; i++) {
         strcpy(sginals[i], signalNames[i]);
 
-        if (states[i] != '0') {
+        if (states[i] != 0) {
             strcat(sginals[i]," ER"); 
         }
         else
@@ -714,7 +692,7 @@ void EditSignalName_IHM(int index) {
     char tempName[20];
     strncpy(tempName, signalNames[index], sizeof(tempName));
     tempName[sizeof(tempName)-1] = '\0';
- //   int pos = 0; // Position du curseur dans le nom
+    //int pos = 0; // Position du curseur dans le nom
 
     int editing = 1;
     while (editing) {
@@ -726,40 +704,20 @@ void EditSignalName_IHM(int index) {
 
         // Attendre une entrée utilisateur (à adapter selon votre système)
         // Exemples :
-        // - bouton haut : tempName[pos]++
-        // - bouton bas : tempName[pos]--
-        // - bouton gauche : pos--
-        // - bouton droite : pos++
-        // - bouton OK : editing = 0
+        // - bouton haut droitre�: tempName[pos]++
+        // - bouton milieu droite �: tempName[pos]--
+        // - bouton milieu bas = �: pos--
+        // - bouton bas droitre�: pos++
+        // - bouton millieu haut = ok �: editing = 0
         
         
         
-//        int key = GetUserKey(); // À implémenter 
-//        switch (key) {
-//            case KEY_UP:
-//                if (tempName[pos] < 'Z') tempName[pos]++;
-//                else tempName[pos] = 'A';
-//                break;
-//            case KEY_DOWN:
-//                if (tempName[pos] > 'A') tempName[pos]--;
-//                else tempName[pos] = 'Z';
-//                break;
-//            case KEY_LEFT:
-//                if (pos > 0) pos--;
-//                break;
-//            case KEY_RIGHT:
-//                if (pos < (int)strlen(tempName)-1) pos++;
-//                break;
-//            case KEY_OK:
-//                editing = 0;
-//                break;
-//            case KEY_CANCEL:
-//                return; // Annule l'édition
-//        }
-//        */
-    }
+                 // Gestion des touches
+       
+    
     // Appliquer le nouveau nom
     SetSignalName(index, tempName);
+    }
 }
 
 /* *****************************************************************************

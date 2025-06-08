@@ -175,7 +175,7 @@ void APP_Disp_Tasks(void) {
 
             // test if we need display and reset flag afer
             if (displayTaskCtrl.isDirty && appDispData.dispInit) {
-                App_Display_ChangeScreen(DISP_SIGN, 0, true);  // or current UI state (force)
+                App_Display_ChangeScreen(DISP_SIGN, 0, true);  //  current UI state (force)
                 displayTaskCtrl.isDirty = false;    // clear dirty flag
             }
 
@@ -346,11 +346,12 @@ void App_Display_HandleTouch(uint16_t *touchStates) {
 
         case 0:
              displayTaskCtrl.isDirty = true; 
+              
             //touche released so rerender
             // Optional: revert to previous or idle
              //nothing is pressed 
              //force redraw may be neecessary 
-             //App_Display_ChangeScreen(DISP_SCR_MENU,touchStates ,false);
+            App_Display_ChangeScreen(appDispData.currentScreen,touchStates ,true);
             break;
 
             /*
