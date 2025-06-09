@@ -208,7 +208,37 @@ void DisplayScreen_MainMenu(uint16_t * stateTouch, bool setToDark)
     }
     
     // Gestion des touches
-    
+    stateTouch[0] &= 0xFF00; // On garde que les touches haut et bas
+	//déterminer laquelle est appuiyée 
+	if (stateTouch[0] & KEY_UP_L_MASK) {
+		// Touche haut
+		if (menuIndex > 0) {
+			menuIndex--;
+		}
+	} else if (stateTouch[0] & KEY_DOWN_L_MASK) {
+		// Touche bas
+		if (menuIndex < nbItems - 1) {
+			menuIndex++;
+		}
+	} else if (stateTouch[0] & KEY_MID_L_MASK) {
+		// Touche milieu gauche
+		switch (menuIndex) {
+			case 0:
+				// Afficher signaux
+				App_Display_ChangeScreen(DISP_SIGN, stateTouch, false);
+				break;
+			case 1:
+				// Renommer un signal
+				App_Display_ChangeScreen(DISP_CHANGE_SIGN_NAME, stateTouch, false);
+				break;
+			case 2:
+				// Test Buzzer
+				App_Display_ChangeScreen(DISP_SCR_ERROR, stateTouch, false);
+				break;
+			default:
+				break;
+		}
+	}
   
     
 }

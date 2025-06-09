@@ -1,10 +1,12 @@
-
 #include "mcp79411.h"
 
 #include "Mc32_I2cUtil_SM.h"
 #include "app.h"
 
 static mcp79411_obj mcp79411;
+
+// Structure d'état pour la machine d'état I2C du MCP79411
+static S_Descr_I2C_SM mcp_i2c_sm = { I2C_XSM_Idle, 0, 0 };
 
 uint8_t mcp79411_dec2bcd(uint8_t dec)
 {
@@ -292,37 +294,130 @@ void mcp79411_init(void)
     (void)mcp79411_rtc_reg_write(MCP79411_REG_RTCC_OSCTRIM, &reg_OSCTRIM.osctrim_byte, sizeof(reg_OSCTRIM));
      
 }
+// --- Fonctions I2C bloquantes corrigées ---
 uint8_t mcp79411_rtc_iic_write(uint8_t  *tx_buffer, uint16_t len)
 {
-    int8_t ack = 1;
-    static uint8_t i =0;
-
-    I2C_SM_start(I2C_ID_2);
-    I2C_SM_write(I2C_ID_2,MCP79411_I2C_ADDR_W,ack)
-    for (i=0;i<len;i++)//DATA
-    {
-        
-       I2C_SM_write(I2C_ID_2,tx_buffer[i],ack);
+    bool ack;
+    uint8_t i;
+    I2C_SM_start(&mcp_i2c_sm);
+    while (!I2C_SM_isReady(&mcp_i2c_sm));
+    I2C_SM_write(&mcp_i2c_sm, MCP79411_I2C_ADDR_W, &ack);
+    while (!I2C_SM_isReady(&mcp_i2c_sm));
+    for (i = 0; i < len; i++) {
+        I2C_SM_write(&mcp_i2c_sm, tx_buffer[i], &ack);
+        while (!I2C_SM_isReady(&mcp_i2c_sm));
     }
-    I2C_SM_stop(I2C_ID_2);
+    I2C_SM_stop(&mcp_i2c_sm);
+    while (!I2C_SM_isReady(&mcp_i2c_sm));
     return ack;
 }
 
-uint8_t mcp79411_rtc_iic_read(uint8_t  *rx_buffer,uint16_t len)
-{   static uint8_t i =0;
+uint8_t mcp79411_rtc_iic_read(uint8_t  *rx_buffer, uint16_t len)
+{
+    bool ack;
+    uint8_t i;
     int ret = 1;
-
-    I2C_SM_start(I2C_ID_2);
-    
-    I2C_SM_write(I2C_ID_2,MCP79411_I2C_ADDR_R,0);//ADR
-    for (i=0;i<(len-1);i++)
-    {
-        I2C_SM_read(I2C_ID_2,rx_buffer[i],1);
-        
+    I2C_SM_start(&mcp_i2c_sm);
+    while (!I2C_SM_isReady(&mcp_i2c_sm));
+    I2C_SM_write(&mcp_i2c_sm, MCP79411_I2C_ADDR_R, &ack);
+    while (!I2C_SM_isReady(&mcp_i2c_sm));
+    for (i = 0; i < (len - 1); i++) {
+        I2C_SM_read(&mcp_i2c_sm, true, &rx_buffer[i]);
+        while (!I2C_SM_isReady(&mcp_i2c_sm));
     }
-    I2C_SM_read(I2C_ID_2,rx_buffer[len],0);
-    
-    I2C_SM_stop();
+    I2C_SM_read(&mcp_i2c_sm, false, &rx_buffer[len - 1]);
+    while (!I2C_SM_isReady(&mcp_i2c_sm));
+    I2C_SM_stop(&mcp_i2c_sm);
+    while (!I2C_SM_isReady(&mcp_i2c_sm));
     ret = 0;
     return ret;
+}
+
+// --- Fonctions non bloquantes pour la machine d'état I2C du MCP79411 ---
+void mcp79411_rtc_iic_write_nb(uint8_t *tx_buffer, uint16_t len, int *state, bool *done)
+{
+    static bool ack;
+    static uint16_t i = 0;
+    switch (*state) {
+        case 0:
+            i = 0;
+            I2C_SM_start(&mcp_i2c_sm);
+            *state = 1;
+            break;
+        case 1:
+            if (I2C_SM_isReady(&mcp_i2c_sm)) {
+                I2C_SM_write(&mcp_i2c_sm, MCP79411_I2C_ADDR_W, &ack);
+                *state = 2;
+            }
+            break;
+        case 2:
+            if (I2C_SM_isReady(&mcp_i2c_sm)) {
+                if (i < len) {
+                    I2C_SM_write(&mcp_i2c_sm, tx_buffer[i], &ack);
+                    i++;
+                } else {
+                    *state = 3;
+                }
+            }
+            break;
+        case 3:
+            if (I2C_SM_isReady(&mcp_i2c_sm)) {
+                I2C_SM_stop(&mcp_i2c_sm);
+                *state = 4;
+            }
+            break;
+        case 4:
+            if (I2C_SM_isReady(&mcp_i2c_sm)) {
+                *done = true;
+                *state = 0;
+            }
+            break;
+    }
+}
+
+void mcp79411_rtc_iic_read_nb(uint8_t *rx_buffer, uint16_t len, int *state, bool *done)
+{
+    static bool ack;
+    static uint16_t i = 0;
+    switch (*state) {
+        case 0:
+            i = 0;
+            I2C_SM_start(&mcp_i2c_sm);
+            *state = 1;
+            break;
+        case 1:
+            if (I2C_SM_isReady(&mcp_i2c_sm)) {
+                I2C_SM_write(&mcp_i2c_sm, MCP79411_I2C_ADDR_R, &ack);
+                *state = 2;
+            }
+            break;
+        case 2:
+            if (I2C_SM_isReady(&mcp_i2c_sm)) {
+                if (i < (len - 1)) {
+                    I2C_SM_read(&mcp_i2c_sm, true, &rx_buffer[i]);
+                    i++;
+                } else {
+                    *state = 3;
+                }
+            }
+            break;
+        case 3:
+            if (I2C_SM_isReady(&mcp_i2c_sm)) {
+                I2C_SM_read(&mcp_i2c_sm, false, &rx_buffer[len - 1]);
+                *state = 4;
+            }
+            break;
+        case 4:
+            if (I2C_SM_isReady(&mcp_i2c_sm)) {
+                I2C_SM_stop(&mcp_i2c_sm);
+                *state = 5;
+            }
+            break;
+        case 5:
+            if (I2C_SM_isReady(&mcp_i2c_sm)) {
+                *done = true;
+                *state = 0;
+            }
+            break;
+    }
 }

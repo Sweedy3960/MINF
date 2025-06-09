@@ -175,7 +175,7 @@ void APP_Disp_Tasks(void) {
 
             // test if we need display and reset flag afer
             if (displayTaskCtrl.isDirty && appDispData.dispInit) {
-                App_Display_ChangeScreen(DISP_SIGN, 0, true);  //  current UI state (force)
+                App_Display_ChangeScreen(appDispData.currentScreen, 0, true);  //  current UI state (force)
                 displayTaskCtrl.isDirty = false;    // clear dirty flag
             }
 
@@ -218,8 +218,25 @@ void App_Display_HandleTouch(uint16_t *touchStates) {
     switch (*touchStates) {
             //SIMPLE TOUCH
         case KEY_UP_L_MASK:
-            //
-
+            switch (appDispData.currentScreen) {
+                case DISP_SCR_MENU:
+                    // Handle up left key in menu
+                    //to make it work a non blockig way we call a function to set flag then flag is checked 
+                    // and the screen is changed
+                    // this is not good for performance but it is easier to understand
+                    appDispData.needDisplayUpdate = 1;
+                    App_Display_ChangeScreen(DISP_SCR_MENU, touchStates, false);
+                    
+                    break;
+                case DISP_CHANGE_SIGN_NAME:
+                    // Handle up left key in change sign name screen
+                    // This could be used to change the name of the sign
+                    
+                    break;
+                default:
+                   
+                    break;
+            }
             break;
         case KEY_MID_L_MASK:
 
@@ -262,11 +279,13 @@ void App_Display_HandleTouch(uint16_t *touchStates) {
              * @brief Changement d'écran vers le menu via App_Display_ChangeScreen (non forcé).
              */
             App_Display_ChangeScreen(DISP_SCR_MENU, touchStates, false);
+            appDispData.currentScreen = DISP_SCR_MENU; // Update current screen state
             break;
             //RIGHT
         case ((KEY_UP_R_MASK | KEY_MID_R_MASK)):
             //
              App_Display_ChangeScreen(DISP_CHANGE_SIGN_NAME, touchStates, false);
+             appDispData.currentScreen = DISP_CHANGE_SIGN_NAME; // Update current screen state
             break;
 
         case ((KEY_UP_R_MASK | KEY_DOWN_R_MASK)):
@@ -407,6 +426,7 @@ void App_Display_HandleTouch(uint16_t *touchStates) {
 }
 void App_Display_ChangeScreen(uint8_t newScreen, uint16_t *touchStates, bool forceUpdate)
 {
+    touchTaskCtrl.isActive = false; // disable touch task while updating display
     if (appDispData.currentScreen == newScreen && !forceUpdate)
         return;  // Skip if already on this screen and no forced redraw
 
@@ -415,6 +435,7 @@ void App_Display_ChangeScreen(uint8_t newScreen, uint16_t *touchStates, bool for
     DisplayScreen(newScreen, touchStates, true);
 
     displayTaskCtrl.isDirty = false; // reset after full redraw
+    touchTaskCtrl.isActive = true; // re-enable touch task
 }
 /*******************************************************************************
  End of File

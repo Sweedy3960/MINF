@@ -8,6 +8,7 @@ set(SPB7_MCP_default_default_XC32_FILE_TYPE_compile
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/Mc32_I2cUtil_SM.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/PIC32130_AT42QT2120_I2C.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/app.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/gestMCP79411_SM.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/main.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/mcp79411.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/system_config/default/bsp/bsp.c"

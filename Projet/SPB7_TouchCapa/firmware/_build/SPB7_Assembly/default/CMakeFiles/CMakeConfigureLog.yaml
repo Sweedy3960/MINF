@@ -32,7 +32,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
       The C compiler identification is GNU, found in:
-        C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/3.30.3/CompilerIdC/a.out
+        C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_Assembly/default/CMakeFiles/3.30.3/CompilerIdC/a.out
       
   -
     kind: "message-v1"
@@ -57,7 +57,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
       
       The CXX compiler identification is GNU, found in:
-        C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/3.30.3/CompilerIdCXX/a.out
+        C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_Assembly/default/CMakeFiles/3.30.3/CompilerIdCXX/a.out
       
   -
     kind: "message-v1"
@@ -85,23 +85,23 @@ events:
     checks:
       - "Detecting CXX compile features"
     directories:
-      source: "C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-b9edm2"
-      binary: "C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-b9edm2"
+      source: "C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_Assembly/default/CMakeFiles/CMakeScratch/TryCompile-t11c7g"
+      binary: "C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_Assembly/default/CMakeFiles/CMakeScratch/TryCompile-t11c7g"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
-      CMAKE_USER_MAKE_RULES_OVERRIDE: "C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/cmake/SPB7_TouchCapa/default/.generated/overrides.cmake"
+      CMAKE_USER_MAKE_RULES_OVERRIDE: "C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/cmake/SPB7_Assembly/default/.generated/overrides.cmake"
     buildResult:
       variable: "CMAKE_CXX_FEATURE_TEST"
       cached: true
       stdout: |
-        Change Dir: 'C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-b9edm2'
+        Change Dir: 'C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_Assembly/default/CMakeFiles/CMakeScratch/TryCompile-t11c7g'
         
-        Run Build Command(s): C:/Users/aymer/.mplab/app-finder/apps/ninja/v1.12.1/ninja.exe -v cmTC_d8196
-        [1/2] c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_d8196.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-b9edm2/feature_tests.cxx
-        FAILED: CMakeFiles/cmTC_d8196.dir/feature_tests.cxx.obj 
-        c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_d8196.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-b9edm2/feature_tests.cxx
+        Run Build Command(s): C:/Users/aymer/.mplab/app-finder/apps/ninja/v1.12.1/ninja.exe -v cmTC_3c344
+        [1/2] c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_3c344.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_Assembly/default/CMakeFiles/CMakeScratch/TryCompile-t11c7g/feature_tests.cxx
+        FAILED: CMakeFiles/cmTC_3c344.dir/feature_tests.cxx.obj 
+        c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_3c344.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_Assembly/default/CMakeFiles/CMakeScratch/TryCompile-t11c7g/feature_tests.cxx
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
