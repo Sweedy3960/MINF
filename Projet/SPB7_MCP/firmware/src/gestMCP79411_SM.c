@@ -98,8 +98,7 @@ void I2C_MCP_SM_Execute(S_Descr_MCP_SM *pDescr)
     //Déclaration des variables
     int16_t byte;
     bool AckBit;
-    static uint8_t cntTx=0;
-    static uint8_t cntRx=0;
+
     
     switch ( pDescr->Mcpstate )  {
         case  MCP_SM_Idle :
@@ -139,7 +138,9 @@ void I2C_MCP_SM_Execute(S_Descr_MCP_SM *pDescr)
                 break;
 
                 case MCP_I2CSEQ_WriteReg :
+                    
                     I2C_SM_write( &pDescr->I2cSmInfo, pDescr->mcp79411.buffers.tx_buffer[0], &AckBit);
+               
                     if (I2C_SM_isReady (&pDescr->I2cSmInfo)){
                         pDescr->McpSequence = MCP_I2CSEQ_ReStart;
                         I2C_SM_begin(&pDescr->I2cSmInfo); // redemare la SM
