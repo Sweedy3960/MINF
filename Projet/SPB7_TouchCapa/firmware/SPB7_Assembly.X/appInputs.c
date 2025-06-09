@@ -187,8 +187,10 @@ void APP_Inputs_Tasks ( void )
            
             
             
+            
             if (appInputsData.SySwitch.switchStates!=appInputsData.LastSySwitch.switchStates)
             {//||(test ad val) {
+                
                 //set the flag 
                 appInputsData.evtToPubWasConf =true;
                 inputsTaskCtrl.isDirty = true;
@@ -242,13 +244,19 @@ void APP_AdcReadAllSamples(void)
 {
     uint8_t i = 0;
     static uint8_t SampleReadyToRead;
+    uint16_t sample =0;
     SampleReadyToRead = DRV_ADC_SamplesAvailable();
     if (SampleReadyToRead) {
         inputsTaskCtrl.isDirty = true; // ADC est "dirty" pendant la lecture
         for (i = 0; i < 14; i++) {
-            appInputsData.valAD[i] = DRV_ADC_SamplesRead(i);
+            
+            sample = DRV_ADC_SamplesRead(i);
+            // 3 =  2= 1 = 0 = Rien /
+            appInputsData.valAD[i] = (sample>=150)?'2':(sample>=250)?'1':'0';     
         }
+        
     }
+    
 }
 
   void APP_GetInputsStates(void)
