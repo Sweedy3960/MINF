@@ -48,7 +48,7 @@ void I2C_SM_init(  bool Fast, S_Descr_I2C_SM *pDSM )
    
     I2C_SM_begin(pDSM);
 
-    DRV_I2C0_Initialize(I2C_ID_2);    // besoin de la version modifiée
+    DRV_I2C0_Initialize();    // besoin de la version modifiée
  
 }
 

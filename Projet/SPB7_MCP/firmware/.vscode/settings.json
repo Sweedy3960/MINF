@@ -1,0 +1,6 @@
+{
+    "mplab.clangd.arguments": [
+        "--compile-commands-dir=${workspaceRoot}\\_build\\SPB7_MCP\\default"
+    ],
+    "mplab.clangd.path": ""
+}

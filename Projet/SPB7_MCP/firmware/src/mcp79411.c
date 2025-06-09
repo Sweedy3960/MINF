@@ -1,7 +1,7 @@
 
 #include "mcp79411.h"
 
-#include "Mc32_I2cUtilCCS.h"
+#include "Mc32_I2cUtil_SM.h"
 #include "app.h"
 
 static mcp79411_obj mcp79411;
@@ -297,13 +297,14 @@ uint8_t mcp79411_rtc_iic_write(uint8_t  *tx_buffer, uint16_t len)
     int8_t ack = 1;
     static uint8_t i =0;
 
-    i2c_start();
-    ack=i2c_write(MCP79411_I2C_ADDR_W);//ADR
+    I2C_SM_start();
+    I2C_SM_write(I2C_ID_2,MCP79411_I2C_ADDR_W,ack)
     for (i=0;i<len;i++)//DATA
     {
-        ack =i2c_write(tx_buffer[i]);
+        
+       I2C_SM_write(I2C_ID_2,tx_buffer[i],ack);
     }
-    i2c_stop();
+    I2C_SM_stop();
     return ack;
 }
 
@@ -311,14 +312,17 @@ uint8_t mcp79411_rtc_iic_read(uint8_t  *rx_buffer,uint16_t len)
 {   static uint8_t i =0;
     int ret = 1;
 
-    i2c_start();
-    i2c_write(MCP79411_I2C_ADDR_R);//ADR
+    I2C_SM_start(I2C_ID_2);
+    
+    I2C_SM_write(I2C_ID_2,MCP79411_I2C_ADDR_R,0);//ADR
     for (i=0;i<(len-1);i++)
     {
-        rx_buffer[i]=i2c_read(1);
+        I2C_SM_read(I2C_ID_2,rx_buffer[i],1);
+        
     }
-    rx_buffer[len]=i2c_read(0);
-    i2c_stop();
+    I2C_SM_read(I2C_ID_2,rx_buffer[len],0);
+    
+    I2C_SM_stop();
     ret = 0;
     return ret;
 }

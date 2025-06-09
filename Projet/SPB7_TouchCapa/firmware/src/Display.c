@@ -692,32 +692,59 @@ void EditSignalName_IHM(int index) {
     char tempName[20];
     strncpy(tempName, signalNames[index], sizeof(tempName));
     tempName[sizeof(tempName)-1] = '\0';
-    //int pos = 0; // Position du curseur dans le nom
-
+    int pos = 0; // Position du curseur dans le nom
     int editing = 1;
+    uint16_t lastTouch = 0;
     while (editing) {
         // Afficher le nom en cours d'édition avec un curseur (ex: '_')
         char display[24];
         snprintf(display, sizeof(display), "%s_", tempName);
         UG_FillFrame(0, 0, 127, 15, C_WHITE); // Efface la zone d'affichage
+        UG_SetForecolor(C_BLACK);
         UG_PutString(0, 0, display);
+        // Affiche le curseur visuel
+        UG_DrawLine(0 + pos*8, 12, 7 + pos*8, 12, C_BLACK); // Soulignement sous le caractère courant
 
-        // Attendre une entrée utilisateur (à adapter selon votre système)
-        // Exemples :
-        // - bouton haut droitre�: tempName[pos]++
-        // - bouton milieu droite �: tempName[pos]--
-        // - bouton milieu bas = �: pos--
-        // - bouton bas droitre�: pos++
-        // - bouton millieu haut = ok �: editing = 0
-        
-        
-        
-                 // Gestion des touches
-       
-    
+        // Attendre une entrée utilisateur (ici, on suppose un polling du touchStates global)
+        extern volatile uint16_t g_lastTouchStates; // À déclarer dans ton projet, ou passer en paramètre
+        uint16_t touch = g_lastTouchStates;
+        // Gestion des touches :
+        // - KEY_UP_C_MASK : lettre suivante (A->B)
+        // - KEY_DOWN_C_MASK : lettre précédente (B->A)
+        // - KEY_UP_R_MASK : curseur à droite
+        // - KEY_DOWN_R_MASK : curseur à gauche
+        // - KEY_MID_L_MASK : valider
+        // - KEY_MID_R_MASK : annuler
+        if ((touch & KEY_UP_C_MASK) && !(lastTouch & KEY_UP_C_MASK)) {
+            if (tempName[pos] == '\0' || tempName[pos] == ' ') tempName[pos] = 'A';
+            else if (tempName[pos] >= 'A' && tempName[pos] < 'Z') tempName[pos]++;
+            else tempName[pos] = 'A';
+        }
+        if ((touch & KEY_DOWN_C_MASK) && !(lastTouch & KEY_DOWN_C_MASK)) {
+            if (tempName[pos] == '\0' || tempName[pos] == ' ') tempName[pos] = 'Z';
+            else if (tempName[pos] > 'A' && tempName[pos] <= 'Z') tempName[pos]--;
+            else tempName[pos] = 'Z';
+        }
+        if ((touch & KEY_UP_R_MASK) && !(lastTouch & KEY_UP_R_MASK)) {
+            if (pos < (int)strlen(tempName)-1 && pos < (int)sizeof(tempName)-2) pos++;
+        }
+        if ((touch & KEY_DOWN_R_MASK) && !(lastTouch & KEY_DOWN_R_MASK)) {
+            if (pos > 0) pos--;
+        }
+        if ((touch & KEY_MID_L_MASK) && !(lastTouch & KEY_MID_L_MASK)) {
+            // Valider
+            editing = 0;
+        }
+        if ((touch & KEY_MID_R_MASK) && !(lastTouch & KEY_MID_R_MASK)) {
+            // Annuler
+            return;
+        }
+        lastTouch = touch;
+        // Petite pause pour éviter le rebond (à ajuster selon ton système)
+        for (volatile int d=0; d<100000; ++d) { __asm("nop"); }
+    }
     // Appliquer le nouveau nom
     SetSignalName(index, tempName);
-    }
 }
 
 /* *****************************************************************************
