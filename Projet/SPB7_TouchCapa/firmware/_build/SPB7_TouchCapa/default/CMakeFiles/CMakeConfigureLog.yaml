@@ -85,8 +85,8 @@ events:
     checks:
       - "Detecting CXX compile features"
     directories:
-      source: "C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-b9edm2"
-      binary: "C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-b9edm2"
+      source: "C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-dq0bhq"
+      binary: "C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-dq0bhq"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -96,12 +96,12 @@ events:
       variable: "CMAKE_CXX_FEATURE_TEST"
       cached: true
       stdout: |
-        Change Dir: 'C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-b9edm2'
+        Change Dir: 'C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-dq0bhq'
         
-        Run Build Command(s): C:/Users/aymer/.mplab/app-finder/apps/ninja/v1.12.1/ninja.exe -v cmTC_d8196
-        [1/2] c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_d8196.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-b9edm2/feature_tests.cxx
-        FAILED: CMakeFiles/cmTC_d8196.dir/feature_tests.cxx.obj 
-        c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_d8196.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-b9edm2/feature_tests.cxx
+        Run Build Command(s): C:/Users/aymer/.mplab/app-finder/apps/ninja/v1.12.1/ninja.exe -v cmTC_52500
+        [1/2] c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_52500.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-dq0bhq/feature_tests.cxx
+        FAILED: CMakeFiles/cmTC_52500.dir/feature_tests.cxx.obj 
+        c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_52500.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/_build/SPB7_TouchCapa/default/CMakeFiles/CMakeScratch/TryCompile-dq0bhq/feature_tests.cxx
         ninja: build stopped: subcommand failed.
         
       exitCode: 1

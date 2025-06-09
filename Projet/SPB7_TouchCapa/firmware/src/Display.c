@@ -777,7 +777,7 @@ void EditSignalName_IHM(int index) {
     // Appliquer le nouveau nom
     SetSignalName(index, tempName);
 }
-
+ 
 /* *****************************************************************************
  End of File Display
  */

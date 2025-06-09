@@ -1,7 +1,7 @@
 //app_eventbus.c
 #include "app_eventbus.h"
 #include "appDisp.h"
-
+#include "appInputs.h"
 #include "appTouch.h"
 #include "appReg.h"
 void App_EventBus_Publish(app_event_t evt, uint16_t *data)
@@ -14,7 +14,7 @@ void App_EventBus_Publish(app_event_t evt, uint16_t *data)
             break;
 
         case EVT_INPUTS:
-            //App_Display_HandleInputs(data);    //
+            App_Display_HandleInputs(data);    //
             //App_LED_HandleInputs(data);      // Trigger LED if error ack
             //this need to be done
             break;

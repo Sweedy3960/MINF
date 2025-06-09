@@ -413,6 +413,7 @@ void App_Display_ChangeScreen(uint8_t newScreen, uint16_t *touchStates, bool for
 {
     touchTaskCtrl.isActive = false; // disable touch task while updating display
     ledTaskCtrl.isActive = false; //disable SR led updates
+    inputsTaskCtrl.isActive = false; //disable inputs readings
     if (appDispData.currentScreen == newScreen && !forceUpdate)
         return;  // Skip if already on this screen and no forced redraw
 
@@ -423,6 +424,7 @@ void App_Display_ChangeScreen(uint8_t newScreen, uint16_t *touchStates, bool for
     displayTaskCtrl.isDirty = false; // reset after full redraw
     touchTaskCtrl.isActive = true; // re-enable touch task
     ledTaskCtrl.isActive = true;
+    inputsTaskCtrl.isActive = true; //disable inputs readings
 }
 
 
@@ -437,6 +439,15 @@ void APP_DISP_TIMER5_CALLBACK(void) {
     }
 }
 
+void App_Display_HandleInputs(uint16_t *InputsStates)
+ {
+    //static uint16_t lastInputsStates=0;
+    
+    if (*InputsStates !=NULL)
+    {}
+    
+    
+ }
 /*******************************************************************************
  End of File
  */

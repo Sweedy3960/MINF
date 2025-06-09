@@ -54,6 +54,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 #include "appInputs.h"
+#include "app_taskctrl.h"
+#include "app_eventbus.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -77,6 +79,13 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 */
 
 APP_INPUTS_DATA appInputsData;
+
+// Contrôle de tâche pour appInputs
+extern app_task_ctrl_t inputsTaskCtrl;
+
+
+// Dernier état connu pour détection de changement
+static uint16_t lastInputsStates = 0;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -134,6 +143,9 @@ void APP_Inputs_Initialize ( void )
 
 void APP_Inputs_Tasks ( void )
 {
+    /* Ne rien faire si la tâche n'est pas active */
+    if (!inputsTaskCtrl.isActive)
+        return;
 
     /* Check the application's current state. */
     switch ( appInputsData.state )
@@ -159,18 +171,55 @@ void APP_Inputs_Tasks ( void )
             appInputsData.state = APP_INPUTS_STATE_SERVICE_TASKS;
             break;
             
-        }
-
-        case APP_INPUTS_STATE_SERVICE_TASKS:
+        }        case APP_INPUTS_STATE_SERVICE_TASKS:
         {
+            if (!touchTaskCtrl.isActive)
+                break;
+             
+            s_dataSensor.valKey0to7 = AT42QT_Read_Key0to7(0);
+            s_dataSensor.valKey8to11 = AT42QT_Read_Key8to11(0);
+            appTouchData.touchStates = ((s_dataSensor.valKey8to11 <<8)| s_dataSensor.valKey0to7);
+             if (appTouchData.touchStates != appTouchData.lastTouchStates) {
+                //set the flag 
+                touchTaskCtrl.isDirty = true;
+                appTouchData.lastTouchStates = appTouchData.touchStates;
+            }
+
+            appTouchData.state = APP_TOUCH_STATE_IDLE;
+            if (!InputsTaskCtrl.isActive) 
+                break;
+
+            // Désactiver les autres tâches pendant la lecture
+            touchTaskCtrl.isActive = false;
+            displayTaskCtrl.isActive = false;
+            ledTaskCtrl.isActive = false;
+            // Lire les échantillons ADC
+            // et mettre à jour les états des entrées
+
             APP_AdcReadAllSamples();
             APP_GetInputsStates();
+            // Calcul d'un état global pour détection de changement (exemple simple)
+            uint16_t currentInputsStates = 0;
+            for (uint8_t i = 0; i < 14; i++)
+                currentInputsStates |= (appInputsData.valAD[i] ? (1 << i) : 0);
+            if (currentInputsStates != lastInputsStates) {
+                inputsTaskCtrl.isDirty = true;
+                lastInputsStates = currentInputsStates;
+            }
+            // Réactiver les autres tâches
+            touchTaskCtrl.isActive = true;
+            displayTaskCtrl.isActive = true;
+            ledTaskCtrl.isActive = true;
+            // Passer à l'état de service
             appInputsData.state = APP_INPUTS_STATE_IDLE;
             break;
-        }
-         case APP_INPUTS_STATE_IDLE:
+        }         case APP_INPUTS_STATE_IDLE:
         {
-           
+            if (inputsTaskCtrl.isDirty) {
+                // Publier l'événement sur le bus
+                App_EventBus_Publish(EVT_INPUTS, &lastInputsStates);
+                inputsTaskCtrl.isDirty = false;
+            }
             break;
         }
 
@@ -186,21 +235,18 @@ void APP_Inputs_Tasks ( void )
     }
 }
 void APP_AdcReadAllSamples(void)
-    {
-        uint8_t i = 0;
-        static uint8_t SampleReadyToRead;
-        SampleReadyToRead = DRV_ADC_SamplesAvailable();
-
-        if (SampleReadyToRead)
-        {
-            for (i = 0; i < 14; i++)
-            {
-                appInputsData.valAD[i] = DRV_ADC_SamplesRead(i);
-
-
-            }
+{
+    uint8_t i = 0;
+    static uint8_t SampleReadyToRead;
+    SampleReadyToRead = DRV_ADC_SamplesAvailable();
+    if (SampleReadyToRead) {
+        inputsTaskCtrl.isDirty = true; // ADC est "dirty" pendant la lecture
+        for (i = 0; i < 14; i++) {
+            appInputsData.valAD[i] = DRV_ADC_SamplesRead(i);
         }
     }
+}
+
   void APP_GetInputsStates(void)
     {
 
@@ -218,13 +264,13 @@ void APP_AdcReadAllSamples(void)
   
   
   void APP_TIMER_AD_CALL_BACK(void)
-  {
-      
-      //200ms call back wee want read each time as its slow
-      appInputsData.state = APP_INPUTS_STATE_SERVICE_TASKS;
-      
-      
-  }
+{
+    // 200ms call back, on veut lire à chaque fois car c'est lent
+    appInputsData.state = APP_INPUTS_STATE_SERVICE_TASKS;
+    // Activer la tâche inputs
+    inputsTaskCtrl.isActive = true;
+}
+
 
 /*******************************************************************************
  End of File

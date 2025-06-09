@@ -83,10 +83,30 @@ extern "C" {
     This enumeration defines the valid application states.  These states
     determine the behavior of the application at various times.
 */
-       typedef struct {
-        uint8_t state : 1;
+      typedef union {
 
-    } SwithcConfig;
+        struct {
+            uint8_t Ain1_conf:1;
+            uint8_t Ain2_conf:1;
+            uint8_t Ain3_conf:1;
+            uint8_t Unsude_1:1;
+            uint8_t FreeIn1_conf:1;
+            uint8_t FreeIn2_conf:1;
+            uint8_t FreeIn3_conf:1;
+            uint8_t FreeIn4_conf:1;
+            uint8_t FreeIn5_conf:1;
+            uint8_t Unsude_2:1;
+            uint8_t SPBIn1_conf:1;
+            uint8_t SPBIn2_conf:1;
+            uint8_t SPBIn3_conf:1;
+            uint8_t Unsude_3:1;
+            uint8_t Unsude_4:1;
+            uint8_t Unsude_5:1;
+
+        };
+        uint16_t switchStates;
+        bool state;
+    } CONFIG_SWITCHS;  
 
     typedef enum {
         //AIN switch can set if it's an 0-10v or 4-20mA input
@@ -107,24 +127,9 @@ extern "C" {
         SPB_IN_REPEAT = 1,
     } ConfigStatesSPBs;
 
-     typedef struct {
-        SwithcConfig Ain1_conf;
-        SwithcConfig Ain2_conf;
-        SwithcConfig Ain3_conf;
-
-        SwithcConfig FreeIn1_conf;
-        SwithcConfig FreeIn2_conf;
-        SwithcConfig FreeIn3_conf;
-        SwithcConfig FreeIn4_conf;
-        SwithcConfig FreeIn5_conf;
-
-        SwithcConfig SPBIn1_conf;
-        SwithcConfig SPBIn2_conf;
-        SwithcConfig SPBIn3_conf;
-    } ConfInSwitchs;
+    
 
 
-ConfInSwitchs SySwitch;
 typedef enum
 {
 	/* Application's state machine's initial state. */
@@ -154,7 +159,11 @@ typedef struct
     /* The application's current state */
     APP_INPUTS_STATES state;
     ADC_SAMPLE valAD[14];
-    ConfInSwitchs SySwitch;
+    ADC_SAMPLE lastValAD[14];
+    CONFIG_SWITCHS SySwitch;
+    CONFIG_SWITCHS LastSySwitch;
+    bool evtToPubWasAD;
+    bool evtToPubWasConf;
     /* TODO: Define any additional data used by the application. */
 
 } APP_INPUTS_DATA;

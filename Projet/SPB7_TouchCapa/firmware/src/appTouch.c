@@ -160,6 +160,11 @@ void APP_Touch_Tasks ( void )
              if (!touchTaskCtrl.isActive)
                 break;
              
+            // Désactiver les autres tâches pendant la lecture
+            inputsTaskCtrl.isActive = false;
+            displayTaskCtrl.isActive = false;
+            ledTaskCtrl.isActive = false;
+             
             s_dataSensor.valKey0to7 = AT42QT_Read_Key0to7(0);
             s_dataSensor.valKey8to11 = AT42QT_Read_Key8to11(0);
             appTouchData.touchStates = ((s_dataSensor.valKey8to11 <<8)| s_dataSensor.valKey0to7);
@@ -180,7 +185,10 @@ void APP_Touch_Tasks ( void )
              //send the event
              App_EventBus_Publish(EVT_TOUCH, &appTouchData.touchStates);
              touchTaskCtrl.isDirty = false;  // clear after publishing
-    }
+             inputsTaskCtrl.isActive = false;
+             displayTaskCtrl.isActive = false;
+             ledTaskCtrl.isActive = false;
+    }   
             
         }
         break;

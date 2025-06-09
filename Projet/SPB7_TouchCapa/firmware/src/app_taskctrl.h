@@ -15,6 +15,7 @@ extern app_task_ctrl_t touchTaskCtrl;
 extern app_task_ctrl_t displayTaskCtrl;
 
 extern app_task_ctrl_t ledTaskCtrl;
-// ...
+
+extern app_task_ctrl_t inputsTaskCtrl;
 
 #endif // APP_TASKCTRL_H

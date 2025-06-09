@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<project>                                  
+  <executable name="C:\microchip\harmony\v2_06\apps\MINF\Projet\SPB7_TouchCapa\out\SPB7_Assembly\default.elf">                 
+    <memory name="program">                 
+      <units>bytes</units>                 
+      <length>531968</length>                 
+      <used>121324</used>                     
+      <free>410644</free>                     
+    </memory>                              
+    <memory name="data">              
+      <units>bytes</units>                 
+      <length>131072</length>                 
+      <used>3548</used>                     
+      <free>127524</free>                     
+    </memory>                              
+  </executable>                            
+</project>                                 

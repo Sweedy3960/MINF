@@ -174,10 +174,12 @@ void APP_Reg_Tasks(void) {
 
                 touchTaskCtrl.isActive = false; // disable touch task while updating display
                 displayTaskCtrl.isActive = false;
+                inputsTaskCtrl.isActive = false;
                 SR_Update(&appRegData.sysLeds);
                 ledTaskCtrl.isDirty = false; // clear after updating
                 touchTaskCtrl.isActive = true; // disable touch task while updating display
                 displayTaskCtrl.isActive = true;
+                inputsTaskCtrl.isActive = true;
                 break;
             }
 

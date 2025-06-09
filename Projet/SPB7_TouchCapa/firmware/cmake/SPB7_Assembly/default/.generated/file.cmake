@@ -5,6 +5,9 @@ set(SPB7_Assembly_default_default_XC32_FILE_TYPE_assembleWithPreprocess)
 set_source_files_properties(${SPB7_Assembly_default_default_XC32_FILE_TYPE_assembleWithPreprocess} PROPERTIES LANGUAGE ASM)
 set(SPB7_Assembly_default_default_XC32_FILE_TYPE_compile
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../../../../../../framework/system/int/src/sys_int_pic32.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../SPB7_Assembly.X/Driver_SR_SN74HCS596QPWRQ1.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../SPB7_Assembly.X/appInputs.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../SPB7_Assembly.X/appReg.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/Display.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/LCD_Driver.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../src/Mc32_I2cUtilCCS.c"
