@@ -228,10 +228,9 @@ void APP_Disp_Initialize ( void );
   Remarks:
     This routine must be called from SYS_Tasks() routine.
  */
-
+void APP_DISP_TIMER5_CALLBACK(void);
 void APP_Disp_Tasks( void );
 void EditSignalName_IHM(int index);
-void APP_TIMER5_CALLBACK(void);
 void App_Display_ChangeScreen(uint8_t newScreen, uint16_t *touchStates, bool forceUpdate);
 void App_Display_HandleTouch(uint16_t *touchStates);
 

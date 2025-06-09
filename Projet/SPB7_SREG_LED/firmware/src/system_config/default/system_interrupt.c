@@ -60,7 +60,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 #include "system/common/sys_common.h"
-#include "app.h"
+#include "appReg.h"
 #include "system_definitions.h"
 
 // *****************************************************************************
@@ -81,13 +81,14 @@ void __ISR(_TIMER_2_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance1(void)
 }
 void __ISR(_TIMER_3_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance2(void)
 {
+    //20ms
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_3);
-    APP_TIMER3_CALLBACK();
+    //APP_TIMER3_CALLBACK();
 }
 void __ISR(_TIMER_4_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance3(void)
 {
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_4);
-      
+    APP_TIMER4_CALLBACK();
 }
 void __ISR(_TIMER_5_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance4(void)
 {

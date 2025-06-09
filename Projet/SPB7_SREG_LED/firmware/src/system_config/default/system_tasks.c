@@ -80,7 +80,7 @@ void SYS_Tasks ( void )
     /* Maintain Middleware & Other Libraries */
 
     /* Maintain the application's state machine. */
-    APP_Tasks();
+    APP_REG_Tasks();
 }
 
 

@@ -60,10 +60,14 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 
 #include "system/common/sys_common.h"
-#include "appTouch.h"
 #include "system_definitions.h"
+
+
+#include "appReg.h"
+#include "appDisp.h"
 #include "Display.h"
 
+#include "appTouch.h"
 // *****************************************************************************
 // *****************************************************************************
 // Section: System Interrupt Vector Functions
@@ -79,28 +83,37 @@ void __ISR(_TIMER_1_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance0(void)
 }
 void __ISR(_TIMER_2_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance1(void)
 {
+    //working fine but not with touch capa to test 
+    //APP_TIMER_AD_CALL_BACK();
+    //50ms for touch capa
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_2);
+    APP_TIMER2_CALLBACK();
 }
 void __ISR(_TIMER_3_VECTOR, ipl0AUTO) IntHandlerDrvTmrInstance2(void)
 {
+    //for adc
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_3);
+   
 }
 void __ISR(_TIMER_4_VECTOR, ipl2AUTO) IntHandlerDrvTmrInstance3(void)
 {
-    //50ms
+    //10ms for SR
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_4);
     APP_TIMER4_CALLBACK();
          
 }
 void __ISR(_TIMER_5_VECTOR, ipl1AUTO) IntHandlerDrvTmrInstance4(void)
 {
- 
+    //10ms for disp
     Display_TimerCallback();
+    //APP_TIMER5_CALLBACK();
     PLIB_INT_SourceFlagClear(INT_ID_0,INT_SOURCE_TIMER_5);
+    APP_DISP_TIMER5_CALLBACK();
     
-    APP_TIMER5_CALLBACK();
    
 }
+
+
 
 
  /*******************************************************************************

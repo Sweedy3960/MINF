@@ -11,8 +11,10 @@ typedef struct {
 // Declare task control instances
 extern app_task_ctrl_t touchTaskCtrl;
 // Add more for other modules:
-extern app_task_ctrl_t ledTaskCtrl;
+
 extern app_task_ctrl_t displayTaskCtrl;
+
+extern app_task_ctrl_t ledTaskCtrl;
 // ...
 
 #endif // APP_TASKCTRL_H

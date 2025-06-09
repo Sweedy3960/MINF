@@ -150,7 +150,7 @@ void APP_Touch_Tasks ( void )
         {
             AT42QT_Init();
             appTouchData.state = APP_TOUCH_STATE_SERVICE_TASKS;
-            DRV_TMR3_Start();
+            DRV_TMR1_Start();
             LIFELED_GREENOff();
             break;
         }
@@ -196,7 +196,7 @@ void APP_Touch_Tasks ( void )
     }
 }
 
-void APP_TIMER4_CALLBACK(void)
+void APP_TIMER2_CALLBACK(void)
 {
     //time the app
     appTouchData.state = APP_TOUCH_STATE_SERVICE_TASKS;

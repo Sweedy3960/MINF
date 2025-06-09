@@ -50,7 +50,8 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 #include "system_definitions.h"
 #include "appTouch.h"
 #include "appDisp.h"
-
+#include "appReg.h"
+#include "appInputs.h"
 
 // ****************************************************************************
 // ****************************************************************************
@@ -156,6 +157,10 @@ void SYS_Initialize ( void* data )
 
     /* Initialize Drivers */
 
+    /* Initialize ADC */
+    DRV_ADC_Initialize();
+
+
     /*** SPI Driver Index 0 initialization***/
 
     sysObj.spiObjectIdx0 = DRV_SPI_Initialize(DRV_SPI_INDEX_0, (const SYS_MODULE_INIT  * const)NULL);
@@ -189,6 +194,9 @@ void SYS_Initialize ( void* data )
     /* Initialize the Application */
     APP_Touch_Initialize();
     APP_Disp_Initialize();
+  
+    APP_REG_Initialize();
+    APP_Inputs_Initialize();
 }
 
 

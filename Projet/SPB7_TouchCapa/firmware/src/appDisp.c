@@ -195,18 +195,9 @@ void APP_Disp_Tasks(void) {
     }
 }
 
-void APP_TIMER5_CALLBACK(void) {
-
-    appDispData.TimerScreen--;
-    if (appDispData.TimerScreen == 0) {
-        appDispData.TimerScreen = 200;
-        if (!appDispData.dispInit) {
-            appDispData.needDisplayUpdate = 1;
-        }
-    }
-}
 
 void App_Display_HandleTouch(uint16_t *touchStates) {
+    static uint16_t lastTouchStates =0;
     // mettre � jour l?affichage selon les touches d�tect�es
     // Par exemple?: changer l'�tat du menu
     // Pour l?instant, on se contente de marquer la t�che display comme "dirty"
@@ -214,11 +205,32 @@ void App_Display_HandleTouch(uint16_t *touchStates) {
         return; // Ignore touches until startup is complete
     
     displayTaskCtrl.isDirty = true;
-    
     switch (*touchStates) {
             //SIMPLE TOUCH
         case KEY_UP_L_MASK:
-            switch (appDispData.currentScreen) {
+           
+        case KEY_MID_L_MASK:
+
+           
+        case KEY_DOWN_L_MASK:
+
+            
+        case KEY_UP_C_MASK:
+
+           
+        case KEY_DOWN_C_MASK:
+
+           
+        case KEY_UP_R_MASK:
+
+           
+        case KEY_MID_R_MASK:
+
+         
+        case KEY_DOWN_R_MASK:
+
+            
+             switch (appDispData.currentScreen) {
                 case DISP_SCR_MENU:
                     // Handle up left key in menu
                     //to make it work a non blockig way we call a function to set flag then flag is checked 
@@ -238,29 +250,6 @@ void App_Display_HandleTouch(uint16_t *touchStates) {
                     break;
             }
             break;
-        case KEY_MID_L_MASK:
-
-            break;
-        case KEY_DOWN_L_MASK:
-
-            break;
-        case KEY_UP_C_MASK:
-
-            break;
-        case KEY_DOWN_C_MASK:
-
-            break;
-        case KEY_UP_R_MASK:
-
-            break;
-        case KEY_MID_R_MASK:
-
-            break;
-        case KEY_DOWN_R_MASK:
-
-            break;
-
-
 
             //SIMPLE COMBO TOUCH   
 
@@ -365,12 +354,8 @@ void App_Display_HandleTouch(uint16_t *touchStates) {
 
         case 0:
              displayTaskCtrl.isDirty = true; 
-              
             //touche released so rerender
-            // Optional: revert to previous or idle
-             //nothing is pressed 
-             //force redraw may be neecessary 
-            App_Display_ChangeScreen(appDispData.currentScreen,touchStates ,true);
+            App_Display_ChangeScreen(appDispData.currentScreen,&lastTouchStates,true);
             break;
 
             /*
@@ -420,13 +405,14 @@ void App_Display_HandleTouch(uint16_t *touchStates) {
             break;
     }
 
-
+   lastTouchStates =  *touchStates;
 
 
 }
 void App_Display_ChangeScreen(uint8_t newScreen, uint16_t *touchStates, bool forceUpdate)
 {
     touchTaskCtrl.isActive = false; // disable touch task while updating display
+    ledTaskCtrl.isActive = false; //disable SR led updates
     if (appDispData.currentScreen == newScreen && !forceUpdate)
         return;  // Skip if already on this screen and no forced redraw
 
@@ -436,7 +422,21 @@ void App_Display_ChangeScreen(uint8_t newScreen, uint16_t *touchStates, bool for
 
     displayTaskCtrl.isDirty = false; // reset after full redraw
     touchTaskCtrl.isActive = true; // re-enable touch task
+    ledTaskCtrl.isActive = true;
 }
+
+
+void APP_DISP_TIMER5_CALLBACK(void) {
+
+    appDispData.TimerScreen--;
+    if (appDispData.TimerScreen == 0) {
+        appDispData.TimerScreen = 200;
+        if (!appDispData.dispInit) {
+            appDispData.needDisplayUpdate = 1;
+        }
+    }
+}
+
 /*******************************************************************************
  End of File
  */

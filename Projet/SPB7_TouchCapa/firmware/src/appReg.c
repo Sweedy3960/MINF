@@ -53,7 +53,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 // *****************************************************************************
 
-#include "app.h"
+#include "appReg.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -76,7 +76,7 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
     Application strings and buffers are be defined outside this structure.
 */
 
-APP_DATA appData;
+APP_REG_DATA appRegData;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -112,10 +112,10 @@ APP_DATA appData;
     See prototype in app.h.
  */
 
-void APP_Initialize ( void )
+void APP_REG_Initialize ( void )
 {
     /* Place the App state machine in its initial state. */
-    appData.state = APP_STATE_INIT;
+    appRegData.Regstate = APP_REG_STATE_INIT;
 
     
     /* TODO: Initialize your application's state machine and other
@@ -132,33 +132,38 @@ void APP_Initialize ( void )
     See prototype in app.h.
  */
 
-void APP_Tasks ( void )
+void APP_REG_Tasks ( void )
 {
 
     /* Check the application's current state. */
-    switch ( appData.state )
+    switch ( appRegData.Regstate )
     {
         /* Application's initial state. */
-        case APP_STATE_INIT:
+        case APP_REG_STATE_INIT:
         {
-            bool appInitialized = true;
-       
-        
             
-            
-                appData.state = APP_STATE_SERVICE_TASKS;
+            SR_Init(&appRegData.sysLeds);
+           
+            appRegData.Regstate = APP_REG_STATE_SERVICE_TASKS;
            
             break;
         }
 
-        case APP_STATE_SERVICE_TASKS:
+        case APP_REG_STATE_SERVICE_TASKS:
         {
         
+            
+            SR_Update(&appRegData.sysLeds);    
+            appRegData.Regstate = APP_REG_STATE_IDLE;
             break;
         }
 
         /* TODO: implement your application state machine.*/
-        
+        case APP_REG_STATE_IDLE:
+        {
+            
+            break;
+        }
 
         /* The default state should never be executed. */
         default:
@@ -168,11 +173,45 @@ void APP_Tasks ( void )
         }
     }
 }
-void APP_TIMER3_CALLBACK(void)
-{
-    appData.state = APP_STATE_SERVICE_TASKS;
-}
 
+
+void APP_WaitStart(uint16_t waitingTime_ms)
+    {
+
+        appRegData.AppDelay = waitingTime_ms - 1;
+        DRV_TMR3_Start();
+        appRegData.APP_DelayTimeIsRunning = 1;
+        // Garde-fou : timeout logiciel (2x le temps demandé)
+       
+       
+        while (appRegData.APP_DelayTimeIsRunning)
+        {
+            
+        }
+        DRV_TMR3_Stop();
+    }
+
+    void APP_TIMER4_CALLBACK(void)
+    {
+        if (appRegData.AppDelay > 0)
+        {
+            appRegData.AppDelay--;
+        }
+        else
+        {
+            appRegData.APP_DelayTimeIsRunning = 0;
+        }
+
+    }
+
+
+
+
+void APP_SER_SET_CMD_LED( uint16_t *cmd)
+{
+
+    appRegData.sysLeds.cmd_leds = *cmd;
+}
 /*******************************************************************************
  End of File
  */

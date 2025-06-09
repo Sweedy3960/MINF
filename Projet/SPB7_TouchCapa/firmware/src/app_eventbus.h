@@ -6,6 +6,8 @@
 typedef enum {
     EVT_TOUCH,
     EVT_DISPLAY,
+    EVT_SREG_LED,  
+    EVT_INPUTS,       
     EVT_TIMER5_TOUCH_ELAPSED,
 } app_event_t;
 
