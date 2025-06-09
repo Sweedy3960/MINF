@@ -285,7 +285,7 @@ void mcp79411_init(void)
     reg_CONTROL.bits.ALM0EN = 0;
     reg_CONTROL.bits.ALM1EN = 0;
     reg_CONTROL.bits.SQWEN = 1;
-    reg_CONTROL.bits.OUT = 1;
+    reg_CONTROL.bits.OUT = 0;
     (void)mcp79411_rtc_reg_write(MCP79411_REG_RTCC_CONTROL, &reg_CONTROL.ctrl_byte, sizeof(reg_CONTROL));
 
     reg_OSCTRIM.osctrim_byte = 0;

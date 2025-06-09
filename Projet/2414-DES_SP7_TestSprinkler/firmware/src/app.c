@@ -111,10 +111,10 @@ float songMelody[10] = {
 #define SONG_LENGTH (sizeof(songMelody)/sizeof(songMelody[0]))
 
 
-static uint8_t DebugUART_Enable =1; // Flag to enable/disable debug UART output
-static uint8_t InitMcp =0;
+static uint8_t DebugUART_Enable =0; // Flag to enable/disable debug UART output
+static uint8_t InitMcp =1;
 static uint8_t InitADC =1;
-static uint8_t InitTouchCap =1;
+static uint8_t InitTouchCap =0;
 static uint8_t SDcard=0;
 
 
@@ -187,6 +187,7 @@ void APP_Tasks(void)
         /* Application's initial state. */
     case APP_STATE_INIT:
     {
+        SR_Init(&appData.sysLeds);
           if(DebugUART_Enable)
               
         {
@@ -227,7 +228,8 @@ void APP_Tasks(void)
 
     case APP_STATE_SERVICE_TASKS:
     {
-        
+        appData.sysLeds.cmd_leds =0xFFFF;
+                SR_Update(&appData.sysLeds);
         if(DebugUART_Enable) DebugUART_Print("[SM] Starting SERVICE_TASKS functionality\r\n");
         appData.state = APP_STATE_WAIT_START;
        
@@ -344,7 +346,7 @@ void APP_Tasks(void)
         {
             if(DebugUART_Enable) DebugUART_Print("[SM] Starting BUZZER functionality\r\n");
             //call to play a song
-           // APP_PlaySong();
+            APP_PlaySong();
             // Transition back to the service tasks stateB
             LIFELED_GREENToggle();
         }
@@ -525,6 +527,7 @@ void APP_Tasks(void)
 
     void APP_InitMcp79411(void)
     {
+        i2c_init(1);
         appData.timeofRTC.sec = 0;
         appData.timeofRTC.min = 0;
         appData.timeofRTC.sec = 1;

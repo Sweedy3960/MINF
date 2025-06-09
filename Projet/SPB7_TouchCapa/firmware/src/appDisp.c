@@ -266,7 +266,7 @@ void App_Display_HandleTouch(uint16_t *touchStates) {
             //RIGHT
         case ((KEY_UP_R_MASK | KEY_MID_R_MASK)):
             //
-
+             App_Display_ChangeScreen(DISP_CHANGE_SIGN_NAME, touchStates, false);
             break;
 
         case ((KEY_UP_R_MASK | KEY_DOWN_R_MASK)):

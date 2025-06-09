@@ -209,7 +209,7 @@ void DisplayScreen_MainMenu(uint16_t * stateTouch, bool setToDark)
     
     // Gestion des touches
     
-    
+  
     
 }
 
@@ -740,8 +740,8 @@ void EditSignalName_IHM(int index) {
             return;
         }
         lastTouch = touch;
-        // Petite pause pour éviter le rebond (à ajuster selon ton système)
-        for (volatile int d=0; d<100000; ++d) { __asm("nop"); }
+       
+       
     }
     // Appliquer le nouveau nom
     SetSignalName(index, tempName);
