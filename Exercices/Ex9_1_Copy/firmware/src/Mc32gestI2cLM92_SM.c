@@ -22,7 +22,7 @@
 #include "system_config.h"    // pour bsp
 
 // Compilation conditionelle (Mettre en commentaire pour ne pas utiliser les leds)
-#define USE_LED_MEASURE true
+//#define USE_LED_MEASURE true
 // Utilisation BSP_LED 5 & 6
 
 // Définition pour LM92

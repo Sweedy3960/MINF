@@ -297,14 +297,14 @@ uint8_t mcp79411_rtc_iic_write(uint8_t  *tx_buffer, uint16_t len)
     int8_t ack = 1;
     static uint8_t i =0;
 
-    I2C_SM_start();
+    I2C_SM_start(I2C_ID_2);
     I2C_SM_write(I2C_ID_2,MCP79411_I2C_ADDR_W,ack)
     for (i=0;i<len;i++)//DATA
     {
         
        I2C_SM_write(I2C_ID_2,tx_buffer[i],ack);
     }
-    I2C_SM_stop();
+    I2C_SM_stop(I2C_ID_2);
     return ack;
 }
 
