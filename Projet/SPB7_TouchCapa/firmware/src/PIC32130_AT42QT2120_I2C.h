@@ -45,7 +45,7 @@ extern "C" {
 #define I2C_ADDRESS_READ  0X39 //Address READ  0X1C + READ 1
     
 #define WHEEL_ENABLE      0X80 //Enable WHEEL on channels 0,1 and 2
-#define DETECT_THRESHOLD  0X32 //Change the value for the key    
+#define DETECT_THRESHOLD  0X0C //Change the value for the key    
     
 /*Déclaration des registres*/
  /*-----NAME REGISTRE    ADDRESSE  DESCRITPTION-------------------*/

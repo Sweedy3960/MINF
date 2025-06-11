@@ -146,7 +146,8 @@ void SR_Update(SERIAL_REG_DATA *SregData) {
     //outputs of 
     // TESTPINOn();//set off 
     //TESTPINOff();//set on 
-   
+    SR_LED_OE_2On();//set off 
+    SR_LED_OE_1On();
     //data valid at first clk
     SR_LED_DATAStateSet((cmd_led_save & 0x01));   
     APP_WaitStart(1);
