@@ -94,7 +94,7 @@ void SYS_Tasks ( void )
    
     APP_Reg_Tasks();
     
-    APP_Inputs_Tasks();
+    //APP_Inputs_Tasks();
     
 }
 

@@ -143,7 +143,7 @@ void APP_Reg_Tasks(void) {
         {
 
             SR_Init(&appRegData.sysLeds);
-            
+
             appRegData.Regstate = APP_REG_STATE_SERVICE_TASKS;
 
             break;
@@ -214,13 +214,13 @@ void APP_TIMER4_CALLBACK(void) {
 
 }
 
-void APP_SER_SET_CMD_LED(uint16_t *cmd) {
+void APP_SER_SET_CMD_LED(uint16_t cmd) {
 
-    appRegData.sysLeds.cmd_leds = *cmd;
+    appRegData.sysLeds.cmd_leds = cmd;
 }
 
 void App_LED_HandleTouch(uint16_t *touchStates) {
-   // static uint16_t lastTouchStates = 0;
+    // static uint16_t lastTouchStates = 0;
     // mettre � jour l?affichage selon les touches d�tect�es
     // Par exemple?: changer l'�tat du menu
     // Pour l?instant, on se contente de marquer la t�che display comme "dirty"
@@ -229,26 +229,27 @@ void App_LED_HandleTouch(uint16_t *touchStates) {
     switch (*touchStates) {
             //SIMPLE TOUCH
         case KEY_UP_L_MASK:
-
+            APP_SER_SET_CMD_LED(~(*touchStates));
         case KEY_MID_L_MASK:
-
+            APP_SER_SET_CMD_LED(~(*touchStates));
 
         case KEY_DOWN_L_MASK:
 
-
+            APP_SER_SET_CMD_LED(~(*touchStates));
         case KEY_UP_C_MASK:
 
-
+            APP_SER_SET_CMD_LED(~(*touchStates));
         case KEY_DOWN_C_MASK:
 
-
+            APP_SER_SET_CMD_LED(~(*touchStates));
         case KEY_UP_R_MASK:
 
-
+            APP_SER_SET_CMD_LED(~(*touchStates));
         case KEY_MID_R_MASK:
-
+            APP_SER_SET_CMD_LED(~(*touchStates));
 
         case KEY_DOWN_R_MASK:
+            APP_SER_SET_CMD_LED(~(*touchStates));
             break;
         default:
             break;

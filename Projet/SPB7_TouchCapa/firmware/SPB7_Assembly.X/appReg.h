@@ -201,7 +201,7 @@ void APP_REG_Initialize ( void );
 
 void APP_Reg_Tasks( void );
 void APP_WaitStart(uint16_t waitingTime_ms);
-void APP_SER_SET_CMD_LED( uint16_t *cmd);
+void APP_SER_SET_CMD_LED( uint16_t cmd);
 void APP_TIMER4_CALLBACK(void);
 void App_LED_HandleTouch(uint16_t *data);
 #endif /* _APP_H */

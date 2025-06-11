@@ -196,7 +196,7 @@ void SYS_Initialize ( void* data )
     APP_Disp_Initialize();
   
     APP_REG_Initialize();
-    APP_Inputs_Initialize();
+   // APP_Inputs_Initialize();
 }
 
 
