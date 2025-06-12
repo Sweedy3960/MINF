@@ -3,7 +3,30 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_ADC_IN/firmware/src/appInputs.c</file>
             <file>file:/C:/microchip/harmony/v2_06/framework/system/common/sys_module.h</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/appInputs.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/appTouch.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/SPB7_Assembly.X/Driver_SR_SN74HCS596QPWRQ1.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/src/system_config/default/system_init.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/app_eventbus.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/system_config/default/system_tasks.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_ADC_IN/firmware/src/system_config/default/system_tasks.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/system_config/default/framework/driver/spi/static/src/drv_spi_static_sys_queue.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_ADC_IN/firmware/src/system_config/default/framework/driver/tmr/src/drv_tmr_static.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/SPB7_Assembly.X/appReg.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/SPB7_Assembly.X/appInputs.h</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/LCD_Driver.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/SPB7_Assembly.X/appReg.h</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/app_taskctrl.h</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/SPB7_Assembly.X/appInputs.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/main.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/PIC32130_AT42QT2120_I2C.h</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/app_taskctrl.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/PIC32130_AT42QT2120_I2C.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/appDisp.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/Display.c</file>
+            <file>file:/C:/microchip/harmony/v2_06/apps/MINF/Projet/SPB7_TouchCapa/firmware/src/system_config/default/system_init.c</file>
         </group>
     </open-files>
 </project-private>
