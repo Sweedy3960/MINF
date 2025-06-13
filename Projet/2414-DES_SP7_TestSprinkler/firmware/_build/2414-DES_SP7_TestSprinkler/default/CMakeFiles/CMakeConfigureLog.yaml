@@ -85,8 +85,8 @@ events:
     checks:
       - "Detecting CXX compile features"
     directories:
-      source: "C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/_build/2414-DES_SP7_TestSprinkler/default/CMakeFiles/CMakeScratch/TryCompile-6rdepn"
-      binary: "C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/_build/2414-DES_SP7_TestSprinkler/default/CMakeFiles/CMakeScratch/TryCompile-6rdepn"
+      source: "C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/_build/2414-DES_SP7_TestSprinkler/default/CMakeFiles/CMakeScratch/TryCompile-6g6itp"
+      binary: "C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/_build/2414-DES_SP7_TestSprinkler/default/CMakeFiles/CMakeScratch/TryCompile-6g6itp"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -96,12 +96,12 @@ events:
       variable: "CMAKE_CXX_FEATURE_TEST"
       cached: true
       stdout: |
-        Change Dir: 'C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/_build/2414-DES_SP7_TestSprinkler/default/CMakeFiles/CMakeScratch/TryCompile-6rdepn'
+        Change Dir: 'C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/_build/2414-DES_SP7_TestSprinkler/default/CMakeFiles/CMakeScratch/TryCompile-6g6itp'
         
-        Run Build Command(s): C:/Users/aymer/.mplab/app-finder/apps/ninja/v1.12.1/ninja.exe -v cmTC_b3682
-        [1/2] c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_b3682.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/_build/2414-DES_SP7_TestSprinkler/default/CMakeFiles/CMakeScratch/TryCompile-6rdepn/feature_tests.cxx
-        FAILED: CMakeFiles/cmTC_b3682.dir/feature_tests.cxx.obj 
-        c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_b3682.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/_build/2414-DES_SP7_TestSprinkler/default/CMakeFiles/CMakeScratch/TryCompile-6rdepn/feature_tests.cxx
+        Run Build Command(s): C:/Users/aymer/.mplab/app-finder/apps/ninja/v1.12.1/ninja.exe -v cmTC_7f7e7
+        [1/2] c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_7f7e7.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/_build/2414-DES_SP7_TestSprinkler/default/CMakeFiles/CMakeScratch/TryCompile-6g6itp/feature_tests.cxx
+        FAILED: CMakeFiles/cmTC_7f7e7.dir/feature_tests.cxx.obj 
+        c:\\PROGRA~1\\MICROC~1\\xc32\\v2.50\\bin\\XC32-G~1.EXE   -std=c++1y -o CMakeFiles/cmTC_7f7e7.dir/feature_tests.cxx.obj -c C:/microchip/harmony/v2_06/apps/MINF/Projet/2414-DES_SP7_TestSprinkler/firmware/_build/2414-DES_SP7_TestSprinkler/default/CMakeFiles/CMakeScratch/TryCompile-6g6itp/feature_tests.cxx
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
