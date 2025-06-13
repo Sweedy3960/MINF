@@ -2,21 +2,41 @@
 \hypertarget{_mc32_driver_adc_8h}{}\label{_mc32_driver_adc_8h}\index{Mc32DriverAdc.h@{Mc32DriverAdc.h}}
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 Include dependency graph for Mc32\+Driver\+Adc.\+h\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{_mc32_driver_adc_8h__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32_driver_adc_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_s___a_d_c_results}{S\+\_\+\+ADCResults}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Structure contenant les résultats de conversion de tous les canaux ADC. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{_mc32_driver_adc_8h_ab8f2c4611b41e63055e35004ea2341e3}{BSP\+\_\+\+Init\+ADC10}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialise le driver ADC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_mc32_driver_adc_8h_acc0c400e02d6ced6ac5552f9687386c7}{DRV\+\_\+\+ADC\+\_\+\+Open}} (void)
+\begin{DoxyCompactList}\small\item\em Ouvre le driver ADC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_mc32_driver_adc_8h_a9b06f68a42771766770774e3302a1ffe}{DRV\+\_\+\+ADC\+\_\+\+Start}} (void)
+\begin{DoxyCompactList}\small\item\em Démarre la conversion ADC. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_mc32_driver_adc_8h_a04eded505f95b03236b5c5052c66fb91}{DRV\+\_\+\+ADC\+\_\+\+Samples\+Available}} (void)
+\begin{DoxyCompactList}\small\item\em Vérifie si des échantillons ADC sont disponibles. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{_mc32_driver_adc_8h_a61e35dbbc70ed4c9bce1c368fa6f10b0}{DRV\+\_\+\+ADC\+\_\+\+Samples\+Read}} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Lit la valeur d\textquotesingle{}un canal ADC. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_s___a_d_c_results}{S\+\_\+\+ADCResults}} \mbox{\hyperlink{_mc32_driver_adc_8h_a36f58dfc74e1e275e60c920f876974db}{BSP\+\_\+\+Read\+All\+ADC}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Lit toutes les valeurs des canaux ADC. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -26,9 +46,134 @@ void \mbox{\hyperlink{_mc32_driver_adc_8h_ab8f2c4611b41e63055e35004ea2341e3}{BSP
 {\footnotesize\ttfamily \label{_mc32_driver_adc_8h_ab8f2c4611b41e63055e35004ea2341e3} 
 void BSP\+\_\+\+Init\+ADC10 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Initialise le driver ADC. 
+
+Cette fonction configure et initialise le module ADC pour la lecture des canaux analogiques.
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Initialise le driver ADC.
+
+Configure l\textquotesingle{}ADC pour scanner plusieurs canaux analogiques avec les bons paramètres matériels.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \Hypertarget{_mc32_driver_adc_8h_a36f58dfc74e1e275e60c920f876974db}\index{Mc32DriverAdc.h@{Mc32DriverAdc.h}!BSP\_ReadAllADC@{BSP\_ReadAllADC}}
 \index{BSP\_ReadAllADC@{BSP\_ReadAllADC}!Mc32DriverAdc.h@{Mc32DriverAdc.h}}
 \doxysubsubsection{\texorpdfstring{BSP\_ReadAllADC()}{BSP\_ReadAllADC()}}
 {\footnotesize\ttfamily \label{_mc32_driver_adc_8h_a36f58dfc74e1e275e60c920f876974db} 
 \mbox{\hyperlink{struct_s___a_d_c_results}{S\+\_\+\+ADCResults}} BSP\+\_\+\+Read\+All\+ADC (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Lit toutes les valeurs des canaux ADC. 
+
+Cette fonction lit les valeurs converties de tous les canaux ADC configurés.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_s___a_d_c_results}{S\+\_\+\+ADCResults} Structure contenant les valeurs de tous les canaux ADC.
+\end{DoxyReturn}
+Lit toutes les valeurs des canaux ADC.
+
+Cette fonction attend la fin de conversion, lit tous les canaux configurés et retourne les valeurs dans une structure.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_s___a_d_c_results}{S\+\_\+\+ADCResults} Structure contenant les valeurs de chaque canal ADC. 
+\end{DoxyReturn}
+\Hypertarget{_mc32_driver_adc_8h_acc0c400e02d6ced6ac5552f9687386c7}\index{Mc32DriverAdc.h@{Mc32DriverAdc.h}!DRV\_ADC\_Open@{DRV\_ADC\_Open}}
+\index{DRV\_ADC\_Open@{DRV\_ADC\_Open}!Mc32DriverAdc.h@{Mc32DriverAdc.h}}
+\doxysubsubsection{\texorpdfstring{DRV\_ADC\_Open()}{DRV\_ADC\_Open()}}
+{\footnotesize\ttfamily \label{_mc32_driver_adc_8h_acc0c400e02d6ced6ac5552f9687386c7} 
+void DRV\+\_\+\+ADC\+\_\+\+Open (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Ouvre le driver ADC. 
+
+Cette fonction prépare le module ADC pour la lecture des échantillons.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32_driver_adc_8h_acc0c400e02d6ced6ac5552f9687386c7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_mc32_driver_adc_8h_a04eded505f95b03236b5c5052c66fb91}\index{Mc32DriverAdc.h@{Mc32DriverAdc.h}!DRV\_ADC\_SamplesAvailable@{DRV\_ADC\_SamplesAvailable}}
+\index{DRV\_ADC\_SamplesAvailable@{DRV\_ADC\_SamplesAvailable}!Mc32DriverAdc.h@{Mc32DriverAdc.h}}
+\doxysubsubsection{\texorpdfstring{DRV\_ADC\_SamplesAvailable()}{DRV\_ADC\_SamplesAvailable()}}
+{\footnotesize\ttfamily \label{_mc32_driver_adc_8h_a04eded505f95b03236b5c5052c66fb91} 
+uint8\+\_\+t DRV\+\_\+\+ADC\+\_\+\+Samples\+Available (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Vérifie si des échantillons ADC sont disponibles. 
+
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 1 si des échantillons sont prêts, 0 sinon. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32_driver_adc_8h_a04eded505f95b03236b5c5052c66fb91_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_mc32_driver_adc_8h_a61e35dbbc70ed4c9bce1c368fa6f10b0}\index{Mc32DriverAdc.h@{Mc32DriverAdc.h}!DRV\_ADC\_SamplesRead@{DRV\_ADC\_SamplesRead}}
+\index{DRV\_ADC\_SamplesRead@{DRV\_ADC\_SamplesRead}!Mc32DriverAdc.h@{Mc32DriverAdc.h}}
+\doxysubsubsection{\texorpdfstring{DRV\_ADC\_SamplesRead()}{DRV\_ADC\_SamplesRead()}}
+{\footnotesize\ttfamily \label{_mc32_driver_adc_8h_a61e35dbbc70ed4c9bce1c368fa6f10b0} 
+uint16\+\_\+t DRV\+\_\+\+ADC\+\_\+\+Samples\+Read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel}{}\end{DoxyParamCaption})}
+
+
+
+Lit la valeur d\textquotesingle{}un canal ADC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & Numéro du canal à lire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t Valeur convertie du canal ADC. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32_driver_adc_8h_a61e35dbbc70ed4c9bce1c368fa6f10b0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_mc32_driver_adc_8h_a9b06f68a42771766770774e3302a1ffe}\index{Mc32DriverAdc.h@{Mc32DriverAdc.h}!DRV\_ADC\_Start@{DRV\_ADC\_Start}}
+\index{DRV\_ADC\_Start@{DRV\_ADC\_Start}!Mc32DriverAdc.h@{Mc32DriverAdc.h}}
+\doxysubsubsection{\texorpdfstring{DRV\_ADC\_Start()}{DRV\_ADC\_Start()}}
+{\footnotesize\ttfamily \label{_mc32_driver_adc_8h_a9b06f68a42771766770774e3302a1ffe} 
+void DRV\+\_\+\+ADC\+\_\+\+Start (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Démarre la conversion ADC. 
+
+Cette fonction lance la conversion analogique-\/numérique sur les canaux configurés.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32_driver_adc_8h_a9b06f68a42771766770774e3302a1ffe_icgraph}
+\end{center}
+\end{figure}

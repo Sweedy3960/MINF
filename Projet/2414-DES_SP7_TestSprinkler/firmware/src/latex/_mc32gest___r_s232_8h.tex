@@ -1,0 +1,133 @@
+\doxysection{Mc32gest\+\_\+\+RS232.\+h File Reference}
+\hypertarget{_mc32gest___r_s232_8h}{}\label{_mc32gest___r_s232_8h}\index{Mc32gest\_RS232.h@{Mc32gest\_RS232.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}Ges\+Fifo\+Th32.\+h"{}}\newline
+Include dependency graph for Mc32gest\+\_\+\+RS232.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{_mc32gest___r_s232_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{_mc32gest___r_s232_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_mc32gest___r_s232_8h_a3fc330c2bdfdecefba5c67b50a7295e7}{MAXMSGFAUX}}~10
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_mc32gest___r_s232_8h_a2d69784a459e16a762705f2d7c0c5665}{Init\+Fifo\+Comm}} (void)
+\begin{DoxyCompactList}\small\item\em Initialise les FIFOs de communication série (réception et émission). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_mc32gest___r_s232_8h_a9942400bfd56594e50487c705c8240a7}{Send\+Message}} (int8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data)
+\begin{DoxyCompactList}\small\item\em Envoie un message via la FIFO d\textquotesingle{}émission série. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \mbox{\hyperlink{_mc32gest___r_s232_8h_a0769dca91fb15b42f540c7b5111e25d2}{descr\+Fifo\+RX}}
+\item 
+\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \mbox{\hyperlink{_mc32gest___r_s232_8h_aad4684d4f6da1ce70998e982331c86a5}{descr\+Fifo\+TX}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_mc32gest___r_s232_8h_a3fc330c2bdfdecefba5c67b50a7295e7}\index{Mc32gest\_RS232.h@{Mc32gest\_RS232.h}!MAXMSGFAUX@{MAXMSGFAUX}}
+\index{MAXMSGFAUX@{MAXMSGFAUX}!Mc32gest\_RS232.h@{Mc32gest\_RS232.h}}
+\doxysubsubsection{\texorpdfstring{MAXMSGFAUX}{MAXMSGFAUX}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8h_a3fc330c2bdfdecefba5c67b50a7295e7} 
+\#define MAXMSGFAUX~10}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_mc32gest___r_s232_8h_a2d69784a459e16a762705f2d7c0c5665}\index{Mc32gest\_RS232.h@{Mc32gest\_RS232.h}!InitFifoComm@{InitFifoComm}}
+\index{InitFifoComm@{InitFifoComm}!Mc32gest\_RS232.h@{Mc32gest\_RS232.h}}
+\doxysubsubsection{\texorpdfstring{InitFifoComm()}{InitFifoComm()}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8h_a2d69784a459e16a762705f2d7c0c5665} 
+void Init\+Fifo\+Comm (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialise les FIFOs de communication série (réception et émission). 
+
+Cette fonction initialise les descripteurs et les buffers des FIFOs utilisés pour la communication série. Elle configure également la ligne RTS pour contrôler l\textquotesingle{}accès à l\textquotesingle{}émission.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{_mc32gest___r_s232_8h_a2d69784a459e16a762705f2d7c0c5665_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{_mc32gest___r_s232_8h_a2d69784a459e16a762705f2d7c0c5665_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_mc32gest___r_s232_8h_a9942400bfd56594e50487c705c8240a7}\index{Mc32gest\_RS232.h@{Mc32gest\_RS232.h}!SendMessage@{SendMessage}}
+\index{SendMessage@{SendMessage}!Mc32gest\_RS232.h@{Mc32gest\_RS232.h}}
+\doxysubsubsection{\texorpdfstring{SendMessage()}{SendMessage()}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8h_a9942400bfd56594e50487c705c8240a7} 
+void Send\+Message (\begin{DoxyParamCaption}\item[{int8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Data}{}\end{DoxyParamCaption})}
+
+
+
+Envoie un message via la FIFO d\textquotesingle{}émission série. 
+
+Cette fonction place un message dans la FIFO d\textquotesingle{}émission si de la place est disponible, puis gère le contrôle de flux matériel (CTS) pour déclencher l\textquotesingle{}interruption d\textquotesingle{}émission si nécessaire.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Data} & Pointeur vers le tableau de données à envoyer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32gest___r_s232_8h_a9942400bfd56594e50487c705c8240a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32gest___r_s232_8h_a9942400bfd56594e50487c705c8240a7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_mc32gest___r_s232_8h_a0769dca91fb15b42f540c7b5111e25d2}\index{Mc32gest\_RS232.h@{Mc32gest\_RS232.h}!descrFifoRX@{descrFifoRX}}
+\index{descrFifoRX@{descrFifoRX}!Mc32gest\_RS232.h@{Mc32gest\_RS232.h}}
+\doxysubsubsection{\texorpdfstring{descrFifoRX}{descrFifoRX}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8h_a0769dca91fb15b42f540c7b5111e25d2} 
+\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} descr\+Fifo\+RX\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{_mc32gest___r_s232_8h_aad4684d4f6da1ce70998e982331c86a5}\index{Mc32gest\_RS232.h@{Mc32gest\_RS232.h}!descrFifoTX@{descrFifoTX}}
+\index{descrFifoTX@{descrFifoTX}!Mc32gest\_RS232.h@{Mc32gest\_RS232.h}}
+\doxysubsubsection{\texorpdfstring{descrFifoTX}{descrFifoTX}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8h_aad4684d4f6da1ce70998e982331c86a5} 
+\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} descr\+Fifo\+TX\hspace{0.3cm}{\ttfamily [extern]}}
+

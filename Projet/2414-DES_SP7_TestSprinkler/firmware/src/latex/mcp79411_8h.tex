@@ -2,9 +2,21 @@
 \hypertarget{mcp79411_8h}{}\label{mcp79411_8h}\index{mcp79411.h@{mcp79411.h}}
 {\ttfamily \#include "{}stdint.\+h"{}}\newline
 Include dependency graph for mcp79411.\+h\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{mcp79411_8h__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -126,31 +138,31 @@ enum \mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04}{mcp79411\+\
 \begin{DoxyCompactItemize}
 \item 
 uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_aa60e654238b849de1b1440e8a5fb1909}{mcp79411\+\_\+rtc\+\_\+reg\+\_\+read}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}rx\+\_\+buffer, uint16\+\_\+t len)
-\item 
+\begin{DoxyCompactList}\small\item\em Lit un ou plusieurs registres du RTC MCP79411 via I2C. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a65e0738f4056e1c71fdf5394ad69d9f0}{mcp79411\+\_\+rtc\+\_\+reg\+\_\+write}} (uint8\+\_\+t reg\+\_\+addr, uint8\+\_\+t \texorpdfstring{$\ast$}{*}tx\+\_\+buffer, uint16\+\_\+t len)
-\item 
+\begin{DoxyCompactList}\small\item\em Écrit un ou plusieurs registres du RTC MCP79411 via I2C. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{mcp79411_8h_a42a385a44017102ecf7ec3564d40aa5b}{mcp79411\+\_\+init}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialise le RTC MCP79411 (configuration par défaut). \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_aa48c2f24c3ced51665e713fad332217c}{mcp79411\+\_\+set\+\_\+time}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}time)
-\item 
+\begin{DoxyCompactList}\small\item\em Définit l\textquotesingle{}heure du RTC MCP79411. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_adcbe7d2c5f35d60954ec2f3c652a20a3}{mcp79411\+\_\+get\+\_\+time}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}time)
-\item 
+\begin{DoxyCompactList}\small\item\em Lit l\textquotesingle{}heure courante du RTC MCP79411. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a5db7f9b8bc73d67c3b8f8fac4f40f083}{mcp79411\+\_\+set\+\_\+alarm}} (\mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04}{mcp79411\+\_\+alarm\+\_\+channel}} chnl, \mbox{\hyperlink{mcp79411_8h_a9e0b5c5bf2e2d00b3eedc532858bc7a9}{mcp79411\+\_\+alarm\+\_\+mode}} mode, \mbox{\hyperlink{structmcp79411__alarm}{mcp79411\+\_\+alarm}} \texorpdfstring{$\ast$}{*}alarm)
 \item 
 uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a24713f45d1f40957e6acb3f8e0bbfb19}{mcp79411\+\_\+stop\+\_\+alarm}} (\mbox{\hyperlink{mcp79411_8h_a3c6ed0c6f7309029270d232ebfbd4e04}{mcp79411\+\_\+alarm\+\_\+channel}} chnl)
 \item 
 uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a140d411267c7eedc5fe9d3bf1ae902f9}{mcp79411\+\_\+dec2bcd}} (uint8\+\_\+t dec)
-\item 
+\begin{DoxyCompactList}\small\item\em Convertit un entier décimal en BCD (Binary Coded Decimal). \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a53b7cc370a69d20d748070c4276f97e7}{mcp79411\+\_\+bcd2dec}} (uint8\+\_\+t bcd)
-\item 
+\begin{DoxyCompactList}\small\item\em Convertit une valeur BCD en entier décimal. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a507ee5efba3f31963f5dc40e05e2b610}{mcp79411\+\_\+rtc\+\_\+iic\+\_\+read}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}rx\+\_\+buffer, uint16\+\_\+t len)
-\item 
+\begin{DoxyCompactList}\small\item\em Effectue une lecture I2C depuis le RTC MCP79411. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a828b08c558474707c1a9bc1638196b10}{mcp79411\+\_\+rtc\+\_\+iic\+\_\+write}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}tx\+\_\+buffer, uint16\+\_\+t len)
-\item 
+\begin{DoxyCompactList}\small\item\em Effectue une écriture I2C vers le RTC MCP79411. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_a716e7698399ac524d53db8beed23ff84}{mcp79411\+\_\+get\+\_\+status}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}time)
-\item 
+\begin{DoxyCompactList}\small\item\em Récupère le statut de l\textquotesingle{}oscillateur du RTC MCP79411. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{mcp79411_8h_aa43d28edf61dee366af7f84e510c3dcd}{mcp79411\+\_\+set\+\_\+\+Osc\+On}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}time)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Active l\textquotesingle{}oscillateur du RTC MCP79411. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -456,82 +468,281 @@ MCP79411\+\_\+\+ALRM\+\_\+\+MODE\+\_\+\+MAX&\\
 {\footnotesize\ttfamily \label{mcp79411_8h_a53b7cc370a69d20d748070c4276f97e7} 
 uint8\+\_\+t mcp79411\+\_\+bcd2dec (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{bcd}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
 
+
+
+Convertit une valeur BCD en entier décimal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bcd} & Valeur BCD à convertir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Valeur convertie en décimal. 
+\end{DoxyReturn}
 Here is the caller graph for this function\+:
-% FIG 2
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_a53b7cc370a69d20d748070c4276f97e7_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{mcp79411_8h_a140d411267c7eedc5fe9d3bf1ae902f9}\index{mcp79411.h@{mcp79411.h}!mcp79411\_dec2bcd@{mcp79411\_dec2bcd}}
 \index{mcp79411\_dec2bcd@{mcp79411\_dec2bcd}!mcp79411.h@{mcp79411.h}}
 \doxysubsubsection{\texorpdfstring{mcp79411\_dec2bcd()}{mcp79411\_dec2bcd()}}
 {\footnotesize\ttfamily \label{mcp79411_8h_a140d411267c7eedc5fe9d3bf1ae902f9} 
 uint8\+\_\+t mcp79411\+\_\+dec2bcd (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{dec}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
 
+
+
+Convertit un entier décimal en BCD (Binary Coded Decimal). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dec} & Valeur décimale à convertir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Valeur convertie en BCD. 
+\end{DoxyReturn}
 Here is the caller graph for this function\+:
-% FIG 3
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_a140d411267c7eedc5fe9d3bf1ae902f9_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{mcp79411_8h_a716e7698399ac524d53db8beed23ff84}\index{mcp79411.h@{mcp79411.h}!mcp79411\_get\_status@{mcp79411\_get\_status}}
 \index{mcp79411\_get\_status@{mcp79411\_get\_status}!mcp79411.h@{mcp79411.h}}
 \doxysubsubsection{\texorpdfstring{mcp79411\_get\_status()}{mcp79411\_get\_status()}}
 {\footnotesize\ttfamily \label{mcp79411_8h_a716e7698399ac524d53db8beed23ff84} 
 uint8\+\_\+t mcp79411\+\_\+get\+\_\+status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
 
+
+
+Récupère le statut de l\textquotesingle{}oscillateur du RTC MCP79411. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Pointeur vers la structure d\textquotesingle{}heure (non utilisé ici). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Statut de l\textquotesingle{}oscillateur (0 = arrêt, 1 = en marche). 
+\end{DoxyReturn}
 Here is the call graph for this function\+:
-% FIG 4
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_a716e7698399ac524d53db8beed23ff84_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{mcp79411_8h_adcbe7d2c5f35d60954ec2f3c652a20a3}\index{mcp79411.h@{mcp79411.h}!mcp79411\_get\_time@{mcp79411\_get\_time}}
 \index{mcp79411\_get\_time@{mcp79411\_get\_time}!mcp79411.h@{mcp79411.h}}
 \doxysubsubsection{\texorpdfstring{mcp79411\_get\_time()}{mcp79411\_get\_time()}}
 {\footnotesize\ttfamily \label{mcp79411_8h_adcbe7d2c5f35d60954ec2f3c652a20a3} 
 uint8\+\_\+t mcp79411\+\_\+get\+\_\+time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
 
+
+
+Lit l\textquotesingle{}heure courante du RTC MCP79411. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Pointeur vers la structure où stocker l\textquotesingle{}heure lue. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 0 si succès, -\/1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
 Here is the call graph for this function\+:
-% FIG 5
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_adcbe7d2c5f35d60954ec2f3c652a20a3_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 6
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{mcp79411_8h_adcbe7d2c5f35d60954ec2f3c652a20a3_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{mcp79411_8h_a42a385a44017102ecf7ec3564d40aa5b}\index{mcp79411.h@{mcp79411.h}!mcp79411\_init@{mcp79411\_init}}
 \index{mcp79411\_init@{mcp79411\_init}!mcp79411.h@{mcp79411.h}}
 \doxysubsubsection{\texorpdfstring{mcp79411\_init()}{mcp79411\_init()}}
 {\footnotesize\ttfamily \label{mcp79411_8h_a42a385a44017102ecf7ec3564d40aa5b} 
 void mcp79411\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
 
+
+
+Initialise le RTC MCP79411 (configuration par défaut). 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 Here is the call graph for this function\+:
-% FIG 7
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_a42a385a44017102ecf7ec3564d40aa5b_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{mcp79411_8h_a507ee5efba3f31963f5dc40e05e2b610}\index{mcp79411.h@{mcp79411.h}!mcp79411\_rtc\_iic\_read@{mcp79411\_rtc\_iic\_read}}
 \index{mcp79411\_rtc\_iic\_read@{mcp79411\_rtc\_iic\_read}!mcp79411.h@{mcp79411.h}}
 \doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_iic\_read()}{mcp79411\_rtc\_iic\_read()}}
 {\footnotesize\ttfamily \label{mcp79411_8h_a507ee5efba3f31963f5dc40e05e2b610} 
 uint8\+\_\+t mcp79411\+\_\+rtc\+\_\+iic\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{rx\+\_\+buffer}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
 
+
+
+Effectue une lecture I2C depuis le RTC MCP79411. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rx\+\_\+buffer} & Pointeur vers le buffer de réception. \\
+\hline
+{\em len} & Nombre d\textquotesingle{}octets à lire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 0 si succès, 1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
 Here is the call graph for this function\+:
-% FIG 8
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{mcp79411_8h_a507ee5efba3f31963f5dc40e05e2b610_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 9
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_a507ee5efba3f31963f5dc40e05e2b610_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{mcp79411_8h_a828b08c558474707c1a9bc1638196b10}\index{mcp79411.h@{mcp79411.h}!mcp79411\_rtc\_iic\_write@{mcp79411\_rtc\_iic\_write}}
 \index{mcp79411\_rtc\_iic\_write@{mcp79411\_rtc\_iic\_write}!mcp79411.h@{mcp79411.h}}
 \doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_iic\_write()}{mcp79411\_rtc\_iic\_write()}}
 {\footnotesize\ttfamily \label{mcp79411_8h_a828b08c558474707c1a9bc1638196b10} 
 uint8\+\_\+t mcp79411\+\_\+rtc\+\_\+iic\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{tx\+\_\+buffer}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
 
+
+
+Effectue une écriture I2C vers le RTC MCP79411. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tx\+\_\+buffer} & Pointeur vers le buffer de données à écrire. \\
+\hline
+{\em len} & Nombre d\textquotesingle{}octets à écrire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 0 si succès, 1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
 Here is the call graph for this function\+:
-% FIG 10
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{mcp79411_8h_a828b08c558474707c1a9bc1638196b10_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 11
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_a828b08c558474707c1a9bc1638196b10_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{mcp79411_8h_aa60e654238b849de1b1440e8a5fb1909}\index{mcp79411.h@{mcp79411.h}!mcp79411\_rtc\_reg\_read@{mcp79411\_rtc\_reg\_read}}
 \index{mcp79411\_rtc\_reg\_read@{mcp79411\_rtc\_reg\_read}!mcp79411.h@{mcp79411.h}}
 \doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_reg\_read()}{mcp79411\_rtc\_reg\_read()}}
 {\footnotesize\ttfamily \label{mcp79411_8h_aa60e654238b849de1b1440e8a5fb1909} 
 uint8\+\_\+t mcp79411\+\_\+rtc\+\_\+reg\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{rx\+\_\+buffer}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
 
+
+
+Lit un ou plusieurs registres du RTC MCP79411 via I2C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+\_\+addr} & Adresse du registre à lire. \\
+\hline
+{\em rx\+\_\+buffer} & Pointeur vers le buffer de réception. \\
+\hline
+{\em len} & Nombre d\textquotesingle{}octets à lire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 0 si succès, -\/1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
 Here is the call graph for this function\+:
-% FIG 12
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_aa60e654238b849de1b1440e8a5fb1909_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 13
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_aa60e654238b849de1b1440e8a5fb1909_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{mcp79411_8h_a65e0738f4056e1c71fdf5394ad69d9f0}\index{mcp79411.h@{mcp79411.h}!mcp79411\_rtc\_reg\_write@{mcp79411\_rtc\_reg\_write}}
 \index{mcp79411\_rtc\_reg\_write@{mcp79411\_rtc\_reg\_write}!mcp79411.h@{mcp79411.h}}
 \doxysubsubsection{\texorpdfstring{mcp79411\_rtc\_reg\_write()}{mcp79411\_rtc\_reg\_write()}}
 {\footnotesize\ttfamily \label{mcp79411_8h_a65e0738f4056e1c71fdf5394ad69d9f0} 
 uint8\+\_\+t mcp79411\+\_\+rtc\+\_\+reg\+\_\+write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg\+\_\+addr}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{tx\+\_\+buffer}{, }\item[{uint16\+\_\+t}]{len}{}\end{DoxyParamCaption})}
 
+
+
+Écrit un ou plusieurs registres du RTC MCP79411 via I2C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+\_\+addr} & Adresse du registre à écrire. \\
+\hline
+{\em tx\+\_\+buffer} & Pointeur vers le buffer de données à écrire. \\
+\hline
+{\em len} & Nombre d\textquotesingle{}octets à écrire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 0 si succès, -\/1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
 Here is the call graph for this function\+:
-% FIG 14
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_a65e0738f4056e1c71fdf5394ad69d9f0_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 15
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_a65e0738f4056e1c71fdf5394ad69d9f0_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{mcp79411_8h_a5db7f9b8bc73d67c3b8f8fac4f40f083}\index{mcp79411.h@{mcp79411.h}!mcp79411\_set\_alarm@{mcp79411\_set\_alarm}}
 \index{mcp79411\_set\_alarm@{mcp79411\_set\_alarm}!mcp79411.h@{mcp79411.h}}
 \doxysubsubsection{\texorpdfstring{mcp79411\_set\_alarm()}{mcp79411\_set\_alarm()}}
@@ -544,18 +755,60 @@ uint8\+\_\+t mcp79411\+\_\+set\+\_\+alarm (\begin{DoxyParamCaption}\item[{\mbox{
 {\footnotesize\ttfamily \label{mcp79411_8h_aa43d28edf61dee366af7f84e510c3dcd} 
 uint8\+\_\+t mcp79411\+\_\+set\+\_\+\+Osc\+On (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
 
+
+
+Active l\textquotesingle{}oscillateur du RTC MCP79411. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Pointeur vers la structure d\textquotesingle{}heure (non utilisé ici). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 0 si succès, 1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
 Here is the call graph for this function\+:
-% FIG 16
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_aa43d28edf61dee366af7f84e510c3dcd_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{mcp79411_8h_aa48c2f24c3ced51665e713fad332217c}\index{mcp79411.h@{mcp79411.h}!mcp79411\_set\_time@{mcp79411\_set\_time}}
 \index{mcp79411\_set\_time@{mcp79411\_set\_time}!mcp79411.h@{mcp79411.h}}
 \doxysubsubsection{\texorpdfstring{mcp79411\_set\_time()}{mcp79411\_set\_time()}}
 {\footnotesize\ttfamily \label{mcp79411_8h_aa48c2f24c3ced51665e713fad332217c} 
 uint8\+\_\+t mcp79411\+\_\+set\+\_\+time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
 
+
+
+Définit l\textquotesingle{}heure du RTC MCP79411. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Pointeur vers la structure contenant l\textquotesingle{}heure à programmer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 0 si succès, -\/1 en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
 Here is the call graph for this function\+:
-% FIG 17
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_aa48c2f24c3ced51665e713fad332217c_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 18
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mcp79411_8h_aa48c2f24c3ced51665e713fad332217c_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{mcp79411_8h_a24713f45d1f40957e6acb3f8e0bbfb19}\index{mcp79411.h@{mcp79411.h}!mcp79411\_stop\_alarm@{mcp79411\_stop\_alarm}}
 \index{mcp79411\_stop\_alarm@{mcp79411\_stop\_alarm}!mcp79411.h@{mcp79411.h}}
 \doxysubsubsection{\texorpdfstring{mcp79411\_stop\_alarm()}{mcp79411\_stop\_alarm()}}

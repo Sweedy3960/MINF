@@ -1,0 +1,89 @@
+\doxysection{Ges\+Fifo\+Th32.\+h}
+\hypertarget{_ges_fifo_th32_8h_source}{}\label{_ges_fifo_th32_8h_source}\mbox{\hyperlink{_ges_fifo_th32_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ ETML\ Ecole\ Technique}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ GesFifoTh32.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ \ Description\ :}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ \ \ Gestion\ d'un\ fifo\ de\ caractère,\ utilisation\ de\ pointeur\ et}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ \ \ d'un\ descripteur\ de\ fifo}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ \ Auteur\ \ \ \ \ \ :\ \ \ C.\ Huber}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ \ Version\ \ \ \ \ :\ \ \ V1.6}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ Compilateur\ :\ \ \ XC32\ V1.42\ +\ Harmony\ 1.08}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ \ Modifications\ :}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ CHR\ 19.12.2014\ \ remplacement\ typedef32\ par\ stdint}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ \ CHR\ 20.12.2016\ \ fifosize\ en\ int32\_t\ pour\ permettre\ des}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fifo\ de\ grande\ taille}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ \ \ SCA\ 06.09.2022\ \ v1.7\ MPLABX\ 5.45/xc32\ 2.50/Harmony\ 2.06}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Enlevé bug\ dans\ GetCharFromFifo\ qui}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ empêchait\ un\ buffer\ >\ 256\ éléments}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifndef\ GesFifoTh32\_H}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ GesFifoTh32\_H}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ structure\ décrivant\ un\ FIFO}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structfifo}{fifo}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ int32\_t\ \mbox{\hyperlink{structfifo_ae41458656c44d1c3c827dde8ee29b298}{fifoSize}};\ \ \ \textcolor{comment}{//\ taille\ du\ fifo}}
+\DoxyCodeLine{00032\ \ \ \ int8\_t\ *\mbox{\hyperlink{structfifo_abeda917683e579be43522a6040a7a0ab}{pDebFifo}};\ \ \ \textcolor{comment}{//\ pointeur\ sur\ début\ du\ fifo}}
+\DoxyCodeLine{00033\ \ \ \ int8\_t\ *\mbox{\hyperlink{structfifo_a020a790c0fd625fe9c1f45cde49eccf0}{pFinFifo}};\ \ \ \textcolor{comment}{//\ pointeur\ sur\ fin\ du\ fifo}}
+\DoxyCodeLine{00034\ \ \ \ int8\_t\ *\mbox{\hyperlink{structfifo_a036dee8146e72ad3c67b70ea4d078228}{pWrite}};\ \ \ \ \ \ \textcolor{comment}{//\ pointeur\ d'écriture}}
+\DoxyCodeLine{00035\ \ \ \ int8\_t\ *\mbox{\hyperlink{structfifo_a6422bf7f4dc9d867313e67aa807e1792}{pRead}};\ \ \ \ \ \ \textcolor{comment}{//\ pointeur\ de\ lecture}}
+\DoxyCodeLine{00036\ \}\ \mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\_fifo}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00039\ \textcolor{comment}{/*\ Définition\ des\ fonctions\ de\ gestion\ du\ fifo\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00040\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00043\ \textcolor{comment}{/*\ InitFifo\ \ \ \ \ \ */}}
+\DoxyCodeLine{00044\ \textcolor{comment}{/*===============*/}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ Initialisation\ du\ descripteur\ de\ FIFO}}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_ges_fifo_th32_8h_aeed954247aceee8fa793443163d52260}{InitFifo}}\ (\ \mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\_fifo}}\ *pDescrFifo,\ int32\_t\ FifoSize,\ int8\_t\ *pDebFifo,\ int8\_t\ InitVal\ );}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00050\ \textcolor{comment}{/*\ GetWriteSpace\ */}}
+\DoxyCodeLine{00051\ \textcolor{comment}{/*===============*/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ Retourne\ la\ place\ disponible\ en\ écriture}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ int32\_t\ \mbox{\hyperlink{_ges_fifo_th32_8h_ab5464f5c735ba7e3be289d309a46eabb}{GetWriteSpace}}\ (\ \mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\_fifo}}\ *pDescrFifo);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00058\ \textcolor{comment}{/*\ GetReadSize\ */}}
+\DoxyCodeLine{00059\ \textcolor{comment}{/*=============*/}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ Retourne\ le\ nombre\ de\ caractères\ à lire}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ int32\_t\ \mbox{\hyperlink{_ges_fifo_th32_8h_a955713596c746a403b3c353c1e29668f}{GetReadSize}}\ (\ \mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\_fifo}}\ *pDescrFifo);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00066\ \textcolor{comment}{/*\ PutCharInFifo\ */}}
+\DoxyCodeLine{00067\ \textcolor{comment}{/*===============*/}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ Dépose\ un\ caractère\ dans\ le\ FIFO}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ Retourne\ 0\ si\ OK,\ 1\ si\ FIFO\ full}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ uint8\_t\ \mbox{\hyperlink{_ges_fifo_th32_8h_ae2a401c7dff876c69868f7a873426232}{PutCharInFifo}}\ (\ \mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\_fifo}}\ *pDescrFifo,\ int8\_t\ charToPut\ );}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00075\ \textcolor{comment}{/*\ GetCharFromFifo\ */}}
+\DoxyCodeLine{00076\ \textcolor{comment}{/*=================*/}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ Obtient\ (lecture)\ un\ caractère\ du\ fifo}}
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ retourne\ 0\ si\ OK,\ 1\ si\ empty}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ le\ caractère\ lu\ est\ retourné par\ réference}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ uint8\_t\ \mbox{\hyperlink{_ges_fifo_th32_8h_a3557f3b8c09b32667dcbb38d9d872bc6}{GetCharFromFifo}}\ (\ \mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\_fifo}}\ *pDescrFifo,\ int8\_t\ *carLu\ );}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

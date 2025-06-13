@@ -3,7 +3,7 @@
 // GesFifoTh32.c
 /*--------------------------------------------------------*/
 //	Description :
-//	 Gestion d'un fifo de caractère, utilisation de pointeur et
+//	 Gestion d'un fifo de caractï¿½re, utilisation de pointeur et
 //   d'un descripteur de fifo
 //
 //	Auteur 		: 	C. Huber
@@ -15,8 +15,8 @@
 //   CHR 20.12.2016  fifosize en int32_t pour permettre des
 //                    fifo de grande taille
 //   SCA 06.09.2022  v1.7 MPLABX 5.45/xc32 2.50/Harmony 2.06
-//                   Enlevé bug dans GetCharFromFifo qui
-//                   empêchait un buffer > 256 éléments
+//                   Enlevï¿½ bug dans GetCharFromFifo qui
+//                   empï¿½chait un buffer > 256 ï¿½lï¿½ments
 //
 /*--------------------------------------------------------*/
 
@@ -26,19 +26,25 @@
 /* InitFifo      */
 /*===============*/
 
-// Init avec possibilité de fournir une valeur de remplissage
-// Initialisation du descripteur de FIFO
-
+/**
+ * @brief Initialise un descripteur de FIFO avec une valeur d'initialisation.
+ *
+ * @param pDescrFifo Pointeur vers la structure du descripteur FIFO Ã  initialiser.
+ * @param FifoSize Taille du FIFO (nombre d'Ã©lÃ©ments).
+ * @param pDebFifo Pointeur vers le dÃ©but du buffer FIFO.
+ * @param InitVal Valeur d'initialisation pour chaque Ã©lÃ©ment du FIFO.
+ * @return void
+ */
 void InitFifo ( S_fifo *pDescrFifo, int32_t FifoSize, int8_t *pDebFifo, int8_t InitVal )
 {
    int32_t i;
    int8_t *pFif;
    pDescrFifo->fifoSize =   FifoSize;
-   pDescrFifo->pDebFifo =   pDebFifo; // début du fifo
+   pDescrFifo->pDebFifo =   pDebFifo; // dï¿½but du fifo
    // fin du fifo
    pDescrFifo->pFinFifo =   pDebFifo + (FifoSize - 1);
-   pDescrFifo->pWrite   =   pDebFifo;  // début du fifo
-   pDescrFifo->pRead     =   pDebFifo;  // début du fifo
+   pDescrFifo->pWrite   =   pDebFifo;  // dï¿½but du fifo
+   pDescrFifo->pRead     =   pDebFifo;  // dï¿½but du fifo
    pFif = pDebFifo;
    for (i=0; i < FifoSize; i++) {
       *pFif  = InitVal;
@@ -51,13 +57,17 @@ void InitFifo ( S_fifo *pDescrFifo, int32_t FifoSize, int8_t *pDebFifo, int8_t I
 /* GetWriteSpace */
 /*===============*/
 
-// Retourne la place disponible en écriture
-
+/**
+ * @brief Retourne la place disponible en Ã©criture dans le FIFO.
+ *
+ * @param pDescrFifo Pointeur vers la structure du descripteur FIFO.
+ * @return int32_t Nombre d'emplacements libres pour l'Ã©criture.
+ */
 int32_t GetWriteSpace ( S_fifo *pDescrFifo)
 {
    int32_t writeSize;
 
-   // Détermine le nb de car.que l'on peut déposer
+   // Dï¿½termine le nb de car.que l'on peut dï¿½poser
    writeSize = pDescrFifo->pRead - pDescrFifo->pWrite -1;
    if (writeSize < 0) {
       writeSize = writeSize + pDescrFifo->fifoSize;
@@ -70,8 +80,12 @@ int32_t GetWriteSpace ( S_fifo *pDescrFifo)
 /* GetReadSize */
 /*=============*/
 
-// Retourne le nombre de caractères à lire
-
+/**
+ * @brief Retourne le nombre de caractÃ¨res Ã  lire dans le FIFO.
+ *
+ * @param pDescrFifo Pointeur vers la structure du descripteur FIFO.
+ * @return int32_t Nombre de caractÃ¨res disponibles Ã  la lecture.
+ */
 int32_t GetReadSize ( S_fifo *pDescrFifo)
 {
    int32_t readSize;
@@ -88,9 +102,13 @@ int32_t GetReadSize ( S_fifo *pDescrFifo)
 /* PutCharInFifo */
 /*===============*/
 
-// Dépose un caractère dans le FIFO
-// Retourne 0 si OK, 1 si FIFO full
-
+/**
+ * @brief DÃ©pose un caractÃ¨re dans le FIFO.
+ *
+ * @param pDescrFifo Pointeur vers la structure du descripteur FIFO.
+ * @param charToPut CaractÃ¨re Ã  insÃ©rer dans le FIFO.
+ * @return uint8_t 0 si OK, 1 si le FIFO est plein.
+ */
 uint8_t PutCharInFifo ( S_fifo *pDescrFifo, int8_t charToPut )
 {
    uint8_t writeStatus;
@@ -100,10 +118,10 @@ uint8_t PutCharInFifo ( S_fifo *pDescrFifo, int8_t charToPut )
       writeStatus = 1; // fifo FULL
    }
    else {
-      // écrit le caractère dans le FIFO
+      // ï¿½crit le caractï¿½re dans le FIFO
       *(pDescrFifo->pWrite) = charToPut;
 
-      // incrément le pointeur d'écriture
+      // incrï¿½ment le pointeur d'ï¿½criture
       pDescrFifo->pWrite++;
       // gestion du rebouclement
       if (pDescrFifo->pWrite > pDescrFifo->pFinFifo) {
@@ -120,16 +138,19 @@ uint8_t PutCharInFifo ( S_fifo *pDescrFifo, int8_t charToPut )
 /* GetCharFromFifo */
 /*=================*/
 
-// Obtient (lecture) un caractère du fifo 
-// retourne 0 si OK, 1 si empty
-// le caractère lu est retourné par réference
-
+/**
+ * @brief Lit un caractÃ¨re du FIFO.
+ *
+ * @param pDescrFifo Pointeur vers la structure du descripteur FIFO.
+ * @param carLu Pointeur vers la variable oÃ¹ sera stockÃ© le caractÃ¨re lu.
+ * @return uint8_t 0 si OK, 1 si le FIFO est vide.
+ */
 uint8_t GetCharFromFifo ( S_fifo *pDescrFifo, int8_t *carLu )
 {
    int32_t readSize;
    uint8_t readStatus;
 
-   // détermine le nb de car. que l'on peut lire
+   // dï¿½termine le nb de car. que l'on peut lire
    readSize = GetReadSize(pDescrFifo);
 
    // test si fifo est vide
@@ -138,10 +159,10 @@ uint8_t GetCharFromFifo ( S_fifo *pDescrFifo, int8_t *carLu )
       *carLu = 0;     // carLu = NULL
    }
    else {
-      // lis le caractère dans le FIFO
+      // lis le caractï¿½re dans le FIFO
       *carLu = *(pDescrFifo->pRead);
 
-      // incrément du pointeur de lecture
+      // incrï¿½ment du pointeur de lecture
       pDescrFifo->pRead++;
       // gestion du rebouclement
       if (pDescrFifo->pRead > pDescrFifo->pFinFifo) {
@@ -150,6 +171,6 @@ uint8_t GetCharFromFifo ( S_fifo *pDescrFifo, int8_t *carLu )
       readStatus = 0; // OK
    }
    return (readStatus);
-} // GetCharFromFifo 
+} // GetCharFromFifo
 
 

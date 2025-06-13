@@ -1,0 +1,183 @@
+\doxysection{Ges\+Fifo\+Th32.\+c File Reference}
+\hypertarget{_ges_fifo_th32_8c}{}\label{_ges_fifo_th32_8c}\index{GesFifoTh32.c@{GesFifoTh32.c}}
+{\ttfamily \#include "{}Ges\+Fifo\+Th32.\+h"{}}\newline
+Include dependency graph for Ges\+Fifo\+Th32.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{_ges_fifo_th32_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_ges_fifo_th32_8c_aeed954247aceee8fa793443163d52260}{Init\+Fifo}} (\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \texorpdfstring{$\ast$}{*}p\+Descr\+Fifo, int32\+\_\+t Fifo\+Size, int8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Deb\+Fifo, int8\+\_\+t Init\+Val)
+\begin{DoxyCompactList}\small\item\em Initialise un descripteur de FIFO avec une valeur d\textquotesingle{}initialisation. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{_ges_fifo_th32_8c_ab5464f5c735ba7e3be289d309a46eabb}{Get\+Write\+Space}} (\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \texorpdfstring{$\ast$}{*}p\+Descr\+Fifo)
+\begin{DoxyCompactList}\small\item\em Retourne la place disponible en écriture dans le FIFO. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{_ges_fifo_th32_8c_a955713596c746a403b3c353c1e29668f}{Get\+Read\+Size}} (\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \texorpdfstring{$\ast$}{*}p\+Descr\+Fifo)
+\begin{DoxyCompactList}\small\item\em Retourne le nombre de caractères à lire dans le FIFO. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_ges_fifo_th32_8c_ae2a401c7dff876c69868f7a873426232}{Put\+Char\+In\+Fifo}} (\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \texorpdfstring{$\ast$}{*}p\+Descr\+Fifo, int8\+\_\+t char\+To\+Put)
+\begin{DoxyCompactList}\small\item\em Dépose un caractère dans le FIFO. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_ges_fifo_th32_8c_a3557f3b8c09b32667dcbb38d9d872bc6}{Get\+Char\+From\+Fifo}} (\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \texorpdfstring{$\ast$}{*}p\+Descr\+Fifo, int8\+\_\+t \texorpdfstring{$\ast$}{*}car\+Lu)
+\begin{DoxyCompactList}\small\item\em Lit un caractère du FIFO. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_ges_fifo_th32_8c_a3557f3b8c09b32667dcbb38d9d872bc6}\index{GesFifoTh32.c@{GesFifoTh32.c}!GetCharFromFifo@{GetCharFromFifo}}
+\index{GetCharFromFifo@{GetCharFromFifo}!GesFifoTh32.c@{GesFifoTh32.c}}
+\doxysubsubsection{\texorpdfstring{GetCharFromFifo()}{GetCharFromFifo()}}
+{\footnotesize\ttfamily \label{_ges_fifo_th32_8c_a3557f3b8c09b32667dcbb38d9d872bc6} 
+uint8\+\_\+t Get\+Char\+From\+Fifo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \texorpdfstring{$\ast$}{*}}]{p\+Descr\+Fifo}{, }\item[{int8\+\_\+t \texorpdfstring{$\ast$}{*}}]{car\+Lu}{}\end{DoxyParamCaption})}
+
+
+
+Lit un caractère du FIFO. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Descr\+Fifo} & Pointeur vers la structure du descripteur FIFO. \\
+\hline
+{\em car\+Lu} & Pointeur vers la variable où sera stocké le caractère lu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 0 si OK, 1 si le FIFO est vide. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{_ges_fifo_th32_8c_a3557f3b8c09b32667dcbb38d9d872bc6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{_ges_fifo_th32_8c_a3557f3b8c09b32667dcbb38d9d872bc6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_ges_fifo_th32_8c_a955713596c746a403b3c353c1e29668f}\index{GesFifoTh32.c@{GesFifoTh32.c}!GetReadSize@{GetReadSize}}
+\index{GetReadSize@{GetReadSize}!GesFifoTh32.c@{GesFifoTh32.c}}
+\doxysubsubsection{\texorpdfstring{GetReadSize()}{GetReadSize()}}
+{\footnotesize\ttfamily \label{_ges_fifo_th32_8c_a955713596c746a403b3c353c1e29668f} 
+int32\+\_\+t Get\+Read\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \texorpdfstring{$\ast$}{*}}]{p\+Descr\+Fifo}{}\end{DoxyParamCaption})}
+
+
+
+Retourne le nombre de caractères à lire dans le FIFO. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Descr\+Fifo} & Pointeur vers la structure du descripteur FIFO. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Nombre de caractères disponibles à la lecture. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_ges_fifo_th32_8c_a955713596c746a403b3c353c1e29668f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_ges_fifo_th32_8c_ab5464f5c735ba7e3be289d309a46eabb}\index{GesFifoTh32.c@{GesFifoTh32.c}!GetWriteSpace@{GetWriteSpace}}
+\index{GetWriteSpace@{GetWriteSpace}!GesFifoTh32.c@{GesFifoTh32.c}}
+\doxysubsubsection{\texorpdfstring{GetWriteSpace()}{GetWriteSpace()}}
+{\footnotesize\ttfamily \label{_ges_fifo_th32_8c_ab5464f5c735ba7e3be289d309a46eabb} 
+int32\+\_\+t Get\+Write\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \texorpdfstring{$\ast$}{*}}]{p\+Descr\+Fifo}{}\end{DoxyParamCaption})}
+
+
+
+Retourne la place disponible en écriture dans le FIFO. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Descr\+Fifo} & Pointeur vers la structure du descripteur FIFO. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Nombre d\textquotesingle{}emplacements libres pour l\textquotesingle{}écriture. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_ges_fifo_th32_8c_ab5464f5c735ba7e3be289d309a46eabb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_ges_fifo_th32_8c_aeed954247aceee8fa793443163d52260}\index{GesFifoTh32.c@{GesFifoTh32.c}!InitFifo@{InitFifo}}
+\index{InitFifo@{InitFifo}!GesFifoTh32.c@{GesFifoTh32.c}}
+\doxysubsubsection{\texorpdfstring{InitFifo()}{InitFifo()}}
+{\footnotesize\ttfamily \label{_ges_fifo_th32_8c_aeed954247aceee8fa793443163d52260} 
+void Init\+Fifo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \texorpdfstring{$\ast$}{*}}]{p\+Descr\+Fifo}{, }\item[{int32\+\_\+t}]{Fifo\+Size}{, }\item[{int8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Deb\+Fifo}{, }\item[{int8\+\_\+t}]{Init\+Val}{}\end{DoxyParamCaption})}
+
+
+
+Initialise un descripteur de FIFO avec une valeur d\textquotesingle{}initialisation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Descr\+Fifo} & Pointeur vers la structure du descripteur FIFO à initialiser. \\
+\hline
+{\em Fifo\+Size} & Taille du FIFO (nombre d\textquotesingle{}éléments). \\
+\hline
+{\em p\+Deb\+Fifo} & Pointeur vers le début du buffer FIFO. \\
+\hline
+{\em Init\+Val} & Valeur d\textquotesingle{}initialisation pour chaque élément du FIFO. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{_ges_fifo_th32_8c_aeed954247aceee8fa793443163d52260_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_ges_fifo_th32_8c_ae2a401c7dff876c69868f7a873426232}\index{GesFifoTh32.c@{GesFifoTh32.c}!PutCharInFifo@{PutCharInFifo}}
+\index{PutCharInFifo@{PutCharInFifo}!GesFifoTh32.c@{GesFifoTh32.c}}
+\doxysubsubsection{\texorpdfstring{PutCharInFifo()}{PutCharInFifo()}}
+{\footnotesize\ttfamily \label{_ges_fifo_th32_8c_ae2a401c7dff876c69868f7a873426232} 
+uint8\+\_\+t Put\+Char\+In\+Fifo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \texorpdfstring{$\ast$}{*}}]{p\+Descr\+Fifo}{, }\item[{int8\+\_\+t}]{char\+To\+Put}{}\end{DoxyParamCaption})}
+
+
+
+Dépose un caractère dans le FIFO. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Descr\+Fifo} & Pointeur vers la structure du descripteur FIFO. \\
+\hline
+{\em char\+To\+Put} & Caractère à insérer dans le FIFO. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 0 si OK, 1 si le FIFO est plein. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{_ges_fifo_th32_8c_ae2a401c7dff876c69868f7a873426232_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_ges_fifo_th32_8c_ae2a401c7dff876c69868f7a873426232_icgraph}
+\end{center}
+\end{figure}

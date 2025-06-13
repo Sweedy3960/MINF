@@ -10,8 +10,8 @@
 //
 //      BSP             :  pic32mx_skes
 //
-// Revu / modifié:
-//      création 18.09.2014 CHR
+// Revu / modifiï¿½:
+//      crï¿½ation 18.09.2014 CHR
 /*--------------------------------------------------------*/
 
 #include "system_config.h"
@@ -28,12 +28,18 @@
 /*--------------------------------------------------------*/
 // Fonction BSP_InitADC10
 /*--------------------------------------------------------*/
-
+/**
+ * @brief Initialise l'ADC en mode scan 10 bits.
+ *
+ * Configure l'ADC pour scanner plusieurs canaux analogiques avec les bons paramÃ¨tres matÃ©riels.
+ *
+ * @return void
+ */
 void BSP_InitADC10(void)
 {
     // Configure l'ADC
 
-    PLIB_ADC_InputScanMaskAdd(ADC_ID_1, configscan) ;   // liste des AN à scanner
+    PLIB_ADC_InputScanMaskAdd(ADC_ID_1, configscan) ;   // liste des AN ï¿½ scanner
     PLIB_ADC_ResultFormatSelect(ADC_ID_1, ADC_RESULT_FORMAT_INTEGER_16BIT);
     PLIB_ADC_ResultBufferModeSelect(ADC_ID_1, ADC_BUFFER_MODE_ONE_16WORD_BUFFER);
     PLIB_ADC_SamplingModeSelect(ADC_ID_1, ADC_SAMPLING_MODE_MUXA);
@@ -43,7 +49,7 @@ void BSP_InitADC10(void)
     PLIB_ADC_SampleAcquisitionTimeSet(ADC_ID_1, 0x1F);
     PLIB_ADC_ConversionClockSet(ADC_ID_1, SYS_CLK_FREQ, 32);
 
-    // Rem CHR le nb d'échantillon par interruption doit correspondre au nb d'entrées
+    // Rem CHR le nb d'ï¿½chantillon par interruption doit correspondre au nb d'entrï¿½es
     // de la liste de scan
     PLIB_ADC_SamplesPerInterruptSelect(ADC_ID_1, ADC_14SAMPLES_PER_INTERRUPT);
     PLIB_ADC_MuxAInputScanEnable(ADC_ID_1);
@@ -51,12 +57,18 @@ void BSP_InitADC10(void)
     // Enable the ADC module
     PLIB_ADC_Enable(ADC_ID_1);
 
- }
+}
 
 /*--------------------------------------------------------*/
 // Fonction ReadAllADC
 /*--------------------------------------------------------*/
-
+/**
+ * @brief Lit tous les canaux ADC et retourne les rÃ©sultats.
+ *
+ * Cette fonction attend la fin de conversion, lit tous les canaux configurÃ©s et retourne les valeurs dans une structure.
+ *
+ * @return S_ADCResults Structure contenant les valeurs de chaque canal ADC.
+ */
 S_ADCResults BSP_ReadAllADC()
 {
     S_ADCResults result;
@@ -71,7 +83,7 @@ S_ADCResults BSP_ReadAllADC()
     // Stop sample/convert
     PLIB_ADC_SampleAutoStartDisable(ADC_ID_1);
 
-    // traitement avec buffer alterné
+    // traitement avec buffer alternï¿½
     BufStatus = PLIB_ADC_ResultBufferStatusGet(ADC_ID_1);
     if (BufStatus == ADC_FILLING_BUF_0TO7) {
         result.Chan0 = PLIB_ADC_ResultGetByIndex(ADC_ID_1, 0);

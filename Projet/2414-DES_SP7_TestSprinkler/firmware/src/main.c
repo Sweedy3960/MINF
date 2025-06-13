@@ -67,6 +67,14 @@ SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
 // *****************************************************************************
 // *****************************************************************************
 
+/**
+ * @brief Fonction principale du programme.
+ *
+ * Cette fonction initialise tous les modules Harmony, puis exécute la boucle principale
+ * qui maintient les machines d'état de tous les modules Harmony interrogés.
+ *
+ * @return int Code de sortie (EXIT_FAILURE en cas d'erreur).
+ */
 int main ( void )
 {
     /* Initialize all MPLAB Harmony modules, including application(s). */

@@ -5,12 +5,18 @@
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include "{}system/common/sys\+\_\+module.\+h"{}}\newline
 Include dependency graph for main.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Fonction principale du programme. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -20,3 +26,12 @@ int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
 {\footnotesize\ttfamily \label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
 int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Fonction principale du programme. 
+
+Cette fonction initialise tous les modules Harmony, puis exécute la boucle principale qui maintient les machines d\textquotesingle{}état de tous les modules Harmony interrogés.
+
+\begin{DoxyReturn}{Returns}
+int Code de sortie (EXIT\+\_\+\+FAILURE en cas d\textquotesingle{}erreur). 
+\end{DoxyReturn}

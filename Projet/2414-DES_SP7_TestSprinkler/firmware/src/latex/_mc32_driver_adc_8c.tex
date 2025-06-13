@@ -4,7 +4,13 @@
 {\ttfamily \#include "{}Mc32\+Driver\+Adc.\+h"{}}\newline
 {\ttfamily \#include "{}peripheral/adc/plib\+\_\+adc.\+h"{}}\newline
 Include dependency graph for Mc32\+Driver\+Adc.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32_driver_adc_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,9 +20,9 @@ Include dependency graph for Mc32\+Driver\+Adc.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{_mc32_driver_adc_8c_ab8f2c4611b41e63055e35004ea2341e3}{BSP\+\_\+\+Init\+ADC10}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialise l\textquotesingle{}ADC en mode scan 10 bits. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_s___a_d_c_results}{S\+\_\+\+ADCResults}} \mbox{\hyperlink{_mc32_driver_adc_8c_a36f58dfc74e1e275e60c920f876974db}{BSP\+\_\+\+Read\+All\+ADC}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Lit tous les canaux ADC et retourne les résultats. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -35,9 +41,31 @@ void \mbox{\hyperlink{_mc32_driver_adc_8c_ab8f2c4611b41e63055e35004ea2341e3}{BSP
 {\footnotesize\ttfamily \label{_mc32_driver_adc_8c_ab8f2c4611b41e63055e35004ea2341e3} 
 void BSP\+\_\+\+Init\+ADC10 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Initialise l\textquotesingle{}ADC en mode scan 10 bits. 
+
+Initialise le driver ADC.
+
+Configure l\textquotesingle{}ADC pour scanner plusieurs canaux analogiques avec les bons paramètres matériels.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \Hypertarget{_mc32_driver_adc_8c_a36f58dfc74e1e275e60c920f876974db}\index{Mc32DriverAdc.c@{Mc32DriverAdc.c}!BSP\_ReadAllADC@{BSP\_ReadAllADC}}
 \index{BSP\_ReadAllADC@{BSP\_ReadAllADC}!Mc32DriverAdc.c@{Mc32DriverAdc.c}}
 \doxysubsubsection{\texorpdfstring{BSP\_ReadAllADC()}{BSP\_ReadAllADC()}}
 {\footnotesize\ttfamily \label{_mc32_driver_adc_8c_a36f58dfc74e1e275e60c920f876974db} 
 \mbox{\hyperlink{struct_s___a_d_c_results}{S\+\_\+\+ADCResults}} BSP\+\_\+\+Read\+All\+ADC (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Lit tous les canaux ADC et retourne les résultats. 
+
+Lit toutes les valeurs des canaux ADC.
+
+Cette fonction attend la fin de conversion, lit tous les canaux configurés et retourne les valeurs dans une structure.
+
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_s___a_d_c_results}{S\+\_\+\+ADCResults} Structure contenant les valeurs de chaque canal ADC. 
+\end{DoxyReturn}

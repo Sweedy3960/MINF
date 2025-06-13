@@ -7,7 +7,13 @@
 
 
 Collaboration diagram for APP\+\_\+\+DATA\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_a_p_p___d_a_t_a__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,6 +32,8 @@ bool \mbox{\hyperlink{struct_a_p_p___d_a_t_a_a3b98f7c2463a4ee686752b1b9577a022}{
 \mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \mbox{\hyperlink{struct_a_p_p___d_a_t_a_ac9aff2c82e28d67ac00d682b76c1bb62}{timeof\+RTC}}
 \item 
 uint8\+\_\+t \mbox{\hyperlink{struct_a_p_p___d_a_t_a_a1262446d553b67fd5ab69650d1b578c0}{cmd\+Realay\+Out}} \mbox{[}9\mbox{]}
+\item 
+\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\+\_\+t}} \mbox{\hyperlink{struct_a_p_p___d_a_t_a_a135ad94f246c9990576e183800df2397}{app\+Mutex}}
 \end{DoxyCompactItemize}
 
 
@@ -41,6 +49,12 @@ bool APP\+\_\+\+Delay\+Time\+Is\+Running}
 \doxysubsubsection{\texorpdfstring{AppDelay}{AppDelay}}
 {\footnotesize\ttfamily \label{struct_a_p_p___d_a_t_a_a17a3cc95c0d2a70aedea4e7d50fd3ba7} 
 uint32\+\_\+t App\+Delay}
+
+\Hypertarget{struct_a_p_p___d_a_t_a_a135ad94f246c9990576e183800df2397}\index{APP\_DATA@{APP\_DATA}!appMutex@{appMutex}}
+\index{appMutex@{appMutex}!APP\_DATA@{APP\_DATA}}
+\doxysubsubsection{\texorpdfstring{appMutex}{appMutex}}
+{\footnotesize\ttfamily \label{struct_a_p_p___d_a_t_a_a135ad94f246c9990576e183800df2397} 
+\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\+\_\+t}} app\+Mutex}
 
 \Hypertarget{struct_a_p_p___d_a_t_a_a1262446d553b67fd5ab69650d1b578c0}\index{APP\_DATA@{APP\_DATA}!cmdRealayOut@{cmdRealayOut}}
 \index{cmdRealayOut@{cmdRealayOut}!APP\_DATA@{APP\_DATA}}

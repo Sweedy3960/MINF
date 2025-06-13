@@ -268,3 +268,39 @@ void SR_LoadData2(SERIAL_REG_DATA *SRegData, uint8_t data) {
 /* *****************************************************************************
  End of File
  */
+
+/**
+ * @brief Initialise la structure du registre série et met le circuit en état IDLE.
+ *
+ * @param SRegData Pointeur vers la structure de registre série à initialiser.
+ * @return void
+ */
+void SR_Init(SERIAL_REG_DATA *SRegData);
+
+/**
+ * @brief Met à jour l'état du registre série et effectue le décalage/latch des données.
+ *
+ * Cette fonction gère le cycle complet de transmission des données vers le registre à décalage.
+ *
+ * @param SregData Pointeur vers la structure de registre série à mettre à jour.
+ * @return void
+ */
+void SR_Update(SERIAL_REG_DATA *SregData);
+
+/**
+ * @brief Charge une nouvelle valeur dans le registre série si l'état est IDLE.
+ *
+ * @param SRegData Pointeur vers la structure de registre série à modifier.
+ * @param data Valeur 16 bits à charger dans le registre.
+ * @return void
+ */
+void SR_LoadData(SERIAL_REG_DATA *SRegData, uint16_t data);
+
+/**
+ * @brief (Exemple) Charge une nouvelle valeur 8 bits dans le registre série (fonction incomplète).
+ *
+ * @param SRegData Pointeur vers la structure de registre série à modifier.
+ * @param data Valeur 8 bits à charger dans le registre.
+ * @return void
+ */
+void SR_LoadData2(SERIAL_REG_DATA *SRegData, uint8_t data);

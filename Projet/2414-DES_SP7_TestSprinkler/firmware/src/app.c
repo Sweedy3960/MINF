@@ -152,6 +152,14 @@ static uint8_t SDcard=0;
     See prototype in app.h.
  */
 
+/**
+ * @brief Initialise l'application et son état interne.
+ *
+ * Cette fonction place la machine d'état de l'application dans son état initial.
+ * Elle doit être appelée au démarrage du firmware.
+ *
+ * @return void
+ */
 void APP_Initialize(void)
 {
     /* Place the App state machine in its initial state. */
@@ -171,6 +179,14 @@ void APP_Initialize(void)
     See prototype in app.h.
  */
 
+/**
+ * @brief Fonction principale de la machine d'état de l'application.
+ *
+ * Cette fonction gère les différents états de l'application et exécute les actions associées.
+ * Elle doit être appelée régulièrement dans la boucle principale.
+ *
+ * @return void
+ */
 void APP_Tasks(void)
 {
     //timer1 used to buzz RN 
@@ -401,8 +417,15 @@ void APP_Tasks(void)
     
     }
 }
-    void APP_GetInputsStates(void)
-    {
+    /**
+ * @brief Met à jour les états des entrées physiques (switches).
+ *
+ * Cette fonction lit l'état des entrées et met à jour la structure appData.SySwitch.
+ *
+ * @return void
+ */
+void APP_GetInputsStates(void)
+{
 
 
         //SPB's outpus derrranement states 
@@ -416,6 +439,13 @@ void APP_Tasks(void)
         appData.SySwitch.FreeIn5_conf.state = FC5StateGet();
     }
 
+    /**
+ * @brief Lit toutes les valeurs d'échantillons ADC disponibles et les stocke dans appData.valAD.
+ *
+ * Cette fonction vérifie si des échantillons ADC sont prêts, puis lit et stocke jusqu'à 14 canaux.
+ *
+ * @return void
+ */
     void APP_AdcReadAllSamples(void)
     {
         uint8_t i = 0;
@@ -433,6 +463,13 @@ void APP_Tasks(void)
         }
     }
 
+    /**
+ * @brief Callback du timer 1 pour la gestion du buzzer.
+ *
+ * Cette fonction est appelée à chaque interruption du timer 1 pour générer le signal du buzzer.
+ *
+ * @return void
+ */
     void APP_TIMER1_CALLBACK(void)
     {
         //between 1khz and 4khz 
@@ -447,6 +484,14 @@ void APP_Tasks(void)
      * Fct d'attente en fct du param d'entr�e en ms 
      * utilisation du timer 1 attente = 1ms
      */
+    /**
+ * @brief Fonction d'attente bloquante basée sur le timer 3.
+ *
+ * @param waitingTime_ms Durée d'attente en millisecondes.
+ * @return void
+ *
+ * Cette fonction démarre le timer 3 et attend la fin du délai demandé.
+ */
     void APP_WaitStart(uint16_t waitingTime_ms)
     {
 
@@ -463,6 +508,13 @@ void APP_Tasks(void)
         DRV_TMR3_Stop();
     }
 
+    /**
+ * @brief Callback du timer 4 pour la gestion des délais d'attente.
+ *
+ * Cette fonction décrémente le compteur de délai et arrête l'attente lorsque le temps est écoulé.
+ *
+ * @return void
+ */
     void APP_TIMER4_CALLBACK(void)
     {
         if (appData.AppDelay > 0)
@@ -476,6 +528,14 @@ void APP_Tasks(void)
 
     }
 
+    /**
+ * @brief Configure la fréquence du timer 0 (TMR0).
+ *
+ * @param freq_hz Fréquence souhaitée en Hertz.
+ * @return void
+ *
+ * Cette fonction ajuste le prescaler et la période du timer pour obtenir la fréquence désirée.
+ */
     void APP_SetTMR0_Frequency(float freq_hz)
     {
         //we should verify if prescaler value is disponible for the TMR used
@@ -508,6 +568,13 @@ void APP_Tasks(void)
 
     // Function to play a song (blocking, for demo)
 
+    /**
+     * @brief Joue une mélodie sur le buzzer (fonction bloquante).
+     *
+     * Cette fonction parcourt la séquence de notes et joue chaque note avec la durée correspondante.
+     *
+     * @return void
+     */
     void APP_PlaySong(void)
     {
         static uint16_t songDurations[10] = {
@@ -525,6 +592,13 @@ void APP_Tasks(void)
         }
     }
 
+    /**
+ * @brief Initialise le circuit RTC MCP79411.
+ *
+ * Cette fonction configure l'horloge temps réel avec des valeurs par défaut.
+ *
+ * @return void
+ */
     void APP_InitMcp79411(void)
     {
         i2c_init(1);
@@ -539,6 +613,13 @@ void APP_Tasks(void)
         //mcp79411_get_time(&appData.timeofRTC);
     }
 
+    /**
+ * @brief Initialise le module ADC et les échantillons associés.
+ *
+ * Cette fonction configure et démarre le driver ADC, puis initialise les valeurs d'échantillons.
+ *
+ * @return void
+ */
     void APP_InitADC(void)
     {
         uint8_t i;
@@ -558,7 +639,17 @@ void APP_Tasks(void)
 
 
 // Fonction simple pour envoyer une chaîne sur l'UART (à adapter selon ton driver)
-void DebugUART_Print(const char *format, ...) {
+/**
+ * @brief Envoie une chaîne de caractères sur l'UART de debug.
+ *
+ * @param format Chaîne de format (type printf).
+ * @param ... Arguments variables pour la chaîne de format.
+ * @return void
+ *
+ * Cette fonction formate et envoie la chaîne sur l'UART via SendMessage.
+ */
+void DebugUART_Print(const char *format, ...)
+{
     int8_t buffer[128];
     va_list args;
     va_start(args, format);
@@ -573,6 +664,13 @@ void DebugUART_Print(const char *format, ...) {
 }
 
 
+/**
+ * @brief Met à jour les sorties relais selon la structure de commande.
+ *
+ * Cette fonction applique les états de la structure appData.cmdRealayOut aux sorties physiques.
+ *
+ * @return void
+ */
 void APP_SetRealyOut(void/*&appdata.cmdRealayOut cmd*/)
 {
     uint8_t i;

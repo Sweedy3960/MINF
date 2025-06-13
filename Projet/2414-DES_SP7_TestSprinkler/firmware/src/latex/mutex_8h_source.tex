@@ -1,0 +1,29 @@
+\doxysection{mutex.\+h}
+\hypertarget{mutex_8h_source}{}\label{mutex_8h_source}\mbox{\hyperlink{mutex_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MUTEX\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MUTEX\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ Structure\ du\ mutex\ (simple\ flag\ }}
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ \mbox{\hyperlink{struct_m_u_t_e_x__t_a3fcb77810c3cb5ba631500d718de8585}{locked}};}
+\DoxyCodeLine{00016\ \}\ \mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\_t}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ Initialise\ le\ mutex\ (à\ l'état\ déverrouillé)}}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mutex_8h_af86cf4cdd2cc3faac418cef4b63fd96b}{MUTEX\_Init}}(\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\_t}}\ *mutex);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ Prend\ le\ mutex\ (bloquant)}}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mutex_8h_a3b9252b6be417a9ce610be29de296dfa}{MUTEX\_Lock}}(\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\_t}}\ *mutex);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ Relâche\ le\ mutex}}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mutex_8h_a28e7eafd9ab27ec5cf3440eb367abcd0}{MUTEX\_Unlock}}(\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\_t}}\ *mutex);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ Essaie\ de\ prendre\ le\ mutex\ (non\ bloquant)}}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{mutex_8h_ae8fe33e5f807bf6871ef569fdbcd0798}{MUTEX\_TryLock}}(\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\_t}}\ *mutex);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MUTEX\_H}}
+
+\end{DoxyCode}

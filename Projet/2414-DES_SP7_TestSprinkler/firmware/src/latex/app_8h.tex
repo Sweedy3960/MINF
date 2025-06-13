@@ -10,10 +10,23 @@
 {\ttfamily \#include "{}Driver\+\_\+\+SR\+\_\+\+SN74\+HCS596\+QPWRQ1.\+h"{}}\newline
 {\ttfamily \#include "{}mcp79411.\+h"{}}\newline
 {\ttfamily \#include "{}mcp79411\+\_\+interface.\+h"{}}\newline
+{\ttfamily \#include "{}mutex.\+h"{}}\newline
 Include dependency graph for app.\+h\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8h__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -84,7 +97,7 @@ enum \mbox{\hyperlink{app_8h_ada390c31648888e80455e59aededec89}{Config\+States\+
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{app_8h_a59b305aa4f4287d45cbe428f533f84b2}{APP\+\_\+\+Initialize}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialise l\textquotesingle{}application et son état interne. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{app_8h_ac84821be565c3ad536c97469e444bd01}{set\+Alarm\+Led}} (void)
 \item 
 void \mbox{\hyperlink{app_8h_ac49dd186f408eac336716408104ede01}{set\+Der\+Led}} (void)
@@ -104,27 +117,27 @@ uint8\+\_\+t \mbox{\hyperlink{app_8h_a49e20dc3e3e27d43533501f8f7f34026}{gray\+\_
 void \mbox{\hyperlink{app_8h_ab11af01d10b55155821953dccf79c672}{Set\+Led}} (\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5}{FCT\+\_\+\+LED}} Led\+Tomod)
 \item 
 void \mbox{\hyperlink{app_8h_a859aee46b660cfee47cfd45ce08f6862}{APP\+\_\+\+Tasks}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction principale de la machine d\textquotesingle{}état de l\textquotesingle{}application. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{app_8h_a8f46b20760f4b4b10df763dd5b6e2525}{APP\+\_\+\+TIMER1\+\_\+\+CALLBACK}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Callback du timer 1 pour la gestion du buzzer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{app_8h_a245753d6244c3f5682adbdc334412149}{APP\+\_\+\+TIMER4\+\_\+\+CALLBACK}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Callback du timer 4 pour la gestion des délais d\textquotesingle{}attente. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{app_8h_a51d9a9aba50639baf27bff12757c9dae}{APP\+\_\+\+SERIAL\+\_\+\+LEDS\+\_\+\+CMD}} (void)
 \item 
 void \mbox{\hyperlink{app_8h_abcbd1769c7d03ea90681c10fe1f03775}{APP\+\_\+\+Wait\+Start}} (uint16\+\_\+t waiting\+Time\+\_\+ms)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction d\textquotesingle{}attente bloquante basée sur le timer 3. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{app_8h_a98a5fecb1828f413db07cfb10273379c}{APP\+\_\+\+Adc\+Read\+All\+Samples}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Lit toutes les valeurs d\textquotesingle{}échantillons ADC disponibles et les stocke dans app\+Data.\+val\+AD. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{app_8h_a912c163cafb881d4deea72f7b463cbdc}{APP\+\_\+\+Get\+Inputs\+States}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Met à jour les états des entrées physiques (switches). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{app_8h_a23e441f0e8d8f65fb909cf1630237be2}{APP\+\_\+\+Set\+TMR0\+\_\+\+Frequency}} (float freq\+\_\+hz)
-\item 
+\begin{DoxyCompactList}\small\item\em Configure la fréquence du timer 0 (TMR0). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{app_8h_aa3bed8e1f96b2024b7750e4b1c6b9cbe}{APP\+\_\+\+Play\+Song}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Joue une mélodie sur le buzzer (fonction bloquante). \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{app_8h_aa01b24d00b6eb54fd185e029a791cccc}{APP\+\_\+\+Init\+Mcp79411}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialise le circuit RTC MCP79411. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{app_8h_a43ccfb3bb8362f57c897915a2bf0b888}{APP\+\_\+\+Init\+ADC}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialise le module ADC et les échantillons associés. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{app_8h_ae151403ee4e82e74bbd931fe9e0ff9e8}{CLOCKING\+\_\+\+SRCLK}} (void)
 \item 
 void \mbox{\hyperlink{app_8h_a83f72156f02ea0c9d1980998f6a1133e}{CLOCKING\+\_\+\+CLK}} (void)
@@ -132,7 +145,7 @@ void \mbox{\hyperlink{app_8h_a83f72156f02ea0c9d1980998f6a1133e}{CLOCKING\+\_\+\+
 void \mbox{\hyperlink{app_8h_a1f221d6b1726a5ef4b2533d542fde9f6}{Reset\+Led}} (\mbox{\hyperlink{_driver___s_r___s_n74_h_c_s596_q_p_w_r_q1_8h_ac77ecf9860eed32f92689772e20da5a5}{FCT\+\_\+\+LED}} Led\+Tomod)
 \item 
 void \mbox{\hyperlink{app_8h_ab90aceec1f83db2e42e1f207cd9e4c95}{Debug\+UART\+\_\+\+Print}} (const char \texorpdfstring{$\ast$}{*}format,...)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Envoie une chaîne de caractères sur l\textquotesingle{}UART de debug. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -315,50 +328,162 @@ SPB\+\_\+\+IN\+\_\+\+REPEAT&\\
 {\footnotesize\ttfamily \label{app_8h_a98a5fecb1828f413db07cfb10273379c} 
 void APP\+\_\+\+Adc\+Read\+All\+Samples (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Lit toutes les valeurs d\textquotesingle{}échantillons ADC disponibles et les stocke dans app\+Data.\+val\+AD. 
+
+Cette fonction vérifie si des échantillons ADC sont prêts, puis lit et stocke jusqu\textquotesingle{}à 14 canaux.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8h_a98a5fecb1828f413db07cfb10273379c_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 2
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{app_8h_a98a5fecb1828f413db07cfb10273379c_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{app_8h_a912c163cafb881d4deea72f7b463cbdc}\index{app.h@{app.h}!APP\_GetInputsStates@{APP\_GetInputsStates}}
 \index{APP\_GetInputsStates@{APP\_GetInputsStates}!app.h@{app.h}}
 \doxysubsubsection{\texorpdfstring{APP\_GetInputsStates()}{APP\_GetInputsStates()}}
 {\footnotesize\ttfamily \label{app_8h_a912c163cafb881d4deea72f7b463cbdc} 
 void APP\+\_\+\+Get\+Inputs\+States (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Met à jour les états des entrées physiques (switches). 
+
+Cette fonction lit l\textquotesingle{}état des entrées et met à jour la structure app\+Data.\+Sy\+Switch.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 Here is the caller graph for this function\+:
-% FIG 3
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{app_8h_a912c163cafb881d4deea72f7b463cbdc_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{app_8h_a43ccfb3bb8362f57c897915a2bf0b888}\index{app.h@{app.h}!APP\_InitADC@{APP\_InitADC}}
 \index{APP\_InitADC@{APP\_InitADC}!app.h@{app.h}}
 \doxysubsubsection{\texorpdfstring{APP\_InitADC()}{APP\_InitADC()}}
 {\footnotesize\ttfamily \label{app_8h_a43ccfb3bb8362f57c897915a2bf0b888} 
 void APP\+\_\+\+Init\+ADC (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Initialise le module ADC et les échantillons associés. 
+
+Cette fonction configure et démarre le driver ADC, puis initialise les valeurs d\textquotesingle{}échantillons.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{app_8h_a43ccfb3bb8362f57c897915a2bf0b888_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 4
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{app_8h_a43ccfb3bb8362f57c897915a2bf0b888_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{app_8h_a59b305aa4f4287d45cbe428f533f84b2}\index{app.h@{app.h}!APP\_Initialize@{APP\_Initialize}}
 \index{APP\_Initialize@{APP\_Initialize}!app.h@{app.h}}
 \doxysubsubsection{\texorpdfstring{APP\_Initialize()}{APP\_Initialize()}}
 {\footnotesize\ttfamily \label{app_8h_a59b305aa4f4287d45cbe428f533f84b2} 
 void APP\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Initialise l\textquotesingle{}application et son état interne. 
+
+Cette fonction place la machine d\textquotesingle{}état de l\textquotesingle{}application dans son état initial. Elle doit être appelée au démarrage du firmware.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \Hypertarget{app_8h_aa01b24d00b6eb54fd185e029a791cccc}\index{app.h@{app.h}!APP\_InitMcp79411@{APP\_InitMcp79411}}
 \index{APP\_InitMcp79411@{APP\_InitMcp79411}!app.h@{app.h}}
 \doxysubsubsection{\texorpdfstring{APP\_InitMcp79411()}{APP\_InitMcp79411()}}
 {\footnotesize\ttfamily \label{app_8h_aa01b24d00b6eb54fd185e029a791cccc} 
 void APP\+\_\+\+Init\+Mcp79411 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Initialise le circuit RTC MCP79411. 
+
+Cette fonction configure l\textquotesingle{}horloge temps réel avec des valeurs par défaut.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 Here is the call graph for this function\+:
-% FIG 5
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8h_aa01b24d00b6eb54fd185e029a791cccc_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 6
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{app_8h_aa01b24d00b6eb54fd185e029a791cccc_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{app_8h_aa3bed8e1f96b2024b7750e4b1c6b9cbe}\index{app.h@{app.h}!APP\_PlaySong@{APP\_PlaySong}}
 \index{APP\_PlaySong@{APP\_PlaySong}!app.h@{app.h}}
 \doxysubsubsection{\texorpdfstring{APP\_PlaySong()}{APP\_PlaySong()}}
 {\footnotesize\ttfamily \label{app_8h_aa3bed8e1f96b2024b7750e4b1c6b9cbe} 
 void APP\+\_\+\+Play\+Song (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Joue une mélodie sur le buzzer (fonction bloquante). 
+
+Cette fonction parcourt la séquence de notes et joue chaque note avec la durée correspondante.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 Here is the call graph for this function\+:
-% FIG 7
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{app_8h_aa3bed8e1f96b2024b7750e4b1c6b9cbe_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 8
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{app_8h_aa3bed8e1f96b2024b7750e4b1c6b9cbe_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{app_8h_a51d9a9aba50639baf27bff12757c9dae}\index{app.h@{app.h}!APP\_SERIAL\_LEDS\_CMD@{APP\_SERIAL\_LEDS\_CMD}}
 \index{APP\_SERIAL\_LEDS\_CMD@{APP\_SERIAL\_LEDS\_CMD}!app.h@{app.h}}
 \doxysubsubsection{\texorpdfstring{APP\_SERIAL\_LEDS\_CMD()}{APP\_SERIAL\_LEDS\_CMD()}}
@@ -371,36 +496,105 @@ void APP\+\_\+\+SERIAL\+\_\+\+LEDS\+\_\+\+CMD (\begin{DoxyParamCaption}\item[{vo
 {\footnotesize\ttfamily \label{app_8h_a23e441f0e8d8f65fb909cf1630237be2} 
 void APP\+\_\+\+Set\+TMR0\+\_\+\+Frequency (\begin{DoxyParamCaption}\item[{float}]{freq\+\_\+hz}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:
-% FIG 9
+
+
+Configure la fréquence du timer 0 (TMR0). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq\+\_\+hz} & Fréquence souhaitée en Hertz. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Cette fonction ajuste le prescaler et la période du timer pour obtenir la fréquence désirée. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8h_a23e441f0e8d8f65fb909cf1630237be2_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{app_8h_a859aee46b660cfee47cfd45ce08f6862}\index{app.h@{app.h}!APP\_Tasks@{APP\_Tasks}}
 \index{APP\_Tasks@{APP\_Tasks}!app.h@{app.h}}
 \doxysubsubsection{\texorpdfstring{APP\_Tasks()}{APP\_Tasks()}}
 {\footnotesize\ttfamily \label{app_8h_a859aee46b660cfee47cfd45ce08f6862} 
 void APP\+\_\+\+Tasks (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Fonction principale de la machine d\textquotesingle{}état de l\textquotesingle{}application. 
+
+Cette fonction gère les différents états de l\textquotesingle{}application et exécute les actions associées. Elle doit être appelée régulièrement dans la boucle principale.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 here we should repeat inputs to outputs if neededHere is the call graph for this function\+:
-% FIG 10
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8h_a859aee46b660cfee47cfd45ce08f6862_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{app_8h_a8f46b20760f4b4b10df763dd5b6e2525}\index{app.h@{app.h}!APP\_TIMER1\_CALLBACK@{APP\_TIMER1\_CALLBACK}}
 \index{APP\_TIMER1\_CALLBACK@{APP\_TIMER1\_CALLBACK}!app.h@{app.h}}
 \doxysubsubsection{\texorpdfstring{APP\_TIMER1\_CALLBACK()}{APP\_TIMER1\_CALLBACK()}}
 {\footnotesize\ttfamily \label{app_8h_a8f46b20760f4b4b10df763dd5b6e2525} 
 void APP\+\_\+\+TIMER1\+\_\+\+CALLBACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Callback du timer 1 pour la gestion du buzzer. 
+
+Cette fonction est appelée à chaque interruption du timer 1 pour générer le signal du buzzer.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \Hypertarget{app_8h_a245753d6244c3f5682adbdc334412149}\index{app.h@{app.h}!APP\_TIMER4\_CALLBACK@{APP\_TIMER4\_CALLBACK}}
 \index{APP\_TIMER4\_CALLBACK@{APP\_TIMER4\_CALLBACK}!app.h@{app.h}}
 \doxysubsubsection{\texorpdfstring{APP\_TIMER4\_CALLBACK()}{APP\_TIMER4\_CALLBACK()}}
 {\footnotesize\ttfamily \label{app_8h_a245753d6244c3f5682adbdc334412149} 
 void APP\+\_\+\+TIMER4\+\_\+\+CALLBACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Callback du timer 4 pour la gestion des délais d\textquotesingle{}attente. 
+
+Cette fonction décrémente le compteur de délai et arrête l\textquotesingle{}attente lorsque le temps est écoulé.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \Hypertarget{app_8h_abcbd1769c7d03ea90681c10fe1f03775}\index{app.h@{app.h}!APP\_WaitStart@{APP\_WaitStart}}
 \index{APP\_WaitStart@{APP\_WaitStart}!app.h@{app.h}}
 \doxysubsubsection{\texorpdfstring{APP\_WaitStart()}{APP\_WaitStart()}}
 {\footnotesize\ttfamily \label{app_8h_abcbd1769c7d03ea90681c10fe1f03775} 
 void APP\+\_\+\+Wait\+Start (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{waiting\+Time\+\_\+ms}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:
-% FIG 11
+
+
+Fonction d\textquotesingle{}attente bloquante basée sur le timer 3. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiting\+Time\+\_\+ms} & Durée d\textquotesingle{}attente en millisecondes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Cette fonction démarre le timer 3 et attend la fin du délai demandé. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8h_abcbd1769c7d03ea90681c10fe1f03775_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{app_8h_a83f72156f02ea0c9d1980998f6a1133e}\index{app.h@{app.h}!CLOCKING\_CLK@{CLOCKING\_CLK}}
 \index{CLOCKING\_CLK@{CLOCKING\_CLK}!app.h@{app.h}}
 \doxysubsubsection{\texorpdfstring{CLOCKING\_CLK()}{CLOCKING\_CLK()}}
@@ -419,8 +613,36 @@ void CLOCKING\+\_\+\+SRCLK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyPa
 {\footnotesize\ttfamily \label{app_8h_ab90aceec1f83db2e42e1f207cd9e4c95} 
 void Debug\+UART\+\_\+\+Print (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{format}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
 
+
+
+Envoie une chaîne de caractères sur l\textquotesingle{}UART de debug. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & Chaîne de format (type printf). \\
+\hline
+{\em ...} & Arguments variables pour la chaîne de format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Cette fonction formate et envoie la chaîne sur l\textquotesingle{}UART via Send\+Message. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_8h_ab90aceec1f83db2e42e1f207cd9e4c95_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 12
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{app_8h_ab90aceec1f83db2e42e1f207cd9e4c95_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{app_8h_a49e20dc3e3e27d43533501f8f7f34026}\index{app.h@{app.h}!gray\_conv@{gray\_conv}}
 \index{gray\_conv@{gray\_conv}!app.h@{app.h}}
 \doxysubsubsection{\texorpdfstring{gray\_conv()}{gray\_conv()}}

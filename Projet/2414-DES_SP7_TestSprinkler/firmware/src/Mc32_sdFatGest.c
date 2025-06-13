@@ -70,6 +70,13 @@ APP_FAT_DATA COHERENT_ALIGNED appFatData;
 /* ************************************************************************** */
 /* ************************************************************************** */
 
+/**
+ * @brief Tâche principale de gestion du système de fichiers FAT sur carte SD.
+ *
+ * Cette fonction implémente la machine d'état pour le montage, l'écriture, la fermeture et le démontage de la carte SD.
+ *
+ * @return void
+ */
 void sd_fat_task ( void )
 {   
     /* The application task state machine */

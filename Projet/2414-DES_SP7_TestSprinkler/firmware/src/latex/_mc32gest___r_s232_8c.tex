@@ -1,0 +1,218 @@
+\doxysection{Mc32gest\+\_\+\+RS232.\+c File Reference}
+\hypertarget{_mc32gest___r_s232_8c}{}\label{_mc32gest___r_s232_8c}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+{\ttfamily \#include $<$xc.\+h$>$}\newline
+{\ttfamily \#include $<$sys/attribs.\+h$>$}\newline
+{\ttfamily \#include "{}system\+\_\+definitions.\+h"{}}\newline
+{\ttfamily \#include $<$Generic\+Type\+Defs.\+h$>$}\newline
+{\ttfamily \#include "{}app.\+h"{}}\newline
+{\ttfamily \#include "{}Ges\+Fifo\+Th32.\+h"{}}\newline
+{\ttfamily \#include "{}Mc32gest\+\_\+\+RS232.\+h"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for Mc32gest\+\_\+\+RS232.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32gest___r_s232_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_u__manip16}{U\+\_\+manip16}}
+\item 
+struct \mbox{\hyperlink{struct_stru_mess}{Stru\+Mess}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_mc32gest___r_s232_8c_a2db7ddbaa1ae7b60bc685a19cccd5d42}{TAILLE\+\_\+\+TABLEAU}}~3
+\item 
+\#define \mbox{\hyperlink{_mc32gest___r_s232_8c_a1f116fa64399a48ec7662f6a207063bf}{MESS\+\_\+\+SIZE}}~5
+\item 
+\#define \mbox{\hyperlink{_mc32gest___r_s232_8c_a875e32598663495e97588e7baaeafdfd}{STX\+\_\+code}}~(-\/86)
+\item 
+\#define \mbox{\hyperlink{_mc32gest___r_s232_8c_a131ae84ad3ae96195fb9306a3c8b8876}{FIFO\+\_\+\+RX\+\_\+\+SIZE}}~( (4\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_mc32gest___r_s232_8c_a1f116fa64399a48ec7662f6a207063bf}{MESS\+\_\+\+SIZE}}) + 1)
+\item 
+\#define \mbox{\hyperlink{_mc32gest___r_s232_8c_ab69d26ca940cf09d48360806e1cd0d8e}{FIFO\+\_\+\+TX\+\_\+\+SIZE}}~( (4\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_mc32gest___r_s232_8c_a1f116fa64399a48ec7662f6a207063bf}{MESS\+\_\+\+SIZE}}) + 1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_mc32gest___r_s232_8c_a2d69784a459e16a762705f2d7c0c5665}{Init\+Fifo\+Comm}} (void)
+\begin{DoxyCompactList}\small\item\em Initialise les FIFOs de communication série (réception et émission). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_mc32gest___r_s232_8c_a9942400bfd56594e50487c705c8240a7}{Send\+Message}} (int8\+\_\+t \texorpdfstring{$\ast$}{*}p\+Data)
+\begin{DoxyCompactList}\small\item\em Envoie un message via la FIFO d\textquotesingle{}émission série. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_mc32gest___r_s232_8c_a357972e136ce657ac26f0c47b8220325}{\+\_\+\+\_\+\+ISR}} (\+\_\+\+UART\+\_\+3\+\_\+\+VECTOR, ipl3\+AUTO)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_stru_mess}{Stru\+Mess}} \mbox{\hyperlink{_mc32gest___r_s232_8c_ad4804b90a46438a37eced198010718f4}{Tx\+Mess}}
+\item 
+\mbox{\hyperlink{struct_stru_mess}{Stru\+Mess}} \mbox{\hyperlink{_mc32gest___r_s232_8c_ae9139a9d1322c0c140f4c772e1b6f813}{Rx\+Mess}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{_mc32gest___r_s232_8c_a49d11c764d38810f5e60a38a096fac5a}{fifo\+RX}} \mbox{[}\mbox{\hyperlink{_mc32gest___r_s232_8c_a131ae84ad3ae96195fb9306a3c8b8876}{FIFO\+\_\+\+RX\+\_\+\+SIZE}}\mbox{]}
+\item 
+\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \mbox{\hyperlink{_mc32gest___r_s232_8c_a0769dca91fb15b42f540c7b5111e25d2}{descr\+Fifo\+RX}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{_mc32gest___r_s232_8c_a3d5c9a7c210c20dd426321d307258a19}{fifo\+TX}} \mbox{[}\mbox{\hyperlink{_mc32gest___r_s232_8c_ab69d26ca940cf09d48360806e1cd0d8e}{FIFO\+\_\+\+TX\+\_\+\+SIZE}}\mbox{]}
+\item 
+\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} \mbox{\hyperlink{_mc32gest___r_s232_8c_aad4684d4f6da1ce70998e982331c86a5}{descr\+Fifo\+TX}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_mc32gest___r_s232_8c_a131ae84ad3ae96195fb9306a3c8b8876}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!FIFO\_RX\_SIZE@{FIFO\_RX\_SIZE}}
+\index{FIFO\_RX\_SIZE@{FIFO\_RX\_SIZE}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{FIFO\_RX\_SIZE}{FIFO\_RX\_SIZE}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_a131ae84ad3ae96195fb9306a3c8b8876} 
+\#define FIFO\+\_\+\+RX\+\_\+\+SIZE~( (4\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_mc32gest___r_s232_8c_a1f116fa64399a48ec7662f6a207063bf}{MESS\+\_\+\+SIZE}}) + 1)}
+
+\Hypertarget{_mc32gest___r_s232_8c_ab69d26ca940cf09d48360806e1cd0d8e}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!FIFO\_TX\_SIZE@{FIFO\_TX\_SIZE}}
+\index{FIFO\_TX\_SIZE@{FIFO\_TX\_SIZE}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{FIFO\_TX\_SIZE}{FIFO\_TX\_SIZE}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_ab69d26ca940cf09d48360806e1cd0d8e} 
+\#define FIFO\+\_\+\+TX\+\_\+\+SIZE~( (4\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_mc32gest___r_s232_8c_a1f116fa64399a48ec7662f6a207063bf}{MESS\+\_\+\+SIZE}}) + 1)}
+
+\Hypertarget{_mc32gest___r_s232_8c_a1f116fa64399a48ec7662f6a207063bf}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!MESS\_SIZE@{MESS\_SIZE}}
+\index{MESS\_SIZE@{MESS\_SIZE}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{MESS\_SIZE}{MESS\_SIZE}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_a1f116fa64399a48ec7662f6a207063bf} 
+\#define MESS\+\_\+\+SIZE~5}
+
+\Hypertarget{_mc32gest___r_s232_8c_a875e32598663495e97588e7baaeafdfd}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!STX\_code@{STX\_code}}
+\index{STX\_code@{STX\_code}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{STX\_code}{STX\_code}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_a875e32598663495e97588e7baaeafdfd} 
+\#define STX\+\_\+code~(-\/86)}
+
+\Hypertarget{_mc32gest___r_s232_8c_a2db7ddbaa1ae7b60bc685a19cccd5d42}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!TAILLE\_TABLEAU@{TAILLE\_TABLEAU}}
+\index{TAILLE\_TABLEAU@{TAILLE\_TABLEAU}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{TAILLE\_TABLEAU}{TAILLE\_TABLEAU}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_a2db7ddbaa1ae7b60bc685a19cccd5d42} 
+\#define TAILLE\+\_\+\+TABLEAU~3}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_mc32gest___r_s232_8c_a357972e136ce657ac26f0c47b8220325}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!\_\_ISR@{\_\_ISR}}
+\index{\_\_ISR@{\_\_ISR}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{\_\_ISR()}{\_\_ISR()}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_a357972e136ce657ac26f0c47b8220325} 
+void \+\_\+\+\_\+\+ISR (\begin{DoxyParamCaption}\item[{\+\_\+\+UART\+\_\+3\+\_\+\+VECTOR}]{}{, }\item[{ipl3\+AUTO}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32gest___r_s232_8c_a357972e136ce657ac26f0c47b8220325_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_mc32gest___r_s232_8c_a2d69784a459e16a762705f2d7c0c5665}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!InitFifoComm@{InitFifoComm}}
+\index{InitFifoComm@{InitFifoComm}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{InitFifoComm()}{InitFifoComm()}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_a2d69784a459e16a762705f2d7c0c5665} 
+void Init\+Fifo\+Comm (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialise les FIFOs de communication série (réception et émission). 
+
+Cette fonction initialise les descripteurs et les buffers des FIFOs utilisés pour la communication série. Elle configure également la ligne RTS pour contrôler l\textquotesingle{}accès à l\textquotesingle{}émission.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{_mc32gest___r_s232_8c_a2d69784a459e16a762705f2d7c0c5665_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{_mc32gest___r_s232_8c_a2d69784a459e16a762705f2d7c0c5665_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_mc32gest___r_s232_8c_a9942400bfd56594e50487c705c8240a7}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!SendMessage@{SendMessage}}
+\index{SendMessage@{SendMessage}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{SendMessage()}{SendMessage()}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_a9942400bfd56594e50487c705c8240a7} 
+void Send\+Message (\begin{DoxyParamCaption}\item[{int8\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+Data}{}\end{DoxyParamCaption})}
+
+
+
+Envoie un message via la FIFO d\textquotesingle{}émission série. 
+
+Cette fonction place un message dans la FIFO d\textquotesingle{}émission si de la place est disponible, puis gère le contrôle de flux matériel (CTS) pour déclencher l\textquotesingle{}interruption d\textquotesingle{}émission si nécessaire.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Data} & Pointeur vers le tableau de données à envoyer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32gest___r_s232_8c_a9942400bfd56594e50487c705c8240a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32gest___r_s232_8c_a9942400bfd56594e50487c705c8240a7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_mc32gest___r_s232_8c_a0769dca91fb15b42f540c7b5111e25d2}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!descrFifoRX@{descrFifoRX}}
+\index{descrFifoRX@{descrFifoRX}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{descrFifoRX}{descrFifoRX}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_a0769dca91fb15b42f540c7b5111e25d2} 
+\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} descr\+Fifo\+RX}
+
+\Hypertarget{_mc32gest___r_s232_8c_aad4684d4f6da1ce70998e982331c86a5}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!descrFifoTX@{descrFifoTX}}
+\index{descrFifoTX@{descrFifoTX}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{descrFifoTX}{descrFifoTX}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_aad4684d4f6da1ce70998e982331c86a5} 
+\mbox{\hyperlink{_ges_fifo_th32_8h_aab298509f6587480274bed8300d05711}{S\+\_\+fifo}} descr\+Fifo\+TX}
+
+\Hypertarget{_mc32gest___r_s232_8c_a49d11c764d38810f5e60a38a096fac5a}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!fifoRX@{fifoRX}}
+\index{fifoRX@{fifoRX}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{fifoRX}{fifoRX}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_a49d11c764d38810f5e60a38a096fac5a} 
+int8\+\_\+t fifo\+RX\mbox{[}\mbox{\hyperlink{_mc32gest___r_s232_8c_a131ae84ad3ae96195fb9306a3c8b8876}{FIFO\+\_\+\+RX\+\_\+\+SIZE}}\mbox{]}}
+
+\Hypertarget{_mc32gest___r_s232_8c_a3d5c9a7c210c20dd426321d307258a19}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!fifoTX@{fifoTX}}
+\index{fifoTX@{fifoTX}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{fifoTX}{fifoTX}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_a3d5c9a7c210c20dd426321d307258a19} 
+int8\+\_\+t fifo\+TX\mbox{[}\mbox{\hyperlink{_mc32gest___r_s232_8c_ab69d26ca940cf09d48360806e1cd0d8e}{FIFO\+\_\+\+TX\+\_\+\+SIZE}}\mbox{]}}
+
+\Hypertarget{_mc32gest___r_s232_8c_ae9139a9d1322c0c140f4c772e1b6f813}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!RxMess@{RxMess}}
+\index{RxMess@{RxMess}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{RxMess}{RxMess}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_ae9139a9d1322c0c140f4c772e1b6f813} 
+\mbox{\hyperlink{struct_stru_mess}{Stru\+Mess}} Rx\+Mess}
+
+\Hypertarget{_mc32gest___r_s232_8c_ad4804b90a46438a37eced198010718f4}\index{Mc32gest\_RS232.c@{Mc32gest\_RS232.c}!TxMess@{TxMess}}
+\index{TxMess@{TxMess}!Mc32gest\_RS232.c@{Mc32gest\_RS232.c}}
+\doxysubsubsection{\texorpdfstring{TxMess}{TxMess}}
+{\footnotesize\ttfamily \label{_mc32gest___r_s232_8c_ad4804b90a46438a37eced198010718f4} 
+\mbox{\hyperlink{struct_stru_mess}{Stru\+Mess}} Tx\+Mess}
+

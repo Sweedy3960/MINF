@@ -19,39 +19,41 @@
 \DoxyCodeLine{00016\ \textcolor{comment}{//\ \#include\ "{}bsp\_config.h"{}}}
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
 \DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{comment}{//\ Structure\ à adapter\ selon\ le\ nombre\ de\ canaux}}
-\DoxyCodeLine{00020\ \textcolor{comment}{//\ Limite\ à 8\ avec\ les\ buffers\ alterné}}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00023\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_afb94260a95482c919cde704e83a7587d}{Chan0}};}
-\DoxyCodeLine{00024\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a00b476dc1101396037182d19960bb58d}{Chan1}};}
-\DoxyCodeLine{00025\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_aa6826129f4cc390b6b6b878a22bbe10d}{Chan2}};}
-\DoxyCodeLine{00026\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_ac171207bc15d5ce117cb8fe19f29985e}{Chan3}};}
-\DoxyCodeLine{00027\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a92ec1a3371a4677d8c74d04e77a170f4}{Chan4}};}
-\DoxyCodeLine{00028\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a4523ff850903743d85e39f3b28fb506d}{Chan5}};}
-\DoxyCodeLine{00029\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a4014f21e2b7c1f3dfcbed7f238245ac6}{Chan6}};}
-\DoxyCodeLine{00030\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a9166273f3943fc3be1eaf48067f19e36}{Chan7}};}
-\DoxyCodeLine{00031\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a643dccbb5120ec6ec2fe2d474d3d3790}{Chan8}};}
-\DoxyCodeLine{00032\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_af10debbe7d066ba835a7c9d22df8b2db}{Chan9}};}
-\DoxyCodeLine{00033\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_ad171545f2a264b37e50217410caa9b94}{Chan10}};}
-\DoxyCodeLine{00034\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_adc5625b61be26d5046d823c518dafc5f}{Chan11}};}
-\DoxyCodeLine{00035\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a52660a1a038ece5179aa347f3f9d8ff3}{Chan12}};}
-\DoxyCodeLine{00036\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a33032c7242c464af18b7568c055bc093}{Chan13}};}
-\DoxyCodeLine{00037\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_ad0ba400a47dc72ed31e0460312b08caa}{Chan14}};}
-\DoxyCodeLine{00038\ \ \ }
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00040\ \}\ \mbox{\hyperlink{struct_s___a_d_c_results}{S\_ADCResults}}\ ;}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
-\DoxyCodeLine{00043\ \textcolor{comment}{//\ Fonction\ BSP\_InitADC10}}
-\DoxyCodeLine{00044\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
-\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32_driver_adc_8h_ab8f2c4611b41e63055e35004ea2341e3}{BSP\_InitADC10}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
-\DoxyCodeLine{00048\ \textcolor{comment}{//\ Fonction\ BSP\_ReadAllADC()}}
-\DoxyCodeLine{00049\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
-\DoxyCodeLine{00050\ \mbox{\hyperlink{struct_s___a_d_c_results}{S\_ADCResults}}\ \mbox{\hyperlink{_mc32_driver_adc_8h_a36f58dfc74e1e275e60c920f876974db}{BSP\_ReadAllADC}}();}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00056\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00057\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_afb94260a95482c919cde704e83a7587d}{Chan0}};\ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a00b476dc1101396037182d19960bb58d}{Chan1}};\ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_aa6826129f4cc390b6b6b878a22bbe10d}{Chan2}};\ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_ac171207bc15d5ce117cb8fe19f29985e}{Chan3}};\ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a92ec1a3371a4677d8c74d04e77a170f4}{Chan4}};\ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a4523ff850903743d85e39f3b28fb506d}{Chan5}};\ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a4014f21e2b7c1f3dfcbed7f238245ac6}{Chan6}};\ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a9166273f3943fc3be1eaf48067f19e36}{Chan7}};\ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a643dccbb5120ec6ec2fe2d474d3d3790}{Chan8}};\ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_af10debbe7d066ba835a7c9d22df8b2db}{Chan9}};\ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_ad171545f2a264b37e50217410caa9b94}{Chan10}};\ \ }
+\DoxyCodeLine{00068\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_adc5625b61be26d5046d823c518dafc5f}{Chan11}};\ \ }
+\DoxyCodeLine{00069\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a52660a1a038ece5179aa347f3f9d8ff3}{Chan12}};\ \ }
+\DoxyCodeLine{00070\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_a33032c7242c464af18b7568c055bc093}{Chan13}};\ \ }
+\DoxyCodeLine{00071\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_s___a_d_c_results_ad0ba400a47dc72ed31e0460312b08caa}{Chan14}};\ \ }
+\DoxyCodeLine{00072\ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \}\ \mbox{\hyperlink{struct_s___a_d_c_results}{S\_ADCResults}}\ ;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ Fonction\ BSP\_InitADC10}}
+\DoxyCodeLine{00078\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32_driver_adc_8h_ab8f2c4611b41e63055e35004ea2341e3}{BSP\_InitADC10}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32_driver_adc_8h_acc0c400e02d6ced6ac5552f9687386c7}{DRV\_ADC\_Open}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_mc32_driver_adc_8h_a9b06f68a42771766770774e3302a1ffe}{DRV\_ADC\_Start}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00111\ uint8\_t\ \mbox{\hyperlink{_mc32_driver_adc_8h_a04eded505f95b03236b5c5052c66fb91}{DRV\_ADC\_SamplesAvailable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00119\ uint16\_t\ \mbox{\hyperlink{_mc32_driver_adc_8h_a61e35dbbc70ed4c9bce1c368fa6f10b0}{DRV\_ADC\_SamplesRead}}(uint8\_t\ channel);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00128\ \mbox{\hyperlink{struct_s___a_d_c_results}{S\_ADCResults}}\ \mbox{\hyperlink{_mc32_driver_adc_8h_a36f58dfc74e1e275e60c920f876974db}{BSP\_ReadAllADC}}();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

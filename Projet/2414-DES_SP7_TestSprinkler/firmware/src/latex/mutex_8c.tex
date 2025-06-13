@@ -1,0 +1,111 @@
+\doxysection{mutex.\+c File Reference}
+\hypertarget{mutex_8c}{}\label{mutex_8c}\index{mutex.c@{mutex.c}}
+{\ttfamily \#include "{}mutex.\+h"{}}\newline
+Include dependency graph for mutex.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{mutex_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{mutex_8c_af86cf4cdd2cc3faac418cef4b63fd96b}{MUTEX\+\_\+\+Init}} (\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\+\_\+t}} \texorpdfstring{$\ast$}{*}mutex)
+\begin{DoxyCompactList}\small\item\em Initialise le mutex. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mutex_8c_a3b9252b6be417a9ce610be29de296dfa}{MUTEX\+\_\+\+Lock}} (\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\+\_\+t}} \texorpdfstring{$\ast$}{*}mutex)
+\begin{DoxyCompactList}\small\item\em Verrouille le mutex (attente active). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mutex_8c_a28e7eafd9ab27ec5cf3440eb367abcd0}{MUTEX\+\_\+\+Unlock}} (\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\+\_\+t}} \texorpdfstring{$\ast$}{*}mutex)
+\begin{DoxyCompactList}\small\item\em Déverrouille le mutex. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{mutex_8c_ae8fe33e5f807bf6871ef569fdbcd0798}{MUTEX\+\_\+\+Try\+Lock}} (\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\+\_\+t}} \texorpdfstring{$\ast$}{*}mutex)
+\begin{DoxyCompactList}\small\item\em Tente de verrouiller le mutex sans attendre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mutex_8c_af86cf4cdd2cc3faac418cef4b63fd96b}\index{mutex.c@{mutex.c}!MUTEX\_Init@{MUTEX\_Init}}
+\index{MUTEX\_Init@{MUTEX\_Init}!mutex.c@{mutex.c}}
+\doxysubsubsection{\texorpdfstring{MUTEX\_Init()}{MUTEX\_Init()}}
+{\footnotesize\ttfamily \label{mutex_8c_af86cf4cdd2cc3faac418cef4b63fd96b} 
+void MUTEX\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mutex}{}\end{DoxyParamCaption})}
+
+
+
+Initialise le mutex. 
+
+Initialise le mutex (à l\textquotesingle{}état déverrouillé).
+
+Place le mutex dans un état déverrouillé.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mutex} & Pointeur vers la structure du mutex à initialiser. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{mutex_8c_a3b9252b6be417a9ce610be29de296dfa}\index{mutex.c@{mutex.c}!MUTEX\_Lock@{MUTEX\_Lock}}
+\index{MUTEX\_Lock@{MUTEX\_Lock}!mutex.c@{mutex.c}}
+\doxysubsubsection{\texorpdfstring{MUTEX\_Lock()}{MUTEX\_Lock()}}
+{\footnotesize\ttfamily \label{mutex_8c_a3b9252b6be417a9ce610be29de296dfa} 
+void MUTEX\+\_\+\+Lock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mutex}{}\end{DoxyParamCaption})}
+
+
+
+Verrouille le mutex (attente active). 
+
+Prend le mutex (bloquant).
+
+Bloque jusqu\textquotesingle{}à ce que le mutex soit disponible, puis le verrouille.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mutex} & Pointeur vers la structure du mutex à verrouiller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{mutex_8c_ae8fe33e5f807bf6871ef569fdbcd0798}\index{mutex.c@{mutex.c}!MUTEX\_TryLock@{MUTEX\_TryLock}}
+\index{MUTEX\_TryLock@{MUTEX\_TryLock}!mutex.c@{mutex.c}}
+\doxysubsubsection{\texorpdfstring{MUTEX\_TryLock()}{MUTEX\_TryLock()}}
+{\footnotesize\ttfamily \label{mutex_8c_ae8fe33e5f807bf6871ef569fdbcd0798} 
+bool MUTEX\+\_\+\+Try\+Lock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mutex}{}\end{DoxyParamCaption})}
+
+
+
+Tente de verrouiller le mutex sans attendre. 
+
+Essaie de prendre le mutex (non bloquant).
+
+
+\begin{DoxyParams}{Parameters}
+{\em mutex} & Pointeur vers la structure du mutex à verrouiller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le verrou a été acquis, false sinon. 
+\end{DoxyReturn}
+\Hypertarget{mutex_8c_a28e7eafd9ab27ec5cf3440eb367abcd0}\index{mutex.c@{mutex.c}!MUTEX\_Unlock@{MUTEX\_Unlock}}
+\index{MUTEX\_Unlock@{MUTEX\_Unlock}!mutex.c@{mutex.c}}
+\doxysubsubsection{\texorpdfstring{MUTEX\_Unlock()}{MUTEX\_Unlock()}}
+{\footnotesize\ttfamily \label{mutex_8c_a28e7eafd9ab27ec5cf3440eb367abcd0} 
+void MUTEX\+\_\+\+Unlock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_u_t_e_x__t}{MUTEX\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mutex}{}\end{DoxyParamCaption})}
+
+
+
+Déverrouille le mutex. 
+
+Relâche le mutex.
+
+Libère le verrou du mutex.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mutex} & Pointeur vers la structure du mutex à déverrouiller. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

@@ -4,12 +4,18 @@
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include "{}app.\+h"{}}\newline
 Include dependency graph for Mc32\+\_\+sd\+Fat\+Gest.\+c\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_mc32__sd_fat_gest_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{_mc32__sd_fat_gest_8c_a778050b1faf45c6ed4b5b15a96c044b0}{sd\+\_\+fat\+\_\+task}} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Tâche principale de gestion du système de fichiers FAT sur carte SD. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_mc32__sd_fat_gest_8c_ab88f2212acaa520ae9bcdc4155dc3413}{sd\+\_\+logger\+\_\+schedule\+Write}} (\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}data)
 \item 
 \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4ed}{APP\+\_\+\+FAT\+\_\+\+STATES}} \mbox{\hyperlink{_mc32__sd_fat_gest_8c_a59e4eeaae6bb99a25a56ef760a9e7cc7}{sd\+\_\+get\+State}} (void)
@@ -30,6 +36,10 @@ void \mbox{\hyperlink{_mc32__sd_fat_gest_8c_ad212171d27d68bce04e48d11500b9a80}{s
 {\footnotesize\ttfamily \label{_mc32__sd_fat_gest_8c_a778050b1faf45c6ed4b5b15a96c044b0} 
 void sd\+\_\+fat\+\_\+task (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
+
+
+Tâche principale de gestion du système de fichiers FAT sur carte SD. 
+
 Descriptive Data Item Name
 
 @\+Summary Brief one-\/line summary of the data item.
@@ -40,8 +50,21 @@ Additional description in consecutive paragraphs separated by HTML paragraph bre
 
 Type "{}\+Java\+Doc"{} in the "{}\+How Do I?"{} IDE toolbar for more information on tags.
 
-@\+Remarks Any additional remarks Here is the caller graph for this function\+:
-% FIG 1
+@\+Remarks Any additional remarks 
+
+Cette fonction implémente la machine d\textquotesingle{}état pour le montage, l\textquotesingle{}écriture, la fermeture et le démontage de la carte SD.
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{_mc32__sd_fat_gest_8c_a778050b1faf45c6ed4b5b15a96c044b0_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_mc32__sd_fat_gest_8c_a59e4eeaae6bb99a25a56ef760a9e7cc7}\index{Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}!sd\_getState@{sd\_getState}}
 \index{sd\_getState@{sd\_getState}!Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}}
 \doxysubsubsection{\texorpdfstring{sd\_getState()}{sd\_getState()}}
@@ -49,7 +72,13 @@ Type "{}\+Java\+Doc"{} in the "{}\+How Do I?"{} IDE toolbar for more information
 \mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4ed}{APP\+\_\+\+FAT\+\_\+\+STATES}} sd\+\_\+get\+State (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
 Here is the caller graph for this function\+:
-% FIG 2
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{_mc32__sd_fat_gest_8c_a59e4eeaae6bb99a25a56ef760a9e7cc7_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_mc32__sd_fat_gest_8c_ab88f2212acaa520ae9bcdc4155dc3413}\index{Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}!sd\_logger\_scheduleWrite@{sd\_logger\_scheduleWrite}}
 \index{sd\_logger\_scheduleWrite@{sd\_logger\_scheduleWrite}!Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}}
 \doxysubsubsection{\texorpdfstring{sd\_logger\_scheduleWrite()}{sd\_logger\_scheduleWrite()}}
@@ -57,15 +86,19 @@ Here is the caller graph for this function\+:
 void sd\+\_\+logger\+\_\+schedule\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmcp79411__time}{mcp79411\+\_\+time}} \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
 
 Here is the caller graph for this function\+:
-% FIG 3
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{_mc32__sd_fat_gest_8c_ab88f2212acaa520ae9bcdc4155dc3413_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{_mc32__sd_fat_gest_8c_ad212171d27d68bce04e48d11500b9a80}\index{Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}!sd\_setState@{sd\_setState}}
 \index{sd\_setState@{sd\_setState}!Mc32\_sdFatGest.c@{Mc32\_sdFatGest.c}}
 \doxysubsubsection{\texorpdfstring{sd\_setState()}{sd\_setState()}}
 {\footnotesize\ttfamily \label{_mc32__sd_fat_gest_8c_ad212171d27d68bce04e48d11500b9a80} 
 void sd\+\_\+set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_mc32__sd_fat_gest_8h_affaec50313a856692ec757cbeef1f4ed}{APP\+\_\+\+FAT\+\_\+\+STATES}}}]{new\+State}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:
-% FIG 4
 
 
 \doxysubsection{Variable Documentation}

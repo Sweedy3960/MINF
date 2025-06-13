@@ -1,4 +1,3 @@
-
 #include "mcp79411.h"
 
 #include "Mc32_I2cUtilCCS.h"
@@ -6,6 +5,12 @@
 
 static mcp79411_obj mcp79411;
 
+/**
+ * @brief Convertit un entier décimal en BCD (Binary Coded Decimal).
+ *
+ * @param dec Valeur décimale à convertir.
+ * @return uint8_t Valeur convertie en BCD.
+ */
 uint8_t mcp79411_dec2bcd(uint8_t dec)
 {
     unsigned char l_highHalfByte = 0;
@@ -28,6 +33,13 @@ uint8_t mcp79411_dec2bcd(uint8_t dec)
 
     return ret;
 }
+
+/**
+ * @brief Convertit une valeur BCD en entier décimal.
+ *
+ * @param bcd Valeur BCD à convertir.
+ * @return uint8_t Valeur convertie en décimal.
+ */
 uint8_t mcp79411_bcd2dec(uint8_t bcd)
 {
     unsigned char l_highHalfByte = 0;
@@ -51,6 +63,14 @@ uint8_t mcp79411_bcd2dec(uint8_t bcd)
     return ret;    
 }
 
+/**
+ * @brief Lit un ou plusieurs registres du RTC MCP79411 via I2C.
+ *
+ * @param reg_addr Adresse du registre à lire.
+ * @param rx_buffer Pointeur vers le buffer de réception.
+ * @param len Nombre d'octets à lire.
+ * @return uint8_t 0 si succès, -1 en cas d'erreur.
+ */
 uint8_t mcp79411_rtc_reg_read(uint8_t reg_addr, uint8_t* rx_buffer, uint16_t len)
 {
     int ret = -1;
@@ -69,6 +89,14 @@ uint8_t mcp79411_rtc_reg_read(uint8_t reg_addr, uint8_t* rx_buffer, uint16_t len
     return ret;    
 }
 
+/**
+ * @brief Écrit un ou plusieurs registres du RTC MCP79411 via I2C.
+ *
+ * @param reg_addr Adresse du registre à écrire.
+ * @param tx_buffer Pointeur vers le buffer de données à écrire.
+ * @param len Nombre d'octets à écrire.
+ * @return uint8_t 0 si succès, -1 en cas d'erreur.
+ */
 uint8_t mcp79411_rtc_reg_write(uint8_t reg_addr, uint8_t* tx_buffer, uint16_t len)
 {
 	unsigned char* ptx = &mcp79411.buffers.tx_buffer[0];
@@ -88,6 +116,12 @@ uint8_t mcp79411_rtc_reg_write(uint8_t reg_addr, uint8_t* tx_buffer, uint16_t le
     return ret;    
 }
 
+/**
+ * @brief Définit l'heure du RTC MCP79411.
+ *
+ * @param time Pointeur vers la structure contenant l'heure à programmer.
+ * @return uint8_t 0 si succès, -1 en cas d'erreur.
+ */
 uint8_t mcp79411_set_time(mcp79411_time* time)
 {
     mcp79411_TIME_KEEPING reg_time;
@@ -120,6 +154,12 @@ uint8_t mcp79411_set_time(mcp79411_time* time)
     return ret;
 }
 
+/**
+ * @brief Lit l'heure courante du RTC MCP79411.
+ *
+ * @param time Pointeur vers la structure où stocker l'heure lue.
+ * @return uint8_t 0 si succès, -1 en cas d'erreur.
+ */
 uint8_t mcp79411_get_time(mcp79411_time* time)
 {
     mcp79411_TIME_KEEPING reg_time;
@@ -145,6 +185,13 @@ uint8_t mcp79411_get_time(mcp79411_time* time)
 
     return ret;
 }
+
+/**
+ * @brief Récupère le statut de l'oscillateur du RTC MCP79411.
+ *
+ * @param time Pointeur vers la structure d'heure (non utilisé ici).
+ * @return uint8_t Statut de l'oscillateur (0 = arrêt, 1 = en marche).
+ */
 uint8_t mcp79411_get_status(mcp79411_time* time)
 {
     mcp79411_TIME_KEEPING reg_time;
@@ -165,6 +212,13 @@ uint8_t mcp79411_get_status(mcp79411_time* time)
     }
     return Oscillator_status;
 }
+
+/**
+ * @brief Active l'oscillateur du RTC MCP79411.
+ *
+ * @param time Pointeur vers la structure d'heure (non utilisé ici).
+ * @return uint8_t 0 si succès, 1 en cas d'erreur.
+ */
 uint8_t mcp79411_set_OscOn(mcp79411_time* time)
 {
     mcp79411_CONTROL reg_CONTROL;
@@ -188,6 +242,7 @@ uint8_t mcp79411_set_OscOn(mcp79411_time* time)
 
     return ret;
 }
+
 /*
 int mcp79411_set_alarm(mcp79411_alarm_channel chnl, mcp79411_alarm_mode mode,
  mcp79411_alarm *alarm)
@@ -266,6 +321,12 @@ int mcp79411_stop_alarm(mcp79411_alarm_channel chnl)
     return ret;
 }
 */
+
+/**
+ * @brief Initialise le RTC MCP79411 (configuration par défaut).
+ *
+ * @return void
+ */
 void mcp79411_init(void)
 {
     
@@ -292,6 +353,14 @@ void mcp79411_init(void)
     (void)mcp79411_rtc_reg_write(MCP79411_REG_RTCC_OSCTRIM, &reg_OSCTRIM.osctrim_byte, sizeof(reg_OSCTRIM));
      
 }
+
+/**
+ * @brief Effectue une écriture I2C vers le RTC MCP79411.
+ *
+ * @param tx_buffer Pointeur vers le buffer de données à écrire.
+ * @param len Nombre d'octets à écrire.
+ * @return uint8_t 0 si succès, 1 en cas d'erreur.
+ */
 uint8_t mcp79411_rtc_iic_write(uint8_t  *tx_buffer, uint16_t len)
 {
     int8_t ack = 1;
@@ -307,6 +376,13 @@ uint8_t mcp79411_rtc_iic_write(uint8_t  *tx_buffer, uint16_t len)
     return ack;
 }
 
+/**
+ * @brief Effectue une lecture I2C depuis le RTC MCP79411.
+ *
+ * @param rx_buffer Pointeur vers le buffer de réception.
+ * @param len Nombre d'octets à lire.
+ * @return uint8_t 0 si succès, 1 en cas d'erreur.
+ */
 uint8_t mcp79411_rtc_iic_read(uint8_t  *rx_buffer,uint16_t len)
 {   static uint8_t i =0;
     int ret = 1;

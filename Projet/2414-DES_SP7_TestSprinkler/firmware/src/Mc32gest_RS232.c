@@ -1,9 +1,9 @@
 // Mc32Gest_RS232.C
 // Canevas manipulatio TP2 RS232 SLO2 2017-18
-// Fonctions d'émission et de réception des message
+// Fonctions d'ï¿½mission et de rï¿½ception des message
 // CHR 20.12.2016 ajout traitement int error
 // CHR 22.12.2016 evolution des marquers observation int Usart
-// SCA 03.01.2018 nettoyé réponse interrupt pour ne laisser que les 3 ifs
+// SCA 03.01.2018 nettoyï¿½ rï¿½ponse interrupt pour ne laisser que les 3 ifs
 
 #include <xc.h>
 #include <sys/attribs.h>
@@ -32,7 +32,7 @@ typedef union {
 // avec int8_t besoin -86 au lieu de 0xAA
 #define STX_code  (-86)
 
-// Structure décrivant le message
+// Structure dï¿½crivant le message
 
 typedef struct {
     uint8_t Start;
@@ -43,51 +43,68 @@ typedef struct {
 } StruMess;
 
 
-// Struct pour émission des messages
+// Struct pour ï¿½mission des messages
 StruMess TxMess;
-// Struct pour réception des messages
+// Struct pour rï¿½ception des messages
 StruMess RxMess;
 
-// Declaration des FIFO pour réception et émission
+// Declaration des FIFO pour rï¿½ception et ï¿½mission
 #define FIFO_RX_SIZE ( (4*MESS_SIZE) + 1)  // 4 messages
 #define FIFO_TX_SIZE ( (4*MESS_SIZE) + 1)  // 4 messages
 
 int8_t fifoRX[FIFO_RX_SIZE];
-// Declaration du descripteur du FIFO de réception
+// Declaration du descripteur du FIFO de rï¿½ception
 S_fifo descrFifoRX;
 
 
 int8_t fifoTX[FIFO_TX_SIZE];
-// Declaration du descripteur du FIFO d'émission
+// Declaration du descripteur du FIFO d'ï¿½mission
 S_fifo descrFifoTX;
 
 
-// Initialisation de la communication sérielle
+// Initialisation de la communication sï¿½rielle
 
+/**
+ * @brief Initialise les FIFOs de communication sÃ©rie (rÃ©ception et Ã©mission).
+ *
+ * Cette fonction initialise les descripteurs et les buffers des FIFOs utilisÃ©s pour la communication sÃ©rie.
+ * Elle configure Ã©galement la ligne RTS pour contrÃ´ler l'accÃ¨s Ã  l'Ã©mission.
+ *
+ * @return void
+ */
 void InitFifoComm(void) {
-    // Initialisation du fifo de réception
+    // Initialisation du fifo de rï¿½ception
     InitFifo(&descrFifoRX, FIFO_RX_SIZE, fifoRX, 0);
-    // Initialisation du fifo d'émission
+    // Initialisation du fifo d'ï¿½mission
     InitFifo(&descrFifoTX, FIFO_TX_SIZE, fifoTX, 0);
 
     // Init RTS 
-    UART1_RTSOn(); // interdit émission par l'autre
+    UART1_RTSOn(); // interdit ï¿½mission par l'autre
 
 } // InitComm
 
 
-// Valeur de retour 0  = pas de message reçu donc local (data non modifié)
-// Valeur de retour 1  = message reçu donc en remote (data mis à jour)
+// Valeur de retour 0  = pas de message reï¿½u donc local (data non modifiï¿½)
+// Valeur de retour 1  = message reï¿½u donc en remote (data mis ï¿½ jour)
+/**
+ * @brief Envoie un message via la FIFO d'Ã©mission sÃ©rie.
+ *
+ * Cette fonction place un message dans la FIFO d'Ã©mission si de la place est disponible,
+ * puis gÃ¨re le contrÃ´le de flux matÃ©riel (CTS) pour dÃ©clencher l'interruption d'Ã©mission si nÃ©cessaire.
+ *
+ * @param pData Pointeur vers le tableau de donnÃ©es Ã  envoyer.
+ * @return void
+ */
 void SendMessage(int8_t *pData) {
     int8_t freeSize;
     int8_t ctsstate;
-    // Traitement émission à introduire ICI
-    // Formatage message et remplissage fifo émission
+    // Traitement ï¿½mission ï¿½ introduire ICI
+    // Formatage message et remplissage fifo ï¿½mission
     // ...
-    // Test si place Pour écrire 1 message 
+    // Test si place Pour ï¿½crire 1 message 
     freeSize = GetWriteSpace(&descrFifoTX);
     if (freeSize >= MESS_SIZE) {
-        // Dépose le message dans le fifo
+        // Dï¿½pose le message dans le fifo
         PutCharInFifo(&descrFifoTX, (int8_t)*pData);
     }
 
@@ -95,11 +112,11 @@ void SendMessage(int8_t *pData) {
 
 
     // Gestion du controle de flux
-    // si on a un caractère à envoyer et que CTS = 0
+    // si on a un caractï¿½re ï¿½ envoyer et que CTS = 0
     freeSize = GetReadSize(&descrFifoTX);
     ctsstate = UART1_CTSStateGet();
     if ((ctsstate==0) && (freeSize > 0)) {
-        // Autorise int émission    
+        // Autorise int ï¿½mission    
         PLIB_INT_SourceEnable(INT_ID_0, INT_SOURCE_USART_3_TRANSMIT);
     }
 }
@@ -107,7 +124,7 @@ void SendMessage(int8_t *pData) {
 
 // Interruption USART1
 // !!!!!!!!
-// Attention ne pas oublier de supprimer la réponse générée dans system_interrupt
+// Attention ne pas oublier de supprimer la rï¿½ponse gï¿½nï¿½rï¿½e dans system_interrupt
 // !!!!!!!!
 void __ISR(_UART_1_VECTOR, ipl1AUTO)_IntHandlerDrvUsartInstance0() {
 
@@ -123,7 +140,7 @@ void __ISR(_UART_1_VECTOR, ipl1AUTO)_IntHandlerDrvUsartInstance0() {
             PLIB_INT_SourceIsEnabled(INT_ID_0, INT_SOURCE_USART_1_ERROR)) {
         //Clear pending interrupt 
         PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_USART_1_ERROR);
-        // Traitement de l'erreur à la réception.
+        // Traitement de l'erreur ï¿½ la rï¿½ception.
     }
 
 
@@ -131,19 +148,19 @@ void __ISR(_UART_1_VECTOR, ipl1AUTO)_IntHandlerDrvUsartInstance0() {
     if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_1_RECEIVE) &&
             PLIB_INT_SourceIsEnabled(INT_ID_0, INT_SOURCE_USART_1_RECEIVE)) {
 
-        // Oui Test si erreur parité ou overrun
+        // Oui Test si erreur paritï¿½ ou overrun
         UsartStatus = PLIB_USART_ErrorsGet(USART_ID_1);
 
         if ((UsartStatus & (USART_ERROR_PARITY |
                 USART_ERROR_FRAMING | USART_ERROR_RECEIVER_OVERRUN)) == 0) {
 
-            // Traitement RX à faire ICI
-            // Lecture des caractères depuis le buffer HW -> fifo SW
+            // Traitement RX ï¿½ faire ICI
+            // Lecture des caractï¿½res depuis le buffer HW -> fifo SW
             //  (pour savoir s'il y a une data dans le buffer HW RX : PLIB_USART_ReceiverDataIsAvailable())
             //  (Lecture via fonction PLIB_USART_ReceiverByteReceive())
             // ...
             // transfert dans le FIFO software
-            // de tous les char reçus
+            // de tous les char reï¿½us
             if (PLIB_USART_ReceiverDataIsAvailable(USART_ID_1)) {
                 c = PLIB_USART_ReceiverByteReceive(USART_ID_1);
                 PutCharInFifo(&descrFifoRX, c);
@@ -163,7 +180,7 @@ void __ISR(_UART_1_VECTOR, ipl1AUTO)_IntHandlerDrvUsartInstance0() {
         freeSize = GetWriteSpace(&descrFifoRX);
         // clean de la fifo si proche full 
         if (freeSize <= 6) {
-            // Contrôle de flux : demande stop émission
+            // Contrï¿½le de flux : demande stop ï¿½mission
             RS232_RTS = 1;
         }
     }
@@ -180,20 +197,20 @@ void __ISR(_UART_1_VECTOR, ipl1AUTO)_IntHandlerDrvUsartInstance0() {
     if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_1_TRANSMIT) &&
             PLIB_INT_SourceIsEnabled(INT_ID_0, INT_SOURCE_USART_1_TRANSMIT)) {
 
-        // Traitement TX à faire ICI
-        // Envoi des caractères depuis le fifo SW -> buffer HW
+        // Traitement TX ï¿½ faire ICI
+        // Envoi des caractï¿½res depuis le fifo SW -> buffer HW
 
-        // Avant d'émettre, on vérifie 3 conditions :
-        //  Si CTS = 0 autorisation d'émettre (entrée RS232_CTS)
-        //  S'il y a un caratères à émettre dans le fifo
-        //  S'il y a de la place dans le buffer d'émission (PLIB_USART_TransmitterBufferIsFull)
+        // Avant d'ï¿½mettre, on vï¿½rifie 3 conditions :
+        //  Si CTS = 0 autorisation d'ï¿½mettre (entrï¿½e RS232_CTS)
+        //  S'il y a un caratï¿½res ï¿½ ï¿½mettre dans le fifo
+        //  S'il y a de la place dans le buffer d'ï¿½mission (PLIB_USART_TransmitterBufferIsFull)
         //   (envoi avec PLIB_USART_TransmitterByteSend())
 
         // ...
         TXsize = GetReadSize(&descrFifoTX);
-        // Si CTS = 0 (autorisation d'émettre)
+        // Si CTS = 0 (autorisation d'ï¿½mettre)
         i_cts = RS232_CTS;
-        //Si buffer pas full onet autorisation d'émettre 
+        //Si buffer pas full onet autorisation d'ï¿½mettre 
         TxBuffFull = PLIB_USART_TransmitterBufferIsFull(USART_ID_1);
         if ((i_cts == 0) && (TXsize > 0) &&
                 TxBuffFull == false) {
@@ -240,7 +257,7 @@ void __ISR(_UART_3_VECTOR, ipl3AUTO)_IntHandlerDrvUsartInstance1() {
     BOOL TxBuffFull;
 
 
-    //  début int  Led3
+    //  dï¿½but int  Led3
     //LED3_W = 1;
 
     // Is this an Error interrupt ?
@@ -248,7 +265,7 @@ void __ISR(_UART_3_VECTOR, ipl3AUTO)_IntHandlerDrvUsartInstance1() {
             PLIB_INT_SourceIsEnabled(INT_ID_0, INT_SOURCE_USART_3_ERROR)) {
         /* Clear pending interrupt */
         PLIB_INT_SourceFlagClear(INT_ID_0, INT_SOURCE_USART_3_ERROR);
-        // Traitement de l'erreur à la réception.
+        // Traitement de l'erreur ï¿½ la rï¿½ception.
     }
 
 
@@ -256,19 +273,19 @@ void __ISR(_UART_3_VECTOR, ipl3AUTO)_IntHandlerDrvUsartInstance1() {
     if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_3_RECEIVE) &&
             PLIB_INT_SourceIsEnabled(INT_ID_0, INT_SOURCE_USART_3_RECEIVE)) {
 
-        // Oui Test si erreur parité ou overrun
+        // Oui Test si erreur paritï¿½ ou overrun
         UsartStatus = PLIB_USART_ErrorsGet(USART_ID_3);
 
         if ((UsartStatus & (USART_ERROR_PARITY |
                 USART_ERROR_FRAMING | USART_ERROR_RECEIVER_OVERRUN)) == 0) {
 
-            // Traitement RX à faire ICI
-            // Lecture des caractères depuis le buffer HW -> fifo SW
+            // Traitement RX ï¿½ faire ICI
+            // Lecture des caractï¿½res depuis le buffer HW -> fifo SW
             //  (pour savoir s'il y a une data dans le buffer HW RX : PLIB_USART_ReceiverDataIsAvailable())
             //  (Lecture via fonction PLIB_USART_ReceiverByteReceive())
             // ...
             // transfert dans le FIFO software
-            // de tous les char reçus
+            // de tous les char reï¿½us
             if (PLIB_USART_ReceiverDataIsAvailable(USART_ID_3)) {
                 c = PLIB_USART_ReceiverByteReceive(USART_ID_3);
                 PutCharInFifo(&descrFifoRX, c);
@@ -288,7 +305,7 @@ void __ISR(_UART_3_VECTOR, ipl3AUTO)_IntHandlerDrvUsartInstance1() {
         freeSize = GetWriteSpace(&descrFifoRX);
         // clean de la fifo si proche full 
         if (freeSize <= 6) {
-            // Contrôle de flux : demande stop émission
+            // Contrï¿½le de flux : demande stop ï¿½mission
             UART1_RTSOn();
         }
     }
@@ -305,20 +322,20 @@ void __ISR(_UART_3_VECTOR, ipl3AUTO)_IntHandlerDrvUsartInstance1() {
     if (PLIB_INT_SourceFlagGet(INT_ID_0, INT_SOURCE_USART_3_TRANSMIT) &&
             PLIB_INT_SourceIsEnabled(INT_ID_0, INT_SOURCE_USART_3_TRANSMIT)) {
 
-        // Traitement TX à faire ICI
-        // Envoi des caractères depuis le fifo SW -> buffer HW
+        // Traitement TX ï¿½ faire ICI
+        // Envoi des caractï¿½res depuis le fifo SW -> buffer HW
 
-        // Avant d'émettre, on vérifie 3 conditions :
-        //  Si CTS = 0 autorisation d'émettre (entrée RS232_CTS)
-        //  S'il y a un caratères à émettre dans le fifo
-        //  S'il y a de la place dans le buffer d'émission (PLIB_USART_TransmitterBufferIsFull)
+        // Avant d'ï¿½mettre, on vï¿½rifie 3 conditions :
+        //  Si CTS = 0 autorisation d'ï¿½mettre (entrï¿½e RS232_CTS)
+        //  S'il y a un caratï¿½res ï¿½ ï¿½mettre dans le fifo
+        //  S'il y a de la place dans le buffer d'ï¿½mission (PLIB_USART_TransmitterBufferIsFull)
         //   (envoi avec PLIB_USART_TransmitterByteSend())
 
         // ...
         TXsize = GetReadSize(&descrFifoTX);
-        // Si CTS = 0 (autorisation d'émettre)
+        // Si CTS = 0 (autorisation d'ï¿½mettre)
         i_cts = UART1_CTSStateGet();
-        //Si buffer pas full onet autorisation d'émettre 
+        //Si buffer pas full onet autorisation d'ï¿½mettre 
         TxBuffFull = PLIB_USART_TransmitterBufferIsFull(USART_ID_3);
         if ((i_cts == 0) && (TXsize > 0) &&
                 TxBuffFull == false) {
