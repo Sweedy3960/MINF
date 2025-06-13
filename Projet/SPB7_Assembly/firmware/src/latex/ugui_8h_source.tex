@@ -1,0 +1,1063 @@
+\doxysection{ugui.\+h}
+\hypertarget{ugui_8h_source}{}\label{ugui_8h_source}\mbox{\hyperlink{ugui_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*\ -\/-\/\ µGUI\ -\/\ Generic\ GUI\ module\ (C)Achim\ Döbler,\ 2015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ µGUI\ is\ a\ generic\ GUI\ module\ for\ embedded\ systems.}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ This\ is\ a\ free\ software\ that\ is\ open\ for\ education,\ research\ and\ commercial}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ developments\ under\ license\ policy\ of\ following\ terms.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ \ Copyright\ (C)\ 2015,\ Achim\ Döbler,\ all\ rights\ reserved.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ \ URL:\ http://www.embeddedlightning.com/}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ *\ The\ µGUI\ module\ is\ a\ free\ software\ and\ there\ is\ NO\ WARRANTY.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ *\ No\ restriction\ on\ use.\ You\ can\ use,\ modify\ and\ redistribute\ it\ for}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ \ \ personal,\ non-\/profit\ or\ commercial\ products\ UNDER\ YOUR\ RESPONSIBILITY.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ *\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright\ notice.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//}}
+\DoxyCodeLine{00016\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#ifndef\ \_\_UGUI\_H}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ \_\_UGUI\_H}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ MODIFICATION\ DES\ INCLUDE\ POUR\ PROJETS\ PIC32\ -\/\ JMO\ AVRIL\ 2020*/}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\#include\ "{}system.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ugui__config_8h}{ugui\_config.h}}"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ -\/-\/\ µGUI\ FONTS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00032\ \textcolor{comment}{/*\ -\/-\/\ Source:\ http://www.mikrocontroller.net/user/show/benedikt\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00033\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{ugui_8h_a3ad5e582e8d6be4f99ae0fbe549e870ea6ac9b30ec0af4f6c5ec28e577d77b3c1}{FONT\_TYPE\_1BPP}},}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{ugui_8h_a3ad5e582e8d6be4f99ae0fbe549e870ea1ce213d4d2a0c81224c73f18cd3b0667}{FONT\_TYPE\_8BPP}}}
+\DoxyCodeLine{00038\ \}\ \mbox{\hyperlink{ugui_8h_a3ad5e582e8d6be4f99ae0fbe549e870e}{FONT\_TYPE}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_u_g___f_o_n_t_a4014c6f4a6fa0e565ca592bcaca0fa58}{p}};}
+\DoxyCodeLine{00043\ \ \ \ \mbox{\hyperlink{ugui_8h_a3ad5e582e8d6be4f99ae0fbe549e870e}{FONT\_TYPE}}\ \mbox{\hyperlink{struct_u_g___f_o_n_t_a0dab2f9e9703c867eae3d853a4f9eb4b}{font\_type}};}
+\DoxyCodeLine{00044\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___f_o_n_t_a2710e5f835e1d5e149f9a22a32abe06c}{char\_width}};}
+\DoxyCodeLine{00045\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___f_o_n_t_a7eb447146a8ce30bb469d40670b4645b}{char\_height}};}
+\DoxyCodeLine{00046\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a14f28bb1d9bcb9c7a22e5f40d48a4d7d}{UG\_U16}}\ \mbox{\hyperlink{struct_u_g___f_o_n_t_a9931d53458678271f1c38e9db4b97954}{start\_char}};}
+\DoxyCodeLine{00047\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a14f28bb1d9bcb9c7a22e5f40d48a4d7d}{UG\_U16}}\ \mbox{\hyperlink{struct_u_g___f_o_n_t_ab26411fd53a8f700e819d09854c29aa9}{end\_char}};}
+\DoxyCodeLine{00048\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \ *\mbox{\hyperlink{struct_u_g___f_o_n_t_ae42f6ccce02fdd5ae704ca4324f690fa}{widths}};}
+\DoxyCodeLine{00049\ \}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_4X6}}
+\DoxyCodeLine{00052\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ \mbox{\hyperlink{ugui_8c_afeb0ec219ab8d820a2b4d704e3b21023}{FONT\_4X6}};}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_5X8}}
+\DoxyCodeLine{00055\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ \mbox{\hyperlink{ugui_8c_a208221245b571e176f18644ee7d4ecbc}{FONT\_5X8}};}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_5X12}}
+\DoxyCodeLine{00058\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ FONT\_5X12;}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_6X8}}
+\DoxyCodeLine{00061\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ \mbox{\hyperlink{ugui_8c_a4f6036670aeea32d577ec152aa2ddd51}{FONT\_6X8}};}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_6X10}}
+\DoxyCodeLine{00064\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ FONT\_6X10;}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_7X12}}
+\DoxyCodeLine{00067\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ FONT\_7X12;}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_8X8}}
+\DoxyCodeLine{00070\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ \mbox{\hyperlink{ugui_8c_a7bda88e222c59f0fdc67ec3446fecefe}{FONT\_8X8}};}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_8X12}}
+\DoxyCodeLine{00073\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ \mbox{\hyperlink{ugui_8c_a36532cd85f754cb53d082aed557f6fd4}{FONT\_8X12}};}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_8X12\_CYRILLIC}}
+\DoxyCodeLine{00076\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ \mbox{\hyperlink{ugui_8c_a36532cd85f754cb53d082aed557f6fd4}{FONT\_8X12}};}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_8X14}}
+\DoxyCodeLine{00079\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ FONT\_8X14;}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_10X16}}
+\DoxyCodeLine{00082\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ \mbox{\hyperlink{ugui_8c_a660210e3bcc790720b417028589be4dc}{FONT\_10X16}};}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_12X16}}
+\DoxyCodeLine{00085\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ \mbox{\hyperlink{ugui_8c_a445a832192ebab1857e441d14231441b}{FONT\_12X16}};}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_12X20}}
+\DoxyCodeLine{00088\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ FONT\_12X20;}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_16X26}}
+\DoxyCodeLine{00091\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ \mbox{\hyperlink{ugui_8c_a3e384685662b84425f1b530cba9e617d}{FONT\_16X26}};}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_22X36}}
+\DoxyCodeLine{00094\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ \mbox{\hyperlink{ugui_8c_a091ffcf131d1215352cb232184b5e94f}{FONT\_22X36}};}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_24X40}}
+\DoxyCodeLine{00097\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ FONT\_24X40;}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#ifdef\ USE\_FONT\_32X53}}
+\DoxyCodeLine{00100\ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ FONT\_32X53;}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00104\ \textcolor{comment}{/*\ -\/-\/\ TYPEDEFS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00105\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00106\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s___o_b_j_e_c_t}{S\_OBJECT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ugui_8h_a2eb8ed9e0319857ba94b1df5524c08d6}{UG\_OBJECT}};}
+\DoxyCodeLine{00107\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s___w_i_n_d_o_w}{S\_WINDOW}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}};}
+\DoxyCodeLine{00108\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}};}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#ifdef\ USE\_COLOR\_RGB888}}
+\DoxyCodeLine{00110\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{ugui__config_8h_aadcba1b5f48bcd42fd707ba63e3990ea}{UG\_U32}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}};}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#ifdef\ USE\_COLOR\_RGB565}}
+\DoxyCodeLine{00113\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{ugui__config_8h_a14f28bb1d9bcb9c7a22e5f40d48a4d7d}{UG\_U16}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}};}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00115\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00116\ \textcolor{comment}{/*\ -\/-\/\ DEFINES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00117\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ \#define\ NULL\ ((void*)\ 0)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{comment}{/*\ Alignments\ */}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ ALIGN\_H\_LEFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ ALIGN\_H\_CENTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<1)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ ALIGN\_H\_RIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<2)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ ALIGN\_V\_TOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<3)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ ALIGN\_V\_CENTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<4)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ ALIGN\_V\_BOTTOM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<5)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ ALIGN\_BOTTOM\_RIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ALIGN\_V\_BOTTOM|ALIGN\_H\_RIGHT)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ ALIGN\_BOTTOM\_CENTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ALIGN\_V\_BOTTOM|ALIGN\_H\_CENTER)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ ALIGN\_BOTTOM\_LEFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ALIGN\_V\_BOTTOM|ALIGN\_H\_LEFT)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ ALIGN\_CENTER\_RIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ALIGN\_V\_CENTER|ALIGN\_H\_RIGHT)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ ALIGN\_CENTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ALIGN\_V\_CENTER|ALIGN\_H\_CENTER)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ ALIGN\_CENTER\_LEFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ALIGN\_V\_CENTER|ALIGN\_H\_LEFT)}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ ALIGN\_TOP\_RIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ALIGN\_V\_TOP|ALIGN\_H\_RIGHT)}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ ALIGN\_TOP\_CENTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ALIGN\_V\_TOP|ALIGN\_H\_CENTER)}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ ALIGN\_TOP\_LEFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ALIGN\_V\_TOP|ALIGN\_H\_LEFT)}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{comment}{/*\ Default\ IDs\ */}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 6}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 9}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 11}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 13}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 14}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 15}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 17}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 18}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ OBJ\_ID\_19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 19}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00162\ \textcolor{comment}{/*\ -\/-\/\ FUNCTION\ RESULTS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00163\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ UG\_RESULT\_FAIL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/1}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ UG\_RESULT\_OK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00168\ \textcolor{comment}{/*\ -\/-\/\ UNIVERSAL\ STRUCTURES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00169\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00170\ \textcolor{comment}{/*\ Area\ structure\ */}}
+\DoxyCodeLine{00171\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00172\ \{}
+\DoxyCodeLine{00173\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___a_r_e_a_a6433d1b6f09c1a6a5cfbd7a3a0d0bccf}{xs}};}
+\DoxyCodeLine{00174\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___a_r_e_a_a17563738ec8228edfac8d7014db27ca4}{ys}};}
+\DoxyCodeLine{00175\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___a_r_e_a_a9e9d97744ed6c549abfcac5527ca422b}{xe}};}
+\DoxyCodeLine{00176\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___a_r_e_a_a78a69d5bdf6191530c83c784f9241961}{ye}};}
+\DoxyCodeLine{00177\ \}\ \mbox{\hyperlink{struct_u_g___a_r_e_a}{UG\_AREA}};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{comment}{/*\ Text\ structure\ */}}
+\DoxyCodeLine{00180\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00181\ \{}
+\DoxyCodeLine{00182\ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_u_g___t_e_x_t_ab50d783982593ef993ea0b68f7ad8b80}{str}};}
+\DoxyCodeLine{00183\ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ \mbox{\hyperlink{struct_u_g___t_e_x_t_ac6f9909f7ce79946988adff5935baed9}{font}};}
+\DoxyCodeLine{00184\ \ \ \ \mbox{\hyperlink{struct_u_g___a_r_e_a}{UG\_AREA}}\ \mbox{\hyperlink{struct_u_g___t_e_x_t_a32b41ad06ed9675239bdba78d49b9c55}{a}};}
+\DoxyCodeLine{00185\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___t_e_x_t_ab41e4999439c326e4def874236684878}{fc}};}
+\DoxyCodeLine{00186\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___t_e_x_t_a2b1fa3519dd309e124aead2f4ca3aa92}{bc}};}
+\DoxyCodeLine{00187\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___t_e_x_t_a227fefee7b061b95514886e38a80e0df}{align}};}
+\DoxyCodeLine{00188\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___t_e_x_t_a237e007d28825c53d259c4f59f840b27}{h\_space}};}
+\DoxyCodeLine{00189\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___t_e_x_t_aefc482e2e17176bc2462d6748d9e28c5}{v\_space}};}
+\DoxyCodeLine{00190\ \}\ \mbox{\hyperlink{struct_u_g___t_e_x_t}{UG\_TEXT}};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00193\ \textcolor{comment}{/*\ -\/-\/\ BITMAP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00194\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00195\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00196\ \{}
+\DoxyCodeLine{00197\ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_u_g___b_m_p_a117104b82864d3b23ec174af6d392709}{p}};}
+\DoxyCodeLine{00198\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a14f28bb1d9bcb9c7a22e5f40d48a4d7d}{UG\_U16}}\ \mbox{\hyperlink{struct_u_g___b_m_p_a530e314131144894b07d37a5629c13e0}{width}};}
+\DoxyCodeLine{00199\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a14f28bb1d9bcb9c7a22e5f40d48a4d7d}{UG\_U16}}\ \mbox{\hyperlink{struct_u_g___b_m_p_a7066e272348caaefb93f306d55c390ee}{height}};}
+\DoxyCodeLine{00200\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___b_m_p_a565e088c9b7bbe5c22a8a3805e467fe2}{bpp}};}
+\DoxyCodeLine{00201\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___b_m_p_ae84be1052c54ab53ac1b51953e14c8fc}{colors}};}
+\DoxyCodeLine{00202\ \}\ \mbox{\hyperlink{struct_u_g___b_m_p}{UG\_BMP}};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ BMP\_BPP\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ BMP\_BPP\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<1)}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ BMP\_BPP\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<2)}}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ BMP\_BPP\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<3)}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ BMP\_BPP\_16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<4)}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ BMP\_BPP\_32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<5)}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ BMP\_RGB888\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ BMP\_RGB565\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<1)}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ BMP\_RGB555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<2)}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00215\ \textcolor{comment}{/*\ -\/-\/\ MESSAGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00216\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00217\ \textcolor{comment}{/*\ Message\ structure\ */}}
+\DoxyCodeLine{00218\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00219\ \{}
+\DoxyCodeLine{00220\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___m_e_s_s_a_g_e_af7df0776ec0c86cfc0d3a7dc3b13a350}{type}};}
+\DoxyCodeLine{00221\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___m_e_s_s_a_g_e_a06bdbc623064971f3131d90524d506b8}{id}};}
+\DoxyCodeLine{00222\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___m_e_s_s_a_g_e_ac0ab81875c883f7bafbd2c8ed307fe79}{sub\_id}};}
+\DoxyCodeLine{00223\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___m_e_s_s_a_g_e_a58d5758ed5120d3b7af44dc18d56c78e}{event}};}
+\DoxyCodeLine{00224\ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_u_g___m_e_s_s_a_g_e_a888b1d54333f07bd9da7cec44e0d6398}{src}};}
+\DoxyCodeLine{00225\ \}\ \mbox{\hyperlink{struct_u_g___m_e_s_s_a_g_e}{UG\_MESSAGE}};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \textcolor{comment}{/*\ Message\ types\ */}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ MSG\_TYPE\_NONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ MSG\_TYPE\_WINDOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ MSG\_TYPE\_OBJECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00233\ \textcolor{comment}{/*\ -\/-\/\ TOUCH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00234\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00235\ \textcolor{comment}{/*\ Touch\ structure\ */}}
+\DoxyCodeLine{00236\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00237\ \{}
+\DoxyCodeLine{00238\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___t_o_u_c_h_a450d68a546074393ac6e6bc2acf31339}{state}};}
+\DoxyCodeLine{00239\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___t_o_u_c_h_a7a7e7de5ec48a86d972f6a3ce9458a0d}{xp}};}
+\DoxyCodeLine{00240\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___t_o_u_c_h_a0b61cded55a5c51980b5cd023e3d3541}{yp}};}
+\DoxyCodeLine{00241\ \}\ \mbox{\hyperlink{struct_u_g___t_o_u_c_h}{UG\_TOUCH}};}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ TOUCH\_STATE\_PRESSED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#define\ TOUCH\_STATE\_RELEASED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00248\ \textcolor{comment}{/*\ -\/-\/\ OBJECTS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00249\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00250\ \textcolor{comment}{/*\ Object\ structure\ */}}
+\DoxyCodeLine{00251\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s___o_b_j_e_c_t}{S\_OBJECT}}}
+\DoxyCodeLine{00252\ \{}
+\DoxyCodeLine{00253\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_s___o_b_j_e_c_t_a450d68a546074393ac6e6bc2acf31339}{state}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ object\ state\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00254\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_s___o_b_j_e_c_t_afd5f66f8dfc0609519f170938500aeca}{touch\_state}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ object\ touch\ state\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00255\ \ \ \ void\ (*\mbox{\hyperlink{struct_s___o_b_j_e_c_t_a5f2cc5871cb277a66e4f51887070712f}{update}})\ (\mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*,\mbox{\hyperlink{ugui_8h_a2eb8ed9e0319857ba94b1df5524c08d6}{UG\_OBJECT}}*);\ \ \ \textcolor{comment}{/*\ pointer\ to\ object-\/specific\ update\ function\ */}}
+\DoxyCodeLine{00256\ \ \ \ \mbox{\hyperlink{struct_u_g___a_r_e_a}{UG\_AREA}}\ \mbox{\hyperlink{struct_s___o_b_j_e_c_t_a77e2009d7569b2349e9bc0c377aeecf2}{a\_abs}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ absolute\ area\ of\ the\ object\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00257\ \ \ \ \mbox{\hyperlink{struct_u_g___a_r_e_a}{UG\_AREA}}\ \mbox{\hyperlink{struct_s___o_b_j_e_c_t_aa4aa9bb2a1002ae27b754ed65cbdc713}{a\_rel}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ relative\ area\ of\ the\ object\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00258\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_s___o_b_j_e_c_t_af7df0776ec0c86cfc0d3a7dc3b13a350}{type}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ object\ type\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00259\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_s___o_b_j_e_c_t_a06bdbc623064971f3131d90524d506b8}{id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ object\ ID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00260\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_s___o_b_j_e_c_t_a58d5758ed5120d3b7af44dc18d56c78e}{event}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ object-\/specific\ events\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00261\ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_s___o_b_j_e_c_t_a735984d41155bc1032e09bece8f8d66d}{data}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ pointer\ to\ object-\/specific\ data\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00262\ \};}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \textcolor{comment}{/*\ Currently\ supported\ objects\ */}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ OBJ\_TYPE\_NONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#define\ OBJ\_TYPE\_BUTTON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#define\ OBJ\_TYPE\_TEXTBOX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#define\ OBJ\_TYPE\_IMAGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#define\ OBJ\_TYPE\_CHECKBOX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \textcolor{comment}{/*\ Standard\ object\ events\ */}}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#define\ OBJ\_EVENT\_NONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#define\ OBJ\_EVENT\_CLICKED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\#ifdef\ USE\_PRERENDER\_EVENT}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#define\ OBJ\_EVENT\_PRERENDER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#ifdef\ USE\_POSTRENDER\_EVENT}}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ OBJ\_EVENT\_POSTRENDER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#define\ OBJ\_EVENT\_PRESSED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ OBJ\_EVENT\_RELEASED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5}}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \textcolor{comment}{/*\ Object\ states\ */}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ OBJ\_STATE\_FREE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#define\ OBJ\_STATE\_VALID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<1)}}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ OBJ\_STATE\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<2)}}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ OBJ\_STATE\_VISIBLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<3)}}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#define\ OBJ\_STATE\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<4)}}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#define\ OBJ\_STATE\_UPDATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<5)}}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#define\ OBJ\_STATE\_REDRAW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<6)}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ OBJ\_STATE\_TOUCH\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<7)}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ OBJ\_STATE\_INIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (OBJ\_STATE\_FREE\ |\ OBJ\_STATE\_VALID)}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \textcolor{comment}{/*\ Object\ touch\ states\ */}}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ OBJ\_TOUCH\_STATE\_CHANGED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ OBJ\_TOUCH\_STATE\_PRESSED\_ON\_OBJECT\ \ \ \ \ \ \ \ \ \ \ \ \ (1<<1)}}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#define\ OBJ\_TOUCH\_STATE\_PRESSED\_OUTSIDE\_OBJECT\ \ \ \ \ \ \ \ (1<<2)}}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ OBJ\_TOUCH\_STATE\_RELEASED\_ON\_OBJECT\ \ \ \ \ \ \ \ \ \ \ \ (1<<3)}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ OBJ\_TOUCH\_STATE\_RELEASED\_OUTSIDE\_OBJECT\ \ \ \ \ \ \ (1<<4)}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ OBJ\_TOUCH\_STATE\_IS\_PRESSED\_ON\_OBJECT\ \ \ \ \ \ \ \ \ \ (1<<5)}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ OBJ\_TOUCH\_STATE\_IS\_PRESSED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<6)}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ OBJ\_TOUCH\_STATE\_CLICK\_ON\_OBJECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<7)}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ OBJ\_TOUCH\_STATE\_INIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00307\ \textcolor{comment}{/*\ -\/-\/\ WINDOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00308\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00309\ \textcolor{comment}{/*\ Title\ structure\ */}}
+\DoxyCodeLine{00310\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00311\ \{}
+\DoxyCodeLine{00312\ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_u_g___t_i_t_l_e_ab50d783982593ef993ea0b68f7ad8b80}{str}};}
+\DoxyCodeLine{00313\ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ \mbox{\hyperlink{struct_u_g___t_i_t_l_e_ac6f9909f7ce79946988adff5935baed9}{font}};}
+\DoxyCodeLine{00314\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{struct_u_g___t_i_t_l_e_a3492bc158e976dc20a6f1c6b6918cdbd}{h\_space}};}
+\DoxyCodeLine{00315\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{struct_u_g___t_i_t_l_e_ad14966d97c4d6e14accd23a47315195c}{v\_space}};}
+\DoxyCodeLine{00316\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___t_i_t_l_e_a227fefee7b061b95514886e38a80e0df}{align}};}
+\DoxyCodeLine{00317\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___t_i_t_l_e_ab41e4999439c326e4def874236684878}{fc}};}
+\DoxyCodeLine{00318\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___t_i_t_l_e_a2b1fa3519dd309e124aead2f4ca3aa92}{bc}};}
+\DoxyCodeLine{00319\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___t_i_t_l_e_a24ed08c9e3639bfe895b275558409be9}{ifc}};}
+\DoxyCodeLine{00320\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___t_i_t_l_e_a1e11ae56d997b00beb0b2a7cbf47eeb4}{ibc}};}
+\DoxyCodeLine{00321\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___t_i_t_l_e_ab659f8a938743ff883800d1a75b3cae8}{height}};}
+\DoxyCodeLine{00322\ \}\ \mbox{\hyperlink{struct_u_g___t_i_t_l_e}{UG\_TITLE}};}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \textcolor{comment}{/*\ Window\ structure\ */}}
+\DoxyCodeLine{00325\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_s___w_i_n_d_o_w}{S\_WINDOW}}}
+\DoxyCodeLine{00326\ \{}
+\DoxyCodeLine{00327\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_s___w_i_n_d_o_w_a305b1881b00b0630a3e2d827560e9887}{objcnt}};}
+\DoxyCodeLine{00328\ \ \ \ \mbox{\hyperlink{ugui_8h_a2eb8ed9e0319857ba94b1df5524c08d6}{UG\_OBJECT}}*\ \mbox{\hyperlink{struct_s___w_i_n_d_o_w_ab732f127e882ca18d6046c023d491f87}{objlst}};}
+\DoxyCodeLine{00329\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_s___w_i_n_d_o_w_a450d68a546074393ac6e6bc2acf31339}{state}};}
+\DoxyCodeLine{00330\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_s___w_i_n_d_o_w_ab41e4999439c326e4def874236684878}{fc}};}
+\DoxyCodeLine{00331\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_s___w_i_n_d_o_w_a2b1fa3519dd309e124aead2f4ca3aa92}{bc}};}
+\DoxyCodeLine{00332\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_s___w_i_n_d_o_w_a6433d1b6f09c1a6a5cfbd7a3a0d0bccf}{xs}};}
+\DoxyCodeLine{00333\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_s___w_i_n_d_o_w_a17563738ec8228edfac8d7014db27ca4}{ys}};}
+\DoxyCodeLine{00334\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_s___w_i_n_d_o_w_a9e9d97744ed6c549abfcac5527ca422b}{xe}};}
+\DoxyCodeLine{00335\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_s___w_i_n_d_o_w_a78a69d5bdf6191530c83c784f9241961}{ye}};}
+\DoxyCodeLine{00336\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_s___w_i_n_d_o_w_ab0d442feb65c19bd1986227fc0471479}{style}};}
+\DoxyCodeLine{00337\ \ \ \ \mbox{\hyperlink{struct_u_g___t_i_t_l_e}{UG\_TITLE}}\ \mbox{\hyperlink{struct_s___w_i_n_d_o_w_ae55f12483bfcae8e353f7e496d274c39}{title}};}
+\DoxyCodeLine{00338\ \ \ \ void\ (*\mbox{\hyperlink{struct_s___w_i_n_d_o_w_a87775fec4e99c94a76eb164f3011237c}{cb}})(\ \mbox{\hyperlink{struct_u_g___m_e_s_s_a_g_e}{UG\_MESSAGE}}*\ );}
+\DoxyCodeLine{00339\ \};}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \textcolor{comment}{/*\ Window\ states\ */}}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ WND\_STATE\_FREE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ WND\_STATE\_VALID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<1)}}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#define\ WND\_STATE\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<2)}}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ WND\_STATE\_VISIBLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<3)}}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ WND\_STATE\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<4)}}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ WND\_STATE\_UPDATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<5)}}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ WND\_STATE\_REDRAW\_TITLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<6)}}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \textcolor{comment}{/*\ Window\ styles\ */}}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ WND\_STYLE\_2D\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0<<0)}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ WND\_STYLE\_3D\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#define\ WND\_STYLE\_HIDE\_TITLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0<<1)}}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ WND\_STYLE\_SHOW\_TITLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<1)}}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00357\ \textcolor{comment}{/*\ -\/-\/\ BUTTON\ OBJECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00358\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00359\ \textcolor{comment}{/*\ Button\ structure\ */}}
+\DoxyCodeLine{00360\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00361\ \{}
+\DoxyCodeLine{00362\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___b_u_t_t_o_n_a450d68a546074393ac6e6bc2acf31339}{state}};}
+\DoxyCodeLine{00363\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___b_u_t_t_o_n_ab0d442feb65c19bd1986227fc0471479}{style}};}
+\DoxyCodeLine{00364\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___b_u_t_t_o_n_ab41e4999439c326e4def874236684878}{fc}};}
+\DoxyCodeLine{00365\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___b_u_t_t_o_n_a2b1fa3519dd309e124aead2f4ca3aa92}{bc}};}
+\DoxyCodeLine{00366\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___b_u_t_t_o_n_a3e3324f1df67e877f296f661b88f5c36}{afc}};}
+\DoxyCodeLine{00367\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___b_u_t_t_o_n_a9b35a203beaad96aa5789ffc44a7b3a7}{abc}};}
+\DoxyCodeLine{00368\ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ \mbox{\hyperlink{struct_u_g___b_u_t_t_o_n_ac6f9909f7ce79946988adff5935baed9}{font}};}
+\DoxyCodeLine{00369\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___b_u_t_t_o_n_a227fefee7b061b95514886e38a80e0df}{align}};}
+\DoxyCodeLine{00370\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{struct_u_g___b_u_t_t_o_n_a3492bc158e976dc20a6f1c6b6918cdbd}{h\_space}};}
+\DoxyCodeLine{00371\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{struct_u_g___b_u_t_t_o_n_ad14966d97c4d6e14accd23a47315195c}{v\_space}};}
+\DoxyCodeLine{00372\ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_u_g___b_u_t_t_o_n_ab50d783982593ef993ea0b68f7ad8b80}{str}};}
+\DoxyCodeLine{00373\ \}\mbox{\hyperlink{struct_u_g___b_u_t_t_o_n}{UG\_BUTTON}};}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ \textcolor{comment}{/*\ Default\ button\ IDs\ */}}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\#define\ BTN\_ID\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_0}}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#define\ BTN\_ID\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_1}}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#define\ BTN\_ID\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_2}}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\#define\ BTN\_ID\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_3}}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#define\ BTN\_ID\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_4}}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#define\ BTN\_ID\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_5}}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#define\ BTN\_ID\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_6}}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#define\ BTN\_ID\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_7}}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#define\ BTN\_ID\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_8}}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#define\ BTN\_ID\_9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_9}}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#define\ BTN\_ID\_10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_10}}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#define\ BTN\_ID\_11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_11}}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\#define\ BTN\_ID\_12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_12}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#define\ BTN\_ID\_13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_13}}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ BTN\_ID\_14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_14}}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ BTN\_ID\_15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_15}}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ BTN\_ID\_16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_16}}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#define\ BTN\_ID\_17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_17}}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#define\ BTN\_ID\_18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_18}}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#define\ BTN\_ID\_19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_19}}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \textcolor{comment}{/*\ Button\ states\ */}}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#define\ BTN\_STATE\_RELEASED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0<<0)}}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#define\ BTN\_STATE\_PRESSED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\#define\ BTN\_STATE\_ALWAYS\_REDRAW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<1)}}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ \textcolor{comment}{/*\ Button\ style\ */}}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#define\ BTN\_STYLE\_2D\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0<<0)}}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#define\ BTN\_STYLE\_3D\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ BTN\_STYLE\_TOGGLE\_COLORS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<1)}}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ BTN\_STYLE\_USE\_ALTERNATE\_COLORS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<2)}}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ BTN\_STYLE\_NO\_BORDERS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<3)}}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ BTN\_STYLE\_NO\_FILL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<4)}}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \textcolor{comment}{/*\ Button\ events\ */}}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ BTN\_EVENT\_CLICKED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_EVENT\_CLICKED}}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00414\ \textcolor{comment}{/*\ -\/-\/\ CHECKBOX\ OBJECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00415\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00416\ \textcolor{comment}{/*\ Checkbox\ structure\ */}}
+\DoxyCodeLine{00417\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00418\ \{}
+\DoxyCodeLine{00419\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x_a450d68a546074393ac6e6bc2acf31339}{state}};}
+\DoxyCodeLine{00420\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x_ab0d442feb65c19bd1986227fc0471479}{style}};}
+\DoxyCodeLine{00421\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x_ab41e4999439c326e4def874236684878}{fc}};}
+\DoxyCodeLine{00422\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x_a2b1fa3519dd309e124aead2f4ca3aa92}{bc}};}
+\DoxyCodeLine{00423\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x_a3e3324f1df67e877f296f661b88f5c36}{afc}};}
+\DoxyCodeLine{00424\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x_a9b35a203beaad96aa5789ffc44a7b3a7}{abc}};}
+\DoxyCodeLine{00425\ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ \mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x_ac6f9909f7ce79946988adff5935baed9}{font}};}
+\DoxyCodeLine{00426\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x_a227fefee7b061b95514886e38a80e0df}{align}};}
+\DoxyCodeLine{00427\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x_a3492bc158e976dc20a6f1c6b6918cdbd}{h\_space}};}
+\DoxyCodeLine{00428\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x_ad14966d97c4d6e14accd23a47315195c}{v\_space}};}
+\DoxyCodeLine{00429\ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x_ab50d783982593ef993ea0b68f7ad8b80}{str}};}
+\DoxyCodeLine{00430\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x_a89e1dc338e731070043924f621c82574}{checked}};}
+\DoxyCodeLine{00431\ \}\mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x}{UG\_CHECKBOX}};}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \textcolor{comment}{/*\ Default\ checkbox\ IDs\ */}}
+\DoxyCodeLine{00434\ \textcolor{preprocessor}{\#define\ CHB\_ID\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_0}}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\#define\ CHB\_ID\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_1}}
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\#define\ CHB\_ID\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_2}}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\#define\ CHB\_ID\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_3}}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\#define\ CHB\_ID\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_4}}
+\DoxyCodeLine{00439\ \textcolor{preprocessor}{\#define\ CHB\_ID\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_5}}
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\#define\ CHB\_ID\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_6}}
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\#define\ CHB\_ID\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_7}}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#define\ CHB\_ID\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_8}}
+\DoxyCodeLine{00443\ \textcolor{preprocessor}{\#define\ CHB\_ID\_9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_9}}
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\#define\ CHB\_ID\_10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_10}}
+\DoxyCodeLine{00445\ \textcolor{preprocessor}{\#define\ CHB\_ID\_11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_11}}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#define\ CHB\_ID\_12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_12}}
+\DoxyCodeLine{00447\ \textcolor{preprocessor}{\#define\ CHB\_ID\_13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_13}}
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#define\ CHB\_ID\_14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_14}}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#define\ CHB\_ID\_15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_15}}
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#define\ CHB\_ID\_16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_16}}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#define\ CHB\_ID\_17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_17}}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#define\ CHB\_ID\_18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_18}}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#define\ CHB\_ID\_19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_19}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \textcolor{comment}{/*\ Checkbox\ states\ */}}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#define\ CHB\_STATE\_RELEASED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0<<0)}}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\#define\ CHB\_STATE\_PRESSED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#define\ CHB\_STATE\_ALWAYS\_REDRAW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<1)}}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \textcolor{comment}{/*\ Checkbox\ style\ */}}
+\DoxyCodeLine{00461\ \textcolor{preprocessor}{\#define\ CHB\_STYLE\_2D\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0<<0)}}
+\DoxyCodeLine{00462\ \textcolor{preprocessor}{\#define\ CHB\_STYLE\_3D\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#define\ CHB\_STYLE\_TOGGLE\_COLORS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<1)}}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#define\ CHB\_STYLE\_USE\_ALTERNATE\_COLORS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<2)}}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#define\ CHB\_STYLE\_NO\_BORDERS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<3)}}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#define\ CHB\_STYLE\_NO\_FILL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<4)}}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00468\ \textcolor{comment}{/*\ Checkbox\ events\ */}}
+\DoxyCodeLine{00469\ \textcolor{preprocessor}{\#define\ CHB\_EVENT\_CLICKED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_EVENT\_CLICKED}}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ }
+\DoxyCodeLine{00472\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00473\ \textcolor{comment}{/*\ -\/-\/\ TEXTBOX\ OBJECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00474\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00475\ \textcolor{comment}{/*\ Textbox\ structure\ */}}
+\DoxyCodeLine{00476\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00477\ \{}
+\DoxyCodeLine{00478\ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{struct_u_g___t_e_x_t_b_o_x_ab50d783982593ef993ea0b68f7ad8b80}{str}};}
+\DoxyCodeLine{00479\ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ \mbox{\hyperlink{struct_u_g___t_e_x_t_b_o_x_ac6f9909f7ce79946988adff5935baed9}{font}};}
+\DoxyCodeLine{00480\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___t_e_x_t_b_o_x_ab0d442feb65c19bd1986227fc0471479}{style}};}
+\DoxyCodeLine{00481\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___t_e_x_t_b_o_x_ab41e4999439c326e4def874236684878}{fc}};}
+\DoxyCodeLine{00482\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___t_e_x_t_b_o_x_a2b1fa3519dd309e124aead2f4ca3aa92}{bc}};}
+\DoxyCodeLine{00483\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___t_e_x_t_b_o_x_a227fefee7b061b95514886e38a80e0df}{align}};}
+\DoxyCodeLine{00484\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{struct_u_g___t_e_x_t_b_o_x_a3492bc158e976dc20a6f1c6b6918cdbd}{h\_space}};}
+\DoxyCodeLine{00485\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{struct_u_g___t_e_x_t_b_o_x_ad14966d97c4d6e14accd23a47315195c}{v\_space}};}
+\DoxyCodeLine{00486\ \}\ \mbox{\hyperlink{struct_u_g___t_e_x_t_b_o_x}{UG\_TEXTBOX}};}
+\DoxyCodeLine{00487\ }
+\DoxyCodeLine{00488\ \textcolor{comment}{/*\ Default\ textbox\ IDs\ */}}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#define\ TXB\_ID\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_0}}
+\DoxyCodeLine{00490\ \textcolor{preprocessor}{\#define\ TXB\_ID\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_1}}
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\#define\ TXB\_ID\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_2}}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\#define\ TXB\_ID\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_3}}
+\DoxyCodeLine{00493\ \textcolor{preprocessor}{\#define\ TXB\_ID\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_4}}
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#define\ TXB\_ID\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_5}}
+\DoxyCodeLine{00495\ \textcolor{preprocessor}{\#define\ TXB\_ID\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_6}}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\#define\ TXB\_ID\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_7}}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\#define\ TXB\_ID\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_8}}
+\DoxyCodeLine{00498\ \textcolor{preprocessor}{\#define\ TXB\_ID\_9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_9}}
+\DoxyCodeLine{00499\ \textcolor{preprocessor}{\#define\ TXB\_ID\_10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_10}}
+\DoxyCodeLine{00500\ \textcolor{preprocessor}{\#define\ TXB\_ID\_11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_11}}
+\DoxyCodeLine{00501\ \textcolor{preprocessor}{\#define\ TXB\_ID\_12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_12}}
+\DoxyCodeLine{00502\ \textcolor{preprocessor}{\#define\ TXB\_ID\_13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_13}}
+\DoxyCodeLine{00503\ \textcolor{preprocessor}{\#define\ TXB\_ID\_14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_14}}
+\DoxyCodeLine{00504\ \textcolor{preprocessor}{\#define\ TXB\_ID\_15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_15}}
+\DoxyCodeLine{00505\ \textcolor{preprocessor}{\#define\ TXB\_ID\_16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_16}}
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\#define\ TXB\_ID\_17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_17}}
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\#define\ TXB\_ID\_18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_18}}
+\DoxyCodeLine{00508\ \textcolor{preprocessor}{\#define\ TXB\_ID\_19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_19}}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00510\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00511\ \textcolor{comment}{/*\ -\/-\/\ IMAGE\ OBJECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00512\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00513\ \textcolor{comment}{/*\ Image\ structure\ */}}
+\DoxyCodeLine{00514\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00515\ \{}
+\DoxyCodeLine{00516\ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_u_g___i_m_a_g_e_ae6730589cd37c3213cd77b0ce3859656}{img}};}
+\DoxyCodeLine{00517\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___i_m_a_g_e_af7df0776ec0c86cfc0d3a7dc3b13a350}{type}};}
+\DoxyCodeLine{00518\ \}\ \mbox{\hyperlink{struct_u_g___i_m_a_g_e}{UG\_IMAGE}};}
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \textcolor{comment}{/*\ Default\ image\ IDs\ */}}
+\DoxyCodeLine{00521\ \textcolor{preprocessor}{\#define\ IMG\_ID\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_0}}
+\DoxyCodeLine{00522\ \textcolor{preprocessor}{\#define\ IMG\_ID\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_1}}
+\DoxyCodeLine{00523\ \textcolor{preprocessor}{\#define\ IMG\_ID\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_2}}
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\#define\ IMG\_ID\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_3}}
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{\#define\ IMG\_ID\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_4}}
+\DoxyCodeLine{00526\ \textcolor{preprocessor}{\#define\ IMG\_ID\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_5}}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#define\ IMG\_ID\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_6}}
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{\#define\ IMG\_ID\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_7}}
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\#define\ IMG\_ID\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_8}}
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#define\ IMG\_ID\_9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_9}}
+\DoxyCodeLine{00531\ \textcolor{preprocessor}{\#define\ IMG\_ID\_10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_10}}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#define\ IMG\_ID\_11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_11}}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#define\ IMG\_ID\_12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_12}}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#define\ IMG\_ID\_13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_13}}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\#define\ IMG\_ID\_14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_14}}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\#define\ IMG\_ID\_15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_15}}
+\DoxyCodeLine{00537\ \textcolor{preprocessor}{\#define\ IMG\_ID\_16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_16}}
+\DoxyCodeLine{00538\ \textcolor{preprocessor}{\#define\ IMG\_ID\_17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_17}}
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\#define\ IMG\_ID\_18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_18}}
+\DoxyCodeLine{00540\ \textcolor{preprocessor}{\#define\ IMG\_ID\_19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OBJ\_ID\_19}}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \textcolor{comment}{/*\ Image\ types\ */}}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#define\ IMG\_TYPE\_BMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00544\ }
+\DoxyCodeLine{00545\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00546\ \textcolor{comment}{/*\ -\/-\/\ µGUI\ DRIVER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00547\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00548\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00549\ \{}
+\DoxyCodeLine{00550\ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{struct_u_g___d_r_i_v_e_r_a2c89237611efdb2f19eb99adf947a4d2}{driver}};}
+\DoxyCodeLine{00551\ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___d_r_i_v_e_r_a450d68a546074393ac6e6bc2acf31339}{state}};}
+\DoxyCodeLine{00552\ \}\ \mbox{\hyperlink{struct_u_g___d_r_i_v_e_r}{UG\_DRIVER}};}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\#define\ DRIVER\_REGISTERED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00555\ \textcolor{preprocessor}{\#define\ DRIVER\_ENABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<1)}}
+\DoxyCodeLine{00556\ }
+\DoxyCodeLine{00557\ \textcolor{comment}{/*\ Supported\ drivers\ */}}
+\DoxyCodeLine{00558\ \textcolor{preprocessor}{\#define\ NUMBER\_OF\_DRIVERS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00559\ \textcolor{preprocessor}{\#define\ DRIVER\_DRAW\_LINE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00560\ \textcolor{preprocessor}{\#define\ DRIVER\_FILL\_FRAME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00561\ \textcolor{preprocessor}{\#define\ DRIVER\_FILL\_AREA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00563\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00564\ \textcolor{comment}{/*\ -\/-\/\ µGUI\ CORE\ STRUCTURE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00565\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00566\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00567\ \{}
+\DoxyCodeLine{00568\ \ \ \ void\ (*\mbox{\hyperlink{struct_u_g___g_u_i_a64f3af40467072c8af16e56c51578460}{pset}})(\mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}},\mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}},\mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}});}
+\DoxyCodeLine{00569\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___g_u_i_a1282de1c3d035882e6dc9f4bc515cb3a}{x\_dim}};}
+\DoxyCodeLine{00570\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___g_u_i_ab40449232919a83a834eadff9373deda}{y\_dim}};}
+\DoxyCodeLine{00571\ \ \ \ \mbox{\hyperlink{struct_u_g___t_o_u_c_h}{UG\_TOUCH}}\ \mbox{\hyperlink{struct_u_g___g_u_i_a2780081deea4ed07dc26eb97c12b5909}{touch}};}
+\DoxyCodeLine{00572\ \ \ \ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ \mbox{\hyperlink{struct_u_g___g_u_i_a1f20ed1783c71d493e613d5cbee4fd40}{next\_window}};}
+\DoxyCodeLine{00573\ \ \ \ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ \mbox{\hyperlink{struct_u_g___g_u_i_a84f753f7e57891d5ba364690b1e8d332}{active\_window}};}
+\DoxyCodeLine{00574\ \ \ \ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ \mbox{\hyperlink{struct_u_g___g_u_i_acbf711e254780bfb65efdd7e6fc4f159}{last\_window}};}
+\DoxyCodeLine{00575\ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00576\ \ \ \ \{}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___g_u_i_a691776974d2b49d0433a500da3ef9956}{x\_pos}};}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___g_u_i_aff6d5eb84d3e1898fb82df4f4a4481e0}{y\_pos}};}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___g_u_i_aead395fb388d11a2724951a638b1babe}{x\_start}};}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___g_u_i_a7e62c11943925159eaed2b4204486a8d}{y\_start}};}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___g_u_i_ac623ea237653a3f6d0671f56866aafc5}{x\_end}};}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{struct_u_g___g_u_i_a49a83f2fce9a15ae8688179995896195}{y\_end}};}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___g_u_i_a6c34d8aaea6dae9ad8502235d19c155a}{fore\_color}};}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___g_u_i_ad4cef18b561e6113daefaae189c13724}{back\_color}};}
+\DoxyCodeLine{00585\ \ \ \ \}\ console;}
+\DoxyCodeLine{00586\ \ \ \ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}\ \mbox{\hyperlink{struct_u_g___g_u_i_a4c44b52fb170f45b4403d9764cc1828c}{font}};}
+\DoxyCodeLine{00587\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{struct_u_g___g_u_i_a25bbab1c8664a102bfbc7f3935109e55}{char\_h\_space}};}
+\DoxyCodeLine{00588\ \ \ \ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{struct_u_g___g_u_i_af885bb464c3876b92351e96a1e384973}{char\_v\_space}};}
+\DoxyCodeLine{00589\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___g_u_i_a6c34d8aaea6dae9ad8502235d19c155a}{fore\_color}};}
+\DoxyCodeLine{00590\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___g_u_i_ad4cef18b561e6113daefaae189c13724}{back\_color}};}
+\DoxyCodeLine{00591\ \ \ \ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{struct_u_g___g_u_i_a2d50b9f2ecf4a5a0027f62fdf1292893}{desktop\_color}};}
+\DoxyCodeLine{00592\ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{struct_u_g___g_u_i_a450d68a546074393ac6e6bc2acf31339}{state}};}
+\DoxyCodeLine{00593\ \ \ \ \mbox{\hyperlink{struct_u_g___d_r_i_v_e_r}{UG\_DRIVER}}\ \mbox{\hyperlink{struct_u_g___g_u_i_a9b7f7bb2d80b2b55efb7a4bf3877852e}{driver}}[\mbox{\hyperlink{ugui_8h_a29628e8fc0fb13189901bb8d36520230}{NUMBER\_OF\_DRIVERS}}];}
+\DoxyCodeLine{00594\ \}\ \mbox{\hyperlink{struct_u_g___g_u_i}{UG\_GUI}};}
+\DoxyCodeLine{00595\ }
+\DoxyCodeLine{00596\ \textcolor{preprocessor}{\#define\ UG\_SATUS\_WAIT\_FOR\_UPDATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1<<0)}}
+\DoxyCodeLine{00597\ }
+\DoxyCodeLine{00598\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00599\ \textcolor{comment}{/*\ -\/-\/\ µGUI\ COLORS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00600\ \textcolor{comment}{/*\ -\/-\/\ Source:\ http://www.rapidtables.com/web/color/RGB\_Color.htm\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00601\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00602\ \textcolor{preprocessor}{\#ifdef\ USE\_COLOR\_RGB565}}
+\DoxyCodeLine{00603\ \textcolor{preprocessor}{\#define\ C\_MAROON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8000}}
+\DoxyCodeLine{00604\ \textcolor{preprocessor}{\#define\ C\_DARK\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8800}}
+\DoxyCodeLine{00605\ \textcolor{preprocessor}{\#define\ C\_BROWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xA145}}
+\DoxyCodeLine{00606\ \textcolor{preprocessor}{\#define\ C\_FIREBRICK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xB104}}
+\DoxyCodeLine{00607\ \textcolor{preprocessor}{\#define\ C\_CRIMSON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xD8A7}}
+\DoxyCodeLine{00608\ \textcolor{preprocessor}{\#define\ C\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF800}}
+\DoxyCodeLine{00609\ \textcolor{preprocessor}{\#define\ C\_TOMATO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFB09}}
+\DoxyCodeLine{00610\ \textcolor{preprocessor}{\#define\ C\_CORAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFBEA}}
+\DoxyCodeLine{00611\ \textcolor{preprocessor}{\#define\ C\_INDIAN\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xCAEB}}
+\DoxyCodeLine{00612\ \textcolor{preprocessor}{\#define\ C\_LIGHT\_CORAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xEC10}}
+\DoxyCodeLine{00613\ \textcolor{preprocessor}{\#define\ C\_DARK\_SALMON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xE4AF}}
+\DoxyCodeLine{00614\ \textcolor{preprocessor}{\#define\ C\_SALMON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF40E}}
+\DoxyCodeLine{00615\ \textcolor{preprocessor}{\#define\ C\_LIGHT\_SALMON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFD0F}}
+\DoxyCodeLine{00616\ \textcolor{preprocessor}{\#define\ C\_ORANGE\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFA20}}
+\DoxyCodeLine{00617\ \textcolor{preprocessor}{\#define\ C\_DARK\_ORANGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFC60}}
+\DoxyCodeLine{00618\ \textcolor{preprocessor}{\#define\ C\_ORANGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFD20}}
+\DoxyCodeLine{00619\ \textcolor{preprocessor}{\#define\ C\_GOLD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFEA0}}
+\DoxyCodeLine{00620\ \textcolor{preprocessor}{\#define\ C\_DARK\_GOLDEN\_ROD\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xB421}}
+\DoxyCodeLine{00621\ \textcolor{preprocessor}{\#define\ C\_GOLDEN\_ROD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xDD24}}
+\DoxyCodeLine{00622\ \textcolor{preprocessor}{\#define\ C\_PALE\_GOLDEN\_ROD\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xEF35}}
+\DoxyCodeLine{00623\ \textcolor{preprocessor}{\#define\ C\_DARK\_KHAKI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xBDAD}}
+\DoxyCodeLine{00624\ \textcolor{preprocessor}{\#define\ C\_KHAKI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xEF31}}
+\DoxyCodeLine{00625\ \textcolor{preprocessor}{\#define\ C\_OLIVE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8400}}
+\DoxyCodeLine{00626\ \textcolor{preprocessor}{\#define\ C\_YELLOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFE0}}
+\DoxyCodeLine{00627\ \textcolor{preprocessor}{\#define\ C\_YELLOW\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x9E66}}
+\DoxyCodeLine{00628\ \textcolor{preprocessor}{\#define\ C\_DARK\_OLIVE\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ 0x5346}}
+\DoxyCodeLine{00629\ \textcolor{preprocessor}{\#define\ C\_OLIVE\_DRAB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x6C64}}
+\DoxyCodeLine{00630\ \textcolor{preprocessor}{\#define\ C\_LAWN\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7FC0}}
+\DoxyCodeLine{00631\ \textcolor{preprocessor}{\#define\ C\_CHART\_REUSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7FE0}}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\#define\ C\_GREEN\_YELLOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xAFE6}}
+\DoxyCodeLine{00633\ \textcolor{preprocessor}{\#define\ C\_DARK\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0320}}
+\DoxyCodeLine{00634\ \textcolor{preprocessor}{\#define\ C\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x07E0}}
+\DoxyCodeLine{00635\ \textcolor{preprocessor}{\#define\ C\_FOREST\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2444}}
+\DoxyCodeLine{00636\ \textcolor{preprocessor}{\#define\ C\_LIME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x07E0}}
+\DoxyCodeLine{00637\ \textcolor{preprocessor}{\#define\ C\_LIME\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3666}}
+\DoxyCodeLine{00638\ \textcolor{preprocessor}{\#define\ C\_LIGHT\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x9772}}
+\DoxyCodeLine{00639\ \textcolor{preprocessor}{\#define\ C\_PALE\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x97D2}}
+\DoxyCodeLine{00640\ \textcolor{preprocessor}{\#define\ C\_DARK\_SEA\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8DD1}}
+\DoxyCodeLine{00641\ \textcolor{preprocessor}{\#define\ C\_MEDIUM\_SPRING\_GREEN\ \ \ \ \ \ \ \ \ \ 0x07D3}}
+\DoxyCodeLine{00642\ \textcolor{preprocessor}{\#define\ C\_SPRING\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x07EF}}
+\DoxyCodeLine{00643\ \textcolor{preprocessor}{\#define\ C\_SEA\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x344B}}
+\DoxyCodeLine{00644\ \textcolor{preprocessor}{\#define\ C\_MEDIUM\_AQUA\_MARINE\ \ \ \ \ \ \ \ \ \ \ 0x6675}}
+\DoxyCodeLine{00645\ \textcolor{preprocessor}{\#define\ C\_MEDIUM\_SEA\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ 0x3D8E}}
+\DoxyCodeLine{00646\ \textcolor{preprocessor}{\#define\ C\_LIGHT\_SEA\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2595}}
+\DoxyCodeLine{00647\ \textcolor{preprocessor}{\#define\ C\_DARK\_SLATE\_GRAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x328A}}
+\DoxyCodeLine{00648\ \textcolor{preprocessor}{\#define\ C\_TEAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0410}}
+\DoxyCodeLine{00649\ \textcolor{preprocessor}{\#define\ C\_DARK\_CYAN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0451}}
+\DoxyCodeLine{00650\ \textcolor{preprocessor}{\#define\ C\_AQUA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x07FF}}
+\DoxyCodeLine{00651\ \textcolor{preprocessor}{\#define\ C\_CYAN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x07FF}}
+\DoxyCodeLine{00652\ \textcolor{preprocessor}{\#define\ C\_LIGHT\_CYAN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xDFFF}}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#define\ C\_DARK\_TURQUOISE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0679}}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\#define\ C\_TURQUOISE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x46F9}}
+\DoxyCodeLine{00655\ \textcolor{preprocessor}{\#define\ C\_MEDIUM\_TURQUOISE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x4E99}}
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\#define\ C\_PALE\_TURQUOISE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xAF7D}}
+\DoxyCodeLine{00657\ \textcolor{preprocessor}{\#define\ C\_AQUA\_MARINE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7FFA}}
+\DoxyCodeLine{00658\ \textcolor{preprocessor}{\#define\ C\_POWDER\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xAEFC}}
+\DoxyCodeLine{00659\ \textcolor{preprocessor}{\#define\ C\_CADET\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x64F3}}
+\DoxyCodeLine{00660\ \textcolor{preprocessor}{\#define\ C\_STEEL\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4C16}}
+\DoxyCodeLine{00661\ \textcolor{preprocessor}{\#define\ C\_CORN\_FLOWER\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x64BD}}
+\DoxyCodeLine{00662\ \textcolor{preprocessor}{\#define\ C\_DEEP\_SKY\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x05FF}}
+\DoxyCodeLine{00663\ \textcolor{preprocessor}{\#define\ C\_DODGER\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x249F}}
+\DoxyCodeLine{00664\ \textcolor{preprocessor}{\#define\ C\_LIGHT\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xAEBC}}
+\DoxyCodeLine{00665\ \textcolor{preprocessor}{\#define\ C\_SKY\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x867D}}
+\DoxyCodeLine{00666\ \textcolor{preprocessor}{\#define\ C\_LIGHT\_SKY\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x867E}}
+\DoxyCodeLine{00667\ \textcolor{preprocessor}{\#define\ C\_MIDNIGHT\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x18CE}}
+\DoxyCodeLine{00668\ \textcolor{preprocessor}{\#define\ C\_NAVY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0010}}
+\DoxyCodeLine{00669\ \textcolor{preprocessor}{\#define\ C\_DARK\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0011}}
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\#define\ C\_MEDIUM\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0019}}
+\DoxyCodeLine{00671\ \textcolor{preprocessor}{\#define\ C\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x001F}}
+\DoxyCodeLine{00672\ \textcolor{preprocessor}{\#define\ C\_ROYAL\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x435B}}
+\DoxyCodeLine{00673\ \textcolor{preprocessor}{\#define\ C\_BLUE\_VIOLET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x897B}}
+\DoxyCodeLine{00674\ \textcolor{preprocessor}{\#define\ C\_INDIGO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4810}}
+\DoxyCodeLine{00675\ \textcolor{preprocessor}{\#define\ C\_DARK\_SLATE\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x49F1}}
+\DoxyCodeLine{00676\ \textcolor{preprocessor}{\#define\ C\_SLATE\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x6AD9}}
+\DoxyCodeLine{00677\ \textcolor{preprocessor}{\#define\ C\_MEDIUM\_SLATE\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ 0x7B5D}}
+\DoxyCodeLine{00678\ \textcolor{preprocessor}{\#define\ C\_MEDIUM\_PURPLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x939B}}
+\DoxyCodeLine{00679\ \textcolor{preprocessor}{\#define\ C\_DARK\_MAGENTA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8811}}
+\DoxyCodeLine{00680\ \textcolor{preprocessor}{\#define\ C\_DARK\_VIOLET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x901A}}
+\DoxyCodeLine{00681\ \textcolor{preprocessor}{\#define\ C\_DARK\_ORCHID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x9999}}
+\DoxyCodeLine{00682\ \textcolor{preprocessor}{\#define\ C\_MEDIUM\_ORCHID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xBABA}}
+\DoxyCodeLine{00683\ \textcolor{preprocessor}{\#define\ C\_PURPLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8010}}
+\DoxyCodeLine{00684\ \textcolor{preprocessor}{\#define\ C\_THISTLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xD5FA}}
+\DoxyCodeLine{00685\ \textcolor{preprocessor}{\#define\ C\_PLUM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xDD1B}}
+\DoxyCodeLine{00686\ \textcolor{preprocessor}{\#define\ C\_VIOLET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xEC1D}}
+\DoxyCodeLine{00687\ \textcolor{preprocessor}{\#define\ C\_MAGENTA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF81F}}
+\DoxyCodeLine{00688\ \textcolor{preprocessor}{\#define\ C\_ORCHID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xDB9A}}
+\DoxyCodeLine{00689\ \textcolor{preprocessor}{\#define\ C\_MEDIUM\_VIOLET\_RED\ \ \ \ \ \ \ \ \ \ \ \ 0xC0B0}}
+\DoxyCodeLine{00690\ \textcolor{preprocessor}{\#define\ C\_PALE\_VIOLET\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xDB92}}
+\DoxyCodeLine{00691\ \textcolor{preprocessor}{\#define\ C\_DEEP\_PINK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF8B2}}
+\DoxyCodeLine{00692\ \textcolor{preprocessor}{\#define\ C\_HOT\_PINK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFB56}}
+\DoxyCodeLine{00693\ \textcolor{preprocessor}{\#define\ C\_LIGHT\_PINK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFDB7}}
+\DoxyCodeLine{00694\ \textcolor{preprocessor}{\#define\ C\_PINK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFDF9}}
+\DoxyCodeLine{00695\ \textcolor{preprocessor}{\#define\ C\_ANTIQUE\_WHITE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF75A}}
+\DoxyCodeLine{00696\ \textcolor{preprocessor}{\#define\ C\_BEIGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF7BB}}
+\DoxyCodeLine{00697\ \textcolor{preprocessor}{\#define\ C\_BISQUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF18}}
+\DoxyCodeLine{00698\ \textcolor{preprocessor}{\#define\ C\_BLANCHED\_ALMOND\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF59}}
+\DoxyCodeLine{00699\ \textcolor{preprocessor}{\#define\ C\_WHEAT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF6F6}}
+\DoxyCodeLine{00700\ \textcolor{preprocessor}{\#define\ C\_CORN\_SILK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFBB}}
+\DoxyCodeLine{00701\ \textcolor{preprocessor}{\#define\ C\_LEMON\_CHIFFON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFD9}}
+\DoxyCodeLine{00702\ \textcolor{preprocessor}{\#define\ C\_LIGHT\_GOLDEN\_ROD\_YELLOW\ \ \ \ \ \ 0xF7DA}}
+\DoxyCodeLine{00703\ \textcolor{preprocessor}{\#define\ C\_LIGHT\_YELLOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFB}}
+\DoxyCodeLine{00704\ \textcolor{preprocessor}{\#define\ C\_SADDLE\_BROWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8A22}}
+\DoxyCodeLine{00705\ \textcolor{preprocessor}{\#define\ C\_SIENNA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x9A85}}
+\DoxyCodeLine{00706\ \textcolor{preprocessor}{\#define\ C\_CHOCOLATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xD344}}
+\DoxyCodeLine{00707\ \textcolor{preprocessor}{\#define\ C\_PERU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xCC28}}
+\DoxyCodeLine{00708\ \textcolor{preprocessor}{\#define\ C\_SANDY\_BROWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF52C}}
+\DoxyCodeLine{00709\ \textcolor{preprocessor}{\#define\ C\_BURLY\_WOOD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xDDB0}}
+\DoxyCodeLine{00710\ \textcolor{preprocessor}{\#define\ C\_TAN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xD591}}
+\DoxyCodeLine{00711\ \textcolor{preprocessor}{\#define\ C\_ROSY\_BROWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xBC71}}
+\DoxyCodeLine{00712\ \textcolor{preprocessor}{\#define\ C\_MOCCASIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF16}}
+\DoxyCodeLine{00713\ \textcolor{preprocessor}{\#define\ C\_NAVAJO\_WHITE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFEF5}}
+\DoxyCodeLine{00714\ \textcolor{preprocessor}{\#define\ C\_PEACH\_PUFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFED6}}
+\DoxyCodeLine{00715\ \textcolor{preprocessor}{\#define\ C\_MISTY\_ROSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF1B}}
+\DoxyCodeLine{00716\ \textcolor{preprocessor}{\#define\ C\_LAVENDER\_BLUSH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF7E}}
+\DoxyCodeLine{00717\ \textcolor{preprocessor}{\#define\ C\_LINEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF77C}}
+\DoxyCodeLine{00718\ \textcolor{preprocessor}{\#define\ C\_OLD\_LACE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFBC}}
+\DoxyCodeLine{00719\ \textcolor{preprocessor}{\#define\ C\_PAPAYA\_WHIP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF7A}}
+\DoxyCodeLine{00720\ \textcolor{preprocessor}{\#define\ C\_SEA\_SHELL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFBD}}
+\DoxyCodeLine{00721\ \textcolor{preprocessor}{\#define\ C\_MINT\_CREAM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF7FE}}
+\DoxyCodeLine{00722\ \textcolor{preprocessor}{\#define\ C\_SLATE\_GRAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7412}}
+\DoxyCodeLine{00723\ \textcolor{preprocessor}{\#define\ C\_LIGHT\_SLATE\_GRAY\ \ \ \ \ \ \ \ \ \ \ \ \ 0x7453}}
+\DoxyCodeLine{00724\ \textcolor{preprocessor}{\#define\ C\_LIGHT\_STEEL\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0xAE1B}}
+\DoxyCodeLine{00725\ \textcolor{preprocessor}{\#define\ C\_LAVENDER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xE73E}}
+\DoxyCodeLine{00726\ \textcolor{preprocessor}{\#define\ C\_FLORAL\_WHITE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFDD}}
+\DoxyCodeLine{00727\ \textcolor{preprocessor}{\#define\ C\_ALICE\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xEFBF}}
+\DoxyCodeLine{00728\ \textcolor{preprocessor}{\#define\ C\_GHOST\_WHITE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF7BF}}
+\DoxyCodeLine{00729\ \textcolor{preprocessor}{\#define\ C\_HONEYDEW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xEFFD}}
+\DoxyCodeLine{00730\ \textcolor{preprocessor}{\#define\ C\_IVORY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFD}}
+\DoxyCodeLine{00731\ \textcolor{preprocessor}{\#define\ C\_AZURE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xEFFF}}
+\DoxyCodeLine{00732\ \textcolor{preprocessor}{\#define\ C\_SNOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFDE}}
+\DoxyCodeLine{00733\ \textcolor{preprocessor}{\#define\ C\_BLACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{00734\ \textcolor{preprocessor}{\#define\ C\_DIM\_GRAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x6B4D}}
+\DoxyCodeLine{00735\ \textcolor{preprocessor}{\#define\ C\_GRAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8410}}
+\DoxyCodeLine{00736\ \textcolor{preprocessor}{\#define\ C\_DARK\_GRAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xAD55}}
+\DoxyCodeLine{00737\ \textcolor{preprocessor}{\#define\ C\_SILVER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xBDF7}}
+\DoxyCodeLine{00738\ \textcolor{preprocessor}{\#define\ C\_LIGHT\_GRAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xD69A}}
+\DoxyCodeLine{00739\ \textcolor{preprocessor}{\#define\ C\_GAINSBORO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xDEDB}}
+\DoxyCodeLine{00740\ \textcolor{preprocessor}{\#define\ C\_WHITE\_SMOKE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF7BE}}
+\DoxyCodeLine{00741\ \textcolor{preprocessor}{\#define\ C\_WHITE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFF}}
+\DoxyCodeLine{00742\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00743\ }
+\DoxyCodeLine{00744\ \textcolor{preprocessor}{\#ifdef\ USE\_COLOR\_RGB888}}
+\DoxyCodeLine{00745\ \textcolor{preprocessor}{\#define\ \ C\_MAROON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x800000}}
+\DoxyCodeLine{00746\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8B0000}}
+\DoxyCodeLine{00747\ \textcolor{preprocessor}{\#define\ \ C\_BROWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xA52A2A}}
+\DoxyCodeLine{00748\ \textcolor{preprocessor}{\#define\ \ C\_FIREBRICK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xB22222}}
+\DoxyCodeLine{00749\ \textcolor{preprocessor}{\#define\ \ C\_CRIMSON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xDC143C}}
+\DoxyCodeLine{00750\ \textcolor{preprocessor}{\#define\ \ C\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF0000}}
+\DoxyCodeLine{00751\ \textcolor{preprocessor}{\#define\ \ C\_TOMATO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF6347}}
+\DoxyCodeLine{00752\ \textcolor{preprocessor}{\#define\ \ C\_CORAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF7F50}}
+\DoxyCodeLine{00753\ \textcolor{preprocessor}{\#define\ \ C\_INDIAN\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xCD5C5C}}
+\DoxyCodeLine{00754\ \textcolor{preprocessor}{\#define\ \ C\_LIGHT\_CORAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF08080}}
+\DoxyCodeLine{00755\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_SALMON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xE9967A}}
+\DoxyCodeLine{00756\ \textcolor{preprocessor}{\#define\ \ C\_SALMON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFA8072}}
+\DoxyCodeLine{00757\ \textcolor{preprocessor}{\#define\ \ C\_LIGHT\_SALMON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFA07A}}
+\DoxyCodeLine{00758\ \textcolor{preprocessor}{\#define\ \ C\_ORANGE\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF4500}}
+\DoxyCodeLine{00759\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_ORANGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF8C00}}
+\DoxyCodeLine{00760\ \textcolor{preprocessor}{\#define\ \ C\_ORANGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFA500}}
+\DoxyCodeLine{00761\ \textcolor{preprocessor}{\#define\ \ C\_GOLD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFD700}}
+\DoxyCodeLine{00762\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_GOLDEN\_ROD\ \ \ \ \ \ \ \ \ \ \ \ 0xB8860B}}
+\DoxyCodeLine{00763\ \textcolor{preprocessor}{\#define\ \ C\_GOLDEN\_ROD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xDAA520}}
+\DoxyCodeLine{00764\ \textcolor{preprocessor}{\#define\ \ C\_PALE\_GOLDEN\_ROD\ \ \ \ \ \ \ \ \ \ \ \ 0xEEE8AA}}
+\DoxyCodeLine{00765\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_KHAKI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xBDB76B}}
+\DoxyCodeLine{00766\ \textcolor{preprocessor}{\#define\ \ C\_KHAKI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0E68C}}
+\DoxyCodeLine{00767\ \textcolor{preprocessor}{\#define\ \ C\_OLIVE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x808000}}
+\DoxyCodeLine{00768\ \textcolor{preprocessor}{\#define\ \ C\_YELLOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFF00}}
+\DoxyCodeLine{00769\ \textcolor{preprocessor}{\#define\ \ C\_YELLOW\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x9ACD32}}
+\DoxyCodeLine{00770\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_OLIVE\_GREEN\ \ \ \ \ \ \ \ \ \ \ 0x556B2F}}
+\DoxyCodeLine{00771\ \textcolor{preprocessor}{\#define\ \ C\_OLIVE\_DRAB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x6B8E23}}
+\DoxyCodeLine{00772\ \textcolor{preprocessor}{\#define\ \ C\_LAWN\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7CFC00}}
+\DoxyCodeLine{00773\ \textcolor{preprocessor}{\#define\ \ C\_CHART\_REUSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7FFF00}}
+\DoxyCodeLine{00774\ \textcolor{preprocessor}{\#define\ \ C\_GREEN\_YELLOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xADFF2F}}
+\DoxyCodeLine{00775\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x006400}}
+\DoxyCodeLine{00776\ \textcolor{preprocessor}{\#define\ \ C\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00FF00}}
+\DoxyCodeLine{00777\ \textcolor{preprocessor}{\#define\ \ C\_FOREST\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x228B22}}
+\DoxyCodeLine{00778\ \textcolor{preprocessor}{\#define\ \ C\_LIME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00FF00}}
+\DoxyCodeLine{00779\ \textcolor{preprocessor}{\#define\ \ C\_LIME\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x32CD32}}
+\DoxyCodeLine{00780\ \textcolor{preprocessor}{\#define\ \ C\_LIGHT\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x90EE90}}
+\DoxyCodeLine{00781\ \textcolor{preprocessor}{\#define\ \ C\_PALE\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x98FB98}}
+\DoxyCodeLine{00782\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_SEA\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ 0x8FBC8F}}
+\DoxyCodeLine{00783\ \textcolor{preprocessor}{\#define\ \ C\_MEDIUM\_SPRING\_GREEN\ \ \ \ \ \ \ \ 0x00FA9A}}
+\DoxyCodeLine{00784\ \textcolor{preprocessor}{\#define\ \ C\_SPRING\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00FF7F}}
+\DoxyCodeLine{00785\ \textcolor{preprocessor}{\#define\ \ C\_SEA\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2E8B57}}
+\DoxyCodeLine{00786\ \textcolor{preprocessor}{\#define\ \ C\_MEDIUM\_AQUA\_MARINE\ \ \ \ \ \ \ \ \ 0x66CDAA}}
+\DoxyCodeLine{00787\ \textcolor{preprocessor}{\#define\ \ C\_MEDIUM\_SEA\_GREEN\ \ \ \ \ \ \ \ \ \ \ 0x3CB371}}
+\DoxyCodeLine{00788\ \textcolor{preprocessor}{\#define\ \ C\_LIGHT\_SEA\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ 0x20B2AA}}
+\DoxyCodeLine{00789\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_SLATE\_GRAY\ \ \ \ \ \ \ \ \ \ \ \ 0x2F4F4F}}
+\DoxyCodeLine{00790\ \textcolor{preprocessor}{\#define\ \ C\_TEAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x008080}}
+\DoxyCodeLine{00791\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_CYAN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x008B8B}}
+\DoxyCodeLine{00792\ \textcolor{preprocessor}{\#define\ \ C\_AQUA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00FFFF}}
+\DoxyCodeLine{00793\ \textcolor{preprocessor}{\#define\ \ C\_CYAN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00FFFF}}
+\DoxyCodeLine{00794\ \textcolor{preprocessor}{\#define\ \ C\_LIGHT\_CYAN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xE0FFFF}}
+\DoxyCodeLine{00795\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_TURQUOISE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00CED1}}
+\DoxyCodeLine{00796\ \textcolor{preprocessor}{\#define\ \ C\_TURQUOISE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40E0D0}}
+\DoxyCodeLine{00797\ \textcolor{preprocessor}{\#define\ \ C\_MEDIUM\_TURQUOISE\ \ \ \ \ \ \ \ \ \ \ 0x48D1CC}}
+\DoxyCodeLine{00798\ \textcolor{preprocessor}{\#define\ \ C\_PALE\_TURQUOISE\ \ \ \ \ \ \ \ \ \ \ \ \ 0xAFEEEE}}
+\DoxyCodeLine{00799\ \textcolor{preprocessor}{\#define\ \ C\_AQUA\_MARINE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7FFFD4}}
+\DoxyCodeLine{00800\ \textcolor{preprocessor}{\#define\ \ C\_POWDER\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xB0E0E6}}
+\DoxyCodeLine{00801\ \textcolor{preprocessor}{\#define\ \ C\_CADET\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x5F9EA0}}
+\DoxyCodeLine{00802\ \textcolor{preprocessor}{\#define\ \ C\_STEEL\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4682B4}}
+\DoxyCodeLine{00803\ \textcolor{preprocessor}{\#define\ \ C\_CORN\_FLOWER\_BLUE\ \ \ \ \ \ \ \ \ \ \ 0x6495ED}}
+\DoxyCodeLine{00804\ \textcolor{preprocessor}{\#define\ \ C\_DEEP\_SKY\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00BFFF}}
+\DoxyCodeLine{00805\ \textcolor{preprocessor}{\#define\ \ C\_DODGER\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1E90FF}}
+\DoxyCodeLine{00806\ \textcolor{preprocessor}{\#define\ \ C\_LIGHT\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xADD8E6}}
+\DoxyCodeLine{00807\ \textcolor{preprocessor}{\#define\ \ C\_SKY\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x87CEEB}}
+\DoxyCodeLine{00808\ \textcolor{preprocessor}{\#define\ \ C\_LIGHT\_SKY\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x87CEFA}}
+\DoxyCodeLine{00809\ \textcolor{preprocessor}{\#define\ \ C\_MIDNIGHT\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x191970}}
+\DoxyCodeLine{00810\ \textcolor{preprocessor}{\#define\ \ C\_NAVY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000080}}
+\DoxyCodeLine{00811\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00008B}}
+\DoxyCodeLine{00812\ \textcolor{preprocessor}{\#define\ \ C\_MEDIUM\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000CD}}
+\DoxyCodeLine{00813\ \textcolor{preprocessor}{\#define\ \ C\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000FF}}
+\DoxyCodeLine{00814\ \textcolor{preprocessor}{\#define\ \ C\_ROYAL\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4169E1}}
+\DoxyCodeLine{00815\ \textcolor{preprocessor}{\#define\ \ C\_BLUE\_VIOLET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8A2BE2}}
+\DoxyCodeLine{00816\ \textcolor{preprocessor}{\#define\ \ C\_INDIGO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4B0082}}
+\DoxyCodeLine{00817\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_SLATE\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ 0x483D8B}}
+\DoxyCodeLine{00818\ \textcolor{preprocessor}{\#define\ \ C\_SLATE\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x6A5ACD}}
+\DoxyCodeLine{00819\ \textcolor{preprocessor}{\#define\ \ C\_MEDIUM\_SLATE\_BLUE\ \ \ \ \ \ \ \ \ \ 0x7B68EE}}
+\DoxyCodeLine{00820\ \textcolor{preprocessor}{\#define\ \ C\_MEDIUM\_PURPLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x9370DB}}
+\DoxyCodeLine{00821\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_MAGENTA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8B008B}}
+\DoxyCodeLine{00822\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_VIOLET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x9400D3}}
+\DoxyCodeLine{00823\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_ORCHID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x9932CC}}
+\DoxyCodeLine{00824\ \textcolor{preprocessor}{\#define\ \ C\_MEDIUM\_ORCHID\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xBA55D3}}
+\DoxyCodeLine{00825\ \textcolor{preprocessor}{\#define\ \ C\_PURPLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x800080}}
+\DoxyCodeLine{00826\ \textcolor{preprocessor}{\#define\ \ C\_THISTLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xD8BFD8}}
+\DoxyCodeLine{00827\ \textcolor{preprocessor}{\#define\ \ C\_PLUM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xDDA0DD}}
+\DoxyCodeLine{00828\ \textcolor{preprocessor}{\#define\ \ C\_VIOLET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xEE82EE}}
+\DoxyCodeLine{00829\ \textcolor{preprocessor}{\#define\ \ C\_MAGENTA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF00FF}}
+\DoxyCodeLine{00830\ \textcolor{preprocessor}{\#define\ \ C\_ORCHID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xDA70D6}}
+\DoxyCodeLine{00831\ \textcolor{preprocessor}{\#define\ \ C\_MEDIUM\_VIOLET\_RED\ \ \ \ \ \ \ \ \ \ 0xC71585}}
+\DoxyCodeLine{00832\ \textcolor{preprocessor}{\#define\ \ C\_PALE\_VIOLET\_RED\ \ \ \ \ \ \ \ \ \ \ \ 0xDB7093}}
+\DoxyCodeLine{00833\ \textcolor{preprocessor}{\#define\ \ C\_DEEP\_PINK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF1493}}
+\DoxyCodeLine{00834\ \textcolor{preprocessor}{\#define\ \ C\_HOT\_PINK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF69B4}}
+\DoxyCodeLine{00835\ \textcolor{preprocessor}{\#define\ \ C\_LIGHT\_PINK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFB6C1}}
+\DoxyCodeLine{00836\ \textcolor{preprocessor}{\#define\ \ C\_PINK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFC0CB}}
+\DoxyCodeLine{00837\ \textcolor{preprocessor}{\#define\ \ C\_ANTIQUE\_WHITE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFAEBD7}}
+\DoxyCodeLine{00838\ \textcolor{preprocessor}{\#define\ \ C\_BEIGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF5F5DC}}
+\DoxyCodeLine{00839\ \textcolor{preprocessor}{\#define\ \ C\_BISQUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFE4C4}}
+\DoxyCodeLine{00840\ \textcolor{preprocessor}{\#define\ \ C\_BLANCHED\_ALMOND\ \ \ \ \ \ \ \ \ \ \ \ 0xFFEBCD}}
+\DoxyCodeLine{00841\ \textcolor{preprocessor}{\#define\ \ C\_WHEAT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF5DEB3}}
+\DoxyCodeLine{00842\ \textcolor{preprocessor}{\#define\ \ C\_CORN\_SILK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFF8DC}}
+\DoxyCodeLine{00843\ \textcolor{preprocessor}{\#define\ \ C\_LEMON\_CHIFFON\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFACD}}
+\DoxyCodeLine{00844\ \textcolor{preprocessor}{\#define\ \ C\_LIGHT\_GOLDEN\_ROD\_YELLOW\ \ \ \ 0xFAFAD2}}
+\DoxyCodeLine{00845\ \textcolor{preprocessor}{\#define\ \ C\_LIGHT\_YELLOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFE0}}
+\DoxyCodeLine{00846\ \textcolor{preprocessor}{\#define\ \ C\_SADDLE\_BROWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8B4513}}
+\DoxyCodeLine{00847\ \textcolor{preprocessor}{\#define\ \ C\_SIENNA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xA0522D}}
+\DoxyCodeLine{00848\ \textcolor{preprocessor}{\#define\ \ C\_CHOCOLATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xD2691E}}
+\DoxyCodeLine{00849\ \textcolor{preprocessor}{\#define\ \ C\_PERU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xCD853F}}
+\DoxyCodeLine{00850\ \textcolor{preprocessor}{\#define\ \ C\_SANDY\_BROWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF4A460}}
+\DoxyCodeLine{00851\ \textcolor{preprocessor}{\#define\ \ C\_BURLY\_WOOD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xDEB887}}
+\DoxyCodeLine{00852\ \textcolor{preprocessor}{\#define\ \ C\_TAN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xD2B48C}}
+\DoxyCodeLine{00853\ \textcolor{preprocessor}{\#define\ \ C\_ROSY\_BROWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xBC8F8F}}
+\DoxyCodeLine{00854\ \textcolor{preprocessor}{\#define\ \ C\_MOCCASIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFE4B5}}
+\DoxyCodeLine{00855\ \textcolor{preprocessor}{\#define\ \ C\_NAVAJO\_WHITE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFDEAD}}
+\DoxyCodeLine{00856\ \textcolor{preprocessor}{\#define\ \ C\_PEACH\_PUFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFDAB9}}
+\DoxyCodeLine{00857\ \textcolor{preprocessor}{\#define\ \ C\_MISTY\_ROSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFE4E1}}
+\DoxyCodeLine{00858\ \textcolor{preprocessor}{\#define\ \ C\_LAVENDER\_BLUSH\ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFF0F5}}
+\DoxyCodeLine{00859\ \textcolor{preprocessor}{\#define\ \ C\_LINEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFAF0E6}}
+\DoxyCodeLine{00860\ \textcolor{preprocessor}{\#define\ \ C\_OLD\_LACE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFDF5E6}}
+\DoxyCodeLine{00861\ \textcolor{preprocessor}{\#define\ \ C\_PAPAYA\_WHIP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFEFD5}}
+\DoxyCodeLine{00862\ \textcolor{preprocessor}{\#define\ \ C\_SEA\_SHELL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFF5EE}}
+\DoxyCodeLine{00863\ \textcolor{preprocessor}{\#define\ \ C\_MINT\_CREAM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF5FFFA}}
+\DoxyCodeLine{00864\ \textcolor{preprocessor}{\#define\ \ C\_SLATE\_GRAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x708090}}
+\DoxyCodeLine{00865\ \textcolor{preprocessor}{\#define\ \ C\_LIGHT\_SLATE\_GRAY\ \ \ \ \ \ \ \ \ \ \ 0x778899}}
+\DoxyCodeLine{00866\ \textcolor{preprocessor}{\#define\ \ C\_LIGHT\_STEEL\_BLUE\ \ \ \ \ \ \ \ \ \ \ 0xB0C4DE}}
+\DoxyCodeLine{00867\ \textcolor{preprocessor}{\#define\ \ C\_LAVENDER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xE6E6FA}}
+\DoxyCodeLine{00868\ \textcolor{preprocessor}{\#define\ \ C\_FLORAL\_WHITE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFAF0}}
+\DoxyCodeLine{00869\ \textcolor{preprocessor}{\#define\ \ C\_ALICE\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0F8FF}}
+\DoxyCodeLine{00870\ \textcolor{preprocessor}{\#define\ \ C\_GHOST\_WHITE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF8F8FF}}
+\DoxyCodeLine{00871\ \textcolor{preprocessor}{\#define\ \ C\_HONEYDEW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0FFF0}}
+\DoxyCodeLine{00872\ \textcolor{preprocessor}{\#define\ \ C\_IVORY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFF0}}
+\DoxyCodeLine{00873\ \textcolor{preprocessor}{\#define\ \ C\_AZURE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0FFFF}}
+\DoxyCodeLine{00874\ \textcolor{preprocessor}{\#define\ \ C\_SNOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFAFA}}
+\DoxyCodeLine{00875\ \textcolor{preprocessor}{\#define\ \ C\_BLACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000}}
+\DoxyCodeLine{00876\ \textcolor{preprocessor}{\#define\ \ C\_DIM\_GRAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x696969}}
+\DoxyCodeLine{00877\ \textcolor{preprocessor}{\#define\ \ C\_GRAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x808080}}
+\DoxyCodeLine{00878\ \textcolor{preprocessor}{\#define\ \ C\_DARK\_GRAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xA9A9A9}}
+\DoxyCodeLine{00879\ \textcolor{preprocessor}{\#define\ \ C\_SILVER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xC0C0C0}}
+\DoxyCodeLine{00880\ \textcolor{preprocessor}{\#define\ \ C\_LIGHT\_GRAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xD3D3D3}}
+\DoxyCodeLine{00881\ \textcolor{preprocessor}{\#define\ \ C\_GAINSBORO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xDCDCDC}}
+\DoxyCodeLine{00882\ \textcolor{preprocessor}{\#define\ \ C\_WHITE\_SMOKE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF5F5F5}}
+\DoxyCodeLine{00883\ \textcolor{preprocessor}{\#define\ \ C\_WHITE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFF}}
+\DoxyCodeLine{00884\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00885\ }
+\DoxyCodeLine{00886\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00887\ \textcolor{comment}{/*\ -\/-\/\ PROTOTYPES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00888\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00889\ \textcolor{comment}{/*\ Classic\ functions\ */}}
+\DoxyCodeLine{00890\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{ugui_8h_aff88a641e40f257e62d00a2062e3871f}{UG\_Init}}(\ \mbox{\hyperlink{struct_u_g___g_u_i}{UG\_GUI}}*\ g,\ \textcolor{keywordtype}{void}\ (*p)(\mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}},\mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}},\mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}),\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y\ );}
+\DoxyCodeLine{00891\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{ugui_8h_a79fcb0bb26dcf96f662e071fa466c52b}{UG\_SelectGUI}}(\ \mbox{\hyperlink{struct_u_g___g_u_i}{UG\_GUI}}*\ g\ );}
+\DoxyCodeLine{00892\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a6b56714db55284e5c11a79e0bf0bf861}{UG\_FontSelect}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ font\ );}
+\DoxyCodeLine{00893\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a6c8fb836ad0f1dfe94ebb2584bdfedea}{UG\_FillScreen}}(\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00894\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a2131a6f255c96d8915328c35d7975cc5}{UG\_FillFrame}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x1,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y1,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x2,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y2,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00895\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a235a1fd4a6460c8f038f6ab0a7ed1748}{UG\_FillRoundFrame}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x1,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y1,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x2,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y2,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ r,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00896\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a89eff85d00a8199e3b3f1461466fe241}{UG\_DrawMesh}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x1,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y1,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x2,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y2,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00897\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_adcd45bd1309529688976d2cbc2489e8d}{UG\_DrawFrame}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x1,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y1,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x2,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y2,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00898\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_ae0d7ee47bf3a52e43904a11b9bd9a5ea}{UG\_DrawRoundFrame}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x1,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y1,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x2,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y2,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ r,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00899\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a9a714250414945d8d91d4b70eea9585d}{UG\_DrawPixel}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x0,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y0,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00900\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a82a58879e8401d5ad87d5ad32fe04326}{UG\_DrawCircle}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x0,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y0,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ r,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00901\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a8c6d90585382b6e71019a4bb1be85bd0}{UG\_FillCircle}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x0,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y0,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ r,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00902\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a1f614555fc6584b107ad47eeedd73546}{UG\_DrawArc}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x0,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y0,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ r,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ s,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00903\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_af1de0d984c639e483ef9375519f5ec5c}{UG\_DrawLine}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x1,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y1,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x2,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y2,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00904\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a0357aee85ed071c9659ad64745b214ab}{UG\_PutString}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y,\ \textcolor{keywordtype}{char}*\ str\ );}
+\DoxyCodeLine{00905\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a7a093e7e97905a5b58812cdb8ec9e627}{UG\_PutChar}}(\ \textcolor{keywordtype}{char}\ chr,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ x,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ y,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ fc,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ bc\ );}
+\DoxyCodeLine{00906\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a61d37df5110033b7b4217ee96b963934}{UG\_ConsolePutString}}(\ \textcolor{keywordtype}{char}*\ str\ );}
+\DoxyCodeLine{00907\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a7949c21bf10ddecb400299d28e6a63b1}{UG\_ConsoleSetArea}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xs,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ys,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xe,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ye\ );}
+\DoxyCodeLine{00908\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a2bd89c3b31639cb199b0ef84aeb6bb5c}{UG\_ConsoleSetForecolor}}(\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00909\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a83529d357034fa9d059c79bd1cd1a8e7}{UG\_ConsoleSetBackcolor}}(\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00910\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_ac43a6cb3abade5c16cac96ad347b1901}{UG\_SetForecolor}}(\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00911\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a742594f7b2a80a90b28fc7b615f974fd}{UG\_SetBackcolor}}(\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00912\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{ugui_8h_a8146fe826bafa9835333376634bcee67}{UG\_GetXDim}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00913\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{ugui_8h_a6c3862258f13c654ef6486cf181ffe7b}{UG\_GetYDim}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00914\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_af154c65f9796baa6adf82fed520de7a8}{UG\_FontSetHSpace}}(\ \mbox{\hyperlink{ugui__config_8h_a14f28bb1d9bcb9c7a22e5f40d48a4d7d}{UG\_U16}}\ s\ );}
+\DoxyCodeLine{00915\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_ae28320f318ec8a44f60b83d4f0405d53}{UG\_FontSetVSpace}}(\ \mbox{\hyperlink{ugui__config_8h_a14f28bb1d9bcb9c7a22e5f40d48a4d7d}{UG\_U16}}\ s\ );}
+\DoxyCodeLine{00916\ }
+\DoxyCodeLine{00917\ \textcolor{comment}{/*\ Miscellaneous\ functions\ */}}
+\DoxyCodeLine{00918\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a8ec3dc8fd239fb052bcf4e96c4124536}{UG\_WaitForUpdate}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00919\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_abc8c76ace70a1c272a8406de3aa31bee}{UG\_Update}}(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00920\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a8deedc40bcc88d16790c866bcef21f9d}{UG\_DrawBMP}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xp,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ yp,\ \mbox{\hyperlink{struct_u_g___b_m_p}{UG\_BMP}}*\ bmp\ );}
+\DoxyCodeLine{00921\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a64f5c919a6bc7b33845b3b0a6da13a2f}{UG\_TouchUpdate}}(\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xp,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ yp,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ state\ );}
+\DoxyCodeLine{00922\ }
+\DoxyCodeLine{00923\ \textcolor{comment}{/*\ Driver\ functions\ */}}
+\DoxyCodeLine{00924\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a259b6fb71db4de32dac38230b811583a}{UG\_DriverRegister}}(\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ type,\ \textcolor{keywordtype}{void}*\ driver\ );}
+\DoxyCodeLine{00925\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_a9d9fdf9d4749d008531d981c3f2663ad}{UG\_DriverEnable}}(\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ type\ );}
+\DoxyCodeLine{00926\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ugui_8h_ade3e36dd43431de47eff1a4dbe2bf0f9}{UG\_DriverDisable}}(\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ type\ );}
+\DoxyCodeLine{00927\ }
+\DoxyCodeLine{00928\ \textcolor{comment}{/*\ Window\ functions\ */}}
+\DoxyCodeLine{00929\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a42219a57771f99d5cdf20de4c7047645}{UG\_WindowCreate}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui_8h_a2eb8ed9e0319857ba94b1df5524c08d6}{UG\_OBJECT}}*\ objlst,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ objcnt,\ \textcolor{keywordtype}{void}\ (*cb)(\ \mbox{\hyperlink{struct_u_g___m_e_s_s_a_g_e}{UG\_MESSAGE}}*\ )\ );}
+\DoxyCodeLine{00930\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_ad41ec22960761d938a8ec723d8234395}{UG\_WindowDelete}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00931\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a3b46bb2aa0ba240e6e10e3b844633d46}{UG\_WindowShow}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00932\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_ae6ae64cfaabda7f0de4600542faa61f3}{UG\_WindowHide}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00933\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_acba9ca6c6a112442bf6f546fa94944d4}{UG\_WindowResize}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xs,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ys,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xe,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ye\ );}
+\DoxyCodeLine{00934\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_ac23dea4ba4f65d6006381b9637cce7c6}{UG\_WindowAlert}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00935\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_aeb6225dbaf43983bb9f4255bd504bca8}{UG\_WindowSetForeColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ fc\ );}
+\DoxyCodeLine{00936\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a6d461837f26d13ae9455384cbe95516f}{UG\_WindowSetBackColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ bc\ );}
+\DoxyCodeLine{00937\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_adb6a91f93cae0a8a4aa042504d840ed3}{UG\_WindowSetTitleTextColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00938\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a0cc77521d90d86431715ef9b9e54d86c}{UG\_WindowSetTitleColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00939\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a6fb11e729dd0757a21414a1d58dbaa3c}{UG\_WindowSetTitleInactiveTextColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00940\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_ab67257d4b00e3fbecb970e5bd2cba240}{UG\_WindowSetTitleInactiveColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ c\ );}
+\DoxyCodeLine{00941\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a361e6ad0016537aff5d1ef5509d32eb2}{UG\_WindowSetTitleText}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \textcolor{keywordtype}{char}*\ str\ );}
+\DoxyCodeLine{00942\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_acca676523508708444ae8063e91987a2}{UG\_WindowSetTitleTextFont}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ font\ );}
+\DoxyCodeLine{00943\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a9b03d8307ec24fbecd6fb2052d0341f9}{UG\_WindowSetTitleTextHSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ hs\ );}
+\DoxyCodeLine{00944\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_adf70610127f710786f9c529a79335697}{UG\_WindowSetTitleTextVSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ vs\ );}
+\DoxyCodeLine{00945\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a6544acd1d3b814dc7bff21ad75ccf505}{UG\_WindowSetTitleTextAlignment}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ align\ );}
+\DoxyCodeLine{00946\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a3de1fd29ed57d1939ed60bbfa238a0c8}{UG\_WindowSetTitleHeight}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ height\ );}
+\DoxyCodeLine{00947\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_ad60d366490ad53702478851431e3fb32}{UG\_WindowSetXStart}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xs\ );}
+\DoxyCodeLine{00948\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a4684cba50bd9e92838a3e4f94ead7fe2}{UG\_WindowSetYStart}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ys\ );}
+\DoxyCodeLine{00949\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a91fbe0915c5c9143cab4f6f355dd2b60}{UG\_WindowSetXEnd}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xe\ );}
+\DoxyCodeLine{00950\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_af1cce2be505e5aac25f30c11939706ee}{UG\_WindowSetYEnd}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ye\ );}
+\DoxyCodeLine{00951\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_af96f62dc092ab3ea995a65b0b19b4083}{UG\_WindowSetStyle}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ style\ );}
+\DoxyCodeLine{00952\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_a17aa6d983de8ff49c4ce01ed72b9bed6}{UG\_WindowGetForeColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00953\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_a7da9bbdfba569f66a7bcde179b1cba6e}{UG\_WindowGetBackColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00954\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_ad3a6b27bba33a21433c8ce34c432cda0}{UG\_WindowGetTitleTextColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00955\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_a678ab534de23358abe4d358932793214}{UG\_WindowGetTitleColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00956\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_aeb58d4bb41588ed4c069094896bbe296}{UG\_WindowGetTitleInactiveTextColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00957\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_ab2f7de21c61fe6b0c4b72712713b4152}{UG\_WindowGetTitleInactiveColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00958\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{ugui_8h_a67968c8247a3c6a8fb683e8fdb975cc4}{UG\_WindowGetTitleText}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00959\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ \mbox{\hyperlink{ugui_8h_a233d0c5d27e6c9db8d7d482dbe915b3c}{UG\_WindowGetTitleTextFont}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00960\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{ugui_8h_af215b586e8586c12c39e582e16396d39}{UG\_WindowGetTitleTextHSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00961\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{ugui_8h_a4058a5a4c33f62352d1a0a5237fa553e}{UG\_WindowGetTitleTextVSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00962\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{ugui_8h_a691fd2e9fd49c1ee52ab9c2a229b0b90}{UG\_WindowGetTitleTextAlignment}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00963\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{ugui_8h_a6d8e6b9cf920effadc1ec6c29725b5ee}{UG\_WindowGetTitleHeight}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00964\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{ugui_8h_adac8306409d79317c5ee5bfc09639fa0}{UG\_WindowGetXStart}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00965\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{ugui_8h_ae265d956ffe12cd49220d564e4119a11}{UG\_WindowGetYStart}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00966\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{ugui_8h_a5dfb5a0e6d5fd68a4cc8e4eb284baa26}{UG\_WindowGetXEnd}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00967\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{ugui_8h_a11296b055b1cc872e8aa318fe823a9ef}{UG\_WindowGetYEnd}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00968\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{ugui_8h_aa97bc5591f1abb7d7447529bd1104ced}{UG\_WindowGetStyle}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00969\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_ab44965ad0ce60e3b797a17a7dfdb940d}{UG\_WindowGetArea}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{struct_u_g___a_r_e_a}{UG\_AREA}}*\ a\ );}
+\DoxyCodeLine{00970\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{ugui_8h_a2d695621ea4cf5910dc324dbf4335e76}{UG\_WindowGetInnerWidth}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00971\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{ugui_8h_a8f8c3e8239b9a7f063f8883c2ad196c8}{UG\_WindowGetOuterWidth}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00972\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{ugui_8h_a0b160188cc81499e7f9c717e4e4fe5e6}{UG\_WindowGetInnerHeight}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00973\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ \mbox{\hyperlink{ugui_8h_aa1865f294f8f0cd4aee244a5a52ef994}{UG\_WindowGetOuterHeight}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd\ );}
+\DoxyCodeLine{00974\ }
+\DoxyCodeLine{00975\ \textcolor{comment}{/*\ Button\ functions\ */}}
+\DoxyCodeLine{00976\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a022e5b78551472924628a33af6de2569}{UG\_ButtonCreate}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{struct_u_g___b_u_t_t_o_n}{UG\_BUTTON}}*\ btn,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xs,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ys,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xe,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ye\ );}
+\DoxyCodeLine{00977\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a85c52b2207f0d595a2914427b367600d}{UG\_ButtonDelete}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00978\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a6789768c4b421e1d6a64f98a80e9a780}{UG\_ButtonShow}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00979\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_ac5f090404bb547c28603c36708599c67}{UG\_ButtonHide}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00980\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_ab1249159ab4e27910753862c372ed7be}{UG\_ButtonSetForeColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ fc\ );}
+\DoxyCodeLine{00981\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a2b86d141ac1edcb3d45ba0e76c1ae31b}{UG\_ButtonSetBackColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ bc\ );}
+\DoxyCodeLine{00982\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_aae07fbfd2e2589a434d6685155b8d7d3}{UG\_ButtonSetAlternateForeColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ afc\ );}
+\DoxyCodeLine{00983\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a99535cb434c57957c46937823ce59399}{UG\_ButtonSetAlternateBackColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ abc\ );}
+\DoxyCodeLine{00984\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a1f582716693866e991faa13fb583c946}{UG\_ButtonSetText}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{char}*\ str\ );}
+\DoxyCodeLine{00985\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_aeafb79b3649e9308eec42608ae362153}{UG\_ButtonSetFont}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ font\ );}
+\DoxyCodeLine{00986\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a7f5791abf217d8bd6930857f70cc1b66}{UG\_ButtonSetStyle}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ style\ );}
+\DoxyCodeLine{00987\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a7755acc06812c5f7f634ed1b4cdeee7d}{UG\_ButtonSetHSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ hs\ );}
+\DoxyCodeLine{00988\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a6f890ce934e4a4d5d336da32599b2e4c}{UG\_ButtonSetVSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ vs\ );}
+\DoxyCodeLine{00989\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_ad00787256d56f048e00d01bad26fa460}{UG\_ButtonSetAlignment}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ align\ );}
+\DoxyCodeLine{00990\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_abb85edbf57dc6ee95db64b6ee57f8cf0}{UG\_ButtonGetForeColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00991\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_ac0f4fdaf5ebe2bc2ec26d5b060c52aff}{UG\_ButtonGetBackColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00992\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_ae1b79010bee77f01a78580d6635c5451}{UG\_ButtonGetAlternateForeColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00993\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_a0d35b84cb2788d12590515eafd7700b8}{UG\_ButtonGetAlternateBackColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00994\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{ugui_8h_a492dd6e6b234724c0c20412b1c094e5f}{UG\_ButtonGetText}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00995\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ \mbox{\hyperlink{ugui_8h_a2b76c0764f6f956bec5debca3d25a758}{UG\_ButtonGetFont}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00996\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{ugui_8h_aca0f55ec269f4c8c51a2aea7bb744e49}{UG\_ButtonGetStyle}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00997\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{ugui_8h_a8bd609f4a2c42eaf1c0ac875049c6064}{UG\_ButtonGetHSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00998\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{ugui_8h_a763ec7d250ef8b4a505738d240c5d8ad}{UG\_ButtonGetVSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{00999\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{ugui_8h_afb568b7862d07d170bcc42318f07d916}{UG\_ButtonGetAlignment}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01000\ }
+\DoxyCodeLine{01001\ \textcolor{comment}{/*\ Checkbox\ functions\ */}}
+\DoxyCodeLine{01002\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a9571c76f1c6895540c90562f587a5f8c}{UG\_CheckboxCreate}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{struct_u_g___c_h_e_c_k_b_o_x}{UG\_CHECKBOX}}*\ btn,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xs,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ys,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xe,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ye\ );}
+\DoxyCodeLine{01003\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a3ad6ec0623c0d15797e17a984a546a37}{UG\_CheckboxDelete}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01004\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_ac70423c193f210c004103f64d70b9ceb}{UG\_CheckboxShow}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01005\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a89596de2393a45b69e987eb02a02e87a}{UG\_CheckboxHide}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01006\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_ab02159064166dffd6fe4757164984634}{UG\_CheckboxSetCheched}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ ch\ );}
+\DoxyCodeLine{01007\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a5ec4077e64b433ebde2c35706413d883}{UG\_CheckboxSetForeColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ fc\ );}
+\DoxyCodeLine{01008\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a06ff0aeeda35b151673dfcd02a81b0d3}{UG\_CheckboxSetBackColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ bc\ );}
+\DoxyCodeLine{01009\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a8ddfab5bac8d195ec7f689363234ffc0}{UG\_CheckboxSetAlternateForeColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ afc\ );}
+\DoxyCodeLine{01010\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_adbeb3010c22c9e53f8e536822179665d}{UG\_CheckboxSetAlternateBackColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ abc\ );}
+\DoxyCodeLine{01011\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a2ee70368050134eb1a30cba37039c12e}{UG\_CheckboxSetText}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{char}*\ str\ );}
+\DoxyCodeLine{01012\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a444b8b8e71e4b93a6e5f39f3a9616af0}{UG\_CheckboxSetFont}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ font\ );}
+\DoxyCodeLine{01013\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_aa608c57509e0fd6f45233269b9c1fed4}{UG\_CheckboxSetStyle}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ style\ );}
+\DoxyCodeLine{01014\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_aa8a398380596b4be7b9ece584a7748e3}{UG\_CheckboxSetHSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ hs\ );}
+\DoxyCodeLine{01015\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a46d34bb3952602471764700cb8ee96dc}{UG\_CheckboxSetVSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ vs\ );}
+\DoxyCodeLine{01016\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a7b56103733a92a572071749ff735a54e}{UG\_CheckboxSetAlignment}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ align\ );}
+\DoxyCodeLine{01017\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{ugui_8h_a46775ba7ef9ac7cf29f0e3f067089321}{UG\_CheckboxGetChecked}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01018\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_a495e4bc1f789a8231e00120accefec46}{UG\_CheckboxGetForeColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01019\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_a54f82d1929eeef52b2bcb537f3eac06a}{UG\_CheckboxGetBackColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01020\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_a48f541695c8fb1d3a432f605217b4aa3}{UG\_CheckboxGetAlternateForeColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01021\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_adf71e90adbeb7e28b65b7abc1ed1c943}{UG\_CheckboxGetAlternateBackColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01022\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{ugui_8h_ae310bae8932abe987cd9191ea971ac81}{UG\_CheckboxGetText}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01023\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ \mbox{\hyperlink{ugui_8h_a895a6b90fba0a32218768c858a378519}{UG\_CheckboxGetFont}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01024\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{ugui_8h_a97d9c77d08e110816cee348c0eeea38b}{UG\_CheckboxGetStyle}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01025\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{ugui_8h_a37a3ab3d7ee6e669db848b3197c2986d}{UG\_CheckboxGetHSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01026\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{ugui_8h_a4c87cabcf4d9745cbf2c44d7748aa089}{UG\_CheckboxGetVSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01027\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{ugui_8h_acba29527f4e198a94f435275aa08ac4f}{UG\_CheckboxGetAlignment}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01028\ }
+\DoxyCodeLine{01029\ \textcolor{comment}{/*\ Textbox\ functions\ */}}
+\DoxyCodeLine{01030\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a4dcbe55c3a8afb8050ee1fde11999f3f}{UG\_TextboxCreate}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{struct_u_g___t_e_x_t_b_o_x}{UG\_TEXTBOX}}*\ txb,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xs,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ys,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xe,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ye\ );}
+\DoxyCodeLine{01031\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a5bdb1445e81b712f77e40e368ef42901}{UG\_TextboxDelete}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01032\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_af492cd64fdae0eca3fb54904330b8e5f}{UG\_TextboxShow}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01033\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a7ab488f88f6f35123d9a1d4e56b00be6}{UG\_TextboxHide}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01034\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a45d52b7145095ad07e74ae7f424d51a2}{UG\_TextboxSetForeColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ fc\ );}
+\DoxyCodeLine{01035\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_adf8888e6986547a373ef6ac80e7e77ca}{UG\_TextboxSetBackColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ bc\ );}
+\DoxyCodeLine{01036\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_aace0ab8f15b0ab822653b69231712316}{UG\_TextboxSetText}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{char}*\ str\ );}
+\DoxyCodeLine{01037\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a9e2b054bcbfb0b6c6558c4dd55bfc9f9}{UG\_TextboxSetFont}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ font\ );}
+\DoxyCodeLine{01038\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_aad52d8b282cb82ce4324cea59ec48a8c}{UG\_TextboxSetHSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ hs\ );}
+\DoxyCodeLine{01039\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a0cba8c8ed1e40cce8e8e2b13364b4e23}{UG\_TextboxSetVSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ vs\ );}
+\DoxyCodeLine{01040\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a5c1342a0a634b073789d85f8f32aaead}{UG\_TextboxSetAlignment}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ align\ );}
+\DoxyCodeLine{01041\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_a46efcd23c8c02985730810405668926e}{UG\_TextboxGetForeColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01042\ \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\_COLOR}}\ \mbox{\hyperlink{ugui_8h_a0054a4e3b3349b138f33dfd13eb84791}{UG\_TextboxGetBackColor}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01043\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{ugui_8h_a0dea0aaf91af5dd9dc1f19c902e05c57}{UG\_TextboxGetText}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01044\ \mbox{\hyperlink{struct_u_g___f_o_n_t}{UG\_FONT}}*\ \mbox{\hyperlink{ugui_8h_abaef41b65b2d6bbf98259708eb2cc9ba}{UG\_TextboxGetFont}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01045\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{ugui_8h_a948807b8e97e050489def841b19769e6}{UG\_TextboxGetHSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01046\ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}}\ \mbox{\hyperlink{ugui_8h_a470edf44add4bec93648336637892bdd}{UG\_TextboxGetVSpace}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01047\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \mbox{\hyperlink{ugui_8h_afc19ad8516e474a59c50e84456454abd}{UG\_TextboxGetAlignment}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01048\ }
+\DoxyCodeLine{01049\ \textcolor{comment}{/*\ Image\ functions\ */}}
+\DoxyCodeLine{01050\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a91c50a2424283baf3d7c7e79a4044c35}{UG\_ImageCreate}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{struct_u_g___i_m_a_g_e}{UG\_IMAGE}}*\ img,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xs,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ys,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ xe,\ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}}\ ye\ );}
+\DoxyCodeLine{01051\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a63672506a0496f381ce5afbb0606fafd}{UG\_ImageDelete}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01052\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a2521d3f18ada796ccd4de142258716ad}{UG\_ImageShow}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01053\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a357135351c68afb2f22ef132a93b85b0}{UG\_ImageHide}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id}\ );}
+\DoxyCodeLine{01054\ \mbox{\hyperlink{ugui_8h_a0df9ebb826b293cb300ae7d5d48ce231}{UG\_RESULT}}\ \mbox{\hyperlink{ugui_8h_a52192b8663f1bf0f6b500cd03e201ba1}{UG\_ImageSetBMP}}(\ \mbox{\hyperlink{ugui_8h_a3bd1dd4f13c10f4bf48bc6ff89b8129c}{UG\_WINDOW}}*\ wnd,\ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_g___b_m_p}{UG\_BMP}}*\ bmp\ );}
+\DoxyCodeLine{01055\ }
+\DoxyCodeLine{01056\ }
+\DoxyCodeLine{01057\ }
+\DoxyCodeLine{01058\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

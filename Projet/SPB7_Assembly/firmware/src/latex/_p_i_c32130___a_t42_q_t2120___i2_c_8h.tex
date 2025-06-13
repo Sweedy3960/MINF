@@ -1,0 +1,1007 @@
+\doxysection{PIC32130\+\_\+\+AT42\+QT2120\+\_\+\+I2\+C.\+h File Reference}
+\hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h}{}\label{_p_i_c32130___a_t42_q_t2120___i2_c_8h}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+{\ttfamily \#include "{}app\+Touch.\+h"{}}\newline
+Include dependency graph for PIC32130\+\_\+\+AT42\+QT2120\+\_\+\+I2\+C.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_p_i_c32130___a_t42_q_t2120___i2_c_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{_p_i_c32130___a_t42_q_t2120___i2_c_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac4e3d3f3d8a9646071c3cf7843564e12}{I2\+C\+\_\+\+ADDRESS\+\_\+\+WRITE}}~0\+X38
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_acade79bd38ecf615b69621d715b672ea}{I2\+C\+\_\+\+ADDRESS\+\_\+\+READ}}~0\+X39
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9cb36f8067a6f77b9d7173ea7eba4fb2}{WHEEL\+\_\+\+ENABLE}}~0\+X80
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac6aef84b78610b6ac525e0ebe6c1fbc6}{DETECT\+\_\+\+THRESHOLD}}~0\+X32
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ab0aa3e54cd2934b67b9882957456c391}{CHIP\+\_\+\+ID}}~0
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa14dc39d52ab121ceb570f1a265385e0}{FIRMWARE\+\_\+\+VERSION}}~1
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a520d6035616c59b8a92270b63dfaa6cc}{DETECTION\+\_\+\+STATUS}}~2
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9c850b8a751c3f98b07fb89d25e61a7d}{KEY\+\_\+\+STATUS0}}~3
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac9a8f8b0c5ab537e6c71509471c1aaaa}{KEY\+\_\+\+STATUS1}}~4
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a22d4669d15b68c291c8a4ea6fa5f4317}{SLIDER\+\_\+\+POSITION}}~5
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_adacf4c0ec79d1e8779e6bad70ddf1ee9}{CALIBRATE}}~6
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}}~7
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a5b11d088a6ab6484ad47eaa4398e58eb}{LP}}~8
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a83b2d13cfdf4240eb9def6e50dab07d1}{TTD}}~9
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad66998a843825b6ebfc0a0692d8ec3b7}{ATD}}~10
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_acabe1ee3d11be6214c678bf4dabda3c9}{DI}}~11
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9a7eb801a4a00851a9aade0a5c2e01da}{TRD}}~12
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac8ab553bdd4467ede6e28aee888aa518}{DHT}}~13
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1cb16479a962ff63f99d60a8be50352d}{SLIDER\+\_\+\+OPTION}}~14
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a167aceb8c3f9382af6f47ef8df2c4e98}{CHARGE\+\_\+\+TIME}}~15
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2f3d7a292d9629b2b4f20ed613e30284}{KEY0\+\_\+\+DETECT}}~16
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a06cf31320c6857d6b06299f53c277f09}{KEY1\+\_\+\+DETECT}}~17
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af1bd08111aa29a3ba41d0dfd8ded5d79}{KEY2\+\_\+\+DETECT}}~18
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1a9d6962ca80031796a3ac895b7267e1}{KEY3\+\_\+\+DETECT}}~19
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a4564cae6b79f8a3a720bffa681447939}{KEY4\+\_\+\+DETECT}}~20
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a406014eee1412592a4e066e8ae63ed7b}{KEY5\+\_\+\+DETECT}}~21
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a34aaea144c0e0fa0da5813dfb18fdc1a}{KEY6\+\_\+\+DETECT}}~22
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_afbb34dd6a0cdba9ba28c665e7fb6bf3f}{KEY7\+\_\+\+DETECT}}~23
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af2324f0096f4e7ac57982b496e5c03b7}{KEY8\+\_\+\+DETECT}}~24
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a3741abee8952b09256e31988b0227da3}{KEY9\+\_\+\+DETECT}}~25
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af8065edeb2b14320bafb629cd7b9dd67}{KEY10\+\_\+\+DETECT}}~26
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1d8a097f3ef2cc583dcd855c4c942ca7}{KEY11\+\_\+\+DETECT}}~27
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a4851ba95cb66377db27afb1a4f6d253f}{KEYO\+\_\+\+CONTROL}}~28
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a022261c6a298f16d03392acef7f0c52f}{KEY1\+\_\+\+CONTROL}}~29
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a33e1bd299c2f2946fec800ceaa560a5b}{KEY2\+\_\+\+CONTROL}}~30
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9b050cde31a57d7739aeb1e559a26729}{KEY3\+\_\+\+CONTROL}}~31
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1ffa4565f238e6476a4935d4fbb0a66e}{KEY4\+\_\+\+CONTROL}}~32
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a93b8227a828757c9d9a29f9979d14669}{KEY5\+\_\+\+CONTROL}}~33
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9c4c3f4f7ec17731aff64bb0a472ed7c}{KEY6\+\_\+\+CONTROL}}~34
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a450b3c327a3ba31c0e61dcf5ca376bb2}{KEY7\+\_\+\+CONTROL}}~35
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a641b96f223689660913e1dc237905e42}{KEY8\+\_\+\+CONTROL}}~36
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_abf6849d53d4359720ace2882f5c617ba}{KEY9\+\_\+\+CONTROL}}~37
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a69b33517b5b1dcd720ed2b3556a5bb78}{KEY1\+O\+\_\+\+CONTROL}}~38
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2605a619d0271482c33f8d40f252d2b9}{KEY11\+\_\+\+CONTROL}}~39
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a6be285ffbb6a26c9e600a8971dc7f949}{KEY0\+\_\+\+PULSE\+\_\+\+SCALE}}~40
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a152d7a81bc75cfd09426963363eb9afa}{KEY1\+\_\+\+PULSE\+\_\+\+SCALE}}~41
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_abc84c853cf0b5f0f55656dca56047e32}{KEY2\+\_\+\+PULSE\+\_\+\+SCALE}}~42
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac00e21ccfda5a50b93548feff7ae6b85}{KEY3\+\_\+\+PULSE\+\_\+\+SCALE}}~43
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a273208a4b873d2951e81d746ab477f6f}{KEY4\+\_\+\+PULSE\+\_\+\+SCALE}}~44
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a36f0b11dec7b902f7f33d88e89528976}{KEY5\+\_\+\+PULSE\+\_\+\+SCALE}}~45
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac28a66ad6c2cc4d5e2050db1dd43b0fc}{KEY6\+\_\+\+PULSE\+\_\+\+SCALE}}~46
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2b616b63660fa34b3649a61ac542f763}{KEY7\+\_\+\+PULSE\+\_\+\+SCALE}}~47
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1aaa755ab37a1110d7edfef0e752354c}{KEY8\+\_\+\+PULSE\+\_\+\+SCALE}}~48
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_add34ad5e4971f972bd94e257a33514da}{KEY9\+\_\+\+PULSE\+\_\+\+SCALE}}~49
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a6b124a9d900040cb51ef2959ca1ede98}{KEY10\+\_\+\+PULSE\+\_\+\+SCALE}}~50
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a8af4aad6a4e301d80309820282da639d}{KEY11\+\_\+\+PULSE\+\_\+\+SCALE}}~51
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a69d0e1239ebef616ae18f59543a42aed}{KEY0\+\_\+\+SIGNAL\+\_\+\+MSB}}~52
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a4c3dba18d9e7fdd6f9331caeaea8381a}{KEY0\+\_\+\+SIGNAL\+\_\+\+LSB}}~53
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a5a83cf432d0653ac09beaa0b07825f25}{KEY1\+\_\+\+SIGNAL\+\_\+\+MSB}}~54
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1289b3163c95f2599c298aacab6a9a09}{KEY1\+\_\+\+SIGNAL\+\_\+\+LSB}}~55
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aae824b83f1f599a1abb0f8cd70c4b6cc}{KEY2\+\_\+\+SIGNAL\+\_\+\+MSB}}~56
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad66ec68b8e04f148159ca54526738721}{KEY2\+\_\+\+SIGNAL\+\_\+\+LSB}}~57
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a39da362b628cc11b98792a7edc294e59}{KEY3\+\_\+\+SIGNAL\+\_\+\+MSB}}~58
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_adf9d693178cbb409f8674abf0952704a}{KEY3\+\_\+\+SIGNAL\+\_\+\+LSB}}~59
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a12043762806cb820d89c61675a65c819}{KEY4\+\_\+\+SIGNAL\+\_\+\+MSB}}~60
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2e09e83ff0e86b59a71a1ec7a173a5a8}{KEY4\+\_\+\+SIGNAL\+\_\+\+LSB}}~61
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a6acef34c469957ec0e17f9e02a51970f}{KEY5\+\_\+\+SIGNAL\+\_\+\+MSB}}~62
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ace28ac084981d7f4c059d2829c71861d}{KEY5\+\_\+\+SIGNAL\+\_\+\+LSB}}~63
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a018ba98230a5efa7a844b6d7e018dded}{KEY6\+\_\+\+SIGNAL\+\_\+\+MSB}}~64
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa6b6dd6f96d6f98e40d4ef902911052a}{KEY6\+\_\+\+SIGNAL\+\_\+\+LSB}}~65
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a864a6601d929292c04a7d073b26fca66}{KEY7\+\_\+\+SIGNAL\+\_\+\+MSB}}~66
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ace8f90c93c904527942cb6bcac62227d}{KEY7\+\_\+\+SIGNAL\+\_\+\+LSB}}~67
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a889ff15d5583bfd9b95416ddead131bd}{KEY8\+\_\+\+SIGNAL\+\_\+\+MSB}}~68
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_acc515467a63e67b5e4d34aafb806e4f1}{KEY8\+\_\+\+SIGNAL\+\_\+\+LSB}}~69
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad29ce5d70e616e554c0854144947d8ca}{KEY9\+\_\+\+SIGNAL\+\_\+\+MSB}}~70
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a186a9e78c946a6c8ee003fb717a19c0f}{KEY9\+\_\+\+SIGNAL\+\_\+\+LSB}}~71
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a39758f973fab7469fac1c11956abecdb}{KEY10\+\_\+\+SIGNAL\+\_\+\+MSB}}~72
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa99ccabf677bff262fe6b251f11cf07d}{KEY10\+\_\+\+SIGNAL\+\_\+\+LSB}}~73
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a5390c29566e1593d92e88fd5659bda28}{KEY11\+\_\+\+SIGNAL\+\_\+\+MSB}}~74
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a01b46e610c3dcf04e3eb87f99d8c47b9}{KEY11\+\_\+\+SIGNAL\+\_\+\+LSB}}~75
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a8a089d731422058699a6eef0b6bf371a}{REFERENCE0\+\_\+\+MSB}}~76
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a31a6b6224ed8f5cd4b54ca3b1b187714}{REFERENCE0\+\_\+\+LSB}}~77
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1393034da7d8884a6012ab49d205cd09}{REFERENCE1\+\_\+\+MSB}}~78
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_abf14ead172b60ef87d90fc173a6fd73a}{REFERENCE1\+\_\+\+LSB}}~79
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a766d6441ccf3db6816f328210c580d3b}{REFERENCE2\+\_\+\+MSB}}~80
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa2cc1e674afb0d2c1dfab47f55f7f59b}{REFERENCE2\+\_\+\+LSB}}~81
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac2c48358f0d81ce2e1f4b06d7609dbf7}{REFERENCE3\+\_\+\+MSB}}~82
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a5ff2e8c415fe5714755ea68bda1e1a76}{REFERENCE3\+\_\+\+LSB}}~83
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9314c77179e8621ebb038aa4f853a102}{REFERENCE4\+\_\+\+MSB}}~84
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2f72e07d1cd9ce380727bffe947079e4}{REFERENCE4\+\_\+\+LSB}}~85
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a3c72044b148f21beb8b23ff16f683e97}{REFERENCE5\+\_\+\+MSB}}~86
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a88593c6b67874ed05e83fe920401ca46}{REFERENCE5\+\_\+\+LSB}}~87
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a15bd44e2239a89ddbc526dcd03ae7ba1}{REFERENCE6\+\_\+\+MSB}}~88
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa32e11c729dca977f231572722a51285}{REFERENCE6\+\_\+\+LSB}}~89
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a736f5ec4a82319ac8b6a16f9fa35a9b1}{REFERENCE7\+\_\+\+MSB}}~90
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a880f9f4eff6735593d6706be5e5ae2fe}{REFERENCE7\+\_\+\+LSB}}~91
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad500f71e3856a2bbd30f135fff9aa3f3}{REFERENCE8\+\_\+\+MSB}}~92
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aebd43573f2fc3558ca3471fa98f9f41b}{REFERENCE8\+\_\+\+LSB}}~93
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2a5cf667ed87549b0fb061455792b1aa}{REFERENCE9\+\_\+\+MSB}}~94
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2b04a3e448f1d68e6a6d3929afafe8b4}{REFERENCE9\+\_\+\+LSB}}~95
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad0395a711d59d1545abe73c860447d4e}{REFERENCE10\+\_\+\+MSB}}~96
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad9ed04c00941d6a470ad2a79700bb52f}{REFERENCE10\+\_\+\+LSB}}~97
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a18be598c4d175efeebbb6583ad2f4e8a}{REFERENCE11\+\_\+\+MSB}}~98
+\item 
+\#define \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af62d38ff0ac9b059070a368bc9524066}{REFERENCE11\+\_\+\+LSB}}~99
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af5700399ec33af8803bb244e5f1b9667}{AT42\+QT\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ae8b864de4a507559ab0b1b82b82def6f}{AT42\+QT\+\_\+\+Write}} (uint8\+\_\+t adr\+\_\+\+Registre\+\_\+W, uint8\+\_\+t data\+\_\+\+Write)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9619655c3b6d6bc9d52e5da60515ad00}{AT42\+QT\+\_\+\+Read}} (uint8\+\_\+t adr\+\_\+\+Registre\+\_\+R, bool n\+\_\+\+ACK)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a8d973579a3ad5f1718f8f1489ed8ebfe}{AT42\+QT\+\_\+\+Read\+\_\+\+Key0to7}} (bool n\+\_\+\+ACK)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a39150e6230461628108aa0b9b349fc1a}{AT42\+QT\+\_\+\+Read\+\_\+\+Key8to11}} (bool n\+\_\+\+ACK)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a385915a2e3e17d17d3485357160cc161}{AT42\+QT\+\_\+\+Read\+\_\+\+Wheel}} (bool n\+\_\+\+ACK)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad66998a843825b6ebfc0a0692d8ec3b7}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!ATD@{ATD}}
+\index{ATD@{ATD}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{ATD}{ATD}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad66998a843825b6ebfc0a0692d8ec3b7} 
+\#define ATD~10}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_adacf4c0ec79d1e8779e6bad70ddf1ee9}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!CALIBRATE@{CALIBRATE}}
+\index{CALIBRATE@{CALIBRATE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{CALIBRATE}{CALIBRATE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_adacf4c0ec79d1e8779e6bad70ddf1ee9} 
+\#define CALIBRATE~6}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a167aceb8c3f9382af6f47ef8df2c4e98}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!CHARGE\_TIME@{CHARGE\_TIME}}
+\index{CHARGE\_TIME@{CHARGE\_TIME}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{CHARGE\_TIME}{CHARGE\_TIME}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a167aceb8c3f9382af6f47ef8df2c4e98} 
+\#define CHARGE\+\_\+\+TIME~15}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ab0aa3e54cd2934b67b9882957456c391}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!CHIP\_ID@{CHIP\_ID}}
+\index{CHIP\_ID@{CHIP\_ID}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{CHIP\_ID}{CHIP\_ID}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ab0aa3e54cd2934b67b9882957456c391} 
+\#define CHIP\+\_\+\+ID~0}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac6aef84b78610b6ac525e0ebe6c1fbc6}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!DETECT\_THRESHOLD@{DETECT\_THRESHOLD}}
+\index{DETECT\_THRESHOLD@{DETECT\_THRESHOLD}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{DETECT\_THRESHOLD}{DETECT\_THRESHOLD}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac6aef84b78610b6ac525e0ebe6c1fbc6} 
+\#define DETECT\+\_\+\+THRESHOLD~0\+X32}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a520d6035616c59b8a92270b63dfaa6cc}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!DETECTION\_STATUS@{DETECTION\_STATUS}}
+\index{DETECTION\_STATUS@{DETECTION\_STATUS}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{DETECTION\_STATUS}{DETECTION\_STATUS}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a520d6035616c59b8a92270b63dfaa6cc} 
+\#define DETECTION\+\_\+\+STATUS~2}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac8ab553bdd4467ede6e28aee888aa518}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!DHT@{DHT}}
+\index{DHT@{DHT}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{DHT}{DHT}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac8ab553bdd4467ede6e28aee888aa518} 
+\#define DHT~13}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_acabe1ee3d11be6214c678bf4dabda3c9}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!DI@{DI}}
+\index{DI@{DI}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{DI}{DI}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_acabe1ee3d11be6214c678bf4dabda3c9} 
+\#define DI~11}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa14dc39d52ab121ceb570f1a265385e0}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!FIRMWARE\_VERSION@{FIRMWARE\_VERSION}}
+\index{FIRMWARE\_VERSION@{FIRMWARE\_VERSION}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{FIRMWARE\_VERSION}{FIRMWARE\_VERSION}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa14dc39d52ab121ceb570f1a265385e0} 
+\#define FIRMWARE\+\_\+\+VERSION~1}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_acade79bd38ecf615b69621d715b672ea}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!I2C\_ADDRESS\_READ@{I2C\_ADDRESS\_READ}}
+\index{I2C\_ADDRESS\_READ@{I2C\_ADDRESS\_READ}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_ADDRESS\_READ}{I2C\_ADDRESS\_READ}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_acade79bd38ecf615b69621d715b672ea} 
+\#define I2\+C\+\_\+\+ADDRESS\+\_\+\+READ~0\+X39}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac4e3d3f3d8a9646071c3cf7843564e12}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!I2C\_ADDRESS\_WRITE@{I2C\_ADDRESS\_WRITE}}
+\index{I2C\_ADDRESS\_WRITE@{I2C\_ADDRESS\_WRITE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_ADDRESS\_WRITE}{I2C\_ADDRESS\_WRITE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac4e3d3f3d8a9646071c3cf7843564e12} 
+\#define I2\+C\+\_\+\+ADDRESS\+\_\+\+WRITE~0\+X38}
+
+Descriptive File Name
+
+@\+Company ETML-\/\+ES
+
+@\+File Name \doxylink{_p_i_c32130___a_t42_q_t2120___i2_c_8h}{PIC32130\+\_\+\+AT42\+QT2120\+\_\+\+I2\+C.\+h}
+
+@\+Autor David Coelho
+
+@\+Description Déclaration des variables et constantes qu\textquotesingle{}on a besoin pour communiquer en I2C avec l\textquotesingle{}AT42\+QT2120 \Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2f3d7a292d9629b2b4f20ed613e30284}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY0\_DETECT@{KEY0\_DETECT}}
+\index{KEY0\_DETECT@{KEY0\_DETECT}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY0\_DETECT}{KEY0\_DETECT}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2f3d7a292d9629b2b4f20ed613e30284} 
+\#define KEY0\+\_\+\+DETECT~16}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a6be285ffbb6a26c9e600a8971dc7f949}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY0\_PULSE\_SCALE@{KEY0\_PULSE\_SCALE}}
+\index{KEY0\_PULSE\_SCALE@{KEY0\_PULSE\_SCALE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY0\_PULSE\_SCALE}{KEY0\_PULSE\_SCALE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a6be285ffbb6a26c9e600a8971dc7f949} 
+\#define KEY0\+\_\+\+PULSE\+\_\+\+SCALE~40}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a4c3dba18d9e7fdd6f9331caeaea8381a}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY0\_SIGNAL\_LSB@{KEY0\_SIGNAL\_LSB}}
+\index{KEY0\_SIGNAL\_LSB@{KEY0\_SIGNAL\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY0\_SIGNAL\_LSB}{KEY0\_SIGNAL\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a4c3dba18d9e7fdd6f9331caeaea8381a} 
+\#define KEY0\+\_\+\+SIGNAL\+\_\+\+LSB~53}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a69d0e1239ebef616ae18f59543a42aed}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY0\_SIGNAL\_MSB@{KEY0\_SIGNAL\_MSB}}
+\index{KEY0\_SIGNAL\_MSB@{KEY0\_SIGNAL\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY0\_SIGNAL\_MSB}{KEY0\_SIGNAL\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a69d0e1239ebef616ae18f59543a42aed} 
+\#define KEY0\+\_\+\+SIGNAL\+\_\+\+MSB~52}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af8065edeb2b14320bafb629cd7b9dd67}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY10\_DETECT@{KEY10\_DETECT}}
+\index{KEY10\_DETECT@{KEY10\_DETECT}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY10\_DETECT}{KEY10\_DETECT}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af8065edeb2b14320bafb629cd7b9dd67} 
+\#define KEY10\+\_\+\+DETECT~26}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a6b124a9d900040cb51ef2959ca1ede98}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY10\_PULSE\_SCALE@{KEY10\_PULSE\_SCALE}}
+\index{KEY10\_PULSE\_SCALE@{KEY10\_PULSE\_SCALE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY10\_PULSE\_SCALE}{KEY10\_PULSE\_SCALE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a6b124a9d900040cb51ef2959ca1ede98} 
+\#define KEY10\+\_\+\+PULSE\+\_\+\+SCALE~50}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa99ccabf677bff262fe6b251f11cf07d}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY10\_SIGNAL\_LSB@{KEY10\_SIGNAL\_LSB}}
+\index{KEY10\_SIGNAL\_LSB@{KEY10\_SIGNAL\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY10\_SIGNAL\_LSB}{KEY10\_SIGNAL\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa99ccabf677bff262fe6b251f11cf07d} 
+\#define KEY10\+\_\+\+SIGNAL\+\_\+\+LSB~73}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a39758f973fab7469fac1c11956abecdb}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY10\_SIGNAL\_MSB@{KEY10\_SIGNAL\_MSB}}
+\index{KEY10\_SIGNAL\_MSB@{KEY10\_SIGNAL\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY10\_SIGNAL\_MSB}{KEY10\_SIGNAL\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a39758f973fab7469fac1c11956abecdb} 
+\#define KEY10\+\_\+\+SIGNAL\+\_\+\+MSB~72}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2605a619d0271482c33f8d40f252d2b9}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY11\_CONTROL@{KEY11\_CONTROL}}
+\index{KEY11\_CONTROL@{KEY11\_CONTROL}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY11\_CONTROL}{KEY11\_CONTROL}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2605a619d0271482c33f8d40f252d2b9} 
+\#define KEY11\+\_\+\+CONTROL~39}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1d8a097f3ef2cc583dcd855c4c942ca7}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY11\_DETECT@{KEY11\_DETECT}}
+\index{KEY11\_DETECT@{KEY11\_DETECT}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY11\_DETECT}{KEY11\_DETECT}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1d8a097f3ef2cc583dcd855c4c942ca7} 
+\#define KEY11\+\_\+\+DETECT~27}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a8af4aad6a4e301d80309820282da639d}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY11\_PULSE\_SCALE@{KEY11\_PULSE\_SCALE}}
+\index{KEY11\_PULSE\_SCALE@{KEY11\_PULSE\_SCALE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY11\_PULSE\_SCALE}{KEY11\_PULSE\_SCALE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a8af4aad6a4e301d80309820282da639d} 
+\#define KEY11\+\_\+\+PULSE\+\_\+\+SCALE~51}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a01b46e610c3dcf04e3eb87f99d8c47b9}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY11\_SIGNAL\_LSB@{KEY11\_SIGNAL\_LSB}}
+\index{KEY11\_SIGNAL\_LSB@{KEY11\_SIGNAL\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY11\_SIGNAL\_LSB}{KEY11\_SIGNAL\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a01b46e610c3dcf04e3eb87f99d8c47b9} 
+\#define KEY11\+\_\+\+SIGNAL\+\_\+\+LSB~75}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a5390c29566e1593d92e88fd5659bda28}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY11\_SIGNAL\_MSB@{KEY11\_SIGNAL\_MSB}}
+\index{KEY11\_SIGNAL\_MSB@{KEY11\_SIGNAL\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY11\_SIGNAL\_MSB}{KEY11\_SIGNAL\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a5390c29566e1593d92e88fd5659bda28} 
+\#define KEY11\+\_\+\+SIGNAL\+\_\+\+MSB~74}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a022261c6a298f16d03392acef7f0c52f}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY1\_CONTROL@{KEY1\_CONTROL}}
+\index{KEY1\_CONTROL@{KEY1\_CONTROL}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY1\_CONTROL}{KEY1\_CONTROL}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a022261c6a298f16d03392acef7f0c52f} 
+\#define KEY1\+\_\+\+CONTROL~29}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a06cf31320c6857d6b06299f53c277f09}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY1\_DETECT@{KEY1\_DETECT}}
+\index{KEY1\_DETECT@{KEY1\_DETECT}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY1\_DETECT}{KEY1\_DETECT}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a06cf31320c6857d6b06299f53c277f09} 
+\#define KEY1\+\_\+\+DETECT~17}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a152d7a81bc75cfd09426963363eb9afa}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY1\_PULSE\_SCALE@{KEY1\_PULSE\_SCALE}}
+\index{KEY1\_PULSE\_SCALE@{KEY1\_PULSE\_SCALE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY1\_PULSE\_SCALE}{KEY1\_PULSE\_SCALE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a152d7a81bc75cfd09426963363eb9afa} 
+\#define KEY1\+\_\+\+PULSE\+\_\+\+SCALE~41}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1289b3163c95f2599c298aacab6a9a09}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY1\_SIGNAL\_LSB@{KEY1\_SIGNAL\_LSB}}
+\index{KEY1\_SIGNAL\_LSB@{KEY1\_SIGNAL\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY1\_SIGNAL\_LSB}{KEY1\_SIGNAL\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1289b3163c95f2599c298aacab6a9a09} 
+\#define KEY1\+\_\+\+SIGNAL\+\_\+\+LSB~55}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a5a83cf432d0653ac09beaa0b07825f25}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY1\_SIGNAL\_MSB@{KEY1\_SIGNAL\_MSB}}
+\index{KEY1\_SIGNAL\_MSB@{KEY1\_SIGNAL\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY1\_SIGNAL\_MSB}{KEY1\_SIGNAL\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a5a83cf432d0653ac09beaa0b07825f25} 
+\#define KEY1\+\_\+\+SIGNAL\+\_\+\+MSB~54}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a69b33517b5b1dcd720ed2b3556a5bb78}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY1O\_CONTROL@{KEY1O\_CONTROL}}
+\index{KEY1O\_CONTROL@{KEY1O\_CONTROL}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY1O\_CONTROL}{KEY1O\_CONTROL}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a69b33517b5b1dcd720ed2b3556a5bb78} 
+\#define KEY1\+O\+\_\+\+CONTROL~38}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a33e1bd299c2f2946fec800ceaa560a5b}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY2\_CONTROL@{KEY2\_CONTROL}}
+\index{KEY2\_CONTROL@{KEY2\_CONTROL}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY2\_CONTROL}{KEY2\_CONTROL}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a33e1bd299c2f2946fec800ceaa560a5b} 
+\#define KEY2\+\_\+\+CONTROL~30}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af1bd08111aa29a3ba41d0dfd8ded5d79}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY2\_DETECT@{KEY2\_DETECT}}
+\index{KEY2\_DETECT@{KEY2\_DETECT}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY2\_DETECT}{KEY2\_DETECT}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af1bd08111aa29a3ba41d0dfd8ded5d79} 
+\#define KEY2\+\_\+\+DETECT~18}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_abc84c853cf0b5f0f55656dca56047e32}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY2\_PULSE\_SCALE@{KEY2\_PULSE\_SCALE}}
+\index{KEY2\_PULSE\_SCALE@{KEY2\_PULSE\_SCALE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY2\_PULSE\_SCALE}{KEY2\_PULSE\_SCALE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_abc84c853cf0b5f0f55656dca56047e32} 
+\#define KEY2\+\_\+\+PULSE\+\_\+\+SCALE~42}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad66ec68b8e04f148159ca54526738721}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY2\_SIGNAL\_LSB@{KEY2\_SIGNAL\_LSB}}
+\index{KEY2\_SIGNAL\_LSB@{KEY2\_SIGNAL\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY2\_SIGNAL\_LSB}{KEY2\_SIGNAL\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad66ec68b8e04f148159ca54526738721} 
+\#define KEY2\+\_\+\+SIGNAL\+\_\+\+LSB~57}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aae824b83f1f599a1abb0f8cd70c4b6cc}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY2\_SIGNAL\_MSB@{KEY2\_SIGNAL\_MSB}}
+\index{KEY2\_SIGNAL\_MSB@{KEY2\_SIGNAL\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY2\_SIGNAL\_MSB}{KEY2\_SIGNAL\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aae824b83f1f599a1abb0f8cd70c4b6cc} 
+\#define KEY2\+\_\+\+SIGNAL\+\_\+\+MSB~56}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9b050cde31a57d7739aeb1e559a26729}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY3\_CONTROL@{KEY3\_CONTROL}}
+\index{KEY3\_CONTROL@{KEY3\_CONTROL}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY3\_CONTROL}{KEY3\_CONTROL}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9b050cde31a57d7739aeb1e559a26729} 
+\#define KEY3\+\_\+\+CONTROL~31}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1a9d6962ca80031796a3ac895b7267e1}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY3\_DETECT@{KEY3\_DETECT}}
+\index{KEY3\_DETECT@{KEY3\_DETECT}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY3\_DETECT}{KEY3\_DETECT}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1a9d6962ca80031796a3ac895b7267e1} 
+\#define KEY3\+\_\+\+DETECT~19}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac00e21ccfda5a50b93548feff7ae6b85}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY3\_PULSE\_SCALE@{KEY3\_PULSE\_SCALE}}
+\index{KEY3\_PULSE\_SCALE@{KEY3\_PULSE\_SCALE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY3\_PULSE\_SCALE}{KEY3\_PULSE\_SCALE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac00e21ccfda5a50b93548feff7ae6b85} 
+\#define KEY3\+\_\+\+PULSE\+\_\+\+SCALE~43}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_adf9d693178cbb409f8674abf0952704a}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY3\_SIGNAL\_LSB@{KEY3\_SIGNAL\_LSB}}
+\index{KEY3\_SIGNAL\_LSB@{KEY3\_SIGNAL\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY3\_SIGNAL\_LSB}{KEY3\_SIGNAL\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_adf9d693178cbb409f8674abf0952704a} 
+\#define KEY3\+\_\+\+SIGNAL\+\_\+\+LSB~59}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a39da362b628cc11b98792a7edc294e59}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY3\_SIGNAL\_MSB@{KEY3\_SIGNAL\_MSB}}
+\index{KEY3\_SIGNAL\_MSB@{KEY3\_SIGNAL\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY3\_SIGNAL\_MSB}{KEY3\_SIGNAL\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a39da362b628cc11b98792a7edc294e59} 
+\#define KEY3\+\_\+\+SIGNAL\+\_\+\+MSB~58}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1ffa4565f238e6476a4935d4fbb0a66e}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY4\_CONTROL@{KEY4\_CONTROL}}
+\index{KEY4\_CONTROL@{KEY4\_CONTROL}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY4\_CONTROL}{KEY4\_CONTROL}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1ffa4565f238e6476a4935d4fbb0a66e} 
+\#define KEY4\+\_\+\+CONTROL~32}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a4564cae6b79f8a3a720bffa681447939}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY4\_DETECT@{KEY4\_DETECT}}
+\index{KEY4\_DETECT@{KEY4\_DETECT}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY4\_DETECT}{KEY4\_DETECT}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a4564cae6b79f8a3a720bffa681447939} 
+\#define KEY4\+\_\+\+DETECT~20}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a273208a4b873d2951e81d746ab477f6f}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY4\_PULSE\_SCALE@{KEY4\_PULSE\_SCALE}}
+\index{KEY4\_PULSE\_SCALE@{KEY4\_PULSE\_SCALE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY4\_PULSE\_SCALE}{KEY4\_PULSE\_SCALE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a273208a4b873d2951e81d746ab477f6f} 
+\#define KEY4\+\_\+\+PULSE\+\_\+\+SCALE~44}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2e09e83ff0e86b59a71a1ec7a173a5a8}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY4\_SIGNAL\_LSB@{KEY4\_SIGNAL\_LSB}}
+\index{KEY4\_SIGNAL\_LSB@{KEY4\_SIGNAL\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY4\_SIGNAL\_LSB}{KEY4\_SIGNAL\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2e09e83ff0e86b59a71a1ec7a173a5a8} 
+\#define KEY4\+\_\+\+SIGNAL\+\_\+\+LSB~61}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a12043762806cb820d89c61675a65c819}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY4\_SIGNAL\_MSB@{KEY4\_SIGNAL\_MSB}}
+\index{KEY4\_SIGNAL\_MSB@{KEY4\_SIGNAL\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY4\_SIGNAL\_MSB}{KEY4\_SIGNAL\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a12043762806cb820d89c61675a65c819} 
+\#define KEY4\+\_\+\+SIGNAL\+\_\+\+MSB~60}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a93b8227a828757c9d9a29f9979d14669}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY5\_CONTROL@{KEY5\_CONTROL}}
+\index{KEY5\_CONTROL@{KEY5\_CONTROL}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY5\_CONTROL}{KEY5\_CONTROL}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a93b8227a828757c9d9a29f9979d14669} 
+\#define KEY5\+\_\+\+CONTROL~33}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a406014eee1412592a4e066e8ae63ed7b}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY5\_DETECT@{KEY5\_DETECT}}
+\index{KEY5\_DETECT@{KEY5\_DETECT}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY5\_DETECT}{KEY5\_DETECT}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a406014eee1412592a4e066e8ae63ed7b} 
+\#define KEY5\+\_\+\+DETECT~21}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a36f0b11dec7b902f7f33d88e89528976}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY5\_PULSE\_SCALE@{KEY5\_PULSE\_SCALE}}
+\index{KEY5\_PULSE\_SCALE@{KEY5\_PULSE\_SCALE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY5\_PULSE\_SCALE}{KEY5\_PULSE\_SCALE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a36f0b11dec7b902f7f33d88e89528976} 
+\#define KEY5\+\_\+\+PULSE\+\_\+\+SCALE~45}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ace28ac084981d7f4c059d2829c71861d}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY5\_SIGNAL\_LSB@{KEY5\_SIGNAL\_LSB}}
+\index{KEY5\_SIGNAL\_LSB@{KEY5\_SIGNAL\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY5\_SIGNAL\_LSB}{KEY5\_SIGNAL\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ace28ac084981d7f4c059d2829c71861d} 
+\#define KEY5\+\_\+\+SIGNAL\+\_\+\+LSB~63}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a6acef34c469957ec0e17f9e02a51970f}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY5\_SIGNAL\_MSB@{KEY5\_SIGNAL\_MSB}}
+\index{KEY5\_SIGNAL\_MSB@{KEY5\_SIGNAL\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY5\_SIGNAL\_MSB}{KEY5\_SIGNAL\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a6acef34c469957ec0e17f9e02a51970f} 
+\#define KEY5\+\_\+\+SIGNAL\+\_\+\+MSB~62}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9c4c3f4f7ec17731aff64bb0a472ed7c}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY6\_CONTROL@{KEY6\_CONTROL}}
+\index{KEY6\_CONTROL@{KEY6\_CONTROL}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY6\_CONTROL}{KEY6\_CONTROL}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9c4c3f4f7ec17731aff64bb0a472ed7c} 
+\#define KEY6\+\_\+\+CONTROL~34}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a34aaea144c0e0fa0da5813dfb18fdc1a}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY6\_DETECT@{KEY6\_DETECT}}
+\index{KEY6\_DETECT@{KEY6\_DETECT}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY6\_DETECT}{KEY6\_DETECT}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a34aaea144c0e0fa0da5813dfb18fdc1a} 
+\#define KEY6\+\_\+\+DETECT~22}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac28a66ad6c2cc4d5e2050db1dd43b0fc}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY6\_PULSE\_SCALE@{KEY6\_PULSE\_SCALE}}
+\index{KEY6\_PULSE\_SCALE@{KEY6\_PULSE\_SCALE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY6\_PULSE\_SCALE}{KEY6\_PULSE\_SCALE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac28a66ad6c2cc4d5e2050db1dd43b0fc} 
+\#define KEY6\+\_\+\+PULSE\+\_\+\+SCALE~46}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa6b6dd6f96d6f98e40d4ef902911052a}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY6\_SIGNAL\_LSB@{KEY6\_SIGNAL\_LSB}}
+\index{KEY6\_SIGNAL\_LSB@{KEY6\_SIGNAL\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY6\_SIGNAL\_LSB}{KEY6\_SIGNAL\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa6b6dd6f96d6f98e40d4ef902911052a} 
+\#define KEY6\+\_\+\+SIGNAL\+\_\+\+LSB~65}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a018ba98230a5efa7a844b6d7e018dded}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY6\_SIGNAL\_MSB@{KEY6\_SIGNAL\_MSB}}
+\index{KEY6\_SIGNAL\_MSB@{KEY6\_SIGNAL\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY6\_SIGNAL\_MSB}{KEY6\_SIGNAL\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a018ba98230a5efa7a844b6d7e018dded} 
+\#define KEY6\+\_\+\+SIGNAL\+\_\+\+MSB~64}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a450b3c327a3ba31c0e61dcf5ca376bb2}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY7\_CONTROL@{KEY7\_CONTROL}}
+\index{KEY7\_CONTROL@{KEY7\_CONTROL}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY7\_CONTROL}{KEY7\_CONTROL}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a450b3c327a3ba31c0e61dcf5ca376bb2} 
+\#define KEY7\+\_\+\+CONTROL~35}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_afbb34dd6a0cdba9ba28c665e7fb6bf3f}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY7\_DETECT@{KEY7\_DETECT}}
+\index{KEY7\_DETECT@{KEY7\_DETECT}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY7\_DETECT}{KEY7\_DETECT}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_afbb34dd6a0cdba9ba28c665e7fb6bf3f} 
+\#define KEY7\+\_\+\+DETECT~23}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2b616b63660fa34b3649a61ac542f763}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY7\_PULSE\_SCALE@{KEY7\_PULSE\_SCALE}}
+\index{KEY7\_PULSE\_SCALE@{KEY7\_PULSE\_SCALE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY7\_PULSE\_SCALE}{KEY7\_PULSE\_SCALE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2b616b63660fa34b3649a61ac542f763} 
+\#define KEY7\+\_\+\+PULSE\+\_\+\+SCALE~47}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ace8f90c93c904527942cb6bcac62227d}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY7\_SIGNAL\_LSB@{KEY7\_SIGNAL\_LSB}}
+\index{KEY7\_SIGNAL\_LSB@{KEY7\_SIGNAL\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY7\_SIGNAL\_LSB}{KEY7\_SIGNAL\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ace8f90c93c904527942cb6bcac62227d} 
+\#define KEY7\+\_\+\+SIGNAL\+\_\+\+LSB~67}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a864a6601d929292c04a7d073b26fca66}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY7\_SIGNAL\_MSB@{KEY7\_SIGNAL\_MSB}}
+\index{KEY7\_SIGNAL\_MSB@{KEY7\_SIGNAL\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY7\_SIGNAL\_MSB}{KEY7\_SIGNAL\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a864a6601d929292c04a7d073b26fca66} 
+\#define KEY7\+\_\+\+SIGNAL\+\_\+\+MSB~66}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a641b96f223689660913e1dc237905e42}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY8\_CONTROL@{KEY8\_CONTROL}}
+\index{KEY8\_CONTROL@{KEY8\_CONTROL}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY8\_CONTROL}{KEY8\_CONTROL}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a641b96f223689660913e1dc237905e42} 
+\#define KEY8\+\_\+\+CONTROL~36}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af2324f0096f4e7ac57982b496e5c03b7}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY8\_DETECT@{KEY8\_DETECT}}
+\index{KEY8\_DETECT@{KEY8\_DETECT}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY8\_DETECT}{KEY8\_DETECT}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af2324f0096f4e7ac57982b496e5c03b7} 
+\#define KEY8\+\_\+\+DETECT~24}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1aaa755ab37a1110d7edfef0e752354c}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY8\_PULSE\_SCALE@{KEY8\_PULSE\_SCALE}}
+\index{KEY8\_PULSE\_SCALE@{KEY8\_PULSE\_SCALE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY8\_PULSE\_SCALE}{KEY8\_PULSE\_SCALE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1aaa755ab37a1110d7edfef0e752354c} 
+\#define KEY8\+\_\+\+PULSE\+\_\+\+SCALE~48}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_acc515467a63e67b5e4d34aafb806e4f1}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY8\_SIGNAL\_LSB@{KEY8\_SIGNAL\_LSB}}
+\index{KEY8\_SIGNAL\_LSB@{KEY8\_SIGNAL\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY8\_SIGNAL\_LSB}{KEY8\_SIGNAL\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_acc515467a63e67b5e4d34aafb806e4f1} 
+\#define KEY8\+\_\+\+SIGNAL\+\_\+\+LSB~69}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a889ff15d5583bfd9b95416ddead131bd}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY8\_SIGNAL\_MSB@{KEY8\_SIGNAL\_MSB}}
+\index{KEY8\_SIGNAL\_MSB@{KEY8\_SIGNAL\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY8\_SIGNAL\_MSB}{KEY8\_SIGNAL\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a889ff15d5583bfd9b95416ddead131bd} 
+\#define KEY8\+\_\+\+SIGNAL\+\_\+\+MSB~68}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_abf6849d53d4359720ace2882f5c617ba}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY9\_CONTROL@{KEY9\_CONTROL}}
+\index{KEY9\_CONTROL@{KEY9\_CONTROL}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY9\_CONTROL}{KEY9\_CONTROL}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_abf6849d53d4359720ace2882f5c617ba} 
+\#define KEY9\+\_\+\+CONTROL~37}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a3741abee8952b09256e31988b0227da3}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY9\_DETECT@{KEY9\_DETECT}}
+\index{KEY9\_DETECT@{KEY9\_DETECT}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY9\_DETECT}{KEY9\_DETECT}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a3741abee8952b09256e31988b0227da3} 
+\#define KEY9\+\_\+\+DETECT~25}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_add34ad5e4971f972bd94e257a33514da}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY9\_PULSE\_SCALE@{KEY9\_PULSE\_SCALE}}
+\index{KEY9\_PULSE\_SCALE@{KEY9\_PULSE\_SCALE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY9\_PULSE\_SCALE}{KEY9\_PULSE\_SCALE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_add34ad5e4971f972bd94e257a33514da} 
+\#define KEY9\+\_\+\+PULSE\+\_\+\+SCALE~49}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a186a9e78c946a6c8ee003fb717a19c0f}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY9\_SIGNAL\_LSB@{KEY9\_SIGNAL\_LSB}}
+\index{KEY9\_SIGNAL\_LSB@{KEY9\_SIGNAL\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY9\_SIGNAL\_LSB}{KEY9\_SIGNAL\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a186a9e78c946a6c8ee003fb717a19c0f} 
+\#define KEY9\+\_\+\+SIGNAL\+\_\+\+LSB~71}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad29ce5d70e616e554c0854144947d8ca}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY9\_SIGNAL\_MSB@{KEY9\_SIGNAL\_MSB}}
+\index{KEY9\_SIGNAL\_MSB@{KEY9\_SIGNAL\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY9\_SIGNAL\_MSB}{KEY9\_SIGNAL\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad29ce5d70e616e554c0854144947d8ca} 
+\#define KEY9\+\_\+\+SIGNAL\+\_\+\+MSB~70}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9c850b8a751c3f98b07fb89d25e61a7d}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY\_STATUS0@{KEY\_STATUS0}}
+\index{KEY\_STATUS0@{KEY\_STATUS0}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_STATUS0}{KEY\_STATUS0}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9c850b8a751c3f98b07fb89d25e61a7d} 
+\#define KEY\+\_\+\+STATUS0~3}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac9a8f8b0c5ab537e6c71509471c1aaaa}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEY\_STATUS1@{KEY\_STATUS1}}
+\index{KEY\_STATUS1@{KEY\_STATUS1}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_STATUS1}{KEY\_STATUS1}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac9a8f8b0c5ab537e6c71509471c1aaaa} 
+\#define KEY\+\_\+\+STATUS1~4}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a4851ba95cb66377db27afb1a4f6d253f}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!KEYO\_CONTROL@{KEYO\_CONTROL}}
+\index{KEYO\_CONTROL@{KEYO\_CONTROL}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{KEYO\_CONTROL}{KEYO\_CONTROL}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a4851ba95cb66377db27afb1a4f6d253f} 
+\#define KEYO\+\_\+\+CONTROL~28}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a5b11d088a6ab6484ad47eaa4398e58eb}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!LP@{LP}}
+\index{LP@{LP}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{LP}{LP}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a5b11d088a6ab6484ad47eaa4398e58eb} 
+\#define LP~8}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a31a6b6224ed8f5cd4b54ca3b1b187714}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE0\_LSB@{REFERENCE0\_LSB}}
+\index{REFERENCE0\_LSB@{REFERENCE0\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE0\_LSB}{REFERENCE0\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a31a6b6224ed8f5cd4b54ca3b1b187714} 
+\#define REFERENCE0\+\_\+\+LSB~77}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a8a089d731422058699a6eef0b6bf371a}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE0\_MSB@{REFERENCE0\_MSB}}
+\index{REFERENCE0\_MSB@{REFERENCE0\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE0\_MSB}{REFERENCE0\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a8a089d731422058699a6eef0b6bf371a} 
+\#define REFERENCE0\+\_\+\+MSB~76}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad9ed04c00941d6a470ad2a79700bb52f}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE10\_LSB@{REFERENCE10\_LSB}}
+\index{REFERENCE10\_LSB@{REFERENCE10\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE10\_LSB}{REFERENCE10\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad9ed04c00941d6a470ad2a79700bb52f} 
+\#define REFERENCE10\+\_\+\+LSB~97}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad0395a711d59d1545abe73c860447d4e}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE10\_MSB@{REFERENCE10\_MSB}}
+\index{REFERENCE10\_MSB@{REFERENCE10\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE10\_MSB}{REFERENCE10\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad0395a711d59d1545abe73c860447d4e} 
+\#define REFERENCE10\+\_\+\+MSB~96}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af62d38ff0ac9b059070a368bc9524066}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE11\_LSB@{REFERENCE11\_LSB}}
+\index{REFERENCE11\_LSB@{REFERENCE11\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE11\_LSB}{REFERENCE11\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af62d38ff0ac9b059070a368bc9524066} 
+\#define REFERENCE11\+\_\+\+LSB~99}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a18be598c4d175efeebbb6583ad2f4e8a}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE11\_MSB@{REFERENCE11\_MSB}}
+\index{REFERENCE11\_MSB@{REFERENCE11\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE11\_MSB}{REFERENCE11\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a18be598c4d175efeebbb6583ad2f4e8a} 
+\#define REFERENCE11\+\_\+\+MSB~98}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_abf14ead172b60ef87d90fc173a6fd73a}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE1\_LSB@{REFERENCE1\_LSB}}
+\index{REFERENCE1\_LSB@{REFERENCE1\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE1\_LSB}{REFERENCE1\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_abf14ead172b60ef87d90fc173a6fd73a} 
+\#define REFERENCE1\+\_\+\+LSB~79}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1393034da7d8884a6012ab49d205cd09}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE1\_MSB@{REFERENCE1\_MSB}}
+\index{REFERENCE1\_MSB@{REFERENCE1\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE1\_MSB}{REFERENCE1\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1393034da7d8884a6012ab49d205cd09} 
+\#define REFERENCE1\+\_\+\+MSB~78}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa2cc1e674afb0d2c1dfab47f55f7f59b}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE2\_LSB@{REFERENCE2\_LSB}}
+\index{REFERENCE2\_LSB@{REFERENCE2\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE2\_LSB}{REFERENCE2\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa2cc1e674afb0d2c1dfab47f55f7f59b} 
+\#define REFERENCE2\+\_\+\+LSB~81}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a766d6441ccf3db6816f328210c580d3b}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE2\_MSB@{REFERENCE2\_MSB}}
+\index{REFERENCE2\_MSB@{REFERENCE2\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE2\_MSB}{REFERENCE2\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a766d6441ccf3db6816f328210c580d3b} 
+\#define REFERENCE2\+\_\+\+MSB~80}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a5ff2e8c415fe5714755ea68bda1e1a76}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE3\_LSB@{REFERENCE3\_LSB}}
+\index{REFERENCE3\_LSB@{REFERENCE3\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE3\_LSB}{REFERENCE3\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a5ff2e8c415fe5714755ea68bda1e1a76} 
+\#define REFERENCE3\+\_\+\+LSB~83}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac2c48358f0d81ce2e1f4b06d7609dbf7}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE3\_MSB@{REFERENCE3\_MSB}}
+\index{REFERENCE3\_MSB@{REFERENCE3\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE3\_MSB}{REFERENCE3\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ac2c48358f0d81ce2e1f4b06d7609dbf7} 
+\#define REFERENCE3\+\_\+\+MSB~82}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2f72e07d1cd9ce380727bffe947079e4}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE4\_LSB@{REFERENCE4\_LSB}}
+\index{REFERENCE4\_LSB@{REFERENCE4\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE4\_LSB}{REFERENCE4\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2f72e07d1cd9ce380727bffe947079e4} 
+\#define REFERENCE4\+\_\+\+LSB~85}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9314c77179e8621ebb038aa4f853a102}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE4\_MSB@{REFERENCE4\_MSB}}
+\index{REFERENCE4\_MSB@{REFERENCE4\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE4\_MSB}{REFERENCE4\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9314c77179e8621ebb038aa4f853a102} 
+\#define REFERENCE4\+\_\+\+MSB~84}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a88593c6b67874ed05e83fe920401ca46}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE5\_LSB@{REFERENCE5\_LSB}}
+\index{REFERENCE5\_LSB@{REFERENCE5\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE5\_LSB}{REFERENCE5\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a88593c6b67874ed05e83fe920401ca46} 
+\#define REFERENCE5\+\_\+\+LSB~87}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a3c72044b148f21beb8b23ff16f683e97}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE5\_MSB@{REFERENCE5\_MSB}}
+\index{REFERENCE5\_MSB@{REFERENCE5\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE5\_MSB}{REFERENCE5\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a3c72044b148f21beb8b23ff16f683e97} 
+\#define REFERENCE5\+\_\+\+MSB~86}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa32e11c729dca977f231572722a51285}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE6\_LSB@{REFERENCE6\_LSB}}
+\index{REFERENCE6\_LSB@{REFERENCE6\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE6\_LSB}{REFERENCE6\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aa32e11c729dca977f231572722a51285} 
+\#define REFERENCE6\+\_\+\+LSB~89}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a15bd44e2239a89ddbc526dcd03ae7ba1}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE6\_MSB@{REFERENCE6\_MSB}}
+\index{REFERENCE6\_MSB@{REFERENCE6\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE6\_MSB}{REFERENCE6\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a15bd44e2239a89ddbc526dcd03ae7ba1} 
+\#define REFERENCE6\+\_\+\+MSB~88}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a880f9f4eff6735593d6706be5e5ae2fe}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE7\_LSB@{REFERENCE7\_LSB}}
+\index{REFERENCE7\_LSB@{REFERENCE7\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE7\_LSB}{REFERENCE7\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a880f9f4eff6735593d6706be5e5ae2fe} 
+\#define REFERENCE7\+\_\+\+LSB~91}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a736f5ec4a82319ac8b6a16f9fa35a9b1}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE7\_MSB@{REFERENCE7\_MSB}}
+\index{REFERENCE7\_MSB@{REFERENCE7\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE7\_MSB}{REFERENCE7\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a736f5ec4a82319ac8b6a16f9fa35a9b1} 
+\#define REFERENCE7\+\_\+\+MSB~90}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aebd43573f2fc3558ca3471fa98f9f41b}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE8\_LSB@{REFERENCE8\_LSB}}
+\index{REFERENCE8\_LSB@{REFERENCE8\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE8\_LSB}{REFERENCE8\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_aebd43573f2fc3558ca3471fa98f9f41b} 
+\#define REFERENCE8\+\_\+\+LSB~93}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad500f71e3856a2bbd30f135fff9aa3f3}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE8\_MSB@{REFERENCE8\_MSB}}
+\index{REFERENCE8\_MSB@{REFERENCE8\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE8\_MSB}{REFERENCE8\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ad500f71e3856a2bbd30f135fff9aa3f3} 
+\#define REFERENCE8\+\_\+\+MSB~92}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2b04a3e448f1d68e6a6d3929afafe8b4}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE9\_LSB@{REFERENCE9\_LSB}}
+\index{REFERENCE9\_LSB@{REFERENCE9\_LSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE9\_LSB}{REFERENCE9\_LSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2b04a3e448f1d68e6a6d3929afafe8b4} 
+\#define REFERENCE9\+\_\+\+LSB~95}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2a5cf667ed87549b0fb061455792b1aa}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!REFERENCE9\_MSB@{REFERENCE9\_MSB}}
+\index{REFERENCE9\_MSB@{REFERENCE9\_MSB}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{REFERENCE9\_MSB}{REFERENCE9\_MSB}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a2a5cf667ed87549b0fb061455792b1aa} 
+\#define REFERENCE9\+\_\+\+MSB~94}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ab702106cf3b3e96750b6845ded4e0299}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!RESET@{RESET}}
+\index{RESET@{RESET}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{RESET}{RESET}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ab702106cf3b3e96750b6845ded4e0299} 
+\#define RESET~7}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1cb16479a962ff63f99d60a8be50352d}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!SLIDER\_OPTION@{SLIDER\_OPTION}}
+\index{SLIDER\_OPTION@{SLIDER\_OPTION}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{SLIDER\_OPTION}{SLIDER\_OPTION}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a1cb16479a962ff63f99d60a8be50352d} 
+\#define SLIDER\+\_\+\+OPTION~14}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a22d4669d15b68c291c8a4ea6fa5f4317}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!SLIDER\_POSITION@{SLIDER\_POSITION}}
+\index{SLIDER\_POSITION@{SLIDER\_POSITION}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{SLIDER\_POSITION}{SLIDER\_POSITION}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a22d4669d15b68c291c8a4ea6fa5f4317} 
+\#define SLIDER\+\_\+\+POSITION~5}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9a7eb801a4a00851a9aade0a5c2e01da}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!TRD@{TRD}}
+\index{TRD@{TRD}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{TRD}{TRD}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9a7eb801a4a00851a9aade0a5c2e01da} 
+\#define TRD~12}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a83b2d13cfdf4240eb9def6e50dab07d1}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!TTD@{TTD}}
+\index{TTD@{TTD}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{TTD}{TTD}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a83b2d13cfdf4240eb9def6e50dab07d1} 
+\#define TTD~9}
+
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9cb36f8067a6f77b9d7173ea7eba4fb2}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!WHEEL\_ENABLE@{WHEEL\_ENABLE}}
+\index{WHEEL\_ENABLE@{WHEEL\_ENABLE}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{WHEEL\_ENABLE}{WHEEL\_ENABLE}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9cb36f8067a6f77b9d7173ea7eba4fb2} 
+\#define WHEEL\+\_\+\+ENABLE~0\+X80}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af5700399ec33af8803bb244e5f1b9667}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!AT42QT\_Init@{AT42QT\_Init}}
+\index{AT42QT\_Init@{AT42QT\_Init}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{AT42QT\_Init()}{AT42QT\_Init()}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af5700399ec33af8803bb244e5f1b9667} 
+void AT42\+QT\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Descriptive File Name
+
+@\+Company ETML-\/\+ES
+
+@\+File Name \doxylink{_p_i_c32130___a_t42_q_t2120___i2_c_8c}{PIC32130\+\_\+\+AT42\+QT2120\+\_\+\+I2\+C.\+c}
+
+@\+Autor David Coelho
+
+@\+Description Permet de communiquer en I2C avec le capteur capacitif AT42\+QT2120. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af5700399ec33af8803bb244e5f1b9667_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{_p_i_c32130___a_t42_q_t2120___i2_c_8h_af5700399ec33af8803bb244e5f1b9667_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9619655c3b6d6bc9d52e5da60515ad00}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!AT42QT\_Read@{AT42QT\_Read}}
+\index{AT42QT\_Read@{AT42QT\_Read}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{AT42QT\_Read()}{AT42QT\_Read()}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9619655c3b6d6bc9d52e5da60515ad00} 
+uint8\+\_\+t AT42\+QT\+\_\+\+Read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adr\+\_\+\+Registre\+\_\+R}{, }\item[{bool}]{n\+\_\+\+ACK}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a9619655c3b6d6bc9d52e5da60515ad00_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a8d973579a3ad5f1718f8f1489ed8ebfe}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!AT42QT\_Read\_Key0to7@{AT42QT\_Read\_Key0to7}}
+\index{AT42QT\_Read\_Key0to7@{AT42QT\_Read\_Key0to7}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{AT42QT\_Read\_Key0to7()}{AT42QT\_Read\_Key0to7()}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a8d973579a3ad5f1718f8f1489ed8ebfe} 
+uint8\+\_\+t AT42\+QT\+\_\+\+Read\+\_\+\+Key0to7 (\begin{DoxyParamCaption}\item[{bool}]{n\+\_\+\+ACK}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a8d973579a3ad5f1718f8f1489ed8ebfe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a8d973579a3ad5f1718f8f1489ed8ebfe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a39150e6230461628108aa0b9b349fc1a}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!AT42QT\_Read\_Key8to11@{AT42QT\_Read\_Key8to11}}
+\index{AT42QT\_Read\_Key8to11@{AT42QT\_Read\_Key8to11}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{AT42QT\_Read\_Key8to11()}{AT42QT\_Read\_Key8to11()}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a39150e6230461628108aa0b9b349fc1a} 
+uint8\+\_\+t AT42\+QT\+\_\+\+Read\+\_\+\+Key8to11 (\begin{DoxyParamCaption}\item[{bool}]{n\+\_\+\+ACK}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a39150e6230461628108aa0b9b349fc1a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a39150e6230461628108aa0b9b349fc1a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a385915a2e3e17d17d3485357160cc161}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!AT42QT\_Read\_Wheel@{AT42QT\_Read\_Wheel}}
+\index{AT42QT\_Read\_Wheel@{AT42QT\_Read\_Wheel}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{AT42QT\_Read\_Wheel()}{AT42QT\_Read\_Wheel()}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a385915a2e3e17d17d3485357160cc161} 
+uint8\+\_\+t AT42\+QT\+\_\+\+Read\+\_\+\+Wheel (\begin{DoxyParamCaption}\item[{bool}]{n\+\_\+\+ACK}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{_p_i_c32130___a_t42_q_t2120___i2_c_8h_a385915a2e3e17d17d3485357160cc161_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ae8b864de4a507559ab0b1b82b82def6f}\index{PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}!AT42QT\_Write@{AT42QT\_Write}}
+\index{AT42QT\_Write@{AT42QT\_Write}!PIC32130\_AT42QT2120\_I2C.h@{PIC32130\_AT42QT2120\_I2C.h}}
+\doxysubsubsection{\texorpdfstring{AT42QT\_Write()}{AT42QT\_Write()}}
+{\footnotesize\ttfamily \label{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ae8b864de4a507559ab0b1b82b82def6f} 
+void AT42\+QT\+\_\+\+Write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{adr\+\_\+\+Registre\+\_\+W}{, }\item[{uint8\+\_\+t}]{data\+\_\+\+Write}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ae8b864de4a507559ab0b1b82b82def6f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_p_i_c32130___a_t42_q_t2120___i2_c_8h_ae8b864de4a507559ab0b1b82b82def6f_icgraph}
+\end{center}
+\end{figure}

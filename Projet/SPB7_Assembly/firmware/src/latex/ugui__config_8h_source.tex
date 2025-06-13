@@ -1,0 +1,67 @@
+\doxysection{ugui\+\_\+config.\+h}
+\hypertarget{ugui__config_8h_source}{}\label{ugui__config_8h_source}\mbox{\hyperlink{ugui__config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_UGUI\_CONFIG\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_UGUI\_CONFIG\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00005\ \textcolor{comment}{/*\ -\/-\/\ CONFIG\ SECTION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/\ */}}
+\DoxyCodeLine{00006\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\#define\ USE\_MULTITASKING\ \ \ \ }}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ Enable\ color\ mode\ */}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ USE\_COLOR\_RGB888\ \ \ }\textcolor{comment}{//\ RGB\ =\ 0xFF,0xFF,0xFF}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\#define\ USE\_COLOR\_RGB565\ \ \ //\ RGB\ =\ 0bRRRRRGGGGGGBBBBB\ }}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{/*\ Enable\ needed\ fonts\ here\ */}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ \ USE\_FONT\_4X6}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ \ USE\_FONT\_5X8}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\#define\ \ USE\_FONT\_5X12}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ \ USE\_FONT\_6X8}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\#define\ \ USE\_FONT\_6X10}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\#define\ \ USE\_FONT\_7X12}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ \ USE\_FONT\_8X8}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\#define\ \ USE\_FONT\_8X12\_CYRILLIC}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ \ USE\_FONT\_8X12}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\#define\ \ USE\_FONT\_8X14}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ \ USE\_FONT\_10X16}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ \ USE\_FONT\_12X16}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\#define\ \ USE\_FONT\_12X20}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ \ USE\_FONT\_16X26}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ \ USE\_FONT\_22X36}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\#define\ \ USE\_FONT\_24X40\ \ \ //30'740\ bytes}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\#define\ \ USE\_FONT\_32X53\ \ \ //54'292\ bytes}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{/*\ Specify\ platform-\/dependent\ integer\ types\ here\ */}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ \_\_UG\_FONT\_DATA\ const}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ uint8\_t\ \ \ \ \ \ \mbox{\hyperlink{ugui__config_8h_afd2095067f9679548ed1b1a33852b19d}{UG\_U8}};}
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ int8\_t\ \ \ \ \ \ \ \mbox{\hyperlink{ugui__config_8h_a3e25f38676cfee01791c215333912bf0}{UG\_S8}};}
+\DoxyCodeLine{00038\ \textcolor{keyword}{typedef}\ uint16\_t\ \ \ \ \ \mbox{\hyperlink{ugui__config_8h_a14f28bb1d9bcb9c7a22e5f40d48a4d7d}{UG\_U16}};}
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ int16\_t\ \ \ \ \ \ \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\_S16}};}
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ uint32\_t\ \ \ \ \ \mbox{\hyperlink{ugui__config_8h_aadcba1b5f48bcd42fd707ba63e3990ea}{UG\_U32}};}
+\DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ int32\_t\ \ \ \ \ \ \mbox{\hyperlink{ugui__config_8h_a1b48ea066c20c1d02294755ec5e81ee6}{UG\_S32}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{/*\ Example\ for\ dsPIC33\ */}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//typedef\ unsigned\ char\ \ \ \ \ \ \ \ \ UG\_U8;}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//typedef\ signed\ char\ \ \ \ \ \ \ \ \ \ \ UG\_S8;}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//typedef\ unsigned\ int\ \ \ \ \ \ \ \ \ \ UG\_U16;}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//typedef\ signed\ int\ \ \ \ \ \ \ \ \ \ \ \ UG\_S16;}}
+\DoxyCodeLine{00049\ \textcolor{comment}{//typedef\ unsigned\ long\ int\ \ \ \ \ UG\_U32;}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//typedef\ signed\ long\ int\ \ \ \ \ \ \ UG\_S32;}}
+\DoxyCodeLine{00051\ \textcolor{comment}{/*\ */}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00054\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ Feature\ enablers\ */}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ USE\_PRERENDER\_EVENT}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ USE\_POSTRENDER\_EVENT}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

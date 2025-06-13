@@ -1,0 +1,229 @@
+\doxysection{app\+Inputs.\+h File Reference}
+\hypertarget{app_inputs_8h}{}\label{app_inputs_8h}\index{appInputs.h@{appInputs.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}system\+\_\+config.\+h"{}}\newline
+{\ttfamily \#include "{}system\+\_\+definitions.\+h"{}}\newline
+Include dependency graph for app\+Inputs.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_inputs_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{app_inputs_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_swithc_config}{Swithc\+Config}}
+\item 
+struct \mbox{\hyperlink{struct_conf_in_switchs}{Conf\+In\+Switchs}}
+\item 
+struct \mbox{\hyperlink{struct_a_p_p___i_n_p_u_t_s___d_a_t_a}{APP\+\_\+\+INPUTS\+\_\+\+DATA}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{app_inputs_8h_a4191bff3b8a6064de384d4c03061f1ce}{Config\+States\+AIN}} \{ \mbox{\hyperlink{app_inputs_8h_a4191bff3b8a6064de384d4c03061f1cea94b641944a9cd56925d978cb5b499d18}{AIN\+\_\+0\+\_\+10V}} = 0
+, \mbox{\hyperlink{app_inputs_8h_a4191bff3b8a6064de384d4c03061f1cead50b71e950011960c9b48dd9a55675be}{AIN\+\_\+4\+\_\+20mA}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{app_inputs_8h_acf903aefe776184cd5993e76692aa5a1}{Config\+States\+Free\+In}} \{ \mbox{\hyperlink{app_inputs_8h_acf903aefe776184cd5993e76692aa5a1a8836f3cefcfcc3c37ffb23fface5751c}{FREE\+\_\+\+IN\+\_\+\+DONOT}} = 0
+, \mbox{\hyperlink{app_inputs_8h_acf903aefe776184cd5993e76692aa5a1a990335f82123f351ecbaf502ae7f8c0f}{FREE\+\_\+\+IN\+\_\+\+REPEAT}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{app_inputs_8h_ada390c31648888e80455e59aededec89}{Config\+States\+SPBs}} \{ \mbox{\hyperlink{app_inputs_8h_ada390c31648888e80455e59aededec89aec0faa7f1261066a2e5c416866c3eba7}{SPB\+\_\+\+IN\+\_\+\+DONOT}} = 0
+, \mbox{\hyperlink{app_inputs_8h_ada390c31648888e80455e59aededec89ac86d865e5bb4b3c004fcf5751ea1063a}{SPB\+\_\+\+IN\+\_\+\+REPEAT}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{app_inputs_8h_a2a53f87a70eec83d25362a3a010ecd39}{APP\+\_\+\+INPUTS\+\_\+\+STATES}} \{ \mbox{\hyperlink{app_inputs_8h_a2a53f87a70eec83d25362a3a010ecd39a0038b24089b22a502b59dc756458a458}{APP\+\_\+\+INPUTS\+\_\+\+STATE\+\_\+\+INIT}} =0
+, \mbox{\hyperlink{app_inputs_8h_a2a53f87a70eec83d25362a3a010ecd39ac9e9a836716f460620affcd93af4868b}{APP\+\_\+\+INPUTS\+\_\+\+STATE\+\_\+\+SERVICE\+\_\+\+TASKS}}
+, \mbox{\hyperlink{app_inputs_8h_a2a53f87a70eec83d25362a3a010ecd39a9a528fd204a207f5a54cecbf89fdaeab}{APP\+\_\+\+INPUTS\+\_\+\+STATE\+\_\+\+IDLE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{app_inputs_8h_a9b9401d3e989e3f6a48276979762f3c5}{APP\+\_\+\+Inputs\+\_\+\+Initialize}} (void)
+\item 
+void \mbox{\hyperlink{app_inputs_8h_a537bda88286e0f5e830dac9c7f5d9405}{APP\+\_\+\+Inputs\+\_\+\+Tasks}} (void)
+\item 
+void \mbox{\hyperlink{app_inputs_8h_a98a5fecb1828f413db07cfb10273379c}{APP\+\_\+\+Adc\+Read\+All\+Samples}} (void)
+\begin{DoxyCompactList}\small\item\em Lit tous les échantillons ADC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_inputs_8h_a912c163cafb881d4deea72f7b463cbdc}{APP\+\_\+\+Get\+Inputs\+States}} (void)
+\begin{DoxyCompactList}\small\item\em Récupère l\textquotesingle{}état des entrées. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_inputs_8h_a70154df83c896b9eb59302e4bebcbed4}{APP\+\_\+\+TIMER\+\_\+\+AD\+\_\+\+CALL\+\_\+\+BACK}} (void)
+\begin{DoxyCompactList}\small\item\em Callback du timer ADC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_conf_in_switchs}{Conf\+In\+Switchs}} \mbox{\hyperlink{app_inputs_8h_a6d12f5d530d8f877a04340e2f7d867ad}{Sy\+Switch}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{app_inputs_8h_a2a53f87a70eec83d25362a3a010ecd39}\index{appInputs.h@{appInputs.h}!APP\_INPUTS\_STATES@{APP\_INPUTS\_STATES}}
+\index{APP\_INPUTS\_STATES@{APP\_INPUTS\_STATES}!appInputs.h@{appInputs.h}}
+\doxysubsubsection{\texorpdfstring{APP\_INPUTS\_STATES}{APP\_INPUTS\_STATES}}
+{\footnotesize\ttfamily \label{app_inputs_8h_a2a53f87a70eec83d25362a3a010ecd39} 
+enum \mbox{\hyperlink{app_inputs_8h_a2a53f87a70eec83d25362a3a010ecd39}{APP\+\_\+\+INPUTS\+\_\+\+STATES}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_INPUTS\_STATE\_INIT@{APP\_INPUTS\_STATE\_INIT}!appInputs.h@{appInputs.h}}\index{appInputs.h@{appInputs.h}!APP\_INPUTS\_STATE\_INIT@{APP\_INPUTS\_STATE\_INIT}}}\Hypertarget{app_inputs_8h_a2a53f87a70eec83d25362a3a010ecd39a0038b24089b22a502b59dc756458a458}\label{app_inputs_8h_a2a53f87a70eec83d25362a3a010ecd39a0038b24089b22a502b59dc756458a458} 
+APP\+\_\+\+INPUTS\+\_\+\+STATE\+\_\+\+INIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_INPUTS\_STATE\_SERVICE\_TASKS@{APP\_INPUTS\_STATE\_SERVICE\_TASKS}!appInputs.h@{appInputs.h}}\index{appInputs.h@{appInputs.h}!APP\_INPUTS\_STATE\_SERVICE\_TASKS@{APP\_INPUTS\_STATE\_SERVICE\_TASKS}}}\Hypertarget{app_inputs_8h_a2a53f87a70eec83d25362a3a010ecd39ac9e9a836716f460620affcd93af4868b}\label{app_inputs_8h_a2a53f87a70eec83d25362a3a010ecd39ac9e9a836716f460620affcd93af4868b} 
+APP\+\_\+\+INPUTS\+\_\+\+STATE\+\_\+\+SERVICE\+\_\+\+TASKS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_INPUTS\_STATE\_IDLE@{APP\_INPUTS\_STATE\_IDLE}!appInputs.h@{appInputs.h}}\index{appInputs.h@{appInputs.h}!APP\_INPUTS\_STATE\_IDLE@{APP\_INPUTS\_STATE\_IDLE}}}\Hypertarget{app_inputs_8h_a2a53f87a70eec83d25362a3a010ecd39a9a528fd204a207f5a54cecbf89fdaeab}\label{app_inputs_8h_a2a53f87a70eec83d25362a3a010ecd39a9a528fd204a207f5a54cecbf89fdaeab} 
+APP\+\_\+\+INPUTS\+\_\+\+STATE\+\_\+\+IDLE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{app_inputs_8h_a4191bff3b8a6064de384d4c03061f1ce}\index{appInputs.h@{appInputs.h}!ConfigStatesAIN@{ConfigStatesAIN}}
+\index{ConfigStatesAIN@{ConfigStatesAIN}!appInputs.h@{appInputs.h}}
+\doxysubsubsection{\texorpdfstring{ConfigStatesAIN}{ConfigStatesAIN}}
+{\footnotesize\ttfamily \label{app_inputs_8h_a4191bff3b8a6064de384d4c03061f1ce} 
+enum \mbox{\hyperlink{app_inputs_8h_a4191bff3b8a6064de384d4c03061f1ce}{Config\+States\+AIN}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AIN\_0\_10V@{AIN\_0\_10V}!appInputs.h@{appInputs.h}}\index{appInputs.h@{appInputs.h}!AIN\_0\_10V@{AIN\_0\_10V}}}\Hypertarget{app_inputs_8h_a4191bff3b8a6064de384d4c03061f1cea94b641944a9cd56925d978cb5b499d18}\label{app_inputs_8h_a4191bff3b8a6064de384d4c03061f1cea94b641944a9cd56925d978cb5b499d18} 
+AIN\+\_\+0\+\_\+10V&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AIN\_4\_20mA@{AIN\_4\_20mA}!appInputs.h@{appInputs.h}}\index{appInputs.h@{appInputs.h}!AIN\_4\_20mA@{AIN\_4\_20mA}}}\Hypertarget{app_inputs_8h_a4191bff3b8a6064de384d4c03061f1cead50b71e950011960c9b48dd9a55675be}\label{app_inputs_8h_a4191bff3b8a6064de384d4c03061f1cead50b71e950011960c9b48dd9a55675be} 
+AIN\+\_\+4\+\_\+20mA&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{app_inputs_8h_acf903aefe776184cd5993e76692aa5a1}\index{appInputs.h@{appInputs.h}!ConfigStatesFreeIn@{ConfigStatesFreeIn}}
+\index{ConfigStatesFreeIn@{ConfigStatesFreeIn}!appInputs.h@{appInputs.h}}
+\doxysubsubsection{\texorpdfstring{ConfigStatesFreeIn}{ConfigStatesFreeIn}}
+{\footnotesize\ttfamily \label{app_inputs_8h_acf903aefe776184cd5993e76692aa5a1} 
+enum \mbox{\hyperlink{app_inputs_8h_acf903aefe776184cd5993e76692aa5a1}{Config\+States\+Free\+In}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN\_DONOT@{FREE\_IN\_DONOT}!appInputs.h@{appInputs.h}}\index{appInputs.h@{appInputs.h}!FREE\_IN\_DONOT@{FREE\_IN\_DONOT}}}\Hypertarget{app_inputs_8h_acf903aefe776184cd5993e76692aa5a1a8836f3cefcfcc3c37ffb23fface5751c}\label{app_inputs_8h_acf903aefe776184cd5993e76692aa5a1a8836f3cefcfcc3c37ffb23fface5751c} 
+FREE\+\_\+\+IN\+\_\+\+DONOT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FREE\_IN\_REPEAT@{FREE\_IN\_REPEAT}!appInputs.h@{appInputs.h}}\index{appInputs.h@{appInputs.h}!FREE\_IN\_REPEAT@{FREE\_IN\_REPEAT}}}\Hypertarget{app_inputs_8h_acf903aefe776184cd5993e76692aa5a1a990335f82123f351ecbaf502ae7f8c0f}\label{app_inputs_8h_acf903aefe776184cd5993e76692aa5a1a990335f82123f351ecbaf502ae7f8c0f} 
+FREE\+\_\+\+IN\+\_\+\+REPEAT&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{app_inputs_8h_ada390c31648888e80455e59aededec89}\index{appInputs.h@{appInputs.h}!ConfigStatesSPBs@{ConfigStatesSPBs}}
+\index{ConfigStatesSPBs@{ConfigStatesSPBs}!appInputs.h@{appInputs.h}}
+\doxysubsubsection{\texorpdfstring{ConfigStatesSPBs}{ConfigStatesSPBs}}
+{\footnotesize\ttfamily \label{app_inputs_8h_ada390c31648888e80455e59aededec89} 
+enum \mbox{\hyperlink{app_inputs_8h_ada390c31648888e80455e59aededec89}{Config\+States\+SPBs}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_IN\_DONOT@{SPB\_IN\_DONOT}!appInputs.h@{appInputs.h}}\index{appInputs.h@{appInputs.h}!SPB\_IN\_DONOT@{SPB\_IN\_DONOT}}}\Hypertarget{app_inputs_8h_ada390c31648888e80455e59aededec89aec0faa7f1261066a2e5c416866c3eba7}\label{app_inputs_8h_ada390c31648888e80455e59aededec89aec0faa7f1261066a2e5c416866c3eba7} 
+SPB\+\_\+\+IN\+\_\+\+DONOT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPB\_IN\_REPEAT@{SPB\_IN\_REPEAT}!appInputs.h@{appInputs.h}}\index{appInputs.h@{appInputs.h}!SPB\_IN\_REPEAT@{SPB\_IN\_REPEAT}}}\Hypertarget{app_inputs_8h_ada390c31648888e80455e59aededec89ac86d865e5bb4b3c004fcf5751ea1063a}\label{app_inputs_8h_ada390c31648888e80455e59aededec89ac86d865e5bb4b3c004fcf5751ea1063a} 
+SPB\+\_\+\+IN\+\_\+\+REPEAT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{app_inputs_8h_a98a5fecb1828f413db07cfb10273379c}\index{appInputs.h@{appInputs.h}!APP\_AdcReadAllSamples@{APP\_AdcReadAllSamples}}
+\index{APP\_AdcReadAllSamples@{APP\_AdcReadAllSamples}!appInputs.h@{appInputs.h}}
+\doxysubsubsection{\texorpdfstring{APP\_AdcReadAllSamples()}{APP\_AdcReadAllSamples()}}
+{\footnotesize\ttfamily \label{app_inputs_8h_a98a5fecb1828f413db07cfb10273379c} 
+void APP\+\_\+\+Adc\+Read\+All\+Samples (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Lit tous les échantillons ADC. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{app_inputs_8h_a98a5fecb1828f413db07cfb10273379c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{app_inputs_8h_a912c163cafb881d4deea72f7b463cbdc}\index{appInputs.h@{appInputs.h}!APP\_GetInputsStates@{APP\_GetInputsStates}}
+\index{APP\_GetInputsStates@{APP\_GetInputsStates}!appInputs.h@{appInputs.h}}
+\doxysubsubsection{\texorpdfstring{APP\_GetInputsStates()}{APP\_GetInputsStates()}}
+{\footnotesize\ttfamily \label{app_inputs_8h_a912c163cafb881d4deea72f7b463cbdc} 
+void APP\+\_\+\+Get\+Inputs\+States (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Récupère l\textquotesingle{}état des entrées. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{app_inputs_8h_a912c163cafb881d4deea72f7b463cbdc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{app_inputs_8h_a9b9401d3e989e3f6a48276979762f3c5}\index{appInputs.h@{appInputs.h}!APP\_Inputs\_Initialize@{APP\_Inputs\_Initialize}}
+\index{APP\_Inputs\_Initialize@{APP\_Inputs\_Initialize}!appInputs.h@{appInputs.h}}
+\doxysubsubsection{\texorpdfstring{APP\_Inputs\_Initialize()}{APP\_Inputs\_Initialize()}}
+{\footnotesize\ttfamily \label{app_inputs_8h_a9b9401d3e989e3f6a48276979762f3c5} 
+void APP\+\_\+\+Inputs\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_inputs_8h_a537bda88286e0f5e830dac9c7f5d9405}\index{appInputs.h@{appInputs.h}!APP\_Inputs\_Tasks@{APP\_Inputs\_Tasks}}
+\index{APP\_Inputs\_Tasks@{APP\_Inputs\_Tasks}!appInputs.h@{appInputs.h}}
+\doxysubsubsection{\texorpdfstring{APP\_Inputs\_Tasks()}{APP\_Inputs\_Tasks()}}
+{\footnotesize\ttfamily \label{app_inputs_8h_a537bda88286e0f5e830dac9c7f5d9405} 
+void APP\+\_\+\+Inputs\+\_\+\+Tasks (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_inputs_8h_a537bda88286e0f5e830dac9c7f5d9405_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{app_inputs_8h_a70154df83c896b9eb59302e4bebcbed4}\index{appInputs.h@{appInputs.h}!APP\_TIMER\_AD\_CALL\_BACK@{APP\_TIMER\_AD\_CALL\_BACK}}
+\index{APP\_TIMER\_AD\_CALL\_BACK@{APP\_TIMER\_AD\_CALL\_BACK}!appInputs.h@{appInputs.h}}
+\doxysubsubsection{\texorpdfstring{APP\_TIMER\_AD\_CALL\_BACK()}{APP\_TIMER\_AD\_CALL\_BACK()}}
+{\footnotesize\ttfamily \label{app_inputs_8h_a70154df83c896b9eb59302e4bebcbed4} 
+void APP\+\_\+\+TIMER\+\_\+\+AD\+\_\+\+CALL\+\_\+\+BACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Callback du timer ADC. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{app_inputs_8h_a6d12f5d530d8f877a04340e2f7d867ad}\index{appInputs.h@{appInputs.h}!SySwitch@{SySwitch}}
+\index{SySwitch@{SySwitch}!appInputs.h@{appInputs.h}}
+\doxysubsubsection{\texorpdfstring{SySwitch}{SySwitch}}
+{\footnotesize\ttfamily \label{app_inputs_8h_a6d12f5d530d8f877a04340e2f7d867ad} 
+\mbox{\hyperlink{struct_conf_in_switchs}{Conf\+In\+Switchs}} Sy\+Switch}
+

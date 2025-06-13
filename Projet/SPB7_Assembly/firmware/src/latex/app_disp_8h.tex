@@ -1,0 +1,341 @@
+\doxysection{app\+Disp.\+h File Reference}
+\hypertarget{app_disp_8h}{}\label{app_disp_8h}\index{appDisp.h@{appDisp.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}system\+\_\+config.\+h"{}}\newline
+{\ttfamily \#include "{}system\+\_\+definitions.\+h"{}}\newline
+{\ttfamily \#include "{}Display.\+h"{}}\newline
+{\ttfamily \#include "{}LCD\+\_\+\+Driver.\+h"{}}\newline
+{\ttfamily \#include "{}ugui.\+h"{}}\newline
+{\ttfamily \#include "{}ugui\+\_\+config.\+h"{}}\newline
+Include dependency graph for app\+Disp.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{app_disp_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_a_p_p___d_i_s_p___d_a_t_a}{APP\+\_\+\+DISP\+\_\+\+DATA}}
+\item 
+struct \mbox{\hyperlink{struct_m_o_d_u_l_e___s_l_o_t___d_a_t_a}{MODULE\+\_\+\+SLOT\+\_\+\+DATA}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{app_disp_8h_a9e9ee4b5f4ffd0638e28f3192fb55d15}{DC\+\_\+\+MODE}}~false
+\item 
+\#define \mbox{\hyperlink{app_disp_8h_acf458133e9abe07e98e7b1f6f9961d46}{AC\+\_\+\+MODE}}~true
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{app_disp_8h_a25482893344be191b204181e6271ebb1}{APP\+\_\+\+DISP\+\_\+\+STATES}} \{ \mbox{\hyperlink{app_disp_8h_a25482893344be191b204181e6271ebb1a2b7e025a72fd5a7cecff6f945f9ce5ab}{APP\+\_\+\+DISP\+\_\+\+STATE\+\_\+\+INIT}} =0
+, \mbox{\hyperlink{app_disp_8h_a25482893344be191b204181e6271ebb1aa5c024a7504d4f9c7bc7b2330ad62f23}{APP\+\_\+\+DISP\+\_\+\+STATE\+\_\+\+SERVICE\+\_\+\+TASKS}}
+ \}
+\item 
+enum \mbox{\hyperlink{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6}{E\+\_\+\+MODULE\+\_\+\+ID}} \{ \newline
+\mbox{\hyperlink{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a66018119cb4537e8e663c1e177053827}{MODULE\+\_\+1}} = 1
+, \mbox{\hyperlink{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6ac8f4f92d3575329fd41a0ec5174828a2}{MODULE\+\_\+2}}
+, \mbox{\hyperlink{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a2f14bffd1f8537a2fa10053e43b31f7c}{MODULE\+\_\+3}}
+, \mbox{\hyperlink{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a16e621ecfed89d42abca30dac06ab659}{MODULE\+\_\+4}}
+, \newline
+\mbox{\hyperlink{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a82326ec815f4058ae0afdc8b1d5ccd2e}{MODULE\+\_\+5}}
+, \mbox{\hyperlink{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6ad64d13f10e481c6fd190c534d70e0077}{MODULE\+\_\+6}}
+, \mbox{\hyperlink{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a385d02979259825bfcf0ca7d6ab1352b}{MODULE\+\_\+7}}
+ \}
+\item 
+enum \mbox{\hyperlink{app_disp_8h_a3ae720c5e53f66c3816626b0dfeb7ed6}{E\+\_\+\+MODULE\+\_\+\+MODEL}} \{ \mbox{\hyperlink{app_disp_8h_a3ae720c5e53f66c3816626b0dfeb7ed6a2f0d18fc0d0fa4a6cd92dc328501874d}{EMPTY}} = 0
+, \mbox{\hyperlink{app_disp_8h_a3ae720c5e53f66c3816626b0dfeb7ed6a823a487b72700b767d48a02bbbab080e}{MODULE\+\_\+23132}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{app_disp_8h_a75cb3bf61eb109c27ae1f46fb992146c}{APP\+\_\+\+Disp\+\_\+\+Initialize}} (void)
+\begin{DoxyCompactList}\small\item\em Initialise l\textquotesingle{}application Display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_disp_8h_a7181bf1f6f94fc4377e80e336eb2e3a0}{APP\+\_\+\+DISP\+\_\+\+TIMER5\+\_\+\+CALLBACK}} (void)
+\begin{DoxyCompactList}\small\item\em Callback du timer 5 pour l\textquotesingle{}affichage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_disp_8h_a20e8b14571a3fa38e8400d3f3586c869}{APP\+\_\+\+Disp\+\_\+\+Tasks}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction principale des tâches Display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_disp_8h_a23ca264c2abf733f6258f56bbf09931d}{Edit\+Signal\+Name\+\_\+\+IHM}} (int index)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}éditer le nom d\textquotesingle{}un signal dans l\textquotesingle{}IHM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_disp_8h_ae49115050cd0b8f619a1bd063348808f}{App\+\_\+\+Display\+\_\+\+Change\+Screen}} (uint8\+\_\+t new\+Screen, uint16\+\_\+t \texorpdfstring{$\ast$}{*}touch\+States, bool force\+Update)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}écran affiché. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_disp_8h_a4c93661773cf6006ff7db72322cc103d}{App\+\_\+\+Display\+\_\+\+Handle\+Inputs}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}Inputs\+States)
+\begin{DoxyCompactList}\small\item\em Gère les entrées pour l\textquotesingle{}affichage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_disp_8h_a0af8c8bfa817fe4b676e6d88b21a8a3c}{App\+\_\+\+Display\+\_\+\+Handle\+Touch}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}touch\+States)
+\begin{DoxyCompactList}\small\item\em Gère les entrées tactiles pour l\textquotesingle{}affichage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{app_disp_8h_acf458133e9abe07e98e7b1f6f9961d46}\index{appDisp.h@{appDisp.h}!AC\_MODE@{AC\_MODE}}
+\index{AC\_MODE@{AC\_MODE}!appDisp.h@{appDisp.h}}
+\doxysubsubsection{\texorpdfstring{AC\_MODE}{AC\_MODE}}
+{\footnotesize\ttfamily \label{app_disp_8h_acf458133e9abe07e98e7b1f6f9961d46} 
+\#define AC\+\_\+\+MODE~true}
+
+\Hypertarget{app_disp_8h_a9e9ee4b5f4ffd0638e28f3192fb55d15}\index{appDisp.h@{appDisp.h}!DC\_MODE@{DC\_MODE}}
+\index{DC\_MODE@{DC\_MODE}!appDisp.h@{appDisp.h}}
+\doxysubsubsection{\texorpdfstring{DC\_MODE}{DC\_MODE}}
+{\footnotesize\ttfamily \label{app_disp_8h_a9e9ee4b5f4ffd0638e28f3192fb55d15} 
+\#define DC\+\_\+\+MODE~false}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{app_disp_8h_a25482893344be191b204181e6271ebb1}\index{appDisp.h@{appDisp.h}!APP\_DISP\_STATES@{APP\_DISP\_STATES}}
+\index{APP\_DISP\_STATES@{APP\_DISP\_STATES}!appDisp.h@{appDisp.h}}
+\doxysubsubsection{\texorpdfstring{APP\_DISP\_STATES}{APP\_DISP\_STATES}}
+{\footnotesize\ttfamily \label{app_disp_8h_a25482893344be191b204181e6271ebb1} 
+enum \mbox{\hyperlink{app_disp_8h_a25482893344be191b204181e6271ebb1}{APP\+\_\+\+DISP\+\_\+\+STATES}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_DISP\_STATE\_INIT@{APP\_DISP\_STATE\_INIT}!appDisp.h@{appDisp.h}}\index{appDisp.h@{appDisp.h}!APP\_DISP\_STATE\_INIT@{APP\_DISP\_STATE\_INIT}}}\Hypertarget{app_disp_8h_a25482893344be191b204181e6271ebb1a2b7e025a72fd5a7cecff6f945f9ce5ab}\label{app_disp_8h_a25482893344be191b204181e6271ebb1a2b7e025a72fd5a7cecff6f945f9ce5ab} 
+APP\+\_\+\+DISP\+\_\+\+STATE\+\_\+\+INIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_DISP\_STATE\_SERVICE\_TASKS@{APP\_DISP\_STATE\_SERVICE\_TASKS}!appDisp.h@{appDisp.h}}\index{appDisp.h@{appDisp.h}!APP\_DISP\_STATE\_SERVICE\_TASKS@{APP\_DISP\_STATE\_SERVICE\_TASKS}}}\Hypertarget{app_disp_8h_a25482893344be191b204181e6271ebb1aa5c024a7504d4f9c7bc7b2330ad62f23}\label{app_disp_8h_a25482893344be191b204181e6271ebb1aa5c024a7504d4f9c7bc7b2330ad62f23} 
+APP\+\_\+\+DISP\+\_\+\+STATE\+\_\+\+SERVICE\+\_\+\+TASKS&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6}\index{appDisp.h@{appDisp.h}!E\_MODULE\_ID@{E\_MODULE\_ID}}
+\index{E\_MODULE\_ID@{E\_MODULE\_ID}!appDisp.h@{appDisp.h}}
+\doxysubsubsection{\texorpdfstring{E\_MODULE\_ID}{E\_MODULE\_ID}}
+{\footnotesize\ttfamily \label{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6} 
+enum \mbox{\hyperlink{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6}{E\+\_\+\+MODULE\+\_\+\+ID}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODULE\_1@{MODULE\_1}!appDisp.h@{appDisp.h}}\index{appDisp.h@{appDisp.h}!MODULE\_1@{MODULE\_1}}}\Hypertarget{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a66018119cb4537e8e663c1e177053827}\label{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a66018119cb4537e8e663c1e177053827} 
+MODULE\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODULE\_2@{MODULE\_2}!appDisp.h@{appDisp.h}}\index{appDisp.h@{appDisp.h}!MODULE\_2@{MODULE\_2}}}\Hypertarget{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6ac8f4f92d3575329fd41a0ec5174828a2}\label{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6ac8f4f92d3575329fd41a0ec5174828a2} 
+MODULE\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODULE\_3@{MODULE\_3}!appDisp.h@{appDisp.h}}\index{appDisp.h@{appDisp.h}!MODULE\_3@{MODULE\_3}}}\Hypertarget{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a2f14bffd1f8537a2fa10053e43b31f7c}\label{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a2f14bffd1f8537a2fa10053e43b31f7c} 
+MODULE\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODULE\_4@{MODULE\_4}!appDisp.h@{appDisp.h}}\index{appDisp.h@{appDisp.h}!MODULE\_4@{MODULE\_4}}}\Hypertarget{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a16e621ecfed89d42abca30dac06ab659}\label{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a16e621ecfed89d42abca30dac06ab659} 
+MODULE\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODULE\_5@{MODULE\_5}!appDisp.h@{appDisp.h}}\index{appDisp.h@{appDisp.h}!MODULE\_5@{MODULE\_5}}}\Hypertarget{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a82326ec815f4058ae0afdc8b1d5ccd2e}\label{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a82326ec815f4058ae0afdc8b1d5ccd2e} 
+MODULE\+\_\+5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODULE\_6@{MODULE\_6}!appDisp.h@{appDisp.h}}\index{appDisp.h@{appDisp.h}!MODULE\_6@{MODULE\_6}}}\Hypertarget{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6ad64d13f10e481c6fd190c534d70e0077}\label{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6ad64d13f10e481c6fd190c534d70e0077} 
+MODULE\+\_\+6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODULE\_7@{MODULE\_7}!appDisp.h@{appDisp.h}}\index{appDisp.h@{appDisp.h}!MODULE\_7@{MODULE\_7}}}\Hypertarget{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a385d02979259825bfcf0ca7d6ab1352b}\label{app_disp_8h_aef5b4349ebec2a428d12da4b6d2e71c6a385d02979259825bfcf0ca7d6ab1352b} 
+MODULE\+\_\+7&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{app_disp_8h_a3ae720c5e53f66c3816626b0dfeb7ed6}\index{appDisp.h@{appDisp.h}!E\_MODULE\_MODEL@{E\_MODULE\_MODEL}}
+\index{E\_MODULE\_MODEL@{E\_MODULE\_MODEL}!appDisp.h@{appDisp.h}}
+\doxysubsubsection{\texorpdfstring{E\_MODULE\_MODEL}{E\_MODULE\_MODEL}}
+{\footnotesize\ttfamily \label{app_disp_8h_a3ae720c5e53f66c3816626b0dfeb7ed6} 
+enum \mbox{\hyperlink{app_disp_8h_a3ae720c5e53f66c3816626b0dfeb7ed6}{E\+\_\+\+MODULE\+\_\+\+MODEL}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EMPTY@{EMPTY}!appDisp.h@{appDisp.h}}\index{appDisp.h@{appDisp.h}!EMPTY@{EMPTY}}}\Hypertarget{app_disp_8h_a3ae720c5e53f66c3816626b0dfeb7ed6a2f0d18fc0d0fa4a6cd92dc328501874d}\label{app_disp_8h_a3ae720c5e53f66c3816626b0dfeb7ed6a2f0d18fc0d0fa4a6cd92dc328501874d} 
+EMPTY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MODULE\_23132@{MODULE\_23132}!appDisp.h@{appDisp.h}}\index{appDisp.h@{appDisp.h}!MODULE\_23132@{MODULE\_23132}}}\Hypertarget{app_disp_8h_a3ae720c5e53f66c3816626b0dfeb7ed6a823a487b72700b767d48a02bbbab080e}\label{app_disp_8h_a3ae720c5e53f66c3816626b0dfeb7ed6a823a487b72700b767d48a02bbbab080e} 
+MODULE\+\_\+23132&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{app_disp_8h_a75cb3bf61eb109c27ae1f46fb992146c}\index{appDisp.h@{appDisp.h}!APP\_Disp\_Initialize@{APP\_Disp\_Initialize}}
+\index{APP\_Disp\_Initialize@{APP\_Disp\_Initialize}!appDisp.h@{appDisp.h}}
+\doxysubsubsection{\texorpdfstring{APP\_Disp\_Initialize()}{APP\_Disp\_Initialize()}}
+{\footnotesize\ttfamily \label{app_disp_8h_a75cb3bf61eb109c27ae1f46fb992146c} 
+void APP\+\_\+\+Disp\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialise l\textquotesingle{}application Display. 
+
+Cette fonction initialise l\textquotesingle{}application Display et la place dans son état initial. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{app_disp_8h_a20e8b14571a3fa38e8400d3f3586c869}\index{appDisp.h@{appDisp.h}!APP\_Disp\_Tasks@{APP\_Disp\_Tasks}}
+\index{APP\_Disp\_Tasks@{APP\_Disp\_Tasks}!appDisp.h@{appDisp.h}}
+\doxysubsubsection{\texorpdfstring{APP\_Disp\_Tasks()}{APP\_Disp\_Tasks()}}
+{\footnotesize\ttfamily \label{app_disp_8h_a20e8b14571a3fa38e8400d3f3586c869} 
+void APP\+\_\+\+Disp\+\_\+\+Tasks (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Fonction principale des tâches Display. 
+
+Cette fonction gère la machine d\textquotesingle{}état et la logique principale de l\textquotesingle{}application Display. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8h_a20e8b14571a3fa38e8400d3f3586c869_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{app_disp_8h_a7181bf1f6f94fc4377e80e336eb2e3a0}\index{appDisp.h@{appDisp.h}!APP\_DISP\_TIMER5\_CALLBACK@{APP\_DISP\_TIMER5\_CALLBACK}}
+\index{APP\_DISP\_TIMER5\_CALLBACK@{APP\_DISP\_TIMER5\_CALLBACK}!appDisp.h@{appDisp.h}}
+\doxysubsubsection{\texorpdfstring{APP\_DISP\_TIMER5\_CALLBACK()}{APP\_DISP\_TIMER5\_CALLBACK()}}
+{\footnotesize\ttfamily \label{app_disp_8h_a7181bf1f6f94fc4377e80e336eb2e3a0} 
+void APP\+\_\+\+DISP\+\_\+\+TIMER5\+\_\+\+CALLBACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Callback du timer 5 pour l\textquotesingle{}affichage. 
+
+Cette fonction est appelée lors de l\textquotesingle{}interruption du timer 5 pour gérer les événements liés à l\textquotesingle{}affichage. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{app_disp_8h_ae49115050cd0b8f619a1bd063348808f}\index{appDisp.h@{appDisp.h}!App\_Display\_ChangeScreen@{App\_Display\_ChangeScreen}}
+\index{App\_Display\_ChangeScreen@{App\_Display\_ChangeScreen}!appDisp.h@{appDisp.h}}
+\doxysubsubsection{\texorpdfstring{App\_Display\_ChangeScreen()}{App\_Display\_ChangeScreen()}}
+{\footnotesize\ttfamily \label{app_disp_8h_ae49115050cd0b8f619a1bd063348808f} 
+void App\+\_\+\+Display\+\_\+\+Change\+Screen (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Screen}{, }\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{touch\+States}{, }\item[{bool}]{force\+Update}{}\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}écran affiché. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Screen} & Nouvel écran à afficher. \\
+\hline
+{\em touch\+States} & États tactiles. \\
+\hline
+{\em force\+Update} & Forcer la mise à jour de l\textquotesingle{}affichage. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8h_ae49115050cd0b8f619a1bd063348808f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8h_ae49115050cd0b8f619a1bd063348808f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{app_disp_8h_a4c93661773cf6006ff7db72322cc103d}\index{appDisp.h@{appDisp.h}!App\_Display\_HandleInputs@{App\_Display\_HandleInputs}}
+\index{App\_Display\_HandleInputs@{App\_Display\_HandleInputs}!appDisp.h@{appDisp.h}}
+\doxysubsubsection{\texorpdfstring{App\_Display\_HandleInputs()}{App\_Display\_HandleInputs()}}
+{\footnotesize\ttfamily \label{app_disp_8h_a4c93661773cf6006ff7db72322cc103d} 
+void App\+\_\+\+Display\+\_\+\+Handle\+Inputs (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{Inputs\+States}{}\end{DoxyParamCaption})}
+
+
+
+Gère les entrées pour l\textquotesingle{}affichage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Inputs\+States} & États des entrées. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8h_a4c93661773cf6006ff7db72322cc103d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{app_disp_8h_a0af8c8bfa817fe4b676e6d88b21a8a3c}\index{appDisp.h@{appDisp.h}!App\_Display\_HandleTouch@{App\_Display\_HandleTouch}}
+\index{App\_Display\_HandleTouch@{App\_Display\_HandleTouch}!appDisp.h@{appDisp.h}}
+\doxysubsubsection{\texorpdfstring{App\_Display\_HandleTouch()}{App\_Display\_HandleTouch()}}
+{\footnotesize\ttfamily \label{app_disp_8h_a0af8c8bfa817fe4b676e6d88b21a8a3c} 
+void App\+\_\+\+Display\+\_\+\+Handle\+Touch (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{touch\+States}{}\end{DoxyParamCaption})}
+
+
+
+Gère les entrées tactiles pour l\textquotesingle{}affichage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch\+States} & États tactiles. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Changement d\textquotesingle{}écran vers le menu via App\+\_\+\+Display\+\_\+\+Change\+Screen (non forcé).Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8h_a0af8c8bfa817fe4b676e6d88b21a8a3c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8h_a0af8c8bfa817fe4b676e6d88b21a8a3c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{app_disp_8h_a23ca264c2abf733f6258f56bbf09931d}\index{appDisp.h@{appDisp.h}!EditSignalName\_IHM@{EditSignalName\_IHM}}
+\index{EditSignalName\_IHM@{EditSignalName\_IHM}!appDisp.h@{appDisp.h}}
+\doxysubsubsection{\texorpdfstring{EditSignalName\_IHM()}{EditSignalName\_IHM()}}
+{\footnotesize\ttfamily \label{app_disp_8h_a23ca264c2abf733f6258f56bbf09931d} 
+void Edit\+Signal\+Name\+\_\+\+IHM (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Permet d\textquotesingle{}éditer le nom d\textquotesingle{}un signal dans l\textquotesingle{}IHM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index du signal à éditer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8h_a23ca264c2abf733f6258f56bbf09931d_cgraph}
+\end{center}
+\end{figure}

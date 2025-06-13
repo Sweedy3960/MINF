@@ -1,0 +1,180 @@
+\doxysection{app\+Reg.\+h File Reference}
+\hypertarget{app_reg_8h}{}\label{app_reg_8h}\index{appReg.h@{appReg.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}system\+\_\+config.\+h"{}}\newline
+{\ttfamily \#include "{}system\+\_\+definitions.\+h"{}}\newline
+{\ttfamily \#include "{}Driver\+\_\+\+SR\+\_\+\+SN74\+HCS596\+QPWRQ1.\+h"{}}\newline
+Include dependency graph for app\+Reg.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_reg_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_reg_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_a_p_p___r_e_g___d_a_t_a}{APP\+\_\+\+REG\+\_\+\+DATA}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{app_reg_8h_a8ebe71f8445f8ce2f9cf5a490fb483f2}{APP\+\_\+\+REG\+\_\+\+STATES}} \{ \mbox{\hyperlink{app_reg_8h_a8ebe71f8445f8ce2f9cf5a490fb483f2a8caba96a755b28a68bdd409ba9bec162}{APP\+\_\+\+REG\+\_\+\+STATE\+\_\+\+INIT}} =0
+, \mbox{\hyperlink{app_reg_8h_a8ebe71f8445f8ce2f9cf5a490fb483f2ad3477471ed0ad043692f0717abc37a0c}{APP\+\_\+\+REG\+\_\+\+STATE\+\_\+\+SERVICE\+\_\+\+TASKS}}
+, \mbox{\hyperlink{app_reg_8h_a8ebe71f8445f8ce2f9cf5a490fb483f2a4e2d74ad41f1ece1ff406ea1c8804eab}{APP\+\_\+\+REG\+\_\+\+STATE\+\_\+\+IDLE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{app_reg_8h_a6dbb14f557ff2bf86d6ef7babd25dc8d}{APP\+\_\+\+REG\+\_\+\+Initialize}} (void)
+\begin{DoxyCompactList}\small\item\em Initialise l\textquotesingle{}application Registre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_reg_8h_a2728144b3a2388bcc2b086deb5682515}{APP\+\_\+\+Reg\+\_\+\+Tasks}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction principale des tâches Registre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_reg_8h_abcbd1769c7d03ea90681c10fe1f03775}{APP\+\_\+\+Wait\+Start}} (uint16\+\_\+t waiting\+Time\+\_\+ms)
+\begin{DoxyCompactList}\small\item\em Démarre une attente pour une durée donnée. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_reg_8h_a8d8c3360a51c086125377a019dfb67ba}{APP\+\_\+\+SER\+\_\+\+SET\+\_\+\+CMD\+\_\+\+LED}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Définit la commande LED via le registre série. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_reg_8h_a245753d6244c3f5682adbdc334412149}{APP\+\_\+\+TIMER4\+\_\+\+CALLBACK}} (void)
+\begin{DoxyCompactList}\small\item\em Callback du timer 4. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_reg_8h_ac19feae7263d37da2e2a3e3adaa2a99b}{App\+\_\+\+LED\+\_\+\+Handle\+Touch}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Gère le toucher pour les LEDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{app_reg_8h_a8ebe71f8445f8ce2f9cf5a490fb483f2}\index{appReg.h@{appReg.h}!APP\_REG\_STATES@{APP\_REG\_STATES}}
+\index{APP\_REG\_STATES@{APP\_REG\_STATES}!appReg.h@{appReg.h}}
+\doxysubsubsection{\texorpdfstring{APP\_REG\_STATES}{APP\_REG\_STATES}}
+{\footnotesize\ttfamily \label{app_reg_8h_a8ebe71f8445f8ce2f9cf5a490fb483f2} 
+enum \mbox{\hyperlink{app_reg_8h_a8ebe71f8445f8ce2f9cf5a490fb483f2}{APP\+\_\+\+REG\+\_\+\+STATES}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_REG\_STATE\_INIT@{APP\_REG\_STATE\_INIT}!appReg.h@{appReg.h}}\index{appReg.h@{appReg.h}!APP\_REG\_STATE\_INIT@{APP\_REG\_STATE\_INIT}}}\Hypertarget{app_reg_8h_a8ebe71f8445f8ce2f9cf5a490fb483f2a8caba96a755b28a68bdd409ba9bec162}\label{app_reg_8h_a8ebe71f8445f8ce2f9cf5a490fb483f2a8caba96a755b28a68bdd409ba9bec162} 
+APP\+\_\+\+REG\+\_\+\+STATE\+\_\+\+INIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_REG\_STATE\_SERVICE\_TASKS@{APP\_REG\_STATE\_SERVICE\_TASKS}!appReg.h@{appReg.h}}\index{appReg.h@{appReg.h}!APP\_REG\_STATE\_SERVICE\_TASKS@{APP\_REG\_STATE\_SERVICE\_TASKS}}}\Hypertarget{app_reg_8h_a8ebe71f8445f8ce2f9cf5a490fb483f2ad3477471ed0ad043692f0717abc37a0c}\label{app_reg_8h_a8ebe71f8445f8ce2f9cf5a490fb483f2ad3477471ed0ad043692f0717abc37a0c} 
+APP\+\_\+\+REG\+\_\+\+STATE\+\_\+\+SERVICE\+\_\+\+TASKS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_REG\_STATE\_IDLE@{APP\_REG\_STATE\_IDLE}!appReg.h@{appReg.h}}\index{appReg.h@{appReg.h}!APP\_REG\_STATE\_IDLE@{APP\_REG\_STATE\_IDLE}}}\Hypertarget{app_reg_8h_a8ebe71f8445f8ce2f9cf5a490fb483f2a4e2d74ad41f1ece1ff406ea1c8804eab}\label{app_reg_8h_a8ebe71f8445f8ce2f9cf5a490fb483f2a4e2d74ad41f1ece1ff406ea1c8804eab} 
+APP\+\_\+\+REG\+\_\+\+STATE\+\_\+\+IDLE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{app_reg_8h_ac19feae7263d37da2e2a3e3adaa2a99b}\index{appReg.h@{appReg.h}!App\_LED\_HandleTouch@{App\_LED\_HandleTouch}}
+\index{App\_LED\_HandleTouch@{App\_LED\_HandleTouch}!appReg.h@{appReg.h}}
+\doxysubsubsection{\texorpdfstring{App\_LED\_HandleTouch()}{App\_LED\_HandleTouch()}}
+{\footnotesize\ttfamily \label{app_reg_8h_ac19feae7263d37da2e2a3e3adaa2a99b} 
+void App\+\_\+\+LED\+\_\+\+Handle\+Touch (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Gère le toucher pour les LEDs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointeur vers les données de toucher. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_reg_8h_ac19feae7263d37da2e2a3e3adaa2a99b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{app_reg_8h_a6dbb14f557ff2bf86d6ef7babd25dc8d}\index{appReg.h@{appReg.h}!APP\_REG\_Initialize@{APP\_REG\_Initialize}}
+\index{APP\_REG\_Initialize@{APP\_REG\_Initialize}!appReg.h@{appReg.h}}
+\doxysubsubsection{\texorpdfstring{APP\_REG\_Initialize()}{APP\_REG\_Initialize()}}
+{\footnotesize\ttfamily \label{app_reg_8h_a6dbb14f557ff2bf86d6ef7babd25dc8d} 
+void APP\+\_\+\+REG\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialise l\textquotesingle{}application Registre. 
+
+Cette fonction initialise l\textquotesingle{}application Registre et la place dans son état initial. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{app_reg_8h_a2728144b3a2388bcc2b086deb5682515}\index{appReg.h@{appReg.h}!APP\_Reg\_Tasks@{APP\_Reg\_Tasks}}
+\index{APP\_Reg\_Tasks@{APP\_Reg\_Tasks}!appReg.h@{appReg.h}}
+\doxysubsubsection{\texorpdfstring{APP\_Reg\_Tasks()}{APP\_Reg\_Tasks()}}
+{\footnotesize\ttfamily \label{app_reg_8h_a2728144b3a2388bcc2b086deb5682515} 
+void APP\+\_\+\+Reg\+\_\+\+Tasks (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Fonction principale des tâches Registre. 
+
+Cette fonction gère la machine d\textquotesingle{}état et la logique principale de l\textquotesingle{}application Registre. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{app_reg_8h_a8d8c3360a51c086125377a019dfb67ba}\index{appReg.h@{appReg.h}!APP\_SER\_SET\_CMD\_LED@{APP\_SER\_SET\_CMD\_LED}}
+\index{APP\_SER\_SET\_CMD\_LED@{APP\_SER\_SET\_CMD\_LED}!appReg.h@{appReg.h}}
+\doxysubsubsection{\texorpdfstring{APP\_SER\_SET\_CMD\_LED()}{APP\_SER\_SET\_CMD\_LED()}}
+{\footnotesize\ttfamily \label{app_reg_8h_a8d8c3360a51c086125377a019dfb67ba} 
+void APP\+\_\+\+SER\+\_\+\+SET\+\_\+\+CMD\+\_\+\+LED (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{cmd}{}\end{DoxyParamCaption})}
+
+
+
+Définit la commande LED via le registre série. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & Pointeur vers la commande LED. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{app_reg_8h_a245753d6244c3f5682adbdc334412149}\index{appReg.h@{appReg.h}!APP\_TIMER4\_CALLBACK@{APP\_TIMER4\_CALLBACK}}
+\index{APP\_TIMER4\_CALLBACK@{APP\_TIMER4\_CALLBACK}!appReg.h@{appReg.h}}
+\doxysubsubsection{\texorpdfstring{APP\_TIMER4\_CALLBACK()}{APP\_TIMER4\_CALLBACK()}}
+{\footnotesize\ttfamily \label{app_reg_8h_a245753d6244c3f5682adbdc334412149} 
+void APP\+\_\+\+TIMER4\+\_\+\+CALLBACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Callback du timer 4. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{app_reg_8h_abcbd1769c7d03ea90681c10fe1f03775}\index{appReg.h@{appReg.h}!APP\_WaitStart@{APP\_WaitStart}}
+\index{APP\_WaitStart@{APP\_WaitStart}!appReg.h@{appReg.h}}
+\doxysubsubsection{\texorpdfstring{APP\_WaitStart()}{APP\_WaitStart()}}
+{\footnotesize\ttfamily \label{app_reg_8h_abcbd1769c7d03ea90681c10fe1f03775} 
+void APP\+\_\+\+Wait\+Start (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{waiting\+Time\+\_\+ms}{}\end{DoxyParamCaption})}
+
+
+
+Démarre une attente pour une durée donnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiting\+Time\+\_\+ms} & Durée d\textquotesingle{}attente en millisecondes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

@@ -1,0 +1,203 @@
+\doxysection{app\+Disp.\+c File Reference}
+\hypertarget{app_disp_8c}{}\label{app_disp_8c}\index{appDisp.c@{appDisp.c}}
+{\ttfamily \#include "{}app\+Disp.\+h"{}}\newline
+{\ttfamily \#include "{}Display.\+h"{}}\newline
+{\ttfamily \#include "{}LCD\+\_\+\+Driver.\+h"{}}\newline
+{\ttfamily \#include "{}ugui.\+h"{}}\newline
+{\ttfamily \#include "{}ugui\+\_\+config.\+h"{}}\newline
+{\ttfamily \#include "{}app\+\_\+taskctrl.\+h"{}}\newline
+{\ttfamily \#include "{}app\+\_\+eventbus.\+h"{}}\newline
+{\ttfamily \#include "{}app\+Touch.\+h"{}}\newline
+Include dependency graph for app\+Disp.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{app_disp_8c_a75cb3bf61eb109c27ae1f46fb992146c}{APP\+\_\+\+Disp\+\_\+\+Initialize}} (void)
+\begin{DoxyCompactList}\small\item\em Initialise l\textquotesingle{}application Display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_disp_8c_a20e8b14571a3fa38e8400d3f3586c869}{APP\+\_\+\+Disp\+\_\+\+Tasks}} (void)
+\begin{DoxyCompactList}\small\item\em Fonction principale des tâches Display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_disp_8c_a0af8c8bfa817fe4b676e6d88b21a8a3c}{App\+\_\+\+Display\+\_\+\+Handle\+Touch}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}touch\+States)
+\begin{DoxyCompactList}\small\item\em Gère les entrées tactiles pour l\textquotesingle{}affichage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_disp_8c_ae49115050cd0b8f619a1bd063348808f}{App\+\_\+\+Display\+\_\+\+Change\+Screen}} (uint8\+\_\+t new\+Screen, uint16\+\_\+t \texorpdfstring{$\ast$}{*}touch\+States, bool force\+Update)
+\begin{DoxyCompactList}\small\item\em Change l\textquotesingle{}écran affiché. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_disp_8c_a7181bf1f6f94fc4377e80e336eb2e3a0}{APP\+\_\+\+DISP\+\_\+\+TIMER5\+\_\+\+CALLBACK}} (void)
+\begin{DoxyCompactList}\small\item\em Callback du timer 5 pour l\textquotesingle{}affichage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{app_disp_8c_a4c93661773cf6006ff7db72322cc103d}{App\+\_\+\+Display\+\_\+\+Handle\+Inputs}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}Inputs\+States)
+\begin{DoxyCompactList}\small\item\em Gère les entrées pour l\textquotesingle{}affichage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_a_p_p___d_i_s_p___d_a_t_a}{APP\+\_\+\+DISP\+\_\+\+DATA}} \mbox{\hyperlink{app_disp_8c_a546f81399893bd00237fd3734287063d}{app\+Disp\+Data}}
+\item 
+\mbox{\hyperlink{structapp__task__ctrl__t}{app\+\_\+task\+\_\+ctrl\+\_\+t}} \mbox{\hyperlink{app_disp_8c_a915ba997869ea9d70fb4b08b50009246}{display\+Task\+Ctrl}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{app_disp_8c_a75cb3bf61eb109c27ae1f46fb992146c}\index{appDisp.c@{appDisp.c}!APP\_Disp\_Initialize@{APP\_Disp\_Initialize}}
+\index{APP\_Disp\_Initialize@{APP\_Disp\_Initialize}!appDisp.c@{appDisp.c}}
+\doxysubsubsection{\texorpdfstring{APP\_Disp\_Initialize()}{APP\_Disp\_Initialize()}}
+{\footnotesize\ttfamily \label{app_disp_8c_a75cb3bf61eb109c27ae1f46fb992146c} 
+void APP\+\_\+\+Disp\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialise l\textquotesingle{}application Display. 
+
+Cette fonction initialise l\textquotesingle{}application Display et la place dans son état initial. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{app_disp_8c_a20e8b14571a3fa38e8400d3f3586c869}\index{appDisp.c@{appDisp.c}!APP\_Disp\_Tasks@{APP\_Disp\_Tasks}}
+\index{APP\_Disp\_Tasks@{APP\_Disp\_Tasks}!appDisp.c@{appDisp.c}}
+\doxysubsubsection{\texorpdfstring{APP\_Disp\_Tasks()}{APP\_Disp\_Tasks()}}
+{\footnotesize\ttfamily \label{app_disp_8c_a20e8b14571a3fa38e8400d3f3586c869} 
+void APP\+\_\+\+Disp\+\_\+\+Tasks (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Fonction principale des tâches Display. 
+
+Cette fonction gère la machine d\textquotesingle{}état et la logique principale de l\textquotesingle{}application Display. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8c_a20e8b14571a3fa38e8400d3f3586c869_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{app_disp_8c_a7181bf1f6f94fc4377e80e336eb2e3a0}\index{appDisp.c@{appDisp.c}!APP\_DISP\_TIMER5\_CALLBACK@{APP\_DISP\_TIMER5\_CALLBACK}}
+\index{APP\_DISP\_TIMER5\_CALLBACK@{APP\_DISP\_TIMER5\_CALLBACK}!appDisp.c@{appDisp.c}}
+\doxysubsubsection{\texorpdfstring{APP\_DISP\_TIMER5\_CALLBACK()}{APP\_DISP\_TIMER5\_CALLBACK()}}
+{\footnotesize\ttfamily \label{app_disp_8c_a7181bf1f6f94fc4377e80e336eb2e3a0} 
+void APP\+\_\+\+DISP\+\_\+\+TIMER5\+\_\+\+CALLBACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Callback du timer 5 pour l\textquotesingle{}affichage. 
+
+Cette fonction est appelée lors de l\textquotesingle{}interruption du timer 5 pour gérer les événements liés à l\textquotesingle{}affichage. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{app_disp_8c_ae49115050cd0b8f619a1bd063348808f}\index{appDisp.c@{appDisp.c}!App\_Display\_ChangeScreen@{App\_Display\_ChangeScreen}}
+\index{App\_Display\_ChangeScreen@{App\_Display\_ChangeScreen}!appDisp.c@{appDisp.c}}
+\doxysubsubsection{\texorpdfstring{App\_Display\_ChangeScreen()}{App\_Display\_ChangeScreen()}}
+{\footnotesize\ttfamily \label{app_disp_8c_ae49115050cd0b8f619a1bd063348808f} 
+void App\+\_\+\+Display\+\_\+\+Change\+Screen (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Screen}{, }\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{touch\+States}{, }\item[{bool}]{force\+Update}{}\end{DoxyParamCaption})}
+
+
+
+Change l\textquotesingle{}écran affiché. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Screen} & Nouvel écran à afficher. \\
+\hline
+{\em touch\+States} & États tactiles. \\
+\hline
+{\em force\+Update} & Forcer la mise à jour de l\textquotesingle{}affichage. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8c_ae49115050cd0b8f619a1bd063348808f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8c_ae49115050cd0b8f619a1bd063348808f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{app_disp_8c_a4c93661773cf6006ff7db72322cc103d}\index{appDisp.c@{appDisp.c}!App\_Display\_HandleInputs@{App\_Display\_HandleInputs}}
+\index{App\_Display\_HandleInputs@{App\_Display\_HandleInputs}!appDisp.c@{appDisp.c}}
+\doxysubsubsection{\texorpdfstring{App\_Display\_HandleInputs()}{App\_Display\_HandleInputs()}}
+{\footnotesize\ttfamily \label{app_disp_8c_a4c93661773cf6006ff7db72322cc103d} 
+void App\+\_\+\+Display\+\_\+\+Handle\+Inputs (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{Inputs\+States}{}\end{DoxyParamCaption})}
+
+
+
+Gère les entrées pour l\textquotesingle{}affichage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Inputs\+States} & États des entrées. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8c_a4c93661773cf6006ff7db72322cc103d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{app_disp_8c_a0af8c8bfa817fe4b676e6d88b21a8a3c}\index{appDisp.c@{appDisp.c}!App\_Display\_HandleTouch@{App\_Display\_HandleTouch}}
+\index{App\_Display\_HandleTouch@{App\_Display\_HandleTouch}!appDisp.c@{appDisp.c}}
+\doxysubsubsection{\texorpdfstring{App\_Display\_HandleTouch()}{App\_Display\_HandleTouch()}}
+{\footnotesize\ttfamily \label{app_disp_8c_a0af8c8bfa817fe4b676e6d88b21a8a3c} 
+void App\+\_\+\+Display\+\_\+\+Handle\+Touch (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{touch\+States}{}\end{DoxyParamCaption})}
+
+
+
+Gère les entrées tactiles pour l\textquotesingle{}affichage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em touch\+States} & États tactiles. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Changement d\textquotesingle{}écran vers le menu via App\+\_\+\+Display\+\_\+\+Change\+Screen (non forcé).Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8c_a0af8c8bfa817fe4b676e6d88b21a8a3c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_disp_8c_a0af8c8bfa817fe4b676e6d88b21a8a3c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{app_disp_8c_a546f81399893bd00237fd3734287063d}\index{appDisp.c@{appDisp.c}!appDispData@{appDispData}}
+\index{appDispData@{appDispData}!appDisp.c@{appDisp.c}}
+\doxysubsubsection{\texorpdfstring{appDispData}{appDispData}}
+{\footnotesize\ttfamily \label{app_disp_8c_a546f81399893bd00237fd3734287063d} 
+\mbox{\hyperlink{struct_a_p_p___d_i_s_p___d_a_t_a}{APP\+\_\+\+DISP\+\_\+\+DATA}} app\+Disp\+Data}
+
+\Hypertarget{app_disp_8c_a915ba997869ea9d70fb4b08b50009246}\index{appDisp.c@{appDisp.c}!displayTaskCtrl@{displayTaskCtrl}}
+\index{displayTaskCtrl@{displayTaskCtrl}!appDisp.c@{appDisp.c}}
+\doxysubsubsection{\texorpdfstring{displayTaskCtrl}{displayTaskCtrl}}
+{\footnotesize\ttfamily \label{app_disp_8c_a915ba997869ea9d70fb4b08b50009246} 
+\mbox{\hyperlink{structapp__task__ctrl__t}{app\+\_\+task\+\_\+ctrl\+\_\+t}} display\+Task\+Ctrl\hspace{0.3cm}{\ttfamily [extern]}}
+

@@ -1,0 +1,117 @@
+\doxysection{LCD\+\_\+\+Driver.\+h}
+\hypertarget{_l_c_d___driver_8h_source}{}\label{_l_c_d___driver_8h_source}\mbox{\hyperlink{_l_c_d___driver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ LCD\_DRIVER\_H\ \ \ \ }\textcolor{comment}{/*\ Guard\ against\ multiple\ inclusion\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ LCD\_DRIVER\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00020\ \textcolor{comment}{/*\ Section:\ Included\ Files\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00022\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{/*\ This\ section\ lists\ the\ other\ files\ that\ are\ included\ in\ this\ file.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}system\_definitions.h"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{/*\ Provide\ C++\ Compatibility\ */}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00039\ \textcolor{comment}{/*\ Section:\ Constants\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{/*\ definitions\ pour\ l'ecran\ LCD\ */}}
+\DoxyCodeLine{00044\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00045\ \textcolor{comment}{/*\ display\ resolution.\ */}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ LCD\_WIDTH\ \ \ \ \ \ \ \ \ \ \ 128}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ LCD\_HEIGHT\ \ \ \ \ \ \ \ \ \ 64}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ LCD\_PAGES\ \ \ \ \ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ LCD\_BAUDRATE\ \ \ \ \ \ \ \ 1250000\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ must\ be\ <\ 2.5\ Mbits/s}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ LCD\_DRV\_SPI\_INDEX\ \ \ DRV\_SPI\_INDEX\_1\ }\textcolor{comment}{//\ Changer\ si\ autre\ instance\ utilisee}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_BUF\_SIZE\ \ \ \ 8}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ LCD\_DATA\_BUF\_SIZE\ \ \ 128}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ Section:\ Data\ Types}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00060\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{/*\ LCD's\ state\ machine's\ initial\ state.\ */}}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{_l_c_d___driver_8h_a1e9edb8d01feb8b06850bde62b93075aaa61b4aea958b4dcf6bd287b2e4fb7bbd}{LCD\_STATE\_RESET}}=0,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d___driver_8h_a1e9edb8d01feb8b06850bde62b93075aaf211aae3a1df36caa751fc347a039afc}{LCD\_STATE\_INIT\_7565}},}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d___driver_8h_a1e9edb8d01feb8b06850bde62b93075aaba25cc2226460399e7f756959b6f440d}{LCD\_STATE\_INIT\_RGB}},}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d___driver_8h_a1e9edb8d01feb8b06850bde62b93075aae89e61f0c54cdaf5b96121f390f06ba8}{LCD\_STATE\_DATA\_PAGE\_SET}},}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d___driver_8h_a1e9edb8d01feb8b06850bde62b93075aa911fe2cbbebd4a9966c154aacfeddfaa}{LCD\_STATE\_DATA\_COL\_SET}},}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d___driver_8h_a1e9edb8d01feb8b06850bde62b93075aa8906b7653aa8f927ef803bea92197998}{LCD\_STATE\_READY}},}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_l_c_d___driver_8h_a1e9edb8d01feb8b06850bde62b93075aaa6a29369e11080be9a0fab8940466167}{LCD\_STATE\_TX\_BUSY}}}
+\DoxyCodeLine{00070\ \}\ \mbox{\hyperlink{_l_c_d___driver_8h_a1e9edb8d01feb8b06850bde62b93075a}{LCD\_STATES}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ \ \ \ SYS\_MODULE\_OBJ\ spiObject;}}
+\DoxyCodeLine{00074\ \ \ \ \ DRV\_HANDLE\ \mbox{\hyperlink{struct_t___l_c_d_a70a34cb68fd1720edf1f47032a4db975}{handleSPI}};}
+\DoxyCodeLine{00075\ \ \ \ \ DRV\_SPI\_BUFFER\_HANDLE\ \mbox{\hyperlink{struct_t___l_c_d_a3d97c577b2b0f1ef1548d45d4d283c0c}{bufHandleSPI}};}
+\DoxyCodeLine{00076\ \ \ \ \ DRV\_SPI\_BUFFER\_HANDLE\ \mbox{\hyperlink{struct_t___l_c_d_ad8512bd22526fec060109e8bfe920c3c}{bufHandle2SPI}};}
+\DoxyCodeLine{00077\ \ \ \ \ DRV\_SPI\_CLIENT\_DATA\ \mbox{\hyperlink{struct_t___l_c_d_ab44f04ea5e754e35a019f4552cfbcf7a}{configData}};}
+\DoxyCodeLine{00078\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_t___l_c_d_a13de35a2b0d0e7752d13d2e8b1680f3b}{cmdBuffer}}[\mbox{\hyperlink{_l_c_d___driver_8h_aa7ed5189e30c2b0e9fcddd3301b08518}{LCD\_CMD\_BUF\_SIZE}}];}
+\DoxyCodeLine{00079\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_t___l_c_d_a613a0f718b7166d767f34da505fdcecc}{cmdBufSize}};}
+\DoxyCodeLine{00080\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_t___l_c_d_a14d347d6f568f8edb4c43347ba76090b}{dataBuffer}}[\mbox{\hyperlink{_l_c_d___driver_8h_a22c0bac4fc62f5b55e496dc37a457996}{LCD\_DATA\_BUF\_SIZE}}];}
+\DoxyCodeLine{00081\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_t___l_c_d_aa8af6d2e0ba30d14b770f887111b5457}{dataBufSize}};}
+\DoxyCodeLine{00082\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_t___l_c_d_afab071b5ffe655a02fa7f6812ab2bfdf}{currentPage}};}
+\DoxyCodeLine{00083\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_t___l_c_d_a0eb38214b1374465ab2727e512d01f92}{currentColumn}};}
+\DoxyCodeLine{00084\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_t___l_c_d_a5a64d57a795fb1d3e3389da999820bc9}{currentStartLine}};}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{_l_c_d___driver_8h_a1e9edb8d01feb8b06850bde62b93075a}{LCD\_STATES}}\ \mbox{\hyperlink{struct_t___l_c_d_ad6afb111545e8d462b084a3dcc71317d}{state}};}
+\DoxyCodeLine{00086\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_t___l_c_d_a3630e195ecc5fbc1a8e18acc42242eac}{initStep}};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_t___l_c_d_a46fdfb6e71a9835b4dfa570608a34cec}{transferIsInProgress}};}
+\DoxyCodeLine{00088\ \}\ \mbox{\hyperlink{struct_t___l_c_d}{T\_LCD}};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00091\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00093\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00094\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00099\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00101\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00102\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{00104\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00111\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_c_d___driver_8h_a1c29b1ff033b94fea001608494d51015}{LCD\_ScrollDown}}(uint8\_t\ lines);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00123\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_c_d___driver_8h_a9301a159fdc61e5e3bb713ef81767c7e}{LCD\_DataWrite}}(uint8\_t\ *buf,\ uint8\_t\ bufSize,\ uint8\_t\ page,\ uint8\_t\ column);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00130\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_c_d___driver_8h_a8e53c206533e02e0172145a27aed8eda}{LCD\_Reset}}();}
+\DoxyCodeLine{00131\ \ }
+\DoxyCodeLine{00132\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00138\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_l_c_d___driver_8h_a6b3dd509367f0da2822185c38a4b7bc1}{LCD\_Init}}();}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00147\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_l_c_d___driver_8h_a30d5d6cd44a40f6a0e430c3bab411128}{LCD\_Task\_IsReady}}();}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{/*\ Provide\ C++\ Compatibility\ */}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00153\ \}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LCD\_DRIVER\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{comment}{/*\ *****************************************************************************}}
+\DoxyCodeLine{00159\ \textcolor{comment}{\ End\ of\ File}}
+\DoxyCodeLine{00160\ \textcolor{comment}{\ */}}
+
+\end{DoxyCode}

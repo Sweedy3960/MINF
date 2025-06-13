@@ -1,0 +1,85 @@
+2025-06-09,Sweedy3960,stopping now sadly adc sample are aproximate to detect line interruption evt still need to be implemented and hadled in appdisp in app disp the menu doenst work logic is bad and in sreg logic is ok but we need to hadle inputs adc in appReg(serialled)
+2025-06-09,Sweedy3960,adding ADC readding to assembly task ctrl used and adapted other app but need to test adc to set evt is != last state
+2025-06-09,aymeric3960,added app Inputs and app serial reg
+2025-06-09,Sweedy3960,unblocked?
+2025-06-09,aymeric3960,aled
+2025-06-09,aymeric3960,blocked on screen mainmenu touch managemnt
+2025-06-09,aymeric3960,problem mcpi2c_sm to make buffer style work with sm
+2025-06-09,Sweedy3960,trying to add touch and mcp sm
+2025-06-08,aymeric3960,create app for mcp and Qt2120, another for SREG
+2025-06-08,aymeric3960,menu issue cant move inside
+2025-06-08,Sweedy3960,display menu
+2025-06-08,aymeric3960,Touch+screen ok manque logique menu
+2025-06-08,Sweedy3960,trying a better structure added screen and touch capa
+2025-06-07,Sweedy3960, addded modifying signal names by ihm need implement key later
+2025-06-07,aymeric3960,added screen sequence and signal display
+2025-06-07,aymeric3960,Merge branch 'VS' of https://github.com/Sweedy3960/MINF_C into VS
+2025-06-07,aymeric3960,idk
+2025-06-07,Sweedy3960,correcting eye logo
+2025-06-07,Sweedy3960,modifiying the DisplayPixelSetCallback function
+2025-06-06,Sweedy3960,mmmhh
+2025-06-06,aymeric3960,creating a project for ech functionality
+2025-06-04,Sweedy3960,add modif
+2025-05-30,Sweedy3960,ssomme correction into usart interrupt
+2025-05-30,aymeric3960,euh marche po
+2025-05-30,Sweedy3960,feat
+2025-05-28,Sweedy3960,modifs drivers SPI, added usart for debug, we need to know why programm goes to error while debbugging
+2025-05-27,Sweedy3960,la
+2025-05-27,Sweedy3960,modif song
+2025-05-26,Sweedy3960,la
+2025-05-26,Sweedy3960,modifing tone
+2025-05-26,aymeric3960,la playing song lol
+2025-05-26,Sweedy3960,added some fct
+2025-05-25,aymeric3960,Merge branch 'main' of https://github.com/Sweedy3960/MINF_C
+2025-05-25,aymeric3960,sd wont work idk why
+2025-05-23,Sweedy3960,test
+2025-05-23,Sweedy3960,modifing gitignore again
+2025-05-23,Sweedy3960,modifing gitignore
+2025-05-23,Sweedy3960,add gitignore
+2025-05-23,aymeric3960,stable version  ????
+2025-05-19,aymeric3960,fckit
+2025-05-18,aymeric3960,push modif i scre up the SR nedd modif interface mcp
+2025-05-18,Sweedy3960,la
+2025-05-16,Sweedy3960,added Tp4
+2025-05-16,Sweedy3960,trying to make some order now... need to search for last ver of everything... note for the future bro make structuer thing even with srtuct map before... will keep u safe from brain fatigue
+2025-05-16,aymeric3960,la
+2025-05-16,aymeric3960,la
+2025-05-12,aymeric3960,pff
+2025-05-11,aymeric3960,Merge branch 'main' of https://github.com/Sweedy3960/MINF_C
+2025-05-11,aymeric3960,und vieleicht
+2025-05-11,aymeric3960,rho
+2025-05-11,aymeric3960,bon
+2025-05-11,Sweedy3960,la
+2025-05-11,Sweedy3960,aled
+2025-05-11,Sweedy3960,push spb7?
+2025-05-11,Sweedy3960,euh?
+2025-05-10,Sweedy3960,euh
+2025-05-09,aymeric3960,la
+2025-05-08,Sweedy3960,omg aled
+2025-05-05,Ironay3960,result after modif
+2025-05-05,Ironay3960,mesure SR_OE_LED1&2
+2025-05-05,aymeric3960,test
+2025-04-03,aymeric3960,add modif
+2025-03-18,Sweedy3960,lala
+2025-02-13,Sweedy3960,plein de choses
+2025-01-09,Sweedy3960,Merge branch 'main' of https://github.com/Sweedy3960/MINF
+2025-01-09,Sweedy3960,chore: add TP2 as submodule
+2025-01-05,Ironay3960,Update app.c
+2025-01-05,Ironay3960,Update app.h
+2025-01-05,Ironay3960,Update app.h
+2025-01-05,Ironay3960,Update app.h
+2024-12-19,Sweedy3960,fix: arborescence and submodules
+2024-12-12,Ironay3960,Merge pull request #2 from Sweedy3960/DEV_ACL_ES
+2024-12-12,aymeric3960,chore: doing the doing
+2024-11-28,aymeric3960,fix:git
+2024-11-28,aymeric3960,fix: branching
+2024-11-28,aymeric3960,fix: border text zone
+2024-11-28,aymeric3960,chore: add pdf
+2024-11-28,aymeric3960,chore: add doc
+2024-11-28,aymeric3960,fix:LED0 wasnt turning on
+2024-11-28,aymeric3960,chore: tuning cnt for 3s
+2024-11-26,aymeric3960,chore: doing
+2024-11-26,aymeric3960,chore: code done with switcase, now fun started, try with defies from bsp, now macro
+2024-11-21,aymeric3960,chore: modif app.c
+2024-11-21,aymeric3960,chore: generated and app.h modified
+2024-11-21,aymeric3960,chore: creating repo

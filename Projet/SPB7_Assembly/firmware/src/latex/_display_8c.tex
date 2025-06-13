@@ -1,0 +1,577 @@
+\doxysection{Display.\+c File Reference}
+\hypertarget{_display_8c}{}\label{_display_8c}\index{Display.c@{Display.c}}
+{\ttfamily \#include "{}Display.\+h"{}}\newline
+{\ttfamily \#include "{}app\+Disp.\+h"{}}\newline
+{\ttfamily \#include "{}math.\+h"{}}\newline
+Include dependency graph for Display.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_display_8c_ae93a35f53142087364ee41c5c30c6926}{Draw\+Ellipse}} (int centerX, int centerY, int a, int b)
+\item 
+void \mbox{\hyperlink{_display_8c_a3d430c7a1a79dc0eb2a93f8c40762b1a}{Display\+Screen\+\_\+\+Signals}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}state\+Touch, bool set\+To\+Dark)
+\item 
+void \mbox{\hyperlink{_display_8c_a059e5804d8323d8ba0e7a88ff5bfad54}{Set\+Signal\+Name}} (int index, const char \texorpdfstring{$\ast$}{*}new\+Name)
+\item 
+void \mbox{\hyperlink{_display_8c_a23ca264c2abf733f6258f56bbf09931d}{Edit\+Signal\+Name\+\_\+\+IHM}} (int index)
+\begin{DoxyCompactList}\small\item\em Permet d\textquotesingle{}éditer le nom d\textquotesingle{}un signal dans l\textquotesingle{}IHM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Section\+: Task Callback Routines}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_display_8c_a9a9c72fc2952d0fd96793d4d56b58ef5}{Display\+\_\+\+Timer\+Callback}} (void)
+\begin{DoxyCompactList}\small\item\em Comptage des temps pour Display. Cette routine doit etre appelee par l\textquotesingle{}ISR d\textquotesingle{}un timer a une cadence de 10 ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8c_a3c08e016abe421a46a72b87f3c45c4e3}{Display\+Pixel\+Set\+Callback}} (\mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\+\_\+\+S16}} x, \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\+\_\+\+S16}} y, \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\+\_\+\+COLOR}} c)
+\begin{DoxyCompactList}\small\item\em Fonction de Callback appelee par la lib ugui pour generer un pixel pour l\textquotesingle{}affiche cible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Section\+: Local Functions}\par
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{_display_8c_a6d91234108a07c430955dff0670a8060}{Display\+Clear\+Page}} (uint8\+\_\+t p, bool set\+To\+Clear)
+\begin{DoxyCompactList}\small\item\em Efface la page LCD en fonce ou clair selon le mode utilise. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{_display_8c_a39217a6f590c6e7dd4b5cc005f2c8698}{Display\+Screen\+\_\+\+Welcome}} (bool set\+To\+Dark)
+\begin{DoxyCompactList}\small\item\em Displays the welcome screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8c_a6c6b68e7ba65a041338e06a03fc8b6ca}{Display\+Screen\+\_\+\+Main\+Menu}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}state\+Touch, bool set\+To\+Dark)
+\item 
+void \mbox{\hyperlink{_display_8c_a06db9bdc193201e67d96bf5483f365f2}{Display\+Screen\+\_\+\+Error}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}state\+Touch, bool set\+To\+Dark)
+\item 
+void \mbox{\hyperlink{_display_8c_a3e5c0acc6212c5dff47dcd5978a1c80a}{Display\+Screen\+\_\+23132}} (bool set\+To\+Dark)
+\begin{DoxyCompactList}\small\item\em Displays Screen Voltmeter 23132. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8c_a314aa703544d6a4551e721fd557bd105}{Draw\+Menu\+Icon}} (bool selected)
+\item 
+void \mbox{\hyperlink{_display_8c_a1c16cfbd4f1f7b61f674f58ee3437bae}{Draw\+Current\+Mode}} (bool current\+Mode, bool selected)
+\item 
+void \mbox{\hyperlink{_display_8c_ad276962a93ac03c51d9efe65b93ef004}{Draw\+Hold\+Mode}} (bool hold\+Mode, bool selected)
+\item 
+void \mbox{\hyperlink{_display_8c_a18b27202822ccf9a1eaaa5f65ed15a48}{Display\+Eye\+Logo}} (void)
+\begin{DoxyCompactList}\small\item\em Dessine un logo "{}œil dans un triangle"{} centré sur l\textquotesingle{}écran LCD. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Section\+: Interface Functions}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_display_8c_ab587a42e1e9dc9ad79673b842a4295bb}{Display\+Scroll\+Clear}} ()
+\begin{DoxyCompactList}\small\item\em Sets the background color of the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8c_a687aca91f23b409f019d51365b27ff64}{Display\+Clear}} (bool set\+To\+Clear)
+\begin{DoxyCompactList}\small\item\em Clear Display data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8c_a73eb68fb12c306b2dd058368fb31675f}{Display\+Screen}} (uint8\+\_\+t screen, uint16\+\_\+t \texorpdfstring{$\ast$}{*}touch\+States, bool set\+To\+Dark)
+\begin{DoxyCompactList}\small\item\em Display Screen basics. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_display_8c_aa7bdd4b73d4e50002a6d260156af337d}{Display\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize communication to the LCD display, graphical user interface (GUI) and data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8c_a975af224e4f6571205def3cef2ed8f55}{Display\+\_\+\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Task updates/refreshes the display, must be called periodically by the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Variables}
+\begin{Indent}\textbf{ Section\+: File Scope or Global Data}\par
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_t___d_i_s_p_l_a_y}{T\+\_\+\+DISPLAY}} \mbox{\hyperlink{_display_8c_a425677cbdebb0a93bfb0bbce7a750f7c}{disp}}
+\item 
+char \mbox{\hyperlink{_display_8c_a6b8d21f5768266b213d8b599b4dd103a}{signal\+Names}} \mbox{[}7\mbox{]}\mbox{[}20\mbox{]}
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{_display_8c_autotoc_md0}{}\doxysubsection{\texorpdfstring{DISPLAY.\+c}{DISPLAY.\+c}}\label{_display_8c_autotoc_md0}
+\hypertarget{_display_8c_autotoc_md1}{}\doxysubsubsection{\texorpdfstring{Module de gestion de l\textquotesingle{}affichage du TPA}{Module de gestion de l\textquotesingle{}affichage du TPA}}\label{_display_8c_autotoc_md1}
+\begin{DoxyAuthor}{Author}
+J. Jose Moreno 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+16.\+04.\+2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\hypertarget{_display_8c_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{Description}{Description}}\label{_display_8c_autotoc_md2}
+Fournit les fonctions necessaires pour afficher les donnees du TPA/\+VPA sur l\textquotesingle{}ecran LCD du TPA. Display\+\_\+\+Task effectue une mise a jour reguliere de l\textquotesingle{}affichage complet a partir d\textquotesingle{}une copie complete locale. Elle utilise l\textquotesingle{}API Open\+Source \doxylink{ugui_8h}{ugui.\+h}. pour dessiner des formes et du texte sur l\textquotesingle{}ecran graphique.
+
+\begin{DoxyAuthor}{Author}
+J. Jose Moreno 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11.\+08.\+2023 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+\hypertarget{_display_8c_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{Description}{Description}}\label{_display_8c_autotoc_md3}
+Generalisation pour utilisation dans projets ETML-\/\+ES. Remplacement de D... par D... 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_display_8c_a975af224e4f6571205def3cef2ed8f55}\index{Display.c@{Display.c}!Display\_Task@{Display\_Task}}
+\index{Display\_Task@{Display\_Task}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{Display\_Task()}{Display\_Task()}}
+{\footnotesize\ttfamily \label{_display_8c_a975af224e4f6571205def3cef2ed8f55} 
+void Display\+\_\+\+Task (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Task updates/refreshes the display, must be called periodically by the client. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a975af224e4f6571205def3cef2ed8f55_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{_display_8c_a975af224e4f6571205def3cef2ed8f55_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_a9a9c72fc2952d0fd96793d4d56b58ef5}\index{Display.c@{Display.c}!Display\_TimerCallback@{Display\_TimerCallback}}
+\index{Display\_TimerCallback@{Display\_TimerCallback}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{Display\_TimerCallback()}{Display\_TimerCallback()}}
+{\footnotesize\ttfamily \label{_display_8c_a9a9c72fc2952d0fd96793d4d56b58ef5} 
+void Display\+\_\+\+Timer\+Callback (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Comptage des temps pour Display. Cette routine doit etre appelee par l\textquotesingle{}ISR d\textquotesingle{}un timer a une cadence de 10 ms. 
+
+\Hypertarget{_display_8c_a687aca91f23b409f019d51365b27ff64}\index{Display.c@{Display.c}!DisplayClear@{DisplayClear}}
+\index{DisplayClear@{DisplayClear}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DisplayClear()}{DisplayClear()}}
+{\footnotesize\ttfamily \label{_display_8c_a687aca91f23b409f019d51365b27ff64} 
+void Display\+Clear (\begin{DoxyParamCaption}\item[{bool}]{set\+To\+Clear}{}\end{DoxyParamCaption})}
+
+
+
+Clear Display data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set\+To\+Clear} & false = dark ; true = clear \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a687aca91f23b409f019d51365b27ff64_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_a6d91234108a07c430955dff0670a8060}\index{Display.c@{Display.c}!DisplayClearPage@{DisplayClearPage}}
+\index{DisplayClearPage@{DisplayClearPage}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DisplayClearPage()}{DisplayClearPage()}}
+{\footnotesize\ttfamily \label{_display_8c_a6d91234108a07c430955dff0670a8060} 
+static void Display\+Clear\+Page (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{p}{, }\item[{bool}]{set\+To\+Clear}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Efface la page LCD en fonce ou clair selon le mode utilise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & page to be cleared \\
+\hline
+{\em set\+To\+Clear} & false = dark ; true = clear\\
+\hline
+\end{DoxyParams}
+Texec = 245 us Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a6d91234108a07c430955dff0670a8060_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_a18b27202822ccf9a1eaaa5f65ed15a48}\index{Display.c@{Display.c}!DisplayEyeLogo@{DisplayEyeLogo}}
+\index{DisplayEyeLogo@{DisplayEyeLogo}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DisplayEyeLogo()}{DisplayEyeLogo()}}
+{\footnotesize\ttfamily \label{_display_8c_a18b27202822ccf9a1eaaa5f65ed15a48} 
+void Display\+Eye\+Logo (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Dessine un logo "{}œil dans un triangle"{} centré sur l\textquotesingle{}écran LCD. 
+
+Le logo est centré automatiquement selon DISPLAY\+\_\+\+WIDTH et DISPLAY\+\_\+\+HEIGHT. Les tailles sont adaptées pour un écran 128x64. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a18b27202822ccf9a1eaaa5f65ed15a48_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a18b27202822ccf9a1eaaa5f65ed15a48_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_aa7bdd4b73d4e50002a6d260156af337d}\index{Display.c@{Display.c}!DisplayInit@{DisplayInit}}
+\index{DisplayInit@{DisplayInit}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DisplayInit()}{DisplayInit()}}
+{\footnotesize\ttfamily \label{_display_8c_aa7bdd4b73d4e50002a6d260156af337d} 
+bool Display\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize communication to the LCD display, graphical user interface (GUI) and data. 
+
+\begin{DoxyReturn}{Returns}
+false if init failed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_aa7bdd4b73d4e50002a6d260156af337d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{_display_8c_aa7bdd4b73d4e50002a6d260156af337d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_a3c08e016abe421a46a72b87f3c45c4e3}\index{Display.c@{Display.c}!DisplayPixelSetCallback@{DisplayPixelSetCallback}}
+\index{DisplayPixelSetCallback@{DisplayPixelSetCallback}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DisplayPixelSetCallback()}{DisplayPixelSetCallback()}}
+{\footnotesize\ttfamily \label{_display_8c_a3c08e016abe421a46a72b87f3c45c4e3} 
+void Display\+Pixel\+Set\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\+\_\+\+S16}}}]{x}{, }\item[{\mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\+\_\+\+S16}}}]{y}{, }\item[{\mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\+\_\+\+COLOR}}}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Fonction de Callback appelee par la lib ugui pour generer un pixel pour l\textquotesingle{}affiche cible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & axe des x sur le LCD. La valeur est utilisable directement. \\
+\hline
+{\em y} & axe des y sur le LCD, il est segmente en \textquotesingle{}pages\textquotesingle{} de 8 bits (bytes). La position du bit est calculee pour la bonne page. \\
+\hline
+{\em c} & couleur (noir ou blanc du pixel \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a3c08e016abe421a46a72b87f3c45c4e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_a73eb68fb12c306b2dd058368fb31675f}\index{Display.c@{Display.c}!DisplayScreen@{DisplayScreen}}
+\index{DisplayScreen@{DisplayScreen}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DisplayScreen()}{DisplayScreen()}}
+{\footnotesize\ttfamily \label{_display_8c_a73eb68fb12c306b2dd058368fb31675f} 
+void Display\+Screen (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{screen}{, }\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{touch\+States}{, }\item[{bool}]{set\+To\+Dark}{}\end{DoxyParamCaption})}
+
+
+
+Display Screen basics. 
+
+Affiche un ecran \textquotesingle{}fond\textquotesingle{} ou \textquotesingle{}trame de base\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & image \# to be displayed \\
+\hline
+{\em set\+To\+Dark} & true = dark ; false = clear \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a73eb68fb12c306b2dd058368fb31675f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a73eb68fb12c306b2dd058368fb31675f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_a3e5c0acc6212c5dff47dcd5978a1c80a}\index{Display.c@{Display.c}!DisplayScreen\_23132@{DisplayScreen\_23132}}
+\index{DisplayScreen\_23132@{DisplayScreen\_23132}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DisplayScreen\_23132()}{DisplayScreen\_23132()}}
+{\footnotesize\ttfamily \label{_display_8c_a3e5c0acc6212c5dff47dcd5978a1c80a} 
+void Display\+Screen\+\_\+23132 (\begin{DoxyParamCaption}\item[{bool}]{set\+To\+Dark}{}\end{DoxyParamCaption})}
+
+
+
+Displays Screen Voltmeter 23132. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set\+To\+Dark} & true = dark ; false = clear \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a3e5c0acc6212c5dff47dcd5978a1c80a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_a06db9bdc193201e67d96bf5483f365f2}\index{Display.c@{Display.c}!DisplayScreen\_Error@{DisplayScreen\_Error}}
+\index{DisplayScreen\_Error@{DisplayScreen\_Error}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DisplayScreen\_Error()}{DisplayScreen\_Error()}}
+{\footnotesize\ttfamily \label{_display_8c_a06db9bdc193201e67d96bf5483f365f2} 
+void Display\+Screen\+\_\+\+Error (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{state\+Touch}{, }\item[{bool}]{set\+To\+Dark}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a06db9bdc193201e67d96bf5483f365f2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a06db9bdc193201e67d96bf5483f365f2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_a6c6b68e7ba65a041338e06a03fc8b6ca}\index{Display.c@{Display.c}!DisplayScreen\_MainMenu@{DisplayScreen\_MainMenu}}
+\index{DisplayScreen\_MainMenu@{DisplayScreen\_MainMenu}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DisplayScreen\_MainMenu()}{DisplayScreen\_MainMenu()}}
+{\footnotesize\ttfamily \label{_display_8c_a6c6b68e7ba65a041338e06a03fc8b6ca} 
+void Display\+Screen\+\_\+\+Main\+Menu (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{state\+Touch}{, }\item[{bool}]{set\+To\+Dark}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a6c6b68e7ba65a041338e06a03fc8b6ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a6c6b68e7ba65a041338e06a03fc8b6ca_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_a3d430c7a1a79dc0eb2a93f8c40762b1a}\index{Display.c@{Display.c}!DisplayScreen\_Signals@{DisplayScreen\_Signals}}
+\index{DisplayScreen\_Signals@{DisplayScreen\_Signals}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DisplayScreen\_Signals()}{DisplayScreen\_Signals()}}
+{\footnotesize\ttfamily \label{_display_8c_a3d430c7a1a79dc0eb2a93f8c40762b1a} 
+void Display\+Screen\+\_\+\+Signals (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{state\+Touch}{, }\item[{bool}]{set\+To\+Dark}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a3d430c7a1a79dc0eb2a93f8c40762b1a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a3d430c7a1a79dc0eb2a93f8c40762b1a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_a39217a6f590c6e7dd4b5cc005f2c8698}\index{Display.c@{Display.c}!DisplayScreen\_Welcome@{DisplayScreen\_Welcome}}
+\index{DisplayScreen\_Welcome@{DisplayScreen\_Welcome}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DisplayScreen\_Welcome()}{DisplayScreen\_Welcome()}}
+{\footnotesize\ttfamily \label{_display_8c_a39217a6f590c6e7dd4b5cc005f2c8698} 
+static void Display\+Screen\+\_\+\+Welcome (\begin{DoxyParamCaption}\item[{bool}]{set\+To\+Dark}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Displays the welcome screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set\+To\+Dark} & true = dark ; false = clear \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a39217a6f590c6e7dd4b5cc005f2c8698_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a39217a6f590c6e7dd4b5cc005f2c8698_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_ab587a42e1e9dc9ad79673b842a4295bb}\index{Display.c@{Display.c}!DisplayScrollClear@{DisplayScrollClear}}
+\index{DisplayScrollClear@{DisplayScrollClear}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DisplayScrollClear()}{DisplayScrollClear()}}
+{\footnotesize\ttfamily \label{_display_8c_ab587a42e1e9dc9ad79673b842a4295bb} 
+void Display\+Scroll\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Sets the background color of the display. 
+
+Initiate a scroll clear of the display.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb} & standard RGB value. Ex\+: C\+\_\+\+AQUA = 0x00\+FFFF\\
+\hline
+\end{DoxyParams}
+Initiate a scroll clear of the display \Hypertarget{_display_8c_a1c16cfbd4f1f7b61f674f58ee3437bae}\index{Display.c@{Display.c}!DrawCurrentMode@{DrawCurrentMode}}
+\index{DrawCurrentMode@{DrawCurrentMode}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DrawCurrentMode()}{DrawCurrentMode()}}
+{\footnotesize\ttfamily \label{_display_8c_a1c16cfbd4f1f7b61f674f58ee3437bae} 
+void Draw\+Current\+Mode (\begin{DoxyParamCaption}\item[{bool}]{current\+Mode}{, }\item[{bool}]{selected}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a1c16cfbd4f1f7b61f674f58ee3437bae_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_ae93a35f53142087364ee41c5c30c6926}\index{Display.c@{Display.c}!DrawEllipse@{DrawEllipse}}
+\index{DrawEllipse@{DrawEllipse}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DrawEllipse()}{DrawEllipse()}}
+{\footnotesize\ttfamily \label{_display_8c_ae93a35f53142087364ee41c5c30c6926} 
+void Draw\+Ellipse (\begin{DoxyParamCaption}\item[{int}]{centerX}{, }\item[{int}]{centerY}{, }\item[{int}]{a}{, }\item[{int}]{b}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{_display_8c_ae93a35f53142087364ee41c5c30c6926_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_ae93a35f53142087364ee41c5c30c6926_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_ad276962a93ac03c51d9efe65b93ef004}\index{Display.c@{Display.c}!DrawHoldMode@{DrawHoldMode}}
+\index{DrawHoldMode@{DrawHoldMode}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DrawHoldMode()}{DrawHoldMode()}}
+{\footnotesize\ttfamily \label{_display_8c_ad276962a93ac03c51d9efe65b93ef004} 
+void Draw\+Hold\+Mode (\begin{DoxyParamCaption}\item[{bool}]{hold\+Mode}{, }\item[{bool}]{selected}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_ad276962a93ac03c51d9efe65b93ef004_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_a314aa703544d6a4551e721fd557bd105}\index{Display.c@{Display.c}!DrawMenuIcon@{DrawMenuIcon}}
+\index{DrawMenuIcon@{DrawMenuIcon}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{DrawMenuIcon()}{DrawMenuIcon()}}
+{\footnotesize\ttfamily \label{_display_8c_a314aa703544d6a4551e721fd557bd105} 
+void Draw\+Menu\+Icon (\begin{DoxyParamCaption}\item[{bool}]{selected}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a314aa703544d6a4551e721fd557bd105_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_a23ca264c2abf733f6258f56bbf09931d}\index{Display.c@{Display.c}!EditSignalName\_IHM@{EditSignalName\_IHM}}
+\index{EditSignalName\_IHM@{EditSignalName\_IHM}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{EditSignalName\_IHM()}{EditSignalName\_IHM()}}
+{\footnotesize\ttfamily \label{_display_8c_a23ca264c2abf733f6258f56bbf09931d} 
+void Edit\+Signal\+Name\+\_\+\+IHM (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Permet d\textquotesingle{}éditer le nom d\textquotesingle{}un signal dans l\textquotesingle{}IHM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index du signal à éditer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8c_a23ca264c2abf733f6258f56bbf09931d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8c_a059e5804d8323d8ba0e7a88ff5bfad54}\index{Display.c@{Display.c}!SetSignalName@{SetSignalName}}
+\index{SetSignalName@{SetSignalName}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{SetSignalName()}{SetSignalName()}}
+{\footnotesize\ttfamily \label{_display_8c_a059e5804d8323d8ba0e7a88ff5bfad54} 
+void Set\+Signal\+Name (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{new\+Name}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{_display_8c_a059e5804d8323d8ba0e7a88ff5bfad54_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_display_8c_a425677cbdebb0a93bfb0bbce7a750f7c}\index{Display.c@{Display.c}!disp@{disp}}
+\index{disp@{disp}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{disp}{disp}}
+{\footnotesize\ttfamily \label{_display_8c_a425677cbdebb0a93bfb0bbce7a750f7c} 
+\mbox{\hyperlink{struct_t___d_i_s_p_l_a_y}{T\+\_\+\+DISPLAY}} disp\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{_display_8c_a6b8d21f5768266b213d8b599b4dd103a}\index{Display.c@{Display.c}!signalNames@{signalNames}}
+\index{signalNames@{signalNames}!Display.c@{Display.c}}
+\doxysubsubsection{\texorpdfstring{signalNames}{signalNames}}
+{\footnotesize\ttfamily \label{_display_8c_a6b8d21f5768266b213d8b599b4dd103a} 
+char signal\+Names\mbox{[}7\mbox{]}\mbox{[}20\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Signal1"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Signal2"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Signal3"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Signal4"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Signal5"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Signal6"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Signal7"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

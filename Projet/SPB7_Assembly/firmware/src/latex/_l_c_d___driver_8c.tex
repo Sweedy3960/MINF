@@ -1,0 +1,639 @@
+\doxysection{LCD\+\_\+\+Driver.\+c File Reference}
+\hypertarget{_l_c_d___driver_8c}{}\label{_l_c_d___driver_8c}\index{LCD\_Driver.c@{LCD\_Driver.c}}
+{\ttfamily \#include "{}LCD\+\_\+\+Driver.\+h"{}}\newline
+Include dependency graph for LCD\+\_\+\+Driver.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{Indent}\textbf{ Section\+: Task Callback Routines}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a383edd68b53f5b3560d7d98fb545db2d}{LCD\+\_\+\+Com\+Transfer\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Callback pour le SPI Driver. Actions au debut de transfert, par ex. activer le signal SS du SPI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a7b0c98f1fc5eeef83a7e6587df912063}{LCD\+\_\+\+Com\+Transfer\+End}} ()
+\begin{DoxyCompactList}\small\item\em Callback pour le SPI Driver. Actions a la fin du transfert, par ex. desactiver le signal SS du SPI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_ada08e882173abe26f89181a63a7645ed}{LCD\+\_\+\+Buffer\+Write\+End}} ()
+\begin{DoxyCompactList}\small\item\em Callback pour le SPI Driver. Actions en fin d\textquotesingle{}ecriture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Section\+: Local Functions}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_ac4e0cb2acf6f6e629aa348c453ccdfef}{LCD\+\_\+\+Write\+Command}} ()
+\begin{DoxyCompactList}\small\item\em Envoie une commande dans le buffer du driver Les donnees sont prises dans le buffer de la variable LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a2b83a2a9d67b9235d306fc5030b3cd2c}{LCD\+\_\+\+Write\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Envoie une trame de donnees dans le buffer du driver Les donnees sont prises dans le buffer de la variable LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a52844040065fb0124173aab88b837484}{LCD\+\_\+\+Cmd\+\_\+\+Display\+On}} ()
+\begin{DoxyCompactList}\small\item\em Commande d\textquotesingle{}allumage de l\textquotesingle{}affichage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a80d15fa9c11028c0ef97655cbcd68d55}{LCD\+\_\+\+Cmd\+\_\+\+Display\+Off}} ()
+\begin{DoxyCompactList}\small\item\em Commande d\textquotesingle{}extinction de l\textquotesingle{}affichage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a55e89e21407f031de93a5c27c8d08d86}{LCD\+\_\+\+Cmd\+\_\+\+Page\+Address\+Set}} ()
+\begin{DoxyCompactList}\small\item\em Commande LCD (3) pour initialiser la page d\textquotesingle{}ecriture (rangee) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_aeb72ca94dcd43e3da73fc97f1573c87d}{LCD\+\_\+\+Cmd\+\_\+\+Column\+Address\+Set}} ()
+\begin{DoxyCompactList}\small\item\em Commande LCD (4) pour initialiser la page d\textquotesingle{}ecriture (rangee) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_ae414ae4d811c9e25a646580da2a2cafa}{LCD\+\_\+\+Cmd\+\_\+\+ADCSelect}} ()
+\begin{DoxyCompactList}\small\item\em Commande LCD (8) selection ADC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a50c44985cdb298aef09ca557a7c69705}{LCD\+\_\+\+Cmd\+\_\+\+Display\+Normal\+Reverse}} (uint8\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Commande LCD (9) selection ADC mode \+: 0 = normal; 1 = reverse. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a4a09fb17237c7f05eb99ac3497c024e1}{LCD\+\_\+\+Cmd\+\_\+\+Power\+Supply\+Bias\+Rate\+Set}} ()
+\begin{DoxyCompactList}\small\item\em Commande LCD (11) pour initialiser l\textquotesingle{}alimentation PS bias rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a260adc952f2859ce2ad45bce56f24e32}{LCD\+\_\+\+Cmd\+\_\+\+Common\+Output\+Mode\+Select}} ()
+\begin{DoxyCompactList}\small\item\em Commande LCD (15) selection du mode de scan. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_aea84afd69d16120c16f6f0f5bf339398}{LCD\+\_\+\+Cmd\+\_\+\+Power\+Controller\+Set}} ()
+\begin{DoxyCompactList}\small\item\em Commande LCD (16) pour initialiser l\textquotesingle{}alimentation interne. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a1cc05629387dd1cf279a1b736aa9ad67}{LCD\+\_\+\+Cmd\+\_\+\+V5\+\_\+\+Regulator\+Internal\+Resistor\+Ratio}} (uint8\+\_\+t ratio)
+\begin{DoxyCompactList}\small\item\em Commande LCD (17) pour regler l\textquotesingle{}alimentation de contraste d\textquotesingle{}affichage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a16265266212147a2aaf5dac647a89977}{LCD\+\_\+\+Cmd\+\_\+\+Electronic\+Volume}} (uint8\+\_\+t volume)
+\begin{DoxyCompactList}\small\item\em Commande LCD (18) pour initialiser l\textquotesingle{}alimentation interne. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Section\+: Interface Functions}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a1c29b1ff033b94fea001608494d51015}{LCD\+\_\+\+Scroll\+Down}} (uint8\+\_\+t lines)
+\begin{DoxyCompactList}\small\item\em Sends the Display start line se cmd to the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a9301a159fdc61e5e3bb713ef81767c7e}{LCD\+\_\+\+Data\+Write}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}buf, uint8\+\_\+t buf\+Size, uint8\+\_\+t page, uint8\+\_\+t column)
+\begin{DoxyCompactList}\small\item\em Sends the buffer data to the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d___driver_8c_a8e53c206533e02e0172145a27aed8eda}{LCD\+\_\+\+Reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the LCD module, must be maintained min 0.\+5us. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_l_c_d___driver_8c_a6b3dd509367f0da2822185c38a4b7bc1}{LCD\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the LCD communication port and data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_l_c_d___driver_8c_a30d5d6cd44a40f6a0e430c3bab411128}{LCD\+\_\+\+Task\+\_\+\+Is\+Ready}} ()
+\begin{DoxyCompactList}\small\item\em Task running the display state machine, must be called periodically by the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Variables}
+\begin{Indent}\textbf{ Section\+: File Scope or Global Data}\par
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_t___l_c_d}{T\+\_\+\+LCD}} \mbox{\hyperlink{_l_c_d___driver_8c_ab9c04e534fba7d7c33c95924c18b0479}{LCD}}
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{_l_c_d___driver_8c_autotoc_md8}{}\doxysubsection{\texorpdfstring{LCD\+\_\+\+DRIVER.\+c}{LCD\+\_\+\+DRIVER.\+c}}\label{_l_c_d___driver_8c_autotoc_md8}
+\hypertarget{_l_c_d___driver_8c_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{Module pour l\textquotesingle{}affichage sur un LCD graphique Newhaven}{Module pour l\textquotesingle{}affichage sur un LCD graphique Newhaven}}\label{_l_c_d___driver_8c_autotoc_md9}
+\begin{DoxyAuthor}{Author}
+J. Jose Moreno 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+16.\+04.\+2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\hypertarget{_l_c_d___driver_8c_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{Description}{Description}}\label{_l_c_d___driver_8c_autotoc_md10}
+Ce module fournit les fonctions d\textquotesingle{}ecriture pour afficher sur un LCD au moyen d\textquotesingle{}un SPI. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_l_c_d___driver_8c_ada08e882173abe26f89181a63a7645ed}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_BufferWriteEnd@{LCD\_BufferWriteEnd}}
+\index{LCD\_BufferWriteEnd@{LCD\_BufferWriteEnd}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_BufferWriteEnd()}{LCD\_BufferWriteEnd()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_ada08e882173abe26f89181a63a7645ed} 
+void LCD\+\_\+\+Buffer\+Write\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Callback pour le SPI Driver. Actions en fin d\textquotesingle{}ecriture. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_ada08e882173abe26f89181a63a7645ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_ae414ae4d811c9e25a646580da2a2cafa}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Cmd\_ADCSelect@{LCD\_Cmd\_ADCSelect}}
+\index{LCD\_Cmd\_ADCSelect@{LCD\_Cmd\_ADCSelect}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Cmd\_ADCSelect()}{LCD\_Cmd\_ADCSelect()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_ae414ae4d811c9e25a646580da2a2cafa} 
+void LCD\+\_\+\+Cmd\+\_\+\+ADCSelect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Commande LCD (8) selection ADC. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_ae414ae4d811c9e25a646580da2a2cafa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_ae414ae4d811c9e25a646580da2a2cafa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_aeb72ca94dcd43e3da73fc97f1573c87d}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Cmd\_ColumnAddressSet@{LCD\_Cmd\_ColumnAddressSet}}
+\index{LCD\_Cmd\_ColumnAddressSet@{LCD\_Cmd\_ColumnAddressSet}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Cmd\_ColumnAddressSet()}{LCD\_Cmd\_ColumnAddressSet()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_aeb72ca94dcd43e3da73fc97f1573c87d} 
+void LCD\+\_\+\+Cmd\+\_\+\+Column\+Address\+Set (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Commande LCD (4) pour initialiser la page d\textquotesingle{}ecriture (rangee) 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_aeb72ca94dcd43e3da73fc97f1573c87d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_aeb72ca94dcd43e3da73fc97f1573c87d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a260adc952f2859ce2ad45bce56f24e32}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Cmd\_CommonOutputModeSelect@{LCD\_Cmd\_CommonOutputModeSelect}}
+\index{LCD\_Cmd\_CommonOutputModeSelect@{LCD\_Cmd\_CommonOutputModeSelect}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Cmd\_CommonOutputModeSelect()}{LCD\_Cmd\_CommonOutputModeSelect()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a260adc952f2859ce2ad45bce56f24e32} 
+void LCD\+\_\+\+Cmd\+\_\+\+Common\+Output\+Mode\+Select (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Commande LCD (15) selection du mode de scan. 
+
+\begin{DoxyRemark}{Remarks}
+pour l\textquotesingle{}instant fixe en mode normal, 1/65 duty 
+\end{DoxyRemark}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a260adc952f2859ce2ad45bce56f24e32_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a260adc952f2859ce2ad45bce56f24e32_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a50c44985cdb298aef09ca557a7c69705}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Cmd\_DisplayNormalReverse@{LCD\_Cmd\_DisplayNormalReverse}}
+\index{LCD\_Cmd\_DisplayNormalReverse@{LCD\_Cmd\_DisplayNormalReverse}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Cmd\_DisplayNormalReverse()}{LCD\_Cmd\_DisplayNormalReverse()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a50c44985cdb298aef09ca557a7c69705} 
+void LCD\+\_\+\+Cmd\+\_\+\+Display\+Normal\+Reverse (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{mode}{}\end{DoxyParamCaption})}
+
+
+
+Commande LCD (9) selection ADC mode \+: 0 = normal; 1 = reverse. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a50c44985cdb298aef09ca557a7c69705_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a80d15fa9c11028c0ef97655cbcd68d55}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Cmd\_DisplayOff@{LCD\_Cmd\_DisplayOff}}
+\index{LCD\_Cmd\_DisplayOff@{LCD\_Cmd\_DisplayOff}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Cmd\_DisplayOff()}{LCD\_Cmd\_DisplayOff()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a80d15fa9c11028c0ef97655cbcd68d55} 
+void LCD\+\_\+\+Cmd\+\_\+\+Display\+Off (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Commande d\textquotesingle{}extinction de l\textquotesingle{}affichage. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a80d15fa9c11028c0ef97655cbcd68d55_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a52844040065fb0124173aab88b837484}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Cmd\_DisplayOn@{LCD\_Cmd\_DisplayOn}}
+\index{LCD\_Cmd\_DisplayOn@{LCD\_Cmd\_DisplayOn}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Cmd\_DisplayOn()}{LCD\_Cmd\_DisplayOn()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a52844040065fb0124173aab88b837484} 
+void LCD\+\_\+\+Cmd\+\_\+\+Display\+On (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Commande d\textquotesingle{}allumage de l\textquotesingle{}affichage. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a52844040065fb0124173aab88b837484_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a52844040065fb0124173aab88b837484_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a16265266212147a2aaf5dac647a89977}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Cmd\_ElectronicVolume@{LCD\_Cmd\_ElectronicVolume}}
+\index{LCD\_Cmd\_ElectronicVolume@{LCD\_Cmd\_ElectronicVolume}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Cmd\_ElectronicVolume()}{LCD\_Cmd\_ElectronicVolume()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a16265266212147a2aaf5dac647a89977} 
+void LCD\+\_\+\+Cmd\+\_\+\+Electronic\+Volume (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{volume}{}\end{DoxyParamCaption})}
+
+
+
+Commande LCD (18) pour initialiser l\textquotesingle{}alimentation interne. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & niveau de tension valeur comprise entre 0 et 63 (0x3F) \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a16265266212147a2aaf5dac647a89977_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a16265266212147a2aaf5dac647a89977_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a55e89e21407f031de93a5c27c8d08d86}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Cmd\_PageAddressSet@{LCD\_Cmd\_PageAddressSet}}
+\index{LCD\_Cmd\_PageAddressSet@{LCD\_Cmd\_PageAddressSet}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Cmd\_PageAddressSet()}{LCD\_Cmd\_PageAddressSet()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a55e89e21407f031de93a5c27c8d08d86} 
+void LCD\+\_\+\+Cmd\+\_\+\+Page\+Address\+Set (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Commande LCD (3) pour initialiser la page d\textquotesingle{}ecriture (rangee) 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a55e89e21407f031de93a5c27c8d08d86_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a55e89e21407f031de93a5c27c8d08d86_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_aea84afd69d16120c16f6f0f5bf339398}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Cmd\_PowerControllerSet@{LCD\_Cmd\_PowerControllerSet}}
+\index{LCD\_Cmd\_PowerControllerSet@{LCD\_Cmd\_PowerControllerSet}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Cmd\_PowerControllerSet()}{LCD\_Cmd\_PowerControllerSet()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_aea84afd69d16120c16f6f0f5bf339398} 
+void LCD\+\_\+\+Cmd\+\_\+\+Power\+Controller\+Set (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Commande LCD (16) pour initialiser l\textquotesingle{}alimentation interne. 
+
+\begin{DoxyRemark}{Remarks}
+Booster ON, V regulator ON, V follower ON 
+\end{DoxyRemark}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_aea84afd69d16120c16f6f0f5bf339398_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_aea84afd69d16120c16f6f0f5bf339398_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a4a09fb17237c7f05eb99ac3497c024e1}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Cmd\_PowerSupplyBiasRateSet@{LCD\_Cmd\_PowerSupplyBiasRateSet}}
+\index{LCD\_Cmd\_PowerSupplyBiasRateSet@{LCD\_Cmd\_PowerSupplyBiasRateSet}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Cmd\_PowerSupplyBiasRateSet()}{LCD\_Cmd\_PowerSupplyBiasRateSet()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a4a09fb17237c7f05eb99ac3497c024e1} 
+void LCD\+\_\+\+Cmd\+\_\+\+Power\+Supply\+Bias\+Rate\+Set (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Commande LCD (11) pour initialiser l\textquotesingle{}alimentation PS bias rate. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a4a09fb17237c7f05eb99ac3497c024e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a4a09fb17237c7f05eb99ac3497c024e1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a1cc05629387dd1cf279a1b736aa9ad67}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Cmd\_V5\_RegulatorInternalResistorRatio@{LCD\_Cmd\_V5\_RegulatorInternalResistorRatio}}
+\index{LCD\_Cmd\_V5\_RegulatorInternalResistorRatio@{LCD\_Cmd\_V5\_RegulatorInternalResistorRatio}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Cmd\_V5\_RegulatorInternalResistorRatio()}{LCD\_Cmd\_V5\_RegulatorInternalResistorRatio()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a1cc05629387dd1cf279a1b736aa9ad67} 
+void LCD\+\_\+\+Cmd\+\_\+\+V5\+\_\+\+Regulator\+Internal\+Resistor\+Ratio (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ratio}{}\end{DoxyParamCaption})}
+
+
+
+Commande LCD (17) pour regler l\textquotesingle{}alimentation de contraste d\textquotesingle{}affichage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ratio} & rapport Rb/\+Ra valeur comprise entre 0 et 7 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a1cc05629387dd1cf279a1b736aa9ad67_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a1cc05629387dd1cf279a1b736aa9ad67_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a7b0c98f1fc5eeef83a7e6587df912063}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_ComTransferEnd@{LCD\_ComTransferEnd}}
+\index{LCD\_ComTransferEnd@{LCD\_ComTransferEnd}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_ComTransferEnd()}{LCD\_ComTransferEnd()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a7b0c98f1fc5eeef83a7e6587df912063} 
+void LCD\+\_\+\+Com\+Transfer\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Callback pour le SPI Driver. Actions a la fin du transfert, par ex. desactiver le signal SS du SPI. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a7b0c98f1fc5eeef83a7e6587df912063_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a383edd68b53f5b3560d7d98fb545db2d}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_ComTransferStart@{LCD\_ComTransferStart}}
+\index{LCD\_ComTransferStart@{LCD\_ComTransferStart}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_ComTransferStart()}{LCD\_ComTransferStart()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a383edd68b53f5b3560d7d98fb545db2d} 
+void LCD\+\_\+\+Com\+Transfer\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Callback pour le SPI Driver. Actions au debut de transfert, par ex. activer le signal SS du SPI. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a383edd68b53f5b3560d7d98fb545db2d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a9301a159fdc61e5e3bb713ef81767c7e}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_DataWrite@{LCD\_DataWrite}}
+\index{LCD\_DataWrite@{LCD\_DataWrite}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_DataWrite()}{LCD\_DataWrite()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a9301a159fdc61e5e3bb713ef81767c7e} 
+void LCD\+\_\+\+Data\+Write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{buf}{, }\item[{uint8\+\_\+t}]{buf\+Size}{, }\item[{uint8\+\_\+t}]{page}{, }\item[{uint8\+\_\+t}]{column}{}\end{DoxyParamCaption})}
+
+
+
+Sends the buffer data to the LCD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \texorpdfstring{$\ast$}{*}buf} & pointer to the buffer \\
+\hline
+{\em buf\+Size} & nr of bytes to send \\
+\hline
+{\em page} & vertical position (1 page = 8 bits vertical) \\
+\hline
+{\em column} & horizontal position of the 1st data\\
+\hline
+\end{DoxyParams}
+Note\+: call this function to write on another page. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a9301a159fdc61e5e3bb713ef81767c7e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a9301a159fdc61e5e3bb713ef81767c7e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a6b3dd509367f0da2822185c38a4b7bc1}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Init@{LCD\_Init}}
+\index{LCD\_Init@{LCD\_Init}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Init()}{LCD\_Init()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a6b3dd509367f0da2822185c38a4b7bc1} 
+bool LCD\+\_\+\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the LCD communication port and data. 
+
+\begin{DoxyReturn}{Returns}
+false if init failed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{_l_c_d___driver_8c_a6b3dd509367f0da2822185c38a4b7bc1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a6b3dd509367f0da2822185c38a4b7bc1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a8e53c206533e02e0172145a27aed8eda}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Reset@{LCD\_Reset}}
+\index{LCD\_Reset@{LCD\_Reset}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Reset()}{LCD\_Reset()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a8e53c206533e02e0172145a27aed8eda} 
+void LCD\+\_\+\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Resets the LCD module, must be maintained min 0.\+5us. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a8e53c206533e02e0172145a27aed8eda_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a1c29b1ff033b94fea001608494d51015}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_ScrollDown@{LCD\_ScrollDown}}
+\index{LCD\_ScrollDown@{LCD\_ScrollDown}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_ScrollDown()}{LCD\_ScrollDown()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a1c29b1ff033b94fea001608494d51015} 
+void LCD\+\_\+\+Scroll\+Down (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{lines}{}\end{DoxyParamCaption})}
+
+
+
+Sends the Display start line se cmd to the LCD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lines} & to be added to the current start line\\
+\hline
+\end{DoxyParams}
+\begin{DoxyRemark}{Remarks}
+call this function to make scroll down step by lines 
+\end{DoxyRemark}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a1c29b1ff033b94fea001608494d51015_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a1c29b1ff033b94fea001608494d51015_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a30d5d6cd44a40f6a0e430c3bab411128}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_Task\_IsReady@{LCD\_Task\_IsReady}}
+\index{LCD\_Task\_IsReady@{LCD\_Task\_IsReady}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_Task\_IsReady()}{LCD\_Task\_IsReady()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a30d5d6cd44a40f6a0e430c3bab411128} 
+bool LCD\+\_\+\+Task\+\_\+\+Is\+Ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Task running the display state machine, must be called periodically by the client. 
+
+\begin{DoxyReturn}{Returns}
+true if the LCD is ready for a new transfer 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a30d5d6cd44a40f6a0e430c3bab411128_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a30d5d6cd44a40f6a0e430c3bab411128_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_ac4e0cb2acf6f6e629aa348c453ccdfef}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_WriteCommand@{LCD\_WriteCommand}}
+\index{LCD\_WriteCommand@{LCD\_WriteCommand}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_WriteCommand()}{LCD\_WriteCommand()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_ac4e0cb2acf6f6e629aa348c453ccdfef} 
+void LCD\+\_\+\+Write\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Envoie une commande dans le buffer du driver Les donnees sont prises dans le buffer de la variable LCD. 
+
+GENERALITES\+: les fonctions deposent les commandes a envoyer dans la structure LCD.\+cmd\+Buffer. La fonction LCD\+\_\+\+Write\+Command envoie le contenu au module LCD. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{_l_c_d___driver_8c_ac4e0cb2acf6f6e629aa348c453ccdfef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_ac4e0cb2acf6f6e629aa348c453ccdfef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_l_c_d___driver_8c_a2b83a2a9d67b9235d306fc5030b3cd2c}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD\_WriteData@{LCD\_WriteData}}
+\index{LCD\_WriteData@{LCD\_WriteData}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD\_WriteData()}{LCD\_WriteData()}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_a2b83a2a9d67b9235d306fc5030b3cd2c} 
+void LCD\+\_\+\+Write\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Envoie une trame de donnees dans le buffer du driver Les donnees sont prises dans le buffer de la variable LCD. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{_l_c_d___driver_8c_a2b83a2a9d67b9235d306fc5030b3cd2c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_l_c_d___driver_8c_a2b83a2a9d67b9235d306fc5030b3cd2c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_l_c_d___driver_8c_ab9c04e534fba7d7c33c95924c18b0479}\index{LCD\_Driver.c@{LCD\_Driver.c}!LCD@{LCD}}
+\index{LCD@{LCD}!LCD\_Driver.c@{LCD\_Driver.c}}
+\doxysubsubsection{\texorpdfstring{LCD}{LCD}}
+{\footnotesize\ttfamily \label{_l_c_d___driver_8c_ab9c04e534fba7d7c33c95924c18b0479} 
+\mbox{\hyperlink{struct_t___l_c_d}{T\+\_\+\+LCD}} LCD\hspace{0.3cm}{\ttfamily [static]}}
+

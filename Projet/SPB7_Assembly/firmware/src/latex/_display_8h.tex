@@ -1,0 +1,751 @@
+\doxysection{Display.\+h File Reference}
+\hypertarget{_display_8h}{}\label{_display_8h}\index{Display.h@{Display.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include "{}system\+\_\+definitions.\+h"{}}\newline
+{\ttfamily \#include "{}ugui.\+h"{}}\newline
+{\ttfamily \#include "{}LCD\+\_\+\+Driver.\+h"{}}\newline
+{\ttfamily \#include "{}app\+Disp.\+h"{}}\newline
+Include dependency graph for Display.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{_display_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_t___d_i_s_p_l_a_y}{T\+\_\+\+DISPLAY}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{Indent}\textbf{ Definitions pour l\textquotesingle{}ecran LCD}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_display_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\+\_\+\+WIDTH}}~128
+\item 
+\#define \mbox{\hyperlink{_display_8h_a43b7b2061f733ea1dc0a5a6028e131ff}{DISPLAY\+\_\+\+HEIGHT}}~64
+\item 
+\#define \mbox{\hyperlink{_display_8h_ac667c044f8f31c95ad2a32b0eef85a4e}{DISPLAY\+\_\+\+PAGE\+\_\+\+HEIGHT}}~8
+\item 
+\#define \mbox{\hyperlink{_display_8h_a3d6e8679a1868c4a294ced76461260ec}{DISPLAY\+\_\+\+PAGES}}~8
+\item 
+\#define \mbox{\hyperlink{_display_8h_a5ad3f6d6e003b7f0b32dd8d73a825c6e}{DISPLAY\+\_\+\+SCROLL\+\_\+\+STEP}}~8
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Definitions pour le backlight RGB}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_display_8h_a948d0fd705eec57b122ccfb63f41051d}{DISP\+\_\+\+BLRGB\+\_\+\+PWM\+\_\+\+PERIOD}}~6249
+\item 
+\#define \mbox{\hyperlink{_display_8h_ae8c30add35384b3f1504693825fde223}{DISP\+\_\+\+BLRGB\+\_\+\+PWM\+\_\+\+FACTOR}}~\mbox{\hyperlink{_display_8h_a948d0fd705eec57b122ccfb63f41051d}{DISP\+\_\+\+BLRGB\+\_\+\+PWM\+\_\+\+PERIOD}}/255
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Couleurs utilisees ou redefinies ayant une bonne luminosite}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_display_8h_a8df8ae3f3cd1dde7463b82a434866e7b}{COL\+\_\+\+AQUA}}~\mbox{\hyperlink{ugui_8h_a5384a88833e9cd5e335e1c268dbc77e9}{C\+\_\+\+AQUA}}
+\item 
+\#define \mbox{\hyperlink{_display_8h_a9297e9b9ba9dca08f5a63d27ab99ad69}{COL\+\_\+\+AQUA\+\_\+\+MARINE}}~\mbox{\hyperlink{ugui_8h_aaa2a53265aa1b57f39521481e41f4b4c}{C\+\_\+\+AQUA\+\_\+\+MARINE}}
+\item 
+\#define \mbox{\hyperlink{_display_8h_a11c48ef7ac0d0e7a41067bbce22dedc8}{COL\+\_\+\+ORANGE\+\_\+\+RED}}~\mbox{\hyperlink{ugui_8h_a4ab073278fcdb4ca0b359f0834410ac4}{C\+\_\+\+ORANGE\+\_\+\+RED}}
+\item 
+\#define \mbox{\hyperlink{_display_8h_a87d30d2657caae38d671f052cb9cc0e7}{COL\+\_\+\+RED}}~\mbox{\hyperlink{ugui_8h_a7adb9aaa1eed15caecd92e3837581b53}{C\+\_\+\+RED}}
+\item 
+\#define \mbox{\hyperlink{_display_8h_ac4f2ca33b957169e3d57bf57b4b886a7}{COL\+\_\+\+BLACK}}~\mbox{\hyperlink{ugui_8h_a22a9543e081938a146a8bce60a84200a}{C\+\_\+\+BLACK}}
+\item 
+\#define \mbox{\hyperlink{_display_8h_a17784369af03afc179ecf59c670490c7}{COL\+\_\+\+WHITE}}~\mbox{\hyperlink{ugui_8h_a67fead37547ff67ca0a269d712e87822}{C\+\_\+\+WHITE}}
+\item 
+\#define \mbox{\hyperlink{_display_8h_a6c69fd27f20f00dc82c873c6adacd56b}{COL\+\_\+\+YELLOW}}~\mbox{\hyperlink{ugui_8h_a7749aa942f59b07d1e951066e0aeca73}{C\+\_\+\+YELLOW}}
+\item 
+\#define \mbox{\hyperlink{_display_8h_acc3baac376cd3d303a6a404932ed4e3c}{COL\+\_\+\+RED\+\_\+\+CUSTOM}}~0x\+FF0010
+\item 
+\#define \mbox{\hyperlink{_display_8h_af8e2f08d6b727700185acbf8036d179c}{COL\+\_\+\+GREEN\+\_\+\+CUSTOM}}~\mbox{\hyperlink{ugui_8h_afdb98cfa79f46255cb6e981df3f94c00}{C\+\_\+\+LIME}}
+\item 
+\#define \mbox{\hyperlink{_display_8h_ac7c2a2b674aa447c22cd5f7bbaafc824}{COL\+\_\+\+MEDGREEN\+\_\+\+CUSTOM}}~0x00\+FF2D
+\item 
+\#define \mbox{\hyperlink{_display_8h_a91d13f45f187a22ca7adc935e007d572}{COL\+\_\+\+RED2\+\_\+\+CUSTOM}}~0x\+FF0018
+\item 
+\#define \mbox{\hyperlink{_display_8h_a1a9034ffc8712877b8f77939265583b0}{COL\+\_\+\+YELLOW\+\_\+\+CUSTOM}}~0x\+FF8\+A00
+\item 
+\#define \mbox{\hyperlink{_display_8h_ae6c6b49aac1059bc0c67bd82656133ff}{COL\+\_\+\+PINK\+\_\+\+CUSTOM}}~0x\+FF004B
+\item 
+\#define \mbox{\hyperlink{_display_8h_aea6368ed169b1751d3aa25050c1261e0}{COL\+\_\+\+DEFAULT}}~\mbox{\hyperlink{_display_8h_a17784369af03afc179ecf59c670490c7}{COL\+\_\+\+WHITE}}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Timing}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_display_8h_ad482db7edf28fdecca8f095de1db6fbc}{DISPLAY\+\_\+\+REFRESH\+\_\+\+PERIOD}}~20
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Definitions pour les graphismes et textes}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_display_8h_aae076db88de38cfa4f205dfb0820b341}{BAT\+\_\+\+ZERO\+\_\+\+PERCENTLEVEL}}~5
+\item 
+\#define \mbox{\hyperlink{_display_8h_a531ca9e372f7719101e9f7a99b8c772d}{RSSI\+\_\+\+BARS\+\_\+\+NR}}~5
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Enumerations}
+\begin{Indent}\textbf{ Liste des ecrans a afficher}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_display_8h_a33772d3867b277630826a2d2e48e74f5}{E\+\_\+\+DISPLAY\+\_\+\+SCREENS}} \{ \newline
+\mbox{\hyperlink{_display_8h_a33772d3867b277630826a2d2e48e74f5a7001c59c25abd7b2648ac31d54161c94}{DISP\+\_\+\+SCR\+\_\+\+WELCOME}} =0
+, \mbox{\hyperlink{_display_8h_a33772d3867b277630826a2d2e48e74f5aeff84b9cec10d1c0072bf6e615594120}{DSP\+\_\+\+LOGO}}
+, \mbox{\hyperlink{_display_8h_a33772d3867b277630826a2d2e48e74f5a414f88554617ebee1e530c8b656668b2}{DISP\+\_\+\+SIGN}}
+, \mbox{\hyperlink{_display_8h_a33772d3867b277630826a2d2e48e74f5aefefcce2b17709bf3208a554ad4a3c11}{DISP\+\_\+\+SCR\+\_\+\+MENU}}
+, \newline
+\mbox{\hyperlink{_display_8h_a33772d3867b277630826a2d2e48e74f5a64ffdbc36b8fa0d3fefb817330961e97}{DISP\+\_\+\+CHANGE\+\_\+\+SIGN\+\_\+\+NAME}}
+, \mbox{\hyperlink{_display_8h_a33772d3867b277630826a2d2e48e74f5a9c5e33d0bd55d6631ee6360ed29f6097}{DISP\+\_\+\+SCR\+\_\+\+ERROR}}
+ \}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Liste de commandes d\textquotesingle{}affichage}\par
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_display_8h_a285ebec54c0e210b092506a8f795bbed}{T\+\_\+\+DISP\+\_\+\+COMMAND}} \{ \mbox{\hyperlink{_display_8h_a285ebec54c0e210b092506a8f795bbedae02a54e044a116dd39d9109374354fe3}{DISP\+\_\+\+CMD\+\_\+\+NOCMD}} =0
+, \mbox{\hyperlink{_display_8h_a285ebec54c0e210b092506a8f795bbeda36d5044e2564097c47e565096300ec09}{DISP\+\_\+\+CMD\+\_\+\+SCROLLDOWN\+\_\+\+CLEAR}}
+ \}
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Functions}
+\begin{Indent}\textbf{ Section\+: Task Callback Routines}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_display_8h_a9a9c72fc2952d0fd96793d4d56b58ef5}{Display\+\_\+\+Timer\+Callback}} (void)
+\begin{DoxyCompactList}\small\item\em Comptage des temps pour Display. Cette routine doit etre appelee par l\textquotesingle{}ISR d\textquotesingle{}un timer a une cadence de 10 ms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8h_a3c08e016abe421a46a72b87f3c45c4e3}{Display\+Pixel\+Set\+Callback}} (\mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\+\_\+\+S16}} x, \mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\+\_\+\+S16}} y, \mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\+\_\+\+COLOR}} c)
+\begin{DoxyCompactList}\small\item\em Fonction de Callback appelee par la lib ugui pour generer un pixel pour l\textquotesingle{}affiche cible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Section\+: Interface Functions}\par
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_display_8h_ad8d6bb2c28c392e911854a40e62fde3c}{Display\+Set\+Backlight\+RGB}} (uint32\+\_\+t rgb)
+\begin{DoxyCompactList}\small\item\em Sets the background color of the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8h_ab587a42e1e9dc9ad79673b842a4295bb}{Display\+Scroll\+Clear}} ()
+\begin{DoxyCompactList}\small\item\em Initiate a scroll clear of the display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8h_a687aca91f23b409f019d51365b27ff64}{Display\+Clear}} (bool set\+To\+Clear)
+\begin{DoxyCompactList}\small\item\em Clear Display data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8h_ad0ca0c775fc3eaa4867d591de4e1d778}{Display\+Values\+\_\+23132}} (float voltmeter\+Value, bool current\+Mode, bool hold\+Mode, uint8\+\_\+t position)
+\begin{DoxyCompactList}\small\item\em Display specific data according screen in use -- EXEMPLE DE FONCTION A ADAPTER --. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8h_a3e5c0acc6212c5dff47dcd5978a1c80a}{Display\+Screen\+\_\+23132}} (bool set\+To\+Dark)
+\begin{DoxyCompactList}\small\item\em Displays Screen Voltmeter 23132. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8h_a73eb68fb12c306b2dd058368fb31675f}{Display\+Screen}} (uint8\+\_\+t screen, uint16\+\_\+t \texorpdfstring{$\ast$}{*}touch\+States, bool set\+To\+Dark)
+\begin{DoxyCompactList}\small\item\em Affiche un ecran \textquotesingle{}fond\textquotesingle{} ou \textquotesingle{}trame de base\textquotesingle{}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_display_8h_aa7bdd4b73d4e50002a6d260156af337d}{Display\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize communication to the LCD display, graphical user interface (GUI) and data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8h_a975af224e4f6571205def3cef2ed8f55}{Display\+\_\+\+Task}} ()
+\begin{DoxyCompactList}\small\item\em Task updates/refreshes the display, must be called periodically by the client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_display_8h_a6c6b68e7ba65a041338e06a03fc8b6ca}{Display\+Screen\+\_\+\+Main\+Menu}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}state\+Touch, bool set\+To\+Dark)
+\item 
+void \mbox{\hyperlink{_display_8h_ae93a35f53142087364ee41c5c30c6926}{Draw\+Ellipse}} (int centerX, int centerY, int a, int b)
+\item 
+void \mbox{\hyperlink{_display_8h_a3d430c7a1a79dc0eb2a93f8c40762b1a}{Display\+Screen\+\_\+\+Signals}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}state\+Touch, bool set\+To\+Dark)
+\item 
+void \mbox{\hyperlink{_display_8h_a06db9bdc193201e67d96bf5483f365f2}{Display\+Screen\+\_\+\+Error}} (uint16\+\_\+t \texorpdfstring{$\ast$}{*}state\+Touch, bool set\+To\+Dark)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Etats de l\textquotesingle{}affichage}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_display_8h_af8ca598ecd77fe4b32f188d940bacb45}{DISPLAY\+\_\+\+STATES}} \{ \mbox{\hyperlink{_display_8h_af8ca598ecd77fe4b32f188d940bacb45a46cafc77db0faf51d490758ce846ecff}{DISP\+\_\+\+STATE\+\_\+\+WAIT\+\_\+\+REFRESH}} =0
+, \mbox{\hyperlink{_display_8h_af8ca598ecd77fe4b32f188d940bacb45aa134cbf4c771c2cc328c073734c45801}{DISP\+\_\+\+STATE\+\_\+\+REFRESHING}}
+ \}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{_display_8h_a76f4f4d320e7efb67620a8f827cc4f50}{T\+\_\+\+DISPLAY\+\_\+\+MATRIX}}\mbox{[}\mbox{\hyperlink{_display_8h_a3d6e8679a1868c4a294ced76461260ec}{DISPLAY\+\_\+\+PAGES}}\mbox{]}\mbox{[}\mbox{\hyperlink{_display_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\+\_\+\+WIDTH}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\hypertarget{_display_8h_autotoc_md4}{}\doxysubsection{\texorpdfstring{DISPLAY.\+h}{DISPLAY.\+h}}\label{_display_8h_autotoc_md4}
+\hypertarget{_display_8h_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{Module de gestion de l\textquotesingle{}affichage du TPA}{Module de gestion de l\textquotesingle{}affichage du TPA}}\label{_display_8h_autotoc_md5}
+\begin{DoxyAuthor}{Author}
+J. Jose Moreno 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+16.\+04.\+2020 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+\hypertarget{_display_8h_autotoc_md6}{}\doxysubsubsection{\texorpdfstring{Description}{Description}}\label{_display_8h_autotoc_md6}
+Fournit les fonctions necessaires pour afficher les donnees du TPA/\+VPA sur l\textquotesingle{}ecran LCD du TPA. Display\+\_\+\+Task effectue une mise a jour reguliere de l\textquotesingle{}affichage complet a partir d\textquotesingle{}une copie complete locale. Elle utilise l\textquotesingle{}API Open\+Source \doxylink{ugui_8h}{ugui.\+h}. pour dessiner des formes et du texte sur l\textquotesingle{}ecran graphique.
+
+\begin{DoxyAuthor}{Author}
+J. Jose Moreno 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11.\+08.\+2023 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+2.\+0
+\end{DoxyVersion}
+\hypertarget{_display_8h_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{Description}{Description}}\label{_display_8h_autotoc_md7}
+Generalisation pour utilisation dans projets ETML-\/\+ES. Remplacement de TPA\+\_\+D... par D... 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_display_8h_aae076db88de38cfa4f205dfb0820b341}\index{Display.h@{Display.h}!BAT\_ZERO\_PERCENTLEVEL@{BAT\_ZERO\_PERCENTLEVEL}}
+\index{BAT\_ZERO\_PERCENTLEVEL@{BAT\_ZERO\_PERCENTLEVEL}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{BAT\_ZERO\_PERCENTLEVEL}{BAT\_ZERO\_PERCENTLEVEL}}
+{\footnotesize\ttfamily \label{_display_8h_aae076db88de38cfa4f205dfb0820b341} 
+\#define BAT\+\_\+\+ZERO\+\_\+\+PERCENTLEVEL~5}
+
+\Hypertarget{_display_8h_a8df8ae3f3cd1dde7463b82a434866e7b}\index{Display.h@{Display.h}!COL\_AQUA@{COL\_AQUA}}
+\index{COL\_AQUA@{COL\_AQUA}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_AQUA}{COL\_AQUA}}
+{\footnotesize\ttfamily \label{_display_8h_a8df8ae3f3cd1dde7463b82a434866e7b} 
+\#define COL\+\_\+\+AQUA~\mbox{\hyperlink{ugui_8h_a5384a88833e9cd5e335e1c268dbc77e9}{C\+\_\+\+AQUA}}}
+
+\Hypertarget{_display_8h_a9297e9b9ba9dca08f5a63d27ab99ad69}\index{Display.h@{Display.h}!COL\_AQUA\_MARINE@{COL\_AQUA\_MARINE}}
+\index{COL\_AQUA\_MARINE@{COL\_AQUA\_MARINE}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_AQUA\_MARINE}{COL\_AQUA\_MARINE}}
+{\footnotesize\ttfamily \label{_display_8h_a9297e9b9ba9dca08f5a63d27ab99ad69} 
+\#define COL\+\_\+\+AQUA\+\_\+\+MARINE~\mbox{\hyperlink{ugui_8h_aaa2a53265aa1b57f39521481e41f4b4c}{C\+\_\+\+AQUA\+\_\+\+MARINE}}}
+
+\Hypertarget{_display_8h_ac4f2ca33b957169e3d57bf57b4b886a7}\index{Display.h@{Display.h}!COL\_BLACK@{COL\_BLACK}}
+\index{COL\_BLACK@{COL\_BLACK}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_BLACK}{COL\_BLACK}}
+{\footnotesize\ttfamily \label{_display_8h_ac4f2ca33b957169e3d57bf57b4b886a7} 
+\#define COL\+\_\+\+BLACK~\mbox{\hyperlink{ugui_8h_a22a9543e081938a146a8bce60a84200a}{C\+\_\+\+BLACK}}}
+
+\Hypertarget{_display_8h_aea6368ed169b1751d3aa25050c1261e0}\index{Display.h@{Display.h}!COL\_DEFAULT@{COL\_DEFAULT}}
+\index{COL\_DEFAULT@{COL\_DEFAULT}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_DEFAULT}{COL\_DEFAULT}}
+{\footnotesize\ttfamily \label{_display_8h_aea6368ed169b1751d3aa25050c1261e0} 
+\#define COL\+\_\+\+DEFAULT~\mbox{\hyperlink{_display_8h_a17784369af03afc179ecf59c670490c7}{COL\+\_\+\+WHITE}}}
+
+\Hypertarget{_display_8h_af8e2f08d6b727700185acbf8036d179c}\index{Display.h@{Display.h}!COL\_GREEN\_CUSTOM@{COL\_GREEN\_CUSTOM}}
+\index{COL\_GREEN\_CUSTOM@{COL\_GREEN\_CUSTOM}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_GREEN\_CUSTOM}{COL\_GREEN\_CUSTOM}}
+{\footnotesize\ttfamily \label{_display_8h_af8e2f08d6b727700185acbf8036d179c} 
+\#define COL\+\_\+\+GREEN\+\_\+\+CUSTOM~\mbox{\hyperlink{ugui_8h_afdb98cfa79f46255cb6e981df3f94c00}{C\+\_\+\+LIME}}}
+
+\Hypertarget{_display_8h_ac7c2a2b674aa447c22cd5f7bbaafc824}\index{Display.h@{Display.h}!COL\_MEDGREEN\_CUSTOM@{COL\_MEDGREEN\_CUSTOM}}
+\index{COL\_MEDGREEN\_CUSTOM@{COL\_MEDGREEN\_CUSTOM}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_MEDGREEN\_CUSTOM}{COL\_MEDGREEN\_CUSTOM}}
+{\footnotesize\ttfamily \label{_display_8h_ac7c2a2b674aa447c22cd5f7bbaafc824} 
+\#define COL\+\_\+\+MEDGREEN\+\_\+\+CUSTOM~0x00\+FF2D}
+
+\Hypertarget{_display_8h_a11c48ef7ac0d0e7a41067bbce22dedc8}\index{Display.h@{Display.h}!COL\_ORANGE\_RED@{COL\_ORANGE\_RED}}
+\index{COL\_ORANGE\_RED@{COL\_ORANGE\_RED}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_ORANGE\_RED}{COL\_ORANGE\_RED}}
+{\footnotesize\ttfamily \label{_display_8h_a11c48ef7ac0d0e7a41067bbce22dedc8} 
+\#define COL\+\_\+\+ORANGE\+\_\+\+RED~\mbox{\hyperlink{ugui_8h_a4ab073278fcdb4ca0b359f0834410ac4}{C\+\_\+\+ORANGE\+\_\+\+RED}}}
+
+\Hypertarget{_display_8h_ae6c6b49aac1059bc0c67bd82656133ff}\index{Display.h@{Display.h}!COL\_PINK\_CUSTOM@{COL\_PINK\_CUSTOM}}
+\index{COL\_PINK\_CUSTOM@{COL\_PINK\_CUSTOM}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_PINK\_CUSTOM}{COL\_PINK\_CUSTOM}}
+{\footnotesize\ttfamily \label{_display_8h_ae6c6b49aac1059bc0c67bd82656133ff} 
+\#define COL\+\_\+\+PINK\+\_\+\+CUSTOM~0x\+FF004B}
+
+\Hypertarget{_display_8h_a87d30d2657caae38d671f052cb9cc0e7}\index{Display.h@{Display.h}!COL\_RED@{COL\_RED}}
+\index{COL\_RED@{COL\_RED}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_RED}{COL\_RED}}
+{\footnotesize\ttfamily \label{_display_8h_a87d30d2657caae38d671f052cb9cc0e7} 
+\#define COL\+\_\+\+RED~\mbox{\hyperlink{ugui_8h_a7adb9aaa1eed15caecd92e3837581b53}{C\+\_\+\+RED}}}
+
+\Hypertarget{_display_8h_a91d13f45f187a22ca7adc935e007d572}\index{Display.h@{Display.h}!COL\_RED2\_CUSTOM@{COL\_RED2\_CUSTOM}}
+\index{COL\_RED2\_CUSTOM@{COL\_RED2\_CUSTOM}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_RED2\_CUSTOM}{COL\_RED2\_CUSTOM}}
+{\footnotesize\ttfamily \label{_display_8h_a91d13f45f187a22ca7adc935e007d572} 
+\#define COL\+\_\+\+RED2\+\_\+\+CUSTOM~0x\+FF0018}
+
+\Hypertarget{_display_8h_acc3baac376cd3d303a6a404932ed4e3c}\index{Display.h@{Display.h}!COL\_RED\_CUSTOM@{COL\_RED\_CUSTOM}}
+\index{COL\_RED\_CUSTOM@{COL\_RED\_CUSTOM}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_RED\_CUSTOM}{COL\_RED\_CUSTOM}}
+{\footnotesize\ttfamily \label{_display_8h_acc3baac376cd3d303a6a404932ed4e3c} 
+\#define COL\+\_\+\+RED\+\_\+\+CUSTOM~0x\+FF0010}
+
+\Hypertarget{_display_8h_a17784369af03afc179ecf59c670490c7}\index{Display.h@{Display.h}!COL\_WHITE@{COL\_WHITE}}
+\index{COL\_WHITE@{COL\_WHITE}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_WHITE}{COL\_WHITE}}
+{\footnotesize\ttfamily \label{_display_8h_a17784369af03afc179ecf59c670490c7} 
+\#define COL\+\_\+\+WHITE~\mbox{\hyperlink{ugui_8h_a67fead37547ff67ca0a269d712e87822}{C\+\_\+\+WHITE}}}
+
+\Hypertarget{_display_8h_a6c69fd27f20f00dc82c873c6adacd56b}\index{Display.h@{Display.h}!COL\_YELLOW@{COL\_YELLOW}}
+\index{COL\_YELLOW@{COL\_YELLOW}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_YELLOW}{COL\_YELLOW}}
+{\footnotesize\ttfamily \label{_display_8h_a6c69fd27f20f00dc82c873c6adacd56b} 
+\#define COL\+\_\+\+YELLOW~\mbox{\hyperlink{ugui_8h_a7749aa942f59b07d1e951066e0aeca73}{C\+\_\+\+YELLOW}}}
+
+\Hypertarget{_display_8h_a1a9034ffc8712877b8f77939265583b0}\index{Display.h@{Display.h}!COL\_YELLOW\_CUSTOM@{COL\_YELLOW\_CUSTOM}}
+\index{COL\_YELLOW\_CUSTOM@{COL\_YELLOW\_CUSTOM}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{COL\_YELLOW\_CUSTOM}{COL\_YELLOW\_CUSTOM}}
+{\footnotesize\ttfamily \label{_display_8h_a1a9034ffc8712877b8f77939265583b0} 
+\#define COL\+\_\+\+YELLOW\+\_\+\+CUSTOM~0x\+FF8\+A00}
+
+\Hypertarget{_display_8h_ae8c30add35384b3f1504693825fde223}\index{Display.h@{Display.h}!DISP\_BLRGB\_PWM\_FACTOR@{DISP\_BLRGB\_PWM\_FACTOR}}
+\index{DISP\_BLRGB\_PWM\_FACTOR@{DISP\_BLRGB\_PWM\_FACTOR}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DISP\_BLRGB\_PWM\_FACTOR}{DISP\_BLRGB\_PWM\_FACTOR}}
+{\footnotesize\ttfamily \label{_display_8h_ae8c30add35384b3f1504693825fde223} 
+\#define DISP\+\_\+\+BLRGB\+\_\+\+PWM\+\_\+\+FACTOR~\mbox{\hyperlink{_display_8h_a948d0fd705eec57b122ccfb63f41051d}{DISP\+\_\+\+BLRGB\+\_\+\+PWM\+\_\+\+PERIOD}}/255}
+
+\Hypertarget{_display_8h_a948d0fd705eec57b122ccfb63f41051d}\index{Display.h@{Display.h}!DISP\_BLRGB\_PWM\_PERIOD@{DISP\_BLRGB\_PWM\_PERIOD}}
+\index{DISP\_BLRGB\_PWM\_PERIOD@{DISP\_BLRGB\_PWM\_PERIOD}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DISP\_BLRGB\_PWM\_PERIOD}{DISP\_BLRGB\_PWM\_PERIOD}}
+{\footnotesize\ttfamily \label{_display_8h_a948d0fd705eec57b122ccfb63f41051d} 
+\#define DISP\+\_\+\+BLRGB\+\_\+\+PWM\+\_\+\+PERIOD~6249}
+
+\Hypertarget{_display_8h_a43b7b2061f733ea1dc0a5a6028e131ff}\index{Display.h@{Display.h}!DISPLAY\_HEIGHT@{DISPLAY\_HEIGHT}}
+\index{DISPLAY\_HEIGHT@{DISPLAY\_HEIGHT}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_HEIGHT}{DISPLAY\_HEIGHT}}
+{\footnotesize\ttfamily \label{_display_8h_a43b7b2061f733ea1dc0a5a6028e131ff} 
+\#define DISPLAY\+\_\+\+HEIGHT~64}
+
+\Hypertarget{_display_8h_ac667c044f8f31c95ad2a32b0eef85a4e}\index{Display.h@{Display.h}!DISPLAY\_PAGE\_HEIGHT@{DISPLAY\_PAGE\_HEIGHT}}
+\index{DISPLAY\_PAGE\_HEIGHT@{DISPLAY\_PAGE\_HEIGHT}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_PAGE\_HEIGHT}{DISPLAY\_PAGE\_HEIGHT}}
+{\footnotesize\ttfamily \label{_display_8h_ac667c044f8f31c95ad2a32b0eef85a4e} 
+\#define DISPLAY\+\_\+\+PAGE\+\_\+\+HEIGHT~8}
+
+\Hypertarget{_display_8h_a3d6e8679a1868c4a294ced76461260ec}\index{Display.h@{Display.h}!DISPLAY\_PAGES@{DISPLAY\_PAGES}}
+\index{DISPLAY\_PAGES@{DISPLAY\_PAGES}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_PAGES}{DISPLAY\_PAGES}}
+{\footnotesize\ttfamily \label{_display_8h_a3d6e8679a1868c4a294ced76461260ec} 
+\#define DISPLAY\+\_\+\+PAGES~8}
+
+\Hypertarget{_display_8h_ad482db7edf28fdecca8f095de1db6fbc}\index{Display.h@{Display.h}!DISPLAY\_REFRESH\_PERIOD@{DISPLAY\_REFRESH\_PERIOD}}
+\index{DISPLAY\_REFRESH\_PERIOD@{DISPLAY\_REFRESH\_PERIOD}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_REFRESH\_PERIOD}{DISPLAY\_REFRESH\_PERIOD}}
+{\footnotesize\ttfamily \label{_display_8h_ad482db7edf28fdecca8f095de1db6fbc} 
+\#define DISPLAY\+\_\+\+REFRESH\+\_\+\+PERIOD~20}
+
+\Hypertarget{_display_8h_a5ad3f6d6e003b7f0b32dd8d73a825c6e}\index{Display.h@{Display.h}!DISPLAY\_SCROLL\_STEP@{DISPLAY\_SCROLL\_STEP}}
+\index{DISPLAY\_SCROLL\_STEP@{DISPLAY\_SCROLL\_STEP}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_SCROLL\_STEP}{DISPLAY\_SCROLL\_STEP}}
+{\footnotesize\ttfamily \label{_display_8h_a5ad3f6d6e003b7f0b32dd8d73a825c6e} 
+\#define DISPLAY\+\_\+\+SCROLL\+\_\+\+STEP~8}
+
+\Hypertarget{_display_8h_a46d67d48a7faab308f2e058dc35da83a}\index{Display.h@{Display.h}!DISPLAY\_WIDTH@{DISPLAY\_WIDTH}}
+\index{DISPLAY\_WIDTH@{DISPLAY\_WIDTH}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_WIDTH}{DISPLAY\_WIDTH}}
+{\footnotesize\ttfamily \label{_display_8h_a46d67d48a7faab308f2e058dc35da83a} 
+\#define DISPLAY\+\_\+\+WIDTH~128}
+
+\Hypertarget{_display_8h_a531ca9e372f7719101e9f7a99b8c772d}\index{Display.h@{Display.h}!RSSI\_BARS\_NR@{RSSI\_BARS\_NR}}
+\index{RSSI\_BARS\_NR@{RSSI\_BARS\_NR}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{RSSI\_BARS\_NR}{RSSI\_BARS\_NR}}
+{\footnotesize\ttfamily \label{_display_8h_a531ca9e372f7719101e9f7a99b8c772d} 
+\#define RSSI\+\_\+\+BARS\+\_\+\+NR~5}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_display_8h_a76f4f4d320e7efb67620a8f827cc4f50}\index{Display.h@{Display.h}!T\_DISPLAY\_MATRIX@{T\_DISPLAY\_MATRIX}}
+\index{T\_DISPLAY\_MATRIX@{T\_DISPLAY\_MATRIX}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{T\_DISPLAY\_MATRIX}{T\_DISPLAY\_MATRIX}}
+{\footnotesize\ttfamily \label{_display_8h_a76f4f4d320e7efb67620a8f827cc4f50} 
+typedef uint8\+\_\+t T\+\_\+\+DISPLAY\+\_\+\+MATRIX\mbox{[}\mbox{\hyperlink{_display_8h_a3d6e8679a1868c4a294ced76461260ec}{DISPLAY\+\_\+\+PAGES}}\mbox{]}\mbox{[}\mbox{\hyperlink{_display_8h_a46d67d48a7faab308f2e058dc35da83a}{DISPLAY\+\_\+\+WIDTH}}\mbox{]}}
+
+name@ matrice pour la copie d\textquotesingle{}ecran a afficher 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_display_8h_af8ca598ecd77fe4b32f188d940bacb45}\index{Display.h@{Display.h}!DISPLAY\_STATES@{DISPLAY\_STATES}}
+\index{DISPLAY\_STATES@{DISPLAY\_STATES}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DISPLAY\_STATES}{DISPLAY\_STATES}}
+{\footnotesize\ttfamily \label{_display_8h_af8ca598ecd77fe4b32f188d940bacb45} 
+enum \mbox{\hyperlink{_display_8h_af8ca598ecd77fe4b32f188d940bacb45}{DISPLAY\+\_\+\+STATES}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISP\_STATE\_WAIT\_REFRESH@{DISP\_STATE\_WAIT\_REFRESH}!Display.h@{Display.h}}\index{Display.h@{Display.h}!DISP\_STATE\_WAIT\_REFRESH@{DISP\_STATE\_WAIT\_REFRESH}}}\Hypertarget{_display_8h_af8ca598ecd77fe4b32f188d940bacb45a46cafc77db0faf51d490758ce846ecff}\label{_display_8h_af8ca598ecd77fe4b32f188d940bacb45a46cafc77db0faf51d490758ce846ecff} 
+DISP\+\_\+\+STATE\+\_\+\+WAIT\+\_\+\+REFRESH&Etat d\textquotesingle{}attente d\textquotesingle{}un refresh. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISP\_STATE\_REFRESHING@{DISP\_STATE\_REFRESHING}!Display.h@{Display.h}}\index{Display.h@{Display.h}!DISP\_STATE\_REFRESHING@{DISP\_STATE\_REFRESHING}}}\Hypertarget{_display_8h_af8ca598ecd77fe4b32f188d940bacb45aa134cbf4c771c2cc328c073734c45801}\label{_display_8h_af8ca598ecd77fe4b32f188d940bacb45aa134cbf4c771c2cc328c073734c45801} 
+DISP\+\_\+\+STATE\+\_\+\+REFRESHING&Etat d\textquotesingle{}execution du refresh du LCD. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_display_8h_a33772d3867b277630826a2d2e48e74f5}\index{Display.h@{Display.h}!E\_DISPLAY\_SCREENS@{E\_DISPLAY\_SCREENS}}
+\index{E\_DISPLAY\_SCREENS@{E\_DISPLAY\_SCREENS}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{E\_DISPLAY\_SCREENS}{E\_DISPLAY\_SCREENS}}
+{\footnotesize\ttfamily \label{_display_8h_a33772d3867b277630826a2d2e48e74f5} 
+enum \mbox{\hyperlink{_display_8h_a33772d3867b277630826a2d2e48e74f5}{E\+\_\+\+DISPLAY\+\_\+\+SCREENS}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISP\_SCR\_WELCOME@{DISP\_SCR\_WELCOME}!Display.h@{Display.h}}\index{Display.h@{Display.h}!DISP\_SCR\_WELCOME@{DISP\_SCR\_WELCOME}}}\Hypertarget{_display_8h_a33772d3867b277630826a2d2e48e74f5a7001c59c25abd7b2648ac31d54161c94}\label{_display_8h_a33772d3867b277630826a2d2e48e74f5a7001c59c25abd7b2648ac31d54161c94} 
+DISP\+\_\+\+SCR\+\_\+\+WELCOME&ecran d\textquotesingle{}accueil \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DSP\_LOGO@{DSP\_LOGO}!Display.h@{Display.h}}\index{Display.h@{Display.h}!DSP\_LOGO@{DSP\_LOGO}}}\Hypertarget{_display_8h_a33772d3867b277630826a2d2e48e74f5aeff84b9cec10d1c0072bf6e615594120}\label{_display_8h_a33772d3867b277630826a2d2e48e74f5aeff84b9cec10d1c0072bf6e615594120} 
+DSP\+\_\+\+LOGO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISP\_SIGN@{DISP\_SIGN}!Display.h@{Display.h}}\index{Display.h@{Display.h}!DISP\_SIGN@{DISP\_SIGN}}}\Hypertarget{_display_8h_a33772d3867b277630826a2d2e48e74f5a414f88554617ebee1e530c8b656668b2}\label{_display_8h_a33772d3867b277630826a2d2e48e74f5a414f88554617ebee1e530c8b656668b2} 
+DISP\+\_\+\+SIGN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISP\_SCR\_MENU@{DISP\_SCR\_MENU}!Display.h@{Display.h}}\index{Display.h@{Display.h}!DISP\_SCR\_MENU@{DISP\_SCR\_MENU}}}\Hypertarget{_display_8h_a33772d3867b277630826a2d2e48e74f5aefefcce2b17709bf3208a554ad4a3c11}\label{_display_8h_a33772d3867b277630826a2d2e48e74f5aefefcce2b17709bf3208a554ad4a3c11} 
+DISP\+\_\+\+SCR\+\_\+\+MENU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISP\_CHANGE\_SIGN\_NAME@{DISP\_CHANGE\_SIGN\_NAME}!Display.h@{Display.h}}\index{Display.h@{Display.h}!DISP\_CHANGE\_SIGN\_NAME@{DISP\_CHANGE\_SIGN\_NAME}}}\Hypertarget{_display_8h_a33772d3867b277630826a2d2e48e74f5a64ffdbc36b8fa0d3fefb817330961e97}\label{_display_8h_a33772d3867b277630826a2d2e48e74f5a64ffdbc36b8fa0d3fefb817330961e97} 
+DISP\+\_\+\+CHANGE\+\_\+\+SIGN\+\_\+\+NAME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISP\_SCR\_ERROR@{DISP\_SCR\_ERROR}!Display.h@{Display.h}}\index{Display.h@{Display.h}!DISP\_SCR\_ERROR@{DISP\_SCR\_ERROR}}}\Hypertarget{_display_8h_a33772d3867b277630826a2d2e48e74f5a9c5e33d0bd55d6631ee6360ed29f6097}\label{_display_8h_a33772d3867b277630826a2d2e48e74f5a9c5e33d0bd55d6631ee6360ed29f6097} 
+DISP\+\_\+\+SCR\+\_\+\+ERROR&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_display_8h_a285ebec54c0e210b092506a8f795bbed}\index{Display.h@{Display.h}!T\_DISP\_COMMAND@{T\_DISP\_COMMAND}}
+\index{T\_DISP\_COMMAND@{T\_DISP\_COMMAND}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{T\_DISP\_COMMAND}{T\_DISP\_COMMAND}}
+{\footnotesize\ttfamily \label{_display_8h_a285ebec54c0e210b092506a8f795bbed} 
+enum \mbox{\hyperlink{_display_8h_a285ebec54c0e210b092506a8f795bbed}{T\+\_\+\+DISP\+\_\+\+COMMAND}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISP\_CMD\_NOCMD@{DISP\_CMD\_NOCMD}!Display.h@{Display.h}}\index{Display.h@{Display.h}!DISP\_CMD\_NOCMD@{DISP\_CMD\_NOCMD}}}\Hypertarget{_display_8h_a285ebec54c0e210b092506a8f795bbedae02a54e044a116dd39d9109374354fe3}\label{_display_8h_a285ebec54c0e210b092506a8f795bbedae02a54e044a116dd39d9109374354fe3} 
+DISP\+\_\+\+CMD\+\_\+\+NOCMD&Pas de commande. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISP\_CMD\_SCROLLDOWN\_CLEAR@{DISP\_CMD\_SCROLLDOWN\_CLEAR}!Display.h@{Display.h}}\index{Display.h@{Display.h}!DISP\_CMD\_SCROLLDOWN\_CLEAR@{DISP\_CMD\_SCROLLDOWN\_CLEAR}}}\Hypertarget{_display_8h_a285ebec54c0e210b092506a8f795bbeda36d5044e2564097c47e565096300ec09}\label{_display_8h_a285ebec54c0e210b092506a8f795bbeda36d5044e2564097c47e565096300ec09} 
+DISP\+\_\+\+CMD\+\_\+\+SCROLLDOWN\+\_\+\+CLEAR&Effacement pour mode de defilement. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_display_8h_a975af224e4f6571205def3cef2ed8f55}\index{Display.h@{Display.h}!Display\_Task@{Display\_Task}}
+\index{Display\_Task@{Display\_Task}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{Display\_Task()}{Display\_Task()}}
+{\footnotesize\ttfamily \label{_display_8h_a975af224e4f6571205def3cef2ed8f55} 
+void Display\+\_\+\+Task (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Task updates/refreshes the display, must be called periodically by the client. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_a975af224e4f6571205def3cef2ed8f55_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{_display_8h_a975af224e4f6571205def3cef2ed8f55_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8h_a9a9c72fc2952d0fd96793d4d56b58ef5}\index{Display.h@{Display.h}!Display\_TimerCallback@{Display\_TimerCallback}}
+\index{Display\_TimerCallback@{Display\_TimerCallback}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{Display\_TimerCallback()}{Display\_TimerCallback()}}
+{\footnotesize\ttfamily \label{_display_8h_a9a9c72fc2952d0fd96793d4d56b58ef5} 
+void Display\+\_\+\+Timer\+Callback (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Comptage des temps pour Display. Cette routine doit etre appelee par l\textquotesingle{}ISR d\textquotesingle{}un timer a une cadence de 10 ms. 
+
+\Hypertarget{_display_8h_a687aca91f23b409f019d51365b27ff64}\index{Display.h@{Display.h}!DisplayClear@{DisplayClear}}
+\index{DisplayClear@{DisplayClear}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DisplayClear()}{DisplayClear()}}
+{\footnotesize\ttfamily \label{_display_8h_a687aca91f23b409f019d51365b27ff64} 
+void Display\+Clear (\begin{DoxyParamCaption}\item[{bool}]{set\+To\+Clear}{}\end{DoxyParamCaption})}
+
+
+
+Clear Display data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set\+To\+Clear} & false = dark ; true = clear\\
+\hline
+\end{DoxyParams}
+Texec = 245 us
+
+
+\begin{DoxyParams}{Parameters}
+{\em set\+To\+Clear} & false = dark ; true = clear \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_a687aca91f23b409f019d51365b27ff64_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8h_aa7bdd4b73d4e50002a6d260156af337d}\index{Display.h@{Display.h}!DisplayInit@{DisplayInit}}
+\index{DisplayInit@{DisplayInit}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DisplayInit()}{DisplayInit()}}
+{\footnotesize\ttfamily \label{_display_8h_aa7bdd4b73d4e50002a6d260156af337d} 
+bool Display\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize communication to the LCD display, graphical user interface (GUI) and data. 
+
+\begin{DoxyReturn}{Returns}
+false if init failed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_aa7bdd4b73d4e50002a6d260156af337d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{_display_8h_aa7bdd4b73d4e50002a6d260156af337d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8h_a3c08e016abe421a46a72b87f3c45c4e3}\index{Display.h@{Display.h}!DisplayPixelSetCallback@{DisplayPixelSetCallback}}
+\index{DisplayPixelSetCallback@{DisplayPixelSetCallback}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DisplayPixelSetCallback()}{DisplayPixelSetCallback()}}
+{\footnotesize\ttfamily \label{_display_8h_a3c08e016abe421a46a72b87f3c45c4e3} 
+void Display\+Pixel\+Set\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\+\_\+\+S16}}}]{x}{, }\item[{\mbox{\hyperlink{ugui__config_8h_a31fe9b988a550493d793225d260bc00f}{UG\+\_\+\+S16}}}]{y}{, }\item[{\mbox{\hyperlink{ugui_8h_a98528d91ea10a76726280fe8d0d7dbc1}{UG\+\_\+\+COLOR}}}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Fonction de Callback appelee par la lib ugui pour generer un pixel pour l\textquotesingle{}affiche cible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & axe des x sur le LCD. La valeur est utilisable directement. \\
+\hline
+{\em y} & axe des y sur le LCD, il est segmente en \textquotesingle{}pages\textquotesingle{} de 8 bits (bytes). La position du bit est calculee pour la bonne page. \\
+\hline
+{\em c} & couleur (noir ou blanc du pixel \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_a3c08e016abe421a46a72b87f3c45c4e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8h_a73eb68fb12c306b2dd058368fb31675f}\index{Display.h@{Display.h}!DisplayScreen@{DisplayScreen}}
+\index{DisplayScreen@{DisplayScreen}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DisplayScreen()}{DisplayScreen()}}
+{\footnotesize\ttfamily \label{_display_8h_a73eb68fb12c306b2dd058368fb31675f} 
+void Display\+Screen (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{screen}{, }\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{touch\+States}{, }\item[{bool}]{set\+To\+Dark}{}\end{DoxyParamCaption})}
+
+
+
+Affiche un ecran \textquotesingle{}fond\textquotesingle{} ou \textquotesingle{}trame de base\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & base screen \# to be displayed \\
+\hline
+{\em set\+To\+Dark} & true = dark ; false = clear\\
+\hline
+\end{DoxyParams}
+Affiche un ecran \textquotesingle{}fond\textquotesingle{} ou \textquotesingle{}trame de base\textquotesingle{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & image \# to be displayed \\
+\hline
+{\em set\+To\+Dark} & true = dark ; false = clear \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_a73eb68fb12c306b2dd058368fb31675f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_a73eb68fb12c306b2dd058368fb31675f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8h_a3e5c0acc6212c5dff47dcd5978a1c80a}\index{Display.h@{Display.h}!DisplayScreen\_23132@{DisplayScreen\_23132}}
+\index{DisplayScreen\_23132@{DisplayScreen\_23132}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DisplayScreen\_23132()}{DisplayScreen\_23132()}}
+{\footnotesize\ttfamily \label{_display_8h_a3e5c0acc6212c5dff47dcd5978a1c80a} 
+void Display\+Screen\+\_\+23132 (\begin{DoxyParamCaption}\item[{bool}]{set\+To\+Dark}{}\end{DoxyParamCaption})}
+
+
+
+Displays Screen Voltmeter 23132. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em set\+To\+Dark} & true = dark ; false = clear \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_a3e5c0acc6212c5dff47dcd5978a1c80a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8h_a06db9bdc193201e67d96bf5483f365f2}\index{Display.h@{Display.h}!DisplayScreen\_Error@{DisplayScreen\_Error}}
+\index{DisplayScreen\_Error@{DisplayScreen\_Error}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DisplayScreen\_Error()}{DisplayScreen\_Error()}}
+{\footnotesize\ttfamily \label{_display_8h_a06db9bdc193201e67d96bf5483f365f2} 
+void Display\+Screen\+\_\+\+Error (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{state\+Touch}{, }\item[{bool}]{set\+To\+Dark}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_a06db9bdc193201e67d96bf5483f365f2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_a06db9bdc193201e67d96bf5483f365f2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8h_a6c6b68e7ba65a041338e06a03fc8b6ca}\index{Display.h@{Display.h}!DisplayScreen\_MainMenu@{DisplayScreen\_MainMenu}}
+\index{DisplayScreen\_MainMenu@{DisplayScreen\_MainMenu}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DisplayScreen\_MainMenu()}{DisplayScreen\_MainMenu()}}
+{\footnotesize\ttfamily \label{_display_8h_a6c6b68e7ba65a041338e06a03fc8b6ca} 
+void Display\+Screen\+\_\+\+Main\+Menu (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{state\+Touch}{, }\item[{bool}]{set\+To\+Dark}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_a6c6b68e7ba65a041338e06a03fc8b6ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_a6c6b68e7ba65a041338e06a03fc8b6ca_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8h_a3d430c7a1a79dc0eb2a93f8c40762b1a}\index{Display.h@{Display.h}!DisplayScreen\_Signals@{DisplayScreen\_Signals}}
+\index{DisplayScreen\_Signals@{DisplayScreen\_Signals}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DisplayScreen\_Signals()}{DisplayScreen\_Signals()}}
+{\footnotesize\ttfamily \label{_display_8h_a3d430c7a1a79dc0eb2a93f8c40762b1a} 
+void Display\+Screen\+\_\+\+Signals (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \texorpdfstring{$\ast$}{*}}]{state\+Touch}{, }\item[{bool}]{set\+To\+Dark}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_a3d430c7a1a79dc0eb2a93f8c40762b1a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_a3d430c7a1a79dc0eb2a93f8c40762b1a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_display_8h_ab587a42e1e9dc9ad79673b842a4295bb}\index{Display.h@{Display.h}!DisplayScrollClear@{DisplayScrollClear}}
+\index{DisplayScrollClear@{DisplayScrollClear}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DisplayScrollClear()}{DisplayScrollClear()}}
+{\footnotesize\ttfamily \label{_display_8h_ab587a42e1e9dc9ad79673b842a4295bb} 
+void Display\+Scroll\+Clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initiate a scroll clear of the display. 
+
+Initiate a scroll clear of the display.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb} & standard RGB value. Ex\+: C\+\_\+\+AQUA = 0x00\+FFFF\\
+\hline
+\end{DoxyParams}
+Initiate a scroll clear of the display \Hypertarget{_display_8h_ad8d6bb2c28c392e911854a40e62fde3c}\index{Display.h@{Display.h}!DisplaySetBacklightRGB@{DisplaySetBacklightRGB}}
+\index{DisplaySetBacklightRGB@{DisplaySetBacklightRGB}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DisplaySetBacklightRGB()}{DisplaySetBacklightRGB()}}
+{\footnotesize\ttfamily \label{_display_8h_ad8d6bb2c28c392e911854a40e62fde3c} 
+void Display\+Set\+Backlight\+RGB (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{rgb}{}\end{DoxyParamCaption})}
+
+
+
+Sets the background color of the display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rgb} & standard RGB value. Ex\+: C\+\_\+\+AQUA = 0x00\+FFFF \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_display_8h_ad0ca0c775fc3eaa4867d591de4e1d778}\index{Display.h@{Display.h}!DisplayValues\_23132@{DisplayValues\_23132}}
+\index{DisplayValues\_23132@{DisplayValues\_23132}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DisplayValues\_23132()}{DisplayValues\_23132()}}
+{\footnotesize\ttfamily \label{_display_8h_ad0ca0c775fc3eaa4867d591de4e1d778} 
+void Display\+Values\+\_\+23132 (\begin{DoxyParamCaption}\item[{float}]{voltmeter\+Value}{, }\item[{bool}]{current\+Mode}{, }\item[{bool}]{hold\+Mode}{, }\item[{uint8\+\_\+t}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Display specific data according screen in use -- EXEMPLE DE FONCTION A ADAPTER --. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & valeur a \\
+\hline
+{\em b} & valeur b \\
+\hline
+{\em c} & valeur c \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_display_8h_ae93a35f53142087364ee41c5c30c6926}\index{Display.h@{Display.h}!DrawEllipse@{DrawEllipse}}
+\index{DrawEllipse@{DrawEllipse}!Display.h@{Display.h}}
+\doxysubsubsection{\texorpdfstring{DrawEllipse()}{DrawEllipse()}}
+{\footnotesize\ttfamily \label{_display_8h_ae93a35f53142087364ee41c5c30c6926} 
+void Draw\+Ellipse (\begin{DoxyParamCaption}\item[{int}]{centerX}{, }\item[{int}]{centerY}{, }\item[{int}]{a}{, }\item[{int}]{b}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{_display_8h_ae93a35f53142087364ee41c5c30c6926_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_display_8h_ae93a35f53142087364ee41c5c30c6926_icgraph}
+\end{center}
+\end{figure}

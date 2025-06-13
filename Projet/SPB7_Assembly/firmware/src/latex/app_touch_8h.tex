@@ -1,0 +1,305 @@
+\doxysection{app\+Touch.\+h File Reference}
+\hypertarget{app_touch_8h}{}\label{app_touch_8h}\index{appTouch.h@{appTouch.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}system\+\_\+config.\+h"{}}\newline
+{\ttfamily \#include "{}system\+\_\+definitions.\+h"{}}\newline
+{\ttfamily \#include "{}app\+\_\+taskctrl.\+h"{}}\newline
+Include dependency graph for app\+Touch.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_touch_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_touch_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}}
+\item 
+struct \mbox{\hyperlink{struct_a_p_p___t_o_u_c_h___d_a_t_a}{APP\+\_\+\+TOUCH\+\_\+\+DATA}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_a958518a45b12053ae33606ee7cb68a55}{NACK}}~0
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_accd3be6485f43b3be14d7b1bafa3b823}{KEY\+\_\+\+UP\+\_\+L}}(x)
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_a41647cda48dc4fe55fad556ecf38573d}{KEY\+\_\+\+MID\+\_\+L}}(x)
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_adf217380ddf58b4cceacb8f8a6dae486}{KEY\+\_\+\+DOWN\+\_\+L}}(x)
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_a02e58f7d7e3e3b2491c5060f66bced0e}{KEY\+\_\+\+UP\+\_\+C}}(x)
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_a307e2c4093602c55353e9b604b826b10}{KEY\+\_\+\+DOWN\+\_\+C}}(x)
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_a37c114c851f3a73c341488d727c44637}{KEY\+\_\+\+UP\+\_\+R}}(x)
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_aed58b1a02f1543c2ba3ddc4ee94ac45b}{KEY\+\_\+\+MID\+\_\+R}}(x)
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_a3db80d5b884112b8ed278f556e7463ae}{KEY\+\_\+\+DOWN\+\_\+R}}(x)
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_a897419fddec4c79be83b1080b8c36424}{KEY\+\_\+\+UP\+\_\+\+L\+\_\+\+MASK}}~0x0002
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_a974c79c7706f5f5ea5009d0b76af7d0f}{KEY\+\_\+\+MID\+\_\+\+L\+\_\+\+MASK}}~0x0004
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_a974dfb67c07d06b90b527bfb2c7af2c4}{KEY\+\_\+\+DOWN\+\_\+\+L\+\_\+\+MASK}}~0x0008
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_a92e4c67f32e1404052f6b48d3de30270}{KEY\+\_\+\+UP\+\_\+\+C\+\_\+\+MASK}}~0x0020
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_a294ef9f72af3358447ca148c450e61bc}{KEY\+\_\+\+DOWN\+\_\+\+C\+\_\+\+MASK}}~0x0010
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_acd45d046949560c0a2aba7161592c53a}{KEY\+\_\+\+UP\+\_\+\+R\+\_\+\+MASK}}~0x0100
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_a08dfe58316e60d53f305106baba20bad}{KEY\+\_\+\+MID\+\_\+\+R\+\_\+\+MASK}}~0x0080
+\item 
+\#define \mbox{\hyperlink{app_touch_8h_abd46f145362f60bd2ecb00b182373455}{KEY\+\_\+\+DOWN\+\_\+\+R\+\_\+\+MASK}}~0x0040
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{app_touch_8h_a939150ecf12e2373ed3433f55d72ded2}{APP\+\_\+\+TOUCH\+\_\+\+STATES}} \{ \mbox{\hyperlink{app_touch_8h_a939150ecf12e2373ed3433f55d72ded2a6ac9b75628666153fa7855a197ca5d17}{APP\+\_\+\+TOUCH\+\_\+\+STATE\+\_\+\+INIT}} =0
+, \mbox{\hyperlink{app_touch_8h_a939150ecf12e2373ed3433f55d72ded2a81ae7b680077412dcfad28882797c9b8}{APP\+\_\+\+TOUCH\+\_\+\+STATE\+\_\+\+SERVICE\+\_\+\+TASKS}}
+, \mbox{\hyperlink{app_touch_8h_a939150ecf12e2373ed3433f55d72ded2a8efe5eae86637e97f99840bced67fb51}{APP\+\_\+\+TOUCH\+\_\+\+STATE\+\_\+\+IDLE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{app_touch_8h_afc07aa60a124fa0678987f0f731a7dbe}{APP\+\_\+\+Touch\+\_\+\+Initialize}} (void)
+\item 
+void \mbox{\hyperlink{app_touch_8h_afd38d7decffa5a6716ac74cfa660676a}{APP\+\_\+\+Touch\+\_\+\+Tasks}} (void)
+\item 
+void \mbox{\hyperlink{app_touch_8h_a8437a1895e551b5cee23d1dc836da43c}{APP\+\_\+\+TIMER2\+\_\+\+CALLBACK}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} \mbox{\hyperlink{app_touch_8h_ad3d63cf42bac9da94dc89d5565d39cc1}{s\+\_\+get\+Data\+Sensor}}
+\item 
+\mbox{\hyperlink{structapp__task__ctrl__t}{app\+\_\+task\+\_\+ctrl\+\_\+t}} \mbox{\hyperlink{app_touch_8h_ada7371da5b14870af5e64fa9c382fd4d}{touch\+Task\+Ctrl}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{app_touch_8h_a307e2c4093602c55353e9b604b826b10}\index{appTouch.h@{appTouch.h}!KEY\_DOWN\_C@{KEY\_DOWN\_C}}
+\index{KEY\_DOWN\_C@{KEY\_DOWN\_C}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_DOWN\_C}{KEY\_DOWN\_C}}
+{\footnotesize\ttfamily \label{app_touch_8h_a307e2c4093602c55353e9b604b826b10} 
+\#define KEY\+\_\+\+DOWN\+\_\+C(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(x\&0x10)}
+
+\end{DoxyCode}
+\Hypertarget{app_touch_8h_a294ef9f72af3358447ca148c450e61bc}\index{appTouch.h@{appTouch.h}!KEY\_DOWN\_C\_MASK@{KEY\_DOWN\_C\_MASK}}
+\index{KEY\_DOWN\_C\_MASK@{KEY\_DOWN\_C\_MASK}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_DOWN\_C\_MASK}{KEY\_DOWN\_C\_MASK}}
+{\footnotesize\ttfamily \label{app_touch_8h_a294ef9f72af3358447ca148c450e61bc} 
+\#define KEY\+\_\+\+DOWN\+\_\+\+C\+\_\+\+MASK~0x0010}
+
+\Hypertarget{app_touch_8h_adf217380ddf58b4cceacb8f8a6dae486}\index{appTouch.h@{appTouch.h}!KEY\_DOWN\_L@{KEY\_DOWN\_L}}
+\index{KEY\_DOWN\_L@{KEY\_DOWN\_L}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_DOWN\_L}{KEY\_DOWN\_L}}
+{\footnotesize\ttfamily \label{app_touch_8h_adf217380ddf58b4cceacb8f8a6dae486} 
+\#define KEY\+\_\+\+DOWN\+\_\+L(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(x\&0x08)}
+
+\end{DoxyCode}
+\Hypertarget{app_touch_8h_a974dfb67c07d06b90b527bfb2c7af2c4}\index{appTouch.h@{appTouch.h}!KEY\_DOWN\_L\_MASK@{KEY\_DOWN\_L\_MASK}}
+\index{KEY\_DOWN\_L\_MASK@{KEY\_DOWN\_L\_MASK}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_DOWN\_L\_MASK}{KEY\_DOWN\_L\_MASK}}
+{\footnotesize\ttfamily \label{app_touch_8h_a974dfb67c07d06b90b527bfb2c7af2c4} 
+\#define KEY\+\_\+\+DOWN\+\_\+\+L\+\_\+\+MASK~0x0008}
+
+\Hypertarget{app_touch_8h_a3db80d5b884112b8ed278f556e7463ae}\index{appTouch.h@{appTouch.h}!KEY\_DOWN\_R@{KEY\_DOWN\_R}}
+\index{KEY\_DOWN\_R@{KEY\_DOWN\_R}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_DOWN\_R}{KEY\_DOWN\_R}}
+{\footnotesize\ttfamily \label{app_touch_8h_a3db80d5b884112b8ed278f556e7463ae} 
+\#define KEY\+\_\+\+DOWN\+\_\+R(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(x\&0x40)}
+
+\end{DoxyCode}
+\Hypertarget{app_touch_8h_abd46f145362f60bd2ecb00b182373455}\index{appTouch.h@{appTouch.h}!KEY\_DOWN\_R\_MASK@{KEY\_DOWN\_R\_MASK}}
+\index{KEY\_DOWN\_R\_MASK@{KEY\_DOWN\_R\_MASK}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_DOWN\_R\_MASK}{KEY\_DOWN\_R\_MASK}}
+{\footnotesize\ttfamily \label{app_touch_8h_abd46f145362f60bd2ecb00b182373455} 
+\#define KEY\+\_\+\+DOWN\+\_\+\+R\+\_\+\+MASK~0x0040}
+
+\Hypertarget{app_touch_8h_a41647cda48dc4fe55fad556ecf38573d}\index{appTouch.h@{appTouch.h}!KEY\_MID\_L@{KEY\_MID\_L}}
+\index{KEY\_MID\_L@{KEY\_MID\_L}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_MID\_L}{KEY\_MID\_L}}
+{\footnotesize\ttfamily \label{app_touch_8h_a41647cda48dc4fe55fad556ecf38573d} 
+\#define KEY\+\_\+\+MID\+\_\+L(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(x\&0x04)}
+
+\end{DoxyCode}
+\Hypertarget{app_touch_8h_a974c79c7706f5f5ea5009d0b76af7d0f}\index{appTouch.h@{appTouch.h}!KEY\_MID\_L\_MASK@{KEY\_MID\_L\_MASK}}
+\index{KEY\_MID\_L\_MASK@{KEY\_MID\_L\_MASK}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_MID\_L\_MASK}{KEY\_MID\_L\_MASK}}
+{\footnotesize\ttfamily \label{app_touch_8h_a974c79c7706f5f5ea5009d0b76af7d0f} 
+\#define KEY\+\_\+\+MID\+\_\+\+L\+\_\+\+MASK~0x0004}
+
+\Hypertarget{app_touch_8h_aed58b1a02f1543c2ba3ddc4ee94ac45b}\index{appTouch.h@{appTouch.h}!KEY\_MID\_R@{KEY\_MID\_R}}
+\index{KEY\_MID\_R@{KEY\_MID\_R}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_MID\_R}{KEY\_MID\_R}}
+{\footnotesize\ttfamily \label{app_touch_8h_aed58b1a02f1543c2ba3ddc4ee94ac45b} 
+\#define KEY\+\_\+\+MID\+\_\+R(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(x\&0x80)}
+
+\end{DoxyCode}
+\Hypertarget{app_touch_8h_a08dfe58316e60d53f305106baba20bad}\index{appTouch.h@{appTouch.h}!KEY\_MID\_R\_MASK@{KEY\_MID\_R\_MASK}}
+\index{KEY\_MID\_R\_MASK@{KEY\_MID\_R\_MASK}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_MID\_R\_MASK}{KEY\_MID\_R\_MASK}}
+{\footnotesize\ttfamily \label{app_touch_8h_a08dfe58316e60d53f305106baba20bad} 
+\#define KEY\+\_\+\+MID\+\_\+\+R\+\_\+\+MASK~0x0080}
+
+\Hypertarget{app_touch_8h_a02e58f7d7e3e3b2491c5060f66bced0e}\index{appTouch.h@{appTouch.h}!KEY\_UP\_C@{KEY\_UP\_C}}
+\index{KEY\_UP\_C@{KEY\_UP\_C}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_UP\_C}{KEY\_UP\_C}}
+{\footnotesize\ttfamily \label{app_touch_8h_a02e58f7d7e3e3b2491c5060f66bced0e} 
+\#define KEY\+\_\+\+UP\+\_\+C(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(x\&0x20)}
+
+\end{DoxyCode}
+\Hypertarget{app_touch_8h_a92e4c67f32e1404052f6b48d3de30270}\index{appTouch.h@{appTouch.h}!KEY\_UP\_C\_MASK@{KEY\_UP\_C\_MASK}}
+\index{KEY\_UP\_C\_MASK@{KEY\_UP\_C\_MASK}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_UP\_C\_MASK}{KEY\_UP\_C\_MASK}}
+{\footnotesize\ttfamily \label{app_touch_8h_a92e4c67f32e1404052f6b48d3de30270} 
+\#define KEY\+\_\+\+UP\+\_\+\+C\+\_\+\+MASK~0x0020}
+
+\Hypertarget{app_touch_8h_accd3be6485f43b3be14d7b1bafa3b823}\index{appTouch.h@{appTouch.h}!KEY\_UP\_L@{KEY\_UP\_L}}
+\index{KEY\_UP\_L@{KEY\_UP\_L}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_UP\_L}{KEY\_UP\_L}}
+{\footnotesize\ttfamily \label{app_touch_8h_accd3be6485f43b3be14d7b1bafa3b823} 
+\#define KEY\+\_\+\+UP\+\_\+L(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(x\&0x02)}
+
+\end{DoxyCode}
+\Hypertarget{app_touch_8h_a897419fddec4c79be83b1080b8c36424}\index{appTouch.h@{appTouch.h}!KEY\_UP\_L\_MASK@{KEY\_UP\_L\_MASK}}
+\index{KEY\_UP\_L\_MASK@{KEY\_UP\_L\_MASK}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_UP\_L\_MASK}{KEY\_UP\_L\_MASK}}
+{\footnotesize\ttfamily \label{app_touch_8h_a897419fddec4c79be83b1080b8c36424} 
+\#define KEY\+\_\+\+UP\+\_\+\+L\+\_\+\+MASK~0x0002}
+
+\Hypertarget{app_touch_8h_a37c114c851f3a73c341488d727c44637}\index{appTouch.h@{appTouch.h}!KEY\_UP\_R@{KEY\_UP\_R}}
+\index{KEY\_UP\_R@{KEY\_UP\_R}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_UP\_R}{KEY\_UP\_R}}
+{\footnotesize\ttfamily \label{app_touch_8h_a37c114c851f3a73c341488d727c44637} 
+\#define KEY\+\_\+\+UP\+\_\+R(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{(x\&0x01)}
+
+\end{DoxyCode}
+\Hypertarget{app_touch_8h_acd45d046949560c0a2aba7161592c53a}\index{appTouch.h@{appTouch.h}!KEY\_UP\_R\_MASK@{KEY\_UP\_R\_MASK}}
+\index{KEY\_UP\_R\_MASK@{KEY\_UP\_R\_MASK}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_UP\_R\_MASK}{KEY\_UP\_R\_MASK}}
+{\footnotesize\ttfamily \label{app_touch_8h_acd45d046949560c0a2aba7161592c53a} 
+\#define KEY\+\_\+\+UP\+\_\+\+R\+\_\+\+MASK~0x0100}
+
+\Hypertarget{app_touch_8h_a958518a45b12053ae33606ee7cb68a55}\index{appTouch.h@{appTouch.h}!NACK@{NACK}}
+\index{NACK@{NACK}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{NACK}{NACK}}
+{\footnotesize\ttfamily \label{app_touch_8h_a958518a45b12053ae33606ee7cb68a55} 
+\#define NACK~0}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{app_touch_8h_a939150ecf12e2373ed3433f55d72ded2}\index{appTouch.h@{appTouch.h}!APP\_TOUCH\_STATES@{APP\_TOUCH\_STATES}}
+\index{APP\_TOUCH\_STATES@{APP\_TOUCH\_STATES}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{APP\_TOUCH\_STATES}{APP\_TOUCH\_STATES}}
+{\footnotesize\ttfamily \label{app_touch_8h_a939150ecf12e2373ed3433f55d72ded2} 
+enum \mbox{\hyperlink{app_touch_8h_a939150ecf12e2373ed3433f55d72ded2}{APP\+\_\+\+TOUCH\+\_\+\+STATES}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_TOUCH\_STATE\_INIT@{APP\_TOUCH\_STATE\_INIT}!appTouch.h@{appTouch.h}}\index{appTouch.h@{appTouch.h}!APP\_TOUCH\_STATE\_INIT@{APP\_TOUCH\_STATE\_INIT}}}\Hypertarget{app_touch_8h_a939150ecf12e2373ed3433f55d72ded2a6ac9b75628666153fa7855a197ca5d17}\label{app_touch_8h_a939150ecf12e2373ed3433f55d72ded2a6ac9b75628666153fa7855a197ca5d17} 
+APP\+\_\+\+TOUCH\+\_\+\+STATE\+\_\+\+INIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_TOUCH\_STATE\_SERVICE\_TASKS@{APP\_TOUCH\_STATE\_SERVICE\_TASKS}!appTouch.h@{appTouch.h}}\index{appTouch.h@{appTouch.h}!APP\_TOUCH\_STATE\_SERVICE\_TASKS@{APP\_TOUCH\_STATE\_SERVICE\_TASKS}}}\Hypertarget{app_touch_8h_a939150ecf12e2373ed3433f55d72ded2a81ae7b680077412dcfad28882797c9b8}\label{app_touch_8h_a939150ecf12e2373ed3433f55d72ded2a81ae7b680077412dcfad28882797c9b8} 
+APP\+\_\+\+TOUCH\+\_\+\+STATE\+\_\+\+SERVICE\+\_\+\+TASKS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APP\_TOUCH\_STATE\_IDLE@{APP\_TOUCH\_STATE\_IDLE}!appTouch.h@{appTouch.h}}\index{appTouch.h@{appTouch.h}!APP\_TOUCH\_STATE\_IDLE@{APP\_TOUCH\_STATE\_IDLE}}}\Hypertarget{app_touch_8h_a939150ecf12e2373ed3433f55d72ded2a8efe5eae86637e97f99840bced67fb51}\label{app_touch_8h_a939150ecf12e2373ed3433f55d72ded2a8efe5eae86637e97f99840bced67fb51} 
+APP\+\_\+\+TOUCH\+\_\+\+STATE\+\_\+\+IDLE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{app_touch_8h_a8437a1895e551b5cee23d1dc836da43c}\index{appTouch.h@{appTouch.h}!APP\_TIMER2\_CALLBACK@{APP\_TIMER2\_CALLBACK}}
+\index{APP\_TIMER2\_CALLBACK@{APP\_TIMER2\_CALLBACK}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{APP\_TIMER2\_CALLBACK()}{APP\_TIMER2\_CALLBACK()}}
+{\footnotesize\ttfamily \label{app_touch_8h_a8437a1895e551b5cee23d1dc836da43c} 
+void APP\+\_\+\+TIMER2\+\_\+\+CALLBACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_touch_8h_afc07aa60a124fa0678987f0f731a7dbe}\index{appTouch.h@{appTouch.h}!APP\_Touch\_Initialize@{APP\_Touch\_Initialize}}
+\index{APP\_Touch\_Initialize@{APP\_Touch\_Initialize}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{APP\_Touch\_Initialize()}{APP\_Touch\_Initialize()}}
+{\footnotesize\ttfamily \label{app_touch_8h_afc07aa60a124fa0678987f0f731a7dbe} 
+void APP\+\_\+\+Touch\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_touch_8h_afd38d7decffa5a6716ac74cfa660676a}\index{appTouch.h@{appTouch.h}!APP\_Touch\_Tasks@{APP\_Touch\_Tasks}}
+\index{APP\_Touch\_Tasks@{APP\_Touch\_Tasks}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{APP\_Touch\_Tasks()}{APP\_Touch\_Tasks()}}
+{\footnotesize\ttfamily \label{app_touch_8h_afd38d7decffa5a6716ac74cfa660676a} 
+void APP\+\_\+\+Touch\+\_\+\+Tasks (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_touch_8h_afd38d7decffa5a6716ac74cfa660676a_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{app_touch_8h_ad3d63cf42bac9da94dc89d5565d39cc1}\index{appTouch.h@{appTouch.h}!s\_getDataSensor@{s\_getDataSensor}}
+\index{s\_getDataSensor@{s\_getDataSensor}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{s\_getDataSensor}{s\_getDataSensor}}
+{\footnotesize\ttfamily \label{app_touch_8h_ad3d63cf42bac9da94dc89d5565d39cc1} 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} s\+\_\+get\+Data\+Sensor\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{app_touch_8h_ada7371da5b14870af5e64fa9c382fd4d}\index{appTouch.h@{appTouch.h}!touchTaskCtrl@{touchTaskCtrl}}
+\index{touchTaskCtrl@{touchTaskCtrl}!appTouch.h@{appTouch.h}}
+\doxysubsubsection{\texorpdfstring{touchTaskCtrl}{touchTaskCtrl}}
+{\footnotesize\ttfamily \label{app_touch_8h_ada7371da5b14870af5e64fa9c382fd4d} 
+\mbox{\hyperlink{structapp__task__ctrl__t}{app\+\_\+task\+\_\+ctrl\+\_\+t}} touch\+Task\+Ctrl\hspace{0.3cm}{\ttfamily [extern]}}
+

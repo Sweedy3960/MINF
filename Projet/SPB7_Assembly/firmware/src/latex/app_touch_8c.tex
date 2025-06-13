@@ -1,0 +1,99 @@
+\doxysection{app\+Touch.\+c File Reference}
+\hypertarget{app_touch_8c}{}\label{app_touch_8c}\index{appTouch.c@{appTouch.c}}
+{\ttfamily \#include "{}app\+Touch.\+h"{}}\newline
+{\ttfamily \#include "{}PIC32130\+\_\+\+AT42\+QT2120\+\_\+\+I2\+C.\+h"{}}\newline
+{\ttfamily \#include "{}Mc32\+\_\+\+I2c\+Util\+CCS.\+h"{}}\newline
+{\ttfamily \#include "{}app\+\_\+eventbus.\+h"{}}\newline
+{\ttfamily \#include "{}app\+\_\+taskctrl.\+h"{}}\newline
+Include dependency graph for app\+Touch.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_touch_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{app_touch_8c_afc07aa60a124fa0678987f0f731a7dbe}{APP\+\_\+\+Touch\+\_\+\+Initialize}} (void)
+\item 
+void \mbox{\hyperlink{app_touch_8c_afd38d7decffa5a6716ac74cfa660676a}{APP\+\_\+\+Touch\+\_\+\+Tasks}} (void)
+\item 
+void \mbox{\hyperlink{app_touch_8c_a8437a1895e551b5cee23d1dc836da43c}{APP\+\_\+\+TIMER2\+\_\+\+CALLBACK}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_a_p_p___t_o_u_c_h___d_a_t_a}{APP\+\_\+\+TOUCH\+\_\+\+DATA}} \mbox{\hyperlink{app_touch_8c_a612ed70381d2d8d96e2246049d241893}{app\+Touch\+Data}}
+\item 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} \mbox{\hyperlink{app_touch_8c_a00fb7977be2deac611244a063ae44be4}{s\+\_\+new\+Data\+Sensor}}
+\item 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} \mbox{\hyperlink{app_touch_8c_ad0f2efc2ebe8ab8915d976a328ec9416}{s\+\_\+data\+Sensor}}
+\item 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} \mbox{\hyperlink{app_touch_8c_ad3d63cf42bac9da94dc89d5565d39cc1}{s\+\_\+get\+Data\+Sensor}}
+\item 
+\mbox{\hyperlink{structapp__task__ctrl__t}{app\+\_\+task\+\_\+ctrl\+\_\+t}} \mbox{\hyperlink{app_touch_8c_ada7371da5b14870af5e64fa9c382fd4d}{touch\+Task\+Ctrl}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{app_touch_8c_a8437a1895e551b5cee23d1dc836da43c}\index{appTouch.c@{appTouch.c}!APP\_TIMER2\_CALLBACK@{APP\_TIMER2\_CALLBACK}}
+\index{APP\_TIMER2\_CALLBACK@{APP\_TIMER2\_CALLBACK}!appTouch.c@{appTouch.c}}
+\doxysubsubsection{\texorpdfstring{APP\_TIMER2\_CALLBACK()}{APP\_TIMER2\_CALLBACK()}}
+{\footnotesize\ttfamily \label{app_touch_8c_a8437a1895e551b5cee23d1dc836da43c} 
+void APP\+\_\+\+TIMER2\+\_\+\+CALLBACK (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_touch_8c_afc07aa60a124fa0678987f0f731a7dbe}\index{appTouch.c@{appTouch.c}!APP\_Touch\_Initialize@{APP\_Touch\_Initialize}}
+\index{APP\_Touch\_Initialize@{APP\_Touch\_Initialize}!appTouch.c@{appTouch.c}}
+\doxysubsubsection{\texorpdfstring{APP\_Touch\_Initialize()}{APP\_Touch\_Initialize()}}
+{\footnotesize\ttfamily \label{app_touch_8c_afc07aa60a124fa0678987f0f731a7dbe} 
+void APP\+\_\+\+Touch\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{app_touch_8c_afd38d7decffa5a6716ac74cfa660676a}\index{appTouch.c@{appTouch.c}!APP\_Touch\_Tasks@{APP\_Touch\_Tasks}}
+\index{APP\_Touch\_Tasks@{APP\_Touch\_Tasks}!appTouch.c@{appTouch.c}}
+\doxysubsubsection{\texorpdfstring{APP\_Touch\_Tasks()}{APP\_Touch\_Tasks()}}
+{\footnotesize\ttfamily \label{app_touch_8c_afd38d7decffa5a6716ac74cfa660676a} 
+void APP\+\_\+\+Touch\+\_\+\+Tasks (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{app_touch_8c_afd38d7decffa5a6716ac74cfa660676a_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{app_touch_8c_a612ed70381d2d8d96e2246049d241893}\index{appTouch.c@{appTouch.c}!appTouchData@{appTouchData}}
+\index{appTouchData@{appTouchData}!appTouch.c@{appTouch.c}}
+\doxysubsubsection{\texorpdfstring{appTouchData}{appTouchData}}
+{\footnotesize\ttfamily \label{app_touch_8c_a612ed70381d2d8d96e2246049d241893} 
+\mbox{\hyperlink{struct_a_p_p___t_o_u_c_h___d_a_t_a}{APP\+\_\+\+TOUCH\+\_\+\+DATA}} app\+Touch\+Data}
+
+\Hypertarget{app_touch_8c_ad0f2efc2ebe8ab8915d976a328ec9416}\index{appTouch.c@{appTouch.c}!s\_dataSensor@{s\_dataSensor}}
+\index{s\_dataSensor@{s\_dataSensor}!appTouch.c@{appTouch.c}}
+\doxysubsubsection{\texorpdfstring{s\_dataSensor}{s\_dataSensor}}
+{\footnotesize\ttfamily \label{app_touch_8c_ad0f2efc2ebe8ab8915d976a328ec9416} 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} s\+\_\+data\+Sensor}
+
+\Hypertarget{app_touch_8c_ad3d63cf42bac9da94dc89d5565d39cc1}\index{appTouch.c@{appTouch.c}!s\_getDataSensor@{s\_getDataSensor}}
+\index{s\_getDataSensor@{s\_getDataSensor}!appTouch.c@{appTouch.c}}
+\doxysubsubsection{\texorpdfstring{s\_getDataSensor}{s\_getDataSensor}}
+{\footnotesize\ttfamily \label{app_touch_8c_ad3d63cf42bac9da94dc89d5565d39cc1} 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} s\+\_\+get\+Data\+Sensor}
+
+\Hypertarget{app_touch_8c_a00fb7977be2deac611244a063ae44be4}\index{appTouch.c@{appTouch.c}!s\_newDataSensor@{s\_newDataSensor}}
+\index{s\_newDataSensor@{s\_newDataSensor}!appTouch.c@{appTouch.c}}
+\doxysubsubsection{\texorpdfstring{s\_newDataSensor}{s\_newDataSensor}}
+{\footnotesize\ttfamily \label{app_touch_8c_a00fb7977be2deac611244a063ae44be4} 
+\mbox{\hyperlink{struct_s___a_t42_q_t2120}{S\+\_\+\+AT42\+QT2120}} s\+\_\+new\+Data\+Sensor}
+
+\Hypertarget{app_touch_8c_ada7371da5b14870af5e64fa9c382fd4d}\index{appTouch.c@{appTouch.c}!touchTaskCtrl@{touchTaskCtrl}}
+\index{touchTaskCtrl@{touchTaskCtrl}!appTouch.c@{appTouch.c}}
+\doxysubsubsection{\texorpdfstring{touchTaskCtrl}{touchTaskCtrl}}
+{\footnotesize\ttfamily \label{app_touch_8c_ada7371da5b14870af5e64fa9c382fd4d} 
+\mbox{\hyperlink{structapp__task__ctrl__t}{app\+\_\+task\+\_\+ctrl\+\_\+t}} touch\+Task\+Ctrl\hspace{0.3cm}{\ttfamily [extern]}}
+
