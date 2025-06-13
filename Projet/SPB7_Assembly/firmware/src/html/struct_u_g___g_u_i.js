@@ -1,0 +1,25 @@
+var struct_u_g___g_u_i =
+[
+    [ "active_window", "struct_u_g___g_u_i.html#a84f753f7e57891d5ba364690b1e8d332", null ],
+    [ "back_color", "struct_u_g___g_u_i.html#ad4cef18b561e6113daefaae189c13724", null ],
+    [ "char_h_space", "struct_u_g___g_u_i.html#a25bbab1c8664a102bfbc7f3935109e55", null ],
+    [ "char_v_space", "struct_u_g___g_u_i.html#af885bb464c3876b92351e96a1e384973", null ],
+    [ "console", "struct_u_g___g_u_i.html#abac47650ab77a6de65570ff4e3afed1e", null ],
+    [ "desktop_color", "struct_u_g___g_u_i.html#a2d50b9f2ecf4a5a0027f62fdf1292893", null ],
+    [ "driver", "struct_u_g___g_u_i.html#a9b7f7bb2d80b2b55efb7a4bf3877852e", null ],
+    [ "font", "struct_u_g___g_u_i.html#a4c44b52fb170f45b4403d9764cc1828c", null ],
+    [ "fore_color", "struct_u_g___g_u_i.html#a6c34d8aaea6dae9ad8502235d19c155a", null ],
+    [ "last_window", "struct_u_g___g_u_i.html#acbf711e254780bfb65efdd7e6fc4f159", null ],
+    [ "next_window", "struct_u_g___g_u_i.html#a1f20ed1783c71d493e613d5cbee4fd40", null ],
+    [ "pset", "struct_u_g___g_u_i.html#a64f3af40467072c8af16e56c51578460", null ],
+    [ "state", "struct_u_g___g_u_i.html#a450d68a546074393ac6e6bc2acf31339", null ],
+    [ "touch", "struct_u_g___g_u_i.html#a2780081deea4ed07dc26eb97c12b5909", null ],
+    [ "x_dim", "struct_u_g___g_u_i.html#a1282de1c3d035882e6dc9f4bc515cb3a", null ],
+    [ "x_end", "struct_u_g___g_u_i.html#ac623ea237653a3f6d0671f56866aafc5", null ],
+    [ "x_pos", "struct_u_g___g_u_i.html#a691776974d2b49d0433a500da3ef9956", null ],
+    [ "x_start", "struct_u_g___g_u_i.html#aead395fb388d11a2724951a638b1babe", null ],
+    [ "y_dim", "struct_u_g___g_u_i.html#ab40449232919a83a834eadff9373deda", null ],
+    [ "y_end", "struct_u_g___g_u_i.html#a49a83f2fce9a15ae8688179995896195", null ],
+    [ "y_pos", "struct_u_g___g_u_i.html#aff6d5eb84d3e1898fb82df4f4a4481e0", null ],
+    [ "y_start", "struct_u_g___g_u_i.html#a7e62c11943925159eaed2b4204486a8d", null ]
+];

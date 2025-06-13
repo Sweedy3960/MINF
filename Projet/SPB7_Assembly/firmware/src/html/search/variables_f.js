@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['s_5fdatasensor_0',['s_dataSensor',['../app_touch_8c.html#ad0f2efc2ebe8ab8915d976a328ec9416',1,'appTouch.c']]],
+  ['s_5fgetdatasensor_1',['s_getDataSensor',['../app_touch_8c.html#ad3d63cf42bac9da94dc89d5565d39cc1',1,'s_getDataSensor:&#160;appTouch.c'],['../app_touch_8h.html#ad3d63cf42bac9da94dc89d5565d39cc1',1,'s_getDataSensor:&#160;appTouch.c']]],
+  ['s_5fnewdatasensor_2',['s_newDataSensor',['../app_touch_8c.html#a00fb7977be2deac611244a063ae44be4',1,'appTouch.c']]],
+  ['screencopy_3',['screenCopy',['../struct_t___d_i_s_p_l_a_y.html#a31f1cd1cbe1d22476102ad4f7584f050',1,'T_DISPLAY']]],
+  ['scrollline_4',['scrollLine',['../struct_t___d_i_s_p_l_a_y.html#ace0a0c5c741a5980c12dc85fd53dd253',1,'T_DISPLAY']]],
+  ['signalnames_5',['signalNames',['../_display_8c.html#a6b8d21f5768266b213d8b599b4dd103a',1,'Display.c']]],
+  ['spbin1_5fconf_6',['SPBIn1_conf',['../struct_conf_in_switchs.html#a6adc6882848f7ceb181fb098c3c81713',1,'ConfInSwitchs']]],
+  ['spbin2_5fconf_7',['SPBIn2_conf',['../struct_conf_in_switchs.html#aaf12fb10cfb9814cd2d2f2eb7cc89353',1,'ConfInSwitchs']]],
+  ['spbin3_5fconf_8',['SPBIn3_conf',['../struct_conf_in_switchs.html#af733a950b97916f5fc378e821f3b2ed2',1,'ConfInSwitchs']]],
+  ['src_9',['src',['../struct_u_g___m_e_s_s_a_g_e.html#a888b1d54333f07bd9da7cec44e0d6398',1,'UG_MESSAGE']]],
+  ['start_10',['start',['../struct_s___a_t42_q_t2120.html#a7dc2499e4825a78e484bb388ab29dc1d',1,'S_AT42QT2120']]],
+  ['start_5fchar_11',['start_char',['../struct_u_g___f_o_n_t.html#a9931d53458678271f1c38e9db4b97954',1,'UG_FONT']]],
+  ['state_12',['state',['../struct_a_p_p___d_a_t_a.html#a5e301beaf2d55ccc56dfcf3943d310fc',1,'APP_DATA::state'],['../struct_a_p_p___d_i_s_p___d_a_t_a.html#ad35b6899ef6365e0912ad09a99e03a58',1,'APP_DISP_DATA::state'],['../struct_swithc_config.html#a0b57aa10271a66f3dc936bba1d2f3830',1,'SwithcConfig::state'],['../struct_a_p_p___i_n_p_u_t_s___d_a_t_a.html#a6ca609462d55c4dee58439d95388db4b',1,'APP_INPUTS_DATA::state'],['../struct_a_p_p___t_o_u_c_h___d_a_t_a.html#afecb514710008b0f1952249b97a22410',1,'APP_TOUCH_DATA::state'],['../struct_t___d_i_s_p_l_a_y.html#ab4c585a9c106f937f9222f2b81adb3da',1,'T_DISPLAY::state'],['../union_s_e_r_i_a_l___r_e_g___d_a_t_a.html#a31d906a47a47f4b6d30f6d1c8197e51c',1,'SERIAL_REG_DATA::state'],['../struct_t___l_c_d.html#ad6afb111545e8d462b084a3dcc71317d',1,'T_LCD::state'],['../struct_u_g___t_o_u_c_h.html#a450d68a546074393ac6e6bc2acf31339',1,'UG_TOUCH::state'],['../struct_s___o_b_j_e_c_t.html#a450d68a546074393ac6e6bc2acf31339',1,'S_OBJECT::state'],['../struct_s___w_i_n_d_o_w.html#a450d68a546074393ac6e6bc2acf31339',1,'S_WINDOW::state'],['../struct_u_g___b_u_t_t_o_n.html#a450d68a546074393ac6e6bc2acf31339',1,'UG_BUTTON::state'],['../struct_u_g___c_h_e_c_k_b_o_x.html#a450d68a546074393ac6e6bc2acf31339',1,'UG_CHECKBOX::state'],['../struct_u_g___d_r_i_v_e_r.html#a450d68a546074393ac6e6bc2acf31339',1,'UG_DRIVER::state'],['../struct_u_g___g_u_i.html#a450d68a546074393ac6e6bc2acf31339',1,'UG_GUI::state']]],
+  ['stop_13',['stop',['../struct_s___a_t42_q_t2120.html#a219998cfb366307196d1013046d3f5d2',1,'S_AT42QT2120']]],
+  ['str_14',['str',['../struct_u_g___t_e_x_t.html#ab50d783982593ef993ea0b68f7ad8b80',1,'UG_TEXT::str'],['../struct_u_g___t_i_t_l_e.html#ab50d783982593ef993ea0b68f7ad8b80',1,'UG_TITLE::str'],['../struct_u_g___b_u_t_t_o_n.html#ab50d783982593ef993ea0b68f7ad8b80',1,'UG_BUTTON::str'],['../struct_u_g___c_h_e_c_k_b_o_x.html#ab50d783982593ef993ea0b68f7ad8b80',1,'UG_CHECKBOX::str'],['../struct_u_g___t_e_x_t_b_o_x.html#ab50d783982593ef993ea0b68f7ad8b80',1,'UG_TEXTBOX::str']]],
+  ['style_15',['style',['../struct_s___w_i_n_d_o_w.html#ab0d442feb65c19bd1986227fc0471479',1,'S_WINDOW::style'],['../struct_u_g___b_u_t_t_o_n.html#ab0d442feb65c19bd1986227fc0471479',1,'UG_BUTTON::style'],['../struct_u_g___c_h_e_c_k_b_o_x.html#ab0d442feb65c19bd1986227fc0471479',1,'UG_CHECKBOX::style'],['../struct_u_g___t_e_x_t_b_o_x.html#ab0d442feb65c19bd1986227fc0471479',1,'UG_TEXTBOX::style']]],
+  ['sub_5fid_16',['sub_id',['../struct_u_g___m_e_s_s_a_g_e.html#ac0ab81875c883f7bafbd2c8ed307fe79',1,'UG_MESSAGE']]],
+  ['sysleds_17',['sysLeds',['../struct_a_p_p___r_e_g___d_a_t_a.html#aee7ccbdc60708d03e28215cc98e6977c',1,'APP_REG_DATA']]],
+  ['syswitch_18',['SySwitch',['../struct_a_p_p___i_n_p_u_t_s___d_a_t_a.html#a6d12f5d530d8f877a04340e2f7d867ad',1,'APP_INPUTS_DATA::SySwitch'],['../app_inputs_8h.html#a6d12f5d530d8f877a04340e2f7d867ad',1,'SySwitch:&#160;appInputs.h']]]
+];

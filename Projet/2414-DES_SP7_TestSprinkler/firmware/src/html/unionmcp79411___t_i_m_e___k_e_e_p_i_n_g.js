@@ -1,0 +1,27 @@
+var unionmcp79411___t_i_m_e___k_e_e_p_i_n_g =
+[
+    [ "AM_PM", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a26206c4de8dc5a04f4e80d7e49221728", null ],
+    [ "b12_24", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a194903a2354f91120ef22eb45ceba067", null ],
+    [ "DATE", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a8cb0681aaef4ccb42ef41321f2ed7dfc", null ],
+    [ "HOUR", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#ac1b34e87c3b24929d2075519845a9e32", null ],
+    [ "LPYR", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a6aad6512533268ef21477481bc66ecd6", null ],
+    [ "MIN", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#ac6bf19e173885e4bc2b610105154a0e1", null ],
+    [ "MTH", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#afd8cc5a2c3c8ba541961c0b745f269da", null ],
+    [ "OSCRUN", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a9dba22a968a5bb0ad745f74c923bf647", null ],
+    [ "PWRFAIL", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#ad1c1a0ff242d853669d801422788af30", null ],
+    [ "regs", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a99674dd7363ce12deaf65b89ea5d6de9", null ],
+    [ "RES", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a869d53342ff857c00a887e40bbe44555", null ],
+    [ "RTCDATE_bits", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a62513405d505a23fd1ce7dba2346cc4a", null ],
+    [ "RTCHOUR_bits", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#ae4e042c52bbc0ffb82506a628223c0fa", null ],
+    [ "RTCMIN_bits", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a37ee7e8453818c3da1e33f7841e9e087", null ],
+    [ "RTCMTH_bits", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#ab0a17843df06cd785626a7982a713327", null ],
+    [ "RTCSEC_bits", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a3664dbc8d0413dd1520341be8fcb86a4", null ],
+    [ "RTCWKDAY_bits", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a2b919571c2d54511ef8b3f027b561128", null ],
+    [ "RTCYEAR_bits", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#acbfe9b77874ebd9fe1b83fd32900b85b", null ],
+    [ "SEC", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#af04bb7dfeae1479f7894e30cb3c07fb0", null ],
+    [ "ST", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a59710b8677e6166c4f242455f03fb70f", null ],
+    [ "time_bytes", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a8c834c6e48b633cb40e54d221c305ae4", null ],
+    [ "VBATEN", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#ad036a62ee76bd3fde25d60d2fe329e3b", null ],
+    [ "WKDAY", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#ae7f88a83463b93943fb9016284b2f32a", null ],
+    [ "YEAR", "unionmcp79411___t_i_m_e___k_e_e_p_i_n_g.html#a81568aed827de8d31699cf88c6e0bdb4", null ]
+];
